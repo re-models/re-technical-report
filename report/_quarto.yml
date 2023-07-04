@@ -1,0 +1,27 @@
+project:
+  type: book
+  output-dir: ../output
+
+book:
+  title: "Technical Report"
+  subtitle: "Assessing a Formal Model of Reflective Equilibrium"
+  author: "Andreas Freivogel, Sebastian Cacean"
+  date: December 31, 2023
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - chapter_one.qmd
+    - chapter_two.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+

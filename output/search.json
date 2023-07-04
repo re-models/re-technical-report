@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Technical Report",
+    "section": "",
+    "text": "Preface\nThis report summarizes findings of analysing a formal model of the method of reflective equilibrium. The model is based on Beisbart, Betz, and Brun (2021)."
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "Beisbart, Betz, and Brun (2021) introduced a formal model of reflective equilibrium based on the theory of dialectical structures (Betz 2010, 2013), which, according to them, can be used to better understand the method of reflective equilibrium and to assess its potential to yield better epistemic states. However, their discussion was based on a few illustrative examples only, without assessing how the model behaves under a wider spectrum of circumstances.\nThis report summarizes findings of assessing the RE model more thouroughly by, first, running the model to determine fixed points of the RE process and calculating global optima under a wide range of configurations and, second, by tweaking the original model. The simulation outcomes of three model variants are compared to the ones of the original model.1\n\n\n\n\nBeisbart, Claus, Gregor Betz, and Georg Brun. 2021. “Making Reflective Equlibrium Precise: A Formal Model.” Ergo 8 (0). https://doi.org/10.3998/ergo.1152.\n\n\nBetz, Gregor. 2010. Theorie dialektischer Strukturen. Frankfurt am Main: Klostermann.\n\n\n———. 2013. Debate Dynamics: How Controversy Improves Our Beliefs. Synthese Library. Dordrecht: Springer Netherlands.\n\n\n\n\n\nThe results of Beisbart, Betz, and Brun (2021) are based on a Mathematica implementation of the model (see https://github.com/debatelab/remoma). Here, we rely on a reimplementation in Python (LINK TO PUBLIC REPO).↩︎"
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "4  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Beisbart, Claus, Gregor Betz, and Georg Brun. 2021. “Making\nReflective Equlibrium Precise: A Formal\nModel.” Ergo 8 (0). https://doi.org/10.3998/ergo.1152.\n\n\nBetz, Gregor. 2010. Theorie dialektischer\nStrukturen. Frankfurt am Main:\nKlostermann.\n\n\n———. 2013. Debate Dynamics: How Controversy\nImproves Our Beliefs. Synthese Library.\nDordrecht: Springer Netherlands."
+  },
+  {
+    "objectID": "index.html#reproducibility",
+    "href": "index.html#reproducibility",
+    "title": "Technical Report",
+    "section": "Reproducibility",
+    "text": "Reproducibility\nAll findings and the underlying data can be reproduced by using our Python implementation (ADD LINK) of the model. The data that the model produced can be found here (ADD LINK). For each chapter you will find here (ADD LINK) a IPython notebook whose execution produces all analysis results. The data itself can be reproduced by executing this notebook (ADD LINK)."
+  },
+  {
+    "objectID": "index.html#licence",
+    "href": "index.html#licence",
+    "title": "Technical Report",
+    "section": "Licence",
+    "text": "Licence\nThis report is licenced under …"
+  },
+  {
+    "objectID": "index.html#credits",
+    "href": "index.html#credits",
+    "title": "Technical Report",
+    "section": "Credits",
+    "text": "Credits\nEarlier versions of this report were discussed on several occasions with all members of the research project ‘How far does Reflective Equilibrium Take us? Investigating the Power of a Philosophical Method’ (SNSF grant 182854 and German Research Foundation grant 412679086). We thank, in particular, Claus Beisbart, Gregor Betz, Georg Brun, Alexander Koch and Richard Lohse for their helpful comments, which helped to improve this report considerably.\n\n\n\n\nBeisbart, Claus, Gregor Betz, and Georg Brun. 2021. “Making Reflective Equlibrium Precise: A Formal Model.” Ergo 8 (0). https://doi.org/10.3998/ergo.1152."
+  }
+]

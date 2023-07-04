@@ -1,0 +1,17 @@
+# Preface {.unnumbered}
+
+This report summarizes findings of analysing a formal model of the method of reflective equilibrium. The model is based on @beisbart_making_2021.
+
+
+## Reproducibility
+
+All findings and the underlying data can be reproduced by using our [Python implementation]() (ADD LINK) of the model. The data that the model produced can be found [here]() (ADD LINK). For each chapter you will find [here]() (ADD LINK) a IPython notebook whose execution produces all analysis results. The data itself can be reproduced by executing [this notebook]() (ADD LINK).
+
+
+## Licence
+
+This report is licenced under ...
+
+## Credits
+
+Earlier versions of this report were discussed on several occasions with all members of the research project  ['How far does Reflective Equilibrium Take us? Investigating the Power of a Philosophical Method'](https://www.philosophie.unibe.ch/forschung/forschungsprojekte/how_far_does_reflective_equilibrium_take_us/project/index_ger.html) (SNSF grant 182854 and German Research Foundation grant 412679086). We thank, in particular, Claus Beisbart, Gregor Betz, Georg Brun, Alexander Koch and Richard Lohse for their helpful comments, which helped to improve this report considerably.
