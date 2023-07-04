@@ -7,8 +7,8 @@ Technical report for the SNF-DFG project ["Formal Models of Reflective Equilibri
 The repository has the following structure:
 
 + `data`: Data on which the data analysis is based on.
-+ `notebooks`: [IPython notebooks]() to reproduce the data analysis.
-+ `report`: [Quarto]() source files for this report.
++ `notebooks`: [Jupyter notebooks](https://jupyter.org/) to reproduce the data analysis.
++ `report`: [Quarto](https://quarto.org/) source files for this report.
 + `output`: Quarto generated output.
 
 

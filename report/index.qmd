@@ -5,7 +5,7 @@ This report summarizes findings of analysing a formal model of the method of ref
 
 ## Reproducibility
 
-All findings and the underlying data can be reproduced by using our [Python implementation]() (ADD LINK) of the model. The data that the model produced can be found [here]() (ADD LINK). For each chapter you will find [here]() (ADD LINK) a IPython notebook whose execution produces all analysis results. The data itself can be reproduced by executing [this notebook]() (ADD LINK).
+All findings and the underlying data can be reproduced by using our [Python implementation]() (ADD LINK) of the model. The data that the model produced can be found [here]() (ADD LINK). For each chapter you will find [here]() (ADD LINK) a Jupyter notebook whose execution produces all analysis results. The data itself can be reproduced by executing [this notebook]() (ADD LINK).
 
 
 ## Licence
