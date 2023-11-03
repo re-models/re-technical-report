@@ -12,7 +12,9 @@ book:
     - intro.qmd
     - chapter_one.qmd
     - chapter_two.qmd
-    - summary.qmd
+    - chapter_three.qmd
+    - chapter_four.qmd
+    - chapter_five.qmd
     - references.qmd
 
 bibliography: references.bib

@@ -1,1 +1,63 @@
-# ...
+# Global optima and fixed points {#sec-go-and-fp}
+
+<!--
+Relevant documents:
+
++ Heuristics for finding global optima: <https://github.com/debatelab/re-studies/blob/master/documents/Finding_Global_Optima.pdf>
++ Referenced in the conclusion: <https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-template.ipynb>, section 4
+
+ToDo & remarks:
+
++ Heuristics perhaps in some kind of appendix?
++ Figure/evidence for the described correlation between inferential density of the dialectical structure and the number of global optima or fixed points in the conclusion.
+-->
+
+**Background**
+
+The formal model of RE allows to distinguish to outcomes of RE, i.e. a theory-commitment-pair for some given intial commitments: *global optima* accdording to the achievement functions and *fixed points*, which are reached by an RE process. Global optima are calculated over theory-commitment-pairs and fixed points result from stepwise, mutual adjustment of commitments and theory. Consequently, global optima and fixed points may fall apart for a configuration. A global optima may not be reachable from given inital commitments by an RE process, or a fixed point may not be globally optimal.
+
+Having a substantial overlap of global optima and fixed points is a desirable feature of an RE model. Otherwise, something would be amiss in the achievement function or in the RE process, for which it provides guidance.
+
+**Method**
+
+Obviously, the data which is required to explore the overlap, consists of all global optima and fixed point for a configuration. The brute force search for global optima requires to calculate the achievement function for every theory-commitment-pair (number of dialectically consistent positions * number of minimally consistent positions, worst case: $3^{n}\cdot 3^{n}$ ). However, there are some heuristics that, on average, speed up the calculations dramatically. In order to determine all fixed points for a configuration, all "branches" of an RE process need to be tracked, that occur due to the random choice among equally good performing candidates in an adjustment step. After the construction of global optima and fixed points, one can check for every element whether is contained in the other set. 
+
+The overlap for a configuration is given by the the number of global optima, which are fixed points. Note that the number of global optima which are fixed points is equal to the number of fixed points, which are global optima (see the Venn-diagramms in @fig-venn).
+The relative overlap w.r.t. global optima (fixed points) is the ratio of the overlap and the number of global optima (fixed points) for a configuration. In gereral the relative overlaps w.r.t global optima or fixed points,respectively, are not the same, since configurations yield more global optima than fixed points.
+
+
+**Results**
+
+Observations:
+
+- For every model variant the total number of global optima always exceeds the total number of fixed points between roughly 15% (QDS, ensemble 08) and 50% (QPS, ensemble 07).
+- Quadratic models tend to produce more global optima and fixed points than linear variants. (The exception is QDS, ensemble 08)
+<!--
+[AF]: The following observation is not helpful without said heatmaps.
+- Heatmaps do not exhibit salient features except some "hot" islands in the upper right corner of the plot (low weight for faithfulness and account, hight weight for systematicity), for which we do not have an explanation at this point.
+-->
+
+Mean relative number of fixed points that are global optima
+
+|     | ensemble 07 | ensemble 08 | ensemble 09 |
+| --- | ------ | ------ | ------ |
+| LDS | 71.9% | 72.2% | 76.9% |
+| LPS | 77.9% | 72.5% | 76.5% |
+| QDS | 73.0% | 74.8% | 75.6% |
+| QPS | 81.9% | 73.5% | 73.6% |
+
+Mean relative number of global optima that are fixed points
+
+|     | ensemble 07 | ensemble 08 | ensemble 09 |
+| --- | ------ | ------ | ------ |
+| LDS | 61.6% | 68.2% | 68.9% |
+| LPS | 61.3% | 65.6% | 66.5% |
+| QDS | 63.6% | 68.9% | 67.1% |
+| QPS | 59.7% | 63.4% | 62.6% |
+
+
+**Conclusion**
+
+Global optima and fixed point overlap to a sufficient degree in every model variant. Roughly 3 out of 4 fixed points are global optima, and 2 out 3 global optima are fixed points.
+
+The questions of why there are generally more global optima than fixed points, and when they fall apart require more detailed analysis of additional inputs. For example, there seems to be correlation of inferential density of the dialectical structure and the number of global optima or fixed points.

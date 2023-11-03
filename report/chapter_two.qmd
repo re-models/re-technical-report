@@ -1,1 +1,39 @@
-# ...
+# Full RE states {#sec-full-re-states}
+
+**Background**
+
+A theory-commitment-pair $(C, T)$ is a *full RE state* iff i) it is a global optimum according to the achievement function, and ii) the theory $T$ fully and exlusively accounts for the commitments $C$.
+
+
+**Method**
+
+Formally and irrespecitve of the model variant, full and exclusive account means $C = \overline{T}$, or equivalenty, $A(C, T) = 1$. During the generation of an ensemble, we can store for every global optima and for every fixed point resulting from a configuration, whether it satisfies conditions i) and ii) of full RE states (i) being trivially satisfied by global optima). For the relative share we can consider ratio between the number of full RE states among global optima (fixed points) and the total number of global optima (fixed points) per configuration.
+
+Since (full) account plays a prominent role in the definition of an RE state, the corresponding weight $alpha_{A}$ in heatmaps.
+
+**Results**
+Observations:
+
+- The relative share of full RE states among global optima always exceeds its counterpart for fixed points.
+- The relative share of full RE states among global optima (fixed points) in linear models is roughly 2 times larger than in quadratic variants for all ensembles.
+- The relative share of full RE states among global optima varies between 13.8% (QDS, ensemble 07) and 45.5% (LPS, ensemble 09)
+- The relative share of full RE states among fixed points varies between 9.7% (QPS, ensebmle 08) and 30.1% (LDS, ensemble 09)
+- There are not notable differences between pure and default systematicity in linear (quadratic) model variants.
+
+
+<!-- 
++ Reference to the analytical results:  (see [here](https://git.scc.kit.edu/debatelab/re-python/-/blob/master/projects/ensemble_study_02/documents/linear_models_tipping_line.md))
+    + Perhaps we can put them into some kind of appendix? 
+-->
+
+
+- Across all model variants and ensembles, the weight for account has a positive impact on the mean relative share of full RE states among global optima.
+- The heatmaps for fixed points differ from those for global optima in a peculiar manner. In contrast to global optima, the best values occur for non-extreme weights for account and faihtfulness in quadratic models. In addition to that, linear models also have high relative shares for low faihtfulness and high (but non-extreme) weights for systematicity.
+- The heatmaps for the mean relative share of full RE states among global optima in linear model exhibit the typical "tipping line". Surprisingly and in contrast to the commitment consistency cases (see below), this does not hold for fixed points.
+- Below the "tipping line" in linear models, all global optima are full RE state. This is not only an observation, but also a fact that can be proven analytically.
+- The values in quadratic models tend to transition smoothly between different regions in heatmaps.
+
+**Conclusion**
+
+Overall, the share of full RE states among global optima and fixed points is not overwhelming, but heatmaps reveal (plausible) combinations of weights for every model, where the relative share is acceptable (e.g > 60%)
+Moreover, a low share of full RE states can be seen as a strength of a model, as it does not render everything into a full RE state.

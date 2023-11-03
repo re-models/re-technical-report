@@ -1,0 +1,24 @@
+# Extreme values for account and faitfulness {#sec-extreme-values}
+
+**Background**
+In this study we examine extreme values from measures (not the weights) of account and faithfulness.
+
+$A(C, T) = 1$ means that the theory $T$ fully and exclusively accounts for the commitments $C$. Full and exclusive account is a condition for full RE states. Conversely, $A(C, T) = 0$ holds if a theory completely fails to account for commitments, that is, for every sentence in the commitments the closure theory does not contain this sentence, or contradicts the theory. $F(C \vert C_{0}) = 1$ holds iff the initial committments $C_{0}$ are a subset of the commitments $C$ (expansions of the initial commitments are not penalized). $F(C \vert C_{0})$ attains the minimal value of 0, if every sentence of the initial commitments $C_{0}$ is missing in or contradicted by the commitments $C$.
+
+Extreme values for systematicity are not included. $S(T) = 1$ holds if and only if $T$ is a singleton. $S(T) = 0$ is no serious option, because it is reserved for the empty theory $T=\emptyset$.
+
+The values for account and faithfulness are calculated for every global optimum and fixed point from a configuration.
+
+**Results**
+
+Linear models reach maximal account and faithfulness values more frequently than quadratic variants in all ensembles for both global optima and fixed points
+
+**Conclusion**
+
+The frequency of minimal values for account and faithfulness in LDS is extremely small and they occur in one ensemble (07), only. Moreover, the extreme values for faithfulness and systematicity correlate with extreme, coresponding weights ($\alpha_{F} \leq 0.2$ and $\alpha_{A}\leq 0.2$).
+
+
+The inclusion of non-extreme, but very low and very high values for account and faithfulness might provide a clearer picture of the situation.
+
+The occurence of singleton theories in global optima and fixed points might make for an intersting exploration in the future.
+

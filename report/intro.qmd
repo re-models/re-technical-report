@@ -2,4 +2,177 @@
 
 @beisbart_making_2021 introduced a formal model of reflective equilibrium based on the theory of dialectical structures [@betz_theorie_2010;@betz_debate_2013], which, according to them, can be used to better understand the method of reflective equilibrium and to assess its potential to yield better epistemic states. However, their discussion was based on a few illustrative examples only, without assessing how the model behaves under a wider spectrum of circumstances. 
 
-This report summarizes findings of assessing the RE model more thouroughly by, first, running the model to determine fixed points of the RE process and calculating global optima under a wide range of configurations and, second, by tweaking the original model. The simulation outcomes of three model variants are compared to the ones of the original model.^[The results of @beisbart_making_2021 are based on a Mathematica implementation of the model (see <https://github.com/debatelab/remoma>). Here, we rely on a reimplementation in Python (LINK TO PUBLIC REPO).]
+This report summarizes findings of assessing the RE model more thouroughly by, first, running the model to determine fixed points of the RE process and calculating global optima under a wide range of configurations and, second, by tweaking the original model. The simulation outcomes of three model variants are compared to the ones of the original model.^[The results of @beisbart_making_2021 are based on a Mathematica implementation of the model (see [{{< var link.remoma >}}]({{< var link.remoma >}})). Here, we rely on a reimplementation in Python ([rethon]({{< var link.rethon >}})).]
+
+<!--
++ ToDo: Here we should describe the metrics and criteria more thoroughly, based on:
++ [metrics](https://github.com/debatelab/re-studies/blob/master/documents/ideensammlung_ensemblestudien.md) 
++ and [consolidation criteria](https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/documents/model-validation.md)
+-->
+
+In particular, we evaluate how the four models perform to various desiderata according to the following subquestions, which we address in individual explorative studies (see below).
+
+<!-- ToDo: Add links to other chapters -->
+
+- @sec-go-and-fp: Are global optima reachable, i.e. are they fixed points of RE processes?
+- @sec-full-re-states: Are global optima/fixed points full RE states?
+- @sec-inconsistencies: Are commitments from global optima/fixed points free of inconsistencies?
+- @sec-extreme-values: Do global optima/fixed points have extreme values (maxima, minima) in their measures?
+
+Minimal models should answer the subquestions in the affirmative to a sufficient degree. However, undesirable behaviour of a model variant should be explainable in terms of additional input, apart from the model specification, which is required to run simulations.
+
+Additionally, we address the following questions (@sec-general-props):
+
+- Is the union of commitments and theory of a global optimum/fixed point consistent?
+- How many steps does an RE process take?
+- Does an RE promote principles in theories?
+- Are the results from the published paper reproducible?
+
+## Modelling reflective equilibration
+
+<!--
++ Suggestion: A short general descripription of the RE-Model (with links to more elaborate descriptions).
+-->
+
+## Model variations
+
+<!--
++ ToDo: Description of locally searching model variants.
+-->
+
+The *achievement function* plays an important role for both global optima and adjustment steps in RE processes. Global optima maximize the achievement function and candidate commitments or theories in adjustment steps are selected according to their score in the achievement function. Achievement is defined as follows for commitments $C$, a theory $T$, and initial commitments $C_{0}$:
+
+$$
+Z(C, T \vert C_{0}) = \alpha_{A}\cdot A(C, T) + \alpha_{S}\cdot S(T) + \alpha_{F}\cdot A(C \vert C_{0})
+$$
+
+where $A, S, F$ are measures for account, systematicity and faithfulness with respective weights $\alpha_{A}, \alpha_{S}, \alpha_{F}$. The measures for account, systematicity and faithfulness are based on a monotonically decreasing function $G(x) = 1 - x^{2}$ [see @beisbart_making_2021 for details].
+
+The ensemble studies include four variants of the RE model resulting from a combination of two revisions in the achievement function. First, the  monotonically decreasing function $`G`$ involves a quadratic term (default in the published paper, but not explicitly motivated) that could be replaced by a linear term. Second, the measure for systematicity involves the ratio between a theory's size and the size of its closure (default in the published paper). A more puristic variant, which does not involve the closure of a theory (its "scope"), relates the size of a theory with the size of the sentence pool. 
+
+<!--
++ Regarding the footnote: Should we include a discussion of other model variants. We also have a thourgough analysis of other systsematicity suggestions.
++ See: 
+    + <https://github.com/debatelab/re-studies/blob/master/notebooks/remodel_revisions.ipynb>
+    + <https://github.com/debatelab/re-studies/tree/master/projects/systematicity_study>
+-->
+Combining the model revisions results in four model variants, `QuadraticDefaultSystematicityRE` (in short, `QDS`), `QuadraticPureSystematicityRE` (in short, `QPS`), `LinearDefaultSystematicityRE` (in short, `LDS`) and `LinearPureSystematicityRE` (in short, `LPS`), which are defined as follows:^[For these models, systematicity $S$ is maximized by singleton theories, i.e. sets that contain exactly one sentence. This might be considered problematic for the default model variants (`QDS`,`LDS`), as they do not discriminate singleton theories on the basis of their scope. Model variants with a different behaviour are, however, not included in this explorative study.]
+
+|                   | $S(T) = G(\frac{\vert T\vert - 1}{\vert\overline{T}\vert})$ | $S(T) = G(\frac{\vert T\vert - 1}{n})$ |
+| ------            | ------                            | ------                        |
+| $G(x)= 1-x^2$   | `QDS` | `QPS`|
+| $G(x)= 1-x$     | `LDS`    | `LPS`   |
+
+
+<!--
+ToDos:
+
++ Add perhaps one or some few examples as figures.
++ Do we have to reproduce the ensembles 1-4 with the current algorithm to generate maps?
+-->
+
+## Ensembles
+
+Every simulation of an RE process and the calculation of global optima requires to specify inputs: i) the model variant, ii) the dialectical structure, iii) weighting of the measures, and iv) the initial commitments. Let us call a specification of inputs i)-iv), which allows to run simulation, a *configuration*. Every configuration yields a simulation of a possibly branching RE processess and a set of global optima (i.e. commitment-theory-pairs that maximize the achievement function). <!--The features of every configuration and its outcomes are stored in a row of a table (stored as comma-separated values (.csv), for a complete l). For a complete list of columns, see the [API documentation](http://argunet.philosophie.kit.edu/remodel-apidocs/api-docs/api-ensemble-generation.html)-->Generating an ensemble includes the following tasks and requires the specification of additional parameters.
+
+
+*Size of sentence pool*
+
+Due to the exponential growth of candidate commitments and theories, which all have to be considered for global optima and semi-global adjustment steps in RE processes, the ensembles include sentence pools with a small number of unnegated sentences (around 5 to 8 sentences). <!--The generation of ensembles is handled by a module ([ensemble_generation.py](https://git.scc.kit.edu/debatelab/re-python/-/blob/master/remodel/ensemble_generation.py)) that can be executed from a notebook ([ensemble-study-02-data-generation.ipynb](https://git.scc.kit.edu/debatelab/re-python/-/blob/master/projects/ensemble_study_02/ensemble-study-02-data-generation.ipynb)).--> 
+
+*Automatically generated dialectical structures*
+
+<!--The early ensembles (01-04) rely on a first version of creating random arguments for a dialectical structure. Inspite of initial measures to organize the arguments (e.g. preventing unnconnected clusters of arguments) the resulting dialectical structures still have a tendency to produce chaotic argument maps. In an attempt to generate more orderly structures, we refined the creation of random dialectical structures further. At this point, t-->The creation of random dialectical structures includes the following parameters: The number of unnegated sentences in the sentence pool, the number of arguments, the (maximal) number of premises per argument and whether there is variation, and the (minimal) number of principles. A sentence is called *principle* if and only if it occurs in at least one argument as premise and it or its negation does not occur as a conclusion in any argument. The random generation ensures that the dialectical structure contains the minimal number of principles, but there may be more sentences that satisfy the condition, too.
+
+In addition, the creation of arguments ensures that all (unnegated) sentences are used in the arguments, and there is some preference for sentences that occur fewer times. Before a new candidate argument is added to the other arguments of the dialectical structure under construction, it has to pass a series of test conditions: The new argument 
+- is not question-begging, i.e. the conclusion is not part of the premises
+- is not attack-reflexive, i.e. the negation of the conclusion is not part of the premises
+- has premises that are not a subset of premises of another argument
+- is jointly satisfiable with the other arguments
+- reduces the number of complete consistent postions, if it is added to the dialectical structure
+
+<!--Visual comparison of argument maps ([create_random_arguments](https://git.scc.kit.edu/debatelab/re-python/-/tree/master/projects/ensemble_study_02/data/create_random_arguments) vs. [create_random_arguments2](https://git.scc.kit.edu/debatelab/re-python/-/tree/master/projects/ensemble_study_02/data/create_random_arguments2)), which can be created on demand or automatically during the generation of ensembles.-->
+
+<!--
++ Do we discuss in this report findings of the Semmelweiss example? If not, the para is irrelevant here, right?
+-->
+Apart from generating ensembles with randomly generated dialectical structures, other ensembles are based on  handwritten examples (Semmelweiss example, variations of the standard example), that allow for a more intuitive interpretation of results.
+
+The *inferential density* of a dialectical structure $\tau$, $D(\tau) = \frac{n-lg(\sigma)}{n}$, where $n$ is the number of unnegated sentences in the sentence pool and $\sigma$ is the number of complete and consistent extensions in $\tau$, was kept between $0.05$ and $0.5$.
+
+*Random selection of initial commitments*
+
+There are $3^{n}$ minimally consistent set of sentences that serve as initial commitments. To create intial commitments by chance, an integer between 1 and  $3^{n}$ is randomly chosen, converted to a ternary representation and initialized as a position in the Python implementation.
+
+
+*Resolution of weights*
+
+In order to explore different values for $\alpha_{A}$, $\alpha_{S}$ and $\alpha_{F}$ in the achievement function, a resolution (i.e. the separation of the unit intervall $[0, 1]$ into intervalls of equal length) of weights can be specified for an ensemble. In practice, every combination of $\alpha_{A}$ and $\alpha_{S}$ are , and $\alpha_{F}$ is set so that they satisfy the boundary condition $\alpha_{A} + \alpha_{S} + \alpha_{F} = 1$. 
+
+<!-- 
++ ToDo: Then we should rely the analysis only on ensembles with $\alpha_{F} \neq 0$.
++ ToDo (?): Explain (more thouroughly or shortly) the findings of <https://github.com/debatelab/re-studies/blob/master/notebooks/Faithfulness_0_is_a_bad_idea.ipynb>.
+-->
+The extreme value of $\alpha_{F} = 0$ is excluded (!from the later ensembles!) since it produces all and only singleton theories (and their closure) to be global optima. 
+
+<!--
++ ToDo: Revise this table.
+    + Do we use every ensemble? 
+    + Can we perhaps aggregate some ensembles into one?
++ For more details on the used ensembles, see <https://github.com/debatelab/re-studies/tree/master/projects/ensemble_study_02/data>
+-->
+*Overview of ensembles*
+
+This study is based on different ensembles, which differ with respect to the following properties:
+
+| ensemble | rows | dialectical structure generation |  dialectical structures | initial commitments | alpha resolution (count) | branching processes | principles |
+| -- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| 01 | 54000 | old random | 30 | 10 | steps: 0.1 steps (45) | no | no |
+| 02 | 45000 (incomplete) | old random| 40 | 10 | steps: 0.1 (45) | no | no |
+| 03 | 320 | standard variations | 8 | 10 | a: 0.35, s: 0.55, f: 0.1 (1) | no | no |
+| 04 | 3200 (+ 320) | standard variations | 8 | 10 | steps: 0.2 (10) | no | no |
+| 05 | 69000 | new random | 39 | 10 | steps: 0.1 (45) | no | no |
+| 06 | 90000 | new random | 150 | 50 | (0.35, 0.55, 0.1), (0.5, 0.5, 0.1), (0.55, 0.35, 0.1) (3)| no | 2 |
+| 07 | 129600 | new random | 60 | 15 | steps: 0.1 (36) | yes | no |
+| 08 | 30240 | standard variations | 3 | 70 | steps: 0.1 (36) | yes | no |
+| 09 | 314784 | standard example | 1 | 2186 | steps: 0.1 (36) | yes | no |
+
+<!--
+*Model explorations of ensembles 01 to 06*
+
+There is a [template](https://git.scc.kit.edu/debatelab/re-python/-/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-template.ipynb) for the exploration of ensembles. It extracts the following information from an ensemble
+
+- general points
+- commitment consistency cases
+- global optima and fixed points in relation to inferential density and size of sentence pool
+- process length
+- tau truths
+- dynamics  of concrete examples
+
+*Model validation with ensemble  07 to 09*
+
+An important difference to earlier ensembles is the strict separation of global optima and fixed points with respect to relevant features such as RE states or commitment consistency cases. For every fixed point and every global optimum additional information is stored in the corresponding row (see [here](https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/documents/model-validation.md)).
+-->
+
+**Remarks for the interpretation or explanation** 
+
+Due to the wide range of required inputs for a configuration, salient behaviour may depend on the features of any of i)-iv) or a combination thereof, and it is difficult to separate all dimension at once. In order to disentangle i) model variants  and iii) the weightings, heatmaps proved to be a useful tool and provided insightful plots with respect to various evaluation criteria. The other inputs involve much more features, which could explain salient behaviour, but are much harder to separate: 
+- ii) features of dialectical structures include the size of the sentence pool, number of arguments, number of premises per argument, inferential density, number of complete consistent extensions, number of tau-truths.
+- iv) features of initial commitments include their size, dialectical consistency, dialectical closure, number of complete consistent extensions, the minimal axiomatization
+
+## Summary of results
+
+In general, we did not find conclusive evidence to exclude a model variant as a future reference point. Each model variant satisfies the consolidation criteria to a sufficient degree for a wide range of configurations. At this point, undesirable behaviour (failing with respect to some criterion) cannot be attributed to a model variant on its own, but may result from a combination of other aspects of a configuration, such as unfavourable dialectical structures, extreme weightings or hopelessly absurd initial commitments. This does not mean, that there are no differences at all or no tendencies in favour of some model variants. Linear models tend to perform better as quadratic variants with respect to many criteria. 
+
+<!-- 
+Remarks: Currently I [BC] outcommented this para. 
++ ToDo: We should discuss, whether we want include analytical results in the standalone technical report.
++ Relevant documents:
+    + <https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/documents/linear_models_tipping_line.md>
+    + <https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/documents/Quadratic_Tipping-Line.md>
+-->
+<!--
+In addition to the exploration of ensembles, there is a growing number of analytical results for both linear and quadratic models. Linear models have a ([tipping line](https://git.scc.kit.edu/debatelab/re-python/-/blob/master/projects/ensemble_study_02/documents/linear_models_tipping_line.md)), below which the weight for faithfulness makes no difference in the equilibration process towards fixed points ([see here](https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/documents/linear_models_tipping_line.md)). In quadratic models, the squaring of Hamming distances makes "midpoints" to attractors ([quadratic tipping](https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/documents/Quadratic_Tipping-Line.md)). Dependending on the interpretation of the consequences of such results, a model or specific configurations for a model may be preferred.
+-->
+If conceptual clarity is to be taken into account, pure systematicity (number of a theories sentences normalized by the size of the sentence pool)  may be preferred to default systematicity, which involves normalization by the size of a theory's closure (its "scope"). In the former case, pure systematicity may safely be called "simplicity" and other virtues contributing to the systematicityof a theory (e.g. scope) should be reserved for model extensions. In this line of thought, `LinearPureSystematicityRE` can be seen as the absolute minimal model variant, that is extended by the other variants by squaring measures, refining systematicity, or both.
+
