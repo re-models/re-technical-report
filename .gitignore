@@ -1,6 +1,7 @@
 /report/.quarto/
 /notebooks/.ipynb_checkpoints/
 /notebooks/rethon.log
+/data/.ipynb_checkpoints/
 
 *.*~
 *.log
@@ -9,3 +10,4 @@
 *.log.*
 
 
+/bc/
