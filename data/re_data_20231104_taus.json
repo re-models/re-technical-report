@@ -1,0 +1,138 @@
+{
+    "re_data_20231104_tau_01": {
+        "arguments": [
+            [
+                6,
+                2
+            ],
+            [
+                1,
+                -6
+            ],
+            [
+                4,
+                -1
+            ],
+            [
+                -3,
+                -6
+            ],
+            [
+                -5,
+                1
+            ],
+            [
+                5,
+                3
+            ],
+            [
+                5,
+                -6
+            ]
+        ],
+        "tau_name": "re_data_20231104_tau_01",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "re_data_20231104_tau_02": {
+        "arguments": [
+            [
+                -2,
+                -5
+            ],
+            [
+                -6,
+                -2
+            ],
+            [
+                4,
+                6
+            ],
+            [
+                3,
+                -5
+            ],
+            [
+                1,
+                5
+            ],
+            [
+                2,
+                3
+            ]
+        ],
+        "tau_name": "re_data_20231104_tau_02",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "re_data_20231104_tau_03": {
+        "arguments": [
+            [
+                -4,
+                -5
+            ],
+            [
+                6,
+                5
+            ],
+            [
+                -7,
+                -4
+            ],
+            [
+                1,
+                -5
+            ],
+            [
+                3,
+                -5
+            ],
+            [
+                -2,
+                -1
+            ]
+        ],
+        "tau_name": "re_data_20231104_tau_03",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "re_data_20231104_tau_04": {
+        "arguments": [
+            [
+                -5,
+                -4
+            ],
+            [
+                1,
+                4
+            ],
+            [
+                -3,
+                -1
+            ],
+            [
+                -2,
+                -5
+            ],
+            [
+                -6,
+                -3
+            ],
+            [
+                7,
+                -3
+            ],
+            [
+                5,
+                4
+            ]
+        ],
+        "tau_name": "re_data_20231104_tau_04",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    }
+}
