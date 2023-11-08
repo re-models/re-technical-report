@@ -1,0 +1,5 @@
+Model,% of fixed points in global optima,% of global optima in fixed points
+GlobalRE,56.9,78.4
+LinearGlobalRE,46.9,83.1
+LocalRE,52.2,62.4
+LinearLocalRE,27.7,81.5

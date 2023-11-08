@@ -12,7 +12,7 @@ book:
     - intro.qmd
     - chapter_go-and-fp.qmd
     - chapter_full-re-states.qmd
-    - chapter_commitment-consistenc.qmd
+    - chapter_commitment-consistency.qmd
     - chapter_extreme-values.qmd
     - chapter_sec-general-props.qmd
     - references.qmd
