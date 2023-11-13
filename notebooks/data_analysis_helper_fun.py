@@ -7,6 +7,8 @@ import tarfile
 from pandas import Series, DataFrame
 import pandas as pd
 import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
 from typing import Set, List
 
 def literal_eval_cols(data: DataFrame, cols: List[str]):
@@ -51,4 +53,37 @@ def load_re_data(data_dir, data_file_name):
                                 'fp_global_optimum',
                                ])
     return re_data
+
+def heatmap_plot(*args, **kwargs):
+    data = kwargs.pop('data')
+    mask = kwargs.pop('mask')
+    annot_std = kwargs.pop('annot_std')
+    annot_std_fmt = kwargs.pop('annot_std_fmt')
+    annot_fmt = kwargs.pop('annot_fmt')
+    values = kwargs.pop('values')
+    index = kwargs.pop('index')
+    columns = kwargs.pop('columns')
+    # labels = x_mean
+    cmap = plt.get_cmap('coolwarm')
+    cmap.set_bad('white')
+    x_mean = pd.pivot_table(data, index=[index], columns=columns,
+                            values=values, aggfunc=np.mean)
+    if annot_std:
+        x_std = pd.pivot_table(data, index=[index], columns=columns,
+                               values=values, aggfunc=np.std)
+        labels = x_mean.applymap(lambda x: annot_fmt.format(x)) + x_std.applymap(lambda x: annot_std_fmt.format(x))
+        sns.heatmap(x_mean, cmap=cmap, mask=mask, annot=labels, fmt='', **kwargs)
+    else:
+        sns.heatmap(x_mean, cmap=cmap, mask=mask, annot=x_mean, **kwargs)
+
+
+def heat_maps_by_weights(re_data, values, title, index='weight_account', columns='weight_systematicity',
+                         annot_std=False, annot_fmt="{:2.0f}\n", annot_std_fmt=r'$\pm${:2.1f}'):
+    g = sns.FacetGrid(re_data, col='model_name', col_wrap=2, height=5, aspect=1)
+    g.fig.suptitle(title, y=1.05)
+    mask = pd.pivot_table(re_data, index=[index], columns=columns,
+                          values=values, aggfunc=np.mean).isnull()
+    g.map_dataframe(heatmap_plot, cbar=False, mask=mask, values=values, index=index, columns=columns,
+                    annot_std=annot_std, annot_fmt=annot_fmt, annot_std_fmt=annot_std_fmt, vmin=0, vmax=1)
+    g.set_axis_labels(columns, index)
 
