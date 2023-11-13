@@ -16,7 +16,7 @@ In particular, we evaluate how the four models perform to various desiderata acc
 
 - @sec-go-and-fp: Are global optima reachable, i.e. are they fixed points of RE processes?
 - @sec-full-re-states: Are global optima/fixed points full RE states?
-- @sec-inconsistencies: Are commitments from global optima/fixed points free of inconsistencies?
+- @sec-commitment-consistency: Are commitments from global optima/fixed points free of inconsistencies?
 - @sec-extreme-values: Do global optima/fixed points have extreme values (maxima, minima) in their measures?
 
 Minimal models should answer the subquestions in the affirmative to a sufficient degree. However, undesirable behaviour of a model variant should be explainable in terms of additional input, apart from the model specification, which is required to run simulations.
