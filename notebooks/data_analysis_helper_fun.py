@@ -77,13 +77,13 @@ def heatmap_plot(*args, **kwargs):
         sns.heatmap(x_mean, cmap=cmap, mask=mask, annot=x_mean, **kwargs)
 
 
-def heat_maps_by_weights(re_data, values, title, index='weight_account', columns='weight_systematicity',
-                         annot_std=False, annot_fmt="{:2.0f}\n", annot_std_fmt=r'$\pm${:2.1f}'):
+def normalized_heat_maps_by_weights(re_data, values, title, index='weight_account', columns='weight_systematicity',
+                         annot_std=False, annot_fmt="{:2.0f}\n", annot_std_fmt=r'$\pm${:2.1f}', vmin=0, vmax=1):
     g = sns.FacetGrid(re_data, col='model_name', col_wrap=2, height=5, aspect=1)
-    g.fig.suptitle(title, y=1.05)
+    g.fig.suptitle(title, y=1.01)
     mask = pd.pivot_table(re_data, index=[index], columns=columns,
                           values=values, aggfunc=np.mean).isnull()
     g.map_dataframe(heatmap_plot, cbar=False, mask=mask, values=values, index=index, columns=columns,
-                    annot_std=annot_std, annot_fmt=annot_fmt, annot_std_fmt=annot_std_fmt, vmin=0, vmax=1)
+                    annot_std=annot_std, annot_fmt=annot_fmt, annot_std_fmt=annot_std_fmt, vmin=vmin, vmax=vmax)
     g.set_axis_labels(columns, index)
 
