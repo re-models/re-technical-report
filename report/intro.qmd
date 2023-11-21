@@ -1,6 +1,6 @@
 # Introduction
 
-@beisbart_making_2021 introduced a formal model of reflective equilibrium based on the theory of dialectical structures [@betz_theorie_2010;@betz_debate_2013], which, according to them, can be used to better understand the method of reflective equilibrium and to assess its potential to yield better epistemic states. However, their discussion was based on a few illustrative examples only, without assessing how the model behaves under a wider spectrum of circumstances. 
+@beisbart_making_2021 introduced a formal model of reflective equilibrium based on the theory of dialectical structures [@betz_theorie_2010;@betz_debate_2013], which, according to them, can be used to better understand the method of reflective equilibrium and to assess its potential to yield better epistemic states. Their discussion of the model is mostly based on an illustrative example. An assesment of how the model behaves under a wider spectrum of circumstances went beyond the scope of their work.
 
 This report summarizes findings of assessing the RE model more thouroughly by, first, running the model to determine fixed points of the RE process and calculating global optima under a wide range of configurations and, second, by tweaking the original model. The simulation outcomes of three model variants are compared to the ones of the original model.^[The results of @beisbart_making_2021 are based on a Mathematica implementation of the model (see [{{< var link.remoma >}}]({{< var link.remoma >}})). Here, we rely on a reimplementation in Python ([rethon]({{< var link.rethon >}})).]
 
@@ -10,20 +10,39 @@ This report summarizes findings of assessing the RE model more thouroughly by, f
 + and [consolidation criteria](https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/documents/model-validation.md)
 -->
 
-In particular, we evaluate how the four models perform to various desiderata according to the following subquestions, which we address in individual explorative studies (see below).
-
 <!-- ToDo: Add links to other chapters -->
 
-- @sec-go-and-fp: Are global optima reachable, i.e. are they fixed points of RE processes?
-- @sec-full-re-states: Are global optima/fixed points full RE states?
-- @sec-commitment-consistency: Are commitments from global optima/fixed points free of inconsistencies?
-- @sec-extreme-values: Do global optima/fixed points have extreme values (maxima, minima) in their measures?
+At the outset, there is a plethora of metrics that could be used to examine the performance of the formal model and variants thereof. Let us motivate a small selection of desiderata for model validation, which we are going to address in individual explorative studies later.
 
-Minimal models should answer the subquestions in the affirmative to a sufficient degree. However, undesirable behaviour of a model variant should be explainable in terms of additional input, apart from the model specification, which is required to run simulations.
+- @sec-go-and-fp: Are global optima reachable, i.e. are they fixed points of RE processes?
+
+The formal model allows to distinguish clearly between the *static* aspect of *equilibrium states* and the *dynamic* aspect of *equilibration processes* in RE. This is implemented in the formal model by yielding two kinds of output epistemic states from given inputs: First, global optimization of the achievement function $Z$ results in *global optima*. Second, in a semi-globally optimizing process of alternating adjustments of commitments and theory leads to *fixed points*. Note that both global optima and fixed points may not be uniquely determined given an input. There may be multiple, equally well performing epistemic states according to the achievement function $Z$, or there may  be ties between candidates during equilibration, which leads to branching processes resulting in multiple fixe points.
+
+The global optimization can be achieved by brute force and going through every combination of commitments and theory (worst case). In contrast, the semi-globally optimizing equilibration process of adjustments can already be understood as a heuristic to reach global optimal states, but proccesses can be caught up in local optima. This holds even more so for the local model variant described below.
+
+Consequently, it is an interestng question for model validation whether fixed points are global optima. Conversely, we can also ask whether there are global optima that are not reachable by equilibration processess (given specific inputs).
+
+- @sec-full-re-states: Are global optima/fixed points full RE states?
+
+Elaborate accounts of RE require that states of RE are optimal [REFERENCES]. Otherwise, there is room for improvement. Are global optima in the formal model RE states? @beisbart_making_2021 propose additional requirements for globally epistemic states to qualify as (full) RE states:
+
+- (FEA) The theory should account fully and exclusively for 
+
+It is important to note that being in a globally optimal state does not guarantee (CCT) or (FEA). Thus, it is an important task for model validation to check whether, or in which circumstances the formal model yields outputs that satisfy (CCT) or (FEA) in addition to global optimality.
+
+- @sec-commitment-consistency: Are commitments from global optima and fixed points free of inconsistencies?
+
+Consistency is commonly seen as a necessary condition of coherence, and thus achieveing consistency in RE, which is commonly understood to involve coherentist aspects of justification, is of utmost importance.
+  
+- @sec-extreme-values: Do global optima and fixed points have extreme values (maxima, minima) in their measures?
+
+The achievement function $Z$ aggregates three measures, namely for the desiderata of account $A$, systematicity $S$, and faithfulness $F$. Moreover, the measures are weighted in $Z$ to model trade-offs between the desiderate (e.g. give up on faithfulness to increase account). As optimzize $Z$ it is interesting to study the trade-offs and whether or in which circumstances maximal or minimal values are taken by these measures.
+
+<!-- Minimal models should answer the subquestions in the affirmative to a sufficient degree. However, undesirable behaviour of a model variant should be explainable in terms of additional input, apart from the model specification, which is required to run simulations.-->
 
 Additionally, we address the following questions (@sec-general-props):
 
-- Is the union of commitments and theory of a global optimum/fixed point consistent?
+- Is the union of commitments and theory of a global optimum/fixed point consistent? - (CCT) The commitments and the theory should be consistent with each other
 - How many steps does an RE process take?
 - Does an RE promote principles in theories?
 - Are the results from the published paper reproducible?

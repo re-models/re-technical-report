@@ -2,24 +2,58 @@
 
 **Background**
 
-Consistency is commonly seen as a necessary condition of coherence, thus, if RE is taken to involve coherentist aspects, achieveing consistency is of utmost importance. This study considers the *dialectical consistency* (opposed to minimal consistency, i.e. the absence of flat contradictions, and the dialectical consistency of commitments plus a theory) of initial and endpoint commitments. The endpoint commitments stem either from a global optima or from a fixed point. The juxtaposition of initial and endpoint commitments allows for four cases, which are labelled as follows:
+Consistency is commonly seen as a necessary condition of coherence, and thus achieveing consistency in RE is of utmost importance. This study considers the *dialectical consistency* (opposed to minimal consistency, i.e. the absence of flat contradictions, and the dialectical consistency of commitments plus a theory) of initial and endpoint commitments. The endpoint commitments stem either from a global optimum or from a fixed point. The juxtaposition of initial and endpoint commitments allows for four cases, which are labelled as follows:
 
 |                                   | endpoint commitments consistent   | endpoint commitment inconsistent  |
 | ------                            | ------                            | ----                              |
-| initial commitments consistent    | good                              | very bad                          |
-| initial commitments inconsistent  | very good                         | bad                               |
+| initial commitments consistent    | consistency preserving (CP)       | consistency eliminating (CE)      |   
+| initial commitments inconsistent  | inconistency eliminating (IE)     | inconsistency preserving (IP)     |
 
-Good case preserve or "transfer" consistency between intial and enpoint commitments. In very good cases, inconsistent initial commitments are revised for consistent endpoint commitments. Bad cases fail to eradicate initial inconsistencies and it is very bad if inconsistencies are introduced to initially consistent commitments.
+Case (CP) preserves or "transfers" consistency between intial and enpoint commitments. In (IE) cases, inconsistent initial commitments are revised for consistent endpoint commitments. (IP) cases fail to eradicate initial inconsistencies, and finally there may be (CE) cases if inconsistencies are introduced to initially consistent commitments.
 
 **Method**
 
-During the generation of an ensemble we store the consistency status of intial commitments as well as the status for every commitment from global optima or fixed points for every configuration, and label them accordingly. Again, the number of global optima (fixed points) for a case type is put into relation with the total number of global optima (fixed points) for every configuration.
+During the generation of an ensemble, we store the consistency status of intial commitments as well as the status for every commitment from global optima or fixed points for every configuration, and label them accordingly. Again, the number of global optima (fixed points) for a case type is put into relation with the total number of global optima (fixed points) for every configuration of weights. The relative share of consistency cases are this study's main endpoint.
 
-Good cases are not included in the consolidation. Surely, good cases are a desirable feature of RE, but the other cases seem to be more relevant/interesting for consolidating the models, because the strengths or weaknesses of RE are often discussed for such cases. Since commitment consistency cases are exhaustive, good cases take up the rest.
+From the viewpoint of model consolidation the cases are interesting and relevant in various respects. High shares of 
+(IE) cases would stand in support of the model's revisionary power and signify progress towards establishing coherence by RE. Frequent (IP) cases, in turn, would speak against the model's revisionary power with respect to inconsistent initial commitments. Moreover, this could fuel the objection that RE (or the present model thereof) is overly conservative, such that "garbage in" (inconsistent initial commitments) leads to "garbage out" (inconsistent fixed point/global optimum commitments). High relative shares of (CP) cases are a desireabe feature. Finally, frequent (CE) cases would be a truly worrysome result, as they would indicate that the model leads to a worsening in terms of consistency.
 
 **Results**
 
-*Observations: Very good cases*
+*Overall*
+
+```{python}
+#| echo: false
+#| label: tbl-consistency_cases
+#| tbl-cap: 'Mean relative share of consistency cases'
+
+import pandas as pd
+from os import getcwd, path
+from pathlib import Path
+from IPython.display import Markdown, display
+
+
+tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
+file_name = 'table_consistency_cases_go_fp_branches.csv'
+df = pd.read_csv(path.join(tables_output_dir, file_name))
+#df['% of fixed points in global optima'] = df['% of fixed points in global optima'].map(lambda x: f'{x:.1f}') 
+#df['% of global optima in fixed points'] = df['% of global optima in fixed points'].map(lambda x: f'{x:.1f}') 
+
+display(Markdown(df.to_markdown(index = False)))
+#df.style.hide(axis="index")  
+```
+
+![Mean relative share of consistency cases among global optima across all configuration of weights](figures/overall_consistency_cases_go_setups){#fig-overall-go}
+
+![Mean relative share of consistency cases among fixed points across all configuration of weights](figures/overall_consistency_cases_fp_setups){#fig-overall-fp}
+
+*Grouped by configuration of weights*
+
+![Mean relative share of consistency cases among fixed points grouped by configuration of weights](figures/weight_consistency_cases_go_setups){#fig-weight-go}
+
+![Mean relative share of consistency cases among fixed points grouped by configuration of weights](figures/weight_consistency_cases_fp_setups){#fig-weight-fp}
+
+*Observations: Inconsistency eliminating cases (IE)*
 
 - The relative share of very good cases among global optima and fixed points varies between 10.3% (QDS, ensemble 08) and 22.7% (LDS, ensemble 07)
 - Linear models have higher relative shares than quadratic variants in ensembles 08 and 09. 
@@ -33,7 +67,7 @@ Good cases are not included in the consolidation. Surely, good cases are a desir
 - quadraatic models have smooth transitions
 - in quadratic models, high weights for account and low weight for faithfulness benefit the relative share of very good cases among global optima and fixed points
 
-*Observations: Bad cases*
+*Observations: Inconsistency preserving cases (IP)*
 
 - The relative share of bad cases among global optima varies between 14.8% (LDS, ensemble 08) and 33.8% (QDS, ensemble 09)
 - quadratic models have a higher share of bad cases than linear variants in ensembles 08 and 09. 
@@ -47,7 +81,7 @@ Good cases are not included in the consolidation. Surely, good cases are a desir
 - quadraatic models have smooth transitions
 - in quadratic models, high weights for faithfulness and low weight for account increase the relative share of bad cases among global optima and fixed points.
 
-*Observations: Very bad cases*
+*Observations: Consistency eliminating cases (CE)*
 
 - The relative share of very bad cases among global optima varies between 1.3% (LDS, ensemble 07) and 13.0% (QDS, ensemble 09)
 - The relative share of very bad cases among fixed points varies between 0.4% (LPS, ensemble 07) and 8.7% (QDS, ensemble 08)
@@ -61,6 +95,7 @@ Good cases are not included in the consolidation. Surely, good cases are a desir
 
 - quadraatic models have smooth transitions
 - in quadratic models, low weights for account increase the relative share of very bad cases among global optima and fixed points.
+
 
 
 **Conclusion**
