@@ -22,7 +22,7 @@ The global optimization can be achieved by brute force and going through every c
 
 Consequently, it is an interestng question for model validation whether fixed points are global optima. Conversely, we can also ask whether there are global optima that are not reachable by equilibration processess (given specific inputs).
 
-- @sec-full-re-states: Are global optima/fixed points full RE states?
+@sec-full-re-states: Are global optima/fixed points full RE states?
 
 Elaborate accounts of RE require that states of RE are optimal [REFERENCES]. Otherwise, there is room for improvement. Are global optima in the formal model RE states? @beisbart_making_2021 propose additional requirements for globally epistemic states to qualify as (full) RE states:
 
@@ -53,21 +53,83 @@ Additionally, we address the following questions (@sec-general-props):
 + Suggestion: A short general descripription of the RE-Model (with links to more elaborate descriptions).
 -->
 
+For the original and naturally most detailed presentation of the formal RE model, see @beisbart_making_2021. The present section is based on condensed material from @freivogel_converge_2023.
+
+
+
+![Illustrative diagram of the formal model of RE provided by @beisbart_making_2021. The epistemic state, which consists of a set of commitments and a theory, is subject to operationalised desiderata for RE states (bold arrows). Rules for alternating adjustments of commitments and theory specify a process of equilibration that sets out from initial commitments.](figures/model_schematics.png){#fig-model-schematics}
+
+The epistemic state $(C, T)$ of an agent consists of a set of commitments $C$ and a theory $T$. 
+Both components are represented as *positions* in the framework of dialectical structures @betz_theorie_2010, @betz_debate_2013, but it suffices to think of positions as sets of accepted sentences. 
+The sentences stem from a finite pool of sentences $\mathcal{S}$, which is closed under negation. $\mathcal{S}$ is part of a dialectical structure $\tau$, which also includes a set of deductively valid arguments $\mathcal{A}$. 
+We can interpret the dialectical structure to form the background of an RE inquiry. 
+The sentence pool delineates a subject matter, and the deductively valid arguments are assumed to ``comprise not just the valid arguments, but also the arguments that are valid *given the relevant background theories*'' [@beisbart_making_2021, p. 460].
+
+A position is *minimally consistent* if and only if it does not contain flat contradictions (i.e., a sentence and its negation). 
+On top of that, the arguments of the dialectical structure allow us to define a more demanding notion of consistency. 
+A position is *dialectically* consistent if it is minimally consistent and satisfies all inferential relations that arise from the arguments of a dialectical structure. 
+Sets of commitments are required to be minimally consistent, and theories must be dialectically consistent.
+
+The bold arrows in Figure @fig-model-schematics stand for three epistemic desiderata that are included in elaborate accounts of RE. At the center, we have \emph{account}. The corresponding measure $A(C, T)$ operationalises how well the commitments $C$ fit to what is inferable from the theory $T$ given the dialectical structure $\tau$. For formal details of all measures, see [@beisbart_making_2021, pp. 464-466]. Being able to resolve conflicts in different ways indicates that an agent needs to balance multiple epistemic desiderata. Desiderata are directed at the components of an epistemic state, come in degrees, and can ``pull’’ in different directions.
+
+On the right hand side of Figure @fig-model-schematics, there is the desideratum of *systematicity*. A theory should "do justice to epistemic goals" in order to systematise the commitments (e.g., \citealp[7928]{BB2020}). The operationalised measure $S(T)$ depends on the number of elements of a theory and the number of sentences that can be inferred from it.
+
+Finally, there is the desideratum of *faithfulness* on the left hand side in Figure @fig-model-schematics. It can be motivated by the view that the current commitments should "respect" the initial commitments by not changing the topic, or that a "tie" to credible or tenable initial commitments contributes to the justification of the resulting state \citep[447]{BBB2021}. $F(C \,\vert\, C_{0})$ measures the closeness of current commitments $C$ and initial commitments $C_{0}$.
+
+Trade-offs between desiderata are modelled in an achievement function that aggregates the weighted measures.
+$$Z(C, T\,\vert\, C_{0}) = \alpha_{A}\cdot A(C, T) + \alpha_{S}\cdot S(T) + \alpha_{F}\cdot F(C\,\vert\, C_{0}),$$
+where $\alpha_{A}$, $\alpha_{S}$ and $\alpha_{F}$ are real-valued numbers between $0$ and $1$ that sum up to $1$. 
+The achievement function assigns to every epistemic state $(C, T)$ a value of "overall betterness" relative to what we can call an *epistemic situation* of an agent, i.e., a dialectical structure $\tau$, a set of initial commitments $C_{0}$, and a configuration of weights $(\alpha_{A}, \alpha_{S}, \alpha_{F}$).  
+The epistemic situation captures the subject matter of inquiry, its background, and the means to handle trade-offs between epistemic desiderata.
+
+A *global optimum* relative to an epistemic situation is a state $(C, T)$ such that there is no other epistemic state that performs strictly better according to $Z$ than $(C, T)$.
+The formal model also gives explicit rules for a process of equilibration that sets out from the initial commitments $C_{0}$. 
+In an alternating fashion, theory and commitments are adjusted to optimise the achievement function until a stopping condition is met (for details, see @beisbart_making_2021 [p. 449]). 
+An epistemic state that results from the equilibration process is called a *fixed point*.
+
+
 ## Model variations
+
+The ensemble studies include four variants of the formal RE model that result from a combination of two independent alterations in the formal model. The first alteration concerns the "shape" of the function that measures the desiderata. It is quadratic by default in @beisbart_making_2021, but can be contrasted with a linear model variant. Second, the (semi-)global optimization during equilibrations (default in @beisbart_making_2021) can be compared to a locally optimizing model variant. 
+
+
+The combinations of them odel alterations are labelled as follows: `QuadraticGlobalRE` (in short, `QGRE`), `QuadraticLocalRE` (in short, `QLRE`), `LinearGlobalRE` (in short, `LGRE`) and `LinearLocalRE` (in short, `LLRE`),. Note that `QGRE` corresponds to the "default" model of the published paper by @beisbart_making_2021. The subsequent sections present the model alterations in more detail.
+
+### Quadratic and Linear Measures
+
+The *achievement function* plays an important role for both global optima and adjustment steps in RE processes. Global optima maximize the achievement function and candidate commitments or theories in adjustment steps are selected according to their score in the achievement function.
+
+The  monotonically decreasing function $G$, which is part of the measures for desiderata in the achievement function $Z$ involves a quadratic term per default in the published paper of @beisbart_making_2021. In particular, we have $G(x)= 1-x^2$. However, the shape of $G$ is not explicitly motivated. It can be replaced by a "simpler", linear term to examine the repercussions of such a variation. The linear model variant relies on $G(x)= 1-x$.
 
 <!--
 + ToDo: Description of locally searching model variants.
 -->
 
-The *achievement function* plays an important role for both global optima and adjustment steps in RE processes. Global optima maximize the achievement function and candidate commitments or theories in adjustment steps are selected according to their score in the achievement function. Achievement is defined as follows for commitments $C$, a theory $T$, and initial commitments $C_{0}$:
+### Semi-globally and locally optimizing equilibration processes 
+
+The (semi-)global optimzation during equilibration according to the published model involves the consideration of *all* commitments candidates and *all* theory candidates at each respective adjustment step. This is computationally costly as the search space grows exponentially with the number of involved sentences. In conrast *locally* optimizing processes, that only allow for small changes in a neighborhood of the current position, escape this problem. Moreover, local RE processes may be considered to model "piecemeal" adjustments, which may be the only feasible approach for rationally bounded agents engaging with RE. 
+
+
+The *local* model variant restricts available candidates during adjustment steps in RE processes to a neighborhood of the position that represents the current commitments or theory, respectively.
+
+The depth of this neighborhood is defined in terms of the edit Hamming distance between positions. Let $\mathcal{P}$ denote the set of minimally consistent positions of a dialectical structure $\tau$.
 
 $$
-Z(C, T \vert C_{0}) = \alpha_{A}\cdot A(C, T) + \alpha_{S}\cdot S(T) + \alpha_{F}\cdot A(C \vert C_{0})
+neighborhood(P, d) = \lbrace Q\in\mathcal{P}\vert D_{0, 1, 1, 1}(P, Q)\leq d\rbrace
 $$
 
-where $A, S, F$ are measures for account, systematicity and faithfulness with respective weights $\alpha_{A}, \alpha_{S}, \alpha_{F}$. The measures for account, systematicity and faithfulness are based on a monotonically decreasing function $G(x) = 1 - x^{2}$ [see @beisbart_making_2021 for details].
+For a sentence pool size of $n$, the number of positions in the (inclusive) neighborhood of a position is $$\sum_{k=0}^{d} \binom{n}{k} \cdot 2^k,$$ where $d$ denotes the neighborhood depth. For $d = 1$ the number of positions in the neighbourhood grows linearly with respect to the number of sentences, in particular $2n + 1$.
 
-The ensemble studies include four variants of the RE model resulting from a combination of two revisions in the achievement function. First, the  monotonically decreasing function $`G`$ involves a quadratic term (default in the published paper, but not explicitly motivated) that could be replaced by a linear term. Second, the measure for systematicity involves the ratio between a theory's size and the size of its closure (default in the published paper). A more puristic variant, which does not involve the closure of a theory (its "scope"), relates the size of a theory with the size of the sentence pool. 
+For a neighborhood depth $d = 1$, i.e., a single adjustment of an element in a position per step, the resulting process can be seen to proceed in a ``piece-meal'' fashion. Formally, this can be implemented in the rules for adjustment steps from @beisbart_making_2021 [p. 466] by restricting the candidates in (Theory Adjustment) to $neighbourhood(T_{i}, d)$, and analogously to $neighbourhood(C_{i}, d)$ for (Commitment Adjustment). The handling of ties and the stopping rule remain unchanged.
+
+To illustrate the difference between global, semi-global and local optimization, think of epistemic states $(C, T)$ as cells on a appropriately sized, possibly non-square, chess board.^[Note that the two-dimensional representation of the epistemic states in the subsequent figures is purely illustrative. There is no inherent linear order among positions, which can be understood as points in an $n$-dimensional discrete space.] The unbounded, globally optimising agent can overview the entire board at once (Figure @fig-grid-global), while a semi-globally optimizing agent can evaluate only a single row or column per adjustment step (Figure @fig-grid-semi-global). Finally, only candidates from a small neighborhood of the current position are available to the locally optimizing agent only during an adjustment step (Figure @fig-grid-local).
+
+![Global optimization: All epistemic states are available.](figures/grid_global.png){width=66%  #fig-grid-global}
+
+![Semi-global optimization: All sets of commitments and all theories are available in an alternating fashion while the other component is held fixed.](figures/grid_semi_global.png){width=66% #fig-grid-semi-global}
+
+![Local optimization (alternating): Available commitments(row)/theories (column) are restricted to a neighborhood of the current state in an alternating fashion while the other component is held fixed.](figures/grid_local.png){width=66% #fig-grid-local}
+
 
 <!--
 + Regarding the footnote: Should we include a discussion of other model variants. We also have a thourgough analysis of other systsematicity suggestions.
@@ -75,13 +137,6 @@ The ensemble studies include four variants of the RE model resulting from a comb
     + <https://github.com/debatelab/re-studies/blob/master/notebooks/remodel_revisions.ipynb>
     + <https://github.com/debatelab/re-studies/tree/master/projects/systematicity_study>
 -->
-Combining the model revisions results in four model variants, `QuadraticDefaultSystematicityRE` (in short, `QDS`), `QuadraticPureSystematicityRE` (in short, `QPS`), `LinearDefaultSystematicityRE` (in short, `LDS`) and `LinearPureSystematicityRE` (in short, `LPS`), which are defined as follows:^[For these models, systematicity $S$ is maximized by singleton theories, i.e. sets that contain exactly one sentence. This might be considered problematic for the default model variants (`QDS`,`LDS`), as they do not discriminate singleton theories on the basis of their scope. Model variants with a different behaviour are, however, not included in this explorative study.]
-
-|                   | $S(T) = G(\frac{\vert T\vert - 1}{\vert\overline{T}\vert})$ | $S(T) = G(\frac{\vert T\vert - 1}{n})$ |
-| ------            | ------                            | ------                        |
-| $G(x)= 1-x^2$   | `QDS` | `QPS`|
-| $G(x)= 1-x$     | `LDS`    | `LPS`   |
-
 
 <!--
 ToDos:
