@@ -19,7 +19,7 @@ def literal_eval_cols(data: DataFrame, cols: List[str]):
 def replace_set(row, label):
     return row[label].replace('set()', '{}')
 
-def load_re_data(data_dir, data_file_name):
+def load_re_data(data_dir, data_file_name, filter_erroneous_runs:bool = False):
     if data_file_name[data_file_name.find('.'):len(data_file_name)] == '.csv.tar.gz':
         with tarfile.open(path.join(data_dir,data_file_name)) as tar:
             for tarinfo in tar:
@@ -52,7 +52,10 @@ def load_re_data(data_dir, data_file_name):
                                 'fp_faithfulness',
                                 'fp_global_optimum',
                                ])
-    return re_data
+    if filter_erroneous_runs:
+        return re_data.loc[re_data['error_code'].isna()]
+    else:
+        return re_data
 
 def heatmap_plot(*args, **kwargs):
     data = kwargs.pop('data')
