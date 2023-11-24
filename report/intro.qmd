@@ -1,4 +1,4 @@
-# Introduction
+# Introduction {#sec-intro}
 
 @beisbart_making_2021 introduced a formal model of reflective equilibrium based on the theory of dialectical structures [@betz_theorie_2010;@betz_debate_2013], which, according to them, can be used to better understand the method of reflective equilibrium and to assess its potential to yield better epistemic states. Their discussion of the model is mostly based on an illustrative example. An assesment of how the model behaves under a wider spectrum of circumstances went beyond the scope of their work.
 
@@ -12,42 +12,9 @@ This report summarizes findings of assessing the RE model more thouroughly by, f
 
 <!-- ToDo: Add links to other chapters -->
 
-At the outset, there is a plethora of metrics that could be used to examine the performance of the formal model and variants thereof. Let us motivate a small selection of desiderata for model validation, which we are going to address in individual explorative studies later.
 
-- @sec-go-and-fp: Are global optima reachable, i.e. are they fixed points of RE processes?
 
-The formal model allows to distinguish clearly between the *static* aspect of *equilibrium states* and the *dynamic* aspect of *equilibration processes* in RE. This is implemented in the formal model by yielding two kinds of output epistemic states from given inputs: First, global optimization of the achievement function $Z$ results in *global optima*. Second, in a semi-globally optimizing process of alternating adjustments of commitments and theory leads to *fixed points*. Note that both global optima and fixed points may not be uniquely determined given an input. There may be multiple, equally well performing epistemic states according to the achievement function $Z$, or there may  be ties between candidates during equilibration, which leads to branching processes resulting in multiple fixe points.
-
-The global optimization can be achieved by brute force and going through every combination of commitments and theory (worst case). In contrast, the semi-globally optimizing equilibration process of adjustments can already be understood as a heuristic to reach global optimal states, but proccesses can be caught up in local optima. This holds even more so for the local model variant described below.
-
-Consequently, it is an interestng question for model validation whether fixed points are global optima. Conversely, we can also ask whether there are global optima that are not reachable by equilibration processess (given specific inputs).
-
-@sec-full-re-states: Are global optima/fixed points full RE states?
-
-Elaborate accounts of RE require that states of RE are optimal [REFERENCES]. Otherwise, there is room for improvement. Are global optima in the formal model RE states? @beisbart_making_2021 propose additional requirements for globally epistemic states to qualify as (full) RE states:
-
-- (FEA) The theory should account fully and exclusively for 
-
-It is important to note that being in a globally optimal state does not guarantee (CCT) or (FEA). Thus, it is an important task for model validation to check whether, or in which circumstances the formal model yields outputs that satisfy (CCT) or (FEA) in addition to global optimality.
-
-- @sec-commitment-consistency: Are commitments from global optima and fixed points free of inconsistencies?
-
-Consistency is commonly seen as a necessary condition of coherence, and thus achieveing consistency in RE, which is commonly understood to involve coherentist aspects of justification, is of utmost importance.
-  
-- @sec-extreme-values: Do global optima and fixed points have extreme values (maxima, minima) in their measures?
-
-The achievement function $Z$ aggregates three measures, namely for the desiderata of account $A$, systematicity $S$, and faithfulness $F$. Moreover, the measures are weighted in $Z$ to model trade-offs between the desiderate (e.g. give up on faithfulness to increase account). As optimzize $Z$ it is interesting to study the trade-offs and whether or in which circumstances maximal or minimal values are taken by these measures.
-
-<!-- Minimal models should answer the subquestions in the affirmative to a sufficient degree. However, undesirable behaviour of a model variant should be explainable in terms of additional input, apart from the model specification, which is required to run simulations.-->
-
-Additionally, we address the following questions (@sec-general-props):
-
-- Is the union of commitments and theory of a global optimum/fixed point consistent? - (CCT) The commitments and the theory should be consistent with each other
-- How many steps does an RE process take?
-- Does an RE promote principles in theories?
-- Are the results from the published paper reproducible?
-
-## Modelling reflective equilibration
+## Modelling reflective equilibration {#sec-mod}
 
 <!--
 + Suggestion: A short general descripription of the RE-Model (with links to more elaborate descriptions).
@@ -145,16 +112,62 @@ ToDos:
 + Do we have to reproduce the ensembles 1-4 with the current algorithm to generate maps?
 -->
 
+## Metrics for model validations
+
+At the outset, there is a plethora of metrics that could be used to examine the performance of the formal model and variants thereof. Let us motivate a small selection of desiderata for model validation, which we are going to address in individual explorative studies later.
+
+- @sec-go-and-fp: Are global optima reachable, i.e. are they fixed points of RE processes?
+
+The formal model allows to distinguish clearly between the *static* aspect of *equilibrium states* and the *dynamic* aspect of *equilibration processes* in RE. This is implemented in the formal model by yielding two kinds of output epistemic states from given inputs: First, global optimization of the achievement function $Z$ results in *global optima*. Second, in a semi-globally optimizing process of alternating adjustments of commitments and theory leads to *fixed points*. Note that both global optima and fixed points may not be uniquely determined given an input. There may be multiple, equally well performing epistemic states according to the achievement function $Z$, or there may  be ties between candidates during equilibration, which leads to branching processes resulting in multiple fixe points.
+
+The global optimization can be achieved by brute force and going through every combination of commitments and theory (worst case). In contrast, the semi-globally optimizing equilibration process of adjustments can already be understood as a heuristic to reach global optimal states, but proccesses can be caught up in local optima. This holds even more so for the local model variant described below.
+
+Consequently, it is an interestng question for model validation whether fixed points are global optima. Conversely, we can also ask whether there are global optima that are not reachable by equilibration processess (given specific inputs).
+
+@sec-full-re-states: Are global optima/fixed points full RE states?
+
+Elaborate accounts of RE require that states of RE are optimal [REFERENCES]. Otherwise, there is room for improvement. Are global optima in the formal model RE states? @beisbart_making_2021 propose additional requirements for globally epistemic states to qualify as (full) RE states:
+
+- (FEA) The theory should account fully and exclusively for 
+
+It is important to note that being in a globally optimal state does not guarantee (CCT) or (FEA). Thus, it is an important task for model validation to check whether, or in which circumstances the formal model yields outputs that satisfy (CCT) or (FEA) in addition to global optimality.
+
+- @sec-commitment-consistency: Are commitments from global optima and fixed points free of inconsistencies?
+
+Consistency is commonly seen as a necessary condition of coherence, and thus achieveing consistency in RE, which is commonly understood to involve coherentist aspects of justification, is of utmost importance.
+  
+- @sec-extreme-values: Do global optima and fixed points have extreme values (maxima, minima) in their measures?
+
+The achievement function $Z$ aggregates three measures, namely for the desiderata of account $A$, systematicity $S$, and faithfulness $F$. Moreover, the measures are weighted in $Z$ to model trade-offs between the desiderate (e.g. give up on faithfulness to increase account). As optimzize $Z$ it is interesting to study the trade-offs and whether or in which circumstances maximal or minimal values are taken by these measures.
+
+<!-- Minimal models should answer the subquestions in the affirmative to a sufficient degree. However, undesirable behaviour of a model variant should be explainable in terms of additional input, apart from the model specification, which is required to run simulations.-->
+
+Additionally, we address the following questions (@sec-general-props):
+
+- Is the union of commitments and theory of a global optimum/fixed point consistent? - (CCT) The commitments and the theory should be consistent with each other
+- How many steps does an RE process take?
+- Does an RE promote principles in theories?
+- Are the results from the published paper reproducible?
+
 ## Ensembles
 
-Every simulation of an RE process and the calculation of global optima requires to specify inputs: i) the model variant, ii) the dialectical structure, iii) weighting of the measures, and iv) the initial commitments. Let us call a specification of inputs i)-iv), which allows to run simulation, a *configuration*. Every configuration yields a simulation of a possibly branching RE processess and a set of global optima (i.e. commitment-theory-pairs that maximize the achievement function). <!--The features of every configuration and its outcomes are stored in a row of a table (stored as comma-separated values (.csv), for a complete l). For a complete list of columns, see the [API documentation](http://argunet.philosophie.kit.edu/remodel-apidocs/api-docs/api-ensemble-generation.html)-->Generating an ensemble includes the following tasks and requires the specification of additional parameters.
+Every simulation of an RE process and the calculation of global optima requires some inputs:
+
+i) the model variant 
+ii) the dialectical structure, 
+iii) the weightings of the measures in the achievement function
+iv) the set of initial commitments 
+   
+Let us call a specification of inputs that allows to run simulation a *simulation setup*. Every setup yields a simulation of possibly branching RE processes and a set of global optima (i.e. commitment-theory-pairs that maximize the achievement function). Note that we keep track of all fixed points and all global optima for each simulation setup.
+
+<!--The features of every configuration and its outcomes are stored in a row of a table (stored as comma-separated values (.csv), for a complete l). For a complete list of columns, see the [API documentation](http://argunet.philosophie.kit.edu/remodel-apidocs/api-docs/api-ensemble-generation.html)-->Generating an ensemble of simulations includes the following tasks and requires the specification of additional parameters.
 
 
-*Size of sentence pool*
+**Size of sentence pool**
 
-Due to the exponential growth of candidate commitments and theories, which all have to be considered for global optima and semi-global adjustment steps in RE processes, the ensembles include sentence pools with a small number of unnegated sentences (around 5 to 8 sentences). <!--The generation of ensembles is handled by a module ([ensemble_generation.py](https://git.scc.kit.edu/debatelab/re-python/-/blob/master/remodel/ensemble_generation.py)) that can be executed from a notebook ([ensemble-study-02-data-generation.ipynb](https://git.scc.kit.edu/debatelab/re-python/-/blob/master/projects/ensemble_study_02/ensemble-study-02-data-generation.ipynb)).--> 
+Due to the exponential growth of candidate commitments and theories, which all have to be considered for global optima and semi-global adjustment steps in RE processes, the ensembles include sentence pools with a small number of unnegated sentences (6 to 9 sentences). <!--The generation of ensembles is handled by a module ([ensemble_generation.py](https://git.scc.kit.edu/debatelab/re-python/-/blob/master/remodel/ensemble_generation.py)) that can be executed from a notebook ([ensemble-study-02-data-generation.ipynb](https://git.scc.kit.edu/debatelab/re-python/-/blob/master/projects/ensemble_study_02/ensemble-study-02-data-generation.ipynb)).--> 
 
-*Automatically generated dialectical structures*
+**Automatically generated dialectical structures**
 
 <!--The early ensembles (01-04) rely on a first version of creating random arguments for a dialectical structure. Inspite of initial measures to organize the arguments (e.g. preventing unnconnected clusters of arguments) the resulting dialectical structures still have a tendency to produce chaotic argument maps. In an attempt to generate more orderly structures, we refined the creation of random dialectical structures further. At this point, t-->The creation of random dialectical structures includes the following parameters: The number of unnegated sentences in the sentence pool, the number of arguments, the (maximal) number of premises per argument and whether there is variation, and the (minimal) number of principles. A sentence is called *principle* if and only if it occurs in at least one argument as premise and it or its negation does not occur as a conclusion in any argument. The random generation ensures that the dialectical structure contains the minimal number of principles, but there may be more sentences that satisfy the condition, too.
 
@@ -170,24 +183,31 @@ In addition, the creation of arguments ensures that all (unnegated) sentences ar
 <!--
 + Do we discuss in this report findings of the Semmelweiss example? If not, the para is irrelevant here, right?
 -->
+
+<!--
 Apart from generating ensembles with randomly generated dialectical structures, other ensembles are based on  handwritten examples (Semmelweiss example, variations of the standard example), that allow for a more intuitive interpretation of results.
+-->
 
-The *inferential density* of a dialectical structure $\tau$, $D(\tau) = \frac{n-lg(\sigma)}{n}$, where $n$ is the number of unnegated sentences in the sentence pool and $\sigma$ is the number of complete and consistent extensions in $\tau$, was kept between $0.05$ and $0.5$.
+The *inferential density* of a dialectical structure $\tau$, 
+$$
+D(\tau) = \frac{n-lg(\sigma)}{n},
+$$
+where $n$ is the number of unnegated sentences in the sentence pool and $\sigma$ is the number of complete and consistent extensions in $\tau$, was kept between $0.15$ and $0.5$.
 
-*Random selection of initial commitments*
+**Random selection of initial commitments**
 
-There are $3^{n}$ minimally consistent set of sentences that serve as initial commitments. To create intial commitments by chance, an integer between 1 and  $3^{n}$ is randomly chosen, converted to a ternary representation and initialized as a position in the Python implementation.
+There are $3^{n}$ minimally consistent set of sentences that serve as initial commitments. To create initial commitments, an integer between 1 and  $3^{n}$ is randomly chosen, converted to a ternary representation and initialized as a position in the Python implementation.
 
 
-*Resolution of weights*
+**Resolution of weights**
 
-In order to explore different values for $\alpha_{A}$, $\alpha_{S}$ and $\alpha_{F}$ in the achievement function, a resolution (i.e. the separation of the unit intervall $[0, 1]$ into intervalls of equal length) of weights can be specified for an ensemble. In practice, every combination of $\alpha_{A}$ and $\alpha_{S}$ are , and $\alpha_{F}$ is set so that they satisfy the boundary condition $\alpha_{A} + \alpha_{S} + \alpha_{F} = 1$. 
+In order to explore different values for $\alpha_{A}$, $\alpha_{S}$ and $\alpha_{F}$ in the achievement function, a resolution (i.e. the separation of the unit intervall $[0, 1]$ into intervalls of equal length) of weights can be specified for an ensemble. Every combination of $\alpha_{A}$, $\alpha_{S}$, and $\alpha_{F}$ satisfies the boundary condition $\alpha_{A} + \alpha_{S} + \alpha_{F} = 1$. 
 
 <!-- 
 + ToDo: Then we should rely the analysis only on ensembles with $\alpha_{F} \neq 0$.
 + ToDo (?): Explain (more thouroughly or shortly) the findings of <https://github.com/debatelab/re-studies/blob/master/notebooks/Faithfulness_0_is_a_bad_idea.ipynb>.
 -->
-The extreme value of $\alpha_{F} = 0$ is excluded (!from the later ensembles!) since it produces all and only singleton theories (and their closure) to be global optima. 
+We exclude extreme weightings such as $\alpha_{F} = 0$ or $\alpha_{A} = 1$, since they "break" the model and lead to undesirable behavior. For example, $\alpha_{F} = 0$ yields only, but all, singleton theories and their closures as commitments as global optima. 
 
 <!--
 + ToDo: Revise this table.
@@ -195,21 +215,14 @@ The extreme value of $\alpha_{F} = 0$ is excluded (!from the later ensembles!) s
     + Can we perhaps aggregate some ensembles into one?
 + For more details on the used ensembles, see <https://github.com/debatelab/re-studies/tree/master/projects/ensemble_study_02/data>
 -->
-*Overview of ensembles*
+**Overview of ensembles**
 
 This study is based on different ensembles, which differ with respect to the following properties:
 
-| ensemble | rows | dialectical structure generation |  dialectical structures | initial commitments | alpha resolution (count) | branching processes | principles |
-| -- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| 01 | 54000 | old random | 30 | 10 | steps: 0.1 steps (45) | no | no |
-| 02 | 45000 (incomplete) | old random| 40 | 10 | steps: 0.1 (45) | no | no |
-| 03 | 320 | standard variations | 8 | 10 | a: 0.35, s: 0.55, f: 0.1 (1) | no | no |
-| 04 | 3200 (+ 320) | standard variations | 8 | 10 | steps: 0.2 (10) | no | no |
-| 05 | 69000 | new random | 39 | 10 | steps: 0.1 (45) | no | no |
-| 06 | 90000 | new random | 150 | 50 | (0.35, 0.55, 0.1), (0.5, 0.5, 0.1), (0.55, 0.35, 0.1) (3)| no | 2 |
-| 07 | 129600 | new random | 60 | 15 | steps: 0.1 (36) | yes | no |
-| 08 | 30240 | standard variations | 3 | 70 | steps: 0.1 (36) | yes | no |
-| 09 | 314784 | standard example | 1 | 2186 | steps: 0.1 (36) | yes | no |
+
+| ensemble ID | setups | model variants | sentence pool sizes | dialectical structures | initial commitments | weightings (resolution) |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| 01 | x | 4 | 4 | x | x | 36 (0.1) |
 
 <!--
 *Model explorations of ensembles 01 to 06*
@@ -228,15 +241,16 @@ There is a [template](https://git.scc.kit.edu/debatelab/re-python/-/blob/master/
 An important difference to earlier ensembles is the strict separation of global optima and fixed points with respect to relevant features such as RE states or commitment consistency cases. For every fixed point and every global optimum additional information is stored in the corresponding row (see [here](https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/documents/model-validation.md)).
 -->
 
-**Remarks for the interpretation or explanation** 
+**Remarks on the interpretation or explanation of results** 
 
-Due to the wide range of required inputs for a configuration, salient behaviour may depend on the features of any of i)-iv) or a combination thereof, and it is difficult to separate all dimension at once. In order to disentangle i) model variants  and iii) the weightings, heatmaps proved to be a useful tool and provided insightful plots with respect to various evaluation criteria. The other inputs involve much more features, which could explain salient behaviour, but are much harder to separate: 
-- ii) features of dialectical structures include the size of the sentence pool, number of arguments, number of premises per argument, inferential density, number of complete consistent extensions, number of tau-truths.
-- iv) features of initial commitments include their size, dialectical consistency, dialectical closure, number of complete consistent extensions, the minimal axiomatization
+Due to the wide range of required inputs for a configuration, salient behaviour may depend on the features of any of i) - iv) or a combination thereof, and it is difficult to separate all dimension at once. In order to disentangle model variants  and iii) the weightings, heatmaps proved to be a useful tool and provided insightful plots with respect to various evaluation criteria. The other inputs involve much more features, which could explain salient behaviour, but are much harder to separate:
+
+ii) features of dialectical structures include the size of the sentence pool, number of arguments, number of premises per argument, inferential density, number of complete consistent extensions, number of tau-truths.
+iv) features of initial commitments include their size, dialectical consistency, dialectical closure, number of complete consistent extensions, the minimal axiomatization
 
 ## Summary of results
 
-In general, we did not find conclusive evidence to exclude a model variant as a future reference point. Each model variant satisfies the consolidation criteria to a sufficient degree for a wide range of configurations. At this point, undesirable behaviour (failing with respect to some criterion) cannot be attributed to a model variant on its own, but may result from a combination of other aspects of a configuration, such as unfavourable dialectical structures, extreme weightings or hopelessly absurd initial commitments. This does not mean, that there are no differences at all or no tendencies in favour of some model variants. Linear models tend to perform better as quadratic variants with respect to many criteria. 
+In general, we did not find conclusive evidence to exclude a model variant as a future reference point. Each model variant satisfies the consolidation criteria to a sufficient degree for a wide range of configurations. At this point, undesirable behavior (failing with respect to some criterion) cannot be attributed to a model variant on its own, but may result from a combination of other aspects of a configuration, such as unfavourable dialectical structures, extreme weightings or hopelessly absurd initial commitments. This does not mean, that there are no differences at all or no tendencies in favor of some model variants. Linear models tend to perform better as quadratic variants with respect to many criteria. 
 
 <!-- 
 Remarks: Currently I [BC] outcommented this para. 
@@ -248,5 +262,8 @@ Remarks: Currently I [BC] outcommented this para.
 <!--
 In addition to the exploration of ensembles, there is a growing number of analytical results for both linear and quadratic models. Linear models have a ([tipping line](https://git.scc.kit.edu/debatelab/re-python/-/blob/master/projects/ensemble_study_02/documents/linear_models_tipping_line.md)), below which the weight for faithfulness makes no difference in the equilibration process towards fixed points ([see here](https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/documents/linear_models_tipping_line.md)). In quadratic models, the squaring of Hamming distances makes "midpoints" to attractors ([quadratic tipping](https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/documents/Quadratic_Tipping-Line.md)). Dependending on the interpretation of the consequences of such results, a model or specific configurations for a model may be preferred.
 -->
+
+<!--
 If conceptual clarity is to be taken into account, pure systematicity (number of a theories sentences normalized by the size of the sentence pool)  may be preferred to default systematicity, which involves normalization by the size of a theory's closure (its "scope"). In the former case, pure systematicity may safely be called "simplicity" and other virtues contributing to the systematicityof a theory (e.g. scope) should be reserved for model extensions. In this line of thought, `LinearPureSystematicityRE` can be seen as the absolute minimal model variant, that is extended by the other variants by squaring measures, refining systematicity, or both.
+-->
 
