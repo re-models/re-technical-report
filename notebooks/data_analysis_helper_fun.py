@@ -56,6 +56,38 @@ def load_re_data(data_dir, data_file_name, filter_erroneous_runs:bool = False):
         return re_data.loc[re_data['error_code'].isna()]
     else:
         return re_data
+    
+def load_specific_re_data(data_dir, 
+                          data_file_name,
+                          usecols,
+                          evalcols,
+                          filter_erroneous_runs:bool = False):
+    if data_file_name[data_file_name.find('.'):len(data_file_name)] == '.csv.tar.gz':
+        with tarfile.open(path.join(data_dir,data_file_name)) as tar:
+            for tarinfo in tar:
+                file_name = tarinfo.name
+            tar.extractall(data_dir)        
+     
+        re_data = pd.read_csv(path.join(data_dir, file_name), usecols=usecols)
+    else:
+        re_data = pd.read_csv(path.join(data_dir, data_file_name), usecols=usecols)
+
+    if 'global_otpima' in usecols:
+        re_data['global_optima'] = re_data['global_optima'].replace('set()', '{}')
+        
+    if 'fixed_points' in usecols:
+        re_data['fixed_points'] = re_data['fixed_points'].replace('set()', '{}')
+
+    #re_data['fixed_points'] = re_data.apply(lambda row: replace_set(row, 'fixed_points'), axis=1)
+
+    # WARNING: XXX (eval not being save)
+    # converting mere strings to data-objects
+    literal_eval_cols(re_data, evalcols)
+    
+    if filter_erroneous_runs:
+        return re_data.loc[re_data['error_code'].isna()]
+    else:
+        return re_data
 
 def heatmap_plot(*args, **kwargs):
     data = kwargs.pop('data')
