@@ -1,0 +1,8006 @@
+{
+    "tau_alpha_001": {
+        "arguments": [
+            [
+                -6,
+                3
+            ],
+            [
+                1,
+                3
+            ],
+            [
+                2,
+                6
+            ],
+            [
+                5,
+                6
+            ],
+            [
+                4,
+                6
+            ],
+            [
+                5,
+                -2
+            ],
+            [
+                -4,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_001",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_002": {
+        "arguments": [
+            [
+                2,
+                -6
+            ],
+            [
+                -5,
+                6
+            ],
+            [
+                1,
+                -6
+            ],
+            [
+                -4,
+                2
+            ],
+            [
+                -3,
+                5
+            ],
+            [
+                -4,
+                3
+            ],
+            [
+                6,
+                -3
+            ]
+        ],
+        "tau_name": "tau_alpha_002",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_003": {
+        "arguments": [
+            [
+                2,
+                -1
+            ],
+            [
+                -6,
+                -2
+            ],
+            [
+                -5,
+                2
+            ],
+            [
+                3,
+                -2
+            ],
+            [
+                4,
+                6
+            ],
+            [
+                3,
+                -6
+            ],
+            [
+                -3,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_003",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_004": {
+        "arguments": [
+            [
+                4,
+                -1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                2,
+                -1
+            ],
+            [
+                6,
+                4
+            ],
+            [
+                5,
+                2
+            ]
+        ],
+        "tau_name": "tau_alpha_004",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_005": {
+        "arguments": [
+            [
+                4,
+                1
+            ],
+            [
+                -3,
+                -1
+            ],
+            [
+                6,
+                -4
+            ],
+            [
+                2,
+                3
+            ],
+            [
+                -5,
+                3
+            ],
+            [
+                -2,
+                -6
+            ],
+            [
+                -5,
+                2
+            ]
+        ],
+        "tau_name": "tau_alpha_005",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_006": {
+        "arguments": [
+            [
+                -5,
+                4
+            ],
+            [
+                -3,
+                4
+            ],
+            [
+                1,
+                4
+            ],
+            [
+                6,
+                -5
+            ],
+            [
+                -2,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_006",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_007": {
+        "arguments": [
+            [
+                3,
+                -4
+            ],
+            [
+                -6,
+                -3
+            ],
+            [
+                -1,
+                -4
+            ],
+            [
+                5,
+                4
+            ],
+            [
+                2,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_007",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_008": {
+        "arguments": [
+            [
+                -3,
+                -2
+            ],
+            [
+                -1,
+                2
+            ],
+            [
+                -4,
+                3
+            ],
+            [
+                6,
+                -2
+            ],
+            [
+                -5,
+                -6
+            ]
+        ],
+        "tau_name": "tau_alpha_008",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_009": {
+        "arguments": [
+            [
+                2,
+                5
+            ],
+            [
+                -1,
+                -2
+            ],
+            [
+                -6,
+                -2
+            ],
+            [
+                -4,
+                -2
+            ],
+            [
+                3,
+                4
+            ],
+            [
+                6,
+                4
+            ]
+        ],
+        "tau_name": "tau_alpha_009",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_010": {
+        "arguments": [
+            [
+                4,
+                6
+            ],
+            [
+                -3,
+                4
+            ],
+            [
+                -2,
+                4
+            ],
+            [
+                5,
+                2
+            ],
+            [
+                -1,
+                2
+            ],
+            [
+                4,
+                1
+            ]
+        ],
+        "tau_name": "tau_alpha_010",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_011": {
+        "arguments": [
+            [
+                -1,
+                2
+            ],
+            [
+                6,
+                -1
+            ],
+            [
+                -3,
+                -6
+            ],
+            [
+                4,
+                3
+            ],
+            [
+                6,
+                -1,
+                -3
+            ],
+            [
+                4,
+                1,
+                -2
+            ],
+            [
+                4,
+                5,
+                -2
+            ]
+        ],
+        "tau_name": "tau_alpha_011",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_012": {
+        "arguments": [
+            [
+                -3,
+                -5
+            ],
+            [
+                -2,
+                -6,
+                3
+            ],
+            [
+                -4,
+                1,
+                6
+            ],
+            [
+                2,
+                5
+            ],
+            [
+                4,
+                6
+            ],
+            [
+                -3,
+                4
+            ]
+        ],
+        "tau_name": "tau_alpha_012",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_013": {
+        "arguments": [
+            [
+                -5,
+                1
+            ],
+            [
+                -2,
+                -4,
+                5
+            ],
+            [
+                -3,
+                1
+            ],
+            [
+                -6,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_013",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_014": {
+        "arguments": [
+            [
+                -6,
+                1
+            ],
+            [
+                3,
+                -5,
+                -6
+            ],
+            [
+                -4,
+                1
+            ],
+            [
+                2,
+                -3
+            ],
+            [
+                6,
+                4,
+                -2
+            ],
+            [
+                5,
+                4,
+                -1
+            ],
+            [
+                3,
+                1
+            ]
+        ],
+        "tau_name": "tau_alpha_014",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_015": {
+        "arguments": [
+            [
+                -1,
+                -6
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                4,
+                -1
+            ],
+            [
+                -2,
+                -6
+            ],
+            [
+                5,
+                -3
+            ],
+            [
+                3,
+                -2
+            ],
+            [
+                2,
+                4
+            ]
+        ],
+        "tau_name": "tau_alpha_015",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_016": {
+        "arguments": [
+            [
+                4,
+                -5,
+                -2
+            ],
+            [
+                3,
+                -1,
+                -5
+            ],
+            [
+                4,
+                -6,
+                3
+            ],
+            [
+                -5,
+                1
+            ],
+            [
+                -1,
+                -6
+            ]
+        ],
+        "tau_name": "tau_alpha_016",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_017": {
+        "arguments": [
+            [
+                -1,
+                -5
+            ],
+            [
+                -4,
+                -5
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                -2,
+                -5
+            ],
+            [
+                6,
+                2
+            ]
+        ],
+        "tau_name": "tau_alpha_017",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_018": {
+        "arguments": [
+            [
+                -2,
+                -4
+            ],
+            [
+                -3,
+                -5,
+                -2
+            ],
+            [
+                -1,
+                5
+            ],
+            [
+                6,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_018",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_019": {
+        "arguments": [
+            [
+                -4,
+                5
+            ],
+            [
+                -1,
+                -3,
+                5
+            ],
+            [
+                6,
+                4
+            ],
+            [
+                2,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_019",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_020": {
+        "arguments": [
+            [
+                2,
+                -4
+            ],
+            [
+                -1,
+                5,
+                4
+            ],
+            [
+                6,
+                -4
+            ],
+            [
+                3,
+                2
+            ],
+            [
+                3,
+                5
+            ]
+        ],
+        "tau_name": "tau_alpha_020",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_021": {
+        "arguments": [
+            [
+                -5,
+                -4,
+                3
+            ],
+            [
+                6,
+                5
+            ],
+            [
+                -2,
+                6
+            ],
+            [
+                1,
+                -3
+            ],
+            [
+                2,
+                6
+            ],
+            [
+                4,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_021",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_022": {
+        "arguments": [
+            [
+                -1,
+                4,
+                6
+            ],
+            [
+                -5,
+                -2,
+                6
+            ],
+            [
+                -3,
+                -2
+            ],
+            [
+                4,
+                -6,
+                -3
+            ],
+            [
+                1,
+                2,
+                5
+            ],
+            [
+                -1,
+                -4,
+                5
+            ]
+        ],
+        "tau_name": "tau_alpha_022",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_023": {
+        "arguments": [
+            [
+                5,
+                -4,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                2,
+                -5
+            ],
+            [
+                -4,
+                6,
+                -3
+            ],
+            [
+                6,
+                -3,
+                1
+            ],
+            [
+                1,
+                4,
+                -3
+            ]
+        ],
+        "tau_name": "tau_alpha_023",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_024": {
+        "arguments": [
+            [
+                3,
+                -2
+            ],
+            [
+                -5,
+                4,
+                -3
+            ],
+            [
+                6,
+                -2
+            ],
+            [
+                1,
+                -3
+            ],
+            [
+                3,
+                -5,
+                -6
+            ],
+            [
+                6,
+                4
+            ]
+        ],
+        "tau_name": "tau_alpha_024",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_025": {
+        "arguments": [
+            [
+                -4,
+                -5
+            ],
+            [
+                -6,
+                -1,
+                4
+            ],
+            [
+                3,
+                6
+            ],
+            [
+                2,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_025",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_026": {
+        "arguments": [
+            [
+                -1,
+                -5
+            ],
+            [
+                -4,
+                -2,
+                5
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                6,
+                -5
+            ],
+            [
+                2,
+                1
+            ]
+        ],
+        "tau_name": "tau_alpha_026",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_027": {
+        "arguments": [
+            [
+                -1,
+                -4
+            ],
+            [
+                3,
+                6,
+                -1
+            ],
+            [
+                -5,
+                2,
+                3
+            ],
+            [
+                -6,
+                -3
+            ],
+            [
+                2,
+                -6
+            ],
+            [
+                -5,
+                -1,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_027",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_028": {
+        "arguments": [
+            [
+                3,
+                4,
+                -1
+            ],
+            [
+                5,
+                6,
+                4
+            ],
+            [
+                2,
+                -1
+            ],
+            [
+                3,
+                -6
+            ]
+        ],
+        "tau_name": "tau_alpha_028",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_029": {
+        "arguments": [
+            [
+                -6,
+                -5
+            ],
+            [
+                -3,
+                -6
+            ],
+            [
+                1,
+                2,
+                3
+            ],
+            [
+                2,
+                -4,
+                -3
+            ]
+        ],
+        "tau_name": "tau_alpha_029",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_030": {
+        "arguments": [
+            [
+                -5,
+                3,
+                -4
+            ],
+            [
+                2,
+                4
+            ],
+            [
+                1,
+                6,
+                -3
+            ],
+            [
+                1,
+                -5
+            ],
+            [
+                5,
+                3,
+                -4
+            ],
+            [
+                4,
+                1,
+                -6
+            ]
+        ],
+        "tau_name": "tau_alpha_030",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_031": {
+        "arguments": [
+            [
+                -5,
+                3,
+                -2
+            ],
+            [
+                -1,
+                6,
+                2
+            ],
+            [
+                -1,
+                -3,
+                -2
+            ],
+            [
+                4,
+                -6
+            ],
+            [
+                4,
+                -3,
+                -2
+            ],
+            [
+                -4,
+                -6
+            ],
+            [
+                1,
+                2
+            ]
+        ],
+        "tau_name": "tau_alpha_031",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_032": {
+        "arguments": [
+            [
+                6,
+                5,
+                -2
+            ],
+            [
+                -3,
+                -4,
+                -6
+            ],
+            [
+                1,
+                -6
+            ],
+            [
+                -5,
+                -2
+            ]
+        ],
+        "tau_name": "tau_alpha_032",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_033": {
+        "arguments": [
+            [
+                3,
+                4
+            ],
+            [
+                -2,
+                -3
+            ],
+            [
+                -5,
+                -1,
+                3
+            ],
+            [
+                6,
+                -4
+            ],
+            [
+                4,
+                5
+            ],
+            [
+                -6,
+                4,
+                -5
+            ]
+        ],
+        "tau_name": "tau_alpha_033",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_034": {
+        "arguments": [
+            [
+                5,
+                -2
+            ],
+            [
+                -1,
+                -4,
+                5
+            ],
+            [
+                3,
+                -4
+            ],
+            [
+                5,
+                -6,
+                -3
+            ]
+        ],
+        "tau_name": "tau_alpha_034",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_035": {
+        "arguments": [
+            [
+                5,
+                -4,
+                -6
+            ],
+            [
+                -2,
+                3,
+                6
+            ],
+            [
+                -1,
+                4,
+                2
+            ],
+            [
+                -6,
+                -4
+            ]
+        ],
+        "tau_name": "tau_alpha_035",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_036": {
+        "arguments": [
+            [
+                -6,
+                4,
+                -5
+            ],
+            [
+                1,
+                -2,
+                -4
+            ],
+            [
+                -6,
+                -4,
+                2
+            ],
+            [
+                -3,
+                -2
+            ],
+            [
+                5,
+                3,
+                4
+            ],
+            [
+                4,
+                -5
+            ],
+            [
+                -1,
+                6,
+                -2
+            ]
+        ],
+        "tau_name": "tau_alpha_036",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_037": {
+        "arguments": [
+            [
+                -4,
+                -6,
+                -1
+            ],
+            [
+                -2,
+                3,
+                6
+            ],
+            [
+                -5,
+                -3
+            ],
+            [
+                -6,
+                -3,
+                -5
+            ],
+            [
+                5,
+                -1,
+                2
+            ]
+        ],
+        "tau_name": "tau_alpha_037",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_038": {
+        "arguments": [
+            [
+                4,
+                -5,
+                -3
+            ],
+            [
+                1,
+                3
+            ],
+            [
+                -6,
+                2,
+                -3
+            ],
+            [
+                -5,
+                3,
+                1
+            ]
+        ],
+        "tau_name": "tau_alpha_038",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_039": {
+        "arguments": [
+            [
+                -5,
+                -2
+            ],
+            [
+                3,
+                -2
+            ],
+            [
+                6,
+                1,
+                -5
+            ],
+            [
+                1,
+                4,
+                6
+            ],
+            [
+                -1,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_039",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_040": {
+        "arguments": [
+            [
+                5,
+                3,
+                4
+            ],
+            [
+                -6,
+                -2,
+                -4
+            ],
+            [
+                1,
+                4
+            ],
+            [
+                1,
+                3,
+                -2
+            ],
+            [
+                -4,
+                -5
+            ],
+            [
+                1,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_040",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_041": {
+        "arguments": [
+            [
+                1,
+                -5,
+                -3
+            ],
+            [
+                4,
+                -2,
+                5
+            ],
+            [
+                5,
+                1,
+                2
+            ],
+            [
+                3,
+                6,
+                -2
+            ],
+            [
+                -1,
+                4,
+                5
+            ],
+            [
+                5,
+                -3,
+                -6
+            ],
+            [
+                -2,
+                -6,
+                -3
+            ]
+        ],
+        "tau_name": "tau_alpha_041",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_042": {
+        "arguments": [
+            [
+                3,
+                2,
+                -4
+            ],
+            [
+                -6,
+                5,
+                3
+            ],
+            [
+                1,
+                5,
+                4
+            ],
+            [
+                -3,
+                4,
+                -2
+            ],
+            [
+                -1,
+                6,
+                -4
+            ],
+            [
+                -2,
+                3,
+                4
+            ],
+            [
+                -5,
+                -3,
+                -6
+            ]
+        ],
+        "tau_name": "tau_alpha_042",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_043": {
+        "arguments": [
+            [
+                2,
+                -3,
+                1
+            ],
+            [
+                5,
+                6,
+                -3
+            ],
+            [
+                -5,
+                -2,
+                6
+            ],
+            [
+                4,
+                5,
+                -2
+            ],
+            [
+                -1,
+                -5,
+                -3
+            ],
+            [
+                -4,
+                -3,
+                -1
+            ],
+            [
+                3,
+                2,
+                -4
+            ]
+        ],
+        "tau_name": "tau_alpha_043",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_044": {
+        "arguments": [
+            [
+                -6,
+                -1,
+                4
+            ],
+            [
+                -5,
+                2,
+                -4
+            ],
+            [
+                -1,
+                -3,
+                -2
+            ],
+            [
+                6,
+                -3,
+                4
+            ],
+            [
+                4,
+                1,
+                -2
+            ],
+            [
+                4,
+                5,
+                -6
+            ],
+            [
+                2,
+                -3,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_044",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_045": {
+        "arguments": [
+            [
+                6,
+                5,
+                -2
+            ],
+            [
+                4,
+                1,
+                -6
+            ],
+            [
+                -1,
+                -3,
+                -6
+            ],
+            [
+                3,
+                -5,
+                6
+            ],
+            [
+                -4,
+                -2,
+                5
+            ],
+            [
+                3,
+                2,
+                4
+            ],
+            [
+                3,
+                4,
+                1
+            ]
+        ],
+        "tau_name": "tau_alpha_045",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_046": {
+        "arguments": [
+            [
+                -1,
+                -6,
+                -4
+            ],
+            [
+                3,
+                -2,
+                -6
+            ],
+            [
+                1,
+                -5,
+                -2
+            ],
+            [
+                3,
+                5,
+                1
+            ],
+            [
+                -4,
+                -5,
+                -6
+            ],
+            [
+                1,
+                -2,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_046",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_047": {
+        "arguments": [
+            [
+                -1,
+                4,
+                -6
+            ],
+            [
+                5,
+                -2,
+                6
+            ],
+            [
+                -3,
+                6,
+                1
+            ],
+            [
+                -3,
+                -1,
+                4
+            ],
+            [
+                3,
+                1,
+                2
+            ],
+            [
+                6,
+                -1,
+                -2
+            ],
+            [
+                -2,
+                4,
+                5
+            ]
+        ],
+        "tau_name": "tau_alpha_047",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_048": {
+        "arguments": [
+            [
+                -6,
+                -5,
+                -2
+            ],
+            [
+                1,
+                3,
+                -5
+            ],
+            [
+                3,
+                5,
+                1
+            ],
+            [
+                6,
+                5,
+                1
+            ],
+            [
+                4,
+                5,
+                6
+            ],
+            [
+                -1,
+                -3,
+                6
+            ],
+            [
+                2,
+                6,
+                -4
+            ]
+        ],
+        "tau_name": "tau_alpha_048",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_049": {
+        "arguments": [
+            [
+                3,
+                -5,
+                6
+            ],
+            [
+                -2,
+                1,
+                3
+            ],
+            [
+                4,
+                -1,
+                -2
+            ],
+            [
+                6,
+                -1,
+                4
+            ],
+            [
+                4,
+                2,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_049",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_050": {
+        "arguments": [
+            [
+                1,
+                -6,
+                -5
+            ],
+            [
+                -3,
+                -2,
+                -1
+            ],
+            [
+                5,
+                -4,
+                1
+            ],
+            [
+                2,
+                -3,
+                -6
+            ],
+            [
+                -6,
+                3,
+                2
+            ],
+            [
+                -6,
+                -5,
+                2
+            ]
+        ],
+        "tau_name": "tau_alpha_050",
+        "n_unnegated_sentence_pool": 6,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_051": {
+        "arguments": [
+            [
+                -3,
+                7
+            ],
+            [
+                -2,
+                7
+            ],
+            [
+                -4,
+                -2
+            ],
+            [
+                5,
+                4
+            ],
+            [
+                -6,
+                7
+            ],
+            [
+                1,
+                5
+            ],
+            [
+                -3,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_051",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_052": {
+        "arguments": [
+            [
+                5,
+                1
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                6,
+                5
+            ],
+            [
+                -7,
+                6
+            ],
+            [
+                4,
+                -1
+            ],
+            [
+                -2,
+                7
+            ],
+            [
+                -6,
+                -5
+            ]
+        ],
+        "tau_name": "tau_alpha_052",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_053": {
+        "arguments": [
+            [
+                1,
+                -6
+            ],
+            [
+                4,
+                6
+            ],
+            [
+                7,
+                6
+            ],
+            [
+                -3,
+                4
+            ],
+            [
+                -5,
+                -1
+            ],
+            [
+                -2,
+                1
+            ]
+        ],
+        "tau_name": "tau_alpha_053",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_054": {
+        "arguments": [
+            [
+                2,
+                -4
+            ],
+            [
+                3,
+                2
+            ],
+            [
+                -7,
+                -3
+            ],
+            [
+                1,
+                -4
+            ],
+            [
+                -5,
+                -3
+            ],
+            [
+                -6,
+                -7
+            ],
+            [
+                -6,
+                -5
+            ]
+        ],
+        "tau_name": "tau_alpha_054",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_055": {
+        "arguments": [
+            [
+                1,
+                -5
+            ],
+            [
+                -6,
+                -5
+            ],
+            [
+                7,
+                5
+            ],
+            [
+                3,
+                -1
+            ],
+            [
+                -2,
+                -5
+            ],
+            [
+                4,
+                -2
+            ],
+            [
+                3,
+                -4
+            ],
+            [
+                -2,
+                1
+            ]
+        ],
+        "tau_name": "tau_alpha_055",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_056": {
+        "arguments": [
+            [
+                3,
+                7
+            ],
+            [
+                -5,
+                -7
+            ],
+            [
+                1,
+                5
+            ],
+            [
+                6,
+                5
+            ],
+            [
+                -2,
+                1
+            ],
+            [
+                4,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_056",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_057": {
+        "arguments": [
+            [
+                2,
+                4
+            ],
+            [
+                3,
+                4
+            ],
+            [
+                -6,
+                -4
+            ],
+            [
+                1,
+                -2
+            ],
+            [
+                5,
+                6
+            ],
+            [
+                -7,
+                -2
+            ]
+        ],
+        "tau_name": "tau_alpha_057",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_058": {
+        "arguments": [
+            [
+                6,
+                -1
+            ],
+            [
+                -2,
+                -6
+            ],
+            [
+                3,
+                -1
+            ],
+            [
+                5,
+                6
+            ],
+            [
+                -7,
+                6
+            ],
+            [
+                -4,
+                5
+            ],
+            [
+                -3,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_058",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_059": {
+        "arguments": [
+            [
+                2,
+                1
+            ],
+            [
+                -3,
+                -2
+            ],
+            [
+                -5,
+                -2
+            ],
+            [
+                7,
+                -2
+            ],
+            [
+                6,
+                3
+            ],
+            [
+                4,
+                -3
+            ],
+            [
+                -7,
+                6
+            ],
+            [
+                6,
+                7
+            ]
+        ],
+        "tau_name": "tau_alpha_059",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_060": {
+        "arguments": [
+            [
+                5,
+                3
+            ],
+            [
+                -6,
+                5
+            ],
+            [
+                1,
+                -5
+            ],
+            [
+                7,
+                -5
+            ],
+            [
+                -2,
+                -5
+            ],
+            [
+                4,
+                -2
+            ]
+        ],
+        "tau_name": "tau_alpha_060",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_061": {
+        "arguments": [
+            [
+                -3,
+                2,
+                -1
+            ],
+            [
+                -5,
+                2
+            ],
+            [
+                -6,
+                5
+            ],
+            [
+                4,
+                6
+            ],
+            [
+                -7,
+                -3
+            ],
+            [
+                2,
+                -4
+            ],
+            [
+                -4,
+                -2
+            ],
+            [
+                6,
+                -3,
+                1
+            ]
+        ],
+        "tau_name": "tau_alpha_061",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_062": {
+        "arguments": [
+            [
+                3,
+                -2
+            ],
+            [
+                4,
+                -3
+            ],
+            [
+                -5,
+                -3
+            ],
+            [
+                -1,
+                -3
+            ],
+            [
+                6,
+                -7,
+                5
+            ],
+            [
+                -5,
+                3
+            ],
+            [
+                5,
+                -3
+            ],
+            [
+                6,
+                -2,
+                7
+            ]
+        ],
+        "tau_name": "tau_alpha_062",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_063": {
+        "arguments": [
+            [
+                4,
+                -3,
+                5
+            ],
+            [
+                -2,
+                3
+            ],
+            [
+                1,
+                -4
+            ],
+            [
+                -7,
+                -3
+            ],
+            [
+                6,
+                -2
+            ],
+            [
+                3,
+                -5
+            ],
+            [
+                -1,
+                4
+            ]
+        ],
+        "tau_name": "tau_alpha_063",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_064": {
+        "arguments": [
+            [
+                -1,
+                -6
+            ],
+            [
+                4,
+                -6
+            ],
+            [
+                -5,
+                -1
+            ],
+            [
+                -2,
+                -4
+            ],
+            [
+                -7,
+                -3,
+                4
+            ],
+            [
+                7,
+                -3,
+                -6
+            ],
+            [
+                -7,
+                1,
+                2
+            ]
+        ],
+        "tau_name": "tau_alpha_064",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_065": {
+        "arguments": [
+            [
+                -1,
+                -5,
+                -7
+            ],
+            [
+                -6,
+                -4,
+                1
+            ],
+            [
+                -3,
+                -2,
+                -4
+            ],
+            [
+                7,
+                3,
+                1
+            ],
+            [
+                -3,
+                7
+            ]
+        ],
+        "tau_name": "tau_alpha_065",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_066": {
+        "arguments": [
+            [
+                4,
+                -6
+            ],
+            [
+                -1,
+                5,
+                4
+            ],
+            [
+                7,
+                5
+            ],
+            [
+                -2,
+                -7
+            ],
+            [
+                3,
+                5,
+                -1
+            ],
+            [
+                -7,
+                3
+            ],
+            [
+                5,
+                -3,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_066",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_067": {
+        "arguments": [
+            [
+                -5,
+                -6,
+                -4
+            ],
+            [
+                7,
+                -6
+            ],
+            [
+                3,
+                -2,
+                4
+            ],
+            [
+                -1,
+                -7
+            ],
+            [
+                -6,
+                5
+            ]
+        ],
+        "tau_name": "tau_alpha_067",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_068": {
+        "arguments": [
+            [
+                4,
+                -1,
+                -5
+            ],
+            [
+                7,
+                -4
+            ],
+            [
+                -3,
+                -7
+            ],
+            [
+                6,
+                4
+            ],
+            [
+                -6,
+                2,
+                -7
+            ],
+            [
+                -5,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_068",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_069": {
+        "arguments": [
+            [
+                -4,
+                1
+            ],
+            [
+                -7,
+                1
+            ],
+            [
+                6,
+                -7
+            ],
+            [
+                -2,
+                -4
+            ],
+            [
+                -3,
+                -5,
+                6
+            ],
+            [
+                -7,
+                -3
+            ]
+        ],
+        "tau_name": "tau_alpha_069",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_070": {
+        "arguments": [
+            [
+                -7,
+                -6
+            ],
+            [
+                -4,
+                6
+            ],
+            [
+                -3,
+                1,
+                -7
+            ],
+            [
+                -5,
+                -4
+            ],
+            [
+                2,
+                -6
+            ],
+            [
+                3,
+                -6,
+                -2
+            ],
+            [
+                5,
+                -2
+            ],
+            [
+                -5,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_070",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_071": {
+        "arguments": [
+            [
+                -3,
+                5,
+                4
+            ],
+            [
+                6,
+                -1,
+                5
+            ],
+            [
+                2,
+                -4
+            ],
+            [
+                -4,
+                5,
+                -2
+            ],
+            [
+                7,
+                -6
+            ],
+            [
+                -7,
+                2,
+                -6
+            ]
+        ],
+        "tau_name": "tau_alpha_071",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_072": {
+        "arguments": [
+            [
+                -3,
+                6,
+                1
+            ],
+            [
+                -5,
+                -6
+            ],
+            [
+                -4,
+                2,
+                1
+            ],
+            [
+                -1,
+                7,
+                6
+            ],
+            [
+                -3,
+                -4
+            ],
+            [
+                -3,
+                1,
+                6
+            ],
+            [
+                5,
+                -2,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_072",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_073": {
+        "arguments": [
+            [
+                5,
+                2,
+                -3
+            ],
+            [
+                -6,
+                -7,
+                3
+            ],
+            [
+                4,
+                1,
+                -3
+            ],
+            [
+                -2,
+                3,
+                5
+            ],
+            [
+                3,
+                -6
+            ],
+            [
+                1,
+                2
+            ],
+            [
+                4,
+                7,
+                -5
+            ],
+            [
+                4,
+                -3,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_073",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_074": {
+        "arguments": [
+            [
+                7,
+                1
+            ],
+            [
+                -4,
+                -7
+            ],
+            [
+                3,
+                7
+            ],
+            [
+                6,
+                1
+            ],
+            [
+                5,
+                -7
+            ],
+            [
+                -2,
+                4
+            ],
+            [
+                3,
+                -7
+            ]
+        ],
+        "tau_name": "tau_alpha_074",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_075": {
+        "arguments": [
+            [
+                5,
+                4,
+                6
+            ],
+            [
+                3,
+                1,
+                -4
+            ],
+            [
+                -7,
+                -2,
+                -6
+            ],
+            [
+                6,
+                4
+            ],
+            [
+                -2,
+                -4,
+                7
+            ],
+            [
+                -6,
+                -1
+            ],
+            [
+                -3,
+                7
+            ],
+            [
+                3,
+                4
+            ]
+        ],
+        "tau_name": "tau_alpha_075",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_076": {
+        "arguments": [
+            [
+                -2,
+                -4,
+                -5
+            ],
+            [
+                1,
+                -3,
+                -4
+            ],
+            [
+                -7,
+                -4
+            ],
+            [
+                4,
+                7,
+                -3
+            ],
+            [
+                -1,
+                -2,
+                4
+            ],
+            [
+                -5,
+                -6,
+                4
+            ],
+            [
+                -6,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_076",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_077": {
+        "arguments": [
+            [
+                -4,
+                7,
+                -3
+            ],
+            [
+                -2,
+                1,
+                7
+            ],
+            [
+                6,
+                1
+            ],
+            [
+                -6,
+                -5,
+                -4
+            ],
+            [
+                -4,
+                2
+            ],
+            [
+                7,
+                -6
+            ],
+            [
+                2,
+                -1,
+                -7
+            ]
+        ],
+        "tau_name": "tau_alpha_077",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_078": {
+        "arguments": [
+            [
+                -6,
+                -4,
+                -5
+            ],
+            [
+                -1,
+                7,
+                -6
+            ],
+            [
+                -2,
+                -3,
+                -5
+            ],
+            [
+                5,
+                3,
+                7
+            ],
+            [
+                -4,
+                -3
+            ],
+            [
+                4,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_078",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_079": {
+        "arguments": [
+            [
+                7,
+                2,
+                -1
+            ],
+            [
+                4,
+                5,
+                2
+            ],
+            [
+                6,
+                7
+            ],
+            [
+                -3,
+                4
+            ],
+            [
+                4,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_079",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_080": {
+        "arguments": [
+            [
+                4,
+                -1,
+                -7
+            ],
+            [
+                -3,
+                -5,
+                -1
+            ],
+            [
+                2,
+                6,
+                7
+            ],
+            [
+                -1,
+                -3
+            ],
+            [
+                -6,
+                3
+            ],
+            [
+                6,
+                -5,
+                7
+            ],
+            [
+                3,
+                -7,
+                2
+            ]
+        ],
+        "tau_name": "tau_alpha_080",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_081": {
+        "arguments": [
+            [
+                7,
+                4,
+                -2
+            ],
+            [
+                -5,
+                -2
+            ],
+            [
+                1,
+                3,
+                4
+            ],
+            [
+                -4,
+                -6,
+                7
+            ],
+            [
+                7,
+                2,
+                -3
+            ],
+            [
+                -7,
+                1
+            ],
+            [
+                3,
+                6,
+                -4
+            ],
+            [
+                -2,
+                3,
+                -6
+            ]
+        ],
+        "tau_name": "tau_alpha_081",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_082": {
+        "arguments": [
+            [
+                -2,
+                3,
+                -4
+            ],
+            [
+                -5,
+                -7,
+                3
+            ],
+            [
+                1,
+                5
+            ],
+            [
+                -2,
+                -4,
+                -5
+            ],
+            [
+                -6,
+                -7
+            ],
+            [
+                6,
+                -4,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_082",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_083": {
+        "arguments": [
+            [
+                1,
+                7,
+                3
+            ],
+            [
+                -6,
+                -5,
+                -3
+            ],
+            [
+                4,
+                2,
+                3
+            ],
+            [
+                -2,
+                3,
+                4
+            ],
+            [
+                -2,
+                -7
+            ]
+        ],
+        "tau_name": "tau_alpha_083",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_084": {
+        "arguments": [
+            [
+                -4,
+                5
+            ],
+            [
+                -2,
+                -5
+            ],
+            [
+                -6,
+                7,
+                -2
+            ],
+            [
+                -3,
+                5
+            ],
+            [
+                -2,
+                1,
+                7
+            ],
+            [
+                3,
+                -1
+            ],
+            [
+                7,
+                -2
+            ]
+        ],
+        "tau_name": "tau_alpha_084",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_085": {
+        "arguments": [
+            [
+                -6,
+                -7
+            ],
+            [
+                5,
+                1,
+                -7
+            ],
+            [
+                -4,
+                -2,
+                1
+            ],
+            [
+                -3,
+                -2,
+                -6
+            ],
+            [
+                -7,
+                3,
+                -5
+            ],
+            [
+                -3,
+                -4
+            ],
+            [
+                2,
+                4,
+                -7
+            ]
+        ],
+        "tau_name": "tau_alpha_085",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_086": {
+        "arguments": [
+            [
+                4,
+                1,
+                3
+            ],
+            [
+                -7,
+                -5,
+                3
+            ],
+            [
+                -2,
+                6,
+                -1
+            ],
+            [
+                -4,
+                -6,
+                -1
+            ],
+            [
+                -5,
+                -2,
+                -1
+            ],
+            [
+                2,
+                -3
+            ],
+            [
+                -5,
+                -4,
+                7
+            ],
+            [
+                7,
+                1,
+                -2
+            ]
+        ],
+        "tau_name": "tau_alpha_086",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_087": {
+        "arguments": [
+            [
+                3,
+                7,
+                5
+            ],
+            [
+                6,
+                1,
+                3
+            ],
+            [
+                4,
+                2,
+                7
+            ],
+            [
+                3,
+                -7,
+                -2
+            ],
+            [
+                5,
+                2,
+                4
+            ],
+            [
+                -6,
+                -3,
+                -5
+            ]
+        ],
+        "tau_name": "tau_alpha_087",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_088": {
+        "arguments": [
+            [
+                4,
+                -1,
+                5
+            ],
+            [
+                -3,
+                -7,
+                1
+            ],
+            [
+                6,
+                2,
+                -3
+            ],
+            [
+                -3,
+                6,
+                1
+            ],
+            [
+                -5,
+                3,
+                7
+            ],
+            [
+                4,
+                7
+            ],
+            [
+                -2,
+                3,
+                -5
+            ]
+        ],
+        "tau_name": "tau_alpha_088",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_089": {
+        "arguments": [
+            [
+                -6,
+                -7
+            ],
+            [
+                -1,
+                -7
+            ],
+            [
+                4,
+                -7
+            ],
+            [
+                5,
+                3,
+                -4
+            ],
+            [
+                3,
+                -6,
+                -4
+            ],
+            [
+                -7,
+                6,
+                -1
+            ],
+            [
+                -7,
+                2,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_089",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_090": {
+        "arguments": [
+            [
+                4,
+                5,
+                2
+            ],
+            [
+                -3,
+                1,
+                -4
+            ],
+            [
+                -7,
+                6,
+                3
+            ],
+            [
+                -6,
+                3
+            ],
+            [
+                5,
+                -2,
+                3
+            ],
+            [
+                4,
+                3,
+                -6
+            ],
+            [
+                6,
+                7,
+                2
+            ],
+            [
+                -5,
+                6,
+                -7
+            ]
+        ],
+        "tau_name": "tau_alpha_090",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_091": {
+        "arguments": [
+            [
+                5,
+                -2,
+                -3
+            ],
+            [
+                -7,
+                -1,
+                -5
+            ],
+            [
+                6,
+                -4,
+                3
+            ],
+            [
+                4,
+                -7,
+                6
+            ],
+            [
+                -1,
+                -5,
+                4
+            ],
+            [
+                6,
+                -7,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_091",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_092": {
+        "arguments": [
+            [
+                5,
+                -6,
+                2
+            ],
+            [
+                3,
+                -4,
+                -6
+            ],
+            [
+                -1,
+                7,
+                -2
+            ],
+            [
+                7,
+                5,
+                4
+            ],
+            [
+                -6,
+                3,
+                -1
+            ],
+            [
+                2,
+                -4,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_092",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_093": {
+        "arguments": [
+            [
+                -3,
+                4,
+                2
+            ],
+            [
+                -6,
+                -1,
+                -3
+            ],
+            [
+                -5,
+                7,
+                2
+            ],
+            [
+                5,
+                -3,
+                -7
+            ],
+            [
+                -5,
+                -2,
+                7
+            ],
+            [
+                -5,
+                -1,
+                -6
+            ],
+            [
+                -3,
+                -5,
+                -4
+            ]
+        ],
+        "tau_name": "tau_alpha_093",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_094": {
+        "arguments": [
+            [
+                5,
+                1,
+                -4
+            ],
+            [
+                6,
+                7,
+                -4
+            ],
+            [
+                -2,
+                3,
+                6
+            ],
+            [
+                -5,
+                -3,
+                4
+            ],
+            [
+                -6,
+                1,
+                -3
+            ],
+            [
+                7,
+                4,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_094",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_095": {
+        "arguments": [
+            [
+                4,
+                6,
+                5
+            ],
+            [
+                -7,
+                2,
+                -5
+            ],
+            [
+                -3,
+                1,
+                -4
+            ],
+            [
+                -7,
+                5,
+                -4
+            ],
+            [
+                7,
+                -3,
+                4
+            ],
+            [
+                7,
+                2,
+                1
+            ],
+            [
+                2,
+                3,
+                -4
+            ]
+        ],
+        "tau_name": "tau_alpha_095",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_096": {
+        "arguments": [
+            [
+                3,
+                -2,
+                5
+            ],
+            [
+                -4,
+                -6,
+                -2
+            ],
+            [
+                7,
+                -1,
+                5
+            ],
+            [
+                -7,
+                -3,
+                -4
+            ],
+            [
+                4,
+                -5,
+                6
+            ],
+            [
+                -1,
+                -7,
+                6
+            ],
+            [
+                2,
+                -3,
+                7
+            ],
+            [
+                6,
+                -7,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_096",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_097": {
+        "arguments": [
+            [
+                -2,
+                -5,
+                -4
+            ],
+            [
+                -6,
+                1,
+                -4
+            ],
+            [
+                -7,
+                3,
+                -6
+            ],
+            [
+                -5,
+                2,
+                3
+            ],
+            [
+                3,
+                5,
+                -1
+            ],
+            [
+                -1,
+                6,
+                2
+            ],
+            [
+                -2,
+                -1,
+                -5
+            ]
+        ],
+        "tau_name": "tau_alpha_097",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_098": {
+        "arguments": [
+            [
+                -2,
+                -4,
+                -5
+            ],
+            [
+                6,
+                3,
+                5
+            ],
+            [
+                1,
+                7,
+                -5
+            ],
+            [
+                -3,
+                2,
+                -6
+            ],
+            [
+                -7,
+                -2,
+                4
+            ],
+            [
+                -3,
+                7,
+                4
+            ],
+            [
+                4,
+                3,
+                2
+            ],
+            [
+                -1,
+                -3,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_098",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_099": {
+        "arguments": [
+            [
+                5,
+                6,
+                -4
+            ],
+            [
+                2,
+                1,
+                -4
+            ],
+            [
+                -3,
+                7,
+                -2
+            ],
+            [
+                7,
+                2,
+                -6
+            ],
+            [
+                3,
+                7,
+                2
+            ],
+            [
+                1,
+                -3,
+                2
+            ],
+            [
+                -2,
+                5,
+                -6
+            ],
+            [
+                -4,
+                7,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_099",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_100": {
+        "arguments": [
+            [
+                -6,
+                -7,
+                -1
+            ],
+            [
+                2,
+                -3,
+                7
+            ],
+            [
+                -4,
+                -5,
+                -6
+            ],
+            [
+                2,
+                -7,
+                4
+            ],
+            [
+                1,
+                -4,
+                -7
+            ],
+            [
+                -1,
+                7,
+                4
+            ],
+            [
+                7,
+                2,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_100",
+        "n_unnegated_sentence_pool": 7,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_101": {
+        "arguments": [
+            [
+                1,
+                3
+            ],
+            [
+                7,
+                -3
+            ],
+            [
+                -5,
+                3
+            ],
+            [
+                4,
+                3
+            ],
+            [
+                8,
+                3
+            ],
+            [
+                -6,
+                4
+            ],
+            [
+                -2,
+                8
+            ],
+            [
+                1,
+                5
+            ]
+        ],
+        "tau_name": "tau_alpha_101",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_102": {
+        "arguments": [
+            [
+                -1,
+                -8
+            ],
+            [
+                6,
+                1
+            ],
+            [
+                -3,
+                8
+            ],
+            [
+                7,
+                -6
+            ],
+            [
+                5,
+                -8
+            ],
+            [
+                4,
+                -6
+            ],
+            [
+                -2,
+                -8
+            ],
+            [
+                -7,
+                -1
+            ],
+            [
+                -8,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_102",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_103": {
+        "arguments": [
+            [
+                8,
+                6
+            ],
+            [
+                4,
+                8
+            ],
+            [
+                1,
+                -6
+            ],
+            [
+                2,
+                -6
+            ],
+            [
+                7,
+                6
+            ],
+            [
+                -5,
+                7
+            ],
+            [
+                -3,
+                -8
+            ]
+        ],
+        "tau_name": "tau_alpha_103",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_104": {
+        "arguments": [
+            [
+                7,
+                -4
+            ],
+            [
+                8,
+                -7
+            ],
+            [
+                -2,
+                -7
+            ],
+            [
+                6,
+                2
+            ],
+            [
+                1,
+                2
+            ],
+            [
+                5,
+                2
+            ],
+            [
+                -3,
+                7
+            ],
+            [
+                -8,
+                -4
+            ],
+            [
+                -5,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_104",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_105": {
+        "arguments": [
+            [
+                5,
+                -7
+            ],
+            [
+                6,
+                -5
+            ],
+            [
+                4,
+                7
+            ],
+            [
+                3,
+                -6
+            ],
+            [
+                -1,
+                6
+            ],
+            [
+                8,
+                -6
+            ],
+            [
+                2,
+                -4
+            ],
+            [
+                3,
+                2
+            ],
+            [
+                1,
+                -8
+            ]
+        ],
+        "tau_name": "tau_alpha_105",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_106": {
+        "arguments": [
+            [
+                7,
+                -3
+            ],
+            [
+                -2,
+                7
+            ],
+            [
+                4,
+                2
+            ],
+            [
+                -8,
+                -2
+            ],
+            [
+                6,
+                -4
+            ],
+            [
+                -1,
+                -3
+            ],
+            [
+                5,
+                -4
+            ]
+        ],
+        "tau_name": "tau_alpha_106",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_107": {
+        "arguments": [
+            [
+                8,
+                -3
+            ],
+            [
+                -4,
+                -8
+            ],
+            [
+                -2,
+                -4
+            ],
+            [
+                -7,
+                8
+            ],
+            [
+                1,
+                3
+            ],
+            [
+                -5,
+                -3
+            ],
+            [
+                -6,
+                -3
+            ]
+        ],
+        "tau_name": "tau_alpha_107",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_108": {
+        "arguments": [
+            [
+                4,
+                -7
+            ],
+            [
+                -8,
+                7
+            ],
+            [
+                -3,
+                7
+            ],
+            [
+                1,
+                -4
+            ],
+            [
+                -6,
+                7
+            ],
+            [
+                2,
+                1
+            ],
+            [
+                5,
+                -4
+            ]
+        ],
+        "tau_name": "tau_alpha_108",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_109": {
+        "arguments": [
+            [
+                -6,
+                -4
+            ],
+            [
+                2,
+                -6
+            ],
+            [
+                8,
+                4
+            ],
+            [
+                7,
+                4
+            ],
+            [
+                5,
+                -4
+            ],
+            [
+                -3,
+                -5
+            ],
+            [
+                1,
+                5
+            ],
+            [
+                -4,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_109",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_110": {
+        "arguments": [
+            [
+                7,
+                -1
+            ],
+            [
+                2,
+                -7
+            ],
+            [
+                -4,
+                7
+            ],
+            [
+                -5,
+                4
+            ],
+            [
+                -8,
+                -1
+            ],
+            [
+                6,
+                7
+            ],
+            [
+                3,
+                -6
+            ],
+            [
+                8,
+                3
+            ],
+            [
+                8,
+                4
+            ]
+        ],
+        "tau_name": "tau_alpha_110",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_111": {
+        "arguments": [
+            [
+                -2,
+                8
+            ],
+            [
+                -4,
+                2
+            ],
+            [
+                1,
+                4
+            ],
+            [
+                6,
+                -8
+            ],
+            [
+                -7,
+                -5,
+                -8
+            ],
+            [
+                3,
+                8
+            ]
+        ],
+        "tau_name": "tau_alpha_111",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_112": {
+        "arguments": [
+            [
+                7,
+                -3
+            ],
+            [
+                -1,
+                7
+            ],
+            [
+                -5,
+                -1
+            ],
+            [
+                4,
+                -2,
+                7
+            ],
+            [
+                -6,
+                -3
+            ],
+            [
+                5,
+                8,
+                4
+            ],
+            [
+                -5,
+                -8
+            ]
+        ],
+        "tau_name": "tau_alpha_112",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_113": {
+        "arguments": [
+            [
+                6,
+                3,
+                5
+            ],
+            [
+                7,
+                -1,
+                3
+            ],
+            [
+                -4,
+                7
+            ],
+            [
+                2,
+                3
+            ],
+            [
+                1,
+                -5,
+                -2
+            ],
+            [
+                -8,
+                5
+            ],
+            [
+                7,
+                3,
+                -8
+            ],
+            [
+                8,
+                -2
+            ],
+            [
+                -2,
+                -4,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_113",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_114": {
+        "arguments": [
+            [
+                -8,
+                3
+            ],
+            [
+                7,
+                3
+            ],
+            [
+                -2,
+                3
+            ],
+            [
+                -1,
+                -8
+            ],
+            [
+                -5,
+                -6,
+                -2
+            ],
+            [
+                7,
+                -4,
+                2
+            ]
+        ],
+        "tau_name": "tau_alpha_114",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_115": {
+        "arguments": [
+            [
+                -1,
+                4,
+                -5
+            ],
+            [
+                6,
+                -5
+            ],
+            [
+                8,
+                4
+            ],
+            [
+                3,
+                -1
+            ],
+            [
+                2,
+                8
+            ],
+            [
+                -7,
+                -3
+            ],
+            [
+                -5,
+                7
+            ]
+        ],
+        "tau_name": "tau_alpha_115",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_116": {
+        "arguments": [
+            [
+                2,
+                -6
+            ],
+            [
+                1,
+                -6
+            ],
+            [
+                -7,
+                2
+            ],
+            [
+                -3,
+                2
+            ],
+            [
+                -4,
+                -5,
+                7
+            ],
+            [
+                8,
+                -7
+            ],
+            [
+                -3,
+                8
+            ],
+            [
+                -1,
+                4
+            ]
+        ],
+        "tau_name": "tau_alpha_116",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_117": {
+        "arguments": [
+            [
+                -6,
+                -2
+            ],
+            [
+                -4,
+                -2
+            ],
+            [
+                -5,
+                -4
+            ],
+            [
+                -3,
+                -8,
+                6
+            ],
+            [
+                -1,
+                -5
+            ],
+            [
+                -7,
+                1
+            ],
+            [
+                -4,
+                -5,
+                -1
+            ],
+            [
+                -3,
+                1
+            ]
+        ],
+        "tau_name": "tau_alpha_117",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_118": {
+        "arguments": [
+            [
+                -8,
+                -1,
+                6
+            ],
+            [
+                7,
+                -3,
+                -8
+            ],
+            [
+                4,
+                -5,
+                1
+            ],
+            [
+                2,
+                -5
+            ],
+            [
+                7,
+                5
+            ],
+            [
+                -7,
+                1,
+                -6
+            ]
+        ],
+        "tau_name": "tau_alpha_118",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_119": {
+        "arguments": [
+            [
+                5,
+                8
+            ],
+            [
+                4,
+                8
+            ],
+            [
+                2,
+                4
+            ],
+            [
+                7,
+                5
+            ],
+            [
+                -3,
+                -1,
+                7
+            ],
+            [
+                -6,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_119",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_120": {
+        "arguments": [
+            [
+                -5,
+                4
+            ],
+            [
+                -7,
+                -5
+            ],
+            [
+                1,
+                5
+            ],
+            [
+                6,
+                7
+            ],
+            [
+                2,
+                -5
+            ],
+            [
+                -8,
+                2
+            ],
+            [
+                -3,
+                -7
+            ]
+        ],
+        "tau_name": "tau_alpha_120",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_121": {
+        "arguments": [
+            [
+                -5,
+                -6,
+                -1
+            ],
+            [
+                -3,
+                1
+            ],
+            [
+                -2,
+                8,
+                3
+            ],
+            [
+                4,
+                7,
+                -3
+            ],
+            [
+                -3,
+                7
+            ],
+            [
+                1,
+                5
+            ],
+            [
+                -1,
+                5
+            ]
+        ],
+        "tau_name": "tau_alpha_121",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_122": {
+        "arguments": [
+            [
+                -7,
+                -2,
+                4
+            ],
+            [
+                -3,
+                5,
+                -4
+            ],
+            [
+                -1,
+                -6,
+                3
+            ],
+            [
+                1,
+                -4,
+                -2
+            ],
+            [
+                -8,
+                5
+            ],
+            [
+                4,
+                -6,
+                -1
+            ],
+            [
+                7,
+                4
+            ],
+            [
+                -5,
+                -8
+            ]
+        ],
+        "tau_name": "tau_alpha_122",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_123": {
+        "arguments": [
+            [
+                8,
+                -7
+            ],
+            [
+                5,
+                3,
+                7
+            ],
+            [
+                -1,
+                -5
+            ],
+            [
+                4,
+                5
+            ],
+            [
+                -6,
+                8
+            ],
+            [
+                2,
+                5
+            ],
+            [
+                -3,
+                1,
+                -7
+            ]
+        ],
+        "tau_name": "tau_alpha_123",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_124": {
+        "arguments": [
+            [
+                -3,
+                4
+            ],
+            [
+                -5,
+                -4
+            ],
+            [
+                2,
+                6,
+                -4
+            ],
+            [
+                8,
+                6
+            ],
+            [
+                -7,
+                1,
+                -2
+            ],
+            [
+                -3,
+                -8
+            ],
+            [
+                5,
+                2
+            ],
+            [
+                8,
+                7
+            ],
+            [
+                2,
+                -8
+            ]
+        ],
+        "tau_name": "tau_alpha_124",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_125": {
+        "arguments": [
+            [
+                8,
+                -5
+            ],
+            [
+                -4,
+                -7,
+                -8
+            ],
+            [
+                1,
+                3,
+                4
+            ],
+            [
+                6,
+                -4
+            ],
+            [
+                -8,
+                -5,
+                -6
+            ],
+            [
+                -2,
+                8
+            ]
+        ],
+        "tau_name": "tau_alpha_125",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_126": {
+        "arguments": [
+            [
+                3,
+                4,
+                -7
+            ],
+            [
+                -6,
+                -8,
+                4
+            ],
+            [
+                -1,
+                -5,
+                6
+            ],
+            [
+                2,
+                -6
+            ],
+            [
+                6,
+                -7,
+                3
+            ],
+            [
+                3,
+                -2,
+                1
+            ],
+            [
+                -8,
+                -5,
+                2
+            ],
+            [
+                6,
+                -5,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_126",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_127": {
+        "arguments": [
+            [
+                1,
+                -5,
+                -6
+            ],
+            [
+                -3,
+                -5
+            ],
+            [
+                -8,
+                4,
+                6
+            ],
+            [
+                -7,
+                6
+            ],
+            [
+                2,
+                -6
+            ],
+            [
+                1,
+                -2
+            ],
+            [
+                7,
+                -5,
+                4
+            ],
+            [
+                -3,
+                1,
+                -7
+            ],
+            [
+                -1,
+                8
+            ]
+        ],
+        "tau_name": "tau_alpha_127",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_128": {
+        "arguments": [
+            [
+                -8,
+                7
+            ],
+            [
+                -6,
+                -1,
+                -7
+            ],
+            [
+                -4,
+                -2,
+                -8
+            ],
+            [
+                3,
+                -5,
+                -4
+            ],
+            [
+                1,
+                7
+            ],
+            [
+                -5,
+                1
+            ]
+        ],
+        "tau_name": "tau_alpha_128",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_129": {
+        "arguments": [
+            [
+                1,
+                -3,
+                -2
+            ],
+            [
+                -7,
+                1
+            ],
+            [
+                -5,
+                -7
+            ],
+            [
+                -8,
+                -2
+            ],
+            [
+                -4,
+                -5
+            ],
+            [
+                6,
+                -8
+            ],
+            [
+                3,
+                -7
+            ],
+            [
+                -1,
+                -8
+            ]
+        ],
+        "tau_name": "tau_alpha_129",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_130": {
+        "arguments": [
+            [
+                3,
+                -2,
+                -1
+            ],
+            [
+                -4,
+                3
+            ],
+            [
+                -5,
+                7,
+                -1
+            ],
+            [
+                6,
+                -7
+            ],
+            [
+                8,
+                -5
+            ],
+            [
+                7,
+                -4
+            ],
+            [
+                -4,
+                6,
+                -8
+            ],
+            [
+                1,
+                7
+            ]
+        ],
+        "tau_name": "tau_alpha_130",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_131": {
+        "arguments": [
+            [
+                8,
+                5
+            ],
+            [
+                -4,
+                -7,
+                -5
+            ],
+            [
+                6,
+                2,
+                4
+            ],
+            [
+                3,
+                1,
+                -7
+            ],
+            [
+                -7,
+                5,
+                3
+            ],
+            [
+                -2,
+                8,
+                -6
+            ],
+            [
+                -6,
+                -5,
+                2
+            ],
+            [
+                5,
+                6,
+                2
+            ],
+            [
+                -5,
+                -4,
+                2
+            ]
+        ],
+        "tau_name": "tau_alpha_131",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_132": {
+        "arguments": [
+            [
+                8,
+                5,
+                -3
+            ],
+            [
+                1,
+                5
+            ],
+            [
+                -2,
+                -6,
+                -5
+            ],
+            [
+                7,
+                -4,
+                -1
+            ],
+            [
+                8,
+                4,
+                -7
+            ],
+            [
+                7,
+                1
+            ],
+            [
+                7,
+                -3,
+                8
+            ],
+            [
+                4,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_132",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_133": {
+        "arguments": [
+            [
+                -5,
+                -3,
+                2
+            ],
+            [
+                6,
+                7,
+                5
+            ],
+            [
+                -1,
+                -8,
+                -5
+            ],
+            [
+                5,
+                -6,
+                -3
+            ],
+            [
+                -8,
+                -6,
+                -3
+            ],
+            [
+                4,
+                1
+            ],
+            [
+                -2,
+                3
+            ],
+            [
+                -3,
+                -8,
+                -6
+            ]
+        ],
+        "tau_name": "tau_alpha_133",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_134": {
+        "arguments": [
+            [
+                3,
+                -4
+            ],
+            [
+                -1,
+                -3
+            ],
+            [
+                5,
+                7,
+                -3
+            ],
+            [
+                6,
+                7
+            ],
+            [
+                -8,
+                6
+            ],
+            [
+                -2,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_134",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_135": {
+        "arguments": [
+            [
+                4,
+                -7
+            ],
+            [
+                -1,
+                6,
+                4
+            ],
+            [
+                -3,
+                2,
+                7
+            ],
+            [
+                8,
+                5,
+                -2
+            ],
+            [
+                8,
+                6,
+                5
+            ],
+            [
+                -5,
+                2
+            ]
+        ],
+        "tau_name": "tau_alpha_135",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_136": {
+        "arguments": [
+            [
+                2,
+                -7
+            ],
+            [
+                8,
+                3,
+                7
+            ],
+            [
+                1,
+                -7
+            ],
+            [
+                5,
+                -4,
+                -8
+            ],
+            [
+                -6,
+                5,
+                8
+            ],
+            [
+                5,
+                2,
+                7
+            ],
+            [
+                -1,
+                -5,
+                -4
+            ],
+            [
+                -7,
+                -1,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_136",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_137": {
+        "arguments": [
+            [
+                -3,
+                7,
+                -6
+            ],
+            [
+                2,
+                -8,
+                3
+            ],
+            [
+                5,
+                1,
+                -8
+            ],
+            [
+                4,
+                8
+            ],
+            [
+                5,
+                -8
+            ],
+            [
+                5,
+                6
+            ],
+            [
+                -8,
+                -1,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_137",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_138": {
+        "arguments": [
+            [
+                -6,
+                -2,
+                7
+            ],
+            [
+                -3,
+                -6
+            ],
+            [
+                8,
+                -1,
+                3
+            ],
+            [
+                4,
+                5,
+                -2
+            ],
+            [
+                7,
+                2,
+                -3
+            ],
+            [
+                3,
+                -4,
+                -2
+            ]
+        ],
+        "tau_name": "tau_alpha_138",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_139": {
+        "arguments": [
+            [
+                -1,
+                8,
+                -5
+            ],
+            [
+                -4,
+                3,
+                -1
+            ],
+            [
+                -6,
+                -2,
+                1
+            ],
+            [
+                -3,
+                7,
+                5
+            ],
+            [
+                -5,
+                2,
+                6
+            ],
+            [
+                3,
+                -6,
+                -2
+            ],
+            [
+                6,
+                4,
+                -5
+            ]
+        ],
+        "tau_name": "tau_alpha_139",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_140": {
+        "arguments": [
+            [
+                5,
+                2,
+                -6
+            ],
+            [
+                4,
+                -2
+            ],
+            [
+                -1,
+                7,
+                5
+            ],
+            [
+                3,
+                -8,
+                7
+            ],
+            [
+                2,
+                6,
+                -3
+            ],
+            [
+                7,
+                -5,
+                -3
+            ],
+            [
+                1,
+                -5,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_140",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_141": {
+        "arguments": [
+            [
+                4,
+                1,
+                -8
+            ],
+            [
+                5,
+                3,
+                -8
+            ],
+            [
+                7,
+                2,
+                3
+            ],
+            [
+                5,
+                6,
+                4
+            ],
+            [
+                -7,
+                -3,
+                6
+            ],
+            [
+                5,
+                -8,
+                7
+            ],
+            [
+                -7,
+                8,
+                -3
+            ]
+        ],
+        "tau_name": "tau_alpha_141",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_142": {
+        "arguments": [
+            [
+                -3,
+                -4,
+                -8
+            ],
+            [
+                -7,
+                -2,
+                -8
+            ],
+            [
+                5,
+                1,
+                7
+            ],
+            [
+                7,
+                -6,
+                5
+            ],
+            [
+                -7,
+                -1,
+                8
+            ],
+            [
+                3,
+                7,
+                4
+            ],
+            [
+                2,
+                5,
+                -4
+            ]
+        ],
+        "tau_name": "tau_alpha_142",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_143": {
+        "arguments": [
+            [
+                3,
+                -2,
+                -1
+            ],
+            [
+                6,
+                4,
+                2
+            ],
+            [
+                -5,
+                8,
+                2
+            ],
+            [
+                7,
+                -1,
+                -5
+            ],
+            [
+                5,
+                4,
+                2
+            ],
+            [
+                -7,
+                -1,
+                -5
+            ],
+            [
+                -5,
+                6,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_143",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_144": {
+        "arguments": [
+            [
+                -1,
+                -2,
+                5
+            ],
+            [
+                7,
+                4,
+                1
+            ],
+            [
+                3,
+                -6,
+                -7
+            ],
+            [
+                1,
+                -5,
+                -2
+            ],
+            [
+                -3,
+                -1,
+                5
+            ],
+            [
+                7,
+                -3,
+                -5
+            ],
+            [
+                -6,
+                1,
+                -4
+            ],
+            [
+                1,
+                -7,
+                -3
+            ],
+            [
+                5,
+                8,
+                -2
+            ]
+        ],
+        "tau_name": "tau_alpha_144",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_145": {
+        "arguments": [
+            [
+                -3,
+                -6,
+                -8
+            ],
+            [
+                5,
+                2,
+                8
+            ],
+            [
+                -7,
+                -4,
+                8
+            ],
+            [
+                -1,
+                -5,
+                3
+            ],
+            [
+                1,
+                -4,
+                8
+            ],
+            [
+                -7,
+                5,
+                -3
+            ],
+            [
+                2,
+                -5,
+                -8
+            ]
+        ],
+        "tau_name": "tau_alpha_145",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_146": {
+        "arguments": [
+            [
+                -6,
+                4,
+                5
+            ],
+            [
+                -1,
+                -2,
+                6
+            ],
+            [
+                7,
+                -8,
+                -5
+            ],
+            [
+                1,
+                4,
+                5
+            ],
+            [
+                7,
+                -4,
+                1
+            ],
+            [
+                -8,
+                -1,
+                -5
+            ],
+            [
+                5,
+                3,
+                2
+            ],
+            [
+                7,
+                -2,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_146",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_147": {
+        "arguments": [
+            [
+                -4,
+                5,
+                -7
+            ],
+            [
+                -6,
+                -1,
+                -7
+            ],
+            [
+                8,
+                3,
+                6
+            ],
+            [
+                -4,
+                -6,
+                8
+            ],
+            [
+                3,
+                1,
+                4
+            ],
+            [
+                3,
+                -4,
+                -7
+            ],
+            [
+                -3,
+                5,
+                -6
+            ],
+            [
+                5,
+                -2,
+                6
+            ],
+            [
+                -6,
+                1,
+                -7
+            ]
+        ],
+        "tau_name": "tau_alpha_147",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_148": {
+        "arguments": [
+            [
+                2,
+                8,
+                1
+            ],
+            [
+                -3,
+                6,
+                1
+            ],
+            [
+                -7,
+                4,
+                1
+            ],
+            [
+                -8,
+                -2,
+                -4
+            ],
+            [
+                4,
+                5,
+                6
+            ],
+            [
+                5,
+                -7,
+                -8
+            ],
+            [
+                2,
+                -5,
+                3
+            ],
+            [
+                -1,
+                -7,
+                3
+            ],
+            [
+                8,
+                -5,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_148",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_149": {
+        "arguments": [
+            [
+                -4,
+                6,
+                2
+            ],
+            [
+                -5,
+                1,
+                6
+            ],
+            [
+                8,
+                -3,
+                6
+            ],
+            [
+                -7,
+                4,
+                -6
+            ],
+            [
+                -5,
+                -6,
+                8
+            ],
+            [
+                5,
+                2,
+                -4
+            ],
+            [
+                4,
+                8,
+                -6
+            ],
+            [
+                2,
+                7,
+                6
+            ],
+            [
+                -1,
+                -4,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_149",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_150": {
+        "arguments": [
+            [
+                -8,
+                4,
+                5
+            ],
+            [
+                -2,
+                3,
+                -8
+            ],
+            [
+                -6,
+                1,
+                5
+            ],
+            [
+                8,
+                7,
+                5
+            ],
+            [
+                8,
+                6,
+                -5
+            ],
+            [
+                4,
+                -5,
+                2
+            ],
+            [
+                3,
+                6,
+                -2
+            ],
+            [
+                4,
+                -7,
+                1
+            ]
+        ],
+        "tau_name": "tau_alpha_150",
+        "n_unnegated_sentence_pool": 8,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_151": {
+        "arguments": [
+            [
+                2,
+                4
+            ],
+            [
+                -5,
+                2
+            ],
+            [
+                7,
+                -5
+            ],
+            [
+                6,
+                4
+            ],
+            [
+                9,
+                5
+            ],
+            [
+                8,
+                -4
+            ],
+            [
+                -1,
+                4
+            ],
+            [
+                -3,
+                -2
+            ]
+        ],
+        "tau_name": "tau_alpha_151",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_152": {
+        "arguments": [
+            [
+                2,
+                -5
+            ],
+            [
+                -9,
+                5
+            ],
+            [
+                3,
+                -5
+            ],
+            [
+                -4,
+                -5
+            ],
+            [
+                -7,
+                -2
+            ],
+            [
+                -8,
+                2
+            ],
+            [
+                -1,
+                -8
+            ],
+            [
+                -6,
+                2
+            ]
+        ],
+        "tau_name": "tau_alpha_152",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_153": {
+        "arguments": [
+            [
+                3,
+                1
+            ],
+            [
+                2,
+                -1
+            ],
+            [
+                7,
+                -1
+            ],
+            [
+                -6,
+                7
+            ],
+            [
+                -5,
+                1
+            ],
+            [
+                -4,
+                -3
+            ],
+            [
+                -8,
+                4
+            ],
+            [
+                9,
+                4
+            ]
+        ],
+        "tau_name": "tau_alpha_153",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_154": {
+        "arguments": [
+            [
+                4,
+                -6
+            ],
+            [
+                7,
+                -6
+            ],
+            [
+                3,
+                -6
+            ],
+            [
+                9,
+                -7
+            ],
+            [
+                8,
+                9
+            ],
+            [
+                5,
+                7
+            ],
+            [
+                1,
+                -6
+            ],
+            [
+                -2,
+                3
+            ],
+            [
+                7,
+                5
+            ]
+        ],
+        "tau_name": "tau_alpha_154",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_155": {
+        "arguments": [
+            [
+                -4,
+                -7
+            ],
+            [
+                1,
+                4
+            ],
+            [
+                -6,
+                4
+            ],
+            [
+                8,
+                6
+            ],
+            [
+                -5,
+                -4
+            ],
+            [
+                2,
+                -6
+            ],
+            [
+                -9,
+                -4
+            ],
+            [
+                3,
+                5
+            ],
+            [
+                -8,
+                -1
+            ],
+            [
+                4,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_155",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_156": {
+        "arguments": [
+            [
+                6,
+                8
+            ],
+            [
+                4,
+                8
+            ],
+            [
+                -7,
+                8
+            ],
+            [
+                -1,
+                -7
+            ],
+            [
+                -3,
+                6
+            ],
+            [
+                -2,
+                -6
+            ],
+            [
+                9,
+                -7
+            ],
+            [
+                5,
+                -6
+            ]
+        ],
+        "tau_name": "tau_alpha_156",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_157": {
+        "arguments": [
+            [
+                -9,
+                7
+            ],
+            [
+                2,
+                9
+            ],
+            [
+                1,
+                2
+            ],
+            [
+                4,
+                -1
+            ],
+            [
+                3,
+                -9
+            ],
+            [
+                -6,
+                -1
+            ],
+            [
+                8,
+                7
+            ],
+            [
+                -5,
+                3
+            ],
+            [
+                -5,
+                9
+            ],
+            [
+                -7,
+                -5
+            ]
+        ],
+        "tau_name": "tau_alpha_157",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_158": {
+        "arguments": [
+            [
+                8,
+                1
+            ],
+            [
+                -2,
+                1
+            ],
+            [
+                5,
+                -2
+            ],
+            [
+                3,
+                -2
+            ],
+            [
+                7,
+                3
+            ],
+            [
+                -9,
+                2
+            ],
+            [
+                4,
+                8
+            ],
+            [
+                6,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_158",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_159": {
+        "arguments": [
+            [
+                5,
+                9
+            ],
+            [
+                1,
+                5
+            ],
+            [
+                -3,
+                -9
+            ],
+            [
+                6,
+                -3
+            ],
+            [
+                -4,
+                -1
+            ],
+            [
+                2,
+                -3
+            ],
+            [
+                -8,
+                9
+            ],
+            [
+                -7,
+                -1
+            ],
+            [
+                -7,
+                8
+            ],
+            [
+                -7,
+                2
+            ]
+        ],
+        "tau_name": "tau_alpha_159",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_160": {
+        "arguments": [
+            [
+                -8,
+                3
+            ],
+            [
+                6,
+                -8
+            ],
+            [
+                -7,
+                3
+            ],
+            [
+                2,
+                -8
+            ],
+            [
+                -4,
+                -8
+            ],
+            [
+                -9,
+                4
+            ],
+            [
+                -1,
+                -9
+            ],
+            [
+                -5,
+                -4
+            ],
+            [
+                -5,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_160",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_161": {
+        "arguments": [
+            [
+                -3,
+                -2
+            ],
+            [
+                4,
+                -3
+            ],
+            [
+                9,
+                7,
+                2
+            ],
+            [
+                1,
+                -2
+            ],
+            [
+                -6,
+                4
+            ],
+            [
+                5,
+                8,
+                2
+            ],
+            [
+                -3,
+                9
+            ]
+        ],
+        "tau_name": "tau_alpha_161",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_162": {
+        "arguments": [
+            [
+                -7,
+                1
+            ],
+            [
+                -6,
+                -7
+            ],
+            [
+                8,
+                -2,
+                6
+            ],
+            [
+                4,
+                -6
+            ],
+            [
+                3,
+                -8
+            ],
+            [
+                -9,
+                2
+            ],
+            [
+                9,
+                -3,
+                -7
+            ],
+            [
+                5,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_162",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_163": {
+        "arguments": [
+            [
+                -5,
+                4
+            ],
+            [
+                -3,
+                5
+            ],
+            [
+                -6,
+                -5
+            ],
+            [
+                1,
+                6
+            ],
+            [
+                2,
+                6
+            ],
+            [
+                -8,
+                5
+            ],
+            [
+                -7,
+                5
+            ],
+            [
+                9,
+                -7
+            ]
+        ],
+        "tau_name": "tau_alpha_163",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_164": {
+        "arguments": [
+            [
+                5,
+                -1
+            ],
+            [
+                -7,
+                1
+            ],
+            [
+                -6,
+                -7
+            ],
+            [
+                4,
+                7
+            ],
+            [
+                2,
+                -8,
+                7
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                9,
+                -2
+            ],
+            [
+                6,
+                7
+            ],
+            [
+                6,
+                -4
+            ]
+        ],
+        "tau_name": "tau_alpha_164",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_165": {
+        "arguments": [
+            [
+                3,
+                2
+            ],
+            [
+                8,
+                -4,
+                3
+            ],
+            [
+                1,
+                -2
+            ],
+            [
+                -7,
+                4
+            ],
+            [
+                6,
+                -2
+            ],
+            [
+                -5,
+                -9,
+                1
+            ],
+            [
+                -5,
+                -8,
+                4
+            ],
+            [
+                -3,
+                -6
+            ],
+            [
+                1,
+                -8
+            ]
+        ],
+        "tau_name": "tau_alpha_165",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_166": {
+        "arguments": [
+            [
+                9,
+                -2,
+                -3
+            ],
+            [
+                8,
+                -3
+            ],
+            [
+                -7,
+                2
+            ],
+            [
+                6,
+                8
+            ],
+            [
+                5,
+                -8
+            ],
+            [
+                -4,
+                7
+            ],
+            [
+                1,
+                -8
+            ]
+        ],
+        "tau_name": "tau_alpha_166",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_167": {
+        "arguments": [
+            [
+                2,
+                7
+            ],
+            [
+                4,
+                -1,
+                7
+            ],
+            [
+                -9,
+                1
+            ],
+            [
+                -3,
+                -6,
+                2
+            ],
+            [
+                -8,
+                -4
+            ],
+            [
+                -5,
+                4
+            ],
+            [
+                -4,
+                -1
+            ]
+        ],
+        "tau_name": "tau_alpha_167",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_168": {
+        "arguments": [
+            [
+                -6,
+                -4
+            ],
+            [
+                5,
+                4
+            ],
+            [
+                8,
+                -4
+            ],
+            [
+                3,
+                8
+            ],
+            [
+                1,
+                6
+            ],
+            [
+                -7,
+                6
+            ],
+            [
+                2,
+                -5
+            ],
+            [
+                -9,
+                -7
+            ],
+            [
+                2,
+                6
+            ],
+            [
+                -8,
+                2
+            ]
+        ],
+        "tau_name": "tau_alpha_168",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_169": {
+        "arguments": [
+            [
+                8,
+                -9,
+                7
+            ],
+            [
+                5,
+                -7
+            ],
+            [
+                -6,
+                5
+            ],
+            [
+                -4,
+                8
+            ],
+            [
+                -3,
+                -6
+            ],
+            [
+                1,
+                -9
+            ],
+            [
+                2,
+                3
+            ],
+            [
+                -7,
+                -3
+            ]
+        ],
+        "tau_name": "tau_alpha_169",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_170": {
+        "arguments": [
+            [
+                8,
+                -1
+            ],
+            [
+                -4,
+                -8
+            ],
+            [
+                -9,
+                5,
+                8
+            ],
+            [
+                -3,
+                -1
+            ],
+            [
+                2,
+                -9
+            ],
+            [
+                6,
+                -7,
+                -8
+            ],
+            [
+                -8,
+                2,
+                5
+            ],
+            [
+                -8,
+                7
+            ],
+            [
+                -3,
+                -7
+            ]
+        ],
+        "tau_name": "tau_alpha_170",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_171": {
+        "arguments": [
+            [
+                3,
+                1
+            ],
+            [
+                -9,
+                -5,
+                3
+            ],
+            [
+                -6,
+                -5
+            ],
+            [
+                4,
+                6
+            ],
+            [
+                -2,
+                -6
+            ],
+            [
+                -8,
+                3
+            ],
+            [
+                -7,
+                6
+            ],
+            [
+                4,
+                -6
+            ]
+        ],
+        "tau_name": "tau_alpha_171",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_172": {
+        "arguments": [
+            [
+                6,
+                -7,
+                9
+            ],
+            [
+                -3,
+                7
+            ],
+            [
+                -2,
+                -5,
+                7
+            ],
+            [
+                -4,
+                7
+            ],
+            [
+                -8,
+                -1,
+                -4
+            ],
+            [
+                7,
+                -9,
+                6
+            ],
+            [
+                -6,
+                1,
+                9
+            ],
+            [
+                7,
+                4
+            ],
+            [
+                -1,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_172",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_173": {
+        "arguments": [
+            [
+                1,
+                -4
+            ],
+            [
+                -2,
+                1
+            ],
+            [
+                6,
+                -4
+            ],
+            [
+                3,
+                -6
+            ],
+            [
+                -7,
+                -6
+            ],
+            [
+                -8,
+                -6
+            ],
+            [
+                9,
+                -5,
+                -6
+            ],
+            [
+                -6,
+                4
+            ],
+            [
+                8,
+                2
+            ],
+            [
+                -4,
+                1
+            ]
+        ],
+        "tau_name": "tau_alpha_173",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_174": {
+        "arguments": [
+            [
+                -8,
+                4,
+                6
+            ],
+            [
+                1,
+                8
+            ],
+            [
+                5,
+                4
+            ],
+            [
+                -7,
+                -1
+            ],
+            [
+                3,
+                -2,
+                -1
+            ],
+            [
+                2,
+                7,
+                -1
+            ],
+            [
+                9,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_174",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_175": {
+        "arguments": [
+            [
+                4,
+                9,
+                1
+            ],
+            [
+                -8,
+                1
+            ],
+            [
+                -2,
+                8
+            ],
+            [
+                6,
+                -8
+            ],
+            [
+                -7,
+                3,
+                -8
+            ],
+            [
+                -6,
+                -7,
+                -4
+            ],
+            [
+                -8,
+                -9,
+                4
+            ],
+            [
+                7,
+                5,
+                -4
+            ],
+            [
+                -7,
+                4
+            ]
+        ],
+        "tau_name": "tau_alpha_175",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_176": {
+        "arguments": [
+            [
+                -5,
+                7,
+                -2
+            ],
+            [
+                -4,
+                -5
+            ],
+            [
+                -3,
+                -7
+            ],
+            [
+                9,
+                -6,
+                -7
+            ],
+            [
+                -1,
+                8,
+                4
+            ],
+            [
+                -1,
+                -2
+            ],
+            [
+                -7,
+                -2,
+                6
+            ],
+            [
+                4,
+                7,
+                9
+            ]
+        ],
+        "tau_name": "tau_alpha_176",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_177": {
+        "arguments": [
+            [
+                -9,
+                1
+            ],
+            [
+                7,
+                9
+            ],
+            [
+                4,
+                6,
+                1
+            ],
+            [
+                3,
+                2,
+                9
+            ],
+            [
+                5,
+                8,
+                -2
+            ],
+            [
+                -4,
+                -6,
+                2
+            ],
+            [
+                -1,
+                -2
+            ],
+            [
+                -6,
+                -3,
+                9
+            ],
+            [
+                6,
+                -7
+            ],
+            [
+                6,
+                9,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_177",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_178": {
+        "arguments": [
+            [
+                -3,
+                -9
+            ],
+            [
+                1,
+                3
+            ],
+            [
+                2,
+                3
+            ],
+            [
+                6,
+                -2
+            ],
+            [
+                4,
+                9
+            ],
+            [
+                -7,
+                1
+            ],
+            [
+                8,
+                -5,
+                2
+            ],
+            [
+                -9,
+                -8
+            ],
+            [
+                5,
+                4
+            ],
+            [
+                -2,
+                -8
+            ]
+        ],
+        "tau_name": "tau_alpha_178",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_179": {
+        "arguments": [
+            [
+                -8,
+                4
+            ],
+            [
+                3,
+                1,
+                8
+            ],
+            [
+                9,
+                2,
+                -3
+            ],
+            [
+                7,
+                -6,
+                -8
+            ],
+            [
+                5,
+                2
+            ],
+            [
+                -6,
+                -3
+            ],
+            [
+                -7,
+                -2,
+                1
+            ],
+            [
+                -4,
+                -6,
+                7
+            ],
+            [
+                8,
+                5,
+                4
+            ]
+        ],
+        "tau_name": "tau_alpha_179",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_180": {
+        "arguments": [
+            [
+                7,
+                -2,
+                -1
+            ],
+            [
+                -3,
+                6,
+                -2
+            ],
+            [
+                -8,
+                -5,
+                3
+            ],
+            [
+                -4,
+                9,
+                7
+            ],
+            [
+                -6,
+                -8
+            ],
+            [
+                5,
+                7,
+                -2
+            ],
+            [
+                -7,
+                -2,
+                4
+            ]
+        ],
+        "tau_name": "tau_alpha_180",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_181": {
+        "arguments": [
+            [
+                -9,
+                -2,
+                -4
+            ],
+            [
+                1,
+                -6,
+                -2
+            ],
+            [
+                7,
+                8,
+                -9
+            ],
+            [
+                5,
+                -3,
+                4
+            ],
+            [
+                3,
+                4
+            ],
+            [
+                -4,
+                -2,
+                3
+            ],
+            [
+                -2,
+                8
+            ]
+        ],
+        "tau_name": "tau_alpha_181",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_182": {
+        "arguments": [
+            [
+                -2,
+                -3,
+                7
+            ],
+            [
+                -9,
+                6,
+                -2
+            ],
+            [
+                -5,
+                -8,
+                -3
+            ],
+            [
+                -1,
+                4,
+                3
+            ],
+            [
+                -8,
+                9,
+                -7
+            ],
+            [
+                4,
+                -6
+            ],
+            [
+                3,
+                -1,
+                9
+            ],
+            [
+                3,
+                5,
+                -9
+            ],
+            [
+                8,
+                -3,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_182",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_183": {
+        "arguments": [
+            [
+                -7,
+                -2,
+                5
+            ],
+            [
+                1,
+                -2
+            ],
+            [
+                -8,
+                -4,
+                -1
+            ],
+            [
+                3,
+                -9,
+                1
+            ],
+            [
+                5,
+                6,
+                -9
+            ],
+            [
+                -6,
+                -5,
+                -8
+            ],
+            [
+                -9,
+                -1,
+                -6
+            ],
+            [
+                8,
+                -9,
+                5
+            ]
+        ],
+        "tau_name": "tau_alpha_183",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_184": {
+        "arguments": [
+            [
+                -1,
+                -8,
+                -5
+            ],
+            [
+                6,
+                -9,
+                -8
+            ],
+            [
+                3,
+                1
+            ],
+            [
+                7,
+                4,
+                1
+            ],
+            [
+                -2,
+                4
+            ],
+            [
+                5,
+                7
+            ],
+            [
+                5,
+                3
+            ],
+            [
+                5,
+                -3
+            ],
+            [
+                -3,
+                8
+            ]
+        ],
+        "tau_name": "tau_alpha_184",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_185": {
+        "arguments": [
+            [
+                -3,
+                6,
+                -8
+            ],
+            [
+                4,
+                9,
+                6
+            ],
+            [
+                1,
+                9
+            ],
+            [
+                2,
+                -8
+            ],
+            [
+                -7,
+                2
+            ],
+            [
+                8,
+                5,
+                1
+            ],
+            [
+                1,
+                9,
+                -8
+            ],
+            [
+                -3,
+                -9,
+                1
+            ]
+        ],
+        "tau_name": "tau_alpha_185",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_186": {
+        "arguments": [
+            [
+                1,
+                -4,
+                -9
+            ],
+            [
+                -3,
+                -7,
+                -4
+            ],
+            [
+                2,
+                8,
+                1
+            ],
+            [
+                6,
+                5,
+                7
+            ],
+            [
+                -2,
+                6
+            ],
+            [
+                9,
+                -2,
+                -7
+            ],
+            [
+                -6,
+                -9,
+                -5
+            ]
+        ],
+        "tau_name": "tau_alpha_186",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_187": {
+        "arguments": [
+            [
+                3,
+                -4,
+                5
+            ],
+            [
+                8,
+                1,
+                4
+            ],
+            [
+                -2,
+                -6,
+                5
+            ],
+            [
+                -9,
+                -7,
+                -5
+            ],
+            [
+                6,
+                -8,
+                3
+            ],
+            [
+                -4,
+                -5,
+                6
+            ],
+            [
+                3,
+                4
+            ],
+            [
+                -9,
+                -2,
+                5
+            ],
+            [
+                5,
+                -9,
+                -6
+            ]
+        ],
+        "tau_name": "tau_alpha_187",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_188": {
+        "arguments": [
+            [
+                6,
+                -5
+            ],
+            [
+                -1,
+                3,
+                -5
+            ],
+            [
+                2,
+                5
+            ],
+            [
+                -8,
+                -5
+            ],
+            [
+                4,
+                5
+            ],
+            [
+                -7,
+                -9,
+                -6
+            ],
+            [
+                8,
+                7,
+                4
+            ],
+            [
+                -2,
+                -8,
+                3
+            ]
+        ],
+        "tau_name": "tau_alpha_188",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_189": {
+        "arguments": [
+            [
+                -6,
+                1
+            ],
+            [
+                4,
+                7,
+                1
+            ],
+            [
+                -5,
+                9,
+                -4
+            ],
+            [
+                -8,
+                5
+            ],
+            [
+                3,
+                -9
+            ],
+            [
+                3,
+                4,
+                -7
+            ],
+            [
+                -2,
+                5
+            ],
+            [
+                9,
+                7,
+                -5
+            ],
+            [
+                4,
+                -3,
+                6
+            ]
+        ],
+        "tau_name": "tau_alpha_189",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_190": {
+        "arguments": [
+            [
+                -9,
+                -6,
+                8
+            ],
+            [
+                2,
+                4,
+                -8
+            ],
+            [
+                5,
+                7,
+                -2
+            ],
+            [
+                -1,
+                3,
+                8
+            ],
+            [
+                -3,
+                -4,
+                -2
+            ],
+            [
+                -3,
+                8,
+                -6
+            ],
+            [
+                4,
+                -5,
+                -2
+            ],
+            [
+                6,
+                -2
+            ],
+            [
+                4,
+                -5
+            ]
+        ],
+        "tau_name": "tau_alpha_190",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_191": {
+        "arguments": [
+            [
+                -7,
+                -3,
+                5
+            ],
+            [
+                2,
+                -4,
+                -5
+            ],
+            [
+                -8,
+                6,
+                4
+            ],
+            [
+                9,
+                1,
+                2
+            ],
+            [
+                7,
+                8,
+                -2
+            ],
+            [
+                6,
+                8,
+                -1
+            ],
+            [
+                8,
+                2,
+                -5
+            ],
+            [
+                4,
+                8,
+                -3
+            ],
+            [
+                -9,
+                -7,
+                1
+            ],
+            [
+                -4,
+                1,
+                9
+            ]
+        ],
+        "tau_name": "tau_alpha_191",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_192": {
+        "arguments": [
+            [
+                -5,
+                3,
+                -4
+            ],
+            [
+                -6,
+                -1,
+                4
+            ],
+            [
+                -7,
+                2,
+                5
+            ],
+            [
+                -8,
+                -9,
+                7
+            ],
+            [
+                6,
+                8,
+                -4
+            ],
+            [
+                3,
+                7,
+                -5
+            ],
+            [
+                -9,
+                -3,
+                -6
+            ],
+            [
+                9,
+                4,
+                -5
+            ],
+            [
+                -7,
+                -8,
+                5
+            ]
+        ],
+        "tau_name": "tau_alpha_192",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_193": {
+        "arguments": [
+            [
+                7,
+                -6,
+                2
+            ],
+            [
+                -3,
+                -8,
+                -2
+            ],
+            [
+                -5,
+                9,
+                6
+            ],
+            [
+                -4,
+                1,
+                2
+            ],
+            [
+                9,
+                7,
+                -4
+            ],
+            [
+                2,
+                7,
+                -1
+            ],
+            [
+                7,
+                5,
+                -6
+            ],
+            [
+                -8,
+                -4,
+                -9
+            ]
+        ],
+        "tau_name": "tau_alpha_193",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_194": {
+        "arguments": [
+            [
+                9,
+                5,
+                4
+            ],
+            [
+                -7,
+                2,
+                -5
+            ],
+            [
+                6,
+                8,
+                5
+            ],
+            [
+                -1,
+                -3,
+                -8
+            ],
+            [
+                7,
+                1,
+                -9
+            ],
+            [
+                4,
+                8,
+                -7
+            ],
+            [
+                -7,
+                -2,
+                -1
+            ],
+            [
+                3,
+                5,
+                -8
+            ],
+            [
+                7,
+                -1,
+                2
+            ]
+        ],
+        "tau_name": "tau_alpha_194",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_195": {
+        "arguments": [
+            [
+                -8,
+                -4,
+                9
+            ],
+            [
+                5,
+                1,
+                4
+            ],
+            [
+                3,
+                7,
+                -1
+            ],
+            [
+                -6,
+                2,
+                7
+            ],
+            [
+                -1,
+                4,
+                5
+            ],
+            [
+                -3,
+                9,
+                5
+            ],
+            [
+                3,
+                -6,
+                -4
+            ]
+        ],
+        "tau_name": "tau_alpha_195",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_196": {
+        "arguments": [
+            [
+                8,
+                -3,
+                -6
+            ],
+            [
+                1,
+                -4,
+                -3
+            ],
+            [
+                -5,
+                2,
+                -4
+            ],
+            [
+                -9,
+                -7,
+                -4
+            ],
+            [
+                4,
+                -3,
+                -1
+            ],
+            [
+                -3,
+                9,
+                4
+            ],
+            [
+                4,
+                5,
+                -9
+            ]
+        ],
+        "tau_name": "tau_alpha_196",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_197": {
+        "arguments": [
+            [
+                5,
+                2,
+                -6
+            ],
+            [
+                4,
+                9,
+                -2
+            ],
+            [
+                1,
+                7,
+                2
+            ],
+            [
+                -8,
+                -3,
+                4
+            ],
+            [
+                8,
+                -7,
+                4
+            ],
+            [
+                1,
+                9,
+                -2
+            ],
+            [
+                -8,
+                7,
+                -2
+            ]
+        ],
+        "tau_name": "tau_alpha_197",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_198": {
+        "arguments": [
+            [
+                -7,
+                3,
+                8
+            ],
+            [
+                -4,
+                9,
+                7
+            ],
+            [
+                -2,
+                1,
+                -7
+            ],
+            [
+                -5,
+                6,
+                -9
+            ],
+            [
+                -2,
+                -1,
+                -5
+            ],
+            [
+                2,
+                5,
+                7
+            ],
+            [
+                -8,
+                2,
+                -7
+            ],
+            [
+                8,
+                -9,
+                7
+            ]
+        ],
+        "tau_name": "tau_alpha_198",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_199": {
+        "arguments": [
+            [
+                7,
+                3,
+                -5
+            ],
+            [
+                2,
+                -8,
+                3
+            ],
+            [
+                -9,
+                6,
+                7
+            ],
+            [
+                -1,
+                4,
+                -3
+            ],
+            [
+                8,
+                6,
+                2
+            ],
+            [
+                -3,
+                -2,
+                4
+            ],
+            [
+                3,
+                -5,
+                8
+            ],
+            [
+                -8,
+                4,
+                -7
+            ],
+            [
+                1,
+                9,
+                7
+            ]
+        ],
+        "tau_name": "tau_alpha_199",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    },
+    "tau_alpha_200": {
+        "arguments": [
+            [
+                1,
+                -6,
+                7
+            ],
+            [
+                -5,
+                -3,
+                -7
+            ],
+            [
+                8,
+                -9,
+                7
+            ],
+            [
+                -2,
+                4,
+                -9
+            ],
+            [
+                -5,
+                4,
+                1
+            ],
+            [
+                5,
+                -3,
+                8
+            ],
+            [
+                5,
+                -7,
+                9
+            ],
+            [
+                8,
+                -3,
+                2
+            ]
+        ],
+        "tau_name": "tau_alpha_200",
+        "n_unnegated_sentence_pool": 9,
+        "module_name": "tau.core",
+        "class_name": "BDDDialecticalStructure"
+    }
+}
