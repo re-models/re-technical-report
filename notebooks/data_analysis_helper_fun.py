@@ -11,6 +11,17 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from typing import Set, List
 
+nice_model_names = {'StandardGlobalReflectiveEquilibrium':'QuadraticGlobalRE',
+                     'StandardLocalReflectiveEquilibrium':'QuadraticLocalRE',
+                     'StandardGlobalReflectiveEquilibriumLinearG': 'LinearGlobalRE',
+                     'StandardLocalReflectiveEquilibriumLinearG': 'LinearLocalRE'
+                    }
+nice_model_short_names = {'StandardGlobalReflectiveEquilibrium':'QGRE',
+                     'StandardLocalReflectiveEquilibrium':'QLRE',
+                     'StandardGlobalReflectiveEquilibriumLinearG': 'LGRE',
+                     'StandardLocalReflectiveEquilibriumLinearG': 'LLRE'
+                    }
+
 def literal_eval_cols(data: DataFrame, cols: List[str]):
     for col_name in cols:
         data[col_name] = data.apply(lambda x: literal_eval(x[col_name]), axis=1)
@@ -19,49 +30,12 @@ def literal_eval_cols(data: DataFrame, cols: List[str]):
 def replace_set(row, label):
     return row[label].replace('set()', '{}')
 
-def load_re_data(data_dir, data_file_name, filter_erroneous_runs:bool = False):
-    if data_file_name[data_file_name.find('.'):len(data_file_name)] == '.csv.tar.gz':
-        with tarfile.open(path.join(data_dir,data_file_name)) as tar:
-            for tarinfo in tar:
-                file_name = tarinfo.name
-            tar.extractall(data_dir)
-        re_data = pd.read_csv(path.join(data_dir, file_name))
-    else:
-        re_data = pd.read_csv(path.join(data_dir,data_file_name))
-
-
-    re_data['global_optima'] = re_data['global_optima'].replace('set()', '{}')
-    re_data['fixed_points'] = re_data['fixed_points'].replace('set()', '{}')
-
-    #re_data['fixed_points'] = re_data.apply(lambda row: replace_set(row, 'fixed_points'), axis=1)
-
-    # WARNING: XXX (eval not being save)
-    # converting mere strings to data-objects
-    literal_eval_cols(re_data, ['global_optima',
-                                'go_coms_consistent',
-                                'go_union_consistent',
-                                'go_full_re_state',
-                                'go_fixed_point',
-                                'go_account',
-                                'go_faithfulness',
-                                'fixed_points',
-                                'fp_coms_consistent',
-                                'fp_union_consistent',
-                                'fp_full_re_state',
-                                'fp_account',
-                                'fp_faithfulness',
-                                'fp_global_optimum',
-                               ])
-    if filter_erroneous_runs:
-        return re_data.loc[re_data['error_code'].isna()]
-    else:
-        return re_data
-    
-def load_specific_re_data(data_dir, 
-                          data_file_name,
-                          usecols,
-                          evalcols,
-                          filter_erroneous_runs:bool = False):
+def load_re_data(data_dir, 
+                 data_file_name,
+                 usecols=None,
+                 evalcols=None,
+                 filter_erroneous_runs:bool = False,
+                 replace_model_names = True):
     if data_file_name[data_file_name.find('.'):len(data_file_name)] == '.csv.tar.gz':
         with tarfile.open(path.join(data_dir,data_file_name)) as tar:
             for tarinfo in tar:
@@ -72,18 +46,32 @@ def load_specific_re_data(data_dir,
     else:
         re_data = pd.read_csv(path.join(data_dir, data_file_name), usecols=usecols)
 
-    if 'global_otpima' in usecols:
+    if usecols is None or 'global_optima' in usecols:
         re_data['global_optima'] = re_data['global_optima'].replace('set()', '{}')
         
-    if 'fixed_points' in usecols:
+    if usecols is None or 'fixed_points' in usecols:
         re_data['fixed_points'] = re_data['fixed_points'].replace('set()', '{}')
 
-    #re_data['fixed_points'] = re_data.apply(lambda row: replace_set(row, 'fixed_points'), axis=1)
+    if evalcols is None:
+        evalcols = ['global_optima', 'go_coms_consistent', 'go_union_consistent',
+                    'go_full_re_state', 'go_fixed_point', 'go_account', 'go_faithfulness',
+                    'fixed_points', 'fp_coms_consistent', 'fp_union_consistent', 'fp_full_re_state',
+                    'fp_account', 'fp_faithfulness','fp_global_optimum']
+    # filter for cols that are being used
+    if usecols is not None:
+        evalcols = [use_col for use_col in usecols if use_col in evalcols]
 
+    
     # WARNING: XXX (eval not being save)
     # converting mere strings to data-objects
     literal_eval_cols(re_data, evalcols)
     
+    if replace_model_names:
+        # Adding model short names
+        re_data['model_short_name'] = re_data['model_name'].map(lambda x: nice_model_short_names[x])
+        re_data['model_name'] = re_data['model_name'].map(lambda x: nice_model_names[x])
+
+
     if filter_erroneous_runs:
         return re_data.loc[re_data['error_code'].isna()]
     else:
