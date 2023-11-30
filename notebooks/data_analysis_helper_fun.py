@@ -51,12 +51,13 @@ def load_re_data(data_dir,
         
     if usecols is None or 'fixed_points' in usecols:
         re_data['fixed_points'] = re_data['fixed_points'].replace('set()', '{}')
-
+         
     if evalcols is None:
         evalcols = ['global_optima', 'go_coms_consistent', 'go_union_consistent',
                     'go_full_re_state', 'go_fixed_point', 'go_account', 'go_faithfulness',
                     'fixed_points', 'fp_coms_consistent', 'fp_union_consistent', 'fp_full_re_state',
-                    'fp_account', 'fp_faithfulness','fp_global_optimum']
+                    'fp_account', 'fp_faithfulness','fp_global_optimum', 'coms_evolution', 'init_coms',
+                    'go_union_consistent', 'fp_union_consistent']
     # filter for cols that are being used
     if usecols is not None:
         evalcols = [use_col for use_col in usecols if use_col in evalcols]
@@ -66,6 +67,12 @@ def load_re_data(data_dir,
     # converting mere strings to data-objects
     literal_eval_cols(re_data, evalcols)
     
+    # if columns 'initcoms' was initialised as set we make it a frozen set, which is need for 
+    # some of the analysis routines 
+    if (usecols is None or 'init_coms' in usecols) and ('init_coms' in evalcols):
+        re_data['init_coms'] = frozenset(re_data['fixed_points'])
+        
+
     if replace_model_names:
         # Adding model short names
         re_data['model_short_name'] = re_data['model_name'].map(lambda x: nice_model_short_names[x])
