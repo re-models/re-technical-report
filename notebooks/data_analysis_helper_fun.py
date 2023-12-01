@@ -70,7 +70,7 @@ def load_re_data(data_dir,
     # if columns 'initcoms' was initialised as set we make it a frozen set, which is need for 
     # some of the analysis routines 
     if (usecols is None or 'init_coms' in usecols) and ('init_coms' in evalcols):
-        re_data['init_coms'] = frozenset(re_data['fixed_points'])
+        re_data['init_coms'] = re_data.apply(lambda x: frozenset(x['init_coms']), axis=1)
         
 
     if replace_model_names:
