@@ -10,6 +10,8 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 from typing import Set, List
+import random
+
 
 nice_model_names = {'StandardGlobalReflectiveEquilibrium':'QuadraticGlobalRE',
                      'StandardLocalReflectiveEquilibrium':'QuadraticLocalRE',
@@ -117,3 +119,17 @@ def normalized_heat_maps_by_weights(re_data, values, title, index='weight_accoun
                     annot_std=annot_std, annot_fmt=annot_fmt, annot_std_fmt=annot_std_fmt, vmin=vmin, vmax=vmax)
     g.set_axis_labels(columns, index)
 
+
+def random_weights():
+    
+    # full range
+    alpha = random.uniform(0, 1)
+    beta = random.uniform(0,1)
+    
+    # conversion to weights
+    acc = (alpha * beta)/(alpha + beta - alpha * beta)
+    sys = (beta - alpha * beta)/(alpha + beta - alpha * beta)
+    
+    fai = 1 - (acc + sys)
+    
+    return (acc, sys, fai)
