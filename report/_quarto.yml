@@ -14,7 +14,7 @@ book:
     - chapter_full-re-states.qmd
     - chapter_commitment-consistency.qmd
     - chapter_extreme-values.qmd
-    - chapter_sec-general-props.qmd
+    - chapter_general-props.qmd
     - references.qmd
 
 bibliography: references.bib
@@ -25,5 +25,6 @@ format:
   pdf:
     documentclass: scrreprt
 
+tbl-cap-location: bottom
 
 

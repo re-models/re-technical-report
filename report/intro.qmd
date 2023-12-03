@@ -1,103 +1,3 @@
-# Introduction {#sec-intro}
-
-@beisbart_making_2021 introduced a formal model of reflective equilibrium based on the theory of dialectical structures [@betz_theorie_2010;@betz_debate_2013], which, according to them, can be used to better understand the method of reflective equilibrium and to assess its potential to yield better epistemic states. Their discussion of the model is mostly based on an illustrative example. An assesment of how the model behaves under a wider spectrum of circumstances went beyond the scope of their work.
-
-This report summarizes findings of assessing the RE model more thouroughly by, first, running the model to determine fixed points of the RE process and calculating global optima under a wide range of configurations and, second, by tweaking the original model. The simulation outcomes of three model variants are compared to the ones of the original model.^[The results of @beisbart_making_2021 are based on a Mathematica implementation of the model (see [{{< var link.remoma >}}]({{< var link.remoma >}})). Here, we rely on a reimplementation in Python ([rethon]({{< var link.rethon >}})).]
-
-<!--
-+ ToDo: Here we should describe the metrics and criteria more thoroughly, based on:
-+ [metrics](https://github.com/debatelab/re-studies/blob/master/documents/ideensammlung_ensemblestudien.md) 
-+ and [consolidation criteria](https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/documents/model-validation.md)
--->
-
-<!-- ToDo: Add links to other chapters -->
-
-
-
-## Modelling reflective equilibration {#sec-mod}
-
-<!--
-+ Suggestion: A short general descripription of the RE-Model (with links to more elaborate descriptions).
--->
-
-For the original and naturally most detailed presentation of the formal RE model, see @beisbart_making_2021. The present section is based on condensed material from @freivogel_converge_2023.
-
-
-
-![Illustrative diagram of the formal model of RE provided by @beisbart_making_2021. The epistemic state, which consists of a set of commitments and a theory, is subject to operationalised desiderata for RE states (bold arrows). Rules for alternating adjustments of commitments and theory specify a process of equilibration that sets out from initial commitments.](figures/model_schematics.png){#fig-model-schematics}
-
-The epistemic state $(C, T)$ of an agent consists of a set of commitments $C$ and a theory $T$. 
-Both components are represented as *positions* in the framework of dialectical structures @betz_theorie_2010, @betz_debate_2013, but it suffices to think of positions as sets of accepted sentences. 
-The sentences stem from a finite pool of sentences $\mathcal{S}$, which is closed under negation. $\mathcal{S}$ is part of a dialectical structure $\tau$, which also includes a set of deductively valid arguments $\mathcal{A}$. 
-We can interpret the dialectical structure to form the background of an RE inquiry. 
-The sentence pool delineates a subject matter, and the deductively valid arguments are assumed to ``comprise not just the valid arguments, but also the arguments that are valid *given the relevant background theories*'' [@beisbart_making_2021, p. 460].
-
-A position is *minimally consistent* if and only if it does not contain flat contradictions (i.e., a sentence and its negation). 
-On top of that, the arguments of the dialectical structure allow us to define a more demanding notion of consistency. 
-A position is *dialectically* consistent if it is minimally consistent and satisfies all inferential relations that arise from the arguments of a dialectical structure. 
-Sets of commitments are required to be minimally consistent, and theories must be dialectically consistent.
-
-The bold arrows in Figure @fig-model-schematics stand for three epistemic desiderata that are included in elaborate accounts of RE. At the center, we have \emph{account}. The corresponding measure $A(C, T)$ operationalises how well the commitments $C$ fit to what is inferable from the theory $T$ given the dialectical structure $\tau$. For formal details of all measures, see [@beisbart_making_2021, pp. 464-466]. Being able to resolve conflicts in different ways indicates that an agent needs to balance multiple epistemic desiderata. Desiderata are directed at the components of an epistemic state, come in degrees, and can ``pull’’ in different directions.
-
-On the right hand side of Figure @fig-model-schematics, there is the desideratum of *systematicity*. A theory should "do justice to epistemic goals" in order to systematise the commitments (e.g., \citealp[7928]{BB2020}). The operationalised measure $S(T)$ depends on the number of elements of a theory and the number of sentences that can be inferred from it.
-
-Finally, there is the desideratum of *faithfulness* on the left hand side in Figure @fig-model-schematics. It can be motivated by the view that the current commitments should "respect" the initial commitments by not changing the topic, or that a "tie" to credible or tenable initial commitments contributes to the justification of the resulting state \citep[447]{BBB2021}. $F(C \,\vert\, C_{0})$ measures the closeness of current commitments $C$ and initial commitments $C_{0}$.
-
-Trade-offs between desiderata are modelled in an achievement function that aggregates the weighted measures.
-$$Z(C, T\,\vert\, C_{0}) = \alpha_{A}\cdot A(C, T) + \alpha_{S}\cdot S(T) + \alpha_{F}\cdot F(C\,\vert\, C_{0}),$$
-where $\alpha_{A}$, $\alpha_{S}$ and $\alpha_{F}$ are real-valued numbers between $0$ and $1$ that sum up to $1$. 
-The achievement function assigns to every epistemic state $(C, T)$ a value of "overall betterness" relative to what we can call an *epistemic situation* of an agent, i.e., a dialectical structure $\tau$, a set of initial commitments $C_{0}$, and a configuration of weights $(\alpha_{A}, \alpha_{S}, \alpha_{F}$).  
-The epistemic situation captures the subject matter of inquiry, its background, and the means to handle trade-offs between epistemic desiderata.
-
-A *global optimum* relative to an epistemic situation is a state $(C, T)$ such that there is no other epistemic state that performs strictly better according to $Z$ than $(C, T)$.
-The formal model also gives explicit rules for a process of equilibration that sets out from the initial commitments $C_{0}$. 
-In an alternating fashion, theory and commitments are adjusted to optimise the achievement function until a stopping condition is met (for details, see @beisbart_making_2021 [p. 449]). 
-An epistemic state that results from the equilibration process is called a *fixed point*.
-
-
-## Model variations
-
-The ensemble studies include four variants of the formal RE model that result from a combination of two independent alterations in the formal model. The first alteration concerns the "shape" of the function that measures the desiderata. It is quadratic by default in @beisbart_making_2021, but can be contrasted with a linear model variant. Second, the (semi-)global optimization during equilibrations (default in @beisbart_making_2021) can be compared to a locally optimizing model variant. 
-
-
-The combinations of them odel alterations are labelled as follows: `QuadraticGlobalRE` (in short, `QGRE`), `QuadraticLocalRE` (in short, `QLRE`), `LinearGlobalRE` (in short, `LGRE`) and `LinearLocalRE` (in short, `LLRE`),. Note that `QGRE` corresponds to the "default" model of the published paper by @beisbart_making_2021. The subsequent sections present the model alterations in more detail.
-
-### Quadratic and Linear Measures
-
-The *achievement function* plays an important role for both global optima and adjustment steps in RE processes. Global optima maximize the achievement function and candidate commitments or theories in adjustment steps are selected according to their score in the achievement function.
-
-The  monotonically decreasing function $G$, which is part of the measures for desiderata in the achievement function $Z$ involves a quadratic term per default in the published paper of @beisbart_making_2021. In particular, we have $G(x)= 1-x^2$. However, the shape of $G$ is not explicitly motivated. It can be replaced by a "simpler", linear term to examine the repercussions of such a variation. The linear model variant relies on $G(x)= 1-x$.
-
-<!--
-+ ToDo: Description of locally searching model variants.
--->
-
-### Semi-globally and locally optimizing equilibration processes 
-
-The (semi-)global optimzation during equilibration according to the published model involves the consideration of *all* commitments candidates and *all* theory candidates at each respective adjustment step. This is computationally costly as the search space grows exponentially with the number of involved sentences. In conrast *locally* optimizing processes, that only allow for small changes in a neighborhood of the current position, escape this problem. Moreover, local RE processes may be considered to model "piecemeal" adjustments, which may be the only feasible approach for rationally bounded agents engaging with RE. 
-
-
-The *local* model variant restricts available candidates during adjustment steps in RE processes to a neighborhood of the position that represents the current commitments or theory, respectively.
-
-The depth of this neighborhood is defined in terms of the edit Hamming distance between positions. Let $\mathcal{P}$ denote the set of minimally consistent positions of a dialectical structure $\tau$.
-
-$$
-neighborhood(P, d) = \lbrace Q\in\mathcal{P}\vert D_{0, 1, 1, 1}(P, Q)\leq d\rbrace
-$$
-
-For a sentence pool size of $n$, the number of positions in the (inclusive) neighborhood of a position is $$\sum_{k=0}^{d} \binom{n}{k} \cdot 2^k,$$ where $d$ denotes the neighborhood depth. For $d = 1$ the number of positions in the neighbourhood grows linearly with respect to the number of sentences, in particular $2n + 1$.
-
-For a neighborhood depth $d = 1$, i.e., a single adjustment of an element in a position per step, the resulting process can be seen to proceed in a ``piece-meal'' fashion. Formally, this can be implemented in the rules for adjustment steps from @beisbart_making_2021 [p. 466] by restricting the candidates in (Theory Adjustment) to $neighbourhood(T_{i}, d)$, and analogously to $neighbourhood(C_{i}, d)$ for (Commitment Adjustment). The handling of ties and the stopping rule remain unchanged.
-
-To illustrate the difference between global, semi-global and local optimization, think of epistemic states $(C, T)$ as cells on a appropriately sized, possibly non-square, chess board.^[Note that the two-dimensional representation of the epistemic states in the subsequent figures is purely illustrative. There is no inherent linear order among positions, which can be understood as points in an $n$-dimensional discrete space.] The unbounded, globally optimising agent can overview the entire board at once (Figure @fig-grid-global), while a semi-globally optimizing agent can evaluate only a single row or column per adjustment step (Figure @fig-grid-semi-global). Finally, only candidates from a small neighborhood of the current position are available to the locally optimizing agent only during an adjustment step (Figure @fig-grid-local).
-
-![Global optimization: All epistemic states are available.](figures/grid_global.png){width=66%  #fig-grid-global}
-
-![Semi-global optimization: All sets of commitments and all theories are available in an alternating fashion while the other component is held fixed.](figures/grid_semi_global.png){width=66% #fig-grid-semi-global}
-
-![Local optimization (alternating): Available commitments(row)/theories (column) are restricted to a neighborhood of the current state in an alternating fashion while the other component is held fixed.](figures/grid_local.png){width=66% #fig-grid-local}
-
-
 <!--
 + Regarding the footnote: Should we include a discussion of other model variants. We also have a thourgough analysis of other systsematicity suggestions.
 + See: 
@@ -111,43 +11,118 @@ ToDos:
 + Add perhaps one or some few examples as figures.
 + Do we have to reproduce the ensembles 1-4 with the current algorithm to generate maps?
 -->
-
-## Metrics for model validations
-
-At the outset, there is a plethora of metrics that could be used to examine the performance of the formal model and variants thereof. Let us motivate a small selection of desiderata for model validation, which we are going to address in individual explorative studies later.
-
-- @sec-go-and-fp: Are global optima reachable, i.e. are they fixed points of RE processes?
-
-The formal model allows to distinguish clearly between the *static* aspect of *equilibrium states* and the *dynamic* aspect of *equilibration processes* in RE. This is implemented in the formal model by yielding two kinds of output epistemic states from given inputs: First, global optimization of the achievement function $Z$ results in *global optima*. Second, in a semi-globally optimizing process of alternating adjustments of commitments and theory leads to *fixed points*. Note that both global optima and fixed points may not be uniquely determined given an input. There may be multiple, equally well performing epistemic states according to the achievement function $Z$, or there may  be ties between candidates during equilibration, which leads to branching processes resulting in multiple fixe points.
-
-The global optimization can be achieved by brute force and going through every combination of commitments and theory (worst case). In contrast, the semi-globally optimizing equilibration process of adjustments can already be understood as a heuristic to reach global optimal states, but proccesses can be caught up in local optima. This holds even more so for the local model variant described below.
-
-Consequently, it is an interestng question for model validation whether fixed points are global optima. Conversely, we can also ask whether there are global optima that are not reachable by equilibration processess (given specific inputs).
-
-@sec-full-re-states: Are global optima/fixed points full RE states?
-
-Elaborate accounts of RE require that states of RE are optimal [REFERENCES]. Otherwise, there is room for improvement. Are global optima in the formal model RE states? @beisbart_making_2021 propose additional requirements for globally epistemic states to qualify as (full) RE states:
-
-- (FEA) The theory should account fully and exclusively for 
-
-It is important to note that being in a globally optimal state does not guarantee (CCT) or (FEA). Thus, it is an important task for model validation to check whether, or in which circumstances the formal model yields outputs that satisfy (CCT) or (FEA) in addition to global optimality.
-
-- @sec-commitment-consistency: Are commitments from global optima and fixed points free of inconsistencies?
-
-Consistency is commonly seen as a necessary condition of coherence, and thus achieveing consistency in RE, which is commonly understood to involve coherentist aspects of justification, is of utmost importance.
-  
-- @sec-extreme-values: Do global optima and fixed points have extreme values (maxima, minima) in their measures?
-
-The achievement function $Z$ aggregates three measures, namely for the desiderata of account $A$, systematicity $S$, and faithfulness $F$. Moreover, the measures are weighted in $Z$ to model trade-offs between the desiderate (e.g. give up on faithfulness to increase account). As optimzize $Z$ it is interesting to study the trade-offs and whether or in which circumstances maximal or minimal values are taken by these measures.
-
-<!-- Minimal models should answer the subquestions in the affirmative to a sufficient degree. However, undesirable behaviour of a model variant should be explainable in terms of additional input, apart from the model specification, which is required to run simulations.-->
-
+<!-- to add/revise
 Additionally, we address the following questions (@sec-general-props):
 
 - Is the union of commitments and theory of a global optimum/fixed point consistent? - (CCT) The commitments and the theory should be consistent with each other
 - How many steps does an RE process take?
 - Does an RE promote principles in theories?
 - Are the results from the published paper reproducible?
+
+-->
+
+# Introduction {#sec-intro}
+
+@beisbart_making_2021 introduced a formal model of reflective equilibrium based on the theory of dialectical structures [@betz_theorie_2010; @betz_debate_2013], which they use as a methodological tool to better understand the method of reflective equilibrium and to assess its potential to yield justified epistemic states. Their discussion of the model is mostly based on an illustrative example. An assesment of how the model behaves under a wider spectrum of circumstances went beyond the scope of their work.
+
+This report summarizes findings of assessing the RE model more thouroughly by, first, running the model under a wide range of configurations and, second, by tweaking the original model. The simulation outcomes of three model variants are compared to the ones of the original model.^[The results of @beisbart_making_2021 are based on a Mathematica implementation of the model (see [{{< var link.remoma >}}]({{< var link.remoma >}})). Here, we rely on a reimplementation in Python ([rethon]({{< var link.rethon >}})), which is able to reproduce the results of the original implementation (see [this notebook]({{< var link.reproduction-nb-bbb2021 >}})).]
+
+## Modelling reflective equilibration {#sec-mod}
+
+Reflective equilibrium is a method of justification in which an epistemic subject iteratively adjusts their epistemic state until a reflective equilibrium is reached. In this final state, the agent's belief system is justified to the extent that it is (internally) coherent. 
+
+@beisbart_making_2021 model this process of reflective equilibration and the underlying axiology in the following way.^[For a thorough and complete description of the formal RE model, see @beisbart_making_2021. The present section is based on condensed material from @freivogel_converge_2023.]
+
+The agent's epistemic state is modelled as a tupel $(\mathcal{C}, \mathcal{T})$, which comprises their accepted commitments $\mathcal{C}$ and a theory $\mathcal{T}$. Both are represented by sets of sentences from a finite pool of sentences $S$, which is closed under negation.  
+
+The equilibration process is modelled as a mutual adjustment of the theory and the agent's commitments that aims to improve the epistemic state as measured by an achievement function $Z$ (see Figure @fig-model-schematics). The agent starts with a set of initial commitments $\mathcal{C}_0$. In a next step a theory $\mathcal{T}_0$ is chosen that systematises $\mathcal{C}_0$. This initial state $(\mathcal{C}_0, \mathcal{T}_0)$ is then adjusted by searching for a new set of commitments that performs better in terms of the overall achievement $Z$. This process of adjusting the current epistemic state by choosing a new theory (or new commitments, respectively) goes on until no further improvement is gained any more.  
+
+![Illustrative diagram of the formal model. The epistemic state, which consists of a set of commitments and a theory, is subject to operationalised desiderata for RE states (bold arrows). Rules for alternating adjustments of commitments and theory specify a process of equilibration that sets out from initial commitments.](figures/model_schematics.png){#fig-model-schematics}
+
+
+The achievement function $Z$ models the underlying axiology and is based on the three different desiderata *faithfulness*, *systematicity* and *account*. Their role is illustrated by bold arrows in Figure @fig-model-schematics.^[For formal details of all measures, see [@beisbart_making_2021, pp. 464-466].]
+
+The desideratum of *faithfulness* demands that current commitments should not deviate too much from the initial commitments $\mathcal{C}_{0}$. There are two motivations for this constraint [@beisbart_making_2021, p. 447]. A resemblance of the current commitments to $\mathcal{C}_{0}$ contributes to the justification of the resulting state to the extent that initial commitments have some independent credibility. Additionally, the sentences in $\mathcal{C}_{0}$ represent a specification of the topic under consideration. Deviating too much from $\mathcal{C}_{0}$ courts the danger of changing the topic. Faithfulness $F(\mathcal{C}\,\vert\, \mathcal{C}_{0})$ is operationalized in the model by measuring the distance of the current commitments to the initial commitments.^[The used distance is basically a weighted Hamming distance. For details, see @beisbart_making_2021, 465.]
+
+The role of the theory $\mathcal{T}$ is to systematize the commitments $\mathcal{C}$. One suggestion to explicate this idea is to ask whether commitments are implied by the theory. The account $A(\mathcal{C}, \mathcal{T})$ measures how well the commitments $\mathcal{C}$ fit to what is implied by the theory $\mathcal{T}$. More specifically, $A(\mathcal{C}, T)$ is based on measuring the distance between $\mathcal{C}$ and the set of $\mathcal{T}$'s implications.
+
+To that end, we need to know how the sentences in $S$ are inferentially connected to each other. The inferential relationships are modelled by dialectical structures based on the theory of dialectical structures [@betz_theorie_2010; @betz_debate_2013]. A dialectical structure $\tau$ is a set of deductively valid arguments $\mathcal{A}$ and their "inferential" relationships to each other. For instance, an argument with two premises $S_i, S_j$ ($\in S$) and a conclusion $S_k$ represents the inferential relationship of $S_k$ being implied by the conjunction of $S_i$ and $S_j$.^[The arguments of a dialectical structure $\tau$ need not to be formally valid, but can include "arguments that are valid *given the relevant background theories*" [@beisbart_making_2021, p. 460]. Additionally, $\tau$ does not need to codify all inferential relationship between sentences in $S$ and can, in this way, model some form of bounded rationality.] Each process of reflective equilibration takes place on the background of one dialectical structure that stays fixed during the process. 
+
+The final desideratum demands that a theory does not only perform well in systematizing the commitments $\mathcal{C}$ but is generally able to systematize sentences in $S$ (independent of whether they belong to the agent's epistemic state). Systematicity $S(\mathcal{T})$ measures this general inferential potential by considering the amount of $\mathcal{T}$'s implications in relation to the size of the sentence pool $S$.
+
+All three desiderata can "pull" in different directions. The resolution of such trade-offs is modelled by using a convex combination of the three measures as a one-dimensional combined measure $Z$ for the overall epistemic quality of the agent's epistemic state:
+
+$$
+Z(\mathcal{C}, \mathcal{T}\, \vert\, \mathcal{C}_0) = \alpha_{A}\cdot A(\mathcal{C}, \mathcal{T}) + \alpha_{S}\cdot S(\mathcal{T}) + \alpha_{F}\cdot F(\mathcal{C}\,\vert\, \mathcal{C}_0),
+$$
+
+The weights $\alpha_{A}$, $\alpha_{S}$ and $\alpha_{F}$ are real-valued numbers between $0$ and $1$ that sum up to $1$. Different suggestions of balancing the desiderata are represented by choosing different $\alpha$-weights in the achievement function $Z$. 
+
+The achievement function assigns to every epistemic state $(\mathcal{C}, T)$ a value of "overall betterness" relative to what we can call an *epistemic situation* of an agent, i.e., a dialectical structure $\tau$, a set of initial commitments $\mathcal{C}_0$, and a configuration of weights $(\alpha_{A}, \alpha_{S}, \alpha_{F}$). The epistemic situation captures the subject matter of inquiry, its background, and decisions to handle trade-offs between epistemic desiderata.
+
+
+## Model variations
+
+In this report we compare the performance of four model variations that result from a combination of two independent alterations of the original model from @beisbart_making_2021 (see @tbl-models). First, we will vary the general shape of the functions $A$, $S$ and $F$. In the original model these functions have a quadratic form, which will be contrasted with a linear form. Second, we will compare the (semi-)global optimization during equilibrations steps, which is used in @beisbart_making_2021, with a locally optimizing model variant. 
+
+|                      | Quadratic shape                        | Linear shape                         |
+----------------------:|:---------------------------------------|:-------------------------------------|
+**Global optimization**| `QuadraticGlobalRE` (in short, `QGRE`) | `LinearGlobalRE` (in short, `LGRE`)
+**Local optimization** | `QuadraticLocalRE` (in short, `QLRE`)  | `LinearLocalRE` (in short, `LLRE`)
+
+: Model variations {#tbl-models} {.responsive}
+
+### Quadratic and Linear Measures
+
+In @beisbart_making_2021, the functions $A$, $F$ and $S$ have the following shape:
+
+$$
+G(x)= 1-x^2
+$$
+
+However, the quadratic term $x^2$ is not motivated.  The linear models `LGRE` and `LLRE` will be based on $G(x)= 1-x$ to examine the repercussions of such a variation.
+
+### Semi-globally and locally optimizing equilibration processes 
+
+The mutual adjustment of commitments and theories involves two types of revisions. The agent will revise their current commitments $\mathcal{C}_i$ and their current theory $\mathcal{T}_i$ in an alternating fashion. More specifically, when adjusting their commitments, the agent will search for new commitments $\mathcal{C}_{i+1}$ such that the resulting state $(\mathcal{C}_{i+1}, \mathcal{T}_i)$ performs better w.r.t. $Z$. Similarly, when adjusting their theory, the agent will search for a theory $\mathcal{T}_{i+1}$ such that $Z(\mathcal{C}_{i}, \mathcal{T}_{i+1}\,\vert\, \mathcal{C}_0)> Z(\mathcal{C}_{i}, \mathcal{T}_{i}\,\vert\, \mathcal{C}_0)$. 
+
+The equilibration process in @beisbart_making_2021 is a semi-global optimization in the following way: When searching for new commitments $\mathcal{C}_{i+1}$ that improve $Z$, the agent can choose any set of (consistent) commitments. Similarly, when searching for a new theory $\mathcal{T}_{i+1}$, the agents can choose any (consistent) theory. This is computationally costly as the search space grows exponentially with the size of the sentence pool. It is, for the same reason, also an unrealistic assumption about real epistemic subjects. 
+
+One simple suggestion to solve this problem and to incorporate some form of bounded rationality into the model is to constrain the search space for the adoption of new commitments and theories. Instead of considering all consistent commitments and theories, a *locally* optimizing equilibration process confines the search space to a neighborhood of the current state. 
+
+The definition of this neighborhood is based on an edit distance, which measures the amount of changes that are needed to transform one set of sentences into another one. Suppose the sentence pool $S$ comprise three sentences and their negations---that is, $S=\{s_1,s_3,s_3,\neg s_1, \neg s_2, \neg s_3\}$. Let us now consider two different sets of commitments: $\mathcal{C}_1=\{s_1, \neg s_2\}$ and $\mathcal{C}_2=\{s_1,s_2,s_3\}$. Suppose now that an agent adopts $\mathcal{C}_1$ as their commitments. In other words, they accept $s_1$, refuse $s_2$ and are indifferent towards $s_3$. Consequently, a set of commitments can be specified by describing the doxastic attitude (acceptance, refusal and indifference) towards each sentence of half the sentence pool ($s_1$, $s_2$ and $s_3$ in our example). The edit distance we use is defined by asking how many changes of doxastic attitudes are needed to transform one set of commitments into another one. Consequently, the edit distance between $\mathcal{C}_1$ and $\mathcal{C}_2$ is $2$ since we would have to change the attitude for $s_2$ from refusal to acceptance and for $s_3$ from indifference to acceptance. 
+
+We can now define the neighborhood of depth $d$ of a set of sentences $S_i$ as the set of all sentence sets that have at most an edit distance of $d$ to $S_i$.^[For a sentence pool size of $2n$, the number of positions in the neighborhood of a position is $\sum_{k=0}^{d} \binom{n}{k} \cdot 2^k,$ where $d$ denotes the neighborhood depth. For $d = 1$ the number of positions in the neighbourhood grows linearly with the number of sentences. More specifically, for $d=1$ the size of the neighborhood is $2n + 1$.] 
+
+The *local* model variants `QLRE` and `LLRE` restrict the commitments and theory candidates during adjustment steps to a neighborhood of depth $d=1$.
+
+To illustrate the difference between global, semi-global and local optimization, think of epistemic states $(C, T)$ as cells on a appropriately sized, possibly non-square, chess board.^[Note that the two-dimensional representation of the epistemic states in the subsequent figures is purely illustrative. There is no inherent linear order among positions, which can be understood as points in an $n$-dimensional discrete space.] The unbounded, globally optimising agent can overview the entire board at once (Figure @fig-grid-global), while a semi-globally optimizing agent can evaluate only a single row or column per adjustment step (Figure @fig-grid-semi-global). Finally, only candidates from a small neighborhood of the current position are available to the locally optimizing agent only during an adjustment step (Figure @fig-grid-local).
+
+![Global optimization: All epistemic states are available.](figures/grid_global.png){width=66%  #fig-grid-global}
+
+![Semi-global optimization: All sets of commitments and all theories are available in an alternating fashion while the other component is held fixed.](figures/grid_semi_global.png){width=66% #fig-grid-semi-global}
+
+![Local optimization (alternating): Available commitments(row)/theories (column) are restricted to a neighborhood of the current state in an alternating fashion while the other component is held fixed.](figures/grid_local.png){width=66% #fig-grid-local}
+
+## Metrics for model validations
+
+At the outset, there is a plethora of metrics that could be used to examine the performance of the formal model. Let us motivate a small selection of desiderata for model validation, which we are going to use in following chapters.
+
+The process of reflective equilibration reaches an end point, a so-called fixed point, if the agent arrives at an epistemic state that cannot be further improved (in terms of the achievement function) by revising their commitments or their theory, respectively [@beisbart_making_2021, p. 450]. However, such a fixed point is not necessarily a global optimum. In other words, there might be other epistemic states that perform better w.r.t. $Z$. 
+
+This possible divergence of fixed points and global optima applies to locally optimizing models (`LLRE` and `QLRE`) as well as to the semi-globally optimizing models (`LGRE` and `QGRE`). The former can obviously stuck in local optima since they are confined to a restricted search area for the improvement of epistemic states. But the semi-globally optimizing models can also get stuck in local optima since they do not adjust their commitments and theories simultaneously but alternately. Consequently, there is a conceptual delineation between the axiology (as defined by the achievement function) as a static aspect of RE and the equilibration process as the dynamical aspect of RE.^[The fact that the model allows to distinguish static and dynamic aspects makes the model a fruitful foil to discuss the wider epistemological questions surrouding the method of reflective equilibrium [@beisbart_making_2021, p. 457--458].]
+
+Accordingly, there are interesting questions concerning the relationship between fixed points and global optima, which are relevant to assess the performance of the model variants. In @sec-go-and-fp, we investigate whether fixed points are global optima and, conversely, whether global optima are reachable by equilibration processess.
+
+The reached achievement of fixed points and global optima is not the only evaluative perspective on epistemic states. In other words, there are other aspects of evaluating reflective equilibria besides the desiderate of account, systemticity and faithfulness [@beisbart_making_2021, p. 448-449]. 
+
+The most ambitous requirement demands that a theory accounts fully and exclusively for the commitments of an epistemic state. Fixed point that are global optima and that, additionally, satisfy this criterion are called full RE states. In @sec-full-re-states, we investigate whether and under which circumstances fixed points are full RE states. We will also analyse whether theories of global optima fully and exclusively account for their commitments.
+
+Weaker requirements demand that fixed points or, at least, fixed point commitments are dialectically consistent---that is consistent with respect to all inferential relationships encoded in the given dialectical structure $\tau$. Consistency is commonly seen as a necessary condition of coherence. Achieving consistency is, therefore, of utmost importance for equilibration processes. In @sec-commitment-consistency, we will assess the consistency conduciveness of the different model variants.
+
+Finally, we will investigate whether global optima and fixed points yield extreme values in the normalized measures $A$, $F$ and $S$ (@sec-extreme-values). The achievement function $Z$ aggregates these measures by using weights to model trade-offs between the desiderate (e.g., give up on faithfulness to increase account). Investigating under which circumstances extreme values are achieved in $A$, $F$ and $S$ might improve our understanding of the involved trade-offs and of the consequences to choose specific weights.
+
+<!-- Minimal models should answer the subquestions in the affirmative to a sufficient degree. However, undesirable behaviour of a model variant should be explainable in terms of additional input, apart from the model specification, which is required to run simulations.-->
 
 ## Ensembles
 
