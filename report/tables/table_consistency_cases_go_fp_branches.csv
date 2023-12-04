@@ -1,5 +1,5 @@
 Model,Relative share of inconsistency eliminating cases among global optima,Relative share of consistency preserving cases among global optima,Relative share of inconsistency preserving cases among global optima,Relative share of consistency eliminating cases among global optima,Relative share of inconsistency eliminating cases among fixed points,Relative share of consistency preserving cases among fixed points,Relative share of inconsistency preserving cases among fixed points,Relative share of consistency eliminating cases among fixed points
-QuadraticGlobalRE,0.24,0.37,0.37,0.02,0.25,0.37,0.36,0.01
-LinearGlobalRE,0.29,0.37,0.32,0.02,0.27,0.38,0.34,0.01
-QuadraticLocalRE,0.24,0.37,0.37,0.02,0.22,0.37,0.39,0.01
-LinearLocalRE,0.29,0.37,0.32,0.02,0.21,0.37,0.4,0.02
+LinearGlobalRE,0.23505506030414264,0.5503572364971159,0.2000641433815267,0.014523559817214773,0.17689287800261724,0.5836222894194015,0.23242050319022306,0.00706432938775812
+LinearLocalRE,0.23505506030414264,0.5503572364971159,0.2000641433815267,0.014523559817214773,0.43863268012376605,0.49698105446687296,0.05991079760326114,0.004475467806099897
+QuadraticGlobalRE,0.2166195087578454,0.542091978646957,0.2115539421757503,0.02973457041944724,0.21888034993229755,0.5302237664371549,0.2298551137310259,0.02104076989952169
+QuadraticLocalRE,0.1981111891251744,0.530922196541198,0.2383011550434083,0.03266545929021935,0.2609807481877306,0.46851923088422004,0.24560560791997113,0.024894413008078226
