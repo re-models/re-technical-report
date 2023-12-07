@@ -1,5 +1,0 @@
-Model,Number of global optima with a consistent union,Number of global optima with consistent commitments,Relative share of global optima with a consistent union,Number of fixed points with a consistent union,Number of fixed points with consistent commitments,Relative share of fixed points with a consistent union
-LinearGlobalRE,43723,45762,0.9554433809711114,22578,23821,0.9478191511691365
-LinearLocalRE,43723,45762,0.9554433809711114,18434,18996,0.9704148241735102
-QuadraticGlobalRE,42633,46832,0.9103390843867442,27035,30305,0.8920970136941099
-QuadraticLocalRE,22350,24211,0.9231341125934492,14932,16313,0.9153435910010421

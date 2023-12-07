@@ -1,0 +1,5 @@
+Model,Relative share of inconsistency eliminating cases among fixed points,Relative share of consistency preserving cases among fixed points,Relative share of inconsistency preserving cases among fixed points,Relative share of consistency eliminating cases among fixed points
+QuadraticGlobalRE,0.21145411079929322,0.5003014239684025,0.2660014551501923,0.022243010082112047
+LinearGlobalRE,0.20452185705507173,0.5256711800478885,0.25942406712859956,0.010382895768440235
+QuadraticLocalRE,0.26988681291372024,0.4697828886428846,0.24541942480175316,0.014910873641642003
+LinearLocalRE,0.4818159912181278,0.46637631750394914,0.04844309186159627,0.0033645994163267858
