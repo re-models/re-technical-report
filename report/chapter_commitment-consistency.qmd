@@ -1,31 +1,42 @@
 # Commitment consistency cases {#sec-commitment-consistency}
 
-**Background**
+## Background
 
-Consistency is commonly seen as a necessary condition of coherence, and thus achieveing consistency in RE is of utmost importance. This study considers the *dialectical consistency* (opposed to minimal consistency, i.e. the absence of flat contradictions, and the dialectical consistency of commitments plus a theory) of initial and endpoint commitments. The endpoint commitments stem either from a global optimum or from a fixed point. The juxtaposition of initial and endpoint commitments allows for four cases, which are labelled as follows:
+Consistency is commonly seen as a necessary condition of coherence, and thus achieveing consistency in RE is of utmost importance. This study considers the *dialectical consistency* of inputs and outputs (fixed points and global optima) of RE simulations. This allows to examine consistency from different perspectives:
+
+1. the consistency of output commitments
+2. the "consistency case" that arises from combining the consistency status of initial and output commitments
+3. the consistency of the union of output commitments and theory.
+
+Concerning 2., the juxtaposition of initial and output commitments allows for four cases, which are labelled as follows:
 
 |                                   | endpoint commitments consistent   | endpoint commitment inconsistent  |
 | ------                            | ------                            | ----                              |
 | initial commitments consistent    | consistency preserving (CP)       | consistency eliminating (CE)      |   
 | initial commitments inconsistent  | inconistency eliminating (IE)     | inconsistency preserving (IP)     |
 
-Case (CP) preserves or "transfers" consistency between intial and enpoint commitments. In (IE) cases, inconsistent initial commitments are revised for consistent endpoint commitments. (IP) cases fail to eradicate initial inconsistencies, and finally there may be (CE) cases if inconsistencies are introduced to initially consistent commitments.
+Case (CP) preserves or "transfers" consistency between intial and enpoint commitments. In (IE) cases, inconsistent initial commitments are revised for consistent endpoint commitments. (IP) cases fail to eradicate initial inconsistencies, and finally there may be (CE) cases if inconsistencies are introduced to initially consistent commitments. 
 
-**Method**
-
-During the generation of an ensemble, we store the consistency status of intial commitments as well as the status for every commitment from global optima or fixed points for every configuration, and label them accordingly. Again, the number of global optima (fixed points) for a case type is put into relation with the total number of global optima (fixed points) for every configuration of weights. The relative share of consistency cases are this study's main endpoint.
-
-From the viewpoint of model consolidation the cases are interesting and relevant in various respects. High shares of 
+From the viewpoint of model consolidation, the cases are interesting and relevant in various respects. High shares of 
 (IE) cases would stand in support of the model's revisionary power and signify progress towards establishing coherence by RE. Frequent (IP) cases, in turn, would speak against the model's revisionary power with respect to inconsistent initial commitments. Moreover, this could fuel the objection that RE (or the present model thereof) is overly conservative, such that "garbage in" (inconsistent initial commitments) leads to "garbage out" (inconsistent fixed point/global optimum commitments). High relative shares of (CP) cases are a desireabe feature. Finally, frequent (CE) cases would be a truly worrysome result, as they would indicate that the model leads to a worsening in terms of consistency.
 
-**Results**
+## Method
 
-*Overall*
+During the generation of an ensemble, we store the consistency status of intial commitments as well as the status for the commitments of every global optima or fixed points for every simulation setup. Furthermore, the consistency of the union of commitments and theory of a global optimum or a fixed point is determined as well. This allows to determine the relative shares of consistent outputs, consistency cases, and consistent unions among all outputs. These relatives shares are this study's main endpoints.
+
+Note that fixed points can be counted in different ways. Taking a result-oriented perspective, we can consider unique fixed points per simulation setup, irrespective of whether they can be reached multiple times through different RE processes from a specific simulation setup. In contrast, we can also take a process-oriented perspective and count every "branch" of an RE process, Hence we might count one fixed point multiple times if it is the enpoint of different branches. In what follows, these  perspectives are reported separately, indicated by "(unique)" or "(all branches)".
+
+## Results
+
+### Overall Results
+The following overall results come about by grouping the results only by model variant before calculating the relative shares.
+
+#### Consistent Outputs
 
 ```{python}
 #| echo: false
-#| label: tbl-consistency_cases
-#| tbl-cap: 'Mean relative share of consistency cases'
+#| label: tbl-consistency_outputs_go
+#| tbl-cap: 'Relative share of consistent commitments among global optima'
 
 import pandas as pd
 from os import getcwd, path
@@ -34,24 +45,236 @@ from IPython.display import Markdown, display
 
 
 tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
-file_name = 'table_consistency_cases_go_fp_branches.csv'
+file_name = 'table_consistency_outputs_go_setups.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
-#df['% of fixed points in global optima'] = df['% of fixed points in global optima'].map(lambda x: f'{x:.1f}') 
-#df['% of global optima in fixed points'] = df['% of global optima in fixed points'].map(lambda x: f'{x:.1f}') 
+df = df.round(3)
 
 display(Markdown(df.to_markdown(index = False)))
+
+
+#df.style.hide(axis="index")  
+```
+
+```{python}
+#| echo: false
+#| label: tbl-consistency_outputs_fp_setups
+#| tbl-cap: 'Relative share of consistent commitments among fixed points (unique)'
+
+import pandas as pd
+from os import getcwd, path
+from pathlib import Path
+from IPython.display import Markdown, display
+
+
+tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
+file_name = 'table_consistency_outputs_fp_setups.csv'
+df = pd.read_csv(path.join(tables_output_dir, file_name))
+
+df = df.round(3)
+
+
+display(Markdown(df.to_markdown(index = False)))
+
+
+#df.style.hide(axis="index")  
+```
+
+```{python}
+#| echo: false
+#| label: tbl-consistency_outputs_fp_branches
+#| tbl-cap: 'Relative share of consistent commitments among fixed points (all branches)'
+
+import pandas as pd
+from os import getcwd, path
+from pathlib import Path
+from IPython.display import Markdown, display
+
+
+tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
+file_name = 'table_consistency_outputs_fp_branches.csv'
+df = pd.read_csv(path.join(tables_output_dir, file_name))
+df = df.round(3)
+
+display(Markdown(df.to_markdown(index = False)))
+
+
+#df.style.hide(axis="index")  
+```
+
+**Observations: Consistent Outputs**
+
+- The relative share of global optima with consistent outputs is identical for `QuadraticGlobalRE` and `QuadraticLocalRE`, as well as for `LinearGlobalRE` and `LinearLocalRE` in @tbl-consistency_outputs_go. (Explanation: The local model variants rely on their global counterparts to determine global optima. Hence, these results are not interesting for the present study, but included for the sake of completeness.)
+- The overall relative share of consistent global optima commitments does not differ substantially between quadratic and linear model variants.
+- The relative shares of consistent commitments among fixed points does not differ substantially from the results for global optima for `QuadraticGlobalRE`, `QuadraticLocalRE`, and `LinearGlobalRE`
+- `LinearLocalRE` exhibits substantially higher relative shares of consistent commitments among fixed points (unique and all branches) 
+- The number of fixed points reached through different branches in local model variants is substantially higher than for global model variants (@tbl-consistency_outputs_fp_branches)
+
+#### Consistency Cases
+
+The results of this section are based on a more fine-grained distinction of cases than before. Note that the sum of relative shares of consistency preserving and inconsistency eliminating cases corresponds to the relative share of consistent output commitments from above. 
+
+```{python}
+#| echo: false
+#| label: tbl-consistency_cases_go
+#| tbl-cap: 'Relative share of consistency cases among global optima'
+
+import pandas as pd
+from os import getcwd, path
+from pathlib import Path
+from IPython.display import Markdown, display
+
+
+tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
+file_name = 'table_consistency_cases_go_setups.csv'
+df = pd.read_csv(path.join(tables_output_dir, file_name))
+df = df.round(3)
+
+display(Markdown(df.to_markdown(index = False)))
+
+
 #df.style.hide(axis="index")  
 ```
 
 ![Mean relative share of consistency cases among global optima across all configuration of weights](figures/overall_consistency_cases_go_setups){#fig-overall-go}
 
+```{python}
+#| echo: false
+#| label: tbl-consistency_cases_fp_setups
+#| tbl-cap: 'Relative share of consistency cases among fixed points (unique)'
+
+import pandas as pd
+from os import getcwd, path
+from pathlib import Path
+from IPython.display import Markdown, display
+
+
+tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
+file_name = 'table_consistency_cases_fp_setups.csv'
+df = pd.read_csv(path.join(tables_output_dir, file_name))
+
+df = df.round(3)
+
+
+display(Markdown(df.to_markdown(index = False)))
+
+
+#df.style.hide(axis="index")  
+```
+
 ![Mean relative share of consistency cases among fixed points across all configuration of weights](figures/overall_consistency_cases_fp_setups){#fig-overall-fp}
 
-*Grouped by configuration of weights*
 
-![Mean relative share of consistency cases among fixed points grouped by configuration of weights](figures/weight_consistency_cases_go_setups){#fig-weight-go}
+```{python}
+#| echo: false
+#| label: tbl-consistency_cases_fp_branches
+#| tbl-cap: 'Relative share of consistency cases among fixed points (all branches)'
 
-![Mean relative share of consistency cases among fixed points grouped by configuration of weights](figures/weight_consistency_cases_fp_setups){#fig-weight-fp}
+import pandas as pd
+from os import getcwd, path
+from pathlib import Path
+from IPython.display import Markdown, display
+
+
+tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
+file_name = 'table_consistency_cases_fp_branches.csv'
+df = pd.read_csv(path.join(tables_output_dir, file_name))
+df = df.round(3)
+
+display(Markdown(df.to_markdown(index = False)))
+
+
+#df.style.hide(axis="index")  
+```
+
+**Observations: Consistency Cases**
+
+#### Consistent Union
+
+```{python}
+#| echo: false
+#| label: tbl-consistency_union_go
+#| tbl-cap: 'Relative share of global optima with a consistent union of commitments and theory'
+
+import pandas as pd
+from os import getcwd, path
+from pathlib import Path
+from IPython.display import Markdown, display
+
+
+tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
+file_name = 'table_consistency_union_go_setups.csv'
+df = pd.read_csv(path.join(tables_output_dir, file_name))
+df = df.round(3)
+
+display(Markdown(df.to_markdown(index = False)))
+
+
+#df.style.hide(axis="index")  
+```
+
+
+```{python}
+#| echo: false
+#| label: tbl-consistency_union_fp_setups
+#| tbl-cap: 'Relative share of fixed points (unique) with a consistent union of commitments and theory'
+
+import pandas as pd
+from os import getcwd, path
+from pathlib import Path
+from IPython.display import Markdown, display
+
+
+tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
+file_name = 'table_consistency_union_fp_setups.csv'
+df = pd.read_csv(path.join(tables_output_dir, file_name))
+
+df = df.round(3)
+
+
+display(Markdown(df.to_markdown(index = False)))
+
+
+#df.style.hide(axis="index")  
+```
+
+
+
+```{python}
+#| echo: false
+#| label: tbl-consistency_union_fp_branches
+#| tbl-cap: 'Relative share of fixed points (all branches) with a consistent union of commitments and theory'
+
+import pandas as pd
+from os import getcwd, path
+from pathlib import Path
+from IPython.display import Markdown, display
+
+
+tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
+file_name = 'table_consistency_union_fp_branches.csv'
+df = pd.read_csv(path.join(tables_output_dir, file_name))
+df = df.round(3)
+
+display(Markdown(df.to_markdown(index = False)))
+
+
+#df.style.hide(axis="index")  
+```
+
+
+
+
+### Results Grouped by Weight Configuration
+
+#### Consistency Cases
+
+**Inconsistency Eliminating Cases**
+
+![Relative share of inconsistency eliminating cases among global optima grouped by model variant and configuration of weights.](figures/go_inconsistency_eliminating_cases_setups.png){#fig-IE-go}
+
+![Relative share of inconsistency eliminating cases among fixed points (unique) grouped by model variant and configuration of weights.](figures/fp_inconsistency_eliminating_cases_setups.png){#fig-IE-fp-setups}
+
+![Relative share of inconsistency eliminating cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_inconsistency_eliminating_cases_branches.png){#fig-IE-fp-branches}
 
 *Observations: Inconsistency eliminating cases (IE)*
 
@@ -64,8 +287,36 @@ display(Markdown(df.to_markdown(index = False)))
 - the mean relative share (and the standard deviation) below the tipping line in linear model are completely uniform.
 - all model variants have regions in there heatmpas, where no very good cases occur at all, the maximal relative share of is 37% (ensebmle 07 and 08)/ 47% (ensemble 09) for both global and fixed points
 
-- quadraatic models have smooth transitions
+- quadratic models have smooth transitions
 - in quadratic models, high weights for account and low weight for faithfulness benefit the relative share of very good cases among global optima and fixed points
+
+**Consistency Preserving Cases**
+
+![Relative share of consistency preserving cases among global optima grouped by model variant and configuration of weights.](figures/go_consistency_preserving_cases_setups.png){#fig-CP-go}
+
+![Relative share of consistency preserving cases among fixed points (unique) grouped by model variant and configuration of weights.](figures/fp_consistency_preserving_cases_setups.png){#fig-CP-fp-setups}
+
+![Relative share of consistency preserving cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_consistency_preserving_cases_branches.png){#fig-CP-fp-branches}
+
+
+**Inconsistency Preserving Cases**
+
+![Relative share of inconsistency preserving cases among global optima grouped by model variant and configuration of weights.](figures/go_inconsistency_preserving_cases_setups.png){#fig-IP-go}
+
+![Relative share of inconsistency preserving cases among fixed points (unique) grouped by model variant and configuration of weights.](figures/fp_inconsistency_preserving_cases_setups.png){#fig-IP-fp-setups}
+
+![Relative share of inconsistency preserving cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_inconsistency_preserving_cases_branches.png){#fig-IP-fp-branches}
+
+**Consistency Eliminating Cases**
+
+![Relative share of consistency eliminating cases among global optima grouped by model variant and configuration of weights.](figures/go_consistency_eliminating_cases_setups.png){#fig-CE-go}
+
+![Relative share of consistency eliminating cases among fixed points (unique) grouped by model variant and configuration of weights.](figures/fp_consistency_eliminating_cases_setups.png){#fig-CE-fp-setups}
+
+![Relative share of consistency eliminating cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_consistency_eliminating_cases_branches.png){#fig-CE-fp-branches}
+
+
+
 
 *Observations: Inconsistency preserving cases (IP)*
 
@@ -98,7 +349,7 @@ display(Markdown(df.to_markdown(index = False)))
 
 
 
-**Conclusion**
+## Conclusion
 
 <!--
 What do we want to add from <https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-04.ipynb>?
@@ -107,3 +358,67 @@ What do we want to add from <https://github.com/debatelab/re-studies/blob/master
 
 
 Overall, linear models tend to perform better than quadratic variants for all cases, but every model variant has combinations of weights where very (bad) cases disapear and very good cases occur more often. Even very bad cases cannot serve as an exclusion criteria. They have a (very) small share and their manifestation may depend on additional input features (e.g. the size of initial commitmen or their minimal axiomatizsation). <!--A description how an RE process creates a very bad case can be found in [dataexploration-04](https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-04.ipynb) of an earlier ensemble.-->
+
+## Appendix
+<!-- Move to a dedicated chapter for appendices?-->
+
+### The Tipping Line of Linear Model Variants
+
+A *linear model variant*, is a model that differs from the model provided by @beisbart_making_2021 only in that the measures involve the linear function $G$ instead of the quadratic one. This variant exhibits a *tipping line* in ternary plots that marks off configurations of weights that lead to drastically different behaviour with respect to consistency considerations or the attainment of full RE states, for example. 
+
+We can characterise the tipping line as an equation that relates $\alpha_{A}$ and $\alpha_{S}$:
+$$
+\begin{equation} \label{eq:lin}
+  \alpha_{A} = \frac{1-\alpha_{S}}{2}  
+\end{equation}
+$${#eq-lin}
+The boundary condition $\alpha_{A} + \alpha_{S} + \alpha_{F} = 1$ allows us to rewrite @eq-lin in an even simpler form:
+$$
+\alpha_{A} = \alpha_{F}
+$$
+Consequently, the tipping line splits the space of weight configuration in two regions $\alpha_{A} < \alpha_{F}$ and $\alpha_{A} > \alpha_{F}$. For the latter region, where account receives more weight than faithfulness, we have some interesting analytical results.
+
+The following proposition and its corollaries help to explain the salient change in the behaviour of linear model variants when crossing the tipping line.
+
+**Proposition**
+Assume that a dialectical structure $\tau$ and some initial commitments $C_{0}$ are given. Moreover, assume $\alpha_{A} > \alpha_{F}$ for a configuration of weights $(\alpha_{A}, \alpha_{S}, \alpha_{F})$ in a linear model variant. Then all global optima (relative to $C_{0}$) according to the achievement function specified by the configuration of weights are full RE states.
+
+**Corollaries**
+The linear model variants exhibit the following behaviour for $\alpha_{A} > \alpha_{F}$:
+
+- For global optima, there no inconsistency preserving cases
+- Consistency eliminating cases do not occur for global optima
+
+In contrast, for $\alpha_{A} < \alpha_{F}$ the following holds for the linear model variants:
+
+- Inconsistency eliminating cases do not occur for global optima
+
+**Open questions**
+
+- Interestingly, the corollaries almost always hold for fixed points as well. However, an analoguous proposition for fixed points would require a different proof.
+
+
+**Proof sketch**
+
+Intuitively, $\alpha_{A} > \alpha_{F}$ means that account trumps faithfulness, which allows to select commitments ignoring faithfulness so that they are fully and exclusively accounted for by a theory.
+
+Assume that an epistemic state $(C, T)$ is a global optimum according to the achievement function $Z$ given some initial commitments $C_{0}$ and a configuration of weights  $(\alpha_{A}, \alpha_{S}, \alpha_{F})$ such that $\alpha_{A} > \alpha_{F}$. We need to show that $(C, T)$ is a full RE state, i.e., that $T$ fully and exclusively accounts for $C$ (FEA), or equivalently, $A(C, T) = 1$.
+
+For a proof by contradiction, assume that $$A(C, T)=G(\frac{D_{0,\,0.3,\,1,\,1}(C,\overline{T})}{n}) < 1,$$ which holds only if $D_{0,\,0.3,\,1,\,1}(C,\overline{T}) > 0$. In other words, there is at least one sentence $s$ (negated or unnegated) for which there is a positive contribution to the Hamming distance. In particular, we have the following cases:
+
+i. $\overline{T}$ extends $C$ with respect to $s$: $+0.3$
+ii. $\overline{T}$ contracts $C$ with respect to $s$: $+1$
+iii. $\overline{T}$ and $C$ contradict each other with respect to $s$: $+1$
+
+Each case of changing $C$ with respect to $s$, yielding new commitments $C'$, impacts the contributions to the Hamming distances for account and faithfulness. Note that systematicity is not affected by changing the commitments.
+
+The complete linearity of the achievement function allows to distribute ("push in") the weights $\alpha_{A}$ and $\alpha_{F}$ over the individual contributions of the hamming distances.
+
+Since the achievement function is optimised for minimal contributions and $\alpha_{A} > \alpha_{F}$, it is always more attractive to change the commitments to increase account rather than faithfully respecting the initial commitments. This argument can be repeated for every sentence for which $C$ and $\overline{T}$ differ.
+
+In summary, if $(C, T)$ is a global optimum but $A(C, T) < 1$, then there is a position $(C', T)$ such that $A(C, T) < A(C', T)$ contradicting $(C, T)$ being a global optimum. Consequently, we must have $A(C, T) = 1$, i.e., $T$ accounts fully and exclusively for $S$ (FEA). This shows that $(C, T)$ is a full RE state.
+
+*Remark*
+
+Note that this argument does not work for quadratic model variants, and in particular, the default model of  @beisbart_making_2021. 
+Remember that the Hamming distance $D$ is a summation of penalties. Consequently, squaring the hamming distance yields a polynomial expression where every contributing penalty "interferes" by multiplication with the others. This blocks the above strategy of comparing the contributions and distributing the weights $\alpha_{A}$ or $\alpha_{S}$ over these expressions. In the quadratic models of the above ensemble study, we can observe a gradual transition between configurations that yield global optima, which exhibit a specific behaviour, to configurations that almost certainly fail in this respect.
