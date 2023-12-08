@@ -103,6 +103,7 @@ display(Markdown(df.to_markdown(index = False)))
 
 **Observations: Consistent Outputs**
 
+- Overall, the relative share of consistent output commitments are high for all model variants and output types, roughly ranging from 0.70 to 0.95
 - The relative share of global optima with consistent outputs is identical for `QuadraticGlobalRE` and `QuadraticLocalRE`, as well as for `LinearGlobalRE` and `LinearLocalRE` in @tbl-consistency_outputs_go. (Explanation: The local model variants rely on their global counterparts to determine global optima. Hence, these results are not interesting for the present study, but included for the sake of completeness.)
 - The overall relative share of consistent global optima commitments does not differ substantially between quadratic and linear model variants.
 - The relative shares of consistent commitments among fixed points does not differ substantially from the results for global optima for `QuadraticGlobalRE`, `QuadraticLocalRE`, and `LinearGlobalRE`
@@ -111,7 +112,7 @@ display(Markdown(df.to_markdown(index = False)))
 
 #### Consistency Cases
 
-The results of this section are based on a more fine-grained distinction of cases than before. Note that the sum of relative shares of consistency preserving and inconsistency eliminating cases corresponds to the relative share of consistent output commitments from above. 
+The results of this section are based on a more fine-grained distinction of cases than before. 
 
 ```{python}
 #| echo: false
@@ -135,7 +136,7 @@ display(Markdown(df.to_markdown(index = False)))
 #df.style.hide(axis="index")  
 ```
 
-![Mean relative share of consistency cases among global optima across all configuration of weights](figures/overall_consistency_cases_go_setups){#fig-overall-go}
+![Relative share of consistency cases among global optima across all configuration of weights](figures/overall_consistency_cases_go_setups){#fig-overall-go}
 
 ```{python}
 #| echo: false
@@ -161,7 +162,7 @@ display(Markdown(df.to_markdown(index = False)))
 #df.style.hide(axis="index")  
 ```
 
-![Mean relative share of consistency cases among fixed points across all configuration of weights](figures/overall_consistency_cases_fp_setups){#fig-overall-fp}
+![Relative share of consistency cases among fixed points (unique) across all configuration of weights](figures/overall_consistency_cases_fp_setups){#fig-overall-fp-setups}
 
 
 ```{python}
@@ -186,7 +187,14 @@ display(Markdown(df.to_markdown(index = False)))
 #df.style.hide(axis="index")  
 ```
 
+![Relative share of consistency cases among fixed points (all branches) across all configuration of weights](figures/overall_consistency_cases_fp_branches){#fig-overall-fp-branches}
+
 **Observations: Consistency Cases**
+
+- As it is to be expected, there are no differences in relative shares for global optima for `QuadraticGlobalRE` and `QuadraticLocalRE`, as well as for `LinearGlobalRE` and `LinearLocalRE`.
+- The relative share of inconsistency eliminating and consistency preserving cases is high for all model variants and output types. Note that their sum corresponds to the relative share of consistent output commitments from above.
+- In turn, the relative share of inconsistency preserving cases are small, and consistency eliminating cases occur very rarely.
+- The linear local model variant reaches inconsistent outputs (@fig-overall-fp-setups), but only very few branches result in these commitments (@fig-overall-fp-setups).
 
 #### Consistent Union
 
@@ -261,7 +269,9 @@ display(Markdown(df.to_markdown(index = False)))
 #df.style.hide(axis="index")  
 ```
 
+**Observations: Consistent Union**
 
+- The relative shares of consistent unions of commitments and theory among outputs with consistent commitments is very high for all model variants and output types.
 
 
 ### Results Grouped by Weight Configuration
@@ -276,21 +286,17 @@ display(Markdown(df.to_markdown(index = False)))
 
 ![Relative share of inconsistency eliminating cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_inconsistency_eliminating_cases_branches.png){#fig-IE-fp-branches}
 
-*Observations: Inconsistency eliminating cases (IE)*
+**Observations: Inconsistency eliminating cases (IE)**
 
-- The relative share of very good cases among global optima and fixed points varies between 10.3% (QDS, ensemble 08) and 22.7% (LDS, ensemble 07)
-- Linear models have higher relative shares than quadratic variants in ensembles 08 and 09. 
-- The relative share of very good cases among global optima does not exceed its counterpart for fixed points (In ensemble 09, the converse holds.)
+- Linear models exhibit a "tipping line" for IE cases among both global optima and fixed points. There are no IE cases where $\alpha_{A} < \alpha_{F}$. IE cases occur only for $\alpha_{A} > \alpha_{F}$.
+- In contrast, quadratic models have smooth transitions. High weights for account and systematicity, resulting in low weights for faithfulness, benefit the relative share of IE cases among global optima and fixed points.
+- The relative shares of IE cases among global optima do not exceed their counterpart for fixed points
+- The relative shares of IE cases among global optima are identical for `LinearGlobalRE` and `LinearLocalRE` in @fig-IE-go (as expected).
+- The relative shares of IE cases among fixed points from all branches in local model variants (@fig-IE-fp-branches) are slightly boosted in comparison to the consideration of unique fixed points (@fig-IE-fp-setups).
 
-- linear model have a "tipping line" for very good cases among both global optima and fixed points
-- very good cases occur only below the "tippling line" in linear models
-- the mean relative share (and the standard deviation) below the tipping line in linear model are completely uniform.
-- all model variants have regions in there heatmpas, where no very good cases occur at all, the maximal relative share of is 37% (ensebmle 07 and 08)/ 47% (ensemble 09) for both global and fixed points
 
-- quadratic models have smooth transitions
-- in quadratic models, high weights for account and low weight for faithfulness benefit the relative share of very good cases among global optima and fixed points
 
-**Consistency Preserving Cases**
+**Consistency Preserving Case (CP)**
 
 ![Relative share of consistency preserving cases among global optima grouped by model variant and configuration of weights.](figures/go_consistency_preserving_cases_setups.png){#fig-CP-go}
 
@@ -298,8 +304,14 @@ display(Markdown(df.to_markdown(index = False)))
 
 ![Relative share of consistency preserving cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_consistency_preserving_cases_branches.png){#fig-CP-fp-branches}
 
+**Observations: Consistency Preserving Cases (CP)** 
 
-**Inconsistency Preserving Cases**
+- Overall, CP cases occur frequently (roughly between 0.40 and 0.60) for all model variants and output types
+- The influence of weight configurations is moderately at best.
+- The relative shares of CP cases among global optima are identical for `LinearGlobalRE` and `LinearLocalRE` in @fig-CP-go (as expected).
+
+
+**Inconsistency Preserving Cases (IP)**
 
 ![Relative share of inconsistency preserving cases among global optima grouped by model variant and configuration of weights.](figures/go_inconsistency_preserving_cases_setups.png){#fig-IP-go}
 
@@ -307,7 +319,12 @@ display(Markdown(df.to_markdown(index = False)))
 
 ![Relative share of inconsistency preserving cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_inconsistency_preserving_cases_branches.png){#fig-IP-fp-branches}
 
-**Consistency Eliminating Cases**
+**Observations: Inconsistency Preserving Cases (IP)**
+
+- Linear models exhibit a "tipping line" for IP cases among both global optima and fixed points. There are no IE cases where $\alpha_{A} > \alpha_{F}$. IP cases occur only for $\alpha_{A} < \alpha_{F}$.
+- In contrast, quadratic models have smooth transitions. High weights for faithfulness boost the relative shares of IP cases among global optima and fixed points.
+
+**Consistency Eliminating Cases (CE)**
 
 ![Relative share of consistency eliminating cases among global optima grouped by model variant and configuration of weights.](figures/go_consistency_eliminating_cases_setups.png){#fig-CE-go}
 
@@ -315,38 +332,11 @@ display(Markdown(df.to_markdown(index = False)))
 
 ![Relative share of consistency eliminating cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_consistency_eliminating_cases_branches.png){#fig-CE-fp-branches}
 
+**Observations: Consistency Eliminating Cases (CE)**
 
-
-
-*Observations: Inconsistency preserving cases (IP)*
-
-- The relative share of bad cases among global optima varies between 14.8% (LDS, ensemble 08) and 33.8% (QDS, ensemble 09)
-- quadratic models have a higher share of bad cases than linear variants in ensembles 08 and 09. 
-- The relative share of bad cases among global optima tend to exceed its counterpart for fixed points (In ensemble 09, the converse holds for linear models.)
-
-- linear model have a "tipping line" for bad cases among both global optima and fixed points
-- bad cases occur only above the "tippling line" in linear models
-- the mean relative share (and the standard deviation) above the tipping line in linear model are completely uniform.
-- all model variants have regions in there heatmpas, where no bad cases occur at all, the maximal relative share of is 37% (ensebmle 07 and 08)/ 47% (ensemble 09) for both global and fixed points
-
-- quadraatic models have smooth transitions
-- in quadratic models, high weights for faithfulness and low weight for account increase the relative share of bad cases among global optima and fixed points.
-
-*Observations: Consistency eliminating cases (CE)*
-
-- The relative share of very bad cases among global optima varies between 1.3% (LDS, ensemble 07) and 13.0% (QDS, ensemble 09)
-- The relative share of very bad cases among fixed points varies between 0.4% (LPS, ensemble 07) and 8.7% (QDS, ensemble 08)
-- quadratic models have a higher share of very bad cases than linear variants for both global optima and fixed points in all ensembles. 
-- The relative share of very bad cases among global optima exceed its counterpart for fixed points
-
-- linear model have a "tipping line" for very bad cases among both global optima and fixed points
-- very bad cases occur only above the "tippling line" in linear models
-
-- all model variants have regions in there heatmpas, where no very bad cases occur at all
-
-- quadraatic models have smooth transitions
-- in quadratic models, low weights for account increase the relative share of very bad cases among global optima and fixed points.
-
+- Generally, the relative shares of CE cases are very low.
+- Linear models exhibit a "tipping line" for CE cases among both global optima and fixed points. There are no CE cases where $\alpha_{A} > \alpha_{F}$. IP cases occur only for $\alpha_{A} < \alpha_{F}$.
+- In contrast, quadratic models have smoother transitions. High weights for faithfulness boost the relative shares of CE cases among global optima and fixed points.
 
 
 ## Conclusion
@@ -355,9 +345,13 @@ display(Markdown(df.to_markdown(index = False)))
 What do we want to add from <https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-04.ipynb>?
 -->
 
+Overall, the present ensemble study concerning the three perspectives on consistency of outputs of RE simulations provides positive results with respect to model variation. The overall relative shares of consitent outputs, inconsistency eliminating and consistency preserving cases, as well as consistent unions are satisfactorily high for all model variants.
 
+In the more fine-grained analysis according to weigh configurations, we can observe regions of weight configurations that yield desirable behaviour. Moreover, these regions are robust across model variants. This provides at least some motivation to prefer some configurations over others. In particular it is benificial to consistency considerations if $\alpha_{A} > \alpha_{F}$.
 
-Overall, linear models tend to perform better than quadratic variants for all cases, but every model variant has combinations of weights where very (bad) cases disapear and very good cases occur more often. Even very bad cases cannot serve as an exclusion criteria. They have a (very) small share and their manifestation may depend on additional input features (e.g. the size of initial commitmen or their minimal axiomatizsation). <!--A description how an RE process creates a very bad case can be found in [dataexploration-04](https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-04.ipynb) of an earlier ensemble.-->
+There is a notable difference between quadratic and linear model variant (smooth transitions vs. tipping line), but this does not serve as a criterion to prefer some model variant over the others.
+
+ <!--A description how an RE process creates a very bad case can be found in [dataexploration-04](https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-04.ipynb) of an earlier ensemble.-->
 
 ## Appendix
 <!-- Move to a dedicated chapter for appendices?-->
