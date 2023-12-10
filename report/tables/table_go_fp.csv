@@ -1,5 +1,5 @@
 Model,% of fixed points in global optima,% of global optima in fixed points
-GlobalRE,56.9,78.4
-LinearGlobalRE,46.9,83.1
-LocalRE,52.2,62.4
-LinearLocalRE,27.7,81.5
+QuadraticGlobalRE,46.75303013454909,79.63068181818181
+LinearGlobalRE,44.68879668049793,77.55374961423722
+QuadraticLocalRE,40.34248860224619,66.43471891594946
+LinearLocalRE,35.07409602845287,73.63115978098557

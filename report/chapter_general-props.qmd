@@ -1,0 +1,104 @@
+# General ensemble properties {#sec-general-props}
+
+Before analyzing how the model variants perform with regard to the described performance criteria, we will analyze some basic features of model runs that help us understand the model better. In particular, we assess the overall length of processes, the (mean) step length of commitments adjustments steps and the extent of branching.   
+
+## Process length and step length
+
+In the following, we understand *process length* ($l_p$) as the number of theories and commitment sets in the evolution $e$ of the epistemic state, including the initial and final state. 
+
+$$
+\mathcal{C_0} \rightarrow \mathcal{T_0} \rightarrow \mathcal{C_1} \rightarrow \mathcal{T_1} \rightarrow \dots \rightarrow \mathcal{T_{final}} \rightarrow \mathcal{C_{final}}
+$$
+
+In other words, if $(\mathcal{T_{0}}, \mathcal{C_{0}})$ is the initial state and $(\mathcal{T_{m}}, \mathcal{C_{m}})$ the fixed-point state, $l_p(e)=2(m+1)$. An equilibration process reaches a fixed point if the newly chosen theory and commitments set are identical to the previous epistemic state---that is, if $(\mathcal{T_{i+1}}, \mathcal{C_{i+1}})=(\mathcal{T_{i}}, \mathcal{C_{i}})$  [@beisbart_making_2021, p. 466]. Accordingly, the minimal length of a process is $4$. In such a case, the achievement of initial commitments and the first chosen theory cannot be further improved. Accordingly, the initial commitments are also the final commitments. 
+
+@fig-dist-process-length shows the distribution of process lengths, and @fig-process-length shows the mean process length (and its standard deviation) for the different model variants dependent on the size of the sentence pool ($2n$) over all branches.  
+
+![Distribution of process lengths for different models.](figures/dist-process-length){width=66%  #fig-dist-process-length}
+
+The first interesting observation is that the semi-globally optimizing models (`QGRE` and `LGRE`) reach their fixed points quickly. Often, they adjust their commitments only once ($l_p(e)=6$); the linear model variant (`LGRE`) will sometimes not even adjust the initial commitments of processes ($l_p(e)=4$). In contrast, the locally optimizing models (`QLRE` and `LLRE`) need significantly more adjustment steps. This difference is expected if we assume that local and global optima commitments are not often in the $1$-neighbourhood of initial commitments (see @fig-distance-go-coms). Under this assumption, the locally searching models will need more than one adjustment step to reach a global or local optimum. 
+
+![Mean process length for different models and sentence pools.](figures/process-length){width=66%  #fig-process-length}
+
+Additionally, the models `QLRE` and `LLRE` have a much larger variance in process lengths than the models `QGRE` and `LGRE`.
+
+A third observation concerns the difference in process lengths between semi-globally and locally optimizing models in terms of their dependence on the sentence pool. @fig-process-length suggests that the process length of locally optimizing models increases with the size of the sentence pool. The semi-globally optimizing models lack such a dependence on the sentence pool size.   
+
+A possible explanation is motivated by analyzing the step length during the adjustment of commitments. @fig-step-length shows the mean distance between adjacent commitments sets in the evolution of epistemic states over all branches. For simplicity, we measure the distance between two commitment sets by their simple Hamming distance, defined as the number of sentences not shared by both sets. For example, the simple Hamming distance between the commitments sets $\{s_1,s_2\}$ and $\{s_2,s_3\}$ is $2$ since there are two sentences ($s_1$ and $s_3$) not shared by both sets. 
+
+![Mean step length of adjacent commitments for different models and sentence pools.](figures/step-length){width=66%  #fig-step-length}
+
+Unsurprisingly, the locally optimizing models have roughly a mean step length of $1$ since they are confined in their choice of new commitments to the $1$-neighbourhood.^[The mean distance is, for some cases, slightly greater than $1$, which can be simply explained: The definition of the $1$-neighbourhood is based on another Hamming distance than the one used here. In particular, there are sentence sets in the $1$-neighbourhood of a sentence set whose simple Hamming distance is greater than $1$. For instance, the set $\mathcal{C}_1=\{s_1, \neg s_2\}$  is in the $1$-neighbourhood of the sentence set $\mathcal{C}_2=\{s_1,s_2\}$ since it only needs an attitude change towards one sentence (i.e., an attitude change towards $s_2$ from rejection to acceptance). However, the simple Hamming distance is $2$ since both $s_2$ and $\neg s_2$ are not shared by $\mathcal{C}_1$ and $\mathcal{C}_2$.]  In contrast, the semi-globally optimizing models take bigger leaps with an increasing sentence pool size.  @fig-distance-go-coms shows why: With the increasing size of the sentence pool, the mean distance between initial commitments and commitments of global optima increases. In other words, RE processes must overcome larger distances to optimize epistemic states. Semi-globally optimizing models can walk this distance with fewer steps (@fig-process-length) since they can take comparably large steps (@fig-step-length). Locally optimizing models are confined to small steps (@fig-step-length) and, thus, have to take more steps  (@fig-process-length).
+
+![Mean distance between initial commitments and optimal commitments for different $\alpha_F$.](figures/distance-go-coms){width=66%  #fig-distance-go-coms}
+
+## Branching
+
+The choice of a new theory (or a new set of commitments respectively) is underdetermined if there are different candidate theories (or commitment sets) that maximize the achievement of the resulting epistemic state. In such a case, the model randomly chooses the new epistemic state. The model we use is able to track all these different branches to assess the degree of this type of underdetermination and to determine all possible fixed points for each configuration setup. 
+
+![Mean number of branches for different models and sentence pools.](figures/mean-branches){width=66%  #fig-mean-branches}
+
+@fig-mean-branches shows the mean number of branches with their dependence on the model and sentence pool. It suggests that branching is more prevalent in locally optimizing models. The large variance can be partly explained by the heat maps in @fig-hm-mean-branches, which depict mean values (and standard deviations) for different weight combinations. Since the three weights $\alpha_S$, $\alpha_F$ and $\alpha_S$ are not independent, it is sufficient to use two dimensions ($\alpha_S$ and $\alpha_F$ in our case). The diagonals from southwest to northeast are isolines for the faithfulness weight ($\alpha_F$). According to @fig-hm-mean-branches, branching is particularly prevalent for locally optimizing models if $\alpha_F$ is low, in other words, if a process is minimally bound to its initial commitments. The combination of low $\alpha_F$ and low $\alpha_S$ values is particularly conducive to the branching of RE processes. 
+
+![Mean number of branches for different models, sentence pools and weights.](figures/hm-mean-branches){width=88%  #fig-hm-mean-branches}
+
+
+<!-- 
+Relevant documents:
+
++ <https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-template.ipynb>
++ <https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-07.ipynb>
+
+Remarks/Todos:
+
++ What do we want to add here from <https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-07.ipynb>
+-->
+
+<!-- 
+Principles
+
+Relevant documents: <https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-06.ipynb>
+
+-->
+<!--
+## Principles
+
+**Background**
+
+The new generation of random arguments allows to ensure that the dialectical structures includes principles, i.e. sentences that only occur as premises in arguments. Consequently, principles have potential to account for other sentences (maybe together wit auxiliary premises).  The question is whether fixed points or global optima tend to include principles in their theories.
+
+**Method**
+
+*Definition*: A sentence is a principle of multiplicity $n$ in a dialectical structure iff (i) it occurs in exactly $n$ arguments as a premise and (ii) it or its negation does not occur as a conclusion in any argument. 
+
+We generated ensemble 06 with at least two principles per dialectical structure (150 structures). Upon initialization, the principles and their multiplicity are saved as a list of tuples of the form (principle, multiplicity) in the dataframe.  The study only included principles with multiplicity $`\geq`$ 2 and addressed the following questions:
+- Comparison with a chance model for the expected number of principles occurring in if theories were selected randomly.
+- Are principles in initial commitments preserved/transferred to fixed point theories?
+
+**Results**
+
+*Observations*
+- the number of principles with multiplicity $\geq 2$ is normally distributed around 2.
+
+*Chance model*
+- in most cases the mean number of principles in fixed point theories is higher than the expected number by chance
+
+*Preservation of principles*
+- in most of processes the amount of principles does not change from initial commitments to fixed point theory.
+- QDS performs better with respect to the mean difference of principles in initial commitments and theory (QDS: 0.0) than the other variants (QPS, LDS, LPS: -0.18)
+- the difference of principles in intial commitments and theory depends on the number of principles in the initial commitments. Only for initial commitments without principles the difference is positive. Again, QDS performs best.
+
+**Conclusion**
+
+The results are interesting but not decisive or well understood for the consolidation of the model.There are many open questions concerning the current implementation of principles:
+
+- Is the definition of principles reasonble in view of alternatives?
+- Is it possible to define other important and related concepts syntactically (e.g. additional or background assumptions, evidence etc.)?
+- Is the chance model too benevolent?
+- Should we consider only those principles, which are not elements of the initial commitments?
+- Should the chance model consider the distribution of principles in the set of all consistent and complete positions?
+
+In contrast to later ensembles, ensemble 06 does not completely track all fixed points and global optima for a configuration. It may be interesting to explore principles in a newly generated ensemble, which allows to study all fixed points as well as global optima.
+-->
+
+

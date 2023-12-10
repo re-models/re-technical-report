@@ -12,6 +12,14 @@ ToDo & remarks:
 + Figure/evidence for the described correlation between inferential density of the dialectical structure and the number of global optima or fixed points in the conclusion.
 -->
 
+<!-- perhaps to add (from c&p)
+
+Note that both global optima and fixed points may not be uniquely determined given an input. There may be multiple, equally well performing epistemic states according to the achievement function $Z$, or there may  be ties between candidates during equilibration, which leads to branching processes resulting in multiple fixe points.
+
+The global optimization can be achieved by brute force and going through every combination of commitments and theory (worst case). In contrast, the semi-globally optimizing equilibration process of adjustments can already be understood as a heuristic to reach global optimal states, but proccesses can be caught up in local optima. This holds even more so for the local model variant described below.
+
+-->
+
 **Background**
 
 The formal model of RE allows to distinguish to outcomes of RE, i.e. a theory-commitment-pair for some given intial commitments: *global optima* accdording to the achievement functions and *fixed points*, which are reached by an RE process. Global optima are calculated over theory-commitment-pairs and fixed points result from stepwise, mutual adjustment of commitments and theory. Consequently, global optima and fixed points may fall apart for a configuration. A global optima may not be reachable from given inital commitments by an RE process, or a fixed point may not be globally optimal.
@@ -53,8 +61,8 @@ from IPython.display import Markdown, display
 tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
 file_name = 'table_go_fp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
-df['% of fixed points in global optima'] = df['% of fixed points in global optima'].map(lambda x: f'{x:.1f}') 
-df['% of global optima in fixed points'] = df['% of global optima in fixed points'].map(lambda x: f'{x:.1f}') 
+df['% of fixed points in global optima'] = df['% of fixed points in global optima'].map(lambda x: f'{round(x,1):.1f}') 
+df['% of global optima in fixed points'] = df['% of global optima in fixed points'].map(lambda x: f'{round(x,1):.1f}') 
 
 display(Markdown(df.to_markdown(index = False)))
 #df.style.hide(axis="index")  

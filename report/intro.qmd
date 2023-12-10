@@ -23,30 +23,30 @@ Additionally, we address the following questions (@sec-general-props):
 
 # Introduction {#sec-intro}
 
-@beisbart_making_2021 introduced a formal model of reflective equilibrium based on the theory of dialectical structures [@betz_theorie_2010; @betz_debate_2013], which they use as a methodological tool to better understand the method of reflective equilibrium and to assess its potential to yield justified epistemic states. Their discussion of the model is mostly based on an illustrative example. An assesment of how the model behaves under a wider spectrum of circumstances went beyond the scope of their work.
+@beisbart_making_2021 introduced a formal model of reflective equilibrium based on the theory of dialectical structures [@betz_theorie_2010; @betz_debate_2013], which they use as a methodological tool to better understand the method of reflective equilibrium and to assess its potential to yield justified epistemic states. Their discussion of the model is mainly based on an illustrative example. An assessment of how the model behaves under a broader spectrum of circumstances went beyond the scope of their work.
 
-This report summarizes findings of assessing the RE model more thouroughly by, first, running the model under a wide range of configurations and, second, by tweaking the original model. The simulation outcomes of three model variants are compared to the ones of the original model.^[The results of @beisbart_making_2021 are based on a Mathematica implementation of the model (see [{{< var link.remoma >}}]({{< var link.remoma >}})). Here, we rely on a reimplementation in Python ([rethon]({{< var link.rethon >}})), which is able to reproduce the results of the original implementation (see [this notebook]({{< var link.reproduction-nb-bbb2021 >}})).]
+This report summarizes the findings of assessing the RE model more thoroughly by running the model under a wide range of configurations and by tweaking the original model. We compare simulation outcomes of three model variants to the ones of the original model.^[The results of @beisbart_making_2021 are based on a Mathematica implementation of the model (see [{{< var link.remoma >}}]({{< var link.remoma >}})). Here, we rely on a reimplementation in Python ([rethon]({{< var link.rethon >}})), which can reproduce the results of the original implementation (see [this notebook]({{< var link.reproduction-nb-bbb2021 >}})).]
 
 ## Modelling reflective equilibration {#sec-mod}
 
-Reflective equilibrium is a method of justification in which an epistemic subject iteratively adjusts their epistemic state until a reflective equilibrium is reached. In this final state, the agent's belief system is justified to the extent that it is (internally) coherent. 
+Reflective equilibrium is a method of justification in which an epistemic subject iteratively adjusts its epistemic state until a reflective equilibrium is reached. In this final state, the agent's belief system is justified to the extent that it is (internally) coherent. 
 
 @beisbart_making_2021 model this process of reflective equilibration and the underlying axiology in the following way.^[For a thorough and complete description of the formal RE model, see @beisbart_making_2021. The present section is based on condensed material from @freivogel_converge_2023.]
 
-The agent's epistemic state is modelled as a tupel $(\mathcal{C}, \mathcal{T})$, which comprises their accepted commitments $\mathcal{C}$ and a theory $\mathcal{T}$. Both are represented by sets of sentences from a finite pool of sentences $S$, which is closed under negation.  
+The agent's epistemic state is modelled as a tuple $(\mathcal{C}, \mathcal{T})$, which comprises their accepted commitments $\mathcal{C}$ and a theory $\mathcal{T}$. Both are represented by sets of sentences from a finite pool of sentences $S$, which is closed under negation.  
 
-The equilibration process is modelled as a mutual adjustment of the theory and the agent's commitments that aims to improve the epistemic state as measured by an achievement function $Z$ (see Figure @fig-model-schematics). The agent starts with a set of initial commitments $\mathcal{C}_0$. In a next step a theory $\mathcal{T}_0$ is chosen that systematises $\mathcal{C}_0$. This initial state $(\mathcal{C}_0, \mathcal{T}_0)$ is then adjusted by searching for a new set of commitments that performs better in terms of the overall achievement $Z$. This process of adjusting the current epistemic state by choosing a new theory (or new commitments, respectively) goes on until no further improvement is gained any more.  
+The equilibration process is modelled as a mutual adjustment of the theory and the agent's commitments to improve the epistemic state as measured by an achievement function $Z$ (see Figure @fig-model-schematics). The agent starts with a set of initial commitments $\mathcal{C}_0$. Then, a theory $\mathcal{T}_0$ is chosen that systematizes $\mathcal{C}_0$. This initial state $(\mathcal{C}_0, \mathcal{T}_0)$ is then adjusted by searching for a new set of commitments that performs better in terms of the overall achievement $Z$. This process of adjusting the current epistemic state by choosing a new theory (or new commitments, respectively) goes on until no further improvement is gained any more.  
 
-![Illustrative diagram of the formal model. The epistemic state, which consists of a set of commitments and a theory, is subject to operationalised desiderata for RE states (bold arrows). Rules for alternating adjustments of commitments and theory specify a process of equilibration that sets out from initial commitments.](figures/model_schematics.png){#fig-model-schematics}
+![Illustrative diagram of the formal model. The epistemic state, which consists of a set of commitments and a theory, is subject to operationalized desiderata for RE states (bold arrows). Rules for alternating adjustments of commitments and theory specify a process of equilibration that sets out from initial commitments.](figures/model_schematics.png){#fig-model-schematics}
 
 
 The achievement function $Z$ models the underlying axiology and is based on the three different desiderata *faithfulness*, *systematicity* and *account*. Their role is illustrated by bold arrows in Figure @fig-model-schematics.^[For formal details of all measures, see [@beisbart_making_2021, pp. 464-466].]
 
-The desideratum of *faithfulness* demands that current commitments should not deviate too much from the initial commitments $\mathcal{C}_{0}$. There are two motivations for this constraint [@beisbart_making_2021, p. 447]. A resemblance of the current commitments to $\mathcal{C}_{0}$ contributes to the justification of the resulting state to the extent that initial commitments have some independent credibility. Additionally, the sentences in $\mathcal{C}_{0}$ represent a specification of the topic under consideration. Deviating too much from $\mathcal{C}_{0}$ courts the danger of changing the topic. Faithfulness $F(\mathcal{C}\,\vert\, \mathcal{C}_{0})$ is operationalized in the model by measuring the distance of the current commitments to the initial commitments.^[The used distance is basically a weighted Hamming distance. For details, see @beisbart_making_2021, 465.]
+The desideratum of *faithfulness* demands that current commitments should not deviate too much from the initial commitments $\mathcal{C}_{0}$. There are two motivations for this constraint [@beisbart_making_2021, p. 447]. A resemblance of the current commitments to $\mathcal{C}_{0}$ contributes to the justification of the resulting state to the extent that initial commitments have some independent credibility. Additionally, the sentences in $\mathcal{C}_{0}$ represent a specification of the topic under consideration. Deviating too much from $\mathcal{C}_{0}$ courts the danger of changing the topic. Faithfulness $F(\mathcal{C}\,\vert\, \mathcal{C}_{0})$ is operationalized in the model by measuring the distance of the current commitments to the initial commitments.^[The used distance is a weighted Hamming distance. For details, see @beisbart_making_2021, 465.]
 
-The role of the theory $\mathcal{T}$ is to systematize the commitments $\mathcal{C}$. One suggestion to explicate this idea is to ask whether commitments are implied by the theory. The account $A(\mathcal{C}, \mathcal{T})$ measures how well the commitments $\mathcal{C}$ fit to what is implied by the theory $\mathcal{T}$. More specifically, $A(\mathcal{C}, T)$ is based on measuring the distance between $\mathcal{C}$ and the set of $\mathcal{T}$'s implications.
+The role of the theory $\mathcal{T}$ is to systematize the commitments $\mathcal{C}$. One suggestion to explicate this idea is to ask whether the theory implies the commitments. The account $A(\mathcal{C}, \mathcal{T})$ measures how well the commitments $\mathcal{C}$ fit to what is implied by the theory $\mathcal{T}$. More specifically, $A(\mathcal{C}, T)$ is based on measuring the distance between $\mathcal{C}$ and the set of $\mathcal{T}$'s implications.
 
-To that end, we need to know how the sentences in $S$ are inferentially connected to each other. The inferential relationships are modelled by dialectical structures based on the theory of dialectical structures [@betz_theorie_2010; @betz_debate_2013]. A dialectical structure $\tau$ is a set of deductively valid arguments $\mathcal{A}$ and their "inferential" relationships to each other. For instance, an argument with two premises $S_i, S_j$ ($\in S$) and a conclusion $S_k$ represents the inferential relationship of $S_k$ being implied by the conjunction of $S_i$ and $S_j$.^[The arguments of a dialectical structure $\tau$ need not to be formally valid, but can include "arguments that are valid *given the relevant background theories*" [@beisbart_making_2021, p. 460]. Additionally, $\tau$ does not need to codify all inferential relationship between sentences in $S$ and can, in this way, model some form of bounded rationality.] Each process of reflective equilibration takes place on the background of one dialectical structure that stays fixed during the process. 
+To that end, we need to know how the sentences in $S$ are inferentially connected. The inferential relationships are modelled by dialectical structures based on the theory of dialectical structures [@betz_theorie_2010; @betz_debate_2013]. A dialectical structure $\tau$ is a set of deductively valid arguments $\mathcal{A}$ and their "inferential" relationships to each other. For instance, an argument with two premises $S_i, S_j$ ($\in S$) and a conclusion $S_k$ represents the inferential relationship of $S_k$ being implied by the conjunction of $S_i$ and $S_j$.^[The arguments of a dialectical structure $\tau$ need not be formally valid, but can include "arguments that are valid *given the relevant background theories*" [@beisbart_making_2021, p. 460]. Additionally, $\tau$ does not need to codify all inferential relationships between sentences in $S$ and can, in this way, model some form of bounded rationality.] Each process of reflective equilibration takes place on the background of one dialectical structure that stays fixed during the process. 
 
 The final desideratum demands that a theory does not only perform well in systematizing the commitments $\mathcal{C}$ but is generally able to systematize sentences in $S$ (independent of whether they belong to the agent's epistemic state). Systematicity $S(\mathcal{T})$ measures this general inferential potential by considering the amount of $\mathcal{T}$'s implications in relation to the size of the sentence pool $S$.
 
@@ -56,14 +56,14 @@ $$
 Z(\mathcal{C}, \mathcal{T}\, \vert\, \mathcal{C}_0) = \alpha_{A}\cdot A(\mathcal{C}, \mathcal{T}) + \alpha_{S}\cdot S(\mathcal{T}) + \alpha_{F}\cdot F(\mathcal{C}\,\vert\, \mathcal{C}_0),
 $$
 
-The weights $\alpha_{A}$, $\alpha_{S}$ and $\alpha_{F}$ are real-valued numbers between $0$ and $1$ that sum up to $1$. Different suggestions of balancing the desiderata are represented by choosing different $\alpha$-weights in the achievement function $Z$. 
+The weights $\alpha_{A}$, $\alpha_{S}$ and $\alpha_{F}$ are real-valued numbers between $0$ and $1$ that sum up to $1$. Different suggestions for balancing the desiderata are represented by choosing different $\alpha$-weights in the achievement function $Z$. 
 
 The achievement function assigns to every epistemic state $(\mathcal{C}, T)$ a value of "overall betterness" relative to what we can call an *epistemic situation* of an agent, i.e., a dialectical structure $\tau$, a set of initial commitments $\mathcal{C}_0$, and a configuration of weights $(\alpha_{A}, \alpha_{S}, \alpha_{F}$). The epistemic situation captures the subject matter of inquiry, its background, and decisions to handle trade-offs between epistemic desiderata.
 
 
 ## Model variations
 
-In this report we compare the performance of four model variations that result from a combination of two independent alterations of the original model from @beisbart_making_2021 (see @tbl-models). First, we will vary the general shape of the functions $A$, $S$ and $F$. In the original model these functions have a quadratic form, which will be contrasted with a linear form. Second, we will compare the (semi-)global optimization during equilibrations steps, which is used in @beisbart_making_2021, with a locally optimizing model variant. 
+In this report, we compare the performance of four model variants that result from a combination of two independent alterations of the original model from @beisbart_making_2021 (see @tbl-models). First, we will vary the general shape of the functions $A$, $S$ and $F$. In the original model, these functions have a quadratic form, which will be contrasted with a linear form. Second, we will compare the semi-global optimization during equilibrations steps, which is used in @beisbart_making_2021, with a locally optimizing model variant. 
 
 |                      | Quadratic shape                        | Linear shape                         |
 ----------------------:|:---------------------------------------|:-------------------------------------|
@@ -86,147 +86,151 @@ However, the quadratic term $x^2$ is not motivated.  The linear models `LGRE` an
 
 The mutual adjustment of commitments and theories involves two types of revisions. The agent will revise their current commitments $\mathcal{C}_i$ and their current theory $\mathcal{T}_i$ in an alternating fashion. More specifically, when adjusting their commitments, the agent will search for new commitments $\mathcal{C}_{i+1}$ such that the resulting state $(\mathcal{C}_{i+1}, \mathcal{T}_i)$ performs better w.r.t. $Z$. Similarly, when adjusting their theory, the agent will search for a theory $\mathcal{T}_{i+1}$ such that $Z(\mathcal{C}_{i}, \mathcal{T}_{i+1}\,\vert\, \mathcal{C}_0)> Z(\mathcal{C}_{i}, \mathcal{T}_{i}\,\vert\, \mathcal{C}_0)$. 
 
-The equilibration process in @beisbart_making_2021 is a semi-global optimization in the following way: When searching for new commitments $\mathcal{C}_{i+1}$ that improve $Z$, the agent can choose any set of (consistent) commitments. Similarly, when searching for a new theory $\mathcal{T}_{i+1}$, the agents can choose any (consistent) theory. This is computationally costly as the search space grows exponentially with the size of the sentence pool. It is, for the same reason, also an unrealistic assumption about real epistemic subjects. 
+The equilibration process in @beisbart_making_2021 is a semi-global optimization in the following way: When searching for new commitments $\mathcal{C}_{i+1}$ that improve $Z$, the agent can choose any set of commitments. Similarly, when searching for a new theory $\mathcal{T}_{i+1}$, the agents can choose any theory. This search strategy is computationally costly as the search space grows exponentially with the size of the sentence pool. For the same reason, it is also an unrealistic assumption about real epistemic subjects. 
 
-One simple suggestion to solve this problem and to incorporate some form of bounded rationality into the model is to constrain the search space for the adoption of new commitments and theories. Instead of considering all consistent commitments and theories, a *locally* optimizing equilibration process confines the search space to a neighborhood of the current state. 
+A straightforward suggestion to solve this problem and incorporate some form of bounded rationality into the model is to constrain the search space for adopting new commitments and theories. Instead of considering all commitments and theories, a *locally* optimizing equilibration process confines the search space to a neighbourhood of the current state. 
 
-The definition of this neighborhood is based on an edit distance, which measures the amount of changes that are needed to transform one set of sentences into another one. Suppose the sentence pool $S$ comprise three sentences and their negations---that is, $S=\{s_1,s_3,s_3,\neg s_1, \neg s_2, \neg s_3\}$. Let us now consider two different sets of commitments: $\mathcal{C}_1=\{s_1, \neg s_2\}$ and $\mathcal{C}_2=\{s_1,s_2,s_3\}$. Suppose now that an agent adopts $\mathcal{C}_1$ as their commitments. In other words, they accept $s_1$, refuse $s_2$ and are indifferent towards $s_3$. Consequently, a set of commitments can be specified by describing the doxastic attitude (acceptance, refusal and indifference) towards each sentence of half the sentence pool ($s_1$, $s_2$ and $s_3$ in our example). The edit distance we use is defined by asking how many changes of doxastic attitudes are needed to transform one set of commitments into another one. Consequently, the edit distance between $\mathcal{C}_1$ and $\mathcal{C}_2$ is $2$ since we would have to change the attitude for $s_2$ from refusal to acceptance and for $s_3$ from indifference to acceptance. 
+The definition of this neighbourhood is based on an edit distance, which measures the number of changes needed to transform one set of sentences into another. Suppose the sentence pool $S$ comprise three sentences and their negations---that is, $S=\{s_1,s_3,s_3,\neg s_1, \neg s_2, \neg s_3\}$. Let us now consider two different sets of commitments: $\mathcal{C}_1=\{s_1, \neg s_2\}$ and $\mathcal{C}_2=\{s_1,s_2,s_3\}$. Suppose further that an agent adopts $\mathcal{C}_1$ as their commitments. In other words, they accept $s_1$, refuse $s_2$ and are indifferent towards $s_3$. Consequently, a set of commitments can be specified by describing the doxastic attitude (acceptance, refusal and indifference) towards each sentence of half the sentence pool ($s_1$, $s_2$ and $s_3$ in our example). The edit distance we use is defined by asking how many changes of doxastic attitudes are needed to transform one set of commitments into another. Consequently, the edit distance between $\mathcal{C}_1$ and $\mathcal{C}_2$ is $2$ since we would have to change the attitude for $s_2$ from refusal to acceptance and for $s_3$ from indifference to acceptance. 
 
-We can now define the neighborhood of depth $d$ of a set of sentences $S_i$ as the set of all sentence sets that have at most an edit distance of $d$ to $S_i$.^[For a sentence pool size of $2n$, the number of positions in the neighborhood of a position is $\sum_{k=0}^{d} \binom{n}{k} \cdot 2^k,$ where $d$ denotes the neighborhood depth. For $d = 1$ the number of positions in the neighbourhood grows linearly with the number of sentences. More specifically, for $d=1$ the size of the neighborhood is $2n + 1$.] 
+We can now define the neighbourhood of depth $d$ (in short, the $d$-neighbourhood) of a set of sentences $S_i$ as the set of all sentence sets that have at most an edit distance of $d$ to $S_i$.^[For a sentence pool size of $2n$, the number of positions in the neighbourhood of a position is $\sum_{k=0}^{d} \binom{n}{k} \cdot 2^k,$ where $d$ denotes the neighbourhood depth. For $d = 1$, the number of positions in the neighbourhood grows linearly with the number of sentences. More specifically, for $d=1$, the size of the neighbourhood is $2n + 1$.] 
 
-The *local* model variants `QLRE` and `LLRE` restrict the commitments and theory candidates during adjustment steps to a neighborhood of depth $d=1$.
+The *local* model variants `QLRE` and `LLRE` restrict the commitments and theory candidates during adjustment steps to a neighbourhood of depth $d=1$.
 
-To illustrate the difference between global, semi-global and local optimization, think of epistemic states $(C, T)$ as cells on a appropriately sized, possibly non-square, chess board.^[Note that the two-dimensional representation of the epistemic states in the subsequent figures is purely illustrative. There is no inherent linear order among positions, which can be understood as points in an $n$-dimensional discrete space.] The unbounded, globally optimising agent can overview the entire board at once (Figure @fig-grid-global), while a semi-globally optimizing agent can evaluate only a single row or column per adjustment step (Figure @fig-grid-semi-global). Finally, only candidates from a small neighborhood of the current position are available to the locally optimizing agent only during an adjustment step (Figure @fig-grid-local).
+To illustrate the difference between global, semi-global and local optimization, think of epistemic states $(C, T)$ as cells on an appropriately sized, possibly non-square, chess board.^[Note that the two-dimensional representation of the epistemic states in the subsequent figures is purely illustrative. There is no inherent linear order among positions, which can be understood as points in an $n$-dimensional discrete space.] The unbounded, globally optimizing agent can overview the entire board at once (@fig-grid-global), while a semi-globally optimizing agent can evaluate only a single row or column per adjustment step (@fig-grid-semi-global). Finally, only candidates from a small neighbourhood of the current position are available to the locally optimizing agent only during an adjustment step (Figure @fig-grid-local).
 
 ![Global optimization: All epistemic states are available.](figures/grid_global.png){width=66%  #fig-grid-global}
 
 ![Semi-global optimization: All sets of commitments and all theories are available in an alternating fashion while the other component is held fixed.](figures/grid_semi_global.png){width=66% #fig-grid-semi-global}
 
-![Local optimization (alternating): Available commitments(row)/theories (column) are restricted to a neighborhood of the current state in an alternating fashion while the other component is held fixed.](figures/grid_local.png){width=66% #fig-grid-local}
+![Local optimization (alternating): Available commitments(row)/theories (column) are restricted to a neighbourhood of the current state in an alternating fashion while the other component is held fixed.](figures/grid_local.png){width=66% #fig-grid-local}
 
 ## Metrics for model validations
 
-At the outset, there is a plethora of metrics that could be used to examine the performance of the formal model. Let us motivate a small selection of desiderata for model validation, which we are going to use in following chapters.
+At the outset, a plethora of metrics could be used to examine the performance of the formal model. Let us motivate a small selection of desiderata for model validation, which we will use in the following chapters.
 
-The process of reflective equilibration reaches an end point, a so-called fixed point, if the agent arrives at an epistemic state that cannot be further improved (in terms of the achievement function) by revising their commitments or their theory, respectively [@beisbart_making_2021, p. 450]. However, such a fixed point is not necessarily a global optimum. In other words, there might be other epistemic states that perform better w.r.t. $Z$. 
+The process of reflective equilibration reaches an endpoint, a so-called fixed point, if the agent arrives at an epistemic state that cannot be further improved (in terms of the achievement function) by revising their commitments or their theory, respectively [@beisbart_making_2021, p. 450]. However, such a fixed point is not necessarily a global optimum. In other words, other epistemic states might perform better w.r.t. $Z$. 
 
-This possible divergence of fixed points and global optima applies to locally optimizing models (`LLRE` and `QLRE`) as well as to the semi-globally optimizing models (`LGRE` and `QGRE`). The former can obviously stuck in local optima since they are confined to a restricted search area for the improvement of epistemic states. But the semi-globally optimizing models can also get stuck in local optima since they do not adjust their commitments and theories simultaneously but alternately. Consequently, there is a conceptual delineation between the axiology (as defined by the achievement function) as a static aspect of RE and the equilibration process as the dynamical aspect of RE.^[The fact that the model allows to distinguish static and dynamic aspects makes the model a fruitful foil to discuss the wider epistemological questions surrouding the method of reflective equilibrium [@beisbart_making_2021, p. 457--458].]
+This possible divergence of fixed points and global optima applies to locally optimizing models (`LLRE` and `QLRE`) and the semi-globally optimizing models (`LGRE` and `QGRE`). The former can get stuck in local optima since they are confined to a restricted search area for the improvement of epistemic states. However, the semi-globally optimizing models can also get stuck in local optima since they do not adjust their commitments and theories simultaneously but alternately. Consequently, there is a conceptual delineation between the axiology (as defined by the achievement function) as a static aspect of RE and the equilibration process as the dynamical aspect of RE.^[The fact that the model allows distinguishing static and dynamic aspects makes the model a fruitful foil to discuss the broader epistemological questions surrounding the method of reflective equilibrium [@beisbart_making_2021, p. 457--458].]
 
-Accordingly, there are interesting questions concerning the relationship between fixed points and global optima, which are relevant to assess the performance of the model variants. In @sec-go-and-fp, we investigate whether fixed points are global optima and, conversely, whether global optima are reachable by equilibration processess.
+Accordingly, several questions concerning the relationship between fixed points and global optima are relevant to the performance assessment of the model variants. In @sec-go-and-fp, we investigate whether fixed points are global optima and, conversely, whether global optima are reachable by equilibration processes.
 
-The reached achievement of fixed points and global optima is not the only evaluative perspective on epistemic states. In other words, there are other aspects of evaluating reflective equilibria besides the desiderate of account, systemticity and faithfulness [@beisbart_making_2021, p. 448-449]. 
+The reached achievement of fixed points and global optima is not the only evaluative perspective on epistemic states. In other words, there are other aspects of evaluating reflective equilibria besides the desiderata of account, systemticity and faithfulness [@beisbart_making_2021, p. 448-449]. 
 
-The most ambitous requirement demands that a theory accounts fully and exclusively for the commitments of an epistemic state. Fixed point that are global optima and that, additionally, satisfy this criterion are called full RE states. In @sec-full-re-states, we investigate whether and under which circumstances fixed points are full RE states. We will also analyse whether theories of global optima fully and exclusively account for their commitments.
+The most ambitious requirement demands that a theory accounts fully and exclusively for the commitments of an epistemic state. Fixed points that are global optima and that additionally satisfy this criterion are called full RE states. In @sec-full-re-states, we investigate whether and under which circumstances fixed points are full RE states. We will also analyze whether theories of global optima fully and exclusively account for their commitments.
 
-Weaker requirements demand that fixed points or, at least, fixed point commitments are dialectically consistent---that is consistent with respect to all inferential relationships encoded in the given dialectical structure $\tau$. Consistency is commonly seen as a necessary condition of coherence. Achieving consistency is, therefore, of utmost importance for equilibration processes. In @sec-commitment-consistency, we will assess the consistency conduciveness of the different model variants.
+Weaker requirements demand that fixed points or, at least, fixed point commitments are dialectically consistent---that is, consistent with respect to all inferential relationships encoded in the given dialectical structure $\tau$. Consistency is commonly seen as a necessary condition of coherence. Achieving consistency is, therefore, of utmost importance for equilibration processes. In @sec-commitment-consistency, we will assess the consistency conduciveness of the different model variants.
 
-Finally, we will investigate whether global optima and fixed points yield extreme values in the normalized measures $A$, $F$ and $S$ (@sec-extreme-values). The achievement function $Z$ aggregates these measures by using weights to model trade-offs between the desiderate (e.g., give up on faithfulness to increase account). Investigating under which circumstances extreme values are achieved in $A$, $F$ and $S$ might improve our understanding of the involved trade-offs and of the consequences to choose specific weights.
+Finally, we will investigate whether global optima and fixed points yield extreme values in the normalized measures $A$, $F$ and $S$ (@sec-extreme-values). The achievement function $Z$ aggregates these measures by using weights to model trade-offs between the desiderate (e.g., give up on faithfulness to increase account). Investigating under which circumstances extreme values are achieved in $A$, $F$, and $S$ might improve our understanding of the involved trade-offs and of the consequences of choosing specific weights.
 
-<!-- Minimal models should answer the subquestions in the affirmative to a sufficient degree. However, undesirable behaviour of a model variant should be explainable in terms of additional input, apart from the model specification, which is required to run simulations.-->
+<!-- Minimal models should answer the sub-questions in the affirmative to a sufficient degree. However, undesirable behaviour of a model variant should be explainable in terms of additional input, apart from the model specification, which is required to run simulations.-->
 
-## Ensembles
+## Ensemble description
 
-Every simulation of an RE process and the calculation of global optima requires some inputs:
+The results of RE processes and their global optima depend on the following inputs:
 
-i) the model variant 
-ii) the dialectical structure, 
-iii) the weightings of the measures in the achievement function
-iv) the set of initial commitments 
++ the model variant,
++ the dialectical structure $\tau$ and the sentence pool, 
++ the $\alpha$-weights for the achievement function and
++ the set of initial commitments 
    
-Let us call a specification of inputs that allows to run simulation a *simulation setup*. Every setup yields a simulation of possibly branching RE processes and a set of global optima (i.e. commitment-theory-pairs that maximize the achievement function). Note that we keep track of all fixed points and all global optima for each simulation setup.
+Let us call a specification of these inputs a *simulation setup*. 
 
-<!--The features of every configuration and its outcomes are stored in a row of a table (stored as comma-separated values (.csv), for a complete l). For a complete list of columns, see the [API documentation](http://argunet.philosophie.kit.edu/remodel-apidocs/api-docs/api-ensemble-generation.html)-->Generating an ensemble of simulations includes the following tasks and requires the specification of additional parameters.
+Due to the exponential growth of candidate commitments and theories, which all have to be considered for global optima and semi-global adjustment steps in RE processes, the ensemble includes only four sentence pools with a small number of sentences ($12$, $14$ , $16$, $18$). We generated $50$ dialectical structures and $20$ sets of random initial commitments for each sentence pool. We used every resulting configuration of dialectical structures and initial commitments (out of $4\,000=4\cdot 50 \cdot 20$ configurations) to run RE processes for every of the described model variants and for $36$ $\alpha$-weight configurations. 
 
+For each of the resulting $576\,000$ simulation setups, we calculated global optima. Note also that one simulation setup does not necessarily determine a fixed point uniquely. For every step of adjusting a theory (or a set of commitments), the subsequent theory (or set of commitments) is underdetermined if there is more than one candidate that maximizes the achievement function. In such cases, the model will randomly choose the next theory (or set of commitments) [@beisbart_making_2021, p. 466]. The Python implementation of the model allows us to track each of the resulting branches, which we did for this report. 
 
-**Size of sentence pool**
-
-Due to the exponential growth of candidate commitments and theories, which all have to be considered for global optima and semi-global adjustment steps in RE processes, the ensembles include sentence pools with a small number of unnegated sentences (6 to 9 sentences). <!--The generation of ensembles is handled by a module ([ensemble_generation.py](https://git.scc.kit.edu/debatelab/re-python/-/blob/master/remodel/ensemble_generation.py)) that can be executed from a notebook ([ensemble-study-02-data-generation.ipynb](https://git.scc.kit.edu/debatelab/re-python/-/blob/master/projects/ensemble_study_02/ensemble-study-02-data-generation.ipynb)).--> 
-
-**Automatically generated dialectical structures**
-
-<!--The early ensembles (01-04) rely on a first version of creating random arguments for a dialectical structure. Inspite of initial measures to organize the arguments (e.g. preventing unnconnected clusters of arguments) the resulting dialectical structures still have a tendency to produce chaotic argument maps. In an attempt to generate more orderly structures, we refined the creation of random dialectical structures further. At this point, t-->The creation of random dialectical structures includes the following parameters: The number of unnegated sentences in the sentence pool, the number of arguments, the (maximal) number of premises per argument and whether there is variation, and the (minimal) number of principles. A sentence is called *principle* if and only if it occurs in at least one argument as premise and it or its negation does not occur as a conclusion in any argument. The random generation ensures that the dialectical structure contains the minimal number of principles, but there may be more sentences that satisfy the condition, too.
-
-In addition, the creation of arguments ensures that all (unnegated) sentences are used in the arguments, and there is some preference for sentences that occur fewer times. Before a new candidate argument is added to the other arguments of the dialectical structure under construction, it has to pass a series of test conditions: The new argument 
-- is not question-begging, i.e. the conclusion is not part of the premises
-- is not attack-reflexive, i.e. the negation of the conclusion is not part of the premises
-- has premises that are not a subset of premises of another argument
-- is jointly satisfiable with the other arguments
-- reduces the number of complete consistent postions, if it is added to the dialectical structure
-
-<!--Visual comparison of argument maps ([create_random_arguments](https://git.scc.kit.edu/debatelab/re-python/-/tree/master/projects/ensemble_study_02/data/create_random_arguments) vs. [create_random_arguments2](https://git.scc.kit.edu/debatelab/re-python/-/tree/master/projects/ensemble_study_02/data/create_random_arguments2)), which can be created on demand or automatically during the generation of ensembles.-->
-
-<!--
-+ Do we discuss in this report findings of the Semmelweiss example? If not, the para is irrelevant here, right?
--->
-
-<!--
-Apart from generating ensembles with randomly generated dialectical structures, other ensembles are based on  handwritten examples (Semmelweiss example, variations of the standard example), that allow for a more intuitive interpretation of results.
--->
-
-The *inferential density* of a dialectical structure $\tau$, 
-$$
-D(\tau) = \frac{n-lg(\sigma)}{n},
-$$
-where $n$ is the number of unnegated sentences in the sentence pool and $\sigma$ is the number of complete and consistent extensions in $\tau$, was kept between $0.15$ and $0.5$.
-
-**Random selection of initial commitments**
-
-There are $3^{n}$ minimally consistent set of sentences that serve as initial commitments. To create initial commitments, an integer between 1 and  $3^{n}$ is randomly chosen, converted to a ternary representation and initialized as a position in the Python implementation.
+However, for some simulation setups ($XXX$), we do not have simulation results. Due to reasons of computational feasibility, we had to set a cut-off point for the number of branches per simulation setup and the number of adjustment steps.^[The models will always converge within a finite number of steps into a fixed point [see @beisbart_making_2021, p. 467]. The same could be shown for the number of branches. However, the number of branches and the length of processes can still be computationally challenging.] We chose to limit the number of branches to $400$ and set the maximum number of adjustment steps to $100$. Given these restrictions, the resulting ensemble comprises $XXX$ branches.
 
 
-**Resolution of weights**
+| Setups | Model variants | Sentence pool sizes      | Dialectical structures | Initial commitments | $\alpha$-weights (resolution) |
+| -------| -------------- | ------------------------ | ---------------------- | ------------------- | --------------- | 
+| $576\,000$| $4$         | $12$, $14$, $16$, $18$  | $4*50$                 | $4*20$              |  $36$ ($0.1$)   |
 
-In order to explore different values for $\alpha_{A}$, $\alpha_{S}$ and $\alpha_{F}$ in the achievement function, a resolution (i.e. the separation of the unit intervall $[0, 1]$ into intervalls of equal length) of weights can be specified for an ensemble. Every combination of $\alpha_{A}$, $\alpha_{S}$, and $\alpha_{F}$ satisfies the boundary condition $\alpha_{A} + \alpha_{S} + \alpha_{F} = 1$. 
+: Ensemble properties {#tbl-ensembles} 
+
+Let us now describe the simulation setups more thoroughly.
+
+
+### $\alpha$-weights
+
+Each $\alpha$-weight was varied between $0.1$ and $0.8$ in steps of $0.1$ (i.e., values from $0.1, 0.2, \dots, 0.8$). We excluded extreme values such as $\alpha_{F} = 0$ or $\alpha_{A} = 1$ since they "break" the model and lead to undesirable behaviour. For example, $\alpha_{F} = 0$ yields only, but all, singleton theories and their closures as commitments as global optima. Since $\alpha$-weights have to satisfy $\alpha_{A} + \alpha_{S} + \alpha_{F} = 1$, there are $36$ possible combinations of the described $\alpha$-weights.
 
 <!-- 
-+ ToDo: Then we should rely the analysis only on ensembles with $\alpha_{F} \neq 0$.
-+ ToDo (?): Explain (more thouroughly or shortly) the findings of <https://github.com/debatelab/re-studies/blob/master/notebooks/Faithfulness_0_is_a_bad_idea.ipynb>.
++ ToDo (?): Explain (more thoroughly or shortly) the findings of <https://github.com/debatelab/re-studies/blob/master/notebooks/Faithfulness_0_is_a_bad_idea.ipynb>.
 -->
-We exclude extreme weightings such as $\alpha_{F} = 0$ or $\alpha_{A} = 1$, since they "break" the model and lead to undesirable behavior. For example, $\alpha_{F} = 0$ yields only, but all, singleton theories and their closures as commitments as global optima. 
+
+### Initial commitments
+
+We generated a simple random sample of $20$ sets of minimally consistent initial commitments for every sentence pool. While we allow initial commitments to be dialectically inconsistent---that is, inconsistent w.r.t. the inferential relationships codified in $\tau$--- they must be minimally consistent. In other words, they should not include flat contradictions (e.g., $\{s_1,s_2,\neg s_1\}$). 
+
+Let $2^S$ be the set of all sets of minimally consistent sentences from $S$. If $2n$ is the size of the sentence pool, then there are $3^{n}$ minimally consistent sets of sentences ($\vert 2^S \vert = 3^{n}$). For the generation of the used random sample, every set of commitments has the same probability of being drawn. Note that this does not translate into a uniform distribution of the number of initial commitments since the amount of sets with a specific size varies in $2^S$. In @fig-distribution-coms-size, you find the actual distribution of the initial commitments' sizes for the different sentence pools.
+
+![Distribution of initial commitments' sizes for different n.](figures/size-init-coms){width=88%  #fig-distribution-coms-size}
+
+### Dialectical structures
+
+<!--and the (minimal) number of principles. A sentence is called *principle* if and only if it occurs in at least one argument as premise and it or its negation does not occur as a conclusion in any argument. The random generation ensures that the dialectical structure contains the minimal number of principles, but there may be more sentences that satisfy the condition, too.-->
+
+We generated $50$ random dialectical structures for each sentence pool, which codify all inferential relationships on which an RE process is based. A dialectical structure comprises arguments with an internal premise-conclusion structure and dialectical relationships between arguments. Arguments can attack or support each other (see @fig-tau-example for an example).^[The illustrated dialectical structure is one from the actual data set (with the name `tau-alpha-020`). Argument maps of all used dialectical structures can be found here XXX.]
+
+![Example of a dialectical structure. Attack relations are indicated by waved-shaped arrows, and support relations by straight arrows. Numbers represent sentences from $S$, and the minus sign denotes the negation of a sentence.](figures/tau_alpha_020){width=40%  #fig-tau-example}
+
+Inferential relationships are represented in a dialectical structure $\tau$ in the following way: If the sentences $P=\{s_ {i_1},s_{i_2},\dots, s_{i_m}\}$ are premises of an argument in $\tau$ and $s_j$ is its conclusion, $s_j$ is (known to be) implied by $P$. If an argument $A$ supports another argument $B$, the conclusion of $A$ is (known to be) equivalent to a premise of $B$; if an argument $A$  attacks another argument $B$, the conclusion of $A$ is (known to be) inconsistent with a premise of $B$. 
+
+The *inferential density* of a dialectical structure $\tau$ "can be understood as measure of the inferential constraints encoded
+in $\tau$" [@betz_debate_2013, p.44] and is defined as
+$$
+D(\tau) = \frac{n-lg(\sigma)}{n}
+$$
+
+where $2n$ is the size sentence pool and $\sigma$ the number of complete and consistent positions in $\tau$
+
+The $\tau$-generating algorithm we used receives the following parameters as constraints: 
+
++ the size of the sentence pool ($n\in \{6,7,8,9\}$),
++ an interval for the permissible number of arguments ($I_{\vert\tau\vert}=[n-2,n+2]$),
++ the maximum number of premises per argument ($P_{n_{max}}=2$),
++ probability weights for the number of premises for arguments (i.e., weights for each $1,\dots, P_{n_{max}}$) and 
++ an interval for the permissible inferential density ($I_D=[0.15,0.5]$)
+
+The algorithm will generate a dialectical structure by randomly constructing arguments so that the number of arguments and the inferential density fall in the specified intervals $I_{\vert\tau\vert}$ and $I_D$. Both properties correlate inversely: Roughly, the more arguments $\tau$ has, the higher its inferential density. 
+
+Besides the specified parameters, the algorithm will satisfy the following constraints:
+
++ The dialectical structure is satisfiable (i.e., there is at least one dialectically consistent position on $\tau$).
++ Every sentence will be used. In other words, there is for every sentence $s\in S$ an argument in $\tau$ such that $s$ or $\neg s$ is either a premise or the conclusion of the argument.  
++ Arguments are not question-begging (i.e., an argument's conclusion is not in its premise set).
++ Arguments are not attack-reflexive (i.e., the negation of an argument's conclusion is not in its premise set).
 
 <!--
-+ ToDo: Revise this table.
-    + Do we use every ensemble? 
-    + Can we perhaps aggregate some ensembles into one?
-+ For more details on the used ensembles, see <https://github.com/debatelab/re-studies/tree/master/projects/ensemble_study_02/data>
+- has premises that are not a subset of premises of another argument (BC: not clear what that means)
+- reduces the number of complete consistent positions, if it is added to the dialectical structure
 -->
-**Overview of ensembles**
 
-This study is based on different ensembles, which differ with respect to the following properties:
+@fig-distr-inf-dens plots the actual distribution of inferential densities in the generated data set of all $200$ dialectical structures.
 
+![Distribution of inferential densities in the used $\tau$-data set.](figures/distr-inf-dens){width=66%  #fig-distr-inf-dens}
 
-| ensemble ID | setups | model variants | sentence pool sizes | dialectical structures | initial commitments | weightings (resolution) |
-| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| 01 | x | 4 | 4 | x | x | 36 (0.1) |
+All generated dialectical structures have arguments with $1$-$2$ premises. For each sentence pool, we used five sets of weights for the number of premises such that there are $10$ dialectical structure with an expected number of premises $E(\vert P_\tau \vert)$ of $1$, $10$ with $E(\vert P_\tau \vert)=1.25$, $10$ with $E(\vert P_\tau \vert)=1.5$, $10$ with $E(\vert P_\tau \vert)=1.75$ and $10$ with $E(\vert P_\tau \vert)=2$. The resulting actual distribution of the mean number of premises per argument can be seen in @fig-mean-number-premises. The increased amount of $\tau$s with only $1$ and $2$-premise arguments results from ceiling effects since all arguments have at least one and at most two premises.
+
+![Distribution of the mean number of premises in the used $\tau$-data set.](figures/mean-number-premises){width=66%  #fig-mean-number-premises}
+
+## Summary of results
+
+to come ...
 
 <!--
-*Model explorations of ensembles 01 to 06*
-
-There is a [template](https://git.scc.kit.edu/debatelab/re-python/-/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-template.ipynb) for the exploration of ensembles. It extracts the following information from an ensemble
-
-- general points
-- commitment consistency cases
-- global optima and fixed points in relation to inferential density and size of sentence pool
-- process length
-- tau truths
-- dynamics  of concrete examples
-
-*Model validation with ensemble  07 to 09*
-
-An important difference to earlier ensembles is the strict separation of global optima and fixed points with respect to relevant features such as RE states or commitment consistency cases. For every fixed point and every global optimum additional information is stored in the corresponding row (see [here](https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/documents/model-validation.md)).
+In general, we did not find conclusive evidence to exclude a model variant as a future reference point. Each model variant satisfies the consolidation criteria to a sufficient degree for a wide range of configurations. At this point, undesirable behavior (failing with respect to some criterion) cannot be attributed to a model variant on its own, but may result from a combination of other aspects of a configuration, such as unfavourable dialectical structures, extreme weightings or hopelessly absurd initial commitments. This does not mean, that there are no differences at all or no tendencies in favor of some model variants. Linear models tend to perform better as quadratic variants with respect to many criteria. 
 -->
 
+<!--
 **Remarks on the interpretation or explanation of results** 
 
 Due to the wide range of required inputs for a configuration, salient behaviour may depend on the features of any of i) - iv) or a combination thereof, and it is difficult to separate all dimension at once. In order to disentangle model variants  and iii) the weightings, heatmaps proved to be a useful tool and provided insightful plots with respect to various evaluation criteria. The other inputs involve much more features, which could explain salient behaviour, but are much harder to separate:
 
 ii) features of dialectical structures include the size of the sentence pool, number of arguments, number of premises per argument, inferential density, number of complete consistent extensions, number of tau-truths.
 iv) features of initial commitments include their size, dialectical consistency, dialectical closure, number of complete consistent extensions, the minimal axiomatization
-
-## Summary of results
-
-In general, we did not find conclusive evidence to exclude a model variant as a future reference point. Each model variant satisfies the consolidation criteria to a sufficient degree for a wide range of configurations. At this point, undesirable behavior (failing with respect to some criterion) cannot be attributed to a model variant on its own, but may result from a combination of other aspects of a configuration, such as unfavourable dialectical structures, extreme weightings or hopelessly absurd initial commitments. This does not mean, that there are no differences at all or no tendencies in favor of some model variants. Linear models tend to perform better as quadratic variants with respect to many criteria. 
-
+-->
 <!-- 
 Remarks: Currently I [BC] outcommented this para. 
 + ToDo: We should discuss, whether we want include analytical results in the standalone technical report.

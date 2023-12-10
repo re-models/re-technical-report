@@ -1,0 +1,5 @@
+Model,% of reached global optima in global optima,% of reached global optima in all branches
+QuadraticGlobalRE,47.92616479484043,79.65255960081315
+LinearGlobalRE,44.69472436277416,77.55605842419256
+QuadraticLocalRE,60.430334704770374,70.41331951282716
+LinearLocalRE,60.11262596324837,77.2294570101287
