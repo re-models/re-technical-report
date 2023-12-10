@@ -124,6 +124,37 @@ def normalized_heat_maps_by_weights(re_data, values, title, index='weight_accoun
         g.savefig(path.join(output_dir, file_name + '.pdf'), bbox_inches='tight')
         g.savefig(path.join(output_dir, file_name + '.png'), bbox_inches='tight')
 
+def plot_multiple_error_bars(data, var_y, ylabel,  
+                             var_hue = 'model_name', hue_title='Model', 
+                             var_x = 'n_sentence_pool', xlabel = 'n', xticks=[6,7,8,9],
+                             file_name=None, output_dir=None,
+                             jitter=True, jitter_size=0.03,
+                             bbox_to_anchor=(1., 0.2)):
+    groupby = [var_hue] + [var_x]
+    data_summary = data.groupby(groupby)[var_y].describe().reset_index()
+    
+    if jitter:
+        data_summary[var_x] = data_summary.apply(lambda x: x[var_x]+random.uniform(-jitter_size, jitter_size), axis=1)
+
+    for name, group in data_summary.groupby(var_hue):
+        #display(group)
+        plt.errorbar(group[var_x], 
+                     group['mean'],
+                     yerr=group['std'],
+                     marker='o', 
+                     #linestyle='', # providing an empty string omits lines 
+                     markersize=5,
+                     capsize=3,
+                     label=name)
+
+    plt.legend(loc='center left', bbox_to_anchor=bbox_to_anchor, ncol=1, title=hue_title)
+    plt.ylabel(ylabel)
+    plt.xlabel(xlabel)
+    plt.xticks(xticks)
+
+    if (file_name is not None) and (output_dir is not None):
+        plt.savefig(path.join(output_dir, file_name + '.pdf'), bbox_inches='tight')
+        plt.savefig(path.join(output_dir, file_name + '.png'), bbox_inches='tight')
 
 def random_weights():
     
