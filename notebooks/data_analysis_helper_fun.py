@@ -11,6 +11,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from typing import Set, List
 import random
+from typing import Set, List
 
 
 nice_model_names = {'StandardGlobalReflectiveEquilibrium':'QuadraticGlobalRE',
@@ -169,3 +170,22 @@ def random_weights():
     fai = 1 - (acc + sys)
     
     return (acc, sys, fai)
+
+def apply_fun_to_adjacents(li: List[any],fun) -> List[any]:
+    if len(li) == 1:
+        return []
+    else: 
+        return [fun(li[0], li[1])] + apply_fun_to_adjacents(li[1:], fun)
+    
+def simple_hamming(x:Set, y:Set) -> float:
+    return len(x.union(y).difference(x.intersection(y)))
+
+def mean_simple_hamming_adjacents(li:List[Set[int]]) -> float:
+    ret = apply_fun_to_adjacents(li, simple_hamming)
+    return 0 if len(ret) == 0 else sum(ret)/len(ret) 
+
+def mean_d_init_coms_go(row):
+    init_coms = row['init_coms']
+    d_init_coms_go = [simple_hamming(init_coms, go_coms) 
+                      for go_theory, go_coms in row['global_optima']]
+    return sum(d_init_coms_go)/len(d_init_coms_go)
