@@ -280,11 +280,11 @@ display(Markdown(df.to_markdown(index = False)))
 
 **Inconsistency Eliminating Cases**
 
-![Relative share of inconsistency eliminating cases among global optima grouped by model variant and configuration of weights.](figures/go_inconsistency_eliminating_cases_setups.png){#fig-IE-go}
+![Relative share of inconsistency eliminating cases among global optima grouped by model variant and configuration of weights.](figures/go_inconsistency_eliminating_cases_setups){#fig-IE-go}
 
-![Relative share of inconsistency eliminating cases among fixed points (unique) grouped by model variant and configuration of weights.](figures/fp_inconsistency_eliminating_cases_setups.png){#fig-IE-fp-setups}
+![Relative share of inconsistency eliminating cases among fixed points (unique) grouped by model variant and configuration of weights.](figures/fp_inconsistency_eliminating_cases_setups){#fig-IE-fp-setups}
 
-![Relative share of inconsistency eliminating cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_inconsistency_eliminating_cases_branches.png){#fig-IE-fp-branches}
+![Relative share of inconsistency eliminating cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_inconsistency_eliminating_cases_branches){#fig-IE-fp-branches}
 
 **Observations: Inconsistency eliminating cases (IE)**
 
@@ -298,11 +298,11 @@ display(Markdown(df.to_markdown(index = False)))
 
 **Consistency Preserving Case (CP)**
 
-![Relative share of consistency preserving cases among global optima grouped by model variant and configuration of weights.](figures/go_consistency_preserving_cases_setups.png){#fig-CP-go}
+![Relative share of consistency preserving cases among global optima grouped by model variant and configuration of weights.](figures/go_consistency_preserving_cases_setups){#fig-CP-go}
 
-![Relative share of consistency preserving cases among fixed points (unique) grouped by model variant and configuration of weights.](figures/fp_consistency_preserving_cases_setups.png){#fig-CP-fp-setups}
+![Relative share of consistency preserving cases among fixed points (unique) grouped by model variant and configuration of weights.](figures/fp_consistency_preserving_cases_setups){#fig-CP-fp-setups}
 
-![Relative share of consistency preserving cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_consistency_preserving_cases_branches.png){#fig-CP-fp-branches}
+![Relative share of consistency preserving cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_consistency_preserving_cases_branches){#fig-CP-fp-branches}
 
 **Observations: Consistency Preserving Cases (CP)** 
 
@@ -313,11 +313,11 @@ display(Markdown(df.to_markdown(index = False)))
 
 **Inconsistency Preserving Cases (IP)**
 
-![Relative share of inconsistency preserving cases among global optima grouped by model variant and configuration of weights.](figures/go_inconsistency_preserving_cases_setups.png){#fig-IP-go}
+![Relative share of inconsistency preserving cases among global optima grouped by model variant and configuration of weights.](figures/go_inconsistency_preserving_cases_setups){#fig-IP-go}
 
-![Relative share of inconsistency preserving cases among fixed points (unique) grouped by model variant and configuration of weights.](figures/fp_inconsistency_preserving_cases_setups.png){#fig-IP-fp-setups}
+![Relative share of inconsistency preserving cases among fixed points (unique) grouped by model variant and configuration of weights.](figures/fp_inconsistency_preserving_cases_setups){#fig-IP-fp-setups}
 
-![Relative share of inconsistency preserving cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_inconsistency_preserving_cases_branches.png){#fig-IP-fp-branches}
+![Relative share of inconsistency preserving cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_inconsistency_preserving_cases_branches){#fig-IP-fp-branches}
 
 **Observations: Inconsistency Preserving Cases (IP)**
 
@@ -326,11 +326,11 @@ display(Markdown(df.to_markdown(index = False)))
 
 **Consistency Eliminating Cases (CE)**
 
-![Relative share of consistency eliminating cases among global optima grouped by model variant and configuration of weights.](figures/go_consistency_eliminating_cases_setups.png){#fig-CE-go}
+![Relative share of consistency eliminating cases among global optima grouped by model variant and configuration of weights.](figures/go_consistency_eliminating_cases_setups){#fig-CE-go}
 
-![Relative share of consistency eliminating cases among fixed points (unique) grouped by model variant and configuration of weights.](figures/fp_consistency_eliminating_cases_setups.png){#fig-CE-fp-setups}
+![Relative share of consistency eliminating cases among fixed points (unique) grouped by model variant and configuration of weights.](figures/fp_consistency_eliminating_cases_setups){#fig-CE-fp-setups}
 
-![Relative share of consistency eliminating cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_consistency_eliminating_cases_branches.png){#fig-CE-fp-branches}
+![Relative share of consistency eliminating cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_consistency_eliminating_cases_branches){#fig-CE-fp-branches}
 
 **Observations: Consistency Eliminating Cases (CE)**
 
