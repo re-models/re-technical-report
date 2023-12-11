@@ -1,0 +1,5 @@
+Model,Number of full RE global optima,Number of global optima,Relative share of full RE global optima
+QuadraticGlobalRE,8167,64147,0.12731694389449233
+LinearGlobalRE,19430,59949,0.3241088258352933
+QuadraticLocalRE,8167,64147,0.12731694389449233
+LinearLocalRE,19430,59949,0.3241088258352933
