@@ -43,6 +43,11 @@ display(Markdown(df.to_markdown(index = False)))
 
 ![Relative share of full RE states among global optima grouped by model variant](figures/overall_full_re_go_setups){#fig-overall-full-re-go}
 
+**Observations**
+
+- The relative share of full RE states among global optima  is identical for `QuadraticGlobalRE` and `QuadraticLocalRE`, as well as for `LinearGlobalRE` and `LinearLocalRE` in @tbl-full-re-go and @fig-overall-full-re-go. This is to be expected because the local model variants rely on their global counterparts to determine global optima.
+- The relative share of full RE states among global optima is substantially higher for linear model variants. 
+
 ```{python}
 #| echo: false
 #| label: tbl-full-re-fp-setups
@@ -67,9 +72,13 @@ display(Markdown(df.to_markdown(index = False)))
 
 ![Relative share of full RE states among unique fixed points grouped by model variant](figures/overall_full_re_fp_setups){#fig-overall-full-re-fp-setups}
 
+**Observations**
+
+- The relative share of unique full RE fixed points (@fig-overall-full-re-fp-setups) is lower than the corresponding results for global optima (@fig-overall-full-re-go). This is not surprising as fixed points are reached through semi-globalLY or locally optimizing processes, which cover a restricted search space in contrast to global optimization. 
+
 ```{python}
 #| echo: false
-#| label: tbl-full_re_fp_branches
+#| label: tbl-full-re-fp-branches
 #| tbl-cap: 'Relative share of full RE states among fixed points (all branches)'
 
 import pandas as pd
@@ -89,23 +98,37 @@ display(Markdown(df.to_markdown(index = False)))
 #df.style.hide(axis="index")  
 ```
 
-![Relative share of full RE states among fixed points from all branches grouped by model variant](figures/overall_full_re_fp_branches){#fig-overall-full-re-fp-setups}
+![Relative share of full RE states among fixed points from all branches grouped by model variant](figures/overall_full_re_fp_branches){#fig-overall-full-re-fp-branches}
+
+**Observations**
+
+- The relative share of full RE fixed points from all branches (@fig-overall-full-re-fp-branches) are similar to the corresponding results for unique fixed points (@fig-overall-full-re-fp-setups), for `QuadraticGlobalRE`, `LinearGlobalRE`, an `QuadraticLocalRE`, excepting `LinearLocalRE`. 
+- For `LinearLocalRE`, the relative share of full RE fixed points is significantly higher when consdering the fixed points from all branches rather than unique fixed points. This means that a relatively higher share of branches lead to full RE fixed points than to non-full-RE fixed points.
+- The relative share of full RE fixed points for `LinearLocalRE` (@fig-overall-full-re-fp-branches), even exceeds the relative share of full RE global optima for linear model variants (@fig-overall-full-re-go).
+- The number of fixed points from all branches (@tbl-full-re-fp-branches) is only slightly higher than the number of unique fixed points (@tbl-full-re-fp-setups) for `QuadraticGlobalRE` and `LinearGlobalRE`. In contrast, the number of fixed points from all branches is substantially higher than the number of unique fixed points for `QuadraticLocalRE`, and even more so for `LinearLocalRE`.
 
 ### Heatmaps
 
 ![Relative share of full RE states among global optima grouped by model variant and configuration of weights.](figures/rel_go_full_re_setups){#fig-hm-full-re-go}
 
+**Observations**
+
+- Linear model variants exhibit a "tipping line" (see XXX). For $\alpha_{A} > \alpha_{F}$, the relative share of full RE global optima is 1, i.e., all global optima are full RE states.
+- Quadrat model variants have a smooth transition between low and high relative shares, and they have a "hotspot" for very high values of $\alpha_{A}$. This result is made plausible by the fact that full RE states require a maximal value for the measure of account, i.e, $A(\mathcal{C}, \mathcal{T}) = 1$. High values for $\alpha_{A}$ benefit the fulfillment of this requirement.
+
+
+
 ![Relative share of full RE states among unique fixed points grouped by model variant and configuration of weights.](figures/rel_fp_full_re_setups){#fig-hm-full-re-fp-setups}
+
 
 ![Relative share of full RE states among fixed points from all branches grouped by model variant and configuration of weights.](figures/rel_fp_full_re_branches){#fig-hm-full-re-fp-branches}
 
-Observations (old):
+**Observations**
 
-- The relative share of full RE states among global optima always exceeds its counterpart for fixed points.
-- The relative share of full RE states among global optima (fixed points) in linear models is roughly 2 times larger than in quadratic variants for all ensembles.
-- The relative share of full RE states among global optima varies between 13.8% (QDS, ensemble 07) and 45.5% (LPS, ensemble 09)
-- The relative share of full RE states among fixed points varies between 9.7% (QPS, ensebmle 08) and 30.1% (LDS, ensemble 09)
-- There are not notable differences between pure and default systematicity in linear (quadratic) model variants.
+- Linear model variants do not exhibit the tipping line for fixed points (@fig-hm-full-re-fp-setups and @fig-hm-full-re-fp-branches)
+- Linear model variants have high relative shares for low faihtfulness, moderate account and high (but non-extreme) weights for systematicity.
+- There are only small differences between relative share of full RE states among unique fixed points (@fig-hm-full-re-fp-setups) and fixed points from all branches (@fig-hm-full-re-fp-branches).
+- `QuadratGlobalRE` exhibits its highest relative shares of full RE fixed points for moderately high values for $\alpha_{A}$ and very low values for $\alpha_{S}$.
 
 
 <!-- 
@@ -114,13 +137,6 @@ Observations (old):
 -->
 
 
-- Across all model variants and ensembles, the weight for account has a positive impact on the mean relative share of full RE states among global optima.
-- The heatmaps for fixed points differ from those for global optima in a peculiar manner. In contrast to global optima, the best values occur for non-extreme weights for account and faihtfulness in quadratic models. In addition to that, linear models also have high relative shares for low faihtfulness and high (but non-extreme) weights for systematicity.
-- The heatmaps for the mean relative share of full RE states among global optima in linear model exhibit the typical "tipping line". Surprisingly and in contrast to the commitment consistency cases (see below), this does not hold for fixed points.
-- Below the "tipping line" in linear models, all global optima are full RE state. This is not only an observation, but also a fact that can be proven analytically.
-- The values in quadratic models tend to transition smoothly between different regions in heatmaps.
+## Conclusion
 
-## Conclusion (old)
-
-Overall, the share of full RE states among global optima and fixed points is not overwhelming, but heatmaps reveal (plausible) combinations of weights for every model, where the relative share is acceptable (e.g > 60%)
-Moreover, a low share of full RE states can be seen as a strength of a model, as it does not render everything into a full RE state.
+Overall, the relative shares of full RE states among global optima and fixed points is not overwhelming, but heatmaps reveal combinations of weights for `GlobalQuadraticRE`, `GlobalLinearRE` and `LinearLocalRE`, where the relative share of full RE states among the outputs is acceptable. For `QuadraticLocalRE`, this holds at least for global optima. However, this does not constitute strong reasons to reject `QuadraticLocalRE`. Depending on the particular goals of an inquiry with RE, a low relative share of full RE states can be seen as a strength of a model, as it does not render everything into a full RE state.
