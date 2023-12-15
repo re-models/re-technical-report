@@ -61,6 +61,9 @@ display(Markdown(df.to_markdown(index = False)))
 #df.style.hide(axis="index")  
 ```
 
+![Relative shares of global optima maximizing the desiderata measures for account, systematicity and faithfulness](figures/overall_max_values_go_setups){#fig-overall-nax-values-go}
+
+
 ```{python}
 #| echo: false
 #| label: tbl-max-values-fp
@@ -83,9 +86,27 @@ display(Markdown(df.to_markdown(index = False)))
 #df.style.hide(axis="index")  
 ```
 
+![Relative shares of unique fixed points maximizing the desiderata measures for account, systematicity and faithfulness](figures/overall_max_values_fp_setups){#fig-overall-nax-values-fp}
+
 ### Grouped by configuration of weights
 
+#### Account
 
+![Relative share of global optima maximizing the measure for account grouped by model variant and configuration of weights.](figures/rel_go_max_account_setups){#fig-hm-max-account-go}
+
+![Relative share of fixed points maximizing the measure for account grouped by model variant and configuration of weights.](figures/rel_fp_max_account_setups){#fig-hm-max-account-fp}
+
+#### Systematicity
+
+![Relative share of global optima maximizing the measure for systematicity grouped by model variant and configuration of weights.](figures/rel_go_max_systematicity_setups){#fig-hm-max-systematicity-go}
+
+![Relative share of fixed points maximizing the measure for systematicity grouped by model variant and configuration of weights.](figures/rel_fp_max_systematicity_setups){#fig-hm-max-systematicity-fp}
+
+#### Faithfulness
+
+![Relative share of global optima maximizing the measure for faithfulness grouped by model variant and configuration of weights.](figures/rel_go_max_faithfulness_setups){#fig-hm-max-faithfulness-go}
+
+![Relative share of fixed points maximizing the measure for faithfulness grouped by model variant and configuration of weights.](figures/rel_fp_max_faithfulness_setups){#fig-hm-max-faithfulness-fp}
 
 
 ## Conclusion (old)
