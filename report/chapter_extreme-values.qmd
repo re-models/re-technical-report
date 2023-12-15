@@ -1,24 +1,97 @@
 # Extreme values for account and faitfulness {#sec-extreme-values}
 
-**Background**
-In this study we examine extreme values from measures (not the weights) of account and faithfulness.
+## Background
+In this study we examine extreme values from measures of account and faithfulness.
 
-$A(C, T) = 1$ means that the theory $T$ fully and exclusively accounts for the commitments $C$. Full and exclusive account is a condition for full RE states. Conversely, $A(C, T) = 0$ holds if a theory completely fails to account for commitments, that is, for every sentence in the commitments the closure theory does not contain this sentence, or contradicts the theory. $F(C \vert C_{0}) = 1$ holds iff the initial committments $C_{0}$ are a subset of the commitments $C$ (expansions of the initial commitments are not penalized). $F(C \vert C_{0})$ attains the minimal value of 0, if every sentence of the initial commitments $C_{0}$ is missing in or contradicted by the commitments $C$.
+$A(C, T) = 1$ means that the theory $T$ fully and exclusively accounts for the commitments $C$. Full and exclusive account is a condition for full RE states. Conversely, $A(C, T) = 0$ holds if a theory completely fails to account for commitments, that is, for every sentence in the commitments the closure theory does not contain this sentence, or contradicts the theory.
 
-Extreme values for systematicity are not included. $S(T) = 1$ holds if and only if $T$ is a singleton. $S(T) = 0$ is no serious option, because it is reserved for the empty theory $T=\emptyset$.
+The measure of systematicity for a theory $\mathcal{T}$ is defined as follows:
+$$
+S(\mathcal{T}) = G(\frac{\vert \mathcal{T}\vert -1}{\vert\overline{\mathcal{T}}\vert })
+$$
 
-The values for account and faithfulness are calculated for every global optimum and fixed point from a configuration.
+Hence, $S(\mathcal{T}) = 1$ if and only if $\vert \mathcal{T}\vert = 1$, i.e., $\mathcal{T}$ is a singleton theory, e.g., $\mathcal{T} =\lbrace s\rbrace$. Note that it does not matter whether $G$ is linear or quadratic. Furthermore, $S(T) = 0$ if and only if $\mathcal{T}=\emptyset$ by definition.
 
-**Results**
 
-Linear models reach maximal account and faithfulness values more frequently than quadratic variants in all ensembles for both global optima and fixed points
+$F(C \vert C_{0}) = 1$ holds if and only if the initial committments $C_{0}$ are a subset of the commitments $C$ (expansions of the initial commitments are not penalized). $F(C \vert C_{0})$ attains the minimal value of 0, if every sentence of the initial commitments $C_{0}$ is missing in or contradicted by the commitments $C$.
 
-**Conclusion**
+<!-- Extreme values for systematicity are not included. $S(T) = 1$ holds if and only if $T$ is a singleton. $S(T) = 0$ is no serious option, because it is reserved for the empty theory $T=\emptyset$.-->
+
+
+
+## Method
+
+During the ensemble generation, the values for account and faithfulness are calculated for every global optimum and fixed point for each simulation setup.
+The systematicity value has not been stored, but extreme values can (easily) be determined by considering the length (i.e. the number of sentences) in the theory. 
+
+<!-- The finformation for branches could be retrieved from the unique fixed point information by complex work on the dataframe, however. -->
+Note that the information about the values of measures has not been stored in the dataframe for fixed points from all branches. Thus, the current study only includes results concerning unique fixed points reached from each simulation setup
+
+## Results
+
+### Overall
+
+#### Minimal values
+
+There is no simulation setup which resulted in a global optimum or a fixed point that has a minimal value for the measure of account, systematicity or faithfulness. Consequently, we can exclude the consideration of minimal values from the subsequent analysis.
+
+This is a desirable result, as minimal values for would constitute quite strange behaviour of the model variants. For example, $F(C\,\vert\,C_{0}) = 0$ would mean that an agent completely departed from their initial commitments $C_{0}$, which could amount to the undesirable outcome of changing the subject matter.
+
+#### Maximal values
+
+```{python}
+#| echo: false
+#| label: tbl-max-values-go
+#| tbl-cap: 'Absolute and relative numbers of global optima maximizing various desiderata measures.'
+
+import pandas as pd
+from os import getcwd, path
+from pathlib import Path
+from IPython.display import Markdown, display
+
+
+tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
+file_name = 'table_max_values_go_setups.csv'
+df = pd.read_csv(path.join(tables_output_dir, file_name))
+df = df.round(3)
+
+display(Markdown(df.to_markdown(index = False)))
+
+
+#df.style.hide(axis="index")  
+```
+
+```{python}
+#| echo: false
+#| label: tbl-max-values-fp
+#| tbl-cap: 'Absolute and relative numbers of fixed points maximizing various desiderata measures.'
+
+import pandas as pd
+from os import getcwd, path
+from pathlib import Path
+from IPython.display import Markdown, display
+
+
+tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
+file_name = 'table_max_values_fp_setups.csv'
+df = pd.read_csv(path.join(tables_output_dir, file_name))
+df = df.round(3)
+
+display(Markdown(df.to_markdown(index = False)))
+
+
+#df.style.hide(axis="index")  
+```
+
+### Grouped by configuration of weights
+
+
+
+
+## Conclusion (old)
 
 The frequency of minimal values for account and faithfulness in LDS is extremely small and they occur in one ensemble (07), only. Moreover, the extreme values for faithfulness and systematicity correlate with extreme, coresponding weights ($\alpha_{F} \leq 0.2$ and $\alpha_{A}\leq 0.2$).
 
-
-The inclusion of non-extreme, but very low and very high values for account and faithfulness might provide a clearer picture of the situation.
 
 The occurence of singleton theories in global optima and fixed points might make for an intersting exploration in the future.
 

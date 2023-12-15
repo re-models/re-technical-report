@@ -1,0 +1,5 @@
+Model,Number of global optima with maximal account,Number of global optima with maximal systematicity,Number of global optima with maximal faithfulness,Number of global optima,Relative share of global optima with maximal account,Relative share of global optima with maximal systematicity,Relative share of global optima with maximal faithfulness
+QuadraticGlobalRE,8167,44715,8185,64141,0.12732885361936983,0.6971359972560452,0.1276094853525826
+LinearGlobalRE,19430,51305,20301,59949,0.3241088258352933,0.8558107724899497,0.338637842165841
+QuadraticLocalRE,8150,44685,8183,64071,0.12720263457726586,0.6974294142435735,0.12771768818966459
+LinearLocalRE,19163,51077,20297,59682,0.3210850842800174,0.8558191749606247,0.3400857880097852

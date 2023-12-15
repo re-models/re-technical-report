@@ -1,0 +1,5 @@
+Model,Number of fixed points with maximal account,Number of fixed points with maximal systematicity,Number of fixed points with maximal faithfulness,Number of fixed points,Relative share of fixed points with maximal account,Relative share of fixed points with maximal systematicity,Relative share of fixed points with maximal faithfulness
+QuadraticGlobalRE,7482,22990,9244,41725,0.17931695626123428,0.5509886159376872,0.22154583582983822
+LinearGlobalRE,11893,23756,17311,32210,0.3692331574045328,0.7375349270412915,0.5374417882645142
+QuadraticLocalRE,8353,25863,5100,55643,0.1501177147170354,0.4648024010207933,0.09165573387488093
+LinearLocalRE,14661,11364,8136,22907,0.640022700484568,0.49609289736761686,0.35517527393373205
