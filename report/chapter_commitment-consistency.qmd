@@ -103,11 +103,15 @@ display(Markdown(df.to_markdown(index = False)))
 
 **Observations: Consistent Outputs**
 
-- Overall, the relative share of consistent output commitments are high for all model variants and output types, roughly ranging from 0.70 to 0.95
+- Overall, the relative share of consistent output commitments are high for all model variants and output types, roughly ranging from 0.69 to 0.95
+<!--
+New: excluding erroneous simulation runs from the ensemble introduces small differences between global optima of local and global model variants
+Old:
 - The relative share of global optima with consistent outputs is identical for `QuadraticGlobalRE` and `QuadraticLocalRE`, as well as for `LinearGlobalRE` and `LinearLocalRE` in @tbl-consistency_outputs_go. (Explanation: The local model variants rely on their global counterparts to determine global optima. Hence, these results are not interesting for the present study, but included for the sake of completeness.)
-- The overall relative share of consistent global optima commitments does not differ substantially between quadratic and linear model variants.
-- The relative shares of consistent commitments among fixed points does not differ substantially from the results for global optima for `QuadraticGlobalRE`, `QuadraticLocalRE`, and `LinearGlobalRE`
-- `LinearLocalRE` exhibits substantially higher relative shares of consistent commitments among fixed points (unique and all branches) 
+--> 
+- The overall relative share of consistent global optima commitments is very slightly boosted  for linear model variants compared to their quadratic counterpairts in @tbl-consistency_outputs_go.
+- The relative shares of consistent commitments among fixed points (unique (@tbl-consistency_outputs_fp_setups) and from all branches (@tbl-consistency_outputs_fp_branches)) is slgithly lower than the corressponding results for global optima in @tbl-consistency_outputs_go for `QuadraticGlobalRE`, `QuadraticLocalRE`, and `LinearGlobalRE`
+- `LinearLocalRE` exhibits substantially higher relative shares of consistent commitments among fixed points (unique and from all branches) 
 - The number of fixed points reached through different branches in local model variants is substantially higher than for global model variants (@tbl-consistency_outputs_fp_branches)
 
 #### Consistency Cases
@@ -191,7 +195,7 @@ display(Markdown(df.to_markdown(index = False)))
 
 **Observations: Consistency Cases**
 
-- As it is to be expected, there are no differences in relative shares for global optima for `QuadraticGlobalRE` and `QuadraticLocalRE`, as well as for `LinearGlobalRE` and `LinearLocalRE`.
+<!--- As it is to be expected, there are no differences in relative shares for global optima for `QuadraticGlobalRE` and `QuadraticLocalRE`, as well as for `LinearGlobalRE` and `LinearLocalRE`.-->
 - The relative share of inconsistency eliminating and consistency preserving cases is high for all model variants and output types. Note that their sum corresponds to the relative share of consistent output commitments from above.
 - In turn, the relative share of inconsistency preserving cases are small, and consistency eliminating cases occur very rarely.
 - The linear local model variant reaches inconsistent outputs (@fig-overall-fp-setups), but only very few branches result in these commitments (@fig-overall-fp-setups).
@@ -288,10 +292,14 @@ display(Markdown(df.to_markdown(index = False)))
 
 **Observations: Inconsistency eliminating cases (IE)**
 
-- Linear models exhibit a "tipping line" for IE cases among both global optima and fixed points. There are no IE cases where $\alpha_{A} < \alpha_{F}$. IE cases occur only for $\alpha_{A} > \alpha_{F}$.
+- Linear models exhibit a "tipping line" for IE cases among both global optima and fixed points. There are no IE cases where $\alpha_{A} < \alpha_{F}$. IE cases occur only for $\alpha_{A} > \alpha_{F}$. See Appendix for an explanation.
 - In contrast, quadratic models have smooth transitions. High weights for account and systematicity, resulting in low weights for faithfulness, benefit the relative share of IE cases among global optima and fixed points.
-- The relative shares of IE cases among global optima do not exceed their counterpart for fixed points
+<!--
+- The relative shares of IE cases among global optima do not exceed their counterpart for fixed points.
+-->
+<!--
 - The relative shares of IE cases among global optima are identical for `LinearGlobalRE` and `LinearLocalRE` in @fig-IE-go (as expected).
+-->
 - The relative shares of IE cases among fixed points from all branches in local model variants (@fig-IE-fp-branches) are slightly boosted in comparison to the consideration of unique fixed points (@fig-IE-fp-setups).
 
 
@@ -308,7 +316,9 @@ display(Markdown(df.to_markdown(index = False)))
 
 - Overall, CP cases occur frequently (roughly between 0.40 and 0.60) for all model variants and output types
 - The influence of weight configurations is moderately at best.
+<!--
 - The relative shares of CP cases among global optima are identical for `LinearGlobalRE` and `LinearLocalRE` in @fig-CP-go (as expected).
+-->
 
 
 **Inconsistency Preserving Cases (IP)**
@@ -335,7 +345,7 @@ display(Markdown(df.to_markdown(index = False)))
 **Observations: Consistency Eliminating Cases (CE)**
 
 - Generally, the relative shares of CE cases are very low.
-- Linear models exhibit a "tipping line" for CE cases among both global optima and fixed points. There are no CE cases where $\alpha_{A} > \alpha_{F}$. IP cases occur only for $\alpha_{A} < \alpha_{F}$.
+- Linear models exhibit a "tipping line" for CE cases among both global optima and fixed points. There are no CE cases where $\alpha_{A} > \alpha_{F}$. sIP cases occur only for $\alpha_{A} \leq \alpha_{F}$.
 - In contrast, quadratic models have smoother transitions. High weights for faithfulness boost the relative shares of CE cases among global optima and fixed points.
 
 
@@ -349,7 +359,7 @@ Overall, the present ensemble study concerning the three perspectives on consist
 
 In the more fine-grained analysis according to weigh configurations, we can observe regions of weight configurations that yield desirable behaviour. Moreover, these regions are robust across model variants. This provides at least some motivation to prefer some configurations over others. In particular it is benificial to consistency considerations if $\alpha_{A} > \alpha_{F}$.
 
-There is a notable difference between quadratic and linear model variant (smooth transitions vs. tipping line), but this does not serve as a criterion to prefer some model variant over the others.
+There is a notable difference between quadratic and linear model variant (smooth transitions vs. tipping line), but on its own, this does not serve as a criterion to prefer some model variant over the others. See the appendix for a presentation of analytical results that explain why linear model variants exhibit tipping lines.
 
  <!--A description how an RE process creates a very bad case can be found in [dataexploration-04](https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-04.ipynb) of an earlier ensemble.-->
 
@@ -358,7 +368,7 @@ There is a notable difference between quadratic and linear model variant (smooth
 
 ### The Tipping Line of Linear Model Variants
 
-A *linear model variant*, is a model that differs from the model provided by @beisbart_making_2021 only in that the measures involve the linear function $G$ instead of the quadratic one. This variant exhibits a *tipping line* in ternary plots that marks off configurations of weights that lead to drastically different behaviour with respect to consistency considerations or the attainment of full RE states, for example. 
+A *linear model variant*, is a model that differs from the model provided by @beisbart_making_2021 only in that the measures involve the linear function $G(x) = 1- x$ instead of the quadratic $G(x) = 1-x^2$. This variant exhibits a *tipping line* in ternary plots that marks off configurations of weights that lead to drastically different behaviour with respect to consistency considerations or the attainment of full RE states, for example.
 
 We can characterise the tipping line as an equation that relates $\alpha_{A}$ and $\alpha_{S}$:
 $$
@@ -374,7 +384,7 @@ Consequently, the tipping line splits the space of weight configuration in two r
 
 The following proposition and its corollaries help to explain the salient change in the behaviour of linear model variants when crossing the tipping line.
 
-**Proposition**
+#### Proposition 1
 Assume that a dialectical structure $\tau$ and some initial commitments $C_{0}$ are given. Moreover, assume $\alpha_{A} > \alpha_{F}$ for a configuration of weights $(\alpha_{A}, \alpha_{S}, \alpha_{F})$ in a linear model variant. Then all global optima (relative to $C_{0}$) according to the achievement function specified by the configuration of weights are full RE states.
 
 **Corollaries**
@@ -392,7 +402,7 @@ In contrast, for $\alpha_{A} < \alpha_{F}$ the following holds for the linear mo
 - Interestingly, the corollaries almost always hold for fixed points as well. However, an analoguous proposition for fixed points would require a different proof.
 
 
-**Proof sketch**
+**Proof sketch for Proposition 1**
 
 Intuitively, $\alpha_{A} > \alpha_{F}$ means that account trumps faithfulness, which allows to select commitments ignoring faithfulness so that they are fully and exclusively accounted for by a theory.
 
@@ -416,3 +426,93 @@ In summary, if $(C, T)$ is a global optimum but $A(C, T) < 1$, then there is a p
 
 Note that this argument does not work for quadratic model variants, and in particular, the default model of  @beisbart_making_2021. 
 Remember that the Hamming distance $D$ is a summation of penalties. Consequently, squaring the hamming distance yields a polynomial expression where every contributing penalty "interferes" by multiplication with the others. This blocks the above strategy of comparing the contributions and distributing the weights $\alpha_{A}$ or $\alpha_{S}$ over these expressions. In the quadratic models of the above ensemble study, we can observe a gradual transition between configurations that yield global optima, which exhibit a specific behaviour, to configurations that almost certainly fail in this respect.
+
+#### Proposition 2
+
+Assume that a dialectical structure $\tau$ and some initial commitments $C_{0}$ are given. Moreover, assume $\alpha_{A} < \alpha_{F}$ for a configuration of weights $(\alpha_{A}, \alpha_{S}, \alpha_{F})$ in a linear model variant. Then, for all global optima (relative to $C_{0}$) according to the achievement function specified by the configuration of weights the following holds:
+
+$$
+F(C\,\vert\,C_{0}) = 1.
+$$
+
+**Proof sketch of Proposition 2**
+
+For a proof by contradiction, assume that $(C, T)$ is a global optimum according to $Z$, but $F(C\,\vert\,C_{0}) < 1$.
+
+This holds only if $G(\frac{D_{0,0,1,1}(C_{0}, C)}{n}) < 1$, i.e. only if $D_{0,0,1,1}(C_{0}, C) > 0$.
+In other words, there is at least one sentence, for which there is a positive contribution to the Hamming distance. 
+In particular, there are two cases
+
+i) $C$ contracts $C_{0}$ with respect to $s$: +1 (there is $s \in C_{0}$, but $s$ and $\neg s$ are not in $C$)
+ii) $C$ and $C_{0}$ contradict each other with respect to $s$: +1
+
+Consider the impacts on individual contributions to the Hamming distances for account
+and faithfulness of changing $C$ with respect to $s$, yielding new commitments  $C′$, in particular the difference $d(C_{0}, C', \lbrace s, \neg s\rbrace) - d(C_{0}, C, \lbrace s, \neg s\rbrace)$. \* denotes the worst cases.
+
+
+<!-- ToDo(@Andreas): present cases in a nicer form, e.g. in a table-->
+
+*Situation i)* 
+
+There is an $s$ in $C_{0}$, but $s$ and $\neg s$ are not in $C$.
+
+Add $s$ to $C$.
+Result: $s$ in $C'$
+
+Faithfulness
+
+agreement (new) - contraction (old): faithfulness:  -1
+
+Account
+
+- Case: $s \in \overline{T}$: agreement (new) - expansion (old): -0.7
+- Case $\neg\in \overline{T}$: contradiction (new) - expansion (old): + 0.7
+- *Case $s$ and $\neg s$  not in $\overline{T}$: contraction (new)- agreement (old): +1
+
+*Situation ii)* 
+
+w.l.o.g. asssume $s$ in $C_{0}$, $\neg s$ in $C$.
+
+a: Remove the contradicting element from $C$.
+Result: $\neg s$ (and $s$) are not in $C'$.
+
+Faithfulness
+
+contraction (new) - contradiction (old) : +0
+
+Account
+- $s in \overline{T}$: expansion (new) - contradiction (old):  -0.7
+- *Case $\neg s \in \overline{T}$: expansion (new) - agreement (old): +0.3
+- Case $s$ and $\neg s$ not in $\overline{T}$: agreement(new) - contraction(old): -1
+  
+b:Revise the contradicting element in $C$:
+Result: $s$ in $C'$
+
+Faithfulness
+agreement (new) - contradiction (old): -1
+
+Account
+- Case: $s in \overline{T}$: agreement (new) - contradiction (old): -1
+- *Case $\neg\in \overline{T}$: contradiction (new) - agreement (old): +1
+- Case $s$ and $\neg$  not in $\overline{T}$: contraction (new) - contraction (old): +0
+
+The complete linearity of the achievement function allows to distribute (push in) the weights $\alpha_{A}$ and $\alpha{F}$ over the individual contributions of the hamming distances in $Z$. Hence, the weights also apply to the individual contributions considered above. Moreover, changing the commitments does not affect the systematicity of the theory, i.e. $S(T)$ is identical for $(C, T)$ and $(C', T)$. Hence, the achievement function is optimised for minimal contributions in the measures for account and faithfulness and $\alpha_{F} > \alpha{A}$.
+
+Consequently, it is always (cases i.a, ii.a and ii.b) more attractive to stay faithful to the initial commitments rather than to change the commitments in order to increase account.
+
+This argument can be repeated for every sentence, for which $C_{0}$ and $C$ differ.
+
+In summary, if $(C, T)$ is a global optimum but it is assumed that $F(C\,\vert\, C_{0}) < 1$, then there is
+a position $(C′, T)$ such that $Z(C, T \,\vert\, C_{0}) < Z(C', T \,\vert\, C_{0})$, contradicting $(C, T)$ being a
+global optimum. Consequently, we must have $F(C \,\vert\, C_{0}) = 1$.
+
+**Corollaries**
+The linear model variants exhibit the following behaviour for $\alpha_{A} > \alpha_{F}$:
+
+- The relative share of inconsistency eliminating cases among global optima is 0.0. Explanation: Removing or revising an initial inconsistency requires to deviate from the initial commitments, which is incompatible with maximal faithfulness.
+- Similarly, the relative share of inconsistency preserving cases in this region of weight configurations correspond to the relative share of inconsistent initial commitments.
+- In turn, the relative share of global optima with maximal value for faithfulness is 1.0.
+
+**Open questions**
+
+- Fixed points (unique) also exhibit this behaviour, respectively. Can the proof be adapted to cover such cases as well?

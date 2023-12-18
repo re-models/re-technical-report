@@ -1,5 +1,5 @@
 Model,Number of fixed points with a consistent union,Number of fixed points with consistent commitments,Relative share of fixed points with a consistent union
-QuadraticGlobalRE,30535,34239,0.8918192704226174
-LinearGlobalRE,22579,23822,0.9478213416169927
-QuadraticLocalRE,104989,115993,0.9051322062538256
-LinearLocalRE,105384,106244,0.9919054252475434
+QuadraticGlobalRE,340059,374476,0.9080929084907978
+LinearGlobalRE,218065,227097,0.9602284486364857
+QuadraticLocalRE,1333612,1463131,0.9114781929984397
+LinearLocalRE,1233142,1240692,0.9939146863202148

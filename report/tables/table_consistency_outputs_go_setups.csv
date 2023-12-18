@@ -1,5 +1,5 @@
 Model,Number of global optima with consistent commitments,Number of global optima,Relative share of global optima with consistent commitments
-QuadraticGlobalRE,46832,64147,0.7300731133178481
-LinearGlobalRE,45762,59949,0.7633488465195416
-QuadraticLocalRE,46832,64147,0.7300731133178481
-LinearLocalRE,45762,59949,0.7633488465195416
+QuadraticGlobalRE,529359,714584,0.7407932447409962
+LinearGlobalRE,540556,700830,0.7713083058659018
+QuadraticLocalRE,525490,709289,0.7408686727130972
+LinearLocalRE,554525,721096,0.7690030176287207
