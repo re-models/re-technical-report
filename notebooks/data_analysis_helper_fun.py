@@ -12,6 +12,8 @@ import matplotlib.pyplot as plt
 from typing import Set, List
 import random
 from typing import Set, List
+import scipy.stats as spst
+
 
 from matplotlib_venn import venn2
 
@@ -89,6 +91,28 @@ def load_re_data(data_dir,
     else:
         return re_data
 
+#def heatmap_plot(*args, **kwargs):
+#    data = kwargs.pop('data')
+#    mask = kwargs.pop('mask')
+#    annot_std = kwargs.pop('annot_std')
+#    annot_std_fmt = kwargs.pop('annot_std_fmt')
+#    annot_fmt = kwargs.pop('annot_fmt')
+#    values = kwargs.pop('values')
+#    index = kwargs.pop('index')
+#    columns = kwargs.pop('columns')
+#    # labels = x_mean
+#    cmap = plt.get_cmap('coolwarm')
+#    cmap.set_bad('white')
+#    x_mean = pd.pivot_table(data, index=[index], columns=columns,
+#                            values=values, aggfunc=np.mean)
+#    if annot_std:
+#        x_std = pd.pivot_table(data, index=[index], columns=columns,
+#                               values=values, aggfunc=np.std)
+#        labels = x_mean.applymap(lambda x: annot_fmt.format(x)) + x_std.applymap(lambda x: annot_std_fmt.format(x))
+#        sns.heatmap(x_mean, cmap=cmap, mask=mask, annot=labels, fmt='', **kwargs)
+#    else:
+#        sns.heatmap(x_mean, cmap=cmap, mask=mask, annot=x_mean, **kwargs)
+
 def heatmap_plot(*args, **kwargs):
     data = kwargs.pop('data')
     mask = kwargs.pop('mask')
@@ -98,19 +122,50 @@ def heatmap_plot(*args, **kwargs):
     values = kwargs.pop('values')
     index = kwargs.pop('index')
     columns = kwargs.pop('columns')
-    # labels = x_mean
+    bootstrap = kwargs.pop('bootstrap')
+    n_resamples = kwargs.pop('n_resamples')
+    
+    if bootstrap:
+        agg_mean = lambda x: bootstrap_mean(x, n_resamples=n_resamples)
+        agg_std = lambda x: bootstrap_std(x, n_resamples=n_resamples)
+        
+    else:
+        agg_mean = np.mean
+        agg_std = np.std
+    
     cmap = plt.get_cmap('coolwarm')
     cmap.set_bad('white')
+    
     x_mean = pd.pivot_table(data, index=[index], columns=columns,
-                            values=values, aggfunc=np.mean)
+                            values=values, aggfunc=agg_mean)
+    
     if annot_std:
         x_std = pd.pivot_table(data, index=[index], columns=columns,
-                               values=values, aggfunc=np.std)
+                               values=values, aggfunc=agg_std)
         labels = x_mean.applymap(lambda x: annot_fmt.format(x)) + x_std.applymap(lambda x: annot_std_fmt.format(x))
         sns.heatmap(x_mean, cmap=cmap, mask=mask, annot=labels, fmt='', **kwargs)
     else:
-        sns.heatmap(x_mean, cmap=cmap, mask=mask, annot=x_mean, **kwargs)
+        sns.heatmap(x_mean, cmap=cmap, mask=mask, annot=x_mean,
+                    fmt=annot_fmt[annot_fmt.find('{')+2:annot_fmt.find('}')],
+                    **kwargs)
 
+
+def heat_maps_by_weights(re_data, values, title, index='weight_account', columns='weight_systematicity',
+                         annot_std=False, annot_fmt="{:2.0f}\n", annot_std_fmt=r'$\pm${:2.1f}', vmin=0, vmax=1,
+                         output_dir=None, file_name=None, index_label=r'$\alpha_A$', columns_label=r'$\alpha_S$', 
+                                     bootstrap=False, n_resamples=1000):
+    g = sns.FacetGrid(re_data, col='model_name', col_wrap=2, height=5, aspect=1)
+    g.fig.suptitle(title, y=1.01)
+    mask = pd.pivot_table(re_data, index=[index], columns=columns,
+                          values=values, aggfunc=np.mean).isnull()
+    g.map_dataframe(heatmap_plot, cbar=False, mask=mask, values=values, index=index, columns=columns,
+                    annot_std=annot_std, annot_fmt=annot_fmt, annot_std_fmt=annot_std_fmt, vmin=vmin, vmax=vmax, 
+                    bootstrap=bootstrap, n_resamples=n_resamples)
+    g.set_axis_labels(columns_label, index_label)
+    g.set_titles("{col_name}")
+    if (file_name is not None) and (output_dir is not None):
+        g.savefig(path.join(output_dir, file_name + '.pdf'), bbox_inches='tight')
+        g.savefig(path.join(output_dir, file_name + '.png'), bbox_inches='tight')
 
 def normalized_heat_maps_by_weights(re_data, values, title, index='weight_account', columns='weight_systematicity',
                          annot_std=False, annot_fmt="{:2.0f}\n", annot_std_fmt=r'$\pm${:2.1f}', vmin=0, vmax=1,
@@ -338,7 +393,7 @@ def rel_share_of_property(re_data,
                            col_rename = None,
                            groupby_cols=['model_short_name', 'model_name'],
                            collapse_branches=False,
-                           cols_groupby_branches = ['model_name','ds','init_coms', 'weight_account', 'weight_systematicity'],
+                           cols_group_branches = ['model_name','ds','init_coms', 'weight_account', 'weight_systematicity'],
                            explode_cols = None,
                            bootstrap=False, n_resamples=1000):
     """
