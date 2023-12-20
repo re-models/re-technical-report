@@ -13,6 +13,8 @@ from typing import Set, List
 import random
 from typing import Set, List
 
+from matplotlib_venn import venn2
+
 
 nice_model_names = {'StandardGlobalReflectiveEquilibrium':'QuadraticGlobalRE',
                      'StandardLocalReflectiveEquilibrium':'QuadraticLocalRE',
@@ -196,3 +198,224 @@ def mean_d_init_coms_go(row):
     d_init_coms_go = [simple_hamming(init_coms, go_coms) 
                       for go_theory, go_coms in row['global_optima']]
     return sum(d_init_coms_go)/len(d_init_coms_go)
+
+
+def plot_venn(result_df, col_setA, col_setB, col_cut,
+              label_setA, label_setB, 
+              output_dir=None, file_name=None, rel_label=True):
+
+    for i, row in result_df.iterrows():
+
+        plt.subplot(2,2,i+1)
+
+        subsets = (row[col_setA]-row[col_cut], row[col_setB]-row[col_cut], row[col_cut])
+
+        v = venn2(subsets = subsets, set_labels=(label_setA + '\n' + str(row[col_setA]), 
+                    label_setB+ '\n' + str(row[col_setB])))
+
+        v.get_patch_by_id('10').set_color("b")
+        v.get_patch_by_id('11').set_color("grey")
+        if rel_label:
+            rel_setA = row[col_cut]/row[col_setA]*100
+            rel_setB = row[col_cut]/row[col_setB]*100
+            v.get_label_by_id('11').set_text(f"{row[col_cut]} \n ({rel_setA:.0f}% / {rel_setB:.0f}%)")
+
+        plt.title(row["model_name"], fontsize=14)
+    
+    if (file_name is not None) and (output_dir is not None):
+        plt.savefig(path.join(output_dir, file_name + '.pdf'), bbox_inches='tight')
+        plt.savefig(path.join(output_dir, file_name + '.png'), bbox_inches='tight')
+
+
+def diff_heatmap_plot(*args, **kwargs):
+    data = kwargs.pop('data')
+    #mask = kwargs.pop('mask')
+    annot_std = kwargs.pop('annot_std')
+    annot_std_fmt = kwargs.pop('annot_std_fmt')
+    annot_fmt = kwargs.pop('annot_fmt')
+    values = kwargs.pop('values')
+    index = kwargs.pop('index')
+    columns = kwargs.pop('columns')
+    bootstrap = kwargs.pop('bootstrap')
+    # col that is used for the groupby for the row in the facetgrid
+    # (will be used to generate a title)
+    facet_row = kwargs.pop('facet_row')
+    if facet_row:
+        # should be unique
+        row_entry = data[facet_row].unique()[0]
+    else:
+        row_entry = None
+    # labels = x_mean
+    cmap = plt.get_cmap('coolwarm')
+    cmap.set_bad('white')
+    
+    #display(data)
+    
+    # difference heatmap plot
+    model_names = data['model_name'].unique()
+    if len(model_names)!=2:
+        raise RuntimeWarning("The sub dataframe contains more than two models, which is not permissible for model comparison.")
+        
+    sub_data_m1 = data[data['model_name']==model_names[0]]
+    sub_data_m2 = data[data['model_name']==model_names[1]]
+    
+    
+    # ToDO
+    if bootstrap:
+        raise NotImplementedError("Bootstrapping is not implemented (yet) for diff heatmaps.")
+    else:
+        x_mean_m1 = pd.pivot_table(sub_data_m1, index=[index], columns=columns,
+                                    values=values, aggfunc=np.mean)
+        x_mean_m2 = pd.pivot_table(sub_data_m2, index=[index], columns=columns,
+                                    values=values, aggfunc=np.mean)
+        x_mean = x_mean_m1-x_mean_m2
+        mask = x_mean.isnull()
+        if annot_std:
+            x_std = pd.pivot_table(data, index=[index], columns=columns,
+                                   values=values, aggfunc=np.std)
+            labels = x_mean.applymap(lambda x: annot_fmt.format(x)) + x_std.applymap(lambda x: annot_std_fmt.format(x))
+            sns.heatmap(x_mean, cmap=cmap, mask=mask, annot=labels, fmt='', **kwargs)
+        else:
+            sns.heatmap(x_mean, cmap=cmap, mask=mask, annot=x_mean, 
+                        fmt=annot_fmt[annot_fmt.find('{')+2:annot_fmt.find('}')], 
+                        **kwargs)
+    if row_entry:
+        plt.title(f"{model_names[0]} - {model_names[1]}\n mean n premise bin: {row_entry}")
+    else:
+        plt.title(f"{model_names[0]} - {model_names[1]}")
+        
+    
+def diff_heat_maps_by_weights(re_data, values, title, comparisons_by_model_name,
+                              index='weight_account', columns='weight_systematicity',
+                              row=None,
+                              annot_std=False, annot_fmt="{:2.0f}\n", annot_std_fmt=r'$\pm${:2.1f}', vmin=0, vmax=1,
+                              output_dir=None, file_name=None, index_label=r'$\alpha_A$', columns_label=r'$\alpha_S$', bootstrap=False):
+    # First we construe a mapping from the given tuples `comparisons_by_model_name`, which 
+    # we will later use for facetgrid/sns.map_dataframe
+    mapping_model_name2comp_type = dict()
+    for m1, m2 in comparisons_by_model_name:
+        mapping_model_name2comp_type[m1] = f'{m1}-{m2}'
+        mapping_model_name2comp_type[m2] = f'{m1}-{m2}'
+    re_data['comp_types']=re_data.apply(lambda x: mapping_model_name2comp_type[x['model_name']], axis=1)
+    
+    g = sns.FacetGrid(re_data, col='comp_types', row=row, height=5, aspect=1)
+    g.fig.suptitle(title, y=1.01)
+    #mask = pd.pivot_table(re_data, index=[index], columns=columns,
+    #                      values=values, aggfunc=np.mean).isnull()
+    g.map_dataframe(diff_heatmap_plot, cbar=False, values=values, index=index, columns=columns, facet_row=row,
+                    annot_std=annot_std, annot_fmt=annot_fmt, annot_std_fmt=annot_std_fmt, vmin=vmin, vmax=vmax, bootstrap=bootstrap)
+    g.set_axis_labels(columns_label, index_label)
+    #g.set_titles("{col_name}")
+    if (file_name is not None) and (output_dir is not None):
+        g.savefig(path.join(output_dir, file_name + '.pdf'), bbox_inches='tight')
+        g.savefig(path.join(output_dir, file_name + '.png'), bbox_inches='tight')    
+        
+        
+def bootstrap_std(col, n_resamples=1000):
+    # We return the standard deviation of the bootstrap distribution as std
+    bootstrap_res = spst.bootstrap((list(col),), np.mean, 
+                              confidence_level=0.95,
+                              random_state=1, 
+                              method='percentile',
+                              n_resamples=n_resamples)
+    return bootstrap_res.standard_error
+
+def bootstrap_mean(col, n_resamples=1000):
+    bootstrap_res = spst.bootstrap((list(col),), np.mean, 
+                              confidence_level=0.95,
+                              random_state=1, 
+                              method='percentile',
+                              n_resamples=n_resamples)
+    # We return the mean of the bootstrap distribution as a point estimate 
+    # of the mean (since the bootstrap distribution is the mean for each 
+    # bootstrap sample, it is a mean of a mean). I guess this makes more 
+    # sense than to take the mean of the actual ensemble (as we did before).
+    return np.mean(bootstrap_res.bootstrap_distribution)
+
+    
+def rel_share_of_property(re_data, 
+                           property_col, 
+                           col_rename = None,
+                           groupby_cols=['model_short_name', 'model_name'],
+                           collapse_branches=False,
+                           cols_groupby_branches = ['model_name','ds','init_coms', 'weight_account', 'weight_systematicity'],
+                           explode_cols = None,
+                           bootstrap=False, n_resamples=1000):
+    """
+    This function uses single bool values or boolean-lists (in the column `property_col`) to calculate the share of these 
+    properties. 
+    
+    
+    :param bootstrap:
+        If `bootstrap` is set to `True`, the relative share of True values in the subset defined by `groupby_cols` 
+        will not be calculated by calculating the actual relative share in the subset, but by calculating the mean
+        of a bootstrap distribution (of relative shares). Additinally, the standard deviation of the bootstrap 
+        distribution will be added as an additional row (see <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html>
+        for details).
+    :param property_col: The name of the colums whose relative share we are interested. The entries should be single boolean values or lists of 
+        boolean values.
+    
+    :param collapse: 
+        If `True` rows will be reduced to one row per simulation setup (which assumes a corresponding
+        redundancy in the column `property_col`).
+    :param explode_cols:
+        If not `None` the function will explode according to the passed cols. 
+        Otherwise, it will will explode in `property_col` if (and only if) it contains list-like entries. 
+    
+    
+    :return: 
+    
+    """
+    ### Implementation idea:
+    # 1. Reduce re_date to one row per simulation setup.
+    # 2. Explode the table w.r.t. the col of interest (i.e., expand the list into rows).
+    # 3. Aggregate the booleans of that col for the subsets of interest (`groupby_cols`)
+    #    to calculate the relative share ('mean') and absolute values if wished.
+    ###
+    
+    if col_rename is None:
+        col_rename = {'mean': f'rel_{property_col}',
+                      'std': f'std_{property_col}', 
+                      'size': f'size_{property_col}', 
+                      'sum': f'sum_{property_col}'}
+    
+    #### Collapse branches if wished ("result" perspective)
+    # Cols that should have identical values for all branches (and only for those) that 
+    # belong to one branching model run
+    if collapse_branches:
+        re_data = re_data.drop_duplicates(cols_group_branches)
+    
+    # specification of those cols (besides `properties_list_col`) that are relevant and later needed for the groupby
+    # ToDo: We could simply use all cols.
+    #relevant_cols = ["model_name", "model_short_name", "ds", "init_coms", "weight_account", "weight_systematicity"]
+    #re_data = re_data[(relevant_cols + [property_col])]
+
+    #### Explode in `property_col` if it contains lists
+    # (e.g. in the column `go_coms_consistent`)
+    # To-Do (?): Actually, we should check whether all entries have the same type.
+    if explode_cols is not None:
+        # To-Do: test this
+        re_data = re_data.explode(explode_cols)
+    elif isinstance(re_data[property_col].dropna()[0], list):
+        re_data = re_data.explode(property_col)
+            
+    # via `col_name` it can be indicated whether besides the relative share 
+    # the absolute values should be added as cols as well: 
+    if bootstrap:
+        # ToDo: The will lead to a double bootstrapping. It would be better to bootstrap only once.
+        agg_fun = [('bootstrap_mean', lambda x: bootstrap_mean(x, n_resamples=n_resamples)), 
+                   ('bootstrap_std', lambda x: bootstrap_std(x, n_resamples=n_resamples))]
+        # add the corresponding new colname
+        col_rename['bootstrap_mean']=col_rename['mean']
+        col_rename['bootstrap_std']=col_rename['std'] 
+    else:
+        # if we don't calculate stds we can take the actual mean and the the point estimated
+        # provided by the bootstrap distribution (right?)
+        # since we deal with a list of bools, `mean` will already return the relative share of `True`s in the respective subset 
+        agg_fun = ['mean']
+    if 'sum' in col_rename.keys():
+        agg_fun.append('sum')
+    if 'size' in col_rename.keys():
+        agg_fun.append('size')
+    result_df = re_data.groupby(groupby_cols)[property_col].agg(agg_fun).rename(columns=col_rename)
+    return result_df
