@@ -167,21 +167,6 @@ def heat_maps_by_weights(re_data, values, title, index='weight_account', columns
         g.savefig(path.join(output_dir, file_name + '.pdf'), bbox_inches='tight')
         g.savefig(path.join(output_dir, file_name + '.png'), bbox_inches='tight')
 
-def normalized_heat_maps_by_weights(re_data, values, title, index='weight_account', columns='weight_systematicity',
-                         annot_std=False, annot_fmt="{:2.0f}\n", annot_std_fmt=r'$\pm${:2.1f}', vmin=0, vmax=1,
-                         output_dir=None, file_name=None, index_label=r'$\alpha_A$', columns_label=r'$\alpha_S$'):
-    g = sns.FacetGrid(re_data, col='model_name', col_wrap=2, height=5, aspect=1)
-    g.fig.suptitle(title, y=1.01)
-    mask = pd.pivot_table(re_data, index=[index], columns=columns,
-                          values=values, aggfunc=np.mean).isnull()
-    g.map_dataframe(heatmap_plot, cbar=False, mask=mask, values=values, index=index, columns=columns,
-                    annot_std=annot_std, annot_fmt=annot_fmt, annot_std_fmt=annot_std_fmt, vmin=vmin, vmax=vmax)
-    g.set_axis_labels(columns_label, index_label)
-    g.set_titles("{col_name}")
-    if (file_name is not None) and (output_dir is not None):
-        g.savefig(path.join(output_dir, file_name + '.pdf'), bbox_inches='tight')
-        g.savefig(path.join(output_dir, file_name + '.png'), bbox_inches='tight')
-
 def plot_multiple_error_bars(data, var_y, ylabel,  
                              var_hue = 'model_name', hue_title='Model',
                              var_std = None,
@@ -451,7 +436,7 @@ def rel_share_of_property(re_data,
     if explode_cols is not None:
         # To-Do: test this
         re_data = re_data.explode(explode_cols)
-    elif isinstance(re_data[property_col].dropna()[0], list):
+    elif isinstance(re_data[property_col].dropna().iloc[0], list):
         re_data = re_data.explode(property_col)
             
     # via `col_name` it can be indicated whether besides the relative share 
