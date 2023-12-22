@@ -1,5 +1,5 @@
-Model,Number of fixed points with consistent commitments,Number of fixed points,Relative share of fixed points with consistent commitments
-QuadraticGlobalRE,333436,458147,0.7277926080493815
-LinearGlobalRE,227000,312783,0.725742767349888
-QuadraticLocalRE,404941,588236,0.6883988739213512
-LinearLocalRE,187163,228122,0.8204513374422459
+Model,Relative share of fixed points with consistent commitments,Standard deviation,Number of fixed points with consistent commitments,Number of fixed points
+QuadraticGlobalRE,0.727767599700533,0.0006560781718499053,333436,458147
+LinearGlobalRE,0.7257788067126412,0.0008068983207197275,227000,312783
+QuadraticLocalRE,0.688429873384152,0.0006063552937103504,404941,588236
+LinearLocalRE,0.8204132547496514,0.0008250507148072137,187163,228122
