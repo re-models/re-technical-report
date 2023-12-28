@@ -150,12 +150,14 @@ def heatmap_plot(*args, **kwargs):
                     **kwargs)
 
 
-def heat_maps_by_weights(re_data, values, title, index='weight_account', columns='weight_systematicity',
+def heat_maps_by_weights(re_data, values, title=None, index='weight_account', 
+                         columns='weight_systematicity',
                          annot_std=False, annot_fmt="{:2.0f}\n", annot_std_fmt=r'$\pm${:2.1f}', vmin=0, vmax=1,
                          output_dir=None, file_name=None, index_label=r'$\alpha_A$', columns_label=r'$\alpha_S$', 
                                      bootstrap=False, n_resamples=1000):
     g = sns.FacetGrid(re_data, col='model_name', col_wrap=2, height=5, aspect=1)
-    g.fig.suptitle(title, y=1.01)
+    if title:
+        g.fig.suptitle(title, y=1.01)
     mask = pd.pivot_table(re_data, index=[index], columns=columns,
                           values=values, aggfunc=np.mean).isnull()
     g.map_dataframe(heatmap_plot, cbar=False, mask=mask, values=values, index=index, columns=columns,
@@ -280,6 +282,7 @@ def diff_heatmap_plot(*args, **kwargs):
     # col that is used for the groupby for the row in the facetgrid
     # (will be used to generate a title)
     facet_row = kwargs.pop('facet_row')
+    row_title = kwargs.pop('row_title')
     if facet_row:
         # should be unique
         row_entry = data[facet_row].unique()[0]
@@ -320,14 +323,17 @@ def diff_heatmap_plot(*args, **kwargs):
                         fmt=annot_fmt[annot_fmt.find('{')+2:annot_fmt.find('}')], 
                         **kwargs)
     if row_entry:
-        plt.title(f"{model_names[0]} - {model_names[1]}\n mean n premise bin: {row_entry}")
+        plt.title(f"{model_names[0]} - {model_names[1]}\n {row_title}: {row_entry}")
     else:
         plt.title(f"{model_names[0]} - {model_names[1]}")
         
     
-def diff_heat_maps_by_weights(re_data, values, title, comparisons_by_model_name,
+def diff_heat_maps_by_weights(re_data, values, 
+                              comparisons_by_model_name,
+                              title=None, 
                               index='weight_account', columns='weight_systematicity',
                               row=None,
+                              row_title=None,
                               annot_std=False, annot_fmt="{:2.0f}\n", annot_std_fmt=r'$\pm${:2.1f}', vmin=0, vmax=1,
                               output_dir=None, file_name=None, index_label=r'$\alpha_A$', columns_label=r'$\alpha_S$', bootstrap=False):
     # First we construe a mapping from the given tuples `comparisons_by_model_name`, which 
@@ -339,10 +345,12 @@ def diff_heat_maps_by_weights(re_data, values, title, comparisons_by_model_name,
     re_data['comp_types']=re_data.apply(lambda x: mapping_model_name2comp_type[x['model_name']], axis=1)
     
     g = sns.FacetGrid(re_data, col='comp_types', row=row, height=5, aspect=1)
-    g.fig.suptitle(title, y=1.01)
+    if title:
+        g.fig.suptitle(title, y=1.01)
     #mask = pd.pivot_table(re_data, index=[index], columns=columns,
     #                      values=values, aggfunc=np.mean).isnull()
-    g.map_dataframe(diff_heatmap_plot, cbar=False, values=values, index=index, columns=columns, facet_row=row,
+    g.map_dataframe(diff_heatmap_plot, cbar=False, values=values, index=index, columns=columns,         
+                    facet_row=row, row_title = row_title,
                     annot_std=annot_std, annot_fmt=annot_fmt, annot_std_fmt=annot_std_fmt, vmin=vmin, vmax=vmax, bootstrap=bootstrap)
     g.set_axis_labels(columns_label, index_label)
     #g.set_titles("{col_name}")
