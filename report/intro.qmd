@@ -104,7 +104,7 @@ To illustrate the difference between global, semi-global and local optimization,
 
 ![Local optimization (alternating): Available commitments(row)/theories (column) are restricted to a neighbourhood of the current state in an alternating fashion while the other component is held fixed.](figures/grid_local.png){width=66% #fig-grid-local}
 
-## Metrics for model validations
+## Metrics for model validations {#sec-intro-metrics}
 
 At the outset, a plethora of metrics could be used to examine the performance of the formal model. Let us motivate a small selection of desiderata for model validation, which we will use in the following chapters.
 
