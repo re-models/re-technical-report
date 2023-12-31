@@ -16,12 +16,14 @@ book:
     - chapter_commitment-consistency.qmd
     - chapter_extreme-values.qmd
     - references.qmd
-
+  appendices:
+    - appendix_tipping_line.qmd
 bibliography: references.bib
 
 format:
   html:
     theme: cosmo
+    toc-depth: 4
   pdf:
     documentclass: scrreprt
 
