@@ -1,0 +1,5 @@
+Model,Relative share of fixed points with a consistent union,Standard deviation,Number of fixed points with a consistent union,Number of fixed points with consistent commitments
+QuadraticGlobalRE,0.9080905852444482,0.00047997997393831303,340059,374476
+LinearGlobalRE,0.9602131688221331,0.0004117670789464173,218065,227097
+QuadraticLocalRE,0.9114734036118434,0.00023796886490832627,1333612,1463131
+LinearLocalRE,0.9939200925773681,7.452746070498007e-05,1233142,1240692
