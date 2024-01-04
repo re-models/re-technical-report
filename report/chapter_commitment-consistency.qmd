@@ -1,4 +1,4 @@
-# Commitment consistency cases {#sec-commitment-consistency}
+# Consistency {#sec-commitment-consistency}
 
 ## Background
 
@@ -31,11 +31,8 @@ Note that fixed points can be counted in different ways. Taking a result-oriente
 
 ## Results
 
-### Overall Results
-
-Similar to the calculation of relative shares in @sec-go-and-fp, the following general results are based on calculating the relative share of properties over all model runs of a specific model.
-
-#### Consistent Outputs
+### Consistent Outputs
+#### Overall Results
 
 ```{python}
 #| echo: false
@@ -49,11 +46,13 @@ from IPython.display import Markdown, display
 
 
 tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
-file_name = 'table_consistency_outputs_go_setups.csv'
+file_name = 'table_consistent_go_rp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
 df = df.round(3)
 
-display(Markdown(df.to_markdown(index = False)))
+keep_columns = [col for col in df.columns if "Standard deviation" not in col]
+
+display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 
 #df.style.hide(axis="index")  
@@ -62,7 +61,7 @@ display(Markdown(df.to_markdown(index = False)))
 ```{python}
 #| echo: false
 #| label: tbl-consistency_outputs_fp_setups
-#| tbl-cap: 'Relative share of consistent commitments among fixed points (unique)'
+#| tbl-cap: 'Relative share of consistent commitments among fixed points (result perspective)'
 
 import pandas as pd
 from os import getcwd, path
@@ -71,13 +70,15 @@ from IPython.display import Markdown, display
 
 
 tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
-file_name = 'table_consistency_outputs_fp_setups.csv'
+file_name = 'table_consistent_fp_rp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
 
 df = df.round(3)
 
+keep_columns = [col for col in df.columns if "Standard deviation" not in col]
 
-display(Markdown(df.to_markdown(index = False)))
+
+display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 
 #df.style.hide(axis="index")  
@@ -86,7 +87,7 @@ display(Markdown(df.to_markdown(index = False)))
 ```{python}
 #| echo: false
 #| label: tbl-consistency_outputs_fp_branches
-#| tbl-cap: 'Relative share of consistent commitments among fixed points (all branches)'
+#| tbl-cap: 'Relative share of consistent commitments among fixed points (process perspective)'
 
 import pandas as pd
 from os import getcwd, path
@@ -95,11 +96,13 @@ from IPython.display import Markdown, display
 
 
 tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
-file_name = 'table_consistency_outputs_fp_branches.csv'
+file_name = 'table_consistent_fp_pp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
 df = df.round(3)
 
-display(Markdown(df.to_markdown(index = False)))
+keep_columns = [col for col in df.columns if "Standard deviation" not in col]
+
+display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 
 #df.style.hide(axis="index")  
@@ -118,9 +121,31 @@ Old:
 - `LinearLocalRE` exhibits substantially higher relative shares of consistent commitments among fixed points (unique and from all branches) 
 - The number of fixed points reached through different branches in local model variants is substantially higher than for global model variants (@tbl-consistency_outputs_fp_branches)
 
-#### Consistency Cases
+#### Results Grouped by Sentence Pool Size
 
-The results of this section are based on a more fine-grained distinction of cases than before. 
+![Relative share of global optima with consistent commitments grouped by model variant and sentence pool size](figures/rel_consistent_go_by_sp_rp){#fig-cons-go-sp-rp}
+
+![Relative share of fixed points (result perspective) with consistent commitments grouped by model variant and sentence pool size](figures/rel_consistent_fp_by_sp_rp){#fig-cons-fp-sp-rp}
+
+![Relative share of fixed points (process perspective) with consistent commitments grouped by model variant and sentence pool size](figures/rel_consistent_fp_by_sp_pp){#fig-cons-fp-sp-pp}
+
+#### Results Grouped by Configuration of Weights
+
+![Relative share of global optima with consistent commitments grouped by model variant and configuration of weights](figures/hm_consistent_coms_go_rp){#fig-cons-go-hm-rp}
+
+![Relative share of fixed points (result perspective) with consistent commitments grouped by model variant and configuration of weights](figures/hm_consistent_coms_fp_rp){#fig-cons-fp-hm-rp}
+
+![Relative share of fixed points (process perspective) with consistent commitments grouped by model variant and configuration of weights](figures/hm_consistent_coms_fp_pp){#fig-cons-fp-hm-pp}
+
+### Consistency Cases
+
+The results of this section are based on a more fine-grained distinction of cases that depend on the consistency status of initial and output commitments.
+
+Note that the relative shares of cases have been calculated for consistent and inconsistent initial separately. For example, the relative share of inconsistency eliminating cases (inconsistent input, consistent output) among global optima has been calculated with respect to all global optima that result from inconsistent inital commitments. 
+
+Consequently, the relative share of inconsistency eleminating and inconsistency preserving cases add up to 1.0, and so do the relative shares of consistency preserving and consistency eliminating cases.
+
+#### Overall Results
 
 ```{python}
 #| echo: false
@@ -134,22 +159,26 @@ from IPython.display import Markdown, display
 
 
 tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
-file_name = 'table_consistency_cases_go_setups.csv'
+file_name = 'table_consistency_cases_go_rp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
 df = df.round(3)
 
-display(Markdown(df.to_markdown(index = False)))
+keep_columns = [col for col in df.columns if "Standard deviation" not in col]
+
+display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 
 #df.style.hide(axis="index")  
 ```
 
-![Relative share of consistency cases among global optima across all configuration of weights](figures/overall_consistency_cases_go_setups){#fig-overall-go}
+![Relative share of consistency cases among global optima resulting from consistent initial commitments](figures/consistency_cases_go_ic_cons_rp){#fig-overall-go-ic-cons}
+
+![Relative share of consistency cases among global optima resulting from inconsistent initial commitments](figures/consistency_cases_go_ic_incons_rp){#fig-overall-go-ic_incons}
 
 ```{python}
 #| echo: false
 #| label: tbl-consistency_cases_fp_setups
-#| tbl-cap: 'Relative share of consistency cases among fixed points (unique)'
+#| tbl-cap: 'Relative share of consistency cases among fixed points (result perspective)'
 
 import pandas as pd
 from os import getcwd, path
@@ -158,25 +187,28 @@ from IPython.display import Markdown, display
 
 
 tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
-file_name = 'table_consistency_cases_fp_setups.csv'
+file_name = 'table_consistency_cases_fp_rp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
 
 df = df.round(3)
 
+keep_columns = [col for col in df.columns if "Standard deviation" not in col]
 
-display(Markdown(df.to_markdown(index = False)))
+
+display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 
 #df.style.hide(axis="index")  
 ```
 
-![Relative share of consistency cases among fixed points (unique) across all configuration of weights](figures/overall_consistency_cases_fp_setups){#fig-overall-fp-setups}
+![Relative share of consistency cases among fixed points (result perspective) from consistent initial commitments](figures/consistency_cases_fp_ic_cons_rp){#fig-overall-fp-ic-cons-rp}
 
+![Relative share of consistency cases among fixed points (result perspective) from inconsistent initial commitments](figures/consistency_cases_fp_ic_incons_rp){#fig-overall-fp-ic-incons-rp}
 
 ```{python}
 #| echo: false
 #| label: tbl-consistency_cases_fp_branches
-#| tbl-cap: 'Relative share of consistency cases among fixed points (all branches)'
+#| tbl-cap: 'Relative share of consistency cases among fixed points (process perspective)'
 
 import pandas as pd
 from os import getcwd, path
@@ -185,28 +217,135 @@ from IPython.display import Markdown, display
 
 
 tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
-file_name = 'table_consistency_cases_fp_branches.csv'
+file_name = 'table_consistency_cases_fp_pp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
 df = df.round(3)
 
-display(Markdown(df.to_markdown(index = False)))
+keep_columns = [col for col in df.columns if "Standard deviation" not in col]
+
+display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 
 #df.style.hide(axis="index")  
 ```
 
-![Relative share of consistency cases among fixed points (all branches) across all configuration of weights](figures/overall_consistency_cases_fp_branches){#fig-overall-fp-branches}
+![Relative share of consistency cases among fixed points (process perspective) from consistent initial commitments](figures/consistency_cases_fp_ic_cons_pp){#fig-overall-fp-ic-cons-pp}
+
+![Relative share of consistency cases among fixed points (process perspective) from inconsistent initial commitments](figures/consistency_cases_fp_ic_incons_pp){#fig-overall-fp-ic-incons-pp}
 
 **Observations: Consistency Cases**
 
 <!--- As it is to be expected, there are no differences in relative shares for global optima for `QuadraticGlobalRE` and `QuadraticLocalRE`, as well as for `LinearGlobalRE` and `LinearLocalRE`.-->
 - The relative share of inconsistency-eliminating and consistency-preserving cases is high for all model variants and output types. Note that their sum corresponds to the relative share of consistent output commitments from above.
 - In turn, the relative share of inconsistency-preserving cases is small, and consistency-eliminating cases rarely occur.
-- The linear local model variant reaches inconsistent outputs (@fig-overall-fp-setups), but only very few branches result in these commitments (@fig-overall-fp-setups).
+- The result perspective makes clear that the linear local model variant reaches inconsistent output commitments from both consistent and inconsistent initial commitments (@fig-overall-fp-ic-cons-rp and @fig-overall-fp-ic-incons-rp), but the process perspective reveals that only very few branches result in these inconsistent output commitments (@fig-overall-fp-ic-cons-pp and @fig-overall-fp-ic-incons-pp).
 
-#### Consistent Union
+#### Results Grouped by Sentence Pool Size
+
+**Inconsistency Eliminating Cases**
+![Relative share of inconsistency eliminating cases among global optima grouped by model variant and sentence pool size](figures/rel_inconsistency_eliminating_case_go_by_sp_rp){#fig-IE-go-sp}
+
+![Relative share of inconsistency eliminating cases among fixed points (result perspective) grouped by model variant and sentence pool size](figures/rel_inconsistency_eliminating_case_fp_by_sp_rp){#fig-IE-fp-sp-rp}
+
+![Relative share of inconsistency eliminating cases among fixed points (process perspective) grouped by model variant and sentence pool size](figures/rel_inconsistency_eliminating_case_fp_by_sp_pp){#fig-IE-fp-sp-pp}
+
+
+**Consistency Preserving Cases**
+![Relative share of consistency preserving cases among global optima grouped by model variant and sentence pool size](figures/rel_consistency_preserving_case_go_by_sp_rp){#fig-CP-go-sp}
+
+![Relative share of consistency preserving cases among fixed points (result perspective) grouped by model variant and sentence pool size](figures/rel_consistency_preserving_case_fp_by_sp_rp){#fig-CP-fp-sp-rp}
+
+![Relative share of consistency preserving cases among fixed points (process perspective) grouped by model variant and sentence pool size](figures/rel_consistency_preserving_case_fp_by_sp_pp){#fig-CP-fp-sp-pp}
+
+**Inconsistency Preserving Cases**
+![Relative share of inconsistency preserving cases among global optima grouped by model variant and sentence pool size](figures/rel_inconsistency_preserving_case_go_by_sp_rp){#fig-IP-go-sp}
+
+![Relative share of inconsistency preserving cases among fixed points (result perspective) grouped by model variant and sentence pool size](figures/rel_inconsistency_preserving_case_fp_by_sp_rp){#fig-IP-fp-sp-rp}
+
+![Relative share of inconsistency preserving cases among fixed points (process perspective) grouped by model variant and sentence pool size](figures/rel_inconsistency_preserving_case_fp_by_sp_pp){#fig-CP-fp-sp-pp}
+
+
+**Consistency Eliminating Cases**
+![Relative share of consistency eliminating cases among global optima grouped by model variant and sentence pool size](figures/rel_consistency_eliminating_case_go_by_sp_rp){#fig-CE-go-sp}
+
+![Relative share of consistency eliminating cases among fixed points (result perspective) grouped by model variant and sentence pool size](figures/rel_consistency_eliminating_case_fp_by_sp_rp){#fig-CE-fp-sp-rp}
+
+![Relative share of consistency eliminating cases among fixed points (process perspective) grouped by model variant and sentence pool size](figures/rel_consistency_eliminating_case_fp_by_sp_pp){#fig-CE-fp-sp-pp}
+
+
+#### Results Grouped by Configuration of Weights
+
+**Inconsistency Eliminating Cases**
+
+![Relative share of inconsistency eliminating cases among global optima grouped by model variant and configuration of weights.](figures/hm_go_inconsistency_eliminating_cases_rp){#fig-IE-go}
+
+![Relative share of inconsistency eliminating cases among fixed points (result perspective) grouped by model variant and configuration of weights.](figures/hm_fp_inconsistency_eliminating_cases_rp){#fig-IE-fp-rp}
+
+![Relative share of inconsistency eliminating cases among fixed points (process perspective) grouped by model variant and configuration of weights.](figures/hm_fp_inconsistency_eliminating_cases_pp){#fig-IE-fp-pp}
+
+**Observations: Inconsistency eliminating cases (IE)**
+
+- Linear models exhibit a "tipping line" for IE cases among global optima and fixed points. There are no IE cases where $\alpha_{A} < \alpha_{F}$. IE cases occur only for $\alpha_{A} > \alpha_{F}$. See @sec-appendix-tipping for an explanation.
+- In contrast, quadratic models have smooth transitions. High weights for account and systematicity, resulting in low weights for faithfulness, benefit the relative share of IE cases among global optima and fixed points.
+<!--
+- The relative shares of IE cases among global optima do not exceed their counterpart for fixed points.
+-->
+<!--
+- The relative shares of IE cases among global optima are identical for `LinearGlobalRE` and `LinearLocalRE` in @fig-IE-go (as expected).
+-->
+- The relative shares of IE cases among fixed points from all branches in local model variants (@fig-IE-fp-pp) are slightly boosted in comparison to the consideration of unique fixed points (@fig-IE-fp-rp).
+
+
+
+**Consistency Preserving Case (CP)**
+
+![Relative share of consistency preserving cases among global optima grouped by model variant and configuration of weights.](figures/hm_go_consistency_preserving_cases_rp){#fig-CP-go}
+
+![Relative share of consistency preserving cases among fixed points (result perspective) grouped by model variant and configuration of weights.](figures/hm_fp_consistency_preserving_cases_rp){#fig-CP-fp-rp}
+
+![Relative share of consistency preserving cases among fixed points (process perspective) grouped by model variant and configuration of weights.](figures/hm_fp_consistency_preserving_cases_pp){#fig-CP-fp-pp}
+
+**Observations: Consistency Preserving Cases (CP)** 
+
+- Overall, CP cases occur frequently (roughly between 0.40 and 0.60) for all model variants and output types
+- The influence of weight configurations is moderately at best.
+<!--
+- The relative shares of CP cases among global optima are identical for `LinearGlobalRE` and `LinearLocalRE` in @fig-CP-go (as expected).
+-->
+
+
+**Inconsistency Preserving Cases (IP)**
+
+![Relative share of inconsistency preserving cases among global optima grouped by model variant and configuration of weights.](figures/hm_go_inconsistency_preserving_cases_rp){#fig-IP-go}
+
+![Relative share of inconsistency preserving cases among fixed points (result perspective) grouped by model variant and configuration of weights.](figures/hm_fp_inconsistency_preserving_cases_rp){#fig-IP-fp-rp}
+
+![Relative share of inconsistency preserving cases among fixed points (process perspective) grouped by model variant and configuration of weights.](figures/hm_fp_inconsistency_preserving_cases_pp){#fig-IP-fp-pp}
+
+**Observations: Inconsistency Preserving Cases (IP)**
+
+- Linear models exhibit a "tipping line" for IP cases among both global optima and fixed points. There are no IE cases where $\alpha_{A} > \alpha_{F}$. IP cases occur only for $\alpha_{A} < \alpha_{F}$.
+- In contrast, quadratic models have smooth transitions. High weights for faithfulness boost the relative shares of IP cases among global optima and fixed points.
+
+**Consistency Eliminating Cases (CE)**
+
+![Relative share of consistency eliminating cases among global optima grouped by model variant and configuration of weights.](figures/hm_go_consistency_eliminating_cases_rp){#fig-CE-go}
+
+![Relative share of consistency eliminating cases among fixed points (result perspective) grouped by model variant and configuration of weights.](figures/hm_fp_consistency_eliminating_cases_rp){#fig-CE-fp-rp}
+
+![Relative share of consistency eliminating cases among fixed points (process perspective) grouped by model variant and configuration of weights.](figures/hm_fp_consistency_eliminating_cases_pp){#fig-CE-fp-pp}
+
+**Observations: Consistency Eliminating Cases (CE)**
+
+- Generally, the relative shares of CE cases are very low.
+- Linear models exhibit a "tipping line" for CE cases among both global optima and fixed points. There are no CE cases where $\alpha_{A} > \alpha_{F}$. sIP cases occur only for $\alpha_{A} \leq \alpha_{F}$.
+- In contrast, quadratic models have smoother transitions. High weights for faithfulness boost the relative shares of CE cases among global optima and fixed points.
+
+### Consistent Unions
 
 In this section, we will analyze the dialectical consistency of whole epistemic states---that is, the union of an epistemic state's commitments and theory. Since we already analyzed the consistency of fixed point commitments and global optima commitments in isolation, we will count only those inconsistencies that arise by combining commitments and theories. In other words, we will not consider inconsistencies that result from inconsistencies in the commitments.
+
+#### Overall Results
 
 ```{python}
 #| echo: false
@@ -220,11 +359,13 @@ from IPython.display import Markdown, display
 
 
 tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
-file_name = 'table_consistency_union_go_setups.csv'
+file_name = 'table_consistency_union_go_rp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
 df = df.round(3)
 
-display(Markdown(df.to_markdown(index = False)))
+keep_columns = [col for col in df.columns if "Standard deviation" not in col]
+
+display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 
 #df.style.hide(axis="index")  
@@ -234,7 +375,7 @@ display(Markdown(df.to_markdown(index = False)))
 ```{python}
 #| echo: false
 #| label: tbl-consistency_union_fp_setups
-#| tbl-cap: 'Relative share of fixed points (unique) with a consistent union of commitments and theory'
+#| tbl-cap: 'Relative share of fixed points (result perspective) with a consistent union of commitments and theory'
 
 import pandas as pd
 from os import getcwd, path
@@ -243,13 +384,14 @@ from IPython.display import Markdown, display
 
 
 tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
-file_name = 'table_consistency_union_fp_setups.csv'
+file_name = 'table_consistency_union_fp_rp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
 
 df = df.round(3)
 
+keep_columns = [col for col in df.columns if "Standard deviation" not in col]
 
-display(Markdown(df.to_markdown(index = False)))
+display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 
 #df.style.hide(axis="index")  
@@ -260,7 +402,7 @@ display(Markdown(df.to_markdown(index = False)))
 ```{python}
 #| echo: false
 #| label: tbl-consistency_union_fp_branches
-#| tbl-cap: 'Relative share of fixed points (all branches) with a consistent union of commitments and theory'
+#| tbl-cap: 'Relative share of fixed points (process perspective) with a consistent union of commitments and theory'
 
 import pandas as pd
 from os import getcwd, path
@@ -269,11 +411,13 @@ from IPython.display import Markdown, display
 
 
 tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
-file_name = 'table_consistency_union_fp_branches.csv'
+file_name = 'table_consistency_union_fp_pp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
 df = df.round(3)
 
-display(Markdown(df.to_markdown(index = False)))
+keep_columns = [col for col in df.columns if "Standard deviation" not in col]
+
+display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 
 #df.style.hide(axis="index")  
@@ -283,76 +427,22 @@ display(Markdown(df.to_markdown(index = False)))
 
 - The relative shares of consistent unions of commitments and theory among outputs with consistent commitments is very high for all model variants and output types.
 
+#### Results Grouped by Sentence Pool Size
 
-### Results Grouped by Weight Configuration
+![Relative share of global optima with a consistent union of commitments and theory grouped by model variant and sentence pool size](figures/rel_consistent_union_go_by_sp_rp){#fig-cons-union-go-sp}
 
-#### Consistency Cases
+![Relative share of fixed points (result perspective) with a consistent union of commitments and theory grouped by model variant and sentence pool size](figures/rel_consistent_union_fp_by_sp_rp){#fig-cons-union-fp-sp-rp}
 
-**Inconsistency Eliminating Cases**
+![Relative share of fixed points (process perspective) with a consistent union of commitments and theory grouped by model variant and sentence pool size](figures/rel_consistent_union_fp_by_sp_pp){#fig-cons-union-fp-sp-pp}
 
-![Relative share of inconsistency eliminating cases among global optima grouped by model variant and configuration of weights.](figures/go_inconsistency_eliminating_cases_setups){#fig-IE-go}
+#### Results Grouped by Configuration of Weights
 
-![Relative share of inconsistency eliminating cases among fixed points (unique) grouped by model variant and configuration of weights.](figures/fp_inconsistency_eliminating_cases_setups){#fig-IE-fp-setups}
+![Relative share of global optima with a consistent union of commitments and theory grouped by model variant and configuration of weights](figures/hm_consistent_union_go_rp){#fig-cons-union-go-hm}
 
-![Relative share of inconsistency eliminating cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_inconsistency_eliminating_cases_branches){#fig-IE-fp-branches}
+![Relative share of fixed points (result perspective) with a consistent union of commitments and theory grouped by model variant and configuration of weights](figures/hm_consistent_union_fp_rp){#fig-cons-union-fp-hm-rp}
 
-**Observations: Inconsistency eliminating cases (IE)**
+![Relative share of fixed points (process perspective) with a consistent union of commitments and theory grouped by model variant and configuration of weights](figures/hm_consistent_union_fp_pp){#fig-cons-union-fp-hm-pp}
 
-- Linear models exhibit a "tipping line" for IE cases among global optima and fixed points. There are no IE cases where $\alpha_{A} < \alpha_{F}$. IE cases occur only for $\alpha_{A} > \alpha_{F}$. See @sec-appendix-tipping for an explanation.
-- In contrast, quadratic models have smooth transitions. High weights for account and systematicity, resulting in low weights for faithfulness, benefit the relative share of IE cases among global optima and fixed points.
-<!--
-- The relative shares of IE cases among global optima do not exceed their counterpart for fixed points.
--->
-<!--
-- The relative shares of IE cases among global optima are identical for `LinearGlobalRE` and `LinearLocalRE` in @fig-IE-go (as expected).
--->
-- The relative shares of IE cases among fixed points from all branches in local model variants (@fig-IE-fp-branches) are slightly boosted in comparison to the consideration of unique fixed points (@fig-IE-fp-setups).
-
-
-
-**Consistency Preserving Case (CP)**
-
-![Relative share of consistency preserving cases among global optima grouped by model variant and configuration of weights.](figures/go_consistency_preserving_cases_setups){#fig-CP-go}
-
-![Relative share of consistency preserving cases among fixed points (unique) grouped by model variant and configuration of weights.](figures/fp_consistency_preserving_cases_setups){#fig-CP-fp-setups}
-
-![Relative share of consistency preserving cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_consistency_preserving_cases_branches){#fig-CP-fp-branches}
-
-**Observations: Consistency Preserving Cases (CP)** 
-
-- Overall, CP cases occur frequently (roughly between 0.40 and 0.60) for all model variants and output types
-- The influence of weight configurations is moderately at best.
-<!--
-- The relative shares of CP cases among global optima are identical for `LinearGlobalRE` and `LinearLocalRE` in @fig-CP-go (as expected).
--->
-
-
-**Inconsistency Preserving Cases (IP)**
-
-![Relative share of inconsistency preserving cases among global optima grouped by model variant and configuration of weights.](figures/go_inconsistency_preserving_cases_setups){#fig-IP-go}
-
-![Relative share of inconsistency preserving cases among fixed points (unique) grouped by model variant and configuration of weights.](figures/fp_inconsistency_preserving_cases_setups){#fig-IP-fp-setups}
-
-![Relative share of inconsistency preserving cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_inconsistency_preserving_cases_branches){#fig-IP-fp-branches}
-
-**Observations: Inconsistency Preserving Cases (IP)**
-
-- Linear models exhibit a "tipping line" for IP cases among both global optima and fixed points. There are no IE cases where $\alpha_{A} > \alpha_{F}$. IP cases occur only for $\alpha_{A} < \alpha_{F}$.
-- In contrast, quadratic models have smooth transitions. High weights for faithfulness boost the relative shares of IP cases among global optima and fixed points.
-
-**Consistency Eliminating Cases (CE)**
-
-![Relative share of consistency eliminating cases among global optima grouped by model variant and configuration of weights.](figures/go_consistency_eliminating_cases_setups){#fig-CE-go}
-
-![Relative share of consistency eliminating cases among fixed points (unique) grouped by model variant and configuration of weights.](figures/fp_consistency_eliminating_cases_setups){#fig-CE-fp-setups}
-
-![Relative share of consistency eliminating cases among fixed points (all branches) grouped by model variant and configuration of weights.](figures/fp_consistency_eliminating_cases_branches){#fig-CE-fp-branches}
-
-**Observations: Consistency Eliminating Cases (CE)**
-
-- Generally, the relative shares of CE cases are very low.
-- Linear models exhibit a "tipping line" for CE cases among both global optima and fixed points. There are no CE cases where $\alpha_{A} > \alpha_{F}$. sIP cases occur only for $\alpha_{A} \leq \alpha_{F}$.
-- In contrast, quadratic models have smoother transitions. High weights for faithfulness boost the relative shares of CE cases among global optima and fixed points.
 
 
 ## Conclusion
