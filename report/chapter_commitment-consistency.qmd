@@ -117,9 +117,9 @@ Old:
 - The relative share of global optima with consistent outputs is identical for `QuadraticGlobalRE` and `QuadraticLocalRE`, as well as for `LinearGlobalRE` and `LinearLocalRE` in @tbl-consistency_outputs_go. (Explanation: The local model variants rely on their global counterparts to determine global optima. Hence, these results are not interesting for the present study, but included for the sake of completeness.)
 --> 
 - The overall relative share of consistent global optima commitments is slightly boosted for linear model variants compared to their quadratic counterparts in @tbl-consistency_outputs_go.
-- The relative shares of consistent commitments among fixed points (unique (@tbl-consistency_outputs_fp_setups) and from all branches (@tbl-consistency_outputs_fp_branches)) is slightly lower than the corresponding results for global optima in @tbl-consistency_outputs_go for `QuadraticGlobalRE`, `QuadraticLocalRE`, and `LinearGlobalRE`
-- `LinearLocalRE` exhibits substantially higher relative shares of consistent commitments among fixed points (unique and from all branches) 
-- The number of fixed points reached through different branches in local model variants is substantially higher than for global model variants (@tbl-consistency_outputs_fp_branches)
+- The relative shares of consistent commitments among fixed points (result perspective: @tbl-consistency_outputs_fp_setups, and process perspective: @tbl-consistency_outputs_fp_branches) is slightly lower than the corresponding results for global optima in @tbl-consistency_outputs_go for `QuadraticGlobalRE`, `QuadraticLocalRE`, and `LinearGlobalRE`
+- `LinearLocalRE` exhibits substantially higher relative shares of consistent commitments among fixed points (result and process perspective) 
+- The number of fixed points reached through different branches (process perspective) in local model variants is substantially higher than for global model variants (@tbl-consistency_outputs_fp_branches)
 
 #### Results Grouped by Sentence Pool Size
 
@@ -293,7 +293,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 <!--
 - The relative shares of IE cases among global optima are identical for `LinearGlobalRE` and `LinearLocalRE` in @fig-IE-go (as expected).
 -->
-- The relative shares of IE cases among fixed points from all branches in local model variants (@fig-IE-fp-pp) are slightly boosted in comparison to the consideration of unique fixed points (@fig-IE-fp-rp).
+- The relative shares of IE cases among fixed points (process perspective) in local model variants (@fig-IE-fp-pp) are slightly boosted in comparison to the consideration of unique fixed points (@fig-IE-fp-rp).
 
 
 
