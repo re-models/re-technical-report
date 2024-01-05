@@ -11,8 +11,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from typing import Set, List
 import random
-from typing import Set, List
 import scipy.stats as spst
+from itertools import combinations
 
 
 from matplotlib_venn import venn2
@@ -63,7 +63,8 @@ def load_re_data(data_dir,
         evalcols = ['global_optima', 'go_coms_consistent', 'go_union_consistent',
                     'go_full_re_state', 'go_fixed_point', 'go_account', 'go_faithfulness',
                     'fixed_points', 'fp_coms_consistent', 'fp_union_consistent', 'fp_full_re_state',
-                    'fp_account', 'fp_faithfulness','fp_global_optimum', 'coms_evolution', 'init_coms',
+                    'fp_account', 'fp_faithfulness','fp_global_optimum', 
+                    'coms_evolution', 'theory_evolution', 'init_coms',
                     'go_union_consistent', 'fp_union_consistent']
     # filter for cols that are being used
     if usecols is not None:
@@ -154,8 +155,8 @@ def heat_maps_by_weights(re_data, values, title=None, index='weight_account',
                          columns='weight_systematicity',
                          annot_std=False, annot_fmt="{:2.0f}\n", annot_std_fmt=r'$\pm${:2.1f}', vmin=0, vmax=1,
                          output_dir=None, file_name=None, index_label=r'$\alpha_A$', columns_label=r'$\alpha_S$', 
-                                     bootstrap=False, n_resamples=1000):
-    g = sns.FacetGrid(re_data, col='model_name', col_wrap=2, height=5, aspect=1)
+                         bootstrap=False, n_resamples=1000, col_model='model_name', col_order=None):
+    g = sns.FacetGrid(re_data, col=col_model, col_wrap=2, height=5, aspect=1, col_order=col_order)
     if title:
         g.fig.suptitle(title, y=1.01)
     mask = pd.pivot_table(re_data, index=[index], columns=columns,
@@ -169,13 +170,15 @@ def heat_maps_by_weights(re_data, values, title=None, index='weight_account',
         g.savefig(path.join(output_dir, file_name + '.pdf'), bbox_inches='tight')
         g.savefig(path.join(output_dir, file_name + '.png'), bbox_inches='tight')
 
+
 def plot_multiple_error_bars(data, var_y, ylabel,  
                              var_hue = 'model_name', hue_title='Model',
                              var_std = None,
                              var_x = 'n_sentence_pool', xlabel = 'n', xticks=[6,7,8,9],
                              file_name=None, output_dir=None,
                              jitter=True, jitter_size=0.03,
-                             bbox_to_anchor=(1., 0.2)):
+                             bbox_to_anchor=(1., 0.2),
+                             alt_labels=None):
     # If no col for error bars is given, we assume that the data is not aggregated and use `describe()` to do so
     if var_std is None:
         groupby = [var_hue] + [var_x]
@@ -190,6 +193,8 @@ def plot_multiple_error_bars(data, var_y, ylabel,
 
     for name, group in data_summary.groupby(var_hue):
         #display(group)
+        if alt_labels:
+            name=alt_labels[name]
         plt.errorbar(group[var_x], 
                      group[var_y],
                      yerr=group[var_std],
@@ -240,6 +245,13 @@ def mean_d_init_coms_go(row):
     d_init_coms_go = [simple_hamming(init_coms, go_coms) 
                       for go_theory, go_coms in row['global_optima']]
     return sum(d_init_coms_go)/len(d_init_coms_go)
+
+def mean_simple_hamming_distance(li:List[Set[int]]) -> float:
+    distances = [simple_hamming(el1, el2) for el1,el2 in combinations(li, 2)]
+    # cases with one element only
+    if len(distances)==0:
+        return None
+    return sum(distances)/len(distances)
 
 
 def plot_venn(result_df, col_setA, col_setB, col_cut,

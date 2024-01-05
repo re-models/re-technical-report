@@ -23,6 +23,10 @@ Additionally, we address the following questions (@sec-general-props):
 
 # Introduction {#sec-intro}
 
+::: {.callout-warning}
+So far, analysis results in this chapter are based but on a subset of the whole data set.
+:::
+
 @beisbart_making_2021 introduced a formal model of reflective equilibrium based on the theory of dialectical structures [@betz_theorie_2010; @betz_debate_2013], which they use as a methodological tool to better understand the method of reflective equilibrium and to assess its potential to yield justified epistemic states. Their discussion of the model is mainly based on an illustrative example. An assessment of how the model behaves under a broader spectrum of circumstances went beyond the scope of their work.
 
 This report summarizes the findings of assessing the RE model more thoroughly by running the model under a wide range of configurations and by tweaking the original model. We compare simulation outcomes of three model variants to the ones of the original model.^[The results of @beisbart_making_2021 are based on a Mathematica implementation of the model (see [{{< var link.remoma >}}]({{< var link.remoma >}})). Here, we rely on a reimplementation in Python ([rethon]({{< var link.rethon >}})), which can reproduce the results of the original implementation (see [this notebook]({{< var link.reproduction-nb-bbb2021 >}})).]
@@ -153,21 +157,28 @@ Let us now describe the simulation setups more thoroughly.
 
 ### $\alpha$-weights
 
-Each $\alpha$-weight was varied between $0.1$ and $0.8$ in steps of $0.1$ (i.e., values from $0.1, 0.2, \dots, 0.8$). We excluded extreme values such as $\alpha_{F} = 0$ or $\alpha_{A} = 1$ since they "break" the model and lead to undesirable behaviour. For example, $\alpha_{F} = 0$ yields only, but all, singleton theories and their closures as commitments as global optima. Since $\alpha$-weights have to satisfy $\alpha_{A} + \alpha_{S} + \alpha_{F} = 1$, there are $36$ possible combinations of the described $\alpha$-weights.
+Each $\alpha$-weight was varied between $0.1$ and $0.8$ in steps of $0.1$ (i.e., values from $0.1, 0.2, \dots, 0.8$). Since $\alpha$-weights have to satisfy $\alpha_{A} + \alpha_{S} + \alpha_{F} = 1$, there are $36$ possible combinations of the described $\alpha$-weights.
+
+We excluded extreme values such as $\alpha_{F} = 0$ or $\alpha_{A} = 1$ since they "break" the model and lead to undesirable behaviour. For example, $\alpha_{F} = 0$ results in global optima that comprise all and only singleton theories and their closures as commitments.
 
 <!-- 
 + ToDo (?): Explain (more thoroughly or shortly) the findings of <https://github.com/debatelab/re-studies/blob/master/notebooks/Faithfulness_0_is_a_bad_idea.ipynb>.
 -->
 
-### Initial commitments
+### Initial commitments {#sec-intro-init-coms}
 
 We generated a simple random sample of $20$ sets of minimally consistent initial commitments for every sentence pool. While we allow initial commitments to be dialectically inconsistent---that is, inconsistent w.r.t. the inferential relationships codified in $\tau$--- they must be minimally consistent. In other words, they should not include flat contradictions (e.g., $\{s_1,s_2,\neg s_1\}$). 
 
 
 <!--  $2^\mathcal{S}$ might be confusing as it commonly denotes the powerset of \mathcal{S}, which extends the set of minimally consistent sets.-->
-Let $2^\mathcal{S}$ be the set of all sets of minimally consistent sets of sentences from $\mathcal{S}$. If $2n$ is the size of the sentence pool, then there are $3^{n}$ minimally consistent sets of sentences ($\vert 2^\mathcal{S} \vert = 3^{n}$). For the generation of the used random sample, every set of commitments has the same probability of being drawn. Note that this does not translate into a uniform distribution of the number of initial commitments since the amount of sets with a specific size varies in $2^\mathcal{S}$. In @fig-distribution-coms-size, you find the actual distribution of the initial commitments' sizes for the different sentence pools.
+Let $2^\mathcal{S}$ be the set of all sets of minimally consistent sets of sentences from $\mathcal{S}$.^[$2^\mathcal{S}$ is a subset of the powerset of $\mathcal{S}$, which is usually denoted by $2^\mathcal{S}$.] If $2n$ is the size of the sentence pool, then there are $3^{n}$ minimally consistent sets of sentences ($\vert 2^\mathcal{S} \vert = 3^{n}$). For the generation of the used random sample, every set of commitments has the same probability of being drawn. Note that this does not translate into a uniform distribution of the number of initial commitments since the amount of sets with a specific size varies in $2^\mathcal{S}$. In @fig-distribution-coms-size, you find the actual distribution of the initial commitments' sizes for the different sentence pools.
 
 ![Distribution of initial commitments' sizes for different n.](figures/size-init-coms){width=88%  #fig-distribution-coms-size}
+
+Roughly, $56\%$ [XXX] of the random initial commitments are dialectically consistent. This value varies slightly depending on the sentence pool (see @fig-consistency-coms-size). 
+
+![Relative share of dialectically consistent initial commitments for different n.](figures/consistency-init-coms){width=66%  #fig-consistency-coms-size}
+
 
 ### Dialectical structures
 
