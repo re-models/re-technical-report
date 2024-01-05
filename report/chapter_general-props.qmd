@@ -1,5 +1,9 @@
 # General ensemble properties {#sec-general-props}
 
+::: {.callout-warning}
+So far, analysis results in this chapter are based but on a subset of the whole data set.
+:::
+
 Before analyzing how the model variants perform with regard to the described performance criteria, we will analyze some basic features of model runs that help us understand the model better. In particular, we assess the overall length of processes, the (mean) step length of commitments adjustments steps and the extent of branching.   
 
 ## Process length and step length
@@ -10,13 +14,13 @@ $$
 \mathcal{C_0} \rightarrow \mathcal{T_0} \rightarrow \mathcal{C_1} \rightarrow \mathcal{T_1} \rightarrow \dots \rightarrow \mathcal{T_{final}} \rightarrow \mathcal{C_{final}}
 $$
 
-In other words, if $(\mathcal{T_{0}}, \mathcal{C_{0}})$ is the initial state and $(\mathcal{T_{m}}, \mathcal{C_{m}})$ the fixed-point state, $l_p(e)=2(m+1)$. An equilibration process reaches a fixed point if the newly chosen theory and commitments set are identical to the previous epistemic state---that is, if $(\mathcal{T_{i+1}}, \mathcal{C_{i+1}})=(\mathcal{T_{i}}, \mathcal{C_{i}})$  [@beisbart_making_2021, p. 466]. Accordingly, the minimal length of a process is $4$. In such a case, the achievement of initial commitments and the first chosen theory cannot be further improved. Accordingly, the initial commitments are also the final commitments. 
+In other words, if $(\mathcal{T_{0}}, \mathcal{C_{0}})$ is the initial state and $(\mathcal{T_{m}}, \mathcal{C_{m}})$ the fixed-point state, $l_p(e)=2(m+1)$. An equilibration process reaches a fixed point if the newly chosen theory and commitments set are identical to the previous epistemic state---that is, if $(\mathcal{T_{i+1}}, \mathcal{C_{i+1}})=(\mathcal{T_{i}}, \mathcal{C_{i}})$  [@beisbart_making_2021, p. 466]. Therefore, the minimal length of a process is $4$. In such a case, the achievement of initial commitments and the first chosen theory cannot be further improved. Accordingly, the initial commitments are also the final commitments. 
 
 @fig-dist-process-length shows the distribution of process lengths, and @fig-process-length shows the mean process length (and its standard deviation) for the different model variants dependent on the size of the sentence pool ($2n$) over all branches.  
 
 ![Distribution of process lengths for different models.](figures/dist-process-length){width=80%  #fig-dist-process-length}
 
-The first interesting observation is that the semi-globally optimizing models (`QGRE` and `LGRE`) reach their fixed points quickly. Often, they adjust their commitments only once ($l_p(e)=6$); the linear model variant (`LGRE`) will sometimes not even adjust the initial commitments of processes ($l_p(e)=4$). In contrast, the locally optimizing models (`QLRE` and `LLRE`) need significantly more adjustment steps. This difference is expected if we assume that local and global optima commitments are not often in the $1$-neighbourhood of initial commitments (see @fig-distance-go-coms). Under this assumption, the locally searching models will need more than one adjustment step to reach a global or local optimum.
+The first interesting observation is that the semi-globally optimizing models (`QGRE` and `LGRE`) reach their fixed points quickly. Often, they adjust their commitments only once ($l_p(e)=6$); the linear model variant (`LGRE`) will sometimes not even adjust the initial commitments of processes ($l_p(e)=4$). In contrast, the locally optimizing models (`QLRE` and `LLRE`) need significantly more adjustment steps. This difference is expected if we assume that local and global optima commitments are not often in the $1$-neighbourhood of initial commitments (see @fig-distance-init-final-coms and @fig-distance-go-coms-n). Under this assumption, the locally searching models will need more than one adjustment step to reach a global or local optimum.
 
 ![Mean process length for different models and sentence pools.](figures/process-length){width=80%  #fig-process-length}
 
@@ -28,9 +32,39 @@ A possible explanation is motivated by analyzing the step length during the adju
 
 ![Mean step length of adjacent commitments for different models and sentence pools.](figures/step-length){width=80%  #fig-step-length}
 
-Unsurprisingly, the locally optimizing models have roughly a mean step length of $1$ since they are confined in their choice of new commitments to the $1$-neighbourhood.^[The mean distance is, for some cases, slightly greater than $1$, which can be simply explained: The definition of the $1$-neighbourhood is based on another Hamming distance than the one used here. In particular, there are sentence sets in the $1$-neighbourhood of a sentence set whose simple Hamming distance is greater than $1$. For instance, the set $\mathcal{C}_1=\{s_1, \neg s_2\}$  is in the $1$-neighbourhood of the sentence set $\mathcal{C}_2=\{s_1,s_2\}$ since it only needs an attitude change towards one sentence (i.e., an attitude change towards $s_2$ from rejection to acceptance). However, the simple Hamming distance is $2$ since both $s_2$ and $\neg s_2$ are not shared by $\mathcal{C}_1$ and $\mathcal{C}_2$.]  In contrast, the semi-globally optimizing models take bigger leaps with an increasing sentence pool size.  @fig-distance-go-coms shows why: With the increasing size of the sentence pool, the mean distance between initial commitments and commitments of global optima increases. In other words, RE processes must overcome larger distances to optimize epistemic states. Semi-globally optimizing models can walk this distance with fewer steps (@fig-process-length) since they can take comparably large steps (@fig-step-length). Locally optimizing models are confined to small steps (@fig-step-length) and, thus, have to take more steps  (@fig-process-length).
+Unsurprisingly, the locally optimizing models have roughly a mean step length of $1$ since they are confined in their choice of new commitments to the $1$-neighbourhood.^[The mean distance is, for some cases, slightly greater than $1$, which can be simply explained: The definition of the $1$-neighbourhood is based on another Hamming distance than the one used here. In particular, there are sentence sets in the $1$-neighbourhood of a sentence set whose simple Hamming distance is greater than $1$. For instance, the set $\mathcal{C}_1=\{s_1, \neg s_2\}$  is in the $1$-neighbourhood of the sentence set $\mathcal{C}_2=\{s_1,s_2\}$ since it only needs an attitude change towards one sentence (i.e., an attitude change towards $s_2$ from rejection to acceptance). However, the simple Hamming distance is $2$ since both $s_2$ and $\neg s_2$ are not shared by $\mathcal{C}_1$ and $\mathcal{C}_2$.]  In contrast, the semi-globally optimizing models take bigger leaps with an increasing sentence pool size.  @fig-distance-init-final-coms shows why: With the increasing size of the sentence pool, the mean distance between initial commitments and fixed-point commitments increases. In other words, RE processes must overcome larger distances to reach their equilibrium state. Semi-globally optimizing models can walk this distance with fewer steps (@fig-process-length) since they can take comparably large steps (@fig-step-length). Locally optimizing models are confined to small steps (@fig-step-length) and, thus, have to take more steps  (@fig-process-length).
 
-![Mean distance between initial commitments and optimal commitments for different $\alpha_F$.](figures/distance-go-coms){width=80%  #fig-distance-go-coms}
+![Mean distance between initial commitments and fixed points.](figures/distance-init-final-coms){width=80%  #fig-distance-init-final-coms}
+
+## Global optima
+
+Global optima are fully determined by the achievement function of the RE model. Accordingly, global optima might differ between the linear and quadratic model variants but do not depend on whether the RE process is based on a locally or semi-globally optimization. In the following, we will therefore summarize analysis results with respect to global optima for linear models under the heading `LinearRE` and for quadratic models under the heading `QuadraticRE`.
+
+The mean number of global optima does not differ significantly between linear and quadratic models ($4\pm 14$ vs. $4\pm 9$ [XXX]) and does not depend on the size of the sentence pool (see @fig-number-global-optima).
+
+![Number of global optima for different $n$.](figures/number-global-optima){width=80%  #fig-number-global-optima}
+
+However, the heatmap in @fig-hm-mean-n-global-optima shows an interesting dependence on the $\alpha$-weights. 
+
+Here and in the following chapters, we will often rely on such heatmaps. Let us therefore provide some clarifications of their interpretation. If we are interested in visualising the dependence on $\alpha$-weight configurations (i.e., a specific triples of $\alpha_A$, $\alpha_F$ and $\alpha_S$), it is sufficient to use two dimensions ($\alpha_A$ and $\alpha_S$ in our case) since the three weights $\alpha_A$, $\alpha_F$ and $\alpha_S$ are not independent. The diagonals in these heatmaps from southwest to northeast are isolines for the faithfulness weight ($\alpha_F$). In the following, we will refer to specific cells in these heatmaps in the typical $(x,y)$ fashion. For instance, we will call the cell with $\alpha_S=0.5$ and $\alpha_A=0.2$ the $(0.5,0.2)$ cell.  
+
+Now, let's come back to @fig-hm-mean-n-global-optima. For each simulation setup there is not necessarily one global optimum. Instead, there can be multiple global optima. Each cell in the heatmap provides for a specific $\alpha$-configuration setup the mean number of global optima of simulation setups with this $\alpha$ configuration. For the quadratic models, the number of global optima (and its variance) increases with an increase in $\alpha_S$. For the linear models, on the other hand, the number of global optima is comparably low ($1-3$) in all cells with the exception of the three islands $(0.4,0.3)$, $(0.6,0.2)$ and $(0.8,0.1)$. These cells are characterised by $\alpha_F = \alpha_A$. For linear models, there are more ties in the achievement function under these conditions, which results in an increase in global optima.  
+
+![Mean number of global optima for different $\alpha$-weight configurations.](figures/hm-mean-n-global-optima){width=88%  #fig-hm-mean-n-global-optima}
+
+The following figures provide an overview of two topological properties of global optima. @fig-mean-distance-global-optima-n and @fig-mean-distance-global-optima-al depict the mean distance of global-optimum commitments. We calculated for each configuration setup that has more than one global optimum the mean (simple Hamming) distance between global-optimum commitments and took the average of these means with respect to different ensemble properties.  @fig-distance-go-coms-n and @fig-distance-go-coms-al, one the other hand, depict the mean distance between initial commitments and global-optimum commitments. For that, we calculated for each simulation setup the mean (simle Hamming) distance between initial commitments and all global-optimum commitments of the simulation setup and, again, took the average of these means with respect to different ensemble properties.
+
+@fig-mean-distance-global-optima-n and @fig-mean-distance-global-optima-al are hard to interpret. The mean distance of initial commitments and global-optimum commitments might increase with the size of the sentence pool. However, without an additional consideration of larger sentence pool, we cannot draw this conclusion with certainty (due to the large variance). It is similarly difficult to read of any dependence of the mean distance between global optima on the size of the senctence pool.  
+
+![Mean distance of global-optima commitments for different $n$.](figures/mean-distance-global-optima-n){width=80%  #fig-mean-distance-global-optima-n}
+
+![Mean distance between initial commitments and optimal commitments for different $n$.](figures/distance-go-coms-n){width=80%  #fig-distance-go-coms-n}
+
+ @fig-distance-go-coms-n and @fig-distance-go-coms-al, one the other hand, show that the mean distance of initial commitments and global-optimum commitments as well as the mean distance between global-optimum commitments depend on $\alpha_F$. The smaller $\alpha_F$, the larger the distance. This result is not suprising. The weight $\alpha_F$ determines the extent to what final commitments should resemble initial commitments. You can think of $\alpha_F$ as the magnitude of an attractive force that pulls the commitments of the epistemic state to the initial commitments. Accordingly, if $\alpha_F$ gets smaller, global optima and fixed points will be distributed more widerspread in the space of epistemic states.   
+
+![Mean distance of global-optima commitments for different $\alpha$.](figures/mean-distance-global-optima-al){width=80%  #fig-mean-distance-global-optima-al}
+
+![Mean distance between initial commitments and optimal commitments for different $\alpha$.](figures/distance-go-coms-al){width=80%  #fig-distance-go-coms-al}
 
 ## Branching
 
@@ -38,7 +72,12 @@ The choice of a new theory (or a new set of commitments respectively) is underde
 
 ![Mean number of branches for different models and sentence pools.](figures/mean-branches){width=80%  #fig-mean-branches}
 
-@fig-mean-branches shows the mean number of branches with their dependence on the model and sentence pool. It suggests that branching is more prevalent in locally optimizing models. The large variance can be partly explained by the heat maps in @fig-hm-mean-branches, which depict mean values (and standard deviations) for different weight combinations. Since the three weights $\alpha_A$, $\alpha_F$ and $\alpha_S$ are not independent, it is sufficient to use two dimensions ($\alpha_A$ and $\alpha_S$ in our case). The diagonals from southwest to northeast are isolines for the faithfulness weight ($\alpha_F$). According to @fig-hm-mean-branches, branching is particularly prevalent for locally optimizing models if $\alpha_F$ is low, in other words, if a process is minimally bound to its initial commitments. The combination of low $\alpha_F$ and low $\alpha_S$ values is particularly conducive to the branching of RE processes. 
+@fig-mean-branches shows the mean number of branches with their dependence on the model and sentence pool. It suggests that branching is more prevalent in locally optimizing models. The large variance can be partly explained by the heat maps in @fig-hm-mean-branches, which depict mean values (and standard deviations) for different weight combinations. 
+
+For `LinearGlobalRE` there are, again, islands with many branches (the cells $(0.4,0.3)$, $(0.6,0.2)$ and $(0.8,0.1)$) which are characterised by $\alpha_F = \alpha_A$. The high number of branches correlates with a high number of global optima within these cells (compare @fig-hm-mean-n-global-optima). It stands, therefore, to reason that the large amount of branches can be explained by a large amount of global optima that are reached by RE processes (see XXX in XXX). 
+
+The "$\alpha_F=\alpha_A$"-line is also relevant for the `LinearLocalRE` model. Above that line, branching is comparably low (roughly $1-3$) and below that line comparably high (with a high variance).  This behaviour is to some extent even observable in the `QuadraticLocalRE` model.
+
 
 ![Mean number of branches for different models, sentence pools and weights.](figures/hm-mean-branches){width=88%  #fig-hm-mean-branches}
 
