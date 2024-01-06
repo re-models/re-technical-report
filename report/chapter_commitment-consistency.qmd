@@ -4,7 +4,7 @@
 
 Consistency is commonly seen as a necessary condition of coherence. Achieving consistency in RE is, therefore, of utmost importance. In contrast to the desiderata of faithfulness, systematicity and account (see @sec-mod), the desideratum of consistency is not hard-wired into the model. Although the agent is not allowed to choose commitments with flat contradictions (i.e., commitment sets of the form $\{s_i,\dots, \neg s_i\}$), they can choose dialectically inconsistent commitments (i.e., commitments that are inconsistent with respect to the inferential relationships encoded in the dialectical structure $\tau$). Or, more formally, a dialectically inconsistent set of commitments may maximize the achievement during the step of adjusting commitments. Accordingly, the process might end at a fixed point with dialectically inconsistent commitments. The question is, therefore, whether the explicitly modelled desiderata and the specification of the process are sufficiently conducive towards dialectical consistency.^[The main driving force for dialectical consistency is the desideratum of account. Since the choice of new theories is confined to dialectically consistent theories, account will favour commitments that are dialectically consistent.]  
 
-In this chapter, we analyze *dialectical consistency* of inputs and outputs (fixed points and global optima) of RE simulations, which can be examined from three different perspectives:
+In this chapter, we analyze the *dialectical consistency* of inputs and outputs (fixed points and global optima) of RE simulations, which can be examined from three different perspectives:
 
 1. the consistency of output commitments
 2. the "consistency case" that arises from combining the consistency status of initial and output commitments
@@ -129,19 +129,31 @@ Old:
 
 ![Relative share of fixed points (process perspective) with consistent commitments grouped by model variant and sentence pool size](figures/rel_consistent_fp_by_sp_pp){#fig-cons-fp-sp-pp}
 
+**Observations**
+
+- The relative share of global optima with consistent commitments slighty decrease for larger sentence pool sizes (@fig-cons-go-hm-rp).
+- The closeness of results of `QuadraticGlobalRE` and `QuadraticLocalRE`, as well as `LinearGlobalRE` and `LinearLocalRE` in @fig-cons-go-hm-rp is due to the fact, that local variants rely on their global counterparts to determine global optima. Differences arise due to the exclusion of different erroneous runs.
+- The relative share of fixed points with consistent commitments slightly decreases for larger sentence pool sizes (both perspectives in @fig-cons-fp-hm-rp and @fig-cons-fp-hm-pp) for `QuadraticGlobalRE`, `QuadraticLocalRE`, and `LinearGlobalRE`.
+- In contrast, for `LinearLocalRE`, the relative share of fixed points with consistent commitments  remains roughly constant (result perspective in @fig-cons-fp-hm-rp) or sligtly increases (process perspective in @fig-cons-fp-hm-pp)
+
 #### Results Grouped by Configuration of Weights
 
-![Relative share of global optima with consistent commitments grouped by model variant and configuration of weights](figures/hm_consistent_coms_go_rp){#fig-cons-go-hm-rp}
+![Relative share of global optima with consistent commitments grouped by model variant and configuration of weights. Note that local variants are omitted due to almost analogous results.](figures/hm_consistent_coms_go_rp){#fig-cons-go-hm-rp}
 
 ![Relative share of fixed points (result perspective) with consistent commitments grouped by model variant and configuration of weights](figures/hm_consistent_coms_fp_rp){#fig-cons-fp-hm-rp}
 
 ![Relative share of fixed points (process perspective) with consistent commitments grouped by model variant and configuration of weights](figures/hm_consistent_coms_fp_pp){#fig-cons-fp-hm-pp}
 
+**Observations**
+
+- Linear models exhibit a "tipping line" for the relative share of global optima and fixed points with consistent commitments. For $\alpha_{A} > \alpha_{F}$, the relative share is consistently 1.0. See @sec-appendix-tipping for an explanation.
+- In contrast, quadratic models show a gradient of smoother transitions between relative shares, increasing with higher weights for $\alpha_{A}$, and also to some extent with higher weights for $\alpha_{A}$.
+
 ### Consistency Cases
 
 The results of this section are based on a more fine-grained distinction of cases that depend on the consistency status of initial and output commitments.
 
-Note that the relative shares of cases have been calculated for consistent and inconsistent initial separately. For example, the relative share of inconsistency eliminating cases (inconsistent input, consistent output) among global optima has been calculated with respect to all global optima that result from inconsistent inital commitments. 
+Note that the relative shares of cases have been calculated for consistent and inconsistent initial commitments separately. For example, the relative share of inconsistency eliminating cases (inconsistent input, consistent output) among global optima has been calculated with respect to all global optima that result from inconsistent inital commitments. 
 
 Consequently, the relative share of inconsistency eleminating and inconsistency preserving cases add up to 1.0, and so do the relative shares of consistency preserving and consistency eliminating cases.
 
@@ -171,9 +183,9 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 #df.style.hide(axis="index")  
 ```
 
-![Relative share of consistency cases among global optima resulting from consistent initial commitments](figures/consistency_cases_go_ic_cons_rp){#fig-overall-go-ic-cons}
+![Relative share of consistency cases among global optima resulting from consistent initial commitments](figures/consistency_cases_go_ic_cons_rp){#fig-overall-go-ic-cons width=70%}
 
-![Relative share of consistency cases among global optima resulting from inconsistent initial commitments](figures/consistency_cases_go_ic_incons_rp){#fig-overall-go-ic_incons}
+![Relative share of consistency cases among global optima resulting from inconsistent initial commitments](figures/consistency_cases_go_ic_incons_rp){#fig-overall-go-ic_incons width=70%}
 
 ```{python}
 #| echo: false
@@ -236,8 +248,8 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 **Observations: Consistency Cases**
 
 <!--- As it is to be expected, there are no differences in relative shares for global optima for `QuadraticGlobalRE` and `QuadraticLocalRE`, as well as for `LinearGlobalRE` and `LinearLocalRE`.-->
-- The relative share of inconsistency-eliminating and consistency-preserving cases is high for all model variants and output types. Note that their sum corresponds to the relative share of consistent output commitments from above.
-- In turn, the relative share of inconsistency-preserving cases is small, and consistency-eliminating cases rarely occur.
+- The relative share of consistency-preserving cases is high for all model variants and output types (@fig-overall-go-ic-cons-rp,@fig-overall-fp-ic-cons-rp, and @fig-overall-fp-ic-cons-pp). Consistency-eliminating cases occur very rarely.
+- The relative share of inconsistency preserving cases slightly exceed the inconsistency eliminating cases for global optima and fixed points of `QuadraticGlobalRE`, `QuadraticLocalRE`, as well as `LinearGlobalRE` (@fig-overall-go-ic-incons-rp,@fig-overall-fp-ic-incons-rp, and @fig-overall-fp-ic-incons-pp).
 - The result perspective makes clear that the linear local model variant reaches inconsistent output commitments from both consistent and inconsistent initial commitments (@fig-overall-fp-ic-cons-rp and @fig-overall-fp-ic-incons-rp), but the process perspective reveals that only very few branches result in these inconsistent output commitments (@fig-overall-fp-ic-cons-pp and @fig-overall-fp-ic-incons-pp).
 
 #### Results Grouped by Sentence Pool Size
@@ -257,6 +269,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 ![Relative share of consistency preserving cases among fixed points (process perspective) grouped by model variant and sentence pool size](figures/rel_consistency_preserving_case_fp_by_sp_pp){#fig-CP-fp-sp-pp}
 
+<!--
 **Inconsistency Preserving Cases**
 ![Relative share of inconsistency preserving cases among global optima grouped by model variant and sentence pool size](figures/rel_inconsistency_preserving_case_go_by_sp_rp){#fig-IP-go-sp}
 
@@ -271,9 +284,15 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 ![Relative share of consistency eliminating cases among fixed points (result perspective) grouped by model variant and sentence pool size](figures/rel_consistency_eliminating_case_fp_by_sp_rp){#fig-CE-fp-sp-rp}
 
 ![Relative share of consistency eliminating cases among fixed points (process perspective) grouped by model variant and sentence pool size](figures/rel_consistency_eliminating_case_fp_by_sp_pp){#fig-CE-fp-sp-pp}
+-->
 
+**Observations**
+
+- `LinearLocalRE` is the only model that tends to perform better with increasing sentence pool sizes with respect to all output types and conistency cases.
 
 #### Results Grouped by Configuration of Weights
+
+Due to the fact, that inconsistency eliminating and inconsistency preserving cases, as well as consistency eliminating and consistency preserving cases are complementary, we confine the presentation of results to two cases.
 
 **Inconsistency Eliminating Cases**
 
@@ -285,7 +304,8 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 **Observations: Inconsistency eliminating cases (IE)**
 
-- Linear models exhibit a "tipping line" for IE cases among global optima and fixed points. There are no IE cases where $\alpha_{A} < \alpha_{F}$. IE cases occur only for $\alpha_{A} > \alpha_{F}$. See @sec-appendix-tipping for an explanation.
+- Linear models exhibit a "tipping line" for IE cases among both global optima and fixed points. There are no IE cases where $\alpha_{A} < \alpha_{F}$, i.e. initial inconsistencies are never removed. In turn, the relative share of IE cases for $\alpha_{A} > \alpha_{F}$ is 1.0, i.e. initial inconsistencies are always removed. See @sec-appendix-tipping for an explanation.
+- The case with non extreme values in linear models occur where $\alpha_{A} = \alpha_{F}$.
 - In contrast, quadratic models have smooth transitions. High weights for account and systematicity, resulting in low weights for faithfulness, benefit the relative share of IE cases among global optima and fixed points.
 <!--
 - The relative shares of IE cases among global optima do not exceed their counterpart for fixed points.
@@ -293,8 +313,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 <!--
 - The relative shares of IE cases among global optima are identical for `LinearGlobalRE` and `LinearLocalRE` in @fig-IE-go (as expected).
 -->
-- The relative shares of IE cases among fixed points (process perspective) in local model variants (@fig-IE-fp-pp) are slightly boosted in comparison to the consideration of unique fixed points (@fig-IE-fp-rp).
-
+- The relative shares of IE cases among fixed points (process perspective) in local model variants (@fig-IE-fp-pp) are slightly boosted in comparison to the consideration of unique fixed points (result perspectve) (@fig-IE-fp-rp).
 
 
 **Consistency Preserving Case (CP)**
@@ -305,15 +324,14 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 ![Relative share of consistency preserving cases among fixed points (process perspective) grouped by model variant and configuration of weights.](figures/hm_fp_consistency_preserving_cases_pp){#fig-CP-fp-pp}
 
+
 **Observations: Consistency Preserving Cases (CP)** 
 
-- Overall, CP cases occur frequently (roughly between 0.40 and 0.60) for all model variants and output types
+- Overall, CP cases occur very frequently for all model variants and output types. In turn, the relative shares of CE cases ($1.0-CP$) are very low.
+- Linear models exhibit a "tipping line" for CP cases among both global optima and fixed points. For $\alpha_{A} > \alpha_{F}$, consitency is always preserved. In turn, CE cases occur only for $\alpha_{A} \leq \alpha_{F}$.
 - The influence of weight configurations is moderately at best.
+
 <!--
-- The relative shares of CP cases among global optima are identical for `LinearGlobalRE` and `LinearLocalRE` in @fig-CP-go (as expected).
--->
-
-
 **Inconsistency Preserving Cases (IP)**
 
 ![Relative share of inconsistency preserving cases among global optima grouped by model variant and configuration of weights.](figures/hm_go_inconsistency_preserving_cases_rp){#fig-IP-go}
@@ -324,8 +342,11 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 **Observations: Inconsistency Preserving Cases (IP)**
 
-- Linear models exhibit a "tipping line" for IP cases among both global optima and fixed points. There are no IE cases where $\alpha_{A} > \alpha_{F}$. IP cases occur only for $\alpha_{A} < \alpha_{F}$.
+- Linear models exhibit a "tipping line" for IP cases among both global optima and fixed points. There are no IP cases where $\alpha_{A} > \alpha_{F}$, i.e. initial inconsistencies are always removed. In turn, the relative share of IP cases for $\alpha_{A} < \alpha_{F}$ is 1.0, i.e. initial inconsistencies are never removed. See @sec-appendix-tipping for an explanation.
+- The case with non extreme values in linear models occur where $\alpha_{A} = \alpha_{F}$.
 - In contrast, quadratic models have smooth transitions. High weights for faithfulness boost the relative shares of IP cases among global optima and fixed points.
+
+
 
 **Consistency Eliminating Cases (CE)**
 
@@ -338,8 +359,10 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 **Observations: Consistency Eliminating Cases (CE)**
 
 - Generally, the relative shares of CE cases are very low.
-- Linear models exhibit a "tipping line" for CE cases among both global optima and fixed points. There are no CE cases where $\alpha_{A} > \alpha_{F}$. sIP cases occur only for $\alpha_{A} \leq \alpha_{F}$.
+- Linear models exhibit a "tipping line" for CE cases among both global optima and fixed points. There are no CE cases where $\alpha_{A} > \alpha_{F}$. CE cases occur only for $\alpha_{A} \leq \alpha_{F}$.
 - In contrast, quadratic models have smoother transitions. High weights for faithfulness boost the relative shares of CE cases among global optima and fixed points.
+
+-->
 
 ### Consistent Unions
 
@@ -423,7 +446,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 #df.style.hide(axis="index")  
 ```
 
-**Observations: Consistent Union**
+**Observations**
 
 - The relative shares of consistent unions of commitments and theory among outputs with consistent commitments is very high for all model variants and output types.
 
@@ -452,6 +475,8 @@ What do we want to add from <https://github.com/debatelab/re-studies/blob/master
 -->
 
 Overall, the present ensemble study concerning the three perspectives on the consistency of outputs of RE simulations provides positive results with respect to model variation. The overall relative shares of consistent outputs, inconsistency-eliminating and consistency-preserving cases, as well as consistent unions are satisfactorily high for all model variants.
+
+According to analysing the results further with respect to the sentence pool size, `LinearLocalRE` seems to have the edge over the other model variants in view of increasing sentence pool sizes. Nonetheless, the severely restricted sample that forms the basis of this report would make an extrapolation to even larger sentence pool sizes a highly speculative matter. Further research in this direction is required.
 
 In the more fine-grained analysis according to weigh configurations, we can observe regions of weight configurations that yield desirable behaviour. Moreover, these regions are robust across model variants. This provides at least some motivation to prefer some configurations over others. In particular, it is beneficial to consistency considerations if $\alpha_{A} > \alpha_{F}$.
 
