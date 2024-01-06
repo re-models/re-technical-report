@@ -119,7 +119,7 @@ In the preceding sections, we aggregated over the spectrum of different $\alpha$
 
 The heatmaps in @fig-hm-rel-fpgo-fp-rp and @fig-hm-rel-fpgo-fp-pp provide an overview of the $\alpha$-weight dependence. In the following, we will refer to specific cells in the typical $(x,y)$ fashion. For instance, we will call the cell with $\alpha_S=0.5$ and $\alpha_A=0.2$ the $(0.5,0.2)$ cell.  
 
-GO efficiency tends to increase with a decrease in $\alpha_A$ and with an increase in $\alpha_S$. There are some exceptions to this pattern, especially in linear models. Most notably, there are four "cold" islands in the linear models from both perspectives (compare the $(0.2,0.4)$, $(0.4,0.3)$, $(0.6,0.2)$ and $(0.8,0.1)$ cells in @fig-hm-rel-fpgo-fp-rp and @fig-hm-rel-fpgo-fp-pp).   
+GO efficiency tends to increase with a decrease in $\alpha_A$ and with an increase in $\alpha_S$. There are some exceptions to this pattern, especially in linear models. Most notably, there are four "cold" islands in the linear models from both perspectives (compare the $(0.2,0.4)$, $(0.4,0.3)$, $(0.6,0.2)$ and $(0.8,0.1)$ cells in @fig-hm-rel-fpgo-fp-rp and @fig-hm-rel-fpgo-fp-pp). The comparably dinimished magnitude of GO efficiency can be explained by the comparably high number of global optima in three of theses cells (compare the $(0.4,0.3)$, $(0.6,0.2)$ and $(0.8,0.1)$ cells in @fig-hm-mean-n-global-optima). Surprisingly, the locally and semi-globally optimizing model perform similarly bad, although the semi-globally optimizing model produces much more branches and fixed points in these cells (compare @fig-hm-mean-branches and @fig-hm-mean-n-fixed-points). [XXX: Re-check with full data set!]
 
 Additionally, linear models tend to exhibit more extreme values than quadratic models. In other words, the difference between "hot" and "cold" regions is higher for linear models than for the quadratic counterparts. 
 
@@ -163,6 +163,8 @@ As before, the overall performance in dependence on the mean number of premises 
 
 The dependence of GO reachability on $\alpha$ weights is somewhat similar to that of GO efficiency. For the semi-globally optimizing models, GO reachability tends to increase with a decrease in $\alpha_A$ and an increase in $\alpha_S$. Again, there are exceptions to this behaviour. Besides the islands of the `LinearGlobalRE` model, the $0.1$ $\alpha_F$ isoline has particularly low GO reachability values for the `QuadraticGlobalRE` model. 
 
+The linear model variants' cold islands can, again, be explained by the comparably high number of global optima in three of theses cells (compare the $(0.4,0.3)$, $(0.6,0.2)$ and $(0.8,0.1)$ cells in @fig-hm-mean-n-global-optima).
+
 The locally optimizing model variants have a comparably non-regular dependence on $\alpha$ weights. Additionally, the values do not vary that much between different cells as compared to the globally optimizing models. 
 
 ![Dependence of GO reachability from $\alpha$-weights for the different model variants.](figures/hm-rel-fpgo-go){#fig-hm-rel-fpgo-go}
@@ -179,9 +181,11 @@ By separating dialectical structures according to their mean number of premises 
 
 ## Conclusion
 
-On average, GO efficiency is high for semi-globally optimizing models and medium-high for locally optimizing models. The fact that GO efficiency drops for semi-globally optimizing models with the size of the sentence pool is worrisome since they are intended to be used in scenarios with larger sentence pools, which are computationally too demanding for semi-globally optimizing models. The question is whether their performance can be improved by increasing their search depth $d$.  
+On average, GO efficiency is high for semi-globally optimizing models and medium-high for locally optimizing models. The fact that GO efficiency drops for semi-globally optimizing models with the size of the sentence pool is, to some extent, worrisome since they are intended to be used in scenarios with larger sentence pools, which are computationally too demanding for semi-globally optimizing models. The question is whether their performance can be improved by increasing their search depth $d$. 
 
-Surprisingly, GO reachability is low to medium for all models. Additionally, all but the `QuadraticGlobalRE` model performs worse with an increase in the size of the sentence pool. A better understanding of this behaviour requires a more detailed analysis, which should be based on a more extensive set of dialectical structures.
+However, in specific contexts the modeller will choose a specific set of $\alpha$ weights. We already saw that the performance of the different model varies significantly between different $\alpha$-weight configurations. Consequently, the dependence on the sentence pool should be repeated for those regions of $\alpha$-weight configurations that are of interest for the modeller. For instance, if we choose to confine the analysis to $\alpha$-weight configurations with $\alpha_a < \alpha_s$, GO efficiency of the `LinearLocalRE` is as high as of the models `QuadraticGlobalRE` and `LinearGlobalRE` (see XXX).  
+
+Surprisingly, GO reachability is low to medium for all models. Additionally, all but the `QuadraticGlobalRE` model perform worse with an increase in the size of the sentence pool. A better understanding of this behaviour requires a more detailed analysis, which should be based on a more extensive set of dialectical structures.
 
 The `QuadraticGlobalRE` model outperforms all other models on average. A direct comparison of the locally optimizing models is complicated since it involves a trade-off: While the `LinearLocalRE` model reaches a higher GO efficiency than the `QuadraticLocalRE` model, it is the other way around with respect to GO reachability.
 
