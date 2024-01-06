@@ -9,6 +9,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 from typing import Set, List
 import random
 import scipy.stats as spst
@@ -126,6 +127,8 @@ def heatmap_plot(*args, **kwargs):
     bootstrap = kwargs.pop('bootstrap')
     n_resamples = kwargs.pop('n_resamples')
     
+    #set_heatmap_plot_style()
+    
     if bootstrap:
         agg_mean = lambda x: bootstrap_mean(x, n_resamples=n_resamples)
         agg_std = lambda x: bootstrap_std(x, n_resamples=n_resamples)
@@ -149,6 +152,8 @@ def heatmap_plot(*args, **kwargs):
         sns.heatmap(x_mean, cmap=cmap, mask=mask, annot=x_mean,
                     fmt=annot_fmt[annot_fmt.find('{')+2:annot_fmt.find('}')],
                     **kwargs)
+        
+    
 
 
 def heat_maps_by_weights(re_data, values, title=None, index='weight_account', 
@@ -156,6 +161,9 @@ def heat_maps_by_weights(re_data, values, title=None, index='weight_account',
                          annot_std=False, annot_fmt="{:2.0f}\n", annot_std_fmt=r'$\pm${:2.1f}', vmin=0, vmax=1,
                          output_dir=None, file_name=None, index_label=r'$\alpha_A$', columns_label=r'$\alpha_S$', 
                          bootstrap=False, n_resamples=1000, col_model='model_name', col_order=None):
+    
+    set_heatmap_plot_style()
+    
     g = sns.FacetGrid(re_data, col=col_model, col_wrap=2, height=5, aspect=1, col_order=col_order)
     if title:
         g.fig.suptitle(title, y=1.01)
@@ -179,6 +187,9 @@ def plot_multiple_error_bars(data, var_y, ylabel,
                              jitter=True, jitter_size=0.03,
                              bbox_to_anchor=(1., 0.2),
                              alt_labels=None):
+    
+    set_errorbar_plot_style()
+    
     # If no col for error bars is given, we assume that the data is not aggregated and use `describe()` to do so
     if var_std is None:
         groupby = [var_hue] + [var_x]
@@ -190,6 +201,8 @@ def plot_multiple_error_bars(data, var_y, ylabel,
     
     if jitter:
         data_summary[var_x] = data_summary.apply(lambda x: x[var_x]+random.uniform(-jitter_size, jitter_size), axis=1)
+        
+    #sns.set(font_scale=1.25)
 
     for name, group in data_summary.groupby(var_hue):
         #display(group)
@@ -479,3 +492,20 @@ def rel_share_of_property(re_data,
         agg_fun.append('size')
     result_df = re_data.groupby(groupby_cols)[property_col].agg(agg_fun).rename(columns=col_rename)
     return result_df
+
+def set_errorbar_plot_style():
+    
+    sns.set_theme(style="darkgrid", 
+                  font_scale = 1.5,
+                  rc={#"axes.spines.right": False, 
+                      #"axes.spines.top": False,
+                      #"axes.grid" : True,
+                      #"axes.grid.axis": "y",
+                      "lines.linewidth": 2.5})
+
+    # set the default color cycle on basis of the color palette "coolwarm"
+    mpl.rcParams['axes.prop_cycle'] = mpl.cycler(color=['#6788ee', '#9abbff', '#e26952', '#f7a889'])
+    
+def set_heatmap_plot_style():
+    sns.set_theme(style="darkgrid",
+                  font_scale = 1.0)

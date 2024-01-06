@@ -269,6 +269,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 ![Relative share of consistency preserving cases among fixed points (process perspective) grouped by model variant and sentence pool size](figures/rel_consistency_preserving_case_fp_by_sp_pp){#fig-CP-fp-sp-pp}
 
+<!--
 **Inconsistency Preserving Cases**
 ![Relative share of inconsistency preserving cases among global optima grouped by model variant and sentence pool size](figures/rel_inconsistency_preserving_case_go_by_sp_rp){#fig-IP-go-sp}
 
@@ -283,13 +284,15 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 ![Relative share of consistency eliminating cases among fixed points (result perspective) grouped by model variant and sentence pool size](figures/rel_consistency_eliminating_case_fp_by_sp_rp){#fig-CE-fp-sp-rp}
 
 ![Relative share of consistency eliminating cases among fixed points (process perspective) grouped by model variant and sentence pool size](figures/rel_consistency_eliminating_case_fp_by_sp_pp){#fig-CE-fp-sp-pp}
-
+-->
 
 **Observations**
 
-- `LinearLocalRE` is the only model that tends to performs better with increasing sentence pool sizes with respect to all output types and conistency cases.
+- `LinearLocalRE` is the only model that tends to perform better with increasing sentence pool sizes with respect to all output types and conistency cases.
 
 #### Results Grouped by Configuration of Weights
+
+Due to the fact, that inconsistency eliminating and inconsistency preserving cases, as well as consistency eliminating and consistency preserving cases are complementary, we confine the presentation of results to two cases.
 
 **Inconsistency Eliminating Cases**
 
@@ -301,7 +304,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 **Observations: Inconsistency eliminating cases (IE)**
 
-- Linear models exhibit a "tipping line" for IE cases among global optima and fixed points. There are no IE cases where $\alpha_{A} < \alpha_{F}$. IE cases always occur for $\alpha_{A} > \alpha_{F}$. See @sec-appendix-tipping for an explanation.
+- Linear models exhibit a "tipping line" for IE cases among both global optima and fixed points. There are no IE cases where $\alpha_{A} < \alpha_{F}$, i.e. initial inconsistencies are never removed. In turn, the relative share of IE cases for $\alpha_{A} > \alpha_{F}$ is 1.0, i.e. initial inconsistencies are always removed. See @sec-appendix-tipping for an explanation.
 - The case with non extreme values in linear models occur where $\alpha_{A} = \alpha_{F}$.
 - In contrast, quadratic models have smooth transitions. High weights for account and systematicity, resulting in low weights for faithfulness, benefit the relative share of IE cases among global optima and fixed points.
 <!--
@@ -310,8 +313,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 <!--
 - The relative shares of IE cases among global optima are identical for `LinearGlobalRE` and `LinearLocalRE` in @fig-IE-go (as expected).
 -->
-- The relative shares of IE cases among fixed points (process perspective) in local model variants (@fig-IE-fp-pp) are slightly boosted in comparison to the consideration of unique fixed points (@fig-IE-fp-rp).
-
+- The relative shares of IE cases among fixed points (process perspective) in local model variants (@fig-IE-fp-pp) are slightly boosted in comparison to the consideration of unique fixed points (result perspectve) (@fig-IE-fp-rp).
 
 
 **Consistency Preserving Case (CP)**
@@ -322,15 +324,14 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 ![Relative share of consistency preserving cases among fixed points (process perspective) grouped by model variant and configuration of weights.](figures/hm_fp_consistency_preserving_cases_pp){#fig-CP-fp-pp}
 
+
 **Observations: Consistency Preserving Cases (CP)** 
 
-- Overall, CP cases occur very frequently for all model variants and output types
+- Overall, CP cases occur very frequently for all model variants and output types. In turn, the relative shares of CE cases ($1.0-CP$) are very low.
+- Linear models exhibit a "tipping line" for CP cases among both global optima and fixed points. For $\alpha_{A} > \alpha_{F}$, consitency is always preserved. In turn, CE cases occur only for $\alpha_{A} \leq \alpha_{F}$.
 - The influence of weight configurations is moderately at best.
+
 <!--
-- The relative shares of CP cases among global optima are identical for `LinearGlobalRE` and `LinearLocalRE` in @fig-CP-go (as expected).
--->
-
-
 **Inconsistency Preserving Cases (IP)**
 
 ![Relative share of inconsistency preserving cases among global optima grouped by model variant and configuration of weights.](figures/hm_go_inconsistency_preserving_cases_rp){#fig-IP-go}
@@ -360,6 +361,8 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 - Generally, the relative shares of CE cases are very low.
 - Linear models exhibit a "tipping line" for CE cases among both global optima and fixed points. There are no CE cases where $\alpha_{A} > \alpha_{F}$. CE cases occur only for $\alpha_{A} \leq \alpha_{F}$.
 - In contrast, quadratic models have smoother transitions. High weights for faithfulness boost the relative shares of CE cases among global optima and fixed points.
+
+-->
 
 ### Consistent Unions
 
