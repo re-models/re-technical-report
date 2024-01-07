@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Assessing a Formal Model of Reflective Equilibrium - 5&nbsp; Consistency</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter_extreme-values.html" rel="next">
+<link href="./chapter_full-re-states.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter_commitment-consistency.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Consistency</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Assessing a Formal Model of Reflective Equilibrium</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter_general-props.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">General ensemble properties</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter_go-and-fp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Global optima and fixed points</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter_full-re-states.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Full RE states</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter_commitment-consistency.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Consistency</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter_extreme-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Extreme values for account and faitfulness</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_tipping_line.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">The Tipping Line of Linear Model Variants</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="header-section-number">5.1</span> Background</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">5.2</span> Results</a>
+  <ul>
+  <li><a href="#consistent-outputs" id="toc-consistent-outputs" class="nav-link" data-scroll-target="#consistent-outputs"><span class="header-section-number">5.2.1</span> Consistent Outputs</a>
+  <ul class="collapse">
+  <li><a href="#overall-results" id="toc-overall-results" class="nav-link" data-scroll-target="#overall-results"><span class="header-section-number">5.2.1.1</span> Overall Results</a></li>
+  <li><a href="#results-grouped-by-sentence-pool-size" id="toc-results-grouped-by-sentence-pool-size" class="nav-link" data-scroll-target="#results-grouped-by-sentence-pool-size"><span class="header-section-number">5.2.1.2</span> Results Grouped by Sentence Pool Size</a></li>
+  <li><a href="#results-grouped-by-configuration-of-weights" id="toc-results-grouped-by-configuration-of-weights" class="nav-link" data-scroll-target="#results-grouped-by-configuration-of-weights"><span class="header-section-number">5.2.1.3</span> Results Grouped by Configuration of Weights</a></li>
+  </ul></li>
+  <li><a href="#consistency-cases" id="toc-consistency-cases" class="nav-link" data-scroll-target="#consistency-cases"><span class="header-section-number">5.2.2</span> Consistency Cases</a>
+  <ul class="collapse">
+  <li><a href="#overall-results-1" id="toc-overall-results-1" class="nav-link" data-scroll-target="#overall-results-1"><span class="header-section-number">5.2.2.1</span> Overall Results</a></li>
+  <li><a href="#results-grouped-by-sentence-pool-size-1" id="toc-results-grouped-by-sentence-pool-size-1" class="nav-link" data-scroll-target="#results-grouped-by-sentence-pool-size-1"><span class="header-section-number">5.2.2.2</span> Results Grouped by Sentence Pool Size</a></li>
+  <li><a href="#results-grouped-by-configuration-of-weights-1" id="toc-results-grouped-by-configuration-of-weights-1" class="nav-link" data-scroll-target="#results-grouped-by-configuration-of-weights-1"><span class="header-section-number">5.2.2.3</span> Results Grouped by Configuration of Weights</a></li>
+  </ul></li>
+  <li><a href="#consistent-unions" id="toc-consistent-unions" class="nav-link" data-scroll-target="#consistent-unions"><span class="header-section-number">5.2.3</span> Consistent Unions</a>
+  <ul class="collapse">
+  <li><a href="#overall-results-2" id="toc-overall-results-2" class="nav-link" data-scroll-target="#overall-results-2"><span class="header-section-number">5.2.3.1</span> Overall Results</a></li>
+  <li><a href="#results-grouped-by-sentence-pool-size-2" id="toc-results-grouped-by-sentence-pool-size-2" class="nav-link" data-scroll-target="#results-grouped-by-sentence-pool-size-2"><span class="header-section-number">5.2.3.2</span> Results Grouped by Sentence Pool Size</a></li>
+  <li><a href="#results-grouped-by-configuration-of-weights-2" id="toc-results-grouped-by-configuration-of-weights-2" class="nav-link" data-scroll-target="#results-grouped-by-configuration-of-weights-2"><span class="header-section-number">5.2.3.3</span> Results Grouped by Configuration of Weights</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">5.3</span> Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-commitment-consistency" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Consistency</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="background" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="background"><span class="header-section-number">5.1</span> Background</h2>
+<p>Consistency is commonly seen as a necessary condition of coherence. Achieving consistency in RE is, therefore, of utmost importance. In contrast to the desiderata of faithfulness, systematicity and account (see <a href="intro.html#sec-mod"><span>Section&nbsp;1.1</span></a>), the desideratum of consistency is not hard-wired into the model. Although the agent is not allowed to choose commitments with flat contradictions (i.e., commitment sets of the form <span class="math inline">\(\{s_i,\dots, \neg s_i\}\)</span>), they can choose dialectically inconsistent commitments (i.e., commitments that are inconsistent with respect to the inferential relationships encoded in the dialectical structure <span class="math inline">\(\tau\)</span>). Or, more formally, a dialectically inconsistent set of commitments may maximize the achievement during the step of adjusting commitments. Accordingly, the process might end at a fixed point with dialectically inconsistent commitments. The question is, therefore, whether the explicitly modelled desiderata and the specification of the process are sufficiently conducive towards dialectical consistency.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>In this chapter, we analyze the <em>dialectical consistency</em> of inputs and outputs (fixed points and global optima) of RE simulations, which can be examined from three different perspectives:</p>
+<ol type="1">
+<li>the consistency of output commitments</li>
+<li>the “consistency case” that arises from combining the consistency status of initial and output commitments</li>
+<li>the consistency of the union of output commitments and theory</li>
+</ol>
+<p>Concerning 2., the juxtaposition of initial and output commitments allows for four cases, which are labelled as follows:</p>
+<table class="table">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 37%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>endpoint commitments consistent</th>
+<th>endpoint commitment inconsistent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>initial commitments consistent</strong></td>
+<td>consistency preserving (CP)</td>
+<td>consistency eliminating (CE)</td>
+</tr>
+<tr class="even">
+<td><strong>initial commitments inconsistent</strong></td>
+<td>inconistency eliminating (IE)</td>
+<td>inconsistency preserving (IP)</td>
+</tr>
+</tbody>
+</table>
+<p>CP Cases preserve or “transfer” consistency between initial and endpoint commitments. In IE cases, inconsistent initial commitments are revised for consistent endpoint commitments. IP cases fail to eradicate initial inconsistencies, and finally, there may be CE cases if inconsistencies are introduced to initially consistent commitments.</p>
+<p>From the viewpoint of model consolidation, the cases are interesting and relevant in various respects. High shares of IE cases would speak in favour of the model’s revisionary power and signify progress towards establishing coherence by RE. Frequent IP cases, in turn, would speak against the model’s revisionary power with respect to inconsistent initial commitments. Moreover, this could fuel the objection that RE (or the present model thereof) is overly conservative, such that “garbage in” (inconsistent initial commitments) leads to “garbage out” (inconsistent fixed point/global optimum commitments). High relative shares of CP cases are a desirable feature. Finally, frequent CE cases would be a truly worrisome result, as they would indicate that the model leads to a worsening in terms of consistency.</p>
+<!--
+## Method
+
+During the generation of an ensemble, we store the consistency status of intial commitments as well as the status for the commitments of every global optima or fixed points for every simulation setup. Furthermore, the consistency of the union of commitments and theory of a global optimum or a fixed point is determined as well. This allows to determine the relative shares of consistent outputs, consistency cases, and consistent unions among all outputs. These relatives shares are this study's main endpoints.
+
+Note that fixed points can be counted in different ways. Taking a result-oriented perspective, we can consider unique fixed points per simulation setup, irrespective of whether they can be reached multiple times through different RE processes from a specific simulation setup. In contrast, we can also take a process-oriented perspective and count every "branch" of an RE process, Hence we might count one fixed point multiple times if it is the enpoint of different branches. In what follows, these  perspectives are reported separately, indicated by "(unique)" or "(all branches)".
+-->
+</section>
+<section id="results" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="results"><span class="header-section-number">5.2</span> Results</h2>
+<section id="consistent-outputs" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="consistent-outputs"><span class="header-section-number">5.2.1</span> Consistent Outputs</h3>
+<section id="overall-results" class="level4" data-number="5.2.1.1">
+<h4 data-number="5.2.1.1" class="anchored" data-anchor-id="overall-results"><span class="header-section-number">5.2.1.1</span> Overall Results</h4>
+<div class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div id="tbl-consistency_outputs_go" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Table&nbsp;5.1: Relative share of consistent commitments among global optima</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 38%">
+<col style="width: 33%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">Relative share of global optima with consistent commitments</th>
+<th style="text-align: right;">Number of global optima with consistent commitments</th>
+<th style="text-align: right;">Number of global optima</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QuadraticGlobalRE</td>
+<td style="text-align: right;">0.741</td>
+<td style="text-align: right;">529359</td>
+<td style="text-align: right;">714584</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearGlobalRE</td>
+<td style="text-align: right;">0.771</td>
+<td style="text-align: right;">540556</td>
+<td style="text-align: right;">700830</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QuadraticLocalRE</td>
+<td style="text-align: right;">0.741</td>
+<td style="text-align: right;">525490</td>
+<td style="text-align: right;">709289</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearLocalRE</td>
+<td style="text-align: right;">0.769</td>
+<td style="text-align: right;">554525</td>
+<td style="text-align: right;">721096</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div id="tbl-consistency_outputs_fp_setups" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Table&nbsp;5.2: Relative share of consistent commitments among fixed points (result perspective)</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 38%">
+<col style="width: 33%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">Relative share of fixed points with consistent commitments</th>
+<th style="text-align: right;">Number of fixed points with consistent commitments</th>
+<th style="text-align: right;">Number of fixed points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QuadraticGlobalRE</td>
+<td style="text-align: right;">0.728</td>
+<td style="text-align: right;">333436</td>
+<td style="text-align: right;">458147</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearGlobalRE</td>
+<td style="text-align: right;">0.726</td>
+<td style="text-align: right;">227000</td>
+<td style="text-align: right;">312783</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QuadraticLocalRE</td>
+<td style="text-align: right;">0.688</td>
+<td style="text-align: right;">404941</td>
+<td style="text-align: right;">588236</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearLocalRE</td>
+<td style="text-align: right;">0.82</td>
+<td style="text-align: right;">187163</td>
+<td style="text-align: right;">228122</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div id="tbl-consistency_outputs_fp_branches" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Table&nbsp;5.3: Relative share of consistent commitments among fixed points (process perspective)</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 38%">
+<col style="width: 33%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">Relative share of fixed points with consistent commitments</th>
+<th style="text-align: right;">Number of fixed points with consistent commitments</th>
+<th style="text-align: right;">Number of fixed points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QuadraticGlobalRE</td>
+<td style="text-align: right;">0.708</td>
+<td style="text-align: right;">374476</td>
+<td style="text-align: right;">528616</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearGlobalRE</td>
+<td style="text-align: right;">0.726</td>
+<td style="text-align: right;">227097</td>
+<td style="text-align: right;">313002</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QuadraticLocalRE</td>
+<td style="text-align: right;">0.735</td>
+<td style="text-align: right;">1463131</td>
+<td style="text-align: right;">1991852</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearLocalRE</td>
+<td style="text-align: right;">0.952</td>
+<td style="text-align: right;">1240692</td>
+<td style="text-align: right;">1303077</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><strong>Observations: Consistent Outputs</strong></p>
+<ul>
+<li>Overall, the relative share of consistent output commitments is high for all model variants and output types, roughly ranging from 0.69 to 0.95 <!--
+New: excluding erroneous simulation runs from the ensemble introduces small differences between global optima of local and global model variants
+Old:
+- The relative share of global optima with consistent outputs is identical for `QuadraticGlobalRE` and `QuadraticLocalRE`, as well as for `LinearGlobalRE` and `LinearLocalRE` in @tbl-consistency_outputs_go. (Explanation: The local model variants rely on their global counterparts to determine global optima. Hence, these results are not interesting for the present study, but included for the sake of completeness.)
+--></li>
+<li>The overall relative share of consistent global optima commitments is slightly boosted for linear model variants compared to their quadratic counterparts in <a href="#tbl-consistency_outputs_go">Table&nbsp;<span>5.1</span></a>.</li>
+<li>The relative shares of consistent commitments among fixed points (result perspective: <a href="#tbl-consistency_outputs_fp_setups">Table&nbsp;<span>5.2</span></a>, and process perspective: <a href="#tbl-consistency_outputs_fp_branches">Table&nbsp;<span>5.3</span></a>) is slightly lower than the corresponding results for global optima in <a href="#tbl-consistency_outputs_go">Table&nbsp;<span>5.1</span></a> for <code>QuadraticGlobalRE</code>, <code>QuadraticLocalRE</code>, and <code>LinearGlobalRE</code></li>
+<li><code>LinearLocalRE</code> exhibits substantially higher relative shares of consistent commitments among fixed points (result and process perspective)</li>
+<li>The number of fixed points reached through different branches (process perspective) in local model variants is substantially higher than for global model variants (<a href="#tbl-consistency_outputs_fp_branches">Table&nbsp;<span>5.3</span></a>)</li>
+</ul>
+</section>
+<section id="results-grouped-by-sentence-pool-size" class="level4" data-number="5.2.1.2">
+<h4 data-number="5.2.1.2" class="anchored" data-anchor-id="results-grouped-by-sentence-pool-size"><span class="header-section-number">5.2.1.2</span> Results Grouped by Sentence Pool Size</h4>
+<div id="fig-cons-go-sp-rp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/rel_consistent_go_by_sp_rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.1: Relative share of global optima with consistent commitments grouped by model variant and sentence pool size</figcaption>
+</figure>
+</div>
+<div id="fig-cons-fp-sp-rp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/rel_consistent_fp_by_sp_rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.2: Relative share of fixed points (result perspective) with consistent commitments grouped by model variant and sentence pool size</figcaption>
+</figure>
+</div>
+<div id="fig-cons-fp-sp-pp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/rel_consistent_fp_by_sp_pp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.3: Relative share of fixed points (process perspective) with consistent commitments grouped by model variant and sentence pool size</figcaption>
+</figure>
+</div>
+<p><strong>Observations</strong></p>
+<ul>
+<li>The relative share of global optima with consistent commitments slighty decrease for larger sentence pool sizes (<a href="#fig-cons-go-hm-rp">Figure&nbsp;<span>5.4</span></a>).</li>
+<li>The closeness of results of <code>QuadraticGlobalRE</code> and <code>QuadraticLocalRE</code>, as well as <code>LinearGlobalRE</code> and <code>LinearLocalRE</code> in <a href="#fig-cons-go-hm-rp">Figure&nbsp;<span>5.4</span></a> is due to the fact, that local variants rely on their global counterparts to determine global optima. Differences arise due to the exclusion of different erroneous runs.</li>
+<li>The relative share of fixed points with consistent commitments slightly decreases for larger sentence pool sizes (both perspectives in <a href="#fig-cons-fp-hm-rp">Figure&nbsp;<span>5.5</span></a> and <a href="#fig-cons-fp-hm-pp">Figure&nbsp;<span>5.6</span></a>) for <code>QuadraticGlobalRE</code>, <code>QuadraticLocalRE</code>, and <code>LinearGlobalRE</code>.</li>
+<li>In contrast, for <code>LinearLocalRE</code>, the relative share of fixed points with consistent commitments remains roughly constant (result perspective in <a href="#fig-cons-fp-hm-rp">Figure&nbsp;<span>5.5</span></a>) or sligtly increases (process perspective in <a href="#fig-cons-fp-hm-pp">Figure&nbsp;<span>5.6</span></a>)</li>
+</ul>
+</section>
+<section id="results-grouped-by-configuration-of-weights" class="level4" data-number="5.2.1.3">
+<h4 data-number="5.2.1.3" class="anchored" data-anchor-id="results-grouped-by-configuration-of-weights"><span class="header-section-number">5.2.1.3</span> Results Grouped by Configuration of Weights</h4>
+<div id="fig-cons-go-hm-rp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/hm_consistent_coms_go_rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.4: Relative share of global optima with consistent commitments grouped by model variant and configuration of weights. Note that local variants are omitted due to almost analogous results.</figcaption>
+</figure>
+</div>
+<div id="fig-cons-fp-hm-rp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/hm_consistent_coms_fp_rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.5: Relative share of fixed points (result perspective) with consistent commitments grouped by model variant and configuration of weights</figcaption>
+</figure>
+</div>
+<div id="fig-cons-fp-hm-pp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/hm_consistent_coms_fp_pp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.6: Relative share of fixed points (process perspective) with consistent commitments grouped by model variant and configuration of weights</figcaption>
+</figure>
+</div>
+<p><strong>Observations</strong></p>
+<ul>
+<li>Linear models exhibit a “tipping line” for the relative share of global optima and fixed points with consistent commitments. For <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span>, the relative share is consistently 1.0. See <a href="appendix_tipping_line.html"><span>Appendix&nbsp;A</span></a> for an explanation.</li>
+<li>In contrast, quadratic models show a gradient of smoother transitions between relative shares, increasing with higher weights for <span class="math inline">\(\alpha_{A}\)</span>, and also to some extent with higher weights for <span class="math inline">\(\alpha_{A}\)</span>.</li>
+</ul>
+</section>
+</section>
+<section id="consistency-cases" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="consistency-cases"><span class="header-section-number">5.2.2</span> Consistency Cases</h3>
+<p>The results of this section are based on a more fine-grained distinction of cases that depend on the consistency status of initial and output commitments.</p>
+<p>Note that the relative shares of cases have been calculated for consistent and inconsistent initial commitments separately. For example, the relative share of inconsistency eliminating cases (inconsistent input, consistent output) among global optima has been calculated with respect to all global optima that result from inconsistent inital commitments.</p>
+<p>Consequently, the relative share of inconsistency eleminating and inconsistency preserving cases add up to 1.0, and so do the relative shares of consistency preserving and consistency eliminating cases.</p>
+<section id="overall-results-1" class="level4" data-number="5.2.2.1">
+<h4 data-number="5.2.2.1" class="anchored" data-anchor-id="overall-results-1"><span class="header-section-number">5.2.2.1</span> Overall Results</h4>
+<div class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div id="tbl-consistency_cases_go" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Table&nbsp;5.4: Relative share of consistency cases among global optima</caption>
+<colgroup>
+<col style="width: 5%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 17%">
+<col style="width: 14%">
+<col style="width: 15%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">Relative share of consistency eliminating cases</th>
+<th style="text-align: right;">Relative share of consistency preserving cases</th>
+<th style="text-align: right;">Number of global optima from consistent initial commitments</th>
+<th style="text-align: right;">Relative share of inconsistency preserving cases</th>
+<th style="text-align: right;">Relative share of inconsistency eliminating cases</th>
+<th style="text-align: right;">Number of global optima from inconsistent initial commitments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QuadraticGlobalRE</td>
+<td style="text-align: right;">0.053</td>
+<td style="text-align: right;">0.947</td>
+<td style="text-align: right;">386131</td>
+<td style="text-align: right;">0.501</td>
+<td style="text-align: right;">0.499</td>
+<td style="text-align: right;">328453</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearGlobalRE</td>
+<td style="text-align: right;">0.024</td>
+<td style="text-align: right;">0.976</td>
+<td style="text-align: right;">366296</td>
+<td style="text-align: right;">0.453</td>
+<td style="text-align: right;">0.547</td>
+<td style="text-align: right;">334534</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QuadraticLocalRE</td>
+<td style="text-align: right;">0.053</td>
+<td style="text-align: right;">0.947</td>
+<td style="text-align: right;">384850</td>
+<td style="text-align: right;">0.504</td>
+<td style="text-align: right;">0.496</td>
+<td style="text-align: right;">324439</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearLocalRE</td>
+<td style="text-align: right;">0.023</td>
+<td style="text-align: right;">0.977</td>
+<td style="text-align: right;">372362</td>
+<td style="text-align: right;">0.453</td>
+<td style="text-align: right;">0.547</td>
+<td style="text-align: right;">348734</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="fig-overall-go-ic-cons" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/consistency_cases_go_ic_cons_rp.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.7: Relative share of consistency cases among global optima resulting from consistent initial commitments</figcaption>
+</figure>
+</div>
+<div id="fig-overall-go-ic_incons" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/consistency_cases_go_ic_incons_rp.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.8: Relative share of consistency cases among global optima resulting from inconsistent initial commitments</figcaption>
+</figure>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div id="tbl-consistency_cases_fp_setups" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Table&nbsp;5.5: Relative share of consistency cases among fixed points (result perspective)</caption>
+<colgroup>
+<col style="width: 5%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 17%">
+<col style="width: 14%">
+<col style="width: 15%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">Relative share of consistency eliminating cases</th>
+<th style="text-align: right;">Relative share of consistency preserving cases</th>
+<th style="text-align: right;">Number of fixed points from consistent initial commitments</th>
+<th style="text-align: right;">Relative share of inconsistency preserving cases</th>
+<th style="text-align: right;">Relative share of inconsistency eliminating cases</th>
+<th style="text-align: right;">Number of fixed points from inconsistent initial commitments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QuadraticGlobalRE</td>
+<td style="text-align: right;">0.041</td>
+<td style="text-align: right;">0.959</td>
+<td style="text-align: right;">246823</td>
+<td style="text-align: right;">0.543</td>
+<td style="text-align: right;">0.457</td>
+<td style="text-align: right;">211324</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearGlobalRE</td>
+<td style="text-align: right;">0.016</td>
+<td style="text-align: right;">0.984</td>
+<td style="text-align: right;">168946</td>
+<td style="text-align: right;">0.577</td>
+<td style="text-align: right;">0.423</td>
+<td style="text-align: right;">143837</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QuadraticLocalRE</td>
+<td style="text-align: right;">0.045</td>
+<td style="text-align: right;">0.955</td>
+<td style="text-align: right;">278450</td>
+<td style="text-align: right;">0.552</td>
+<td style="text-align: right;">0.448</td>
+<td style="text-align: right;">309786</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearLocalRE</td>
+<td style="text-align: right;">0.014</td>
+<td style="text-align: right;">0.986</td>
+<td style="text-align: right;">119476</td>
+<td style="text-align: right;">0.361</td>
+<td style="text-align: right;">0.639</td>
+<td style="text-align: right;">108646</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="fig-overall-fp-ic-cons-rp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/consistency_cases_fp_ic_cons_rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.9: Relative share of consistency cases among fixed points (result perspective) from consistent initial commitments</figcaption>
+</figure>
+</div>
+<div id="fig-overall-fp-ic-incons-rp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/consistency_cases_fp_ic_incons_rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.10: Relative share of consistency cases among fixed points (result perspective) from inconsistent initial commitments</figcaption>
+</figure>
+</div>
+<div class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div id="tbl-consistency_cases_fp_branches" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Table&nbsp;5.6: Relative share of consistency cases among fixed points (process perspective)</caption>
+<colgroup>
+<col style="width: 5%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 17%">
+<col style="width: 14%">
+<col style="width: 15%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">Relative share of consistency eliminating cases</th>
+<th style="text-align: right;">Relative share of consistency preserving cases</th>
+<th style="text-align: right;">Number of fixed points from consistent initial commitments</th>
+<th style="text-align: right;">Relative share of inconsistency preserving cases</th>
+<th style="text-align: right;">Relative share of inconsistency eliminating cases</th>
+<th style="text-align: right;">Number of fixed points from inconsistent initial commitments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QuadraticGlobalRE</td>
+<td style="text-align: right;">0.043</td>
+<td style="text-align: right;">0.957</td>
+<td style="text-align: right;">264780</td>
+<td style="text-align: right;">0.541</td>
+<td style="text-align: right;">0.459</td>
+<td style="text-align: right;">263836</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearGlobalRE</td>
+<td style="text-align: right;">0.016</td>
+<td style="text-align: right;">0.984</td>
+<td style="text-align: right;">169026</td>
+<td style="text-align: right;">0.578</td>
+<td style="text-align: right;">0.422</td>
+<td style="text-align: right;">143976</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QuadraticLocalRE</td>
+<td style="text-align: right;">0.057</td>
+<td style="text-align: right;">0.943</td>
+<td style="text-align: right;">916286</td>
+<td style="text-align: right;">0.443</td>
+<td style="text-align: right;">0.557</td>
+<td style="text-align: right;">1075566</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearLocalRE</td>
+<td style="text-align: right;">0.006</td>
+<td style="text-align: right;">0.994</td>
+<td style="text-align: right;">615748</td>
+<td style="text-align: right;">0.085</td>
+<td style="text-align: right;">0.915</td>
+<td style="text-align: right;">687329</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="fig-overall-fp-ic-cons-pp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/consistency_cases_fp_ic_cons_pp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.11: Relative share of consistency cases among fixed points (process perspective) from consistent initial commitments</figcaption>
+</figure>
+</div>
+<div id="fig-overall-fp-ic-incons-pp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/consistency_cases_fp_ic_incons_pp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.12: Relative share of consistency cases among fixed points (process perspective) from inconsistent initial commitments</figcaption>
+</figure>
+</div>
+<p><strong>Observations: Consistency Cases</strong></p>
+<!--- As it is to be expected, there are no differences in relative shares for global optima for `QuadraticGlobalRE` and `QuadraticLocalRE`, as well as for `LinearGlobalRE` and `LinearLocalRE`.-->
+<ul>
+<li>The relative share of consistency-preserving cases is high for all model variants and output types (<span class="quarto-unresolved-ref">?fig-overall-go-ic-cons-rp</span>,<a href="#fig-overall-fp-ic-cons-rp">Figure&nbsp;<span>5.9</span></a>, and <a href="#fig-overall-fp-ic-cons-pp">Figure&nbsp;<span>5.11</span></a>). Consistency-eliminating cases occur very rarely.</li>
+<li>The relative share of inconsistency preserving cases slightly exceed the inconsistency eliminating cases for global optima and fixed points of <code>QuadraticGlobalRE</code>, <code>QuadraticLocalRE</code>, as well as <code>LinearGlobalRE</code> (<span class="quarto-unresolved-ref">?fig-overall-go-ic-incons-rp</span>,<a href="#fig-overall-fp-ic-incons-rp">Figure&nbsp;<span>5.10</span></a>, and <a href="#fig-overall-fp-ic-incons-pp">Figure&nbsp;<span>5.12</span></a>).</li>
+<li>The result perspective makes clear that the linear local model variant reaches inconsistent output commitments from both consistent and inconsistent initial commitments (<a href="#fig-overall-fp-ic-cons-rp">Figure&nbsp;<span>5.9</span></a> and <a href="#fig-overall-fp-ic-incons-rp">Figure&nbsp;<span>5.10</span></a>), but the process perspective reveals that only very few branches result in these inconsistent output commitments (<a href="#fig-overall-fp-ic-cons-pp">Figure&nbsp;<span>5.11</span></a> and <a href="#fig-overall-fp-ic-incons-pp">Figure&nbsp;<span>5.12</span></a>).</li>
+</ul>
+</section>
+<section id="results-grouped-by-sentence-pool-size-1" class="level4" data-number="5.2.2.2">
+<h4 data-number="5.2.2.2" class="anchored" data-anchor-id="results-grouped-by-sentence-pool-size-1"><span class="header-section-number">5.2.2.2</span> Results Grouped by Sentence Pool Size</h4>
+<p><strong>Inconsistency Eliminating Cases</strong> <img src="figures/rel_inconsistency_eliminating_case_go_by_sp_rp.png" id="fig-IE-go-sp" class="img-fluid" alt="Relative share of inconsistency eliminating cases among global optima grouped by model variant and sentence pool size"></p>
+<div id="fig-IE-fp-sp-rp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/rel_inconsistency_eliminating_case_fp_by_sp_rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.13: Relative share of inconsistency eliminating cases among fixed points (result perspective) grouped by model variant and sentence pool size</figcaption>
+</figure>
+</div>
+<div id="fig-IE-fp-sp-pp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/rel_inconsistency_eliminating_case_fp_by_sp_pp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.14: Relative share of inconsistency eliminating cases among fixed points (process perspective) grouped by model variant and sentence pool size</figcaption>
+</figure>
+</div>
+<p><strong>Consistency Preserving Cases</strong> <img src="figures/rel_consistency_preserving_case_go_by_sp_rp.png" id="fig-CP-go-sp" class="img-fluid" alt="Relative share of consistency preserving cases among global optima grouped by model variant and sentence pool size"></p>
+<div id="fig-CP-fp-sp-rp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/rel_consistency_preserving_case_fp_by_sp_rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.15: Relative share of consistency preserving cases among fixed points (result perspective) grouped by model variant and sentence pool size</figcaption>
+</figure>
+</div>
+<div id="fig-CP-fp-sp-pp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/rel_consistency_preserving_case_fp_by_sp_pp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.16: Relative share of consistency preserving cases among fixed points (process perspective) grouped by model variant and sentence pool size</figcaption>
+</figure>
+</div>
+<!--
+**Inconsistency Preserving Cases**
+![Relative share of inconsistency preserving cases among global optima grouped by model variant and sentence pool size](figures/rel_inconsistency_preserving_case_go_by_sp_rp){#fig-IP-go-sp}
+
+![Relative share of inconsistency preserving cases among fixed points (result perspective) grouped by model variant and sentence pool size](figures/rel_inconsistency_preserving_case_fp_by_sp_rp){#fig-IP-fp-sp-rp}
+
+![Relative share of inconsistency preserving cases among fixed points (process perspective) grouped by model variant and sentence pool size](figures/rel_inconsistency_preserving_case_fp_by_sp_pp){#fig-CP-fp-sp-pp}
+
+
+**Consistency Eliminating Cases**
+![Relative share of consistency eliminating cases among global optima grouped by model variant and sentence pool size](figures/rel_consistency_eliminating_case_go_by_sp_rp){#fig-CE-go-sp}
+
+![Relative share of consistency eliminating cases among fixed points (result perspective) grouped by model variant and sentence pool size](figures/rel_consistency_eliminating_case_fp_by_sp_rp){#fig-CE-fp-sp-rp}
+
+![Relative share of consistency eliminating cases among fixed points (process perspective) grouped by model variant and sentence pool size](figures/rel_consistency_eliminating_case_fp_by_sp_pp){#fig-CE-fp-sp-pp}
+-->
+<p><strong>Observations</strong></p>
+<ul>
+<li><code>LinearLocalRE</code> is the only model that tends to perform better with increasing sentence pool sizes with respect to all output types and conistency cases.</li>
+</ul>
+</section>
+<section id="results-grouped-by-configuration-of-weights-1" class="level4" data-number="5.2.2.3">
+<h4 data-number="5.2.2.3" class="anchored" data-anchor-id="results-grouped-by-configuration-of-weights-1"><span class="header-section-number">5.2.2.3</span> Results Grouped by Configuration of Weights</h4>
+<p>Due to the fact, that inconsistency eliminating and inconsistency preserving cases, as well as consistency eliminating and consistency preserving cases are complementary, we confine the presentation of results to two cases.</p>
+<p><strong>Inconsistency Eliminating Cases</strong></p>
+<div id="fig-IE-go" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/hm_go_inconsistency_eliminating_cases_rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.17: Relative share of inconsistency eliminating cases among global optima grouped by model variant and configuration of weights.</figcaption>
+</figure>
+</div>
+<div id="fig-IE-fp-rp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/hm_fp_inconsistency_eliminating_cases_rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.18: Relative share of inconsistency eliminating cases among fixed points (result perspective) grouped by model variant and configuration of weights.</figcaption>
+</figure>
+</div>
+<div id="fig-IE-fp-pp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/hm_fp_inconsistency_eliminating_cases_pp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.19: Relative share of inconsistency eliminating cases among fixed points (process perspective) grouped by model variant and configuration of weights.</figcaption>
+</figure>
+</div>
+<p><strong>Observations: Inconsistency eliminating cases (IE)</strong></p>
+<ul>
+<li>Linear models exhibit a “tipping line” for IE cases among both global optima and fixed points. There are no IE cases where <span class="math inline">\(\alpha_{A} &lt; \alpha_{F}\)</span>, i.e.&nbsp;initial inconsistencies are never removed. In turn, the relative share of IE cases for <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span> is 1.0, i.e.&nbsp;initial inconsistencies are always removed. See <a href="appendix_tipping_line.html"><span>Appendix&nbsp;A</span></a> for an explanation.</li>
+<li>The case with non extreme values in linear models occur where <span class="math inline">\(\alpha_{A} = \alpha_{F}\)</span>.</li>
+<li>In contrast, quadratic models have smooth transitions. High weights for account and systematicity, resulting in low weights for faithfulness, benefit the relative share of IE cases among global optima and fixed points. <!--
+- The relative shares of IE cases among global optima do not exceed their counterpart for fixed points.
+--> <!--
+- The relative shares of IE cases among global optima are identical for `LinearGlobalRE` and `LinearLocalRE` in @fig-IE-go (as expected).
+--></li>
+<li>The relative shares of IE cases among fixed points (process perspective) in local model variants (<a href="#fig-IE-fp-pp">Figure&nbsp;<span>5.19</span></a>) are slightly boosted in comparison to the consideration of unique fixed points (result perspectve) (<a href="#fig-IE-fp-rp">Figure&nbsp;<span>5.18</span></a>).</li>
+</ul>
+<p><strong>Consistency Preserving Case (CP)</strong></p>
+<div id="fig-CP-go" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/hm_go_consistency_preserving_cases_rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.20: Relative share of consistency preserving cases among global optima grouped by model variant and configuration of weights.</figcaption>
+</figure>
+</div>
+<div id="fig-CP-fp-rp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/hm_fp_consistency_preserving_cases_rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.21: Relative share of consistency preserving cases among fixed points (result perspective) grouped by model variant and configuration of weights.</figcaption>
+</figure>
+</div>
+<div id="fig-CP-fp-pp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/hm_fp_consistency_preserving_cases_pp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.22: Relative share of consistency preserving cases among fixed points (process perspective) grouped by model variant and configuration of weights.</figcaption>
+</figure>
+</div>
+<p><strong>Observations: Consistency Preserving Cases (CP)</strong></p>
+<ul>
+<li>Overall, CP cases occur very frequently for all model variants and output types. In turn, the relative shares of CE cases (<span class="math inline">\(1.0-CP\)</span>) are very low.</li>
+<li>Linear models exhibit a “tipping line” for CP cases among both global optima and fixed points. For <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span>, consitency is always preserved. In turn, CE cases occur only for <span class="math inline">\(\alpha_{A} \leq \alpha_{F}\)</span>.</li>
+<li>The influence of weight configurations is moderately at best.</li>
+</ul>
+<!--
+**Inconsistency Preserving Cases (IP)**
+
+![Relative share of inconsistency preserving cases among global optima grouped by model variant and configuration of weights.](figures/hm_go_inconsistency_preserving_cases_rp){#fig-IP-go}
+
+![Relative share of inconsistency preserving cases among fixed points (result perspective) grouped by model variant and configuration of weights.](figures/hm_fp_inconsistency_preserving_cases_rp){#fig-IP-fp-rp}
+
+![Relative share of inconsistency preserving cases among fixed points (process perspective) grouped by model variant and configuration of weights.](figures/hm_fp_inconsistency_preserving_cases_pp){#fig-IP-fp-pp}
+
+**Observations: Inconsistency Preserving Cases (IP)**
+
+- Linear models exhibit a "tipping line" for IP cases among both global optima and fixed points. There are no IP cases where $\alpha_{A} > \alpha_{F}$, i.e. initial inconsistencies are always removed. In turn, the relative share of IP cases for $\alpha_{A} < \alpha_{F}$ is 1.0, i.e. initial inconsistencies are never removed. See @sec-appendix-tipping for an explanation.
+- The case with non extreme values in linear models occur where $\alpha_{A} = \alpha_{F}$.
+- In contrast, quadratic models have smooth transitions. High weights for faithfulness boost the relative shares of IP cases among global optima and fixed points.
+
+
+
+**Consistency Eliminating Cases (CE)**
+
+![Relative share of consistency eliminating cases among global optima grouped by model variant and configuration of weights.](figures/hm_go_consistency_eliminating_cases_rp){#fig-CE-go}
+
+![Relative share of consistency eliminating cases among fixed points (result perspective) grouped by model variant and configuration of weights.](figures/hm_fp_consistency_eliminating_cases_rp){#fig-CE-fp-rp}
+
+![Relative share of consistency eliminating cases among fixed points (process perspective) grouped by model variant and configuration of weights.](figures/hm_fp_consistency_eliminating_cases_pp){#fig-CE-fp-pp}
+
+**Observations: Consistency Eliminating Cases (CE)**
+
+- Generally, the relative shares of CE cases are very low.
+- Linear models exhibit a "tipping line" for CE cases among both global optima and fixed points. There are no CE cases where $\alpha_{A} > \alpha_{F}$. CE cases occur only for $\alpha_{A} \leq \alpha_{F}$.
+- In contrast, quadratic models have smoother transitions. High weights for faithfulness boost the relative shares of CE cases among global optima and fixed points.
+
+-->
+</section>
+</section>
+<section id="consistent-unions" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="consistent-unions"><span class="header-section-number">5.2.3</span> Consistent Unions</h3>
+<p>In this section, we will analyze the dialectical consistency of whole epistemic states—that is, the union of an epistemic state’s commitments and theory. Since we already analyzed the consistency of fixed point commitments and global optima commitments in isolation, we will count only those inconsistencies that arise by combining commitments and theories. In other words, we will not consider inconsistencies that result from inconsistencies in the commitments.</p>
+<section id="overall-results-2" class="level4" data-number="5.2.3.1">
+<h4 data-number="5.2.3.1" class="anchored" data-anchor-id="overall-results-2"><span class="header-section-number">5.2.3.1</span> Overall Results</h4>
+<div class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div id="tbl-consistency_union_go" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Table&nbsp;5.7: Relative share of global optima with a consistent union of commitments and theory</caption>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 32%">
+<col style="width: 27%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">Relative share of global optima with a consistent union</th>
+<th style="text-align: right;">Number of global optima with a consistent union</th>
+<th style="text-align: right;">Number of global optima with consistent commitments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QuadraticGlobalRE</td>
+<td style="text-align: right;">0.931</td>
+<td style="text-align: right;">492856</td>
+<td style="text-align: right;">529359</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearGlobalRE</td>
+<td style="text-align: right;">0.966</td>
+<td style="text-align: right;">522055</td>
+<td style="text-align: right;">540556</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QuadraticLocalRE</td>
+<td style="text-align: right;">0.932</td>
+<td style="text-align: right;">489618</td>
+<td style="text-align: right;">525490</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearLocalRE</td>
+<td style="text-align: right;">0.966</td>
+<td style="text-align: right;">535532</td>
+<td style="text-align: right;">554525</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div id="tbl-consistency_union_fp_setups" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Table&nbsp;5.8: Relative share of fixed points (result perspective) with a consistent union of commitments and theory</caption>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 32%">
+<col style="width: 27%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">Relative share of fixed points with a consistent union</th>
+<th style="text-align: right;">Number of fixed points with a consistent union</th>
+<th style="text-align: right;">Number of fixed points with consistent commitments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QuadraticGlobalRE</td>
+<td style="text-align: right;">0.915</td>
+<td style="text-align: right;">305081</td>
+<td style="text-align: right;">333436</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearGlobalRE</td>
+<td style="text-align: right;">0.96</td>
+<td style="text-align: right;">218022</td>
+<td style="text-align: right;">227000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QuadraticLocalRE</td>
+<td style="text-align: right;">0.893</td>
+<td style="text-align: right;">361422</td>
+<td style="text-align: right;">404941</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearLocalRE</td>
+<td style="text-align: right;">0.973</td>
+<td style="text-align: right;">182164</td>
+<td style="text-align: right;">187163</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<div id="tbl-consistency_union_fp_branches" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Table&nbsp;5.9: Relative share of fixed points (process perspective) with a consistent union of commitments and theory</caption>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 32%">
+<col style="width: 27%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">Relative share of fixed points with a consistent union</th>
+<th style="text-align: right;">Number of fixed points with a consistent union</th>
+<th style="text-align: right;">Number of fixed points with consistent commitments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QuadraticGlobalRE</td>
+<td style="text-align: right;">0.908</td>
+<td style="text-align: right;">340059</td>
+<td style="text-align: right;">374476</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearGlobalRE</td>
+<td style="text-align: right;">0.96</td>
+<td style="text-align: right;">218065</td>
+<td style="text-align: right;">227097</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QuadraticLocalRE</td>
+<td style="text-align: right;">0.911</td>
+<td style="text-align: right;">1333612</td>
+<td style="text-align: right;">1463131</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearLocalRE</td>
+<td style="text-align: right;">0.994</td>
+<td style="text-align: right;">1233142</td>
+<td style="text-align: right;">1240692</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><strong>Observations</strong></p>
+<ul>
+<li>The relative shares of consistent unions of commitments and theory among outputs with consistent commitments is very high for all model variants and output types.</li>
+</ul>
+</section>
+<section id="results-grouped-by-sentence-pool-size-2" class="level4" data-number="5.2.3.2">
+<h4 data-number="5.2.3.2" class="anchored" data-anchor-id="results-grouped-by-sentence-pool-size-2"><span class="header-section-number">5.2.3.2</span> Results Grouped by Sentence Pool Size</h4>
+<div id="fig-cons-union-go-sp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/rel_consistent_union_go_by_sp_rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.23: Relative share of global optima with a consistent union of commitments and theory grouped by model variant and sentence pool size</figcaption>
+</figure>
+</div>
+<div id="fig-cons-union-fp-sp-rp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/rel_consistent_union_fp_by_sp_rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.24: Relative share of fixed points (result perspective) with a consistent union of commitments and theory grouped by model variant and sentence pool size</figcaption>
+</figure>
+</div>
+<div id="fig-cons-union-fp-sp-pp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/rel_consistent_union_fp_by_sp_pp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.25: Relative share of fixed points (process perspective) with a consistent union of commitments and theory grouped by model variant and sentence pool size</figcaption>
+</figure>
+</div>
+</section>
+<section id="results-grouped-by-configuration-of-weights-2" class="level4" data-number="5.2.3.3">
+<h4 data-number="5.2.3.3" class="anchored" data-anchor-id="results-grouped-by-configuration-of-weights-2"><span class="header-section-number">5.2.3.3</span> Results Grouped by Configuration of Weights</h4>
+<div id="fig-cons-union-go-hm" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/hm_consistent_union_go_rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.26: Relative share of global optima with a consistent union of commitments and theory grouped by model variant and configuration of weights</figcaption>
+</figure>
+</div>
+<div id="fig-cons-union-fp-hm-rp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/hm_consistent_union_fp_rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.27: Relative share of fixed points (result perspective) with a consistent union of commitments and theory grouped by model variant and configuration of weights</figcaption>
+</figure>
+</div>
+<div id="fig-cons-union-fp-hm-pp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/hm_consistent_union_fp_pp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.28: Relative share of fixed points (process perspective) with a consistent union of commitments and theory grouped by model variant and configuration of weights</figcaption>
+</figure>
+</div>
+</section>
+</section>
+</section>
+<section id="conclusion" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">5.3</span> Conclusion</h2>
+<!--
+What do we want to add from <https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-04.ipynb>?
+-->
+<p>Overall, the present ensemble study concerning the three perspectives on the consistency of outputs of RE simulations provides positive results with respect to model variation. The overall relative shares of consistent outputs, inconsistency-eliminating and consistency-preserving cases, as well as consistent unions are satisfactorily high for all model variants.</p>
+<p>According to analysing the results further with respect to the sentence pool size, <code>LinearLocalRE</code> seems to have the edge over the other model variants in view of increasing sentence pool sizes. Nonetheless, the severely restricted sample that forms the basis of this report would make an extrapolation to even larger sentence pool sizes a highly speculative matter. Further research in this direction is required.</p>
+<p>In the more fine-grained analysis according to weigh configurations, we can observe regions of weight configurations that yield desirable behaviour. Moreover, these regions are robust across model variants. This provides at least some motivation to prefer some configurations over others. In particular, it is beneficial to consistency considerations if <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span>.</p>
+<p>There is a notable difference between quadratic and linear model variants (smooth transitions vs.&nbsp;tipping line), but on its own, this does not serve as a criterion to prefer some model variants over others. See the <a href="appendix_tipping_line.html"><span>Appendix&nbsp;A</span></a> for a presentation of analytical results that explain why linear model variants exhibit tipping lines.</p>
+<p><!--A description how an RE process creates a very bad case can be found in [dataexploration-04](https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-04.ipynb) of an earlier ensemble.--></p>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>The main driving force for dialectical consistency is the desideratum of account. Since the choice of new theories is confined to dialectically consistent theories, account will favour commitments that are dialectically consistent.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter_full-re-states.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Full RE states</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chapter_extreme-values.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Extreme values for account and faitfulness</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

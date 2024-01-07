@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Assessing a Formal Model of Reflective Equilibrium - 3&nbsp; Global optima and fixed points</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter_full-re-states.html" rel="next">
+<link href="./chapter_general-props.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter_go-and-fp.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Global optima and fixed points</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Assessing a Formal Model of Reflective Equilibrium</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter_general-props.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">General ensemble properties</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter_go-and-fp.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Global optima and fixed points</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter_full-re-states.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Full RE states</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter_commitment-consistency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Consistency</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter_extreme-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Extreme values for account and faitfulness</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_tipping_line.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">The Tipping Line of Linear Model Variants</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="header-section-number">3.1</span> Background</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">3.2</span> Results</a>
+  <ul>
+  <li><a href="#model-overview" id="toc-model-overview" class="nav-link" data-scroll-target="#model-overview"><span class="header-section-number">3.2.1</span> Model Overview</a></li>
+  <li><a href="#go-efficiency" id="toc-go-efficiency" class="nav-link" data-scroll-target="#go-efficiency"><span class="header-section-number">3.2.2</span> GO efficiency</a>
+  <ul class="collapse">
+  <li><a href="#dependence-on-sentence-pool" id="toc-dependence-on-sentence-pool" class="nav-link" data-scroll-target="#dependence-on-sentence-pool"><span class="header-section-number">3.2.2.1</span> Dependence on sentence pool</a></li>
+  <li><a href="#dependence-on-mean-number-of-premises" id="toc-dependence-on-mean-number-of-premises" class="nav-link" data-scroll-target="#dependence-on-mean-number-of-premises"><span class="header-section-number">3.2.2.2</span> Dependence on mean number of premises</a></li>
+  <li><a href="#dependence-on-alpha-weights" id="toc-dependence-on-alpha-weights" class="nav-link" data-scroll-target="#dependence-on-alpha-weights"><span class="header-section-number">3.2.2.3</span> Dependence on <span class="math inline">\(\alpha\)</span>-weights</a></li>
+  </ul></li>
+  <li><a href="#go-reachability" id="toc-go-reachability" class="nav-link" data-scroll-target="#go-reachability"><span class="header-section-number">3.2.3</span> GO reachability</a>
+  <ul class="collapse">
+  <li><a href="#dependence-on-sentence-pool-1" id="toc-dependence-on-sentence-pool-1" class="nav-link" data-scroll-target="#dependence-on-sentence-pool-1"><span class="header-section-number">3.2.3.1</span> Dependence on sentence pool</a></li>
+  <li><a href="#dependence-on-mean-number-of-premises-1" id="toc-dependence-on-mean-number-of-premises-1" class="nav-link" data-scroll-target="#dependence-on-mean-number-of-premises-1"><span class="header-section-number">3.2.3.2</span> Dependence on mean number of premises</a></li>
+  <li><a href="#dependence-on-alpha-weights-1" id="toc-dependence-on-alpha-weights-1" class="nav-link" data-scroll-target="#dependence-on-alpha-weights-1"><span class="header-section-number">3.2.3.3</span> Dependence on <span class="math inline">\(\alpha\)</span>-weights</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">3.3</span> Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-go-and-fp" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Global optima and fixed points</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="background" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="background"><span class="header-section-number">3.1</span> Background</h2>
+<p>Global optima are epistemic states (i.e., commitments-theory pairs) that maximize epistemic desiderata as the achievement function defines it. The models we assess simulate RE processes by mutually adjusting commitments and theories. Since these models proceed in a semi-globally or locally optimizing fashion, fixed points of RE processes are not necessarily global optima (see <a href="intro.html#sec-intro-metrics"><span>Section&nbsp;1.3</span></a> for details). It is, therefore, important to assess the performance of the different models with respect to their ability to reach global optima. Two main questions guide the following evaluation:</p>
+<ol type="1">
+<li><strong>GO efficiency</strong>: Are fixed points global optima? More specifically, what is the share of global optima among fixed points?</li>
+<li><strong>GO reachability</strong>: Are global optima reachable by RE processes? More specifically, what is the share of fixed points that are global optima among global optima?</li>
+</ol>
+<p>GO efficiency and reachability might not only differ between model variants but might, additionally, depend on the specifics of the simulation setups. In the following, we will confine the consideration to the following dimensions:</p>
+<ul>
+<li>How do GO efficiency and reachability depend on the size of the sentence pool?</li>
+<li>How do GO efficiency and reachability depend on the arguments’ mean number of premises?</li>
+<li>How do GO efficiency and reachability depend on <span class="math inline">\(\alpha\)</span> weights?</li>
+</ul>
+<p>We will answer these questions by calculating different relative shares in the following way.</p>
+<p>Let the <em>ensemble</em> <span class="math inline">\(E\)</span> be the entirety of simulation setups we used to simulate RE processes. Each simulation setup <span class="math inline">\(e\in E\)</span> corresponds to a set of RE processes that can evolve with this specific setup. Remember that the different steps in the evolution can be underdetermined. In other words, a RE process might branch. We will denote the set of all branches of a specific simulation setup <span class="math inline">\(e\)</span> with <span class="math inline">\(B_e\)</span>. Consequently, a specific setup can have more than one fixed point. Similarly, there is not necessarily one global optimum for each simulation setup but possibly many (denoted by <span class="math inline">\(GO_e\)</span>).</p>
+<p>GO efficiency can be calculated in two different ways. First, we can assess the share of global optima among all branches. In other words, we count those branches in <span class="math inline">\(B_e\)</span> that end up in global optima and divide by <span class="math inline">\(|B_e|\)</span>. We will refer to this type of GO efficiency as <em>GO efficiency from the process perspective</em>. However, different branches might end up in the same fixed points. Another way of calculating GO efficiency—<em>GO efficiency from the result perspective</em>—avoids a possible “multiple” counting of fixed points by considering the <em>(mathematical) set</em> of fixed points.</p>
+<p>More formally, let <span class="math inline">\(\{FPGO\}_e\)</span> the set of all fixed points of <span class="math inline">\(e\)</span> that are global optima, and let <span class="math inline">\([FPGO]_e\)</span> the fixed points of all branches in <span class="math inline">\(e\)</span> that are global optima. The latter is formally a multiset, which can contain one fixed point multiple times. We can now define different types of GO efficiency—one based on <span class="math inline">\(\{FPGO\}_e\)</span> and one on <span class="math inline">\([FPGO]_e\)</span>. The corresponding share will be calculated by formulas of the form</p>
+<p><span class="math display">\[
+GOE^{proc}(E^*):=\frac{\sum_{e\in E^*}\vert [FPGO]_e\vert}{\sum_{e\in E^*}\vert B_e\vert}
+\]</span></p>
+<p>and of the form</p>
+<p><span class="math display">\[
+GOE^{res}(E^*):=\frac{\sum_{e\in E^*}\vert \{FPGO\}_e\vert}{\sum_{e\in E^*}\vert \{FP\}_e\vert}
+\]</span></p>
+<p>with respect to different subsets <span class="math inline">\(E^* \subset E\)</span>.</p>
+<p>For instance, let <span class="math inline">\(E_{M_1}\)</span> be the set of all simulation setups belonging to the model <span class="math inline">\(M_1\)</span>. We can calculate the overall GO efficiency of <span class="math inline">\(M_1\)</span> from the process perspective by <span class="math inline">\(GOE^{proc}(E_{M_1})\)</span> and from the result perspective by <span class="math inline">\(GOE^{res}(E_{M_1})\)</span>.</p>
+<p>How can we interpret these different types of GO efficiency? One idea is to interpret them probabilistically. According to this suggestion, the ensemble-based model assessment informs us about the probabilities of catching global optima by means of RE processes. On this view, GO efficiency from the process perspective is the probability of a process ending up in a global optimum. On the other hand, GO efficiency, from the result perspective, is the probability of a fixed point being a global optimum. You can think of the difference in terms of when or under which conditions to ask about the probability. In contrast to the latter case, you do not know the fixed point of the process (perhaps the process has not ended yet) in the former case.</p>
+<p>It does not make much sense to distinguish GO reachability between the process and result perspective. GO reachability asks about the share of global optima that are reachable by RE processes among all global optima. Naturally, the denominator is the (mathematical) set of all global optima in a simulation setup (<span class="math inline">\(GO_e\)</span>), which is a process-independent property of the simulation setup. Since it might happen that <span class="math inline">\(\vert [FPGO]_e \vert&gt;\vert GO_e \vert\)</span> we should define GO reachability based on <span class="math inline">\(\{FPGO\}_e\)</span>:</p>
+<p><span class="math display">\[
+GOR_{E^*}:=\frac{\sum_{e\in E^*}\vert \{FPGO\}_e\vert}{\sum_{e\in E^*}\vert GO_e\vert}
+\]</span></p>
+</section>
+<section id="results" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="results"><span class="header-section-number">3.2</span> Results</h2>
+<section id="model-overview" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="model-overview"><span class="header-section-number">3.2.1</span> Model Overview</h3>
+<p><a href="#tbl-go_fp">Table&nbsp;<span>3.1</span></a> and <a href="#fig-go-fp-venn">Figure&nbsp;<span>3.1</span></a> provide an overview of the different models’ overall GO efficiency and reachability.</p>
+<div class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div id="tbl-go_fp" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Table&nbsp;3.1: Overall GO efficiency and reachability of the different models</caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">GO efficiency (result perspective)</th>
+<th style="text-align: right;">GO efficiency (process perspective)</th>
+<th style="text-align: right;">GO reachability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">LinearGlobalRE</td>
+<td style="text-align: right;">0.73</td>
+<td style="text-align: right;">0.73</td>
+<td style="text-align: right;">0.33</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearLocalRE</td>
+<td style="text-align: right;">0.45</td>
+<td style="text-align: right;">0.54</td>
+<td style="text-align: right;">0.14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QuadraticGlobalRE</td>
+<td style="text-align: right;">0.76</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.49</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QuadraticLocalRE</td>
+<td style="text-align: right;">0.33</td>
+<td style="text-align: right;">0.35</td>
+<td style="text-align: right;">0.27</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The semi-globally optimizing models perform on all measures better than the locally optimizing models.</p>
+<p>GO efficiency is high for the former (<span class="math inline">\(0.73-0.76\)</span>) and does not (much) differ between the process and result perspectives. GO efficiency varies for locally optimizing models between <span class="math inline">\(0.33\)</span> and <span class="math inline">\(0.54\)</span>. We only observe a difference between the process and result perspective for the <code>LinearLocalRE</code> model (<span class="math inline">\(0.45\)</span> vs.&nbsp;<span class="math inline">\(0.54\)</span>). In other words, the extent of branching for the <code>LinearLocalRE</code> model differs between those processes that end up in global optima and those which do not.</p>
+<p>GO reachability is for all models below GO efficiency and varies between low (<span class="math inline">\(0.14\)</span> for <code>LinearLocalRE</code>) and medium (<span class="math inline">\(0.49\)</span> for <code>QuadraticGlobalRE</code>).</p>
+<p>With respect to the overall GO efficiency and reachability, the <code>QuadraticGlobalRE</code> model performs best since it reaches the highest value in GO reachability and is slightly better than <code>LinearGlobalRE</code> concerning GO efficiency.</p>
+<p>For the locally optimizing models, the comparison between quadratic and linear shaped <span class="math inline">\(G\)</span> functions is less clear-cut: While <code>LinearLocalRE</code> performs better in GO efficiency than <code>QuadraticLocalRE</code> (<span class="math inline">\(0.45/0.54\)</span> vs.&nbsp;<span class="math inline">\(0.33/0.35\)</span>), it is the other way around concerning GO reachability (<span class="math inline">\(0.14\)</span> vs.&nbsp;<span class="math inline">\(0.27\)</span>).</p>
+<div id="fig-go-fp-venn" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/go-fp-venn.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.1: Overall GO efficiency (result perspective) and reachability of the different models.</figcaption>
+</figure>
+</div>
+</section>
+<section id="go-efficiency" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="go-efficiency"><span class="header-section-number">3.2.2</span> GO efficiency</h3>
+<section id="dependence-on-sentence-pool" class="level4" data-number="3.2.2.1">
+<h4 data-number="3.2.2.1" class="anchored" data-anchor-id="dependence-on-sentence-pool"><span class="header-section-number">3.2.2.1</span> Dependence on sentence pool</h4>
+<p><a href="#fig-rel-fpgo-fp-by-n-rp">Figure&nbsp;<span>3.2</span></a> shows that GO efficiency is more or less stable along different sizes of the sentence pool for semi-globally optimizing models. The locally optimizing models not only perform worse than the semi-globally optimizing, but GO efficiency decreases for them with an increase in the size of the sentence pool.</p>
+<div id="fig-rel-fpgo-fp-by-n-rp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/rel-fpgo-fp-by-n-rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.2: Dependence of GO efficiency (result perspective) on the size (<span class="math inline">\(2n\)</span>) of the sentence pool.</figcaption>
+</figure>
+</div>
+<p>As we already saw in the model overview, there is no big difference between the result and process perspective except for the <code>LinearLocalRE</code> model, which performs better from the process than from the result perspective (see <a href="#fig-rel-fpgo-fp-by-n-pp">Figure&nbsp;<span>3.3</span></a>).</p>
+<div id="fig-rel-fpgo-fp-by-n-pp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/rel-fpgo-fp-by-n-pp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.3: Dependence of GO efficiency (process perspective) on the size (<span class="math inline">\(2n\)</span>) of the sentence pool.</figcaption>
+</figure>
+</div>
+</section>
+<section id="dependence-on-mean-number-of-premises" class="level4" data-number="3.2.2.2">
+<h4 data-number="3.2.2.2" class="anchored" data-anchor-id="dependence-on-mean-number-of-premises"><span class="header-section-number">3.2.2.2</span> Dependence on mean number of premises</h4>
+<p><a href="#fig-rel-fpgo-fp-by-np-rp">Figure&nbsp;<span>3.4</span></a> and <a href="#fig-rel-fpgo-fp-by-np-pp">Figure&nbsp;<span>3.5</span></a> show the dependence of GO efficiency on the mean number of argument’s premises. They might be interpreted as suggesting that the locally optimizing models tend to perform worse with an increasing amount of premises in arguments. At least the difference between semi-globally and locally optimizing models is smaller for lower mean numbers of premises.</p>
+<p>The zigzag shape of the lines suggests that the actual underlying variance is bigger than the pictured error bars.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> One explanation might be that GO efficiency depends crucially on properties of the dialectical structures other than the mean number of premises. Since there are few dialectical structures for individual data points, their calculation is hardly based on a representative sample. Accordingly, the zigzag might indicate the variation in GO efficiency more accurately. Consequently, the plots must be interpreted with caution.</p>
+<div id="fig-rel-fpgo-fp-by-np-rp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/rel-fpgo-fp-by-np-rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.4: Dependence of GO efficiency (result perspective) on the mean number of arguments’ premises.</figcaption>
+</figure>
+</div>
+<div id="fig-rel-fpgo-fp-by-np-pp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/rel-fpgo-fp-by-np-pp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.5: Dependence of GO efficiency (process perspective) on the mean number of arguments’ premises.</figcaption>
+</figure>
+</div>
+</section>
+<section id="dependence-on-alpha-weights" class="level4" data-number="3.2.2.3">
+<h4 data-number="3.2.2.3" class="anchored" data-anchor-id="dependence-on-alpha-weights"><span class="header-section-number">3.2.2.3</span> Dependence on <span class="math inline">\(\alpha\)</span>-weights</h4>
+<p>In the preceding sections, we aggregated over the spectrum of different <span class="math inline">\(\alpha\)</span>-weight configurations. The question is to what extent GO efficiency depends on the chosen <span class="math inline">\(\alpha\)</span> weights.</p>
+<p>The heatmaps in <a href="#fig-hm-rel-fpgo-fp-rp">Figure&nbsp;<span>3.6</span></a> and <a href="#fig-hm-rel-fpgo-fp-pp">Figure&nbsp;<span>3.7</span></a> provide an overview of the <span class="math inline">\(\alpha\)</span>-weight dependence. In the following, we will refer to specific cells in the typical <span class="math inline">\((x,y)\)</span> fashion. For instance, we will call the cell with <span class="math inline">\(\alpha_S=0.5\)</span> and <span class="math inline">\(\alpha_A=0.2\)</span> the <span class="math inline">\((0.5,0.2)\)</span> cell.</p>
+<p>GO efficiency tends to increase with a decrease in <span class="math inline">\(\alpha_A\)</span> and with an increase in <span class="math inline">\(\alpha_S\)</span>. There are some exceptions to this pattern, especially in linear models. Most notably, there are four “cold” islands in the linear models from both perspectives (compare the <span class="math inline">\((0.2,0.4)\)</span>, <span class="math inline">\((0.4,0.3)\)</span>, <span class="math inline">\((0.6,0.2)\)</span> and <span class="math inline">\((0.8,0.1)\)</span> cells in <a href="#fig-hm-rel-fpgo-fp-rp">Figure&nbsp;<span>3.6</span></a> and <a href="#fig-hm-rel-fpgo-fp-pp">Figure&nbsp;<span>3.7</span></a>). The comparably dinimished magnitude of GO efficiency can be explained by the comparably high number of global optima in three of theses cells (compare the <span class="math inline">\((0.4,0.3)\)</span>, <span class="math inline">\((0.6,0.2)\)</span> and <span class="math inline">\((0.8,0.1)\)</span> cells in <a href="chapter_general-props.html#fig-hm-mean-n-global-optima">Figure&nbsp;<span>2.6</span></a>). Surprisingly, the locally and semi-globally optimizing model perform similarly bad, although the semi-globally optimizing model produces much more branches and fixed points in these cells (compare <a href="chapter_general-props.html#fig-hm-mean-branches">Figure&nbsp;<span>2.12</span></a> and <a href="chapter_general-props.html#fig-hm-mean-n-fixed-points">Figure&nbsp;<span>2.13</span></a>). [XXX: Re-check with full data set!]</p>
+<p>Additionally, linear models tend to exhibit more extreme values than quadratic models. In other words, the difference between “hot” and “cold” regions is higher for linear models than for the quadratic counterparts.</p>
+<div id="fig-hm-rel-fpgo-fp-rp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/hm-rel-fpgo-fp-rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.6: Dependence of GO efficiency (result perspective) from <span class="math inline">\(\alpha\)</span>-weights for the different model variants.</figcaption>
+</figure>
+</div>
+<div id="fig-hm-rel-fpgo-fp-pp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/hm-rel-fpgo-fp-pp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.7: Dependence of GO efficiency (process perspective) from <span class="math inline">\(\alpha\)</span>-weights for the different model variants.</figcaption>
+</figure>
+</div>
+<p><a href="#fig-diff-hm-rel-fpgo-fp-rp">Figure&nbsp;<span>3.8</span></a> and <a href="#fig-diff-hm-rel-fpgo-fp-pp">Figure&nbsp;<span>3.9</span></a> can be used to compare semi-globally with locally optimizing models. It shows for each <span class="math inline">\(\alpha\)</span> cell the difference in GO efficiency between the semi-globally optimizing model and its locally optimizing variant. As already observed above, the locally optimizing models perform on average worse than the semi-globally optimizing models. The difference in performance is smaller between the linear variants than the quadratic variants. The <code>LinearLocalRE</code> model is for some <span class="math inline">\(\alpha\)</span>-weight combinations even better than the <code>LinearGlobalRE</code> and for many configurations as good as the latter.</p>
+<div id="fig-diff-hm-rel-fpgo-fp-rp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/diff-hm-rel-fpgo-fp-rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.8: Comparing GO efficiency (result perspective) between semi-globally and locally optimizing models for different <span class="math inline">\(\alpha\)</span>-weights.</figcaption>
+</figure>
+</div>
+<div id="fig-diff-hm-rel-fpgo-fp-pp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/diff-hm-rel-fpgo-fp-pp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.9: Comparing GO efficiency (process perspective) between semi-globally and locally optimizing models for different <span class="math inline">\(\alpha\)</span>-weights.</figcaption>
+</figure>
+</div>
+<p><a href="#fig-diff-hm-rel-fpgo-fp-by-n-premises-rp">Figure&nbsp;<span>3.10</span></a> and <a href="#fig-diff-hm-rel-fpgo-fp-by-n-premises-pp">Figure&nbsp;<span>3.11</span></a> show, additionally, the dependence on the mean number of arguments. The mean number of premises varies between <span class="math inline">\(1\)</span> and <span class="math inline">\(2\)</span>. We divided this interval into four bins (<span class="math inline">\(1-1.25\)</span>, <span class="math inline">\(1.25-1.5\)</span>, <span class="math inline">\(1.5-1.75\)</span> and <span class="math inline">\(1.75-2\)</span>) and every heatmap row aggregates over those dialectical structures that have a mean number of premises in the corresponding bin.</p>
+<p>Interestingly, there is a difference between quadratic and linear models. For the linear models, the heatmaps do not change much with an increase in the mean number of premises. However, heatmaps suggest such a dependence for the quadratic models: The higher the mean number of premises, the higher the difference between semi-globally and locally optimizing models.</p>
+<div id="fig-diff-hm-rel-fpgo-fp-by-n-premises-rp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/diff-hm-rel-fpgo-fp-by-n-premises-rp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.10: Comparing GO efficiency (result perspective) between semi-globally and locally optimizing models for different <span class="math inline">\(\alpha\)</span>-weights and intervals of the mean number of arguments’ premises.</figcaption>
+</figure>
+</div>
+<div id="fig-diff-hm-rel-fpgo-fp-by-n-premises-pp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/diff-hm-rel-fpgo-fp-by-n-premises-pp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.11: Comparing GO efficiency (process perspective) between semi-globally and locally optimizing models for different <span class="math inline">\(\alpha\)</span>-weights and different intervals of the mean number of arguments’ premises.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="go-reachability" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="go-reachability"><span class="header-section-number">3.2.3</span> GO reachability</h3>
+<section id="dependence-on-sentence-pool-1" class="level4" data-number="3.2.3.1">
+<h4 data-number="3.2.3.1" class="anchored" data-anchor-id="dependence-on-sentence-pool-1"><span class="header-section-number">3.2.3.1</span> Dependence on sentence pool</h4>
+<p><a href="#fig-rel-fpgo-go-by-n">Figure&nbsp;<span>3.12</span></a> shows that GO reachability drops quickly for the linear models and slightly for the quadratic ones with increasing size of the sentence pool. For <span class="math inline">\(n=9\)</span>, a locally optimizing model (<code>QuadraticLocalRE</code>) even outperforms a semi-globally optimizing model (<code>LinearGlobalRE</code>).</p>
+<div id="fig-rel-fpgo-go-by-n" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/rel-fpgo-go-by-n.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.12: Dependence of GO reachability on the size (<span class="math inline">\(2n\)</span>) of the sentence pool.</figcaption>
+</figure>
+</div>
+</section>
+<section id="dependence-on-mean-number-of-premises-1" class="level4" data-number="3.2.3.2">
+<h4 data-number="3.2.3.2" class="anchored" data-anchor-id="dependence-on-mean-number-of-premises-1"><span class="header-section-number">3.2.3.2</span> Dependence on mean number of premises</h4>
+<p>As before, the overall performance in dependence on the mean number of premises is hard to interpret. <a href="#fig-rel-fpgo-go-by-np">Figure&nbsp;<span>3.13</span></a> might suggest that the three models <code>LinearGlobalRE</code>, <code>QuadraticLocalRE</code> and <code>LinearLocalRE</code> perform worse with an increase in the mean number of premises. Only <code>QuadraticGlobalRE</code> is able to keep its level of performance.</p>
+<div id="fig-rel-fpgo-go-by-np" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/rel-fpgo-go-by-np.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.13: Dependence of GO reachability on the mean number of arguments’ premises.</figcaption>
+</figure>
+</div>
+</section>
+<section id="dependence-on-alpha-weights-1" class="level4" data-number="3.2.3.3">
+<h4 data-number="3.2.3.3" class="anchored" data-anchor-id="dependence-on-alpha-weights-1"><span class="header-section-number">3.2.3.3</span> Dependence on <span class="math inline">\(\alpha\)</span>-weights</h4>
+<p>The dependence of GO reachability on <span class="math inline">\(\alpha\)</span> weights is somewhat similar to that of GO efficiency. For the semi-globally optimizing models, GO reachability tends to increase with a decrease in <span class="math inline">\(\alpha_A\)</span> and an increase in <span class="math inline">\(\alpha_S\)</span>. Again, there are exceptions to this behaviour. Besides the islands of the <code>LinearGlobalRE</code> model, the <span class="math inline">\(0.1\)</span> <span class="math inline">\(\alpha_F\)</span> isoline has particularly low GO reachability values for the <code>QuadraticGlobalRE</code> model.</p>
+<p>The linear model variants’ cold islands can, again, be explained by the comparably high number of global optima in three of theses cells (compare the <span class="math inline">\((0.4,0.3)\)</span>, <span class="math inline">\((0.6,0.2)\)</span> and <span class="math inline">\((0.8,0.1)\)</span> cells in <a href="chapter_general-props.html#fig-hm-mean-n-global-optima">Figure&nbsp;<span>2.6</span></a>).</p>
+<p>The locally optimizing model variants have a comparably non-regular dependence on <span class="math inline">\(\alpha\)</span> weights. Additionally, the values do not vary that much between different cells as compared to the globally optimizing models.</p>
+<div id="fig-hm-rel-fpgo-go" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/hm-rel-fpgo-go.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.14: Dependence of GO reachability from <span class="math inline">\(\alpha\)</span>-weights for the different model variants.</figcaption>
+</figure>
+</div>
+<p>The direct comparison between semi-globally and locally optimizing models (<a href="#fig-diff-hm-rel-fpgo-go">Figure&nbsp;<span>3.15</span></a>) shows that locally optimizing models are, for some <span class="math inline">\(\alpha\)</span>-weight combinations, able to outperform the semi-globally optimizing models (cells with negative values).</p>
+<div id="fig-diff-hm-rel-fpgo-go" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/diff-hm-rel-fpgo-go.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.15: Comparing GO reachability between semi-globally and locally optimizing models for different <span class="math inline">\(\alpha\)</span>-weights.</figcaption>
+</figure>
+</div>
+<p>By separating dialectical structures according to their mean number of premises (<a href="#fig-diff-hm-rel-fpgo-go-by-n-premises">Figure&nbsp;<span>3.16</span></a>) we can see that the advantage of <span class="math inline">\(\alpha\)</span>-weight combinations for which the semi-globally optimizing models are on average particularly better w.r.t. GO reachability (roughly, the “hot” cells in the <span class="math inline">\((0.2-0.7, 0.1-0.2)\)</span> area in <a href="#fig-diff-hm-rel-fpgo-go">Figure&nbsp;<span>3.15</span></a>) is mainly generated by dialectical structures with a higher mean number of premises. In contrast, cells in which locally optimizing models outperform semi-globally optimizing models (roughly, the “cold” cells of the <span class="math inline">\(0.1/0.2\)</span> <span class="math inline">\(\alpha_F\)</span> isolines in <a href="#fig-diff-hm-rel-fpgo-go">Figure&nbsp;<span>3.15</span></a>) are more or less stable for the different bins for the mean number of premises.</p>
+<div id="fig-diff-hm-rel-fpgo-go-by-n-premises" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/diff-hm-rel-fpgo-go-by-n-premises.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.16: Comparing GO reachability between semi-globally and locally optimizing models for different <span class="math inline">\(\alpha\)</span>-weights and different intervalls of the mean number of arguments’ premises.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+</section>
+<section id="conclusion" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">3.3</span> Conclusion</h2>
+<p>On average, GO efficiency is high for semi-globally optimizing models and medium-high for locally optimizing models. The fact that GO efficiency drops for semi-globally optimizing models with the size of the sentence pool is, to some extent, worrisome since they are intended to be used in scenarios with larger sentence pools, which are computationally too demanding for semi-globally optimizing models. The question is whether their performance can be improved by increasing their search depth <span class="math inline">\(d\)</span>.</p>
+<p>However, in specific contexts the modeller will choose a specific set of <span class="math inline">\(\alpha\)</span> weights. We already saw that the performance of the different model varies significantly between different <span class="math inline">\(\alpha\)</span>-weight configurations. Consequently, the dependence on the sentence pool should be repeated for those regions of <span class="math inline">\(\alpha\)</span>-weight configurations that are of interest for the modeller. For instance, if we choose to confine the analysis to <span class="math inline">\(\alpha\)</span>-weight configurations with <span class="math inline">\(\alpha_a &lt; \alpha_s\)</span>, GO efficiency of the <code>LinearLocalRE</code> is as high as of the models <code>QuadraticGlobalRE</code> and <code>LinearGlobalRE</code> (see XXX).</p>
+<p>Surprisingly, GO reachability is low to medium for all models. Additionally, all but the <code>QuadraticGlobalRE</code> model perform worse with an increase in the size of the sentence pool. A better understanding of this behaviour requires a more detailed analysis, which should be based on a more extensive set of dialectical structures.</p>
+<p>The <code>QuadraticGlobalRE</code> model outperforms all other models on average. A direct comparison of the locally optimizing models is complicated since it involves a trade-off: While the <code>LinearLocalRE</code> model reaches a higher GO efficiency than the <code>QuadraticLocalRE</code> model, it is the other way around with respect to GO reachability.</p>
+<!--
+## Old Stuff
+-->
+<!--
+Relevant documents:
+
++ Heuristics for finding global optima: <https://github.com/debatelab/re-studies/blob/master/documents/Finding_Global_Optima.pdf>
++ Referenced in the conclusion: <https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-template.ipynb>, section 4
+
+ToDo & remarks:
+
++ Heuristics perhaps in some kind of appendix?
++ Figure/evidence for the described correlation between inferential density of the dialectical structure and the number of global optima or fixed points in the conclusion.
+-->
+<!-- perhaps to add (from c&p)
+
+Note that both global optima and fixed points may not be uniquely determined given an input. There may be multiple, equally well performing epistemic states according to the achievement function $Z$, or there may  be ties between candidates during equilibration, which leads to branching processes resulting in multiple fixe points.
+
+The global optimization can be achieved by brute force and going through every combination of commitments and theory (worst case). In contrast, the semi-globally optimizing equilibration process of adjustments can already be understood as a heuristic to reach global optimal states, but proccesses can be caught up in local optima. This holds even more so for the local model variant described below.
+
+-->
+<!--
+
+**Background**
+
+The formal model of RE allows to distinguish to outcomes of RE, i.e. a theory-commitment-pair for some given intial commitments: *global optima* accdording to the achievement functions and *fixed points*, which are reached by an RE process. Global optima are calculated over theory-commitment-pairs and fixed points result from stepwise, mutual adjustment of commitments and theory. Consequently, global optima and fixed points may fall apart for a configuration. A global optima may not be reachable from given inital commitments by an RE process, or a fixed point may not be globally optimal.
+
+Having a substantial overlap of global optima and fixed points is a desirable feature of an RE model. Otherwise, something would be amiss in the achievement function or in the RE process, for which it provides guidance.
+
+**Method**
+
+Obviously, the data which is required to explore the overlap, consists of all global optima and fixed point for a configuration. The brute force search for global optima requires to calculate the achievement function for every theory-commitment-pair (number of dialectically consistent positions * number of minimally consistent positions, worst case: $3^{n}\cdot 3^{n}$ ). However, there are some heuristics that, on average, speed up the calculations dramatically. In order to determine all fixed points for a configuration, all "branches" of an RE process need to be tracked, that occur due to the random choice among equally good performing candidates in an adjustment step. After the construction of global optima and fixed points, one can check for every element whether is contained in the other set. 
+
+The overlap for a configuration is given by the the number of global optima, which are fixed points. Note that the number of global optima which are fixed points is equal to the number of fixed points, which are global optima (see the Venn-diagramms in @fig-go-fp-venn).
+The relative overlap w.r.t. global optima (fixed points) is the ratio of the overlap and the number of global optima (fixed points) for a configuration. In gereral the relative overlaps w.r.t global optima or fixed points,respectively, are not the same, since configurations yield more global optima than fixed points.
+
+
+
+**Results**
+
+Observations (see @tbl-go_fp):
+
+- For every model variant the total number of global optima always exceeds the total number of fixed points between roughly 15% (QDS, ensemble 08) and 50% (QPS, ensemble 07).
+- Quadratic models tend to produce more global optima and fixed points than linear variants. (The exception is QDS, ensemble 08)
+
+-->
+<!--
+[AF]: The following observation is not helpful without said heatmaps.
+- Heatmaps do not exhibit salient features except some "hot" islands in the upper right corner of the plot (low weight for faithfulness and account, hight weight for systematicity), for which we do not have an explanation at this point.
+-->
+<!--
+
+
+**Conclusion**
+
+Global optima and fixed point overlap to a sufficient degree in every model variant. Roughly 3 out of 4 fixed points are global optima, and 2 out 3 global optima are fixed points.
+
+The questions of why there are generally more global optima than fixed points, and when they fall apart require more detailed analysis of additional inputs. For example, there seems to be correlation of inferential density of the dialectical structure and the number of global optima or fixed points.
+-->
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>The error bars are standard deviations, which are calculated by bootstrapping on the used subset <span class="math inline">\(E^*\)</span> in the calculation of <span class="math inline">\(GOE(E^*)\)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter_general-props.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">General ensemble properties</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chapter_full-re-states.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Full RE states</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Technical Report - 1&nbsp; Introduction</title>
+<title>Assessing a Formal Model of Reflective Equilibrium - 1&nbsp; Introduction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,14 +17,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -38,8 +39,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,7 +49,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapter_one.html" rel="next">
+<link href="./chapter_general-props.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -76,10 +76,13 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -87,11 +90,16 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -99,62 +107,117 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Technical Report</a> 
+      <a href="./">Assessing a Formal Model of Reflective Equilibrium</a> 
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter_one.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">…</span></a>
+  <a href="./chapter_general-props.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">General ensemble properties</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter_two.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">…</span></a>
+  <a href="./chapter_go-and-fp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Global optima and fixed points</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  <a href="./chapter_full-re-states.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Full RE states</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="./chapter_commitment-consistency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Consistency</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter_extreme-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Extreme values for account and faitfulness</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_tipping_line.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">The Tipping Line of Linear Model Variants</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-mod" id="toc-sec-mod" class="nav-link active" data-scroll-target="#sec-mod"><span class="header-section-number">1.1</span> Modelling reflective equilibration</a></li>
+  <li><a href="#model-variations" id="toc-model-variations" class="nav-link" data-scroll-target="#model-variations"><span class="header-section-number">1.2</span> Model variations</a>
+  <ul>
+  <li><a href="#quadratic-and-linear-measures" id="toc-quadratic-and-linear-measures" class="nav-link" data-scroll-target="#quadratic-and-linear-measures"><span class="header-section-number">1.2.1</span> Quadratic and Linear Measures</a></li>
+  <li><a href="#semi-globally-and-locally-optimizing-equilibration-processes" id="toc-semi-globally-and-locally-optimizing-equilibration-processes" class="nav-link" data-scroll-target="#semi-globally-and-locally-optimizing-equilibration-processes"><span class="header-section-number">1.2.2</span> Semi-globally and locally optimizing equilibration processes</a></li>
+  </ul></li>
+  <li><a href="#sec-intro-metrics" id="toc-sec-intro-metrics" class="nav-link" data-scroll-target="#sec-intro-metrics"><span class="header-section-number">1.3</span> Metrics for model validations</a></li>
+  <li><a href="#ensemble-description" id="toc-ensemble-description" class="nav-link" data-scroll-target="#ensemble-description"><span class="header-section-number">1.4</span> Ensemble description</a>
+  <ul>
+  <li><a href="#alpha-weights" id="toc-alpha-weights" class="nav-link" data-scroll-target="#alpha-weights"><span class="header-section-number">1.4.1</span> <span class="math inline">\(\alpha\)</span>-weights</a></li>
+  <li><a href="#sec-intro-init-coms" id="toc-sec-intro-init-coms" class="nav-link" data-scroll-target="#sec-intro-init-coms"><span class="header-section-number">1.4.2</span> Initial commitments</a></li>
+  <li><a href="#dialectical-structures" id="toc-dialectical-structures" class="nav-link" data-scroll-target="#dialectical-structures"><span class="header-section-number">1.4.3</span> Dialectical structures</a></li>
+  </ul></li>
+  <li><a href="#summary-of-results" id="toc-summary-of-results" class="nav-link" data-scroll-target="#summary-of-results"><span class="header-section-number">1.5</span> Summary of results</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title"><span id="sec-intro" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></h1>
 </div>
 
 
@@ -169,25 +232,333 @@ div.csl-indent {
 
 </header>
 
-<p><span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span> introduced a formal model of reflective equilibrium based on the theory of dialectical structures <span class="citation" data-cites="betz_theorie_2010 betz_debate_2013">(<a href="references.html#ref-betz_theorie_2010" role="doc-biblioref">Betz 2010</a>, <a href="references.html#ref-betz_debate_2013" role="doc-biblioref">2013</a>)</span>, which, according to them, can be used to better understand the method of reflective equilibrium and to assess its potential to yield better epistemic states. However, their discussion was based on a few illustrative examples only, without assessing how the model behaves under a wider spectrum of circumstances.</p>
-<p>This report summarizes findings of assessing the RE model more thouroughly by, first, running the model to determine fixed points of the RE process and calculating global optima under a wide range of configurations and, second, by tweaking the original model. The simulation outcomes of three model variants are compared to the ones of the original model.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<!--
++ Regarding the footnote: Should we include a discussion of other model variants. We also have a thourgough analysis of other systsematicity suggestions.
++ See: 
+    + <https://github.com/debatelab/re-studies/blob/master/notebooks/remodel_revisions.ipynb>
+    + <https://github.com/debatelab/re-studies/tree/master/projects/systematicity_study>
+-->
+<!--
+ToDos:
+
++ Add perhaps one or some few examples as figures.
++ Do we have to reproduce the ensembles 1-4 with the current algorithm to generate maps?
+-->
+<!-- to add/revise
+Additionally, we address the following questions (@sec-general-props):
+
+- Is the union of commitments and theory of a global optimum/fixed point consistent? - (CCT) The commitments and the theory should be consistent with each other
+- How many steps does an RE process take?
+- Does an RE promote principles in theories?
+- Are the results from the published paper reproducible?
+
+-->
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>So far, analysis results in this chapter are based but on a subset of the whole data set.</p>
+</div>
+</div>
+<p><span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span> introduced a formal model of reflective equilibrium based on the theory of dialectical structures <span class="citation" data-cites="betz_theorie_2010 betz_debate_2013">(<a href="references.html#ref-betz_theorie_2010" role="doc-biblioref">Betz 2010</a>, <a href="references.html#ref-betz_debate_2013" role="doc-biblioref">2013</a>)</span>, which they use as a methodological tool to better understand the method of reflective equilibrium and to assess its potential to yield justified epistemic states. Their discussion of the model is mainly based on an illustrative example. An assessment of how the model behaves under a broader spectrum of circumstances went beyond the scope of their work.</p>
+<p>This report summarizes the findings of assessing the RE model more thoroughly by running the model under a wide range of configurations and by tweaking the original model. We compare simulation outcomes of three model variants to the ones of the original model.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<section id="sec-mod" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-mod"><span class="header-section-number">1.1</span> Modelling reflective equilibration</h2>
+<p>Reflective equilibrium is commonly understood as a method of justification, in which an epistemic subject iteratively adjusts its epistemic state in a process of equilibration until a state of reflective equilibrium is reached. In this final state, the agent’s belief system is supposed to be justified to the extent that it satifies various pragmatic-epistemc objectives, e.g., (internal) coherence.</p>
+<p><span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span> model this process of reflective equilibration and the underlying axiology of equilibrium states in the following way.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>The agent’s epistemic state is modelled as a tuple <span class="math inline">\((\mathcal{C}, \mathcal{T})\)</span>, which comprises their accepted commitments <span class="math inline">\(\mathcal{C}\)</span> and a theory <span class="math inline">\(\mathcal{T}\)</span>. Both are represented by sets of sentences from a finite pool of sentences <span class="math inline">\(S\)</span>, which is closed under negation.</p>
+<p>The equilibration process is modelled as a mutual adjustment of the theory and the agent’s commitments to improve the epistemic state as measured by an achievement function <span class="math inline">\(Z\)</span> (see Figure <a href="#fig-model-schematics">Figure&nbsp;<span>1.1</span></a>). The agent starts with a set of initial commitments <span class="math inline">\(\mathcal{C}_0\)</span>. Then, a theory <span class="math inline">\(\mathcal{T}_0\)</span> is chosen that systematizes <span class="math inline">\(\mathcal{C}_0\)</span>. This initial state <span class="math inline">\((\mathcal{C}_0, \mathcal{T}_0)\)</span> is then adjusted by searching for a new set of commitments that performs better in terms of the overall achievement <span class="math inline">\(Z\)</span>. This process of adjusting the current epistemic state by choosing a new theory (or new commitments, respectively) goes on until no further improvement is gained any more.</p>
+<div id="fig-model-schematics" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/model_schematics.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.1: Illustrative diagram of the formal model. The epistemic state, which consists of a set of commitments and a theory, is subject to operationalized desiderata for RE states (bold arrows). Rules for alternating adjustments of commitments and theory specify a process of equilibration that sets out from initial commitments.</figcaption>
+</figure>
+</div>
+<p>The achievement function <span class="math inline">\(Z\)</span> models the underlying axiology and is based on the three different desiderata <em>faithfulness</em>, <em>systematicity</em> and <em>account</em>. Their role is illustrated by bold arrows in Figure <a href="#fig-model-schematics">Figure&nbsp;<span>1.1</span></a>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>The desideratum of <em>faithfulness</em> demands that current commitments should not deviate too much from the initial commitments <span class="math inline">\(\mathcal{C}_{0}\)</span>. There are two motivations for this constraint <span class="citation" data-cites="beisbart_making_2021">(<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">Beisbart, Betz, and Brun 2021, 447</a>)</span>. A resemblance of the current commitments to <span class="math inline">\(\mathcal{C}_{0}\)</span> contributes to the justification of the resulting state to the extent that initial commitments have some independent credibility. Additionally, the sentences in <span class="math inline">\(\mathcal{C}_{0}\)</span> represent a specification of the topic under consideration. Deviating too much from <span class="math inline">\(\mathcal{C}_{0}\)</span> courts the danger of changing the topic. Faithfulness <span class="math inline">\(F(\mathcal{C}\,\vert\, \mathcal{C}_{0})\)</span> is operationalized in the model by measuring the distance of the current commitments to the initial commitments.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p>The role of the theory <span class="math inline">\(\mathcal{T}\)</span> is to systematize the commitments <span class="math inline">\(\mathcal{C}\)</span>. One suggestion to explicate this idea is to ask whether the theory implies the commitments. The account <span class="math inline">\(A(\mathcal{C}, \mathcal{T})\)</span> measures how well the commitments <span class="math inline">\(\mathcal{C}\)</span> fit to what is implied by the theory <span class="math inline">\(\mathcal{T}\)</span>. More specifically, <span class="math inline">\(A(\mathcal{C}, T)\)</span> is based on measuring the distance between <span class="math inline">\(\mathcal{C}\)</span> and the set of <span class="math inline">\(\mathcal{T}\)</span>’s implications.</p>
+<p>To that end, we need to know how the sentences in <span class="math inline">\(S\)</span> are inferentially connected. The inferential relationships are modelled by dialectical structures based on the theory of dialectical structures <span class="citation" data-cites="betz_theorie_2010 betz_debate_2013">(<a href="references.html#ref-betz_theorie_2010" role="doc-biblioref">Betz 2010</a>, <a href="references.html#ref-betz_debate_2013" role="doc-biblioref">2013</a>)</span>. A dialectical structure <span class="math inline">\(\tau\)</span> is a set of deductively valid arguments <span class="math inline">\(\mathcal{A}\)</span> and their “inferential” relationships to each other. For instance, an argument with two premises <span class="math inline">\(s_i, s_j\)</span> (<span class="math inline">\(\in \mathcal{S}\)</span>) and a conclusion <span class="math inline">\(S_k\)</span> represents the inferential relationship of <span class="math inline">\(S_k\)</span> being implied by the conjunction of <span class="math inline">\(s_i\)</span> and <span class="math inline">\(s_j\)</span>.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> Each process of reflective equilibration takes place on the background of one dialectical structure that stays fixed during the process.</p>
+<p>The final desideratum demands that a theory does not only perform well in systematizing the commitments <span class="math inline">\(\mathcal{C}\)</span> but is generally able to systematize sentences in <span class="math inline">\(S\)</span> (independent of whether they belong to the agent’s epistemic state). Systematicity <span class="math inline">\(S(\mathcal{T})\)</span> measures this general inferential potential by considering the amount of <span class="math inline">\(\mathcal{T}\)</span>’s implications in relation to the size of the sentence pool <span class="math inline">\(\mathcal{S}\)</span>.</p>
+<p>All three desiderata can “pull” in different directions. The resolution of such trade-offs is modelled by using a convex combination of the three measures as a one-dimensional combined measure <span class="math inline">\(Z\)</span> for the overall epistemic quality of the agent’s epistemic state:</p>
+<p><span class="math display">\[
+Z(\mathcal{C}, \mathcal{T}\, \vert\, \mathcal{C}_0) = \alpha_{A}\cdot A(\mathcal{C}, \mathcal{T}) + \alpha_{S}\cdot S(\mathcal{T}) + \alpha_{F}\cdot F(\mathcal{C}\,\vert\, \mathcal{C}_0),
+\]</span></p>
+<p>The weights <span class="math inline">\(\alpha_{A}\)</span>, <span class="math inline">\(\alpha_{S}\)</span> and <span class="math inline">\(\alpha_{F}\)</span> are real-valued numbers between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> that sum up to <span class="math inline">\(1\)</span>. Different suggestions for balancing the desiderata are represented by choosing different <span class="math inline">\(\alpha\)</span>-weights in the achievement function <span class="math inline">\(Z\)</span>.</p>
+<p>The achievement function assigns to every epistemic state <span class="math inline">\((\mathcal{C}, T)\)</span> a value of “overall betterness” relative to what we can call an <em>epistemic situation</em> of an agent, i.e., a dialectical structure <span class="math inline">\(\tau\)</span>, a set of initial commitments <span class="math inline">\(\mathcal{C}_0\)</span>, and a configuration of weights <span class="math inline">\((\alpha_{A}, \alpha_{S}, \alpha_{F}\)</span>). The epistemic situation captures the subject matter of inquiry, its background, and decisions to handle trade-offs between epistemic desiderata.</p>
+</section>
+<section id="model-variations" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="model-variations"><span class="header-section-number">1.2</span> Model variations</h2>
+<p>In this report, we compare the performance of four model variants that result from a combination of two independent alterations of the original model from <span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span> (see <a href="#tbl-models">Table&nbsp;<span>1.1</span></a>). First, we will vary the general shape of the functions <span class="math inline">\(A\)</span>, <span class="math inline">\(S\)</span> and <span class="math inline">\(F\)</span>. In the original model, these functions have a quadratic form, which will be contrasted with a linear form. Second, we will compare the semi-global optimization during equilibrations steps, which is used in <span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span>, with a locally optimizing model variant.</p>
+<div id="tbl-models" class="anchored">
+<div class="table-responsive">
+<table class="table">
+<caption>Table&nbsp;1.1: Model variations</caption>
+<colgroup>
+<col style="width: 22%">
+<col style="width: 39%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;"></th>
+<th style="text-align: left;">Quadratic shape</th>
+<th style="text-align: left;">Linear shape</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><strong>Global optimization</strong></td>
+<td style="text-align: left;"><code>QuadraticGlobalRE</code> (in short, <code>QGRE</code>)</td>
+<td style="text-align: left;"><code>LinearGlobalRE</code> (in short, <code>LGRE</code>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong>Local optimization</strong></td>
+<td style="text-align: left;"><code>QuadraticLocalRE</code> (in short, <code>QLRE</code>)</td>
+<td style="text-align: left;"><code>LinearLocalRE</code> (in short, <code>LLRE</code>)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<section id="quadratic-and-linear-measures" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="quadratic-and-linear-measures"><span class="header-section-number">1.2.1</span> Quadratic and Linear Measures</h3>
+<p>In <span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span>, the functions <span class="math inline">\(A\)</span>, <span class="math inline">\(F\)</span> and <span class="math inline">\(S\)</span> have the following shape:</p>
+<p><span class="math display">\[
+G(x)= 1-x^2
+\]</span></p>
+<p>However, the quadratic term <span class="math inline">\(x^2\)</span> is not motivated. The linear models <code>LGRE</code> and <code>LLRE</code> will be based on <span class="math inline">\(G(x)= 1-x\)</span> to examine the repercussions of such a variation.</p>
+</section>
+<section id="semi-globally-and-locally-optimizing-equilibration-processes" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="semi-globally-and-locally-optimizing-equilibration-processes"><span class="header-section-number">1.2.2</span> Semi-globally and locally optimizing equilibration processes</h3>
+<p>The mutual adjustment of commitments and theories involves two types of revisions. The agent will revise their current commitments <span class="math inline">\(\mathcal{C}_i\)</span> and their current theory <span class="math inline">\(\mathcal{T}_i\)</span> in an alternating fashion. More specifically, when adjusting their commitments, the agent will search for new commitments <span class="math inline">\(\mathcal{C}_{i+1}\)</span> such that the resulting state <span class="math inline">\((\mathcal{C}_{i+1}, \mathcal{T}_i)\)</span> performs better w.r.t. <span class="math inline">\(Z\)</span>. Similarly, when adjusting their theory, the agent will search for a theory <span class="math inline">\(\mathcal{T}_{i+1}\)</span> such that <span class="math inline">\(Z(\mathcal{C}_{i}, \mathcal{T}_{i+1}\,\vert\, \mathcal{C}_0)&gt; Z(\mathcal{C}_{i}, \mathcal{T}_{i}\,\vert\, \mathcal{C}_0)\)</span>.</p>
+<p>The equilibration process in <span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span> is a semi-global optimization in the following way: When searching for new commitments <span class="math inline">\(\mathcal{C}_{i+1}\)</span> that improve <span class="math inline">\(Z\)</span>, the agent can choose any set of commitments. Similarly, when searching for a new theory <span class="math inline">\(\mathcal{T}_{i+1}\)</span>, the agents can choose any theory. This search strategy is computationally costly as the search space grows exponentially with the size of the sentence pool. For the same reason, it is also an unrealistic assumption about real epistemic subjects.</p>
+<p>To solve this problem and incorporate some form of bounded rationality into the model, we can constrain the search space for adopting new commitments and theories. Instead of considering all commitments and theories, a <em>locally</em> optimizing equilibration process confines the search space to a neighbourhood of the current state.</p>
+<p>The definition of this neighbourhood is based on an edit distance, which measures the number of changes needed to transform one set of sentences into another. Suppose the sentence pool <span class="math inline">\(\mathcal{S}\)</span> comprise three sentences and their negations—that is, <span class="math inline">\(S=\{s_1,s_3,s_3,\neg s_1, \neg s_2, \neg s_3\}\)</span>. Let us now consider two different sets of commitments: <span class="math inline">\(\mathcal{C}_1=\{s_1, \neg s_2\}\)</span> and <span class="math inline">\(\mathcal{C}_2=\{s_1,s_2,s_3\}\)</span>. Suppose further that an agent adopts <span class="math inline">\(\mathcal{C}_1\)</span> as their commitments. In other words, they accept <span class="math inline">\(s_1\)</span>, refuse <span class="math inline">\(s_2\)</span> and are indifferent towards <span class="math inline">\(s_3\)</span>. Consequently, a set of commitments can be specified by describing the doxastic attitude (acceptance, refusal and indifference) towards each sentence of half the sentence pool (<span class="math inline">\(s_1\)</span>, <span class="math inline">\(s_2\)</span> and <span class="math inline">\(s_3\)</span> in our example). The edit distance we use is defined by asking how many changes of doxastic attitudes are needed to transform one set of commitments into another. Consequently, the edit distance between <span class="math inline">\(\mathcal{C}_1\)</span> and <span class="math inline">\(\mathcal{C}_2\)</span> is <span class="math inline">\(2\)</span> since we would have to change the attitude for <span class="math inline">\(s_2\)</span> from refusal to acceptance and for <span class="math inline">\(s_3\)</span> from indifference to acceptance.</p>
+<p>We can now define the neighbourhood of depth <span class="math inline">\(d\)</span> (in short, the <span class="math inline">\(d\)</span>-neighbourhood) of a set of sentences <span class="math inline">\(S_i\)</span> as the set of all sentence sets that have at most an edit distance of <span class="math inline">\(d\)</span> to <span class="math inline">\(S_i\)</span>.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<p>The <em>local</em> model variants <code>QLRE</code> and <code>LLRE</code> restrict the commitments and theory candidates during adjustment steps to a neighbourhood of depth <span class="math inline">\(d=1\)</span>.</p>
+<p>To illustrate the difference between global, semi-global and local optimization, think of epistemic states <span class="math inline">\((C, T)\)</span> as cells on an appropriately sized, possibly non-square, chess board.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> The unbounded, globally optimizing agent can overview the entire board at once (<a href="#fig-grid-global">Figure&nbsp;<span>1.2</span></a>), while a semi-globally optimizing agent can evaluate only a single row or column per adjustment step (<a href="#fig-grid-semi-global">Figure&nbsp;<span>1.3</span></a>). Finally, only candidates from a small neighbourhood of the current position are available to the locally optimizing agent only during an adjustment step (Figure <a href="#fig-grid-local">Figure&nbsp;<span>1.4</span></a>).</p>
+<div id="fig-grid-global" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/grid_global.png" class="img-fluid figure-img" style="width:66.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.2: Global optimization: All epistemic states are available.</figcaption>
+</figure>
+</div>
+<div id="fig-grid-semi-global" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/grid_semi_global.png" class="img-fluid figure-img" style="width:66.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.3: Semi-global optimization: All sets of commitments and all theories are available in an alternating fashion while the other component is held fixed.</figcaption>
+</figure>
+</div>
+<div id="fig-grid-local" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/grid_local.png" class="img-fluid figure-img" style="width:66.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.4: Local optimization (alternating): Available commitments(row)/theories (column) are restricted to a neighbourhood of the current state in an alternating fashion while the other component is held fixed.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-intro-metrics" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="sec-intro-metrics"><span class="header-section-number">1.3</span> Metrics for model validations</h2>
+<p>At the outset, a plethora of metrics could be used to examine the performance of the formal model. Let us motivate a small selection of desiderata for model validation, which we will use in the following chapters.</p>
+<p>The process of reflective equilibration reaches an endpoint, a so-called fixed point, if the agent arrives at an epistemic state that cannot be further improved (in terms of the achievement function) by revising their commitments or their theory, respectively <span class="citation" data-cites="beisbart_making_2021">(<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">Beisbart, Betz, and Brun 2021, 450</a>)</span>. However, such a fixed point is not necessarily a global optimum. In other words, other epistemic states might perform better w.r.t. <span class="math inline">\(Z\)</span>.</p>
+<p>This possible divergence of fixed points and global optima applies to locally optimizing models (<code>LLRE</code> and <code>QLRE</code>) and the semi-globally optimizing models (<code>LGRE</code> and <code>QGRE</code>). The former can get stuck in local optima since they are confined to a restricted search area for the improvement of epistemic states. However, the semi-globally optimizing models can also get stuck in local optima since they do not adjust their commitments and theories simultaneously but alternately. Consequently, there is a conceptual delineation between the axiology (as defined by the achievement function) as a static aspect of RE and the equilibration process as the dynamical aspect of RE.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
+<p>Accordingly, several questions concerning the relationship between fixed points and global optima are relevant to the performance assessment of the model variants. In <a href="chapter_go-and-fp.html"><span>Chapter&nbsp;3</span></a>, we investigate whether fixed points are global optima and, conversely, whether global optima are reachable by equilibration processes.</p>
+<p>The reached achievement of fixed points and global optima is not the only evaluative perspective on epistemic states. In other words, there are other aspects of evaluating reflective equilibria besides the desiderata of account, systemticity and faithfulness <span class="citation" data-cites="beisbart_making_2021">(<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">Beisbart, Betz, and Brun 2021, 448–49</a>)</span>.</p>
+<p>The most ambitious requirement demands that a theory accounts fully and exclusively for the commitments of an epistemic state. Fixed points that are global optima and that additionally satisfy this criterion are called full RE states. In <a href="chapter_full-re-states.html"><span>Chapter&nbsp;4</span></a>, we investigate whether and under which circumstances fixed points are full RE states. We will also analyze whether theories of global optima fully and exclusively account for their commitments.</p>
+<p>Weaker requirements demand that fixed points or, at least, fixed point commitments are dialectically consistent—that is, consistent with respect to all inferential relationships encoded in the given dialectical structure <span class="math inline">\(\tau\)</span>. Consistency is commonly seen as a necessary condition of coherence. Achieving consistency is, therefore, of utmost importance for equilibration processes. In <a href="chapter_commitment-consistency.html"><span>Chapter&nbsp;5</span></a>, we will assess the consistency conduciveness of the different model variants.</p>
+<p>Finally, we will investigate whether global optima and fixed points yield extreme values in the normalized measures <span class="math inline">\(A\)</span>, <span class="math inline">\(F\)</span> and <span class="math inline">\(S\)</span> (<a href="chapter_extreme-values.html"><span>Chapter&nbsp;6</span></a>). The achievement function <span class="math inline">\(Z\)</span> aggregates these measures by using weights to model trade-offs between the desiderate (e.g., give up on faithfulness to increase account). Investigating under which circumstances extreme values are achieved in <span class="math inline">\(A\)</span>, <span class="math inline">\(F\)</span>, and <span class="math inline">\(S\)</span> might improve our understanding of the involved trade-offs and of the consequences of choosing specific weights.</p>
+<!-- Minimal models should answer the sub-questions in the affirmative to a sufficient degree. However, undesirable behaviour of a model variant should be explainable in terms of additional input, apart from the model specification, which is required to run simulations.-->
+</section>
+<section id="ensemble-description" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="ensemble-description"><span class="header-section-number">1.4</span> Ensemble description</h2>
+<p>The results of RE processes and their global optima depend on the following inputs:</p>
+<ul>
+<li>the model variant,</li>
+<li>the dialectical structure <span class="math inline">\(\tau\)</span> and the sentence pool,</li>
+<li>the <span class="math inline">\(\alpha\)</span>-weights for the achievement function and</li>
+<li>the set of initial commitments</li>
+</ul>
+<p>Let us call a specification of these inputs a <em>simulation setup</em>.</p>
+<p>Due to the exponential growth of candidate commitments and theories, which all have to be considered for global optima and semi-global adjustment steps in RE processes, the ensemble includes only four sentence pools with a small number of sentences (<span class="math inline">\(12\)</span>, <span class="math inline">\(14\)</span> , <span class="math inline">\(16\)</span>, <span class="math inline">\(18\)</span>). We generated <span class="math inline">\(50\)</span> dialectical structures and <span class="math inline">\(20\)</span> sets of random initial commitments for each sentence pool. We used every resulting configuration of dialectical structures and initial commitments (out of <span class="math inline">\(4\,000=4\cdot 50 \cdot 20\)</span> configurations) to run RE processes for every of the described model variants and for <span class="math inline">\(36\)</span> <span class="math inline">\(\alpha\)</span>-weight configurations.</p>
+<p>For each of the resulting <span class="math inline">\(576\,000\)</span> simulation setups, we calculated global optima. Note also that one simulation setup does not necessarily determine a fixed point uniquely. For every step of adjusting a theory (or a set of commitments), the subsequent theory (or set of commitments) is underdetermined if there is more than one candidate that maximizes the achievement function. In such cases, the model will randomly choose the next theory (or set of commitments) <span class="citation" data-cites="beisbart_making_2021">(<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">Beisbart, Betz, and Brun 2021, 466</a>)</span>. The Python implementation of the model allows us to track each of the resulting branches, which we did for this report.</p>
+<p>However, for some simulation setups (<span class="math inline">\(XXX\)</span>), we do not have simulation results. Due to reasons of computational feasibility, we had to set a cut-off point for the number of branches per simulation setup and the number of adjustment steps.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> We chose to limit the number of branches to <span class="math inline">\(400\)</span> and set the maximum number of adjustment steps to <span class="math inline">\(100\)</span>. Given these restrictions, the resulting ensemble comprises <span class="math inline">\(XXX\)</span> branches.</p>
+<div id="tbl-ensembles" class="anchored">
+<table class="table">
+<caption>Table&nbsp;1.2: Ensemble properties</caption>
+<colgroup>
+<col style="width: 6%">
+<col style="width: 13%">
+<col style="width: 23%">
+<col style="width: 21%">
+<col style="width: 18%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Setups</th>
+<th>Model variants</th>
+<th>Sentence pool sizes</th>
+<th>Dialectical structures</th>
+<th>Initial commitments</th>
+<th><span class="math inline">\(\alpha\)</span>-weights (resolution)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(576\,000\)</span></td>
+<td><span class="math inline">\(4\)</span></td>
+<td><span class="math inline">\(12\)</span>, <span class="math inline">\(14\)</span>, <span class="math inline">\(16\)</span>, <span class="math inline">\(18\)</span></td>
+<td><span class="math inline">\(4*50\)</span></td>
+<td><span class="math inline">\(4*20\)</span></td>
+<td><span class="math inline">\(36\)</span> (<span class="math inline">\(0.1\)</span>)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Let us now describe the simulation setups more thoroughly.</p>
+<section id="alpha-weights" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="alpha-weights"><span class="header-section-number">1.4.1</span> <span class="math inline">\(\alpha\)</span>-weights</h3>
+<p>Each <span class="math inline">\(\alpha\)</span>-weight was varied between <span class="math inline">\(0.1\)</span> and <span class="math inline">\(0.8\)</span> in steps of <span class="math inline">\(0.1\)</span> (i.e., values from <span class="math inline">\(0.1, 0.2, \dots, 0.8\)</span>). Since <span class="math inline">\(\alpha\)</span>-weights have to satisfy <span class="math inline">\(\alpha_{A} + \alpha_{S} + \alpha_{F} = 1\)</span>, there are <span class="math inline">\(36\)</span> possible combinations of the described <span class="math inline">\(\alpha\)</span>-weights.</p>
+<p>We excluded extreme values such as <span class="math inline">\(\alpha_{F} = 0\)</span> or <span class="math inline">\(\alpha_{A} = 1\)</span> since they “break” the model and lead to undesirable behaviour. For example, <span class="math inline">\(\alpha_{F} = 0\)</span> results in global optima that comprise all and only singleton theories and their closures as commitments.</p>
+<!-- 
++ ToDo (?): Explain (more thoroughly or shortly) the findings of <https://github.com/debatelab/re-studies/blob/master/notebooks/Faithfulness_0_is_a_bad_idea.ipynb>.
+-->
+</section>
+<section id="sec-intro-init-coms" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="sec-intro-init-coms"><span class="header-section-number">1.4.2</span> Initial commitments</h3>
+<p>We generated a simple random sample of <span class="math inline">\(20\)</span> sets of minimally consistent initial commitments for every sentence pool. While we allow initial commitments to be dialectically inconsistent—that is, inconsistent w.r.t. the inferential relationships codified in <span class="math inline">\(\tau\)</span>— they must be minimally consistent. In other words, they should not include flat contradictions (e.g., <span class="math inline">\(\{s_1,s_2,\neg s_1\}\)</span>).</p>
+<!--  $2^\mathcal{S}$ might be confusing as it commonly denotes the powerset of \mathcal{S}, which extends the set of minimally consistent sets.-->
+<p>Let <span class="math inline">\(2^\mathcal{S}\)</span> be the set of all sets of minimally consistent sets of sentences from <span class="math inline">\(\mathcal{S}\)</span>.<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> If <span class="math inline">\(2n\)</span> is the size of the sentence pool, then there are <span class="math inline">\(3^{n}\)</span> minimally consistent sets of sentences (<span class="math inline">\(\vert 2^\mathcal{S} \vert = 3^{n}\)</span>). For the generation of the used random sample, every set of commitments has the same probability of being drawn. Note that this does not translate into a uniform distribution of the number of initial commitments since the amount of sets with a specific size varies in <span class="math inline">\(2^\mathcal{S}\)</span>. In <a href="#fig-distribution-coms-size">Figure&nbsp;<span>1.5</span></a>, you find the actual distribution of the initial commitments’ sizes for the different sentence pools.</p>
+<div id="fig-distribution-coms-size" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/size-init-coms.png" class="img-fluid figure-img" style="width:88.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.5: Distribution of initial commitments’ sizes for different n.</figcaption>
+</figure>
+</div>
+<p>Roughly, <span class="math inline">\(56\%\)</span> [XXX] of the random initial commitments are dialectically consistent. This value varies slightly depending on the sentence pool (see <a href="#fig-consistency-coms-size">Figure&nbsp;<span>1.6</span></a>).</p>
+<div id="fig-consistency-coms-size" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/consistency-init-coms.png" class="img-fluid figure-img" style="width:66.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.6: Relative share of dialectically consistent initial commitments for different n.</figcaption>
+</figure>
+</div>
+</section>
+<section id="dialectical-structures" class="level3" data-number="1.4.3">
+<h3 data-number="1.4.3" class="anchored" data-anchor-id="dialectical-structures"><span class="header-section-number">1.4.3</span> Dialectical structures</h3>
+<!--and the (minimal) number of principles. A sentence is called *principle* if and only if it occurs in at least one argument as premise and it or its negation does not occur as a conclusion in any argument. The random generation ensures that the dialectical structure contains the minimal number of principles, but there may be more sentences that satisfy the condition, too.-->
+<p>We generated <span class="math inline">\(50\)</span> random dialectical structures for each sentence pool, which codify all inferential relationships on which an RE process is based. A dialectical structure comprises arguments with an internal premise-conclusion structure and dialectical relationships between arguments. Arguments can attack or support each other (see <a href="#fig-tau-example">Figure&nbsp;<span>1.7</span></a> for an example).<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></p>
+<div id="fig-tau-example" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/tau_alpha_020.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.7: Example of a dialectical structure. Attack relations are indicated by waved-shaped arrows, and support relations by straight arrows. Numbers represent sentences from <span class="math inline">\(S\)</span>, and the minus sign denotes the negation of a sentence.</figcaption>
+</figure>
+</div>
+<p>Inferential relationships are represented in a dialectical structure <span class="math inline">\(\tau\)</span> in the following way: If the sentences <span class="math inline">\(P=\{s_ {i_1},s_{i_2},\dots, s_{i_m}\}\)</span> are premises of an argument in <span class="math inline">\(\tau\)</span> and <span class="math inline">\(s_j\)</span> is its conclusion, <span class="math inline">\(s_j\)</span> is (known to be) implied by <span class="math inline">\(P\)</span>. If an argument <span class="math inline">\(A\)</span> supports another argument <span class="math inline">\(B\)</span>, the conclusion of <span class="math inline">\(A\)</span> is (known to be) equivalent to a premise of <span class="math inline">\(B\)</span>; if an argument <span class="math inline">\(A\)</span> attacks another argument <span class="math inline">\(B\)</span>, the conclusion of <span class="math inline">\(A\)</span> is (known to be) inconsistent with a premise of <span class="math inline">\(B\)</span>.</p>
+<p>The <em>inferential density</em> of a dialectical structure <span class="math inline">\(\tau\)</span> “can be understood as measure of the inferential constraints encoded in <span class="math inline">\(\tau\)</span>” <span class="citation" data-cites="betz_debate_2013">(<a href="references.html#ref-betz_debate_2013" role="doc-biblioref">Betz 2013, 44</a>)</span> and is defined as <span class="math display">\[
+D(\tau) = \frac{n-lg(\sigma)}{n}
+\]</span></p>
+<p>where <span class="math inline">\(2n\)</span> is the size sentence pool and <span class="math inline">\(\sigma\)</span> the number of complete and consistent positions in <span class="math inline">\(\tau\)</span></p>
+<p>The <span class="math inline">\(\tau\)</span>-generating algorithm we used receives the following parameters as constraints:</p>
+<ul>
+<li>the size of the sentence pool (<span class="math inline">\(n\in \{6,7,8,9\}\)</span>),</li>
+<li>an interval for the permissible number of arguments (<span class="math inline">\(I_{\vert\tau\vert}=[n-2,n+2]\)</span>),</li>
+<li>the maximum number of premises per argument (<span class="math inline">\(P_{n_{max}}=2\)</span>),</li>
+<li>probability weights for the number of premises for arguments (i.e., weights for each <span class="math inline">\(1,\dots, P_{n_{max}}\)</span>) and</li>
+<li>an interval for the permissible inferential density (<span class="math inline">\(I_D=[0.15,0.5]\)</span>)</li>
+</ul>
+<p>The algorithm will generate a dialectical structure by randomly constructing arguments so that the number of arguments and the inferential density fall in the specified intervals <span class="math inline">\(I_{\vert\tau\vert}\)</span> and <span class="math inline">\(I_D\)</span>. Both properties correlate inversely: Roughly, the more arguments <span class="math inline">\(\tau\)</span> has, the higher its inferential density.</p>
+<p>Besides the specified parameters, the algorithm will satisfy the following constraints:</p>
+<ul>
+<li>The dialectical structure is satisfiable (i.e., there is at least one dialectically consistent position on <span class="math inline">\(\tau\)</span>).</li>
+<li>Every sentence will be used. In other words, for every sentence <span class="math inline">\(s\in \mathcal{S}\)</span>, there is an argument in <span class="math inline">\(\tau\)</span> such that <span class="math inline">\(s\)</span> or <span class="math inline">\(\neg s\)</span> is either a premise or the conclusion of the argument.<br>
+</li>
+<li>Arguments are not question-begging (i.e., an argument’s conclusion is not in its premise set).</li>
+<li>Arguments are not attack-reflexive (i.e., the negation of an argument’s conclusion is not in its premise set).</li>
+</ul>
+<!--
+- has premises that are not a subset of premises of another argument (BC: not clear what that means)
+- reduces the number of complete consistent positions, if it is added to the dialectical structure
+-->
+<p><a href="#fig-distr-inf-dens">Figure&nbsp;<span>1.8</span></a> plots the actual distribution of inferential densities in the generated data set of all <span class="math inline">\(200\)</span> dialectical structures.</p>
+<div id="fig-distr-inf-dens" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/distr-inf-dens.png" class="img-fluid figure-img" style="width:66.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.8: Distribution of inferential densities in the used <span class="math inline">\(\tau\)</span>-data set.</figcaption>
+</figure>
+</div>
+<p>All generated dialectical structures have arguments with <span class="math inline">\(1\)</span>-<span class="math inline">\(2\)</span> premises. For each sentence pool, we used five sets of weights for the number of premises such that there are <span class="math inline">\(10\)</span> dialectical structure with an expected number of premises <span class="math inline">\(E(\vert P_\tau \vert)\)</span> of <span class="math inline">\(1\)</span>, <span class="math inline">\(10\)</span> with <span class="math inline">\(E(\vert P_\tau \vert)=1.25\)</span>, <span class="math inline">\(10\)</span> with <span class="math inline">\(E(\vert P_\tau \vert)=1.5\)</span>, <span class="math inline">\(10\)</span> with <span class="math inline">\(E(\vert P_\tau \vert)=1.75\)</span> and <span class="math inline">\(10\)</span> with <span class="math inline">\(E(\vert P_\tau \vert)=2\)</span>. The resulting actual distribution of the mean number of premises per argument can be seen in <a href="#fig-mean-number-premises">Figure&nbsp;<span>1.9</span></a>. The increased amount of <span class="math inline">\(\tau\)</span>s with only <span class="math inline">\(1\)</span> and <span class="math inline">\(2\)</span>-premise arguments results from ceiling effects since all arguments have at least one and at most two premises.</p>
+<div id="fig-mean-number-premises" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/mean-number-premises.png" class="img-fluid figure-img" style="width:66.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.9: Distribution of the mean number of premises in the used <span class="math inline">\(\tau\)</span>-data set.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="summary-of-results" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="summary-of-results"><span class="header-section-number">1.5</span> Summary of results</h2>
+<p>to come …</p>
+<!--
+In general, we did not find conclusive evidence to exclude a model variant as a future reference point. Each model variant satisfies the consolidation criteria to a sufficient degree for a wide range of configurations. At this point, undesirable behavior (failing with respect to some criterion) cannot be attributed to a model variant on its own, but may result from a combination of other aspects of a configuration, such as unfavourable dialectical structures, extreme weightings or hopelessly absurd initial commitments. This does not mean, that there are no differences at all or no tendencies in favor of some model variants. Linear models tend to perform better as quadratic variants with respect to many criteria. 
+-->
+<!--
+**Remarks on the interpretation or explanation of results** 
+
+Due to the wide range of required inputs for a configuration, salient behaviour may depend on the features of any of i) - iv) or a combination thereof, and it is difficult to separate all dimension at once. In order to disentangle model variants  and iii) the weightings, heatmaps proved to be a useful tool and provided insightful plots with respect to various evaluation criteria. The other inputs involve much more features, which could explain salient behaviour, but are much harder to separate:
+
+ii) features of dialectical structures include the size of the sentence pool, number of arguments, number of premises per argument, inferential density, number of complete consistent extensions, number of tau-truths.
+iv) features of initial commitments include their size, dialectical consistency, dialectical closure, number of complete consistent extensions, the minimal axiomatization
+-->
+<!-- 
+Remarks: Currently I [BC] outcommented this para. 
++ ToDo: We should discuss, whether we want include analytical results in the standalone technical report.
++ Relevant documents:
+    + <https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/documents/linear_models_tipping_line.md>
+    + <https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/documents/Quadratic_Tipping-Line.md>
+-->
+<!--
+In addition to the exploration of ensembles, there is a growing number of analytical results for both linear and quadratic models. Linear models have a ([tipping line](https://git.scc.kit.edu/debatelab/re-python/-/blob/master/projects/ensemble_study_02/documents/linear_models_tipping_line.md)), below which the weight for faithfulness makes no difference in the equilibration process towards fixed points ([see here](https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/documents/linear_models_tipping_line.md)). In quadratic models, the squaring of Hamming distances makes "midpoints" to attractors ([quadratic tipping](https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/documents/Quadratic_Tipping-Line.md)). Dependending on the interpretation of the consequences of such results, a model or specific configurations for a model may be preferred.
+-->
+<!--
+If conceptual clarity is to be taken into account, pure systematicity (number of a theories sentences normalized by the size of the sentence pool)  may be preferred to default systematicity, which involves normalization by the size of a theory's closure (its "scope"). In the former case, pure systematicity may safely be called "simplicity" and other virtues contributing to the systematicityof a theory (e.g. scope) should be reserved for model extensions. In this line of thought, `LinearPureSystematicityRE` can be seen as the absolute minimal model variant, that is extended by the other variants by squaring measures, refining systematicity, or both.
+-->
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-beisbart_making_2021" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-beisbart_making_2021" class="csl-entry" role="listitem">
 Beisbart, Claus, Gregor Betz, and Georg Brun. 2021. <span>“Making <span>Reflective Equlibrium Precise</span>: <span>A Formal Model</span>.”</span> <em>Ergo</em> 8 (0). <a href="https://doi.org/10.3998/ergo.1152">https://doi.org/10.3998/ergo.1152</a>.
 </div>
-<div id="ref-betz_theorie_2010" class="csl-entry" role="doc-biblioentry">
+<div id="ref-betz_theorie_2010" class="csl-entry" role="listitem">
 Betz, Gregor. 2010. <em><span>Theorie dialektischer Strukturen</span></em>. <span>Frankfurt am Main</span>: <span>Klostermann</span>.
 </div>
-<div id="ref-betz_debate_2013" class="csl-entry" role="doc-biblioentry">
+<div id="ref-betz_debate_2013" class="csl-entry" role="listitem">
 ———. 2013. <em>Debate <span>Dynamics</span>: <span>How Controversy Improves Our Beliefs</span></em>. Synthese <span>Library</span>. <span>Dordrecht</span>: <span>Springer Netherlands</span>.
 </div>
+<div id="ref-freivogel_converge_2023" class="csl-entry" role="listitem">
+Freivogel, Andreas. 2023. <span>“Does Reflective Equilibrium Help Us Converge?”</span> <em>Synthese</em> 202 (6): 1–22. <a href="https://doi.org/10.1007/s11229-023-04375-0">https://doi.org/10.1007/s11229-023-04375-0</a>.
 </div>
+</div>
+</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>The results of <span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span> are based on a Mathematica implementation of the model (see <a href="https://github.com/debatelab/remoma" class="uri">https://github.com/debatelab/remoma</a>). Here, we rely on a reimplementation in Python (LINK TO PUBLIC REPO).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>The results of <span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span> are based on a Mathematica implementation of the model (see <a href="https://github.com/debatelab/remoma">https://github.com/debatelab/remoma</a>). Here, we rely on a reimplementation in Python (<a href="https://github.com/debatelab/rethon">rethon</a>), which can reproduce the results of the original implementation (see <a href="https://github.com/debatelab/re-technical-report/blob/main/notebooks/replication_bbb_2021.ipynb">this notebook</a>).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>For a thorough and complete description of the formal RE model, see <span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span>. The present section is based on condensed material from <span class="citation" data-cites="freivogel_converge_2023">Freivogel (<a href="references.html#ref-freivogel_converge_2023" role="doc-biblioref">2023</a>)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>For formal details of all measures, see <span class="citation" data-cites="beisbart_making_2021">(<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">Beisbart, Betz, and Brun 2021, 464–66</a>)</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>The used distance is a weighted Hamming distance. For details, see <span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span>, 465.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>The arguments of a dialectical structure <span class="math inline">\(\tau\)</span> need not be formally valid, but can include “arguments that are valid <em>given the relevant background theories</em>” <span class="citation" data-cites="beisbart_making_2021">(<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">Beisbart, Betz, and Brun 2021, 460</a>)</span>. Additionally, <span class="math inline">\(\tau\)</span> does not need to codify all inferential relationships between sentences in <span class="math inline">\(S\)</span> and can, in this way, model some form of bounded rationality.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>For a sentence pool size of <span class="math inline">\(2n\)</span>, the number of positions in the neighbourhood of a position is <span class="math inline">\(\sum_{k=0}^{d} \binom{n}{k} \cdot 2^k,\)</span> where <span class="math inline">\(d\)</span> denotes the neighbourhood depth. For <span class="math inline">\(d = 1\)</span>, the number of positions in the neighbourhood grows linearly with the number of sentences. More specifically, for <span class="math inline">\(d=1\)</span>, the size of the neighbourhood is <span class="math inline">\(2n + 1\)</span>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Note that the two-dimensional representation of the epistemic states in the subsequent figures is purely illustrative. There is no inherent linear order among positions, which can be understood as points in an <span class="math inline">\(n\)</span>-dimensional discrete space.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>The fact that the model allows distinguishing static and dynamic aspects makes the model a fruitful foil to discuss the broader epistemological questions surrounding the method of reflective equilibrium <span class="citation" data-cites="beisbart_making_2021">(<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">Beisbart, Betz, and Brun 2021, 457–58</a>)</span>.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>The models will always converge within a finite number of steps into a fixed point <span class="citation" data-cites="beisbart_making_2021">(see <a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">Beisbart, Betz, and Brun 2021, 467</a>)</span>. The same could be shown for the number of branches. However, the number of branches and the length of processes can still be computationally challenging.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p><span class="math inline">\(2^\mathcal{S}\)</span> is a subset of the powerset of <span class="math inline">\(\mathcal{S}\)</span>, which is usually denoted by <span class="math inline">\(2^\mathcal{S}\)</span>.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>The illustrated dialectical structure is one from the actual data set (with the name <code>tau-alpha-020</code>). Argument maps of all used dialectical structures can be found here XXX.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -219,9 +590,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -286,6 +671,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -332,8 +803,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter_one.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">…</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter_general-props.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">General ensemble properties</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
