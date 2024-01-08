@@ -4,20 +4,19 @@
 
 A theory-commitment-pair $(C, T)$ is a *full RE state* iff 
 
-i) it is a global optimum according to the achievement function, and 
-ii) the theory $T$ fully and exlusively accounts for the commitments $C$.
+1. it is a global optimum according to the achievement function, and 
+2. the theory $T$ fully and exlusively accounts for the commitments $C$.
 
 
-
+<!--
 ## Method
 
 Formally and irrespecitve of the model variant, full and exclusive account means $C = \overline{T}$, or equivalenty, $A(C, T) = 1$. During the generation of an ensemble, we can store for every global optima and for every fixed point resulting from a simulation setup, whether it satisfies conditions i) and ii) of full RE states, i) being trivially satisfied by global optima. For the relative shares we can consider ratio between the number of full RE states among global optima (fixed points) and the total number of global optima (fixed points) per configuration.
-
-<!--Since (full) account plays a prominent role in the definition of an RE state, the corresponding weight $alpha_{A}$ in heatmaps.-->
+-->
 
 ## Results
 
-### Overall
+### Overall Results
 
 ```{python}
 #| echo: false
@@ -31,7 +30,7 @@ from IPython.display import Markdown, display
 
 
 tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
-file_name = 'table_full_re_go_setups.csv'
+file_name = 'table_full_re_go_rp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
 df = df.round(3)
 
@@ -41,17 +40,19 @@ display(Markdown(df.to_markdown(index = False)))
 #df.style.hide(axis="index")  
 ```
 
-![Relative share of full RE states among global optima grouped by model variant](figures/overall_full_re_go_setups){#fig-overall-full-re-go}
+![Relative share of full RE states among global optima grouped by model variant](figures/full_re_go_rp){#fig-overall-full-re-go width=70%}
 
 **Observations**
-
+<!--
 - The relative share of full RE states among global optima  is identical for `QuadraticGlobalRE` and `QuadraticLocalRE`, as well as for `LinearGlobalRE` and `LinearLocalRE` in @tbl-full-re-go and @fig-overall-full-re-go. This is to be expected because the local model variants rely on their global counterparts to determine global optima.
-- The relative share of full RE states among global optima is substantially higher for linear model variants. 
+--> 
+- The relative share of full RE states among global optima is substantially higher for linear model variants than for quadratic models (@fig-overall-full-re-go).
+- Even though local model variants rely on their global counterparts to determine global optima, small differences between corresponding variants in @tbl-full-re-go arise due to the exclusions of different erroneous runs.
 
 ```{python}
 #| echo: false
 #| label: tbl-full-re-fp-setups
-#| tbl-cap: 'Relative share of full RE states among fixed points (unique)'
+#| tbl-cap: 'Relative share of full RE states among fixed points (result perspective)'
 
 import pandas as pd
 from os import getcwd, path
@@ -60,7 +61,7 @@ from IPython.display import Markdown, display
 
 
 tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
-file_name = 'table_full_re_fp_setups.csv'
+file_name = 'table_full_re_fp_rp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
 df = df.round(3)
 
@@ -70,7 +71,7 @@ display(Markdown(df.to_markdown(index = False)))
 #df.style.hide(axis="index")  
 ```
 
-![Relative share of full RE states among unique fixed points grouped by model variant](figures/overall_full_re_fp_setups){#fig-overall-full-re-fp-setups}
+![Relative share of full RE states among fixed points (result perspective) grouped by model variant](figures/full_re_fp_rp){#fig-overall-full-re-fp-setups}
 
 **Observations**
 
@@ -79,7 +80,7 @@ display(Markdown(df.to_markdown(index = False)))
 ```{python}
 #| echo: false
 #| label: tbl-full-re-fp-branches
-#| tbl-cap: 'Relative share of full RE states among fixed points (all branches)'
+#| tbl-cap: 'Relative share of full RE states among fixed points (process perspective)'
 
 import pandas as pd
 from os import getcwd, path
@@ -88,7 +89,7 @@ from IPython.display import Markdown, display
 
 
 tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
-file_name = 'table_full_re_fp_branches.csv'
+file_name = 'table_full_re_fp_pp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
 df = df.round(3)
 
@@ -98,30 +99,38 @@ display(Markdown(df.to_markdown(index = False)))
 #df.style.hide(axis="index")  
 ```
 
-![Relative share of full RE states among fixed points from all branches grouped by model variant](figures/overall_full_re_fp_branches){#fig-overall-full-re-fp-branches}
+![Relative share of full RE states among fixed points (process perspective) grouped by model variant](figures/full_re_fp_pp){#fig-overall-full-re-fp-branches}
 
 **Observations**
 
-- The relative share of full RE fixed points from all branches (@fig-overall-full-re-fp-branches) are similar to the corresponding results for unique fixed points (@fig-overall-full-re-fp-setups), for `QuadraticGlobalRE`, `LinearGlobalRE`, an `QuadraticLocalRE`, excepting `LinearLocalRE`. 
-- For `LinearLocalRE`, the relative share of full RE fixed points is significantly higher when consdering the fixed points from all branches rather than unique fixed points. This means that a relatively higher share of branches lead to full RE fixed points than to non-full-RE fixed points.
+- The relative share of full RE fixed points  (process perspective, @fig-overall-full-re-fp-branches) are similar to the corresponding results for the result perspective (@fig-overall-full-re-fp-setups), for `QuadraticGlobalRE`, `LinearGlobalRE`, an `QuadraticLocalRE`, excepting `LinearLocalRE`. 
+- For `LinearLocalRE`, the relative share of full RE fixed points is significantly higher when consdering the fixed points from all branches (process perspective) rather than unique fixed points (result perspective). This means that a relatively higher share of branches lead to full RE fixed points than to non-full-RE fixed points.
 - The relative share of full RE fixed points for `LinearLocalRE` (@fig-overall-full-re-fp-branches), even exceeds the relative share of full RE global optima for linear model variants (@fig-overall-full-re-go).
-- The number of fixed points from all branches (@tbl-full-re-fp-branches) is only slightly higher than the number of unique fixed points (@tbl-full-re-fp-setups) for `QuadraticGlobalRE` and `LinearGlobalRE`. In contrast, the number of fixed points from all branches is substantially higher than the number of unique fixed points for `QuadraticLocalRE`, and even more so for `LinearLocalRE`.
+- The number of fixed points in the process perspective (@tbl-full-re-fp-branches) is only slightly higher than the number in the result perspective (@tbl-full-re-fp-setups) for `QuadraticGlobalRE` and `LinearGlobalRE`. In contrast, the number of fixed points from all branches is substantially higher than the number of unique fixed points for `QuadraticLocalRE`, and even more so for `LinearLocalRE`.
 
-### Heatmaps
+### Results Grouped by Sentence Pool Size
 
-![Relative share of full RE states among global optima grouped by model variant and configuration of weights.](figures/rel_go_full_re_setups){#fig-hm-full-re-go}
+![Relative share of full RE states among global optima grouped by model variant and sentence pool size](figures/rel_full_re_go_by_sp_rp){#fig-full-re-go-sp-rp}
+
+![Relative share of full RE states among fixed points (result perspective) grouped by model variant and sentence pool size](figures/rel_full_re_fp_by_sp_rp){#fig-full-re-fp-sp-rp}
+
+![Relative share of full RE states among fixed points (process perspective) grouped by model variant and sentence pool size](figures/rel_full_re_fp_by_sp_pp){#fig-full-re-fp-pp-rp}
+
+### REsults Grouped by Configuration of Weights
+
+![Relative share of full RE states among global optima grouped by model variant and configuration of weights](figures/hm_rel_go_full_re_rp){#fig-hm-full-re-go}
 
 **Observations**
 
-- Linear model variants exhibit a "tipping line" (see XXX). For $\alpha_{A} > \alpha_{F}$, the relative share of full RE global optima is 1, i.e., all global optima are full RE states.
-- Quadrat model variants have a smooth transition between low and high relative shares, and they have a "hotspot" for very high values of $\alpha_{A}$. This result is made plausible by the fact that full RE states require a maximal value for the measure of account, i.e, $A(\mathcal{C}, \mathcal{T}) = 1$. High values for $\alpha_{A}$ benefit the fulfillment of this requirement.
+- Linear model variants exhibit a "tipping line" (see @sec-appendix-tipping). For $\alpha_{A} > \alpha_{F}$, the relative share of full RE global optima is 1.0, i.e., all global optima are full RE states.
+- Quadratic model variants have a smooth transition between low and high relative shares, and they have a "hotspot" for very high values of $\alpha_{A}$. This result is made plausible by the fact that full RE states require a maximal value for the measure of account, i.e, $A(\mathcal{C}, \mathcal{T}) = 1$. High values for $\alpha_{A}$ benefit the fulfillment of this requirement.
 
 
 
-![Relative share of full RE states among unique fixed points grouped by model variant and configuration of weights.](figures/rel_fp_full_re_setups){#fig-hm-full-re-fp-setups}
+![Relative share of full RE states among unique fixed points grouped by model variant and configuration of weights.](figures/hm_rel_fp_full_re_rp){#fig-hm-full-re-fp-setups}
 
 
-![Relative share of full RE states among fixed points from all branches grouped by model variant and configuration of weights.](figures/rel_fp_full_re_branches){#fig-hm-full-re-fp-branches}
+![Relative share of full RE states among fixed points from all branches grouped by model variant and configuration of weights.](figures/hm_rel_fp_full_re_pp){#fig-hm-full-re-fp-branches}
 
 **Observations**
 
