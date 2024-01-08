@@ -1,6 +1,6 @@
 # The Tipping Line of Linear Model Variants {#sec-appendix-tipping}
 
-A *linear model variant*, is a model that differs from the model provided by @beisbart_making_2021 only in that the measures involve the linear function $G(x) = 1- x$ instead of the quadratic $G(x) = 1-x^2$. This variant exhibits a *tipping line* in ternary plots that marks off configurations of weights that lead to drastically different behaviour with respect to consistency considerations or the attainment of full RE states, for example.
+A *linear model variant* is a model that differs from the model provided by @beisbart_making_2021 only in that the measures $A,F,S$ involve the linear function $G(x) = 1-x$ instead of the quadratic $G(x) = 1-x^2$. This variant exhibits a *tipping line* in ternary plots that marks off configurations of weights that lead to drastically different behaviour with respect to consistency considerations or the attainment of full RE states (see, e.g., @fig-overall-full-re-go, @fig-cons-go-sp-rp, @fig-cons-fp-sp-rp and @fig-cons-fp-sp-pp).
 
 We can characterise the tipping line as an equation that relates $\alpha_{A}$ and $\alpha_{S}$:
 $$
@@ -8,43 +8,51 @@ $$
   \alpha_{A} = \frac{1-\alpha_{S}}{2}  
 \end{equation}
 $${#eq-lin}
+
 The boundary condition $\alpha_{A} + \alpha_{S} + \alpha_{F} = 1$ allows us to rewrite @eq-lin in an even simpler form:
+
 $$
 \alpha_{A} = \alpha_{F}
 $$
 Consequently, the tipping line splits the space of weight configuration in two regions $\alpha_{A} < \alpha_{F}$ and $\alpha_{A} > \alpha_{F}$. For the latter region, where account receives more weight than faithfulness, we have some interesting analytical results.
 
-The following proposition and its corollaries help to explain the salient change in the behaviour of linear model variants when crossing the tipping line.
+The following propositions and its corollaries help to explain the salient change in the behaviour of linear model variants when crossing the tipping line.
+
++ *Proposition 1*: For the linear model variants all global optima are full RE states if $\alpha_{A} > \alpha_{F}$.
++ *Proposition 2*: For the linear model variants all global-optimum commitments maximize faithfulness if $\alpha_{F} > \alpha_{A}$.
 
 ## Proposition 1
-Assume that a dialectical structure $\tau$ and some initial commitments $C_{0}$ are given. Moreover, assume $\alpha_{A} > \alpha_{F}$ for a configuration of weights $(\alpha_{A}, \alpha_{S}, \alpha_{F})$ in a linear model variant. Then all global optima (relative to $C_{0}$) according to the achievement function specified by the configuration of weights are full RE states.
+Assume that a dialectical structure $\tau$ and some initial commitments $C_{0}$ are given. Moreover, assume $\alpha_{A} > \alpha_{F}$ for a configuration of weights $(\alpha_{A}, \alpha_{S}, \alpha_{F})$ in a linear model variant. Then all global optima (relative to $C_{0}$) are full RE states.
 
 **Corollaries**
 The linear model variants exhibit the following behaviour for $\alpha_{A} > \alpha_{F}$:
 
-- For global optima, there no inconsistency preserving cases
-- Consistency eliminating cases do not occur for global optima
-
-In contrast, for $\alpha_{A} < \alpha_{F}$ the following holds for the linear model variants:
-
-- Inconsistency eliminating cases do not occur for global optima
+- For global optima, there are no inconsistency preserving cases.
+- Consistency eliminating cases do not occur for global optima.
 
 **Open questions**
 
 - Interestingly, the corollaries almost always hold for fixed points as well. However, an analoguous proposition for fixed points would require a different proof.
 
-
-**Proof sketch for Proposition 1**
+**Proof sketch**
 
 Intuitively, $\alpha_{A} > \alpha_{F}$ means that account trumps faithfulness, which allows to select commitments ignoring faithfulness so that they are fully and exclusively accounted for by a theory.
 
 Assume that an epistemic state $(C, T)$ is a global optimum according to the achievement function $Z$ given some initial commitments $C_{0}$ and a configuration of weights  $(\alpha_{A}, \alpha_{S}, \alpha_{F})$ such that $\alpha_{A} > \alpha_{F}$. We need to show that $(C, T)$ is a full RE state, i.e., that $T$ fully and exclusively accounts for $C$ (FEA), or equivalently, $A(C, T) = 1$.
 
-For a proof by contradiction, assume that $$A(C, T)=G(\frac{D_{0,\,0.3,\,1,\,1}(C,\overline{T})}{n}) < 1,$$ which holds only if $D_{0,\,0.3,\,1,\,1}(C,\overline{T}) > 0$. In other words, there is at least one sentence $s$ (negated or unnegated) for which there is a positive contribution to the Hamming distance. In particular, we have the following cases:
+For a proof by contradiction, assume that 
+$$
+A(C, T)=G\left(\frac{D_{0,\,0.3,\,1,\,1}(C,\overline{T})}{n}\right) < 1
+$$ 
 
-i. $\overline{T}$ extends $C$ with respect to $s$: $+0.3$
-ii. $\overline{T}$ contracts $C$ with respect to $s$: $+1$
-iii. $\overline{T}$ and $C$ contradict each other with respect to $s$: $+1$
+This holds only if $D_{0,\,0.3,\,1,\,1}(C,\overline{T}) > 0$. In other words, there is at least one sentence $s$ (negated or unnegated) for which there is a positive contribution to the Hamming distance (penalty). In particular, we have the following cases:
+
+1. $\overline{T}$ extends $C$ with respect to $s$: There is $s \in \overline{T}$, but $s$ and $\neg s$ are not in $C$.
+   - penalty: $0.3$
+2. $\overline{T}$ contracts $C$ with respect to $s$: There is $s \in C$, but $s$ and $\neg s$ are not in $\overline{T}$.
+   - penalty: $1$
+3. $\overline{T}$ and $C$ contradict each other with respect to $s$: Either $s \in \overline{T}$ and $\neg s \in C$ or $\neg s \in \overline{T}$ and $ s \in C$ 
+   - penalty: $1$
 
 Each case of changing $C$ with respect to $s$, yielding new commitments $C'$, impacts the contributions to the Hamming distances for account and faithfulness. Note that systematicity is not affected by changing the commitments.
 
@@ -67,29 +75,38 @@ $$
 F(C\,\vert\,C_{0}) = 1.
 $$
 
+**Corollaries**
+The linear model variants exhibit the following behaviour for $\alpha_{A} < \alpha_{F}$:
+
+- The relative share of inconsistency eliminating cases among global optima is 0.0. 
+   - *Explanation*: Removing or revising an initial inconsistency requires to deviate from the initial commitments, which is incompatible with maximal faithfulness.
+- Similarly, the relative share of inconsistency preserving cases in this region of weight configurations correspond to the relative share of inconsistent initial commitments.
+- In turn, the relative share of global optima with maximal value for faithfulness is 1.0.
+
+**Open questions**
+
+- Fixed points (unique) also exhibit this behaviour, respectively. Can the proof be adapted to cover such cases as well?
+
 **Proof sketch of Proposition 2**
 
 For a proof by contradiction, assume that $(C, T)$ is a global optimum according to $Z$, but $F(C\,\vert\,C_{0}) < 1$.
 
-This holds only if $G(\frac{D_{0,0,1,1}(C_{0}, C)}{n}) < 1$, i.e. only if $D_{0,0,1,1}(C_{0}, C) > 0$.
+This holds only if $G\left(\frac{D_{0,0,1,1}(C_{0}, C)}{n}\right) < 1$, i.e. only if $D_{0,0,1,1}(C_{0}, C) > 0$.
 In other words, there is at least one sentence, for which there is a positive contribution to the Hamming distance. 
 In particular, there are two cases
 
-i) $C$ contracts $C_{0}$ with respect to $s$: +1 (there is $s \in C_{0}$, but $s$ and $\neg s$ are not in $C$)
-ii) $C$ and $C_{0}$ contradict each other with respect to $s$: +1
+1. $C$ contracts $C_{0}$ with respect to $s$: +1 (there is $s \in C_{0}$, but $s$ and $\neg s$ are not in $C$)
+2. $C$ and $C_{0}$ contradict each other with respect to $s$: +1
 
 Consider the impacts on individual contributions to the Hamming distances for account
-and faithfulness of changing $C$ with respect to $s$, yielding new commitments  $C′$, in particular the difference $d(C_{0}, C', \lbrace s, \neg s\rbrace) - d(C_{0}, C, \lbrace s, \neg s\rbrace)$. \* denotes the worst cases.
+and faithfulness of changing $C$ with respect to $s$, yielding new commitments  $C'$, in particular the difference $d(C_{0}, C', \lbrace s, \neg s\rbrace) - d(C_{0}, C, \lbrace s, \neg s\rbrace)$. In the following subcases, \* will denote the worst cases.
 
 
 <!-- ToDo(@Andreas): present cases in a nicer form, e.g. in a table-->
 
-*Situation i)* 
+*Case 1* 
 
-There is an $s$ in $C_{0}$, but $s$ and $\neg s$ are not in $C$.
-
-Add $s$ to $C$.
-Result: $s$ in $C'$
+There is an $s$ in $C_{0}$, but $s$ and $\neg s$ are not in $C$. We can now define a new $C'$ by $C':=C\cup \{s\}$
 
 Faithfulness
 
@@ -98,53 +115,49 @@ agreement (new) - contraction (old): faithfulness:  -1
 Account
 
 - Case: $s \in \overline{T}$: agreement (new) - expansion (old): -0.7
-- Case $\neg\in \overline{T}$: contradiction (new) - expansion (old): + 0.7
-- *Case $s$ and $\neg s$  not in $\overline{T}$: contraction (new)- agreement (old): +1
+- Case $\neg s \in \overline{T}$: contradiction (new) - expansion (old): + 0.7
+- Case $s$ and $\neg s \notin \overline{T}$ (\*): contraction (new)- agreement (old): +1
 
-*Situation ii)* 
+That is, by adding $s$ to $C$, xxx
 
-w.l.o.g. asssume $s$ in $C_{0}$, $\neg s$ in $C$.
+*Case 2* 
 
-a: Remove the contradicting element from $C$.
-Result: $\neg s$ (and $s$) are not in $C'$.
+Without loss of generality, we can assume that $s \in C_{0}$ and $\neg s \in C$. We can now either remove $s$ from $C_{0}$ (subcase A) or $\neg s$ from $C$ (subcase B).
 
-Faithfulness
+Subcase A: $C':=C\setminus \{\neg s\}$
 
-contraction (new) - contradiction (old) : +0
++ Faithfulness
+   + contraction (new) - contradiction (old) : +0
++ Account
+   - $s \in \overline{T}$: expansion (new) - contradiction (old):  -0.7
+   - Case $\neg s \in \overline{T}$ (\*): expansion (new) - agreement (old): +0.3
+   - Case $s$ and $\neg s \notin \overline{T}$: agreement(new) - contraction(old): -1
 
-Account
-- $s in \overline{T}$: expansion (new) - contradiction (old):  -0.7
-- *Case $\neg s \in \overline{T}$: expansion (new) - agreement (old): +0.3
-- Case $s$ and $\neg s$ not in $\overline{T}$: agreement(new) - contraction(old): -1
-  
+Now, .... XXXX
+
+Subcase B: $C':=(C\cup\{s\})\setminus \{\neg s\}$(??)
+
+<!--
 b:Revise the contradicting element in $C$:
 Result: $s$ in $C'$
+-->
 
-Faithfulness
-agreement (new) - contradiction (old): -1
++ Faithfulness
+   + agreement (new) - contradiction (old): -1
++ Account
+   - Case: $s \in \overline{T}$: agreement (new) - contradiction (old): -1
+   - Case $\neg s \in \overline{T}$ (\*): contradiction (new) - agreement (old): +1
+   - Case $s$ and $\neg s \notin \overline{T}$: contraction (new) - contraction (old): +0
 
-Account
-- Case: $s in \overline{T}$: agreement (new) - contradiction (old): -1
-- *Case $\neg\in \overline{T}$: contradiction (new) - agreement (old): +1
-- Case $s$ and $\neg$  not in $\overline{T}$: contraction (new) - contraction (old): +0
+In this case, .... XXX
 
 The complete linearity of the achievement function allows to distribute (push in) the weights $\alpha_{A}$ and $\alpha{F}$ over the individual contributions of the hamming distances in $Z$. Hence, the weights also apply to the individual contributions considered above. Moreover, changing the commitments does not affect the systematicity of the theory, i.e. $S(T)$ is identical for $(C, T)$ and $(C', T)$. Hence, the achievement function is optimised for minimal contributions in the measures for account and faithfulness and $\alpha_{F} > \alpha{A}$.
 
-Consequently, it is always (cases i.a, ii.a and ii.b) more attractive to stay faithful to the initial commitments rather than to change the commitments in order to increase account.
+Consequently, it is always (cases 1, 2.A and 2.B) more attractive to stay faithful to the initial commitments rather than to change the commitments in order to increase account.
 
 This argument can be repeated for every sentence, for which $C_{0}$ and $C$ differ.
 
 In summary, if $(C, T)$ is a global optimum but it is assumed that $F(C\,\vert\, C_{0}) < 1$, then there is
-a position $(C′, T)$ such that $Z(C, T \,\vert\, C_{0}) < Z(C', T \,\vert\, C_{0})$, contradicting $(C, T)$ being a
+a position $(C', T)$ such that $Z(C, T \,\vert\, C_{0}) < Z(C', T \,\vert\, C_{0})$, contradicting $(C, T)$ being a
 global optimum. Consequently, we must have $F(C \,\vert\, C_{0}) = 1$.
 
-**Corollaries**
-The linear model variants exhibit the following behaviour for $\alpha_{A} > \alpha_{F}$:
-
-- The relative share of inconsistency eliminating cases among global optima is 0.0. Explanation: Removing or revising an initial inconsistency requires to deviate from the initial commitments, which is incompatible with maximal faithfulness.
-- Similarly, the relative share of inconsistency preserving cases in this region of weight configurations correspond to the relative share of inconsistent initial commitments.
-- In turn, the relative share of global optima with maximal value for faithfulness is 1.0.
-
-**Open questions**
-
-- Fixed points (unique) also exhibit this behaviour, respectively. Can the proof be adapted to cover such cases as well?
