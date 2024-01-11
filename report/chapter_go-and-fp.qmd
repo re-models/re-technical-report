@@ -181,7 +181,7 @@ By separating dialectical structures according to their mean number of premises 
 
 ## Conclusion
 
-On average, GO efficiency is high for semi-globally optimizing models and medium-high for locally optimizing models. The fact that GO efficiency drops for semi-globally optimizing models with the size of the sentence pool is, to some extent, worrisome since they are intended to be used in scenarios with larger sentence pools, which are computationally too demanding for semi-globally optimizing models. The question is whether their performance can be improved by increasing their search depth $d$. 
+On average, GO efficiency is high for semi-globally optimizing models and medium-high for locally optimizing models. The fact that GO efficiency drops for locally optimizing models with the size of the sentence pool is, to some extent, worrisome since they are intended to be used in scenarios with larger sentence pools, which are computationally too demanding for semi-globally optimizing models. The question is whether their performance can be improved by increasing their search depth $d$. 
 
 However, in specific contexts the modeller will choose a specific set of $\alpha$ weights. We already saw that the performance of the different model varies significantly between different $\alpha$-weight configurations. Consequently, the dependence on the sentence pool should be repeated for those regions of $\alpha$-weight configurations that are of interest for the modeller. For instance, if we choose to confine the analysis to $\alpha$-weight configurations with $\alpha_a < \alpha_s$, GO efficiency of the `LinearLocalRE` is as high as of the models `QuadraticGlobalRE` and `LinearGlobalRE` (see XXX).  
 

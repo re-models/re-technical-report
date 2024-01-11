@@ -3,8 +3,8 @@ project:
   output-dir: ../output
 
 book:
-  title: "Technical Report"
-  subtitle: "Assessing a Formal Model of Reflective Equilibrium"
+  title: "Assessing a Formal Model of Reflective Equilibrium"
+  subtitle: "Technical Report"
   author: "Andreas Freivogel, Sebastian Cacean"
   date: December 31, 2023
   chapters:
@@ -15,6 +15,7 @@ book:
     - chapter_full-re-states.qmd
     - chapter_commitment-consistency.qmd
     - chapter_extreme-values.qmd
+    - summary.qmd
     - references.qmd
   appendices:
     - appendix_tipping_line.qmd
