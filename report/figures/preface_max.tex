@@ -1,0 +1,26 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}
+  \begin{axis}[ 
+    xlabel={},
+    ylabel={},
+    xmin=-0.08,
+    xmax=2.2,
+    ymin=-0.05,
+    ymax= 1.1,
+    axis x line*=bottom,
+    axis y line*=left,
+    ticks=none,
+    enlargelimits = true,
+    axis lines=middle,
+    axis line style={line width=4pt},
+  ] 
+    \addplot[smooth, line width=3pt][domain=0:2] {1-(x-1)^2};
+    \addplot[only marks, mark size=6pt] table[row sep=crcr] {1 0.995\\};
+  \end{axis}
+  %\filldraw[black] (1,1) circle (2pt);
+\end{tikzpicture}
+\end{document}
