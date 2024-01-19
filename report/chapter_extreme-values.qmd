@@ -1,7 +1,7 @@
-# Extreme values for account and faitfulness {#sec-extreme-values}
+# Extreme values for account, systematicity, and faitfulness {#sec-extreme-values}
 
 ## Background
-In this study we examine extreme values from measures of account and faithfulness.
+In this study, we examine extreme values from measures that operationalize RE desiderata in the formal model of RE: account, systematicity and faithfulness.
 
 $A(C, T) = 1$ means that the theory $T$ fully and exclusively accounts for the commitments $C$. Full and exclusive account is a condition for full RE states. Conversely, $A(C, T) = 0$ holds if a theory completely fails to account for commitments, that is, for every sentence in the commitments the closure theory does not contain this sentence, or contradicts the theory.
 
@@ -18,16 +18,21 @@ $F(C \vert C_{0}) = 1$ holds if and only if the initial committments $C_{0}$ are
 <!-- Extreme values for systematicity are not included. $S(T) = 1$ holds if and only if $T$ is a singleton. $S(T) = 0$ is no serious option, because it is reserved for the empty theory $T=\emptyset$.-->
 
 
-
+<!--
 ## Method
 
 During the ensemble generation, the values for account and faithfulness are calculated for every global optimum and fixed point for each simulation setup.
 The systematicity value has not been stored, but extreme values can (easily) be determined by considering the length (i.e. the number of sentences) in the theory. 
 
-<!-- The finformation for branches could be retrieved from the unique fixed point information by complex work on the dataframe, however. -->
+
 Note that the information about the values of measures has not been stored in the dataframe for fixed points from all branches. Thus, the current study only includes results concerning unique fixed points reached from each simulation setup
+-->
 
 ## Results
+
+::: {.callout-note}
+The results of this chapter can be reproduced with the Jupyter notebook located [here](https://github.com/debatelab/re-technical-report/blob/main/notebooks/data_analysis_chapter_extreme_values.ipynb).
+:::
 
 ### Overall
 
@@ -51,23 +56,25 @@ from IPython.display import Markdown, display
 
 
 tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
-file_name = 'table_max_values_go_setups.csv'
+file_name = 'table_max_values_go_rp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
 df = df.round(3)
 
-display(Markdown(df.to_markdown(index = False)))
+keep_columns = [col for col in df.columns if "Standard deviation" not in col]
+
+display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 
 #df.style.hide(axis="index")  
 ```
 
-![Relative shares of global optima maximizing the desiderata measures for account, systematicity and faithfulness](figures/overall_max_values_go_setups){#fig-overall-nax-values-go}
+![Relative shares of global optima maximizing the desiderata measures for account, systematicity and faithfulness](figures/overall_max_values_go_rp){#fig-overall-nmax-values-go}
 
 
 ```{python}
 #| echo: false
 #| label: tbl-max-values-fp
-#| tbl-cap: 'Absolute and relative numbers of fixed points maximizing various desiderata measures.'
+#| tbl-cap: 'Absolute and relative numbers of fixed points (resutlt perspective) maximizing various desiderata measures.'
 
 import pandas as pd
 from os import getcwd, path
@@ -76,43 +83,82 @@ from IPython.display import Markdown, display
 
 
 tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
-file_name = 'table_max_values_fp_setups.csv'
+file_name = 'table_max_values_fp_rp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
 df = df.round(3)
 
-display(Markdown(df.to_markdown(index = False)))
+keep_columns = [col for col in df.columns if "Standard deviation" not in col]
+
+display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 
 #df.style.hide(axis="index")  
 ```
 
-![Relative shares of unique fixed points maximizing the desiderata measures for account, systematicity and faithfulness](figures/overall_max_values_fp_setups){#fig-overall-nax-values-fp}
+![Relative shares of unique fixed points (result perspective) maximizing the desiderata measures for account, systematicity and faithfulness](figures/overall_max_values_fp_rp){#fig-overall-max-values-fp}
+
+**Observations**
+
+- Outputs of linear model variants maximize the measures more often than the outcomes of quadratic models.
+- Outputs of all model variants maximize the measure of systematicity more often than the measures for account or faithfulness, excepting fixed points from `LinearLocalRE` (@fig-overall-max-values-fp)
+
+### Grouped by sentence pool size
+
+#### Account
+
+![Relative share of global optima maximizing the measure for account grouped by model variant and sentence pool size.](figures/rel_max_go_account_by_sp_rp){#fig-max-account-go-sp-rp}
+
+![Relative share of fixed points (result perspective) maximizing the measure for account grouped by model variant and sentence pool size.](figures/rel_max_fp_account_by_sp_rp){#fig-max-account-fp-sp-rp}
+
+#### Systematicity
+
+![Relative share of global optima maximizing the measure for systematicity grouped by model variant and sentence pool size.](figures/rel_max_go_systematicity_by_sp_rp){#fig-max-systematicity-go-sp-rp}
+
+![Relative share of fixed points (result perspective) maximizing the measure for systematicity grouped by model variant and sentence pool size.](figures/rel_max_fp_systematicity_by_sp_rp){#fig-max-systematicity-fp-sp-rp}
+
+#### Faithfulness
+
+![Relative share of global optima maximizing the measure for faithfulness grouped by model variant and sentence pool size.](figures/rel_max_go_faithfulness_by_sp_rp){#fig-max-faithfulness-go-sp-rp}
+
+![Relative share of fixed points (result perspective) maximizing the measure for faithfulness grouped by model variant and sentence pool size.](figures/rel_max_fp_faithfulness_by_sp_rp){#fig-max-faithfulness-fp-sp-rp}
 
 ### Grouped by configuration of weights
 
 #### Account
 
-![Relative share of global optima maximizing the measure for account grouped by model variant and configuration of weights.](figures/rel_go_max_account_setups){#fig-hm-max-account-go}
+![Relative share of global optima maximizing the measure for account grouped by model variant and configuration of weights.](figures/rel_go_max_account_rp){#fig-hm-max-account-go}
 
-![Relative share of fixed points maximizing the measure for account grouped by model variant and configuration of weights.](figures/rel_fp_max_account_setups){#fig-hm-max-account-fp}
+![Relative share of fixed points (result perspective) maximizing the measure for account grouped by model variant and configuration of weights.](figures/rel_fp_max_account_rp){#fig-hm-max-account-fp}
+
+**Observation**
+
+- Linear model variants exhibit a "tipping line". For $\alpha_{A} > \alpha_{F}$ global optima and fixed points always maximize the measure for account. For an explanation, see @sec-appendix-tipping.
+- Quadratic model variants exhibit a gradient with increasing relative shares for higher values of $\alpha_{A}$.
 
 #### Systematicity
 
-![Relative share of global optima maximizing the measure for systematicity grouped by model variant and configuration of weights.](figures/rel_go_max_systematicity_setups){#fig-hm-max-systematicity-go}
+![Relative share of global optima maximizing the measure for systematicity grouped by model variant and configuration of weights.](figures/rel_go_max_systematicity_rp){#fig-hm-max-systematicity-go}
 
-![Relative share of fixed points maximizing the measure for systematicity grouped by model variant and configuration of weights.](figures/rel_fp_max_systematicity_setups){#fig-hm-max-systematicity-fp}
+![Relative share of fixed points (result perspective) maximizing the measure for systematicity grouped by model variant and configuration of weights.](figures/rel_fp_max_systematicity_rp){#fig-hm-max-systematicity-fp}
+
+**Observations**
+
+- For all model variants and outputs, we can observe a gradient of increasing relative shares of outputs with maximal systematicity for increasing values of $\alpha_{S}$.
 
 #### Faithfulness
 
-![Relative share of global optima maximizing the measure for faithfulness grouped by model variant and configuration of weights.](figures/rel_go_max_faithfulness_setups){#fig-hm-max-faithfulness-go}
+![Relative share of global optima maximizing the measure for faithfulness grouped by model variant and configuration of weights.](figures/rel_go_max_faithfulness_rp){#fig-hm-max-faithfulness-go}
 
-![Relative share of fixed points maximizing the measure for faithfulness grouped by model variant and configuration of weights.](figures/rel_fp_max_faithfulness_setups){#fig-hm-max-faithfulness-fp}
+![Relative share of fixed points (result perspective) maximizing the measure for faithfulness grouped by model variant and configuration of weights.](figures/rel_fp_max_faithfulness_rp){#fig-hm-max-faithfulness-fp}
+
+**Observations**
+
+- Linear model variants exhibit a "tipping line". For $\alpha_{F} > \alpha_{A}$ global optima and fixed points always maximize the measure for faithfulness. For an explanation, see @sec-appendix-tipping.
+- Quadratic model variants exhibit a gradient with increasing relative shares for higher values of $\alpha_{F}$.
 
 
-## Conclusion (old)
+## Conclusion
 
-The frequency of minimal values for account and faithfulness in LDS is extremely small and they occur in one ensemble (07), only. Moreover, the extreme values for faithfulness and systematicity correlate with extreme, coresponding weights ($\alpha_{F} \leq 0.2$ and $\alpha_{A}\leq 0.2$).
+Many observations in this chapter are not surprising. It is to be expected that increasing the weight results in higher relatives shares of maximized measures. Nonetheless, this is a reassuring result from the viewpoint of model evaluation, indcating that configuring weights has forseeable consequences.
 
-
-The occurence of singleton theories in global optima and fixed points might make for an intersting exploration in the future.
-
+The high relative shares of outputs maximizing the measure for systematicity may be a consequence of a shortcoming in the measure for systematicity. If $\vert\mathcal{T}\vert = 1$, then $S(\mathcal{T}) = 1$ irrespective of $\vert\overline{\mathcal{T}}\vert$. That is the measure for systematictiy does not discriminate between singleton theories on the basis of their scope ($\overline{\mathcal{T}}$). This renders all singleton theories equally and maximally attractive according to the measure of systematicity. For another consequence of frequently maximizing the measure for systematicity, see @sec-appendix-trivial.
