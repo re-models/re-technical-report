@@ -19,6 +19,7 @@ book:
     - references.qmd
   appendices:
     - appendix_tipping_line.qmd
+    - appendix_trivial_endpoints.qmd
 bibliography: references.bib
 
 format:

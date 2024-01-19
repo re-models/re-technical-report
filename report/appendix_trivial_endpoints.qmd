@@ -1,0 +1,19 @@
+# Trivial Endpoints {#sec-appendix-trivial}
+
+## Background
+A "trivial" endpoint is a fixed point or a global optimum that consists of a singleton theory (e.g. $T=\lbrace s_{1}\rbrace$) and a singleton commitment (e.g. $C = \lbrace s_{1}\rbrace$). 
+
+Such outcomes are not bad per se, but they may be indicative of the model exploiting shortcomings in the underlying measures. In particular, "trivial" endpoints may be a consequence of the original model's shortcoming concerning the measure of systematicity, which and does not discriminate between singleton theories on the basis of the scope of theories. Note that the same shortcoming also applies to the model variants explored in this report.
+
+
+## Results
+
+::: {.callout-note}
+The results of this chapter can be reproduced with the Jupyter notebook located [here](https://github.com/debatelab/re-technical-report/blob/main/notebooks/).
+:::
+
+### Overall Results
+
+### Results Grouped by Sentence Pool Size
+
+### Results Grouped by Configuration of Weights
