@@ -9,11 +9,112 @@ Such outcomes are not bad per se, but they may be indicative of the model exploi
 ## Results
 
 ::: {.callout-note}
-The results of this chapter can be reproduced with the Jupyter notebook located [here](https://github.com/debatelab/re-technical-report/blob/main/notebooks/).
+The results of this chapter can be reproduced with the Jupyter notebook located [here](https://github.com/debatelab/re-technical-report/blob/main/notebooks/data_analysis_appendix_trivial_endpoints.ipynb).
 :::
 
 ### Overall Results
 
+```{python}
+#| echo: false
+#| label: tbl-trivial_go
+#| tbl-cap: 'Relative share of trivial global optima'
+
+import pandas as pd
+from os import getcwd, path
+from pathlib import Path
+from IPython.display import Markdown, display
+
+
+tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
+file_name = 'table_trivial_go_rp.csv'
+df = pd.read_csv(path.join(tables_output_dir, file_name))
+df = df.round(3)
+
+keep_columns = [col for col in df.columns if "Standard deviation" not in col]
+
+display(Markdown(df[keep_columns].to_markdown(index = False)))
+
+
+#df.style.hide(axis="index")  
+```
+
+```{python}
+#| echo: false
+#| label: tbl-trivial_fp_rp
+#| tbl-cap: 'Relative share of trivial fixed points (result perspective)'
+
+import pandas as pd
+from os import getcwd, path
+from pathlib import Path
+from IPython.display import Markdown, display
+
+
+tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
+file_name = 'table_trivial_fp_rp.csv'
+df = pd.read_csv(path.join(tables_output_dir, file_name))
+df = df.round(3)
+
+keep_columns = [col for col in df.columns if "Standard deviation" not in col]
+
+display(Markdown(df[keep_columns].to_markdown(index = False)))
+
+
+#df.style.hide(axis="index")  
+```
+
+
+```{python}
+#| echo: false
+#| label: tbl-trivial_fp_pp
+#| tbl-cap: 'Relative share of trivial fixed points (process perspective)'
+
+import pandas as pd
+from os import getcwd, path
+from pathlib import Path
+from IPython.display import Markdown, display
+
+
+tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "tables")
+file_name = 'table_trivial_fp_pp.csv'
+df = pd.read_csv(path.join(tables_output_dir, file_name))
+df = df.round(3)
+
+keep_columns = [col for col in df.columns if "Standard deviation" not in col]
+
+display(Markdown(df[keep_columns].to_markdown(index = False)))
+
+
+#df.style.hide(axis="index")  
+```
+
+**Observations**
+
+- Overall, the relative share of trivial gobal optima (@tbl-trivial_go) and fixed points (result perspective @tbl-trivial_fp_rp) is very low for quadratic model variants
+- Linear model variants exhibit substantially more trivial global optima, but the relative shares are still low.
+- `LinearLocalRE` exhibits a substantial share of trivial fixed points in the process perspective (@tbl-trivial_fp_pp), but not for the result perspectve (@tbl-trivial_fp_rp).  This indicates that relatively many branches lead to trivial fixed points.
+
 ### Results Grouped by Sentence Pool Size
 
+![Relative share of trivial global optima  grouped by model variant and sentence pool size](figures/rel_go_trivial_by_sp_rp){#fig-trivial-go-sp-rp}
+
+![Relative share of trivial fixed points (result perspective) grouped by model variant and sentence pool size](figures/rel_fp_trivial_by_sp_rp){#fig-trivial-fp-sp-rp}
+
+![Relative share of trivial fixed points (process perspective) grouped by model variant and sentence pool size](figures/rel_fp_trivial_by_sp_pp){#fig-trivial-fp-sp-pp}
+
+**Observations**
+
+- The relative shares of trivial global optima or fixed points tend to decrease with increasing sentence pool sizes.
+- A notable exception to this trend is `LinearLocalRE` in the process perspective (@fig-trivial-fp-sp-pp)
+
 ### Results Grouped by Configuration of Weights
+
+![Relative share of trivial global optima  grouped by model variant and weight configuration](figures/rel_trivial_go_rp){#fig-trivial-go-hm}
+
+![Relative share of trivial fixed points (result perspective)  grouped by model variant and weight configuration](figures/rel_trivial_fp_rp){#fig-trivial-fp-rp-hm}
+
+![Relative share of trivial fixed points (process perspective)  grouped by model variant and weight configuration](figures/rel_trivial_fp_pp){#fig-trivial-fp-pp-hm}
+
+**Observations**
+
+- In quadratic model variants, the configuration of weights have a small impact on the relative shares of trivial endpoints.
+- Linear model variants tend to produce higher relative shares of trivial endpoints for low values of $\alpha_{F}$ (tipping line?) and high values of  $\alpha_{S}$.
