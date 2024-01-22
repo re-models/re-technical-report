@@ -31,6 +31,10 @@ Note that fixed points can be counted in different ways. Taking a result-oriente
 
 ## Results
 
+::: {.callout-note}
+The results of this chapter can be reproduced with the Jupyter notebook located [here](https://github.com/re-models/re-technical-report/blob/main/notebooks/data_analysis_chapter_commitment-consistency.ipynb).
+:::
+
 ### Consistent Outputs
 #### Overall Results
 
