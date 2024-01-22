@@ -1,7 +1,98 @@
 # Summary {#sec-summary}
 
+## Overview
 
-to come ...
+In this reprt we thoroughly assessed a formal RE model by @beisbart_making_2021 by numerical investigation. We ran computer simulations for a broad spectrum of model parameters, initial conditions and with different model variants. 
+
+In the following paragraphs we summarize the most important findings with respect to the metrics  defined in @sec-intro-metrics.
+
+**Global optima and fixed points**
+
+In @sec-go-and-fp, we investigated whether fixed points are global optima (GO efficiency), and conversely, whether global optima are reachable by equilibration processes (GO reachability).
+
+- Overall, GO efficiency is high for semi-globally optimizing models and medium-high for locally optimizing models. 
+- GO efficiency drops for locally optimizing models with the size of the sentence pool.
+- For $\alpha_a < \alpha_s$, GO efficiency of the `LinearLocalRE` model is as high as of the models `QuadraticGlobalRE` and `LinearGlobalRE`.
+- GO reachability is low to medium for all models.
+- All but the `QuadraticGlobalRE` model perform worse concerning GO reachabiity with an increase in the size of the sentence pool.
+- The `QuadraticGlobalRE` model outperforms all other models on average.
+- The`LinearLocalRE` model reaches a higher GO efficiency than the `QuadraticLocalRE` model, but it is the other way around with respect to GO reachability.
+
+
+**Full RE states**
+
+In @sec-full-re-states, we explored whether fixed points and global optima attain full RE states, i.e., globally optimal states in which the theory fully and exlusively accounts for the commitments. 
+
+- Overall, the relative shares of full RE states among global optima and fixed points are rather low.
+- Heatmaps reveal combinations of weights for `GlobalQuadraticRE`, `GlobalLinearRE` and `LinearLocalRE`, where the relative share of full RE states among the outputs is acceptable. 
+- There is a sightly negative trend for the relative shares of full RE states among global optima and fixed points (result perspective) for increasing sentence pool sizes. 
+- The relative share of full RE fixed points (process perspective) of`LinearLocalRE` is not affected by the sentence pool size.
+
+
+**Consistency**
+
+In @sec-commitment-consistency, we assessed different aspects of consistency conduciveness of the  model variants.
+
+- The overall relative shares of consistent outputs, inconsistency-eliminating and consistency-preserving cases, as well as consistent unions are satisfactorily high for all model variants.
+- In view increasing sentence pool sizes, `LinearLocalRE` performs best with respect to all examined aspects of consistency. 
+- There are regions of weight configurations ($\alpha_{A} > \alpha_{F}$) that yield desirable behaviour concerning consistency across all model variants. 
+- A salient "tipping line" in heatmaps of linear model variants marks off regions of weight configurations that yield funamentally different behavior. It can be explained by analytical results in @sec-appendix-tipping.
+
+**Extreme measure values**
+
+In @sec-extreme-values, we nvestigated whether global optima and fixed points yield extreme values in the normalized measures $A$, $F$ and $S$.
+
+- Overall, there are no surprising observations. Increasing the weight of a specific measure results in higher relatives shares of outputs that maximize the corresponding measures.
+
+
+## Appendices
+
+The results concerning the main metrics for are complemente by considerations in various appendices:
+
+**The tipping line of linear model variants**
+
+In @sec-appendix-tipping, we provide analytical results concerning a "tipping line" in linear model variants. That the trade-off .
+
+It is important to note that we cannot conclude from this tipping behavior of linear models with repsect to some metrics, that the liner model variants to not allow for more fine-grained trade-offs between $\alpha_{A}$ and $\alpha_{F}$ (and ultimately, turn this into a point that speaks against the linear model variants).
+
+Results from @sec-go-and-fp make it clear that weight configurations yield different sets of global despite there being uniform with respect to model validation metrics (e.g. ).
+
+**Trivia endpoints**
+
+In @sec-appendix-sec-appendix-trivial,
+
+
+## Conclusions
+
+The multifacetted analysis of the formal model RE in this report makes it difficult to draw universal conclusion or establish hard and fast rules for selecting one of the model variants. In general, we did not find conclusive evidence to exclude a model variant as a future reference point. First, each model variant meets the metrics to a sufficient degree for some range of simulation setups. Next, undesirable behavior (failing with respect to some metric) cannot be attributed to a model variant on its own, but may result from a combination of other aspects of a simulation setup, such as the randomly generated dialectical structures including the sentence pool size, the specific configuration of weights, or the also randomly chosen initial commitments.
+
+This does not mean, that there are no differences between model variants at all, or that we cannot observe any tendencies that could lead us to favor some model variant over another.
+
+
+
+## Outlook
+
+The present state of the technical report is but a starting point for future lines of research. Here is an that came to our mind during work. 
+
+Note that the current Python implementation of the formal model is designed to facilitate extending the model (as demonstrated by the three model variants included in this report). Various components of the formal model, e.g. the measures for desiderata in the achievement function, can be changed with few lines of code (see XXX).
+
+This is demonstrated by the three model variations included in this report that by
+### The neighborhood depth of locally optimizing model variants
+
+The local model variants examine available candidate positions for adjustments during RE processes in a small neighborhood of the current positon. For this report, this search depth was confined to adjusting a single sentence per adjustemt step. 
+A particular shortcoming of such a small neighborhood depths of local model variants is that they may "miss" sensible adjustments that involve arguments with more than one premise.^[Results that might suggest such a shortoming of local model variants can be found in @fig-rel-fpgo-fp-by-np-rp and @fig-rel-fpgo-fp-by-np-pp.]
+
+It is important to note that considering larger neighborhood depths reintroduces an exponential growth of the search space depending on the size of the sentence pool. However, this defies an original motivation to include locally optimizing models in this report, as they render future examples of larger sentence pool size computationally feasible.
+In view of this, new model variations may be an interesting line of future exporation. For example, one could devise variations of locally optimizing models that allow to "backtrack" on branches, if adjustments in a different branch prove to bettter at some point.
+
+### The measure of systematicity
+
+
+
+### The inferential density of dialectical structure
+
+In this report, we did not present results with repsect to the inferential density of the randomly generated dialectical structures (for the definition, see @sec-intro-dia). The dialectical structure determines relevant aspects at the outet of RE processes or global optmization (e.g. the number of complete and consistent positions). Hence, it may be interesting to treat the inferential density as an independent variable to gain new insights about the model's behaviour.
+
 
 <!--
 ToDos:
@@ -11,9 +102,7 @@ ToDos:
     + Ist inferentielle Dichte vlt. auch eine interessante unabhängige variable?
 -->
 
-<!--
-In general, we did not find conclusive evidence to exclude a model variant as a future reference point. Each model variant satisfies the consolidation criteria to a sufficient degree for a wide range of configurations. At this point, undesirable behavior (failing with respect to some criterion) cannot be attributed to a model variant on its own, but may result from a combination of other aspects of a configuration, such as unfavourable dialectical structures, extreme weightings or hopelessly absurd initial commitments. This does not mean, that there are no differences at all or no tendencies in favor of some model variants. Linear models tend to perform better as quadratic variants with respect to many criteria. 
--->
+
 
 <!--
 **Remarks on the interpretation or explanation of results** 
