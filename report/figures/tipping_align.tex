@@ -1,0 +1,11 @@
+\documentclass{standalone}
+\usepackage{amsmath}
+\begin{document}
+$\begin{aligned}
+ & Z(C, T\vert C_{0})\\  
+ & = \alpha_{A}\cdot A(C, T) + \alpha_{F}\cdot F(C\vert C_{0}) + \alpha_{S}\cdot S(T)\\
+ & = \alpha_{A}\cdot (1-\frac{D_{0,\, 0.3,\, 1,\, 1}(C, \overline{T})}{n}) + \alpha_{F}\cdot (1-\frac{D_{0,\, 0,\, 1,\, 1}(C_{0}, C)}{n}) + \alpha_{S}\cdot (1-\frac{\vert T\vert-1}{\vert\overline{T}\vert})\\
+ & =  \alpha_{A} - \frac{\alpha_{A}\cdot D_{0,\, 0.3,\, 1,\, 1}(C, \overline{T})}{n} + \alpha_{F} - \frac{\alpha_{F}\cdot D_{0,\, 0,\, 1,\, 1}(C_{0}, C)}{n} + \alpha_{S} - \frac{\alpha_{S}\cdot(\vert T\vert-1)}{\vert\overline{T}\vert}\\
+ & = 1 - \frac{\alpha_{A}\cdot D_{0,\, 0.3,\, 1,\, 1}(C, \overline{T})+ \alpha_{F}\cdot D_{0,\, 0,\, 1,\, 1}(C_{0}, C)}{n} - \frac{\alpha_{S}\cdot(\vert T\vert-1)}{\vert\overline{T}\vert}
+\end{aligned}$
+\end{document}

@@ -51,9 +51,22 @@ This holds only if $D_{0,\,0.3,\,1,\,1}(C,\overline{T}) > 0$. In other words, th
 
 Each case of changing $C$ with respect to $s$, yielding new commitments $C'$, impacts the contributions to the Hamming distances for account and faithfulness. Note that systematicity is not affected by changing the commitments.
 
+![Differences in contributions to the measures of account and faithfulness between adjusted and original commitments](figures/tipping_table_account){#fig-table-account}
+
 The complete linearity of the achievement function allows to distribute ("push in") the weights $\alpha_{A}$ and $\alpha_{F}$ over the individual contributions of the hamming distances.
 
-Since the achievement function is optimised for minimal contributions and $\alpha_{A} > \alpha_{F}$, it is always more attractive to change the commitments to increase account rather than faithfully respecting the initial commitments. This argument can be repeated for every sentence for which $C$ and $\overline{T}$ differ.
+![The weights $\alpha_{A}$ and $\alpha_{F}$ can be distributed over the individual contributions of the hamming distances in the linear achievement function](figures/tipping_align){#fig-align}
+
+Changing the commitments has no effect on 
+$$
+\frac{\alpha_{S}\cdot(\vert T\vert-1)}{\vert\overline{T}\vert},
+$$
+
+and $n$ is fixed. Consequently, $Z$ can be optimised by changing the commitments such that the following term is minimised:
+
+![Minimizing this term optimizes the achievement function.](figures/tipping_align2){#fig-align2}
+
+Since the achievement function is optimised for minimal contributions and $\alpha_{A} > \alpha_{F}$, it is always more attractive to change the commitments to increase account rather than faithfully respecting the initial commitments. To see this, consider the change in contributions multiplied by the corresponding weights in @fig-table-account. This argument can be repeated for every sentence for which $C$ and $\overline{T}$ differ.
 
 In summary, if $(C, T)$ is a global optimum but $A(C, T) < 1$, then there is a position $(C', T)$ such that $A(C, T) < A(C', T)$ contradicting $(C, T)$ being a global optimum. Consequently, we must have $A(C, T) = 1$, i.e., $T$ accounts fully and exclusively for $S$ (FEA). This shows that $(C, T)$ is a full RE state.
 

@@ -1,0 +1,20 @@
+\documentclass{standalone}
+\usepackage{booktabs}
+\begin{document}
+\begin{tabular}{@{}lcc@{}}
+        \toprule
+        & \textbf{account} & \textbf{faithfulness} (worst case)\\
+        &  $d_{0,\,0.3,\,1,\,1}(C',\overline{T}, \lbrace s, \neg s\rbrace)$ &  $d_{0,\,0,\,1,\,1}(C_{0}, C', \lbrace s, \neg s\rbrace)$ \\
+        
+        \textbf{adjustment}& \quad $- d_{0,\,0.3,\,1,\,1}(C,\overline{T}, \lbrace s, \neg s\rbrace)$ & $- d_{0,\,0,\,1,\,1}(C_{0}, C, \lbrace s, \neg s\rbrace)$\\\midrule
+        
+        remove contradicting element from $C$   & -1    & +1 \\
+        
+        revise contradicting element in $C$     & -1    & +1 \\
+        
+        add missing element to $C$              & -0.3  & 0  \\
+        
+        remove additional element from $C$      & -1    & +1\\
+    \bottomrule
+    \end{tabular}
+\end{document}
