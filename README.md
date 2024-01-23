@@ -26,9 +26,9 @@ You can execute the notebooks locally by proceeding along the following steps:
 
 1. Install python together with JupyterLab (<https://jupyter.org/install>)
 2. Git-clone the repository (with `git clone git@github.com:re-models/re-technical-report.git`).
-3. Open notebook in JupyterLab and execute the cells.
+3. Open notebooks in JupyterLab and execute the cells.
 
-By default the notebook use a convenience function to import one of the three different data sets by specifiying the data set's name (e.g., `re_data_by_name(data_name="TINY")`). The function handles data retrieval in dependence of whether the notebook is executed on Colab or locally. 
+By default, the notebooks use a convenience function to import one of the three data sets by specifiying the data set's name (e.g., `re_data_by_name(data_name="TINY")`). The function handles data retrieval in dependence of whether the notebook is executed on Colab or locally. 
 
 Alternatively, you can load the data by specifying the directory and file name of the data file in the following way:
 
