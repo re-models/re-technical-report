@@ -185,7 +185,7 @@ Roughly, $56\%$ [XXX] of the random initial commitments are dialectically consis
 ![Relative share of dialectically consistent initial commitments for different n.](figures/consistency-init-coms){width=66%  #fig-consistency-coms-size}
 
 
-### Dialectical structures
+### Dialectical structures {#sec-intro-dia}
 
 <!--and the (minimal) number of principles. A sentence is called *principle* if and only if it occurs in at least one argument as premise and it or its negation does not occur as a conclusion in any argument. The random generation ensures that the dialectical structure contains the minimal number of principles, but there may be more sentences that satisfy the condition, too.-->
 
