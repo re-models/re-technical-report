@@ -1,8 +1,8 @@
 # The Tipping Line of Linear Model Variants {#sec-appendix-tipping}
 
-A *linear model variant* is a model that differs from the model provided by @beisbart_making_2021 only in that the measures $A,F,S$ involve the linear function $G(x) = 1-x$ instead of the quadratic $G(x) = 1-x^2$. This variant exhibits a *tipping line* in ternary plots that marks off configurations of weights that lead to drastically different behaviour with respect to consistency considerations or the attainment of full RE states (see, e.g., @fig-overall-full-re-go, @fig-cons-go-sp-rp, @fig-cons-fp-sp-rp and @fig-cons-fp-sp-pp).
+A *linear model variant* is a model that differs from the model provided by @beisbart_making_2021 only in that the measures $A,F,S$ involve the linear function $G(x) = 1-x$ instead of the quadratic $G(x) = 1-x^2$. This variant exhibits a *tipping line* in ternary plots that marks off configurations of weights that lead to drastically different behaviour with respect to the attainment of full RE states (e.g. @fig-hm-full-re-go) consistency considerations (e.g. @fig-cons-go-hm-rp and @fig-cons-fp-hm-rp), or the maximzation of measures such as account or faithfulness, (e.g. @fig-hm-max-account-go and @fig-hm-max-account-fp). 
 
-We can characterise the tipping line as an equation that relates $\alpha_{A}$ and $\alpha_{S}$:
+We can characterize the tipping line as an equation that relates $\alpha_{A}$ and $\alpha_{S}$:
 $$
 \alpha_{A} = \frac{1-\alpha_{S}}{2}  
 $${#eq-lin}
@@ -13,25 +13,21 @@ $$
 \alpha_{A} = \alpha_{F}
 $$
 
-Consequently, the tipping line splits the space of weight configuration in two regions $\alpha_{A} < \alpha_{F}$ and $\alpha_{A} > \alpha_{F}$. For the latter region, where account receives more weight than faithfulness, we have some interesting analytical results.
+Consequently, the tipping line splits the space of weight configuration in two regions $\alpha_{A} < \alpha_{F}$ and $\alpha_{A} > \alpha_{F}$. 
 
-The following propositions and its corollaries help to explain the salient change in the behaviour of linear model variants when crossing the tipping line.
+There are interesting analytical results for both regions. The following propositions and its corollaries help to explain the salient change in the behaviour of linear model variants when crossing the tipping line.
 
-+ *Proposition 1*: For the linear model variants all global optima are full RE states if $\alpha_{A} > \alpha_{F}$.
-+ *Proposition 2*: For the linear model variants all global-optimum commitments maximize faithfulness if $\alpha_{F} > \alpha_{A}$.
++ **Proposition 1**: For the linear model variants all global optima are full RE states if $\alpha_{A} > \alpha_{F}$.
++ **Proposition 2**: For the linear model variants all global-optimum commitments maximize faithfulness if $\alpha_{F} > \alpha_{A}$.
 
 ## Proposition 1
 Assume that a dialectical structure $\tau$ and some initial commitments $C_{0}$ are given. Moreover, assume $\alpha_{A} > \alpha_{F}$ for a configuration of weights $(\alpha_{A}, \alpha_{S}, \alpha_{F})$ in a linear model variant. Then all global optima (relative to $C_{0}$) are full RE states.
 
 **Corollaries**
-The linear model variants exhibit the following behaviour for $\alpha_{A} > \alpha_{F}$:
+The linear model variants exhibit the following behaviour for $\alpha_{A} > \alpha_{F}$.
 
 - For global optima, there are no inconsistency preserving cases.
 - Consistency eliminating cases do not occur for global optima.
-
-**Open questions**
-
-- Interestingly, the corollaries almost always hold for fixed points as well. However, an analoguous proposition for fixed points would require a different proof.
 
 **Proof sketch**
 
@@ -78,13 +74,9 @@ $$
 The linear model variants exhibit the following behaviour for $\alpha_{A} < \alpha_{F}$:
 
 - The relative share of inconsistency eliminating cases among global optima is 0.0. 
-   - *Explanation*: Removing or revising an initial inconsistency requires to deviate from the initial commitments, which is incompatible with maximal faithfulness.
+- *Explanation*: Removing or revising an initial inconsistency requires to deviate from the initial commitments, which is incompatible with maximal faithfulness.
 - Similarly, the relative share of inconsistency preserving cases in this region of weight configurations correspond to the relative share of inconsistent initial commitments.
 - In turn, the relative share of global optima with maximal value for faithfulness is 1.0.
-
-**Open questions**
-
-- Fixed points (unique) also exhibit this behaviour, respectively. Can the proof be adapted to cover such cases as well?
 
 **Proof sketch of Proposition 2**
 
@@ -160,3 +152,22 @@ In summary, if $(C, T)$ is a global optimum but it is assumed that $F(C\,\vert\,
 a position $(C', T)$ such that $Z(C, T \,\vert\, C_{0}) < Z(C', T \,\vert\, C_{0})$, contradicting $(C, T)$ being a
 global optimum. Consequently, we must have $F(C \,\vert\, C_{0}) = 1$.
 
+## Generalization to fixed points
+
+A second inspection of the results of linear mode variants reveals that the corollaries seem to hold for fixed points as well. The analoguous propositions for fixed points require slightly modified proofs.
+
+Here is an outline for a proof of Propostion 1 and fixed points from the globally optimizing model variant(`LinearGlobalRE`). Proposition 2 can be generalized with an analogous proof as well.
+
+**Proof sketch**
+
+Assume that a dialectical structure $\tau$ and some initial commitments $C_{0}$ are given. Moreover, assume $\alpha_{A} > \alpha_{F}$ for a configuration of weights $(\alpha_{A}, \alpha_{S}, \alpha_{F})$ in a linear model variant.
+
+Let $(C_{i}, T_{i})$ be a fixed point from the (semi-)globally optimizing model variant(`LinearGlobalRE`) that resulted from an RE process with initial commitments $C_{0}$.
+
+For a proof by contradiction, we assume once more that $A(C_{i}, T_{i}) < 1$. Hence, there is at least one sentence $s$ for which there is a positive contribution to the Hamming distance in the measure of account.
+
+However, during the last adjustment step, *all* minimally consistent position were available as candidates. We consider $C_{i}'$ which results from changing $C_{i}$ with respect to $s$. From this point on, the proof is analogous to the proof from above for global optima. Hence, $(C_{i}', T_{i})$ would perform better than according to the achievement functon, contradicting $(C_ {i}, T_{i})$ being a fixed point.
+
+**Local Model variants**
+
+Finally, we can also generalize Propostion 1 and Proposition 2 to fixed points of the `LinearLocalRE` model variant. The difference to the semi-globally optimizing RE process of `LinearGlobalRE` is that locally optimzing models proceed by changing at most one sentence per adjustment step. But this is all we need to get the above proofs by contradiction off the ground, where hypothetical adjustments of the commitments with respect to a single element are considered.
