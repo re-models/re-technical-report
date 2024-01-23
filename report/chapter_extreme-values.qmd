@@ -1,6 +1,6 @@
 # Extreme values for account, systematicity, and faitfulness {#sec-extreme-values}
 
-## Background
+## Background {#sec-extreme-values-background}
 In this study, we examine extreme values from measures that operationalize RE desiderata in the formal model of RE: account, systematicity and faithfulness.
 
 $A(C, T) = 1$ means that the theory $T$ fully and exclusively accounts for the commitments $C$. Full and exclusive account is a condition for full RE states. Conversely, $A(C, T) = 0$ holds if a theory completely fails to account for commitments, that is, for every sentence in the commitments the closure theory does not contain this sentence, or contradicts the theory.
