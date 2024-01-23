@@ -93,6 +93,8 @@ The linear model variants exhibit the following behaviour for $\alpha_{A} < \alp
 
 **Proof sketch of Proposition 2**
 
+The proof of Proposition 2 is highly similar to the one of Proposition 1.
+
 For a proof by contradiction, assume that $(C, T)$ is a global optimum according to $Z$, but $F(C\,\vert\,C_{0}) < 1$.
 
 This holds only if $G\left(\frac{D_{0,0,1,1}(C_{0}, C)}{n}\right) < 1$, i.e. only if $D_{0,0,1,1}(C_{0}, C) > 0$.
@@ -103,61 +105,61 @@ In particular, there are two cases
 2. $C$ and $C_{0}$ contradict each other with respect to $s$: +1
 
 Consider the impacts on individual contributions to the Hamming distances for account
-and faithfulness of changing $C$ with respect to $s$, yielding new commitments  $C'$, in particular the difference $d(C_{0}, C', \lbrace s, \neg s\rbrace) - d(C_{0}, C, \lbrace s, \neg s\rbrace)$. In the following subcases, \* will denote the worst cases.
+and faithfulness of changing $C$ with respect to $s$, yielding new commitments  $C'$, in particular the difference $d(C_{0}, C', \lbrace s, \neg s\rbrace) - d(C_{0}, C, \lbrace s, \neg s\rbrace)$. In the following subcases, (\*) will denote the worst cases.
 
 
-<!-- ToDo(@Andreas): present cases in a nicer form, e.g. in a table-->
 
-*Case 1* 
+**Case 1** 
 
 There is an $s$ in $C_{0}$, but $s$ and $\neg s$ are not in $C$. We can now define a new $C'$ by $C':=C\cup \{s\}$
 
-Faithfulness
+*Faithfulness*
 
-agreement (new) - contraction (old): faithfulness:  -1
+- agreement (new) - contraction (old): -1
 
-Account
+*Account*
 
 - Case: $s \in \overline{T}$: agreement (new) - expansion (old): -0.7
 - Case $\neg s \in \overline{T}$: contradiction (new) - expansion (old): + 0.7
 - Case $s$ and $\neg s \notin \overline{T}$ (\*): contraction (new)- agreement (old): +1
 
-That is, by adding $s$ to $C$, xxx
+That is, adding $s$ to $C$ yields a +1 contribution to the account penalties in the worst case. This is counterbalanced by a -1 improvement in the faithfulness penalties.
 
-*Case 2* 
+**Case 2** 
 
-Without loss of generality, we can assume that $s \in C_{0}$ and $\neg s \in C$. We can now either remove $s$ from $C_{0}$ (subcase A) or $\neg s$ from $C$ (subcase B).
+Without loss of generality, we can assume that $s \in C_{0}$ and $\neg s \in C$. We can now either remove $\neg s$ from $C$ (Subcase A) or revise $C$ with $s$ (Subcase B).
 
-Subcase A: $C':=C\setminus \{\neg s\}$
+**Subcase A:** $C':=C\setminus \{\neg s\}$
 
-+ Faithfulness
-   + contraction (new) - contradiction (old) : +0
-+ Account
-   - $s \in \overline{T}$: expansion (new) - contradiction (old):  -0.7
-   - Case $\neg s \in \overline{T}$ (\*): expansion (new) - agreement (old): +0.3
-   - Case $s$ and $\neg s \notin \overline{T}$: agreement(new) - contraction(old): -1
+*Faithfulness*
 
-Now, .... XXXX
++ contraction (new) - contradiction (old) : +0
 
-Subcase B: $C':=(C\cup\{s\})\setminus \{\neg s\}$(??)
+*Account*
 
-<!--
-b:Revise the contradicting element in $C$:
-Result: $s$ in $C'$
--->
+- $s \in \overline{T}$: expansion (new) - contradiction (old):  -0.7
+- Case $\neg s \in \overline{T}$ (\*): expansion (new) - agreement (old): +0.3
+- Case $s$ and $\neg s \notin \overline{T}$: agreement(new) - contraction(old): -1
 
-+ Faithfulness
-   + agreement (new) - contradiction (old): -1
-+ Account
-   - Case: $s \in \overline{T}$: agreement (new) - contradiction (old): -1
-   - Case $\neg s \in \overline{T}$ (\*): contradiction (new) - agreement (old): +1
-   - Case $s$ and $\neg s \notin \overline{T}$: contraction (new) - contraction (old): +0
+Now, removing $\neg s$ from $C$ leads to a worsening in the account penalties of +0.3 in the worst case. This is contrasted with no differences in the contributions to faithfulness.
 
-In this case, .... XXX
+**Subcase B:** $C':=(C\setminus \{\neg s\}) \cup\{s\}$
+
+*Faithfulness*
+
++ agreement (new) - contradiction (old): -1
+
+*Account*
+
+- Case: $s \in \overline{T}$: agreement (new) - contradiction (old): -1
+- Case $\neg s \in \overline{T}$ (\*): contradiction (new) - agreement (old): +1
+- Case $s$ and $\neg s \notin \overline{T}$: contraction (new) - contraction (old): +0
+
+In this case, revising $C$ with $s$ leads to a +1 contribution to the account penalties in the worst case. This is counterbalanced by an improvement of -1 in the faithfulness penalties. 
 
 The complete linearity of the achievement function allows to distribute (push in) the weights $\alpha_{A}$ and $\alpha{F}$ over the individual contributions of the hamming distances in $Z$. Hence, the weights also apply to the individual contributions considered above. Moreover, changing the commitments does not affect the systematicity of the theory, i.e. $S(T)$ is identical for $(C, T)$ and $(C', T)$. Hence, the achievement function is optimised for minimal contributions in the measures for account and faithfulness and $\alpha_{F} > \alpha{A}$.
 
-Consequently, it is always (cases 1, 2.A and 2.B) more attractive to stay faithful to the initial commitments rather than to change the commitments in order to increase account.
+Consequently, it is always (Case 1, Case 2 (A and B)) more attractive to stay faithful to the initial commitments rather than to change the commitments in order to increase account.
 
 This argument can be repeated for every sentence, for which $C_{0}$ and $C$ differ.
 
@@ -177,9 +179,9 @@ Assume that a dialectical structure $\tau$ and some initial commitments $C_{0}$ 
 
 Let $(C_{i}, T_{i})$ be a fixed point from the (semi-)globally optimizing model variant(`LinearGlobalRE`) that resulted from an RE process with initial commitments $C_{0}$.
 
-For a proof by contradiction, we assume once more that $A(C_{i}, T_{i}) < 1$. Hence, there is at least one sentence $s$ for which there is a positive contribution to the Hamming distance in the measure of account.
+For a proof by contradiction, we assume once again that $A(C_{i}, T_{i}) < 1$. Hence, there is at least one sentence $s$ for which there is a positive contribution to the Hamming distance in the measure of account.
 
-However, during the last adjustment step, *all* minimally consistent position were available as candidates. We consider $C_{i}'$ which results from changing $C_{i}$ with respect to $s$. From this point on, the proof is analogous to the proof from above for global optima. Hence, $(C_{i}', T_{i})$ would perform better than according to the achievement functon, contradicting $(C_ {i}, T_{i})$ being a fixed point.
+However, during the last adjustment step, *all* minimally consistent position were available as candidates. We consider $C_{i}'$ which results from changing $C_{i}$ with respect to $s$. From this point on, the proof is analogous to the proof from above for global optima. Hence, $(C_{i}', T_{i})$ would perform better than $(C_{i}, T_{i})$ according to the achievement functon, contradicting $(C_ {i}, T_{i})$ being a fixed point.
 
 **Local Model variants**
 
