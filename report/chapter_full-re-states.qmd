@@ -2,20 +2,20 @@
 
 ## Background
 
-RE is commonly udnerstood as an account of justification, and the aspired outcomes of applying RE are equilibriium states, which are supposed to be justified according to RE.
+RE is commonly understood as an account of justification, and the aspired outcomes of applying RE are equilibrium states, which are supposed to be justified according to RE.
 
 Consequently, it is interesting to study the formal counterparts in the model that represent, or at least approximate, equilibrium states: *full RE states*.
-A theory-commitment-pair $(C, T)$ is a *full RE state* if and only if they live up to very high standards, namely
+A theory-commitment-pair $(C, T)$ is a *full RE state* if and only if they live up to very high standards, namely,
 
-1. it is a global optimum according to the achievement function, and 
+1. if it is a global optimum according to the achievement function and 
 2. the theory $T$ fully and exlusively accounts for the commitments $C$.
 
-The second criterion amounts to the requirement that every commitment and no other sentence of the sentence pool is derivable from the theory given the arguments of the dialectical structure in the background.
+The second criterion amounts to the requirement that every commitment and no other sentence of the sentence pool is derivable from the theory, given the arguments of the dialectical structure in the background.
 
-It is not a necessary requirement for a model to yield a full RE state in every case. However, from the viewpoint of model evaluation, it is still desirable to have a model that is somewhat likely to reach full RE states. This is especially relevant to the fixed points of locally optimizing model variants, which have a severly restricted set of options at every adjustment step.
+An RE model is not required to yield a full RE state in every case. However, from the viewpoint of model evaluation, it is still desirable to have a model that is somewhat likely to reach full RE states. This is especially relevant to the fixed points of locally optimizing model variants, which have a severely restricted set of options at every adjustment step.
 
 
-Note that both fixed points and global optima can qualify as a full RE states. Hence, we present the results for global optima and fixed points, separately. For the latter, we distinguish again between the result and the process perspective.
+Note that both fixed points and global optima can qualify as a full RE states. Hence, we present the results for global optima and fixed points separately. For the latter, we distinguish again between the result and the process perspective.
 
  
 
@@ -32,6 +32,9 @@ The results of this chapter can be reproduced with the Jupyter notebook located 
 :::
 
 ### Overall Results
+
+
+#### Global optima
 
 ```{python}
 #| echo: false
@@ -65,7 +68,9 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 -->
 
 - The relative share of full RE states among global optima is substantially higher for linear model variants than for quadratic models (@fig-overall-full-re-go).
-- Even though local model variants rely on their global counterparts to determine global optima, small differences between corresponding variants in @tbl-full-re-go arise due to the exclusions of different erroneous runs.
+- The small differences in @tbl-full-re-go between semi-globally optimizing model variants and their globally optimizing counterparts are but an artifact of the model implementation. They can be explained by differences in interrupted model runs (see @sec-general-props-go).
+
+#### Fixed Points
 
 ```{python}
 #| echo: false
@@ -95,8 +100,8 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 **Observations**
 
-- The relative share of unique full RE fixed points (@fig-overall-full-re-fp-setups) is lower than the corresponding results for global optima (@fig-overall-full-re-go). This is not surprising as fixed points are reached through semi-globallly or locally optimizing processes, which cover a restricted search space in contrast to global optimization.
-- The relative shares of unique full RE fixed points from quadratic model variants is substantially lower, that those of their corresponding linear model variants.
+- The relative share of full RE fixed points from the result perspective (@fig-overall-full-re-fp-setups) is lower than the corresponding results for global optima (@fig-overall-full-re-go). This result is unsurprising as fixed points are reached through semi-globally or locally optimizing processes, which cover a restricted search space in contrast to global optimization.^[For the difference between result and process perspective, see @sec-go-and-fp-background.] 
+- From the result perspective, the relative shares of full RE fixed points of quadratic model variants are substantially lower than those of their corresponding linear model variants.
 
 ```{python}
 #| echo: false
@@ -126,10 +131,10 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 **Observations**
 
-- The relative share of full RE fixed points  (process perspective, @fig-overall-full-re-fp-branches) are similar to the corresponding results for the result perspective (@fig-overall-full-re-fp-setups), for `QuadraticGlobalRE`, `LinearGlobalRE`, an `QuadraticLocalRE`, excepting `LinearLocalRE`. 
-- For `LinearLocalRE`, the relative share of full RE fixed points is significantly higher when consdering the fixed points from all branches (process perspective) rather than unique fixed points (result perspective). This means that a relatively higher share of branches lead to full RE fixed points than to non-full-RE fixed points.
-- The relative share of full RE fixed points for `LinearLocalRE` (@fig-overall-full-re-fp-branches), even exceeds the relative share of full RE global optima for linear model variants (@fig-overall-full-re-go).
-- The number of fixed points in the process perspective (@tbl-full-re-fp-branches) is only slightly higher than the number in the result perspective (@tbl-full-re-fp-setups) for `QuadraticGlobalRE` and `LinearGlobalRE`. In contrast, the number of fixed points from all branches is substantially higher than the number of unique fixed points for `QuadraticLocalRE`, and even more so for `LinearLocalRE`.
+- The relative share of full RE fixed points  (process perspective, @fig-overall-full-re-fp-branches) is similar to the corresponding results from the result perspective (@fig-overall-full-re-fp-setups) for `QuadraticGlobalRE`, `LinearGlobalRE`, and `QuadraticLocalRE` except for `LinearLocalRE`. 
+- For `LinearLocalRE`, the relative share of full RE fixed points is significantly higher when considering the fixed points from all branches (process perspective) rather than the set of fixed points (result perspective). This means that a relatively higher share of branches leads to full RE fixed points than to non-full-RE fixed points.
+- The relative share of full RE fixed points for `LinearLocalRE` (@fig-overall-full-re-fp-branches) even exceeds the relative share of full RE global optima for linear model variants (@fig-overall-full-re-go).
+- The number of fixed points in the process perspective (@tbl-full-re-fp-branches) is only slightly higher than the number in the result perspective (@tbl-full-re-fp-setups) for `QuadraticGlobalRE` and `LinearGlobalRE`. In contrast, the number of fixed points from all branches is substantially higher than the number of fixed points from the result perspective for `QuadraticLocalRE`, and even more so for `LinearLocalRE`.
 
 ### Results Grouped by Sentence Pool Size
 
@@ -141,10 +146,10 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 **Observations**
 
-- The relative shares  of full RE states among global optima decrease with increasing sentence pool sizes for all model variants (@fig-full-re-go-sp-rp).
-- The relative shares  of full RE states among unique fixed points (result perspective) decrease with increasing sentence pool sizes for all model variants (@fig-full-re-fp-sp-rp).
-- The relative shares  of full RE states among fixed points from all branches (process perspective) decrease with increasing sentence pool sizes for model variants`LGRE`, `QGRE` and `GLRE` (@fig-full-re-fp-sp-pp).
-- The relative shares  of full RE states among fixed points from all branches (process perspective) is roughly constant withh respect to sentence pool sizes for `LLRE` (@fig-full-re-fp-sp-pp).
+- The relative share of full RE states among global optima decreases with increasing sentence-pool size for all model variants (@fig-full-re-go-sp-rp).
+- The relative share of full RE states among the set of fixed points (result perspective) decreases with increasing sentence-pool size for all model variants (@fig-full-re-fp-sp-rp).
+- The relative share of full RE states among the fixed points from all branches (process perspective) decreases with increasing sentence-pool size for the model variants`QuadraticLocalRE`, `QuadraticGlobalRE` and `LinearGlobalRE` (@fig-full-re-fp-sp-pp).
+- The relative share of full RE states among fixed points from all branches (process perspective) is roughly constant with respect to sentence pool sizes for `LinearLocalRE` (@fig-full-re-fp-sp-pp).
 
 ### Results Grouped by Configuration of Weights
 
@@ -153,10 +158,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 **Observations**
 
 - Linear model variants exhibit a "tipping line" (see @sec-appendix-tipping). For $\alpha_{A} > \alpha_{F}$, the relative share of full RE global optima is 1.0, i.e., all global optima are full RE states.
-- Quadratic model variants have a smooth transition between low and high relative shares, and they have a "hotspot" for very high values of $\alpha_{A}$. This result is made plausible by the fact that full RE states require a maximal value for the measure of account, i.e, $A(\mathcal{C}, \mathcal{T}) = 1$. High values for $\alpha_{A}$ benefit the fulfillment of this requirement.
-
-
-
+- Quadratic model variants have a smooth transition between low and high relative shares and have a "hotspot" for very high values of $\alpha_{A}$. This result is made plausible by the fact that full RE states require a maximal value for the measure of account (i.e., $A(\mathcal{C}, \mathcal{T}) = 1)$. High values for $\alpha_{A}$ benefit the fulfilment of this requirement.
 ![Relative share of full RE states among unique fixed points grouped by model variant and configuration of weights.](figures/hm_rel_fp_full_re_rp){#fig-hm-full-re-fp-setups}
 
 
@@ -165,8 +167,8 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 **Observations**
 
 - Linear model variants do not exhibit the tipping line for fixed points (@fig-hm-full-re-fp-setups and @fig-hm-full-re-fp-branches)
-- Linear model variants have high relative shares for low faihtfulness, moderate account and high (but non-extreme) weights for systematicity.
-- There are only small differences between relative share of full RE states among unique fixed points (@fig-hm-full-re-fp-setups) and fixed points from all branches (@fig-hm-full-re-fp-branches).
+- Linear model variants have high relative shares for low faithfulness, moderate account and high (but non-extreme) weights for systematicity.
+- There are only small differences between the relative share of full RE states among sets of fixed points (result perspective, @fig-hm-full-re-fp-setups) and fixed points from all branches (process perspective, @fig-hm-full-re-fp-branches).
 - `QuadraticGlobalRE` exhibits its highest relative shares of full RE fixed points for moderately high values for $\alpha_{A}$ and very low values for $\alpha_{S}$.
 
 
@@ -178,6 +180,6 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 ## Conclusion
 
-Overall, the relative shares of full RE states among global optima and fixed points is not overwhelming, but heatmaps reveal combinations of weights for `GlobalQuadraticRE`, `GlobalLinearRE` and `LinearLocalRE`, where the relative share of full RE states among the outputs is acceptable. For `QuadraticLocalRE`, this holds at least for global optima. However, this does not constitute strong reasons to reject `QuadraticLocalRE`. Depending on the particular goals of an inquiry with RE, a low relative share of full RE states can be seen as a strength of a model, as it does not render everything into a full RE state.
+Overall, the relative share of full RE states among global optima and fixed points is not overwhelming. However, heatmaps reveal combinations of weights for `QuadraticGlobalRE`, `LinearGlobalRE` and `LinearLocalRE`, where the relative share of full RE states among the outputs is acceptable. For `QuadraticLocalRE`, this holds at least for global optima. However, this is not a strong reason to reject `QuadraticLocalRE`. Depending on the particular goals of an inquiry with RE, a low relative share of full RE states can be seen as a strength of a model, as it does not render everything into a full RE state.
 
-Concerning the influence of the sentence pool size, there is sightly a negative trend for the relative shares of full RE states among global optima and fixed points (result perspective). Only the relative share of full RE fixed points (process perspective) of`LinearLocalRE` is not affected by the sentence pool size. At this point, we cannot offer an explanatiion for this behaviour, which calls for further analysis. 
+Concerning the influence of the sentence pool size, there is a negative trend for the relative shares of full RE states among global optima and fixed points (result perspective). Only the relative share of full RE fixed points (process perspective) of the `LinearLocalRE` model is not affected by the sentence pool size. At this point, we cannot offer an explanation for this behaviour, which calls for further analysis. 

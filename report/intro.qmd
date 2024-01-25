@@ -132,7 +132,8 @@ Finally, we will investigate whether global optima and fixed points yield extrem
 
 <!-- Minimal models should answer the sub-questions in the affirmative to a sufficient degree. However, undesirable behaviour of a model variant should be explainable in terms of additional input, apart from the model specification, which is required to run simulations.-->
 
-## Ensemble description
+## Ensemble description {#sec-intro-ensemble-description}
+
 
 The results of RE processes and their global optima depend on the following inputs:
 
@@ -147,7 +148,7 @@ Due to the exponential growth of candidate commitments and theories, which all h
 
 For each of the resulting $576\,000$ simulation setups, we calculated global optima. Note also that one simulation setup does not necessarily determine a fixed point uniquely. For every step of adjusting a theory (or a set of commitments), the subsequent theory (or set of commitments) is underdetermined if there is more than one candidate that maximizes the achievement function. In such cases, the model will randomly choose the next theory (or set of commitments) [@beisbart_making_2021, p. 466]. The Python implementation of the model allows us to track each of the resulting branches, which we did for this report. 
 
-However, for some simulation setups ($XXX$), we do not have simulation results. Due to reasons of computational feasibility, we had to set a cut-off point for the number of branches per simulation setup and the number of adjustment steps.^[The models will always converge within a finite number of steps into a fixed point [see @beisbart_making_2021, p. 467]. The same could be shown for the number of branches. However, the number of branches and the length of processes can still be computationally challenging.] We chose to limit the number of branches to $400$ and set the maximum number of adjustment steps to $100$. Given these restrictions, the resulting ensemble comprises $XXX$ branches.
+However, for some simulation setups ($XXX$), we do not have simulation results. Due to reasons of computational feasibility, we had to set a cut-off point for the number of branches per simulation setup and the number of adjustment steps. Model runs that exceeded these thresholds were interrupted.^[The model runs will always converge within a finite number of steps into a fixed point [see @beisbart_making_2021, p. 467]. The same could be shown for the number of branches. However, the number of branches and the length of processes can still be computationally challenging.] We chose to limit the number of branches to $400$ and set the maximum number of adjustment steps to $100$. Given these restrictions, the resulting ensemble comprises $XXX$ branches.
 
 
 | Setups | Model variants | Sentence pool sizes      | Dialectical structures | Initial commitments | $\alpha$-weights (resolution) |
