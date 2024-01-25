@@ -10,6 +10,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib as mpl
+import plotly.express as px
 from typing import Set, List
 import random
 import scipy.stats as spst
@@ -34,6 +35,11 @@ nice_model_short_names = {'StandardGlobalReflectiveEquilibrium':'QGRE',
 data_set_name_to_file_name = {'FULL': 're_data_tau_alpha',
                               'MINI': 're_data_tau_alpha_mini',
                               'TINY': 're_data_tau_alpha_tiny'}
+
+coolwarm = ['#6788ee', 
+            '#9abbff', 
+            '#e26952', 
+            '#f7a889']
 
 
 def literal_eval_cols(data: DataFrame, cols: List[str]):
@@ -562,3 +568,114 @@ def set_errorbar_plot_style():
 def set_heatmap_plot_style():
     sns.set_theme(style="darkgrid",
                   font_scale = 1.0)
+    
+def consistency_case_barplot(data, 
+                             endpoint_type, 
+                             init_coms_consistent, 
+                             go_models = ["LinearGlobalRE","QuadraticGlobalRE"],
+                             on_colab = True,
+                             analyse_branches = False):
+    
+    # restrict global optima dataframe to two variants
+    if endpoint_type=="go":
+        rdata = data[data["model_name"].isin(go_models)]
+    else:
+        rdata=data
+    
+    if init_coms_consistent:
+        y_cols = ["rel_{}_consistency_preserving_case".format(endpoint_type),
+                  "rel_{}_consistency_eliminating_case".format(endpoint_type)]
+    else:
+        y_cols = ["rel_{}_inconsistency_eliminating_case".format(endpoint_type),
+                  "rel_{}_inconsistency_preserving_case".format(endpoint_type)]    
+    
+    fig = px.bar(rdata.round(3), 
+                  x="model_name", 
+                  y=y_cols,
+                  barmode="stack", 
+                  text_auto=True)
+
+    fig.update_yaxes(range=[0.0, 1.0])
+    fig.update_traces(name="Consistency preserving (CP)", 
+                       marker_color=coolwarm[0], 
+                       selector=dict(name='rel_{}_consistency_preserving_case'.format(endpoint_type)))
+    
+    fig.update_traces(name="Inconsistency eliminating (IE)", 
+                       marker_color=coolwarm[2],
+                       selector=dict(name='rel_{}_inconsistency_eliminating_case'.format(endpoint_type)))
+    
+    fig.update_traces(name="Inconsistency preserving (IP)",
+                       marker_color=coolwarm[3],
+                       selector=dict(name='rel_{}_inconsistency_preserving_case'.format(endpoint_type)))
+    
+    fig.update_traces(name="Consistency eliminating (CE)",
+                       marker_color=coolwarm[1], 
+                       selector=dict(name="rel_{}_consistency_eliminating_case".format(endpoint_type)))
+
+    fig.update_layout(template="plotly_white",
+                       #paper_bgcolor="#e9e8e6",
+                       #plot_bgcolor="#e9e8e6",
+                       font={"color": "black", "size":12},
+                       width=860 if endpoint_type=="fp" else 580,
+                       margin={"t":80}
+                      )
+
+    fig.update_xaxes(title="Model variant", showticklabels=True, showgrid=False, linecolor= 'DarkGrey')
+    fig.update_yaxes(title="Relative share", ticks="outside", tickcolor="DarkGrey", showgrid=False, linecolor='DarkGrey', zeroline=True, zerolinecolor="DarkGrey",
+                      zerolinewidth=1)
+    fig.update_layout(legend_title_text="")
+    fig.update_layout(legend={'traceorder':'reversed', 
+                              "orientation":"v", "x":1.0, "y":1.025, "xanchor":"left"})
+    #fig.update_layout(title_text="Relative share of consistency cases among {}".format("global optima" if endpoint_type=="go" else "fixed points"))
+    fig.update_traces(opacity=0.8)
+    fig.show()
+
+
+
+    if not on_colab:
+        file_name = 'consistency_cases_{}_{}_{}.png'.format(endpoint_type,
+                                                                 "ic_cons" if init_coms_consistent else "ic_incons",
+                                                                 'pp' if analyse_branches else 'rp')
+        fig.write_image(path.join(figures_output_dir, file_name), scale=2)
+        
+        file_name = 'consistency_cases_{}_{}_{}.pdf'.format(endpoint_type,
+                                                                 "ic_cons" if init_coms_consistent else "ic_incons",
+                                                                 'pp' if analyse_branches else 'rp')
+        fig.write_image(path.join(figures_output_dir, file_name), scale=2)
+        
+def consistency_case_heatmaps_by_weights(data, 
+                             endpoint_type, 
+                             case_name,
+                             go_models = ["LinearGlobalRE","QuadraticGlobalRE"],
+                             analyse_branches = False,
+                             bootstrap = False,
+                             n_resamples = 400):
+     
+    # restrict global optima dataframe to two variants
+    if endpoint_type=="go":
+        rdata = data[data["model_name"].isin(go_models)]
+    else:
+        rdata=data
+        
+    if case_name in ["consistency_preserving", "consistency_eliminating"]:
+        # consistent init coms
+        rdata = rdata[rdata["init_coms_dia_consistent"]]
+    else:
+        # inconsistent init coms
+        rdata = rdata[~rdata["init_coms_dia_consistent"]]
+         
+    
+    values_name = endpoint_type + '_' + case_name + '_case' 
+        
+    
+    display_case_name = " ".join(case_name.split("_"))
+    
+    heat_maps_by_weights(re_data = rdata, 
+                     values = values_name, 
+                     #title = '{} share of {} cases for {}{}'.format(metric, display_case_name, display_endpoint_type, branches), 
+                     annot_std = False,
+                     annot_fmt="{:2.2f}\n", 
+                     annot_std_fmt = r'$\pm${:2.2f}',
+                     vmin=0, vmax=1,
+                     bootstrap = bootstrap,
+                     n_resamples = n_resamples)
