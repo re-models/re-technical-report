@@ -1,5 +1,6 @@
 
 from ast import literal_eval
+from math import log
 from os import getcwd, path
 from pathlib import Path
 import tarfile
@@ -19,6 +20,7 @@ from itertools import combinations
 from IPython import get_ipython
 
 from matplotlib_venn import venn2
+from tau import DialecticalStructure, Position, StandardPosition
 
 
 nice_model_names = {'StandardGlobalReflectiveEquilibrium':'QuadraticGlobalRE',
@@ -679,3 +681,95 @@ def consistency_case_heatmaps_by_weights(data,
                      vmin=0, vmax=1,
                      bootstrap = bootstrap,
                      n_resamples = n_resamples)
+
+
+######################################################################    
+##################### Alternative Systematicity Measures #############
+######################################################################    
+    
+# helper functions
+gg = lambda x: 1 - x**2
+
+def sys_standard(theory_size, theory_clos_size):
+    return gg((theory_size-1)/theory_clos_size)
+
+def sys_pure_simpl(theory_size, n):
+    return gg((theory_size-1)/n)
+
+def sys_af(theory_size, sig_theory, n):
+    return gg((theory_size*(log(sig_theory, 2)+1))/(n*(n+1)))
+
+
+def restricted_sigma(tau: DialecticalStructure, domain: Position):
+    return len([pos for pos in tau.consistent_positions() if pos.domain()==domain])
+
+def conditional_restricted_sigma(tau: DialecticalStructure, domain: Position, condition: Position):
+    n = tau.sentence_pool().size()
+    # If the given `domain` is the whole domain minus the condition's domain, the conditional
+    # restricted sigma is simply sigma given the condition:
+    restricted_domain = StandardPosition.from_set(tau.sentence_pool().domain().as_set() - condition.domain().as_set(), n)
+    if restricted_domain == domain:
+        return tau.n_complete_extensions(condition)
+    
+    pos_sigma_conditional_restricted = {StandardPosition.from_set(pos.as_set() & domain.as_set(), n) for 
+                                        pos in 
+                                        tau.consistent_complete_positions() if 
+                                        condition.is_subposition(pos)}
+    return len(pos_sigma_conditional_restricted)
+
+def sys_global(tau: DialecticalStructure, theory: Position):
+    n = tau.sentence_pool().size()
+    restricted_domain = StandardPosition.from_set(tau.sentence_pool().domain().as_set() - theory.domain().as_set(), n)
+    # bug: restricted_domain.size() 
+    restricted_domain_size = len(restricted_domain.as_set()) 
+    
+    if restricted_domain.size() == 0:
+        return 0
+    else:
+        return (log(restricted_sigma(tau,restricted_domain),2)-log(conditional_restricted_sigma(tau, restricted_domain, theory),2))/(restricted_domain_size/2)
+
+
+def sys_sigligs(tau: DialecticalStructure, theory: Position):
+    n = tau.sentence_pool().size()
+    restricted_domain = StandardPosition.from_set(tau.sentence_pool().domain().as_set() - theory.domain().as_set(), n)
+    # bug: restricted_domain.size() 
+    restricted_domain_size = len(restricted_domain.as_set()) 
+    
+    if restricted_domain.size() == 0:
+        return 0
+    else:
+        #sig = tau.n_complete_extensions()
+        return (log(restricted_sigma(tau,restricted_domain),2)-log(conditional_restricted_sigma(tau, restricted_domain, theory),2))/(n-1)
+
+def sys_sigligs_2(tau: DialecticalStructure, theory: Position, denom: float):
+    n = tau.sentence_pool().size()
+    restricted_domain = StandardPosition.from_set(tau.sentence_pool().domain().as_set() - theory.domain().as_set(), n)
+    # bug: restricted_domain.size() 
+    restricted_domain_size = len(restricted_domain.as_set()) 
+    
+    if restricted_domain.size() == 0:
+        return 0
+    else:
+        sig = tau.n_complete_extensions()
+        return (log(restricted_sigma(tau,restricted_domain),2)-log(conditional_restricted_sigma(tau, restricted_domain, theory),2))/denom
+        #return (log(restricted_sigma(tau,restricted_domain),2)-log(conditional_restricted_sigma(tau, restricted_domain, theory),2))/(n-1)
+
+    
+def sys_sigquags(tau: DialecticalStructure, theory: Position):
+    return 1-(1-sys_sigligs(tau, theory))**2
+
+def sligs_a(theory_size, theory_clos_size, n, alpha):
+    # penalties
+    score = alpha * (theory_size - 1) + (1 - alpha) * (n - theory_clos_size)
+    # denominator "c" for normalisation
+    denom = theory_clos_size * (2*alpha-1) + n * (1-alpha) - alpha # (n-1)*0.5 + abs(alpha-0.5) * (n-1)
+    # linear G
+    return 1-score/denom
+
+def s_sligs_b(theory_size, theory_clos_size, n, beta):
+    # penalties
+    score = beta * (theory_size - 1) + (1 - beta) * (n - theory_clos_size)
+    # alternative denominator for normalisation
+    denom = (abs(beta - 0.5) + 0.5) * (n - 1)
+    # linear G
+    return 1-score/denom
