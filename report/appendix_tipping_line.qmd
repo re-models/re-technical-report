@@ -1,8 +1,8 @@
 # The Tipping Line of Linear Model Variants {#sec-appendix-tipping}
 
-A *linear model variant* is a model that differs from the model provided by @beisbart_making_2021 only in that the measures $A,F,S$ involve the linear function $G(x) = 1-x$ instead of the quadratic $G(x) = 1-x^2$. This variant exhibits a *tipping line* in ternary plots that marks off configurations of weights that lead to drastically different behaviour with respect to the attainment of full RE states (e.g. @fig-hm-full-re-go) consistency considerations (e.g. @fig-cons-go-hm-rp and @fig-cons-fp-hm-rp), or the maximzation of measures such as account or faithfulness, (e.g. @fig-hm-max-account-go and @fig-hm-max-account-fp). 
+*Linear model variants* involve a linear function $G(x) = 1-x$ in the calculation of account ($A$), faithfulness ($F$) and systematicity ($S$) instead of the quadratic function $G(x) = 1-x^2$ used in @beisbart_making_2021. For the linear models, we observed a *tipping line* in ternary plots that marks off configurations of weights that lead to drastically different behaviour with respect to the attainment of full RE states (see, e.g., @fig-hm-full-re-go) consistency considerations (see, e.g., @fig-cons-go-hm-rp and @fig-cons-fp-hm-rp), or the maximization of measures such as account or faithfulness (see, e.g., @fig-hm-max-account-go and @fig-hm-max-account-fp). 
 
-We can characterize the tipping line as an equation that relates $\alpha_{A}$ and $\alpha_{S}$:
+This tipping line is characeterized by the following equation:
 $$
 \alpha_{A} = \frac{1-\alpha_{S}}{2}  
 $${#eq-lin}
@@ -13,105 +13,107 @@ $$
 \alpha_{A} = \alpha_{F}
 $$
 
-Consequently, the tipping line splits the space of weight configuration in two regions $\alpha_{A} < \alpha_{F}$ and $\alpha_{A} > \alpha_{F}$. 
+Consequently, the tipping line splits the space of weight configurations into the two regions $\alpha_{A} < \alpha_{F}$ and $\alpha_{A} > \alpha_{F}$. 
 
-There are interesting analytical results for both regions. The following propositions and its corollaries help to explain the salient change in the behaviour of linear model variants when crossing the tipping line.
+There are interesting analytical results for both regions. The following propositions and their corollaries help to explain the salient change in the behaviour of linear model variants when crossing the tipping line.^[We follow the notation used in @beisbart_making_2021. Definitions of terms we neither introduced here nor in the introduction (@sec-intro) can be found in @beisbart_making_2021.]
 
 + **Proposition 1**: For the linear model variants all global optima are full RE states if $\alpha_{A} > \alpha_{F}$.
 + **Proposition 2**: For the linear model variants all global-optimum commitments maximize faithfulness if $\alpha_{F} > \alpha_{A}$.
 
 ## Proposition 1
-Assume that a dialectical structure $\tau$ and some initial commitments $C_{0}$ are given. Moreover, assume $\alpha_{A} > \alpha_{F}$ for a configuration of weights $(\alpha_{A}, \alpha_{S}, \alpha_{F})$ in a linear model variant. Then all global optima (relative to $C_{0}$) are full RE states.
+
+Let $\tau$ be a dialectical structure and $\mathcal{C}_{0}$ some initial commitments. Moreover, assume $\alpha_{A} > \alpha_{F}$ for a configuration of weights $(\alpha_{A}, \alpha_{S}, \alpha_{F})$ in a linear model variant. Then, all global optima (relative to $\mathcal{C}_{0}$) are full RE states.
 
 **Corollaries**
 The linear model variants exhibit the following behaviour for $\alpha_{A} > \alpha_{F}$.
 
-- For global optima, there are no inconsistency preserving cases.
-- Consistency eliminating cases do not occur for global optima.
+- For global optima, there are no inconsistency-preserving cases.
+- Consistency-eliminating cases do not occur for global optima.
 
 **Proof sketch**
 
-Intuitively, $\alpha_{A} > \alpha_{F}$ means that account trumps faithfulness, which allows to select commitments ignoring faithfulness so that they are fully and exclusively accounted for by a theory.
+Intuitively, $\alpha_{A} > \alpha_{F}$ means that account trumps faithfulness. Accordingly, the process can maximize account during the adjustment step of commitments without caring about faithfulness.
 
-Assume that an epistemic state $(C, T)$ is a global optimum according to the achievement function $Z$ given some initial commitments $C_{0}$ and a configuration of weights  $(\alpha_{A}, \alpha_{S}, \alpha_{F})$ such that $\alpha_{A} > \alpha_{F}$. We need to show that $(C, T)$ is a full RE state, i.e., that $T$ fully and exclusively accounts for $C$ (FEA), or equivalently, $A(C, T) = 1$.
+Assume that an epistemic state $(\mathcal{C}, \mathcal{T})$ is a global optimum according to the achievement function $Z$ given some initial commitments $\mathcal{C}_{0}$ and a configuration of weights  $(\alpha_{A}, \alpha_{S}, \alpha_{F})$ such that $\alpha_{A} > \alpha_{F}$. We need to show that $(\mathcal{C}, \mathcal{T})$ is a full RE state, i.e., that $\mathcal{T}$ fully and exclusively accounts for $\mathcal{C}$, or equivalently, $A(\mathcal{C}, \mathcal{T}) = 1$.
 
 For a proof by contradiction, assume that 
 $$
-A(C, T)=G\left(\frac{D_{0,\,0.3,\,1,\,1}(C,\overline{T})}{n}\right) < 1
+A(\mathcal{C}, \mathcal{T})=G\left(\frac{D_{0,\,0.3,\,1,\,1}(\mathcal{C},\overline{\mathcal{T}})}{n}\right) < 1
 $$ 
 
-This holds only if $D_{0,\,0.3,\,1,\,1}(C,\overline{T}) > 0$. In other words, there is at least one sentence $s$ (negated or unnegated) for which there is a positive contribution to the Hamming distance (penalty). In particular, we have the following cases:
+This holds only if $D_{0,\,0.3,\,1,\,1}(\mathcal{C},\overline{\mathcal{T}}) > 0$. In other words, there is at least one sentence $s$ (negated or unnegated) for which there is a positive contribution to the Hamming distance (penalty). In particular, we have the following cases:
 
-1. $\overline{T}$ extends $C$ with respect to $s$: There is $s \in \overline{T}$, but $s$ and $\neg s$ are not in $C$.
+1. $\overline{\mathcal{T}}$ extends $\mathcal{C}$ with respect to $s$: There is $s \in \overline{\mathcal{T}}$, but $s$ and $\neg s$ are not in $\mathcal{C}$.
    - penalty: $0.3$
-2. $\overline{T}$ contracts $C$ with respect to $s$: There is $s \in C$, but $s$ and $\neg s$ are not in $\overline{T}$.
+2. $\overline{\mathcal{T}}$ contracts $\mathcal{C}$ with respect to $s$: There is $s \in \mathcal{C}$, but $s$ and $\neg s$ are not in $\overline{\mathcal{T}}$.
    - penalty: $1$
-3. $\overline{T}$ and $C$ contradict each other with respect to $s$: Either $s \in \overline{T}$ and $\neg s \in C$ or $\neg s \in \overline{T}$ and $s \in C$ 
+3. $\overline{\mathcal{T}}$ and $\mathcal{C}$ contradict each other with respect to $s$: Either $s \in \overline{\mathcal{T}}$ and $\neg s \in \mathcal{C}$ or $\neg s \in \overline{\mathcal{T}}$ and $s \in \mathcal{C}$ 
    - penalty: $1$
 
-Each case of changing $C$ with respect to $s$, yielding new commitments $C'$, impacts the contributions to the Hamming distances for account and faithfulness. Note that systematicity is not affected by changing the commitments.
+Each case of changing $\mathcal{C}$ with respect to $s$, yielding new commitments $\mathcal{C}'$, impacts the contributions to the Hamming distances for account and faithfulness. Note that systematicity is not affected by changing the commitments.
 
-![Differences in contributions to the measures of account and faithfulness between adjusted and original commitments](figures/tipping_table_account){#fig-table-account}
 
-The complete linearity of the achievement function allows to distribute ("push in") the weights $\alpha_{A}$ and $\alpha_{F}$ over the individual contributions of the hamming distances.
+The complete linearity of the achievement function allows us to distribute ("push in") the weights $\alpha_{A}$ and $\alpha_{F}$ over the individual contributions of the hamming distances.
 
 ![The weights $\alpha_{A}$ and $\alpha_{F}$ can be distributed over the individual contributions of the hamming distances in the linear achievement function](figures/tipping_align){#fig-align}
 
 Changing the commitments has no effect on 
 $$
-\frac{\alpha_{S}\cdot(\vert T\vert-1)}{\vert\overline{T}\vert},
+\frac{\alpha_{S}\cdot(\vert \mathcal{T}\vert-1)}{\vert\overline{\mathcal{T}}\vert},
 $$
 
-and $n$ is fixed. Consequently, $Z$ can be optimised by changing the commitments such that the following term is minimised:
+and $n$ is fixed. Consequently, $Z$ can be optimised by changing the commitments such that the following term is minimized:
 
 ![Minimizing this term optimizes the achievement function.](figures/tipping_align2){#fig-align2}
 
-Since the achievement function is optimised for minimal contributions and $\alpha_{A} > \alpha_{F}$, it is always more attractive to change the commitments to increase account rather than faithfully respecting the initial commitments. To see this, consider the change in contributions multiplied by the corresponding weights in @fig-table-account. This argument can be repeated for every sentence for which $C$ and $\overline{T}$ differ.
+Since the achievement function is optimized for minimal contributions and $\alpha_{A} > \alpha_{F}$, it is always more attractive to change the commitments to increase account rather than faithfully respecting the initial commitments. To see this, consider the change in contributions multiplied by the corresponding weights in @fig-table-account. This argument can be repeated for every sentence for which $\mathcal{C}$ and $\overline{\mathcal{T}}$ differ.
 
-In summary, if $(C, T)$ is a global optimum but $A(C, T) < 1$, then there is a position $(C', T)$ such that $A(C, T) < A(C', T)$ contradicting $(C, T)$ being a global optimum. Consequently, we must have $A(C, T) = 1$, i.e., $T$ accounts fully and exclusively for $S$ (FEA). This shows that $(C, T)$ is a full RE state.
+![Differences in contributions to the measures of account and faithfulness between adjusted and original commitments](figures/tipping_table_account){#fig-table-account}
 
-*Remark*
 
-Note that this argument does not work for quadratic model variants, and in particular, the default model of  @beisbart_making_2021. 
-Remember that the Hamming distance $D$ is a summation of penalties. Consequently, squaring the hamming distance yields a polynomial expression where every contributing penalty "interferes" by multiplication with the others. This blocks the above strategy of comparing the contributions and distributing the weights $\alpha_{A}$ or $\alpha_{S}$ over these expressions. In the quadratic models of the above ensemble study, we can observe a gradual transition between configurations that yield global optima, which exhibit a specific behaviour, to configurations that almost certainly fail in this respect.
+In summary, if $(\mathcal{C}, \mathcal{T})$ is a global optimum but $A(\mathcal{C}, \mathcal{T}) < 1$, then there is a position $(\mathcal{C}', \mathcal{T})$ such that $A(\mathcal{C}, \mathcal{T}) < A(\mathcal{C}', \mathcal{T})$ contradicting $(\mathcal{C}, \mathcal{T})$ being a global optimum. Consequently, we must have $A(\mathcal{C}, \mathcal{T}) = 1$, i.e., $\mathcal{T}$ accounts fully and exclusively for $S$. This shows that $(\mathcal{C}, \mathcal{T})$ is a full RE state.
+
+*Remark*: Note that this argument does not work for quadratic model variants, and in particular, the default model of @beisbart_making_2021. 
+The Hamming distance $D$ is a summation of penalties. Consequently, squaring the hamming distance yields a polynomial expression where every contributing penalty "interferes" due to multiplication with the others. The resulting multiplicative terms block the above strategy of comparing the contributions and distributing the weights $\alpha_{A}$ or $\alpha_{S}$ over these expressions. This is why the quadratic models' share of full RE states among global optima changes gradually with a change in $\alpha$-weights (see @sec-full-re-states).
 
 ## Proposition 2
 
-Assume that a dialectical structure $\tau$ and some initial commitments $C_{0}$ are given. Moreover, assume $\alpha_{A} < \alpha_{F}$ for a configuration of weights $(\alpha_{A}, \alpha_{S}, \alpha_{F})$ in a linear model variant. Then, for all global optima (relative to $C_{0}$) according to the achievement function specified by the configuration of weights the following holds:
+Assume that a dialectical structure $\tau$ and some initial commitments $\mathcal{C}_{0}$ are given. Moreover, assume $\alpha_{A} < \alpha_{F}$ for a configuration of weights $(\alpha_{A}, \alpha_{S}, \alpha_{F})$ in a linear model variant. Then, for all global optima:
 
 $$
-F(C\,\vert\,C_{0}) = 1.
+F(\mathcal{C}\,\vert\,\mathcal{C}_{0}) = 1.
 $$
 
 **Corollaries**
+
 The linear model variants exhibit the following behaviour for $\alpha_{A} < \alpha_{F}$:
 
-- The relative share of inconsistency eliminating cases among global optima is 0.0. 
-- *Explanation*: Removing or revising an initial inconsistency requires to deviate from the initial commitments, which is incompatible with maximal faithfulness.
-- Similarly, the relative share of inconsistency preserving cases in this region of weight configurations correspond to the relative share of inconsistent initial commitments.
+- The relative share of inconsistency-eliminating cases among global optima is 0.0. 
+   - *Explanation*: Removing or revising an initial inconsistency requires deviating from the initial commitments, which is incompatible with maximal faithfulness.
+- Similarly, the relative share of inconsistency-preserving cases in this region of weight configurations corresponds to the relative share of inconsistent initial commitments.
 - In turn, the relative share of global optima with maximal value for faithfulness is 1.0.
 
 **Proof sketch of Proposition 2**
 
-The proof of Proposition 2 is highly similar to the one of Proposition 1.
+The proof of Proposition 2 is highly similar to that of Proposition 1.
 
-For a proof by contradiction, assume that $(C, T)$ is a global optimum according to $Z$, but $F(C\,\vert\,C_{0}) < 1$.
+For a proof by contradiction, assume that $(\mathcal{C}, \mathcal{T})$ is a global optimum according to $Z$, but $F(\mathcal{C}\,\vert\,\mathcal{C}_{0}) < 1$.
 
-This holds only if $G\left(\frac{D_{0,0,1,1}(C_{0}, C)}{n}\right) < 1$, i.e. only if $D_{0,0,1,1}(C_{0}, C) > 0$.
-In other words, there is at least one sentence, for which there is a positive contribution to the Hamming distance. 
-In particular, there are two cases
+This holds only if $G\left(\frac{D_{0,0,1,1}(\mathcal{C}_{0}, \mathcal{C})}{n}\right) < 1$, i.e. only if $D_{0,0,1,1}(\mathcal{C}_{0}, \mathcal{C}) > 0$.
+In other words, there is at least one sentence for which there is a positive contribution to the Hamming distance. 
+In particular, there are two cases:
 
-1. $C$ contracts $C_{0}$ with respect to $s$: +1 (there is $s \in C_{0}$, but $s$ and $\neg s$ are not in $C$)
-2. $C$ and $C_{0}$ contradict each other with respect to $s$: +1
+1. $\mathcal{C}$ contracts $\mathcal{C}_{0}$ with respect to $s$: +1 (there is $s \in \mathcal{C}_{0}$, but $s$ and $\neg s$ are not in $\mathcal{C}$)
+2. $\mathcal{C}$ and $\mathcal{C}_{0}$ contradict each other with respect to $s$: +1
 
 Consider the impacts on individual contributions to the Hamming distances for account
-and faithfulness of changing $C$ with respect to $s$, yielding new commitments  $C'$, in particular the difference $d(C_{0}, C', \lbrace s, \neg s\rbrace) - d(C_{0}, C, \lbrace s, \neg s\rbrace)$. In the following subcases, (\*) will denote the worst cases.
+and faithfulness of changing $\mathcal{C}$ with respect to $s$, yielding new commitments  $\mathcal{C}'$, in particular the difference $d(\mathcal{C}_{0}, \mathcal{C}', \lbrace s, \neg s\rbrace) - d(\mathcal{C}_{0}, \mathcal{C}, \lbrace s, \neg s\rbrace)$. In the following subcases, (\*) will denote the worst cases.
 
 
 
 **Case 1** 
 
-There is an $s$ in $C_{0}$, but $s$ and $\neg s$ are not in $C$. We can now define a new $C'$ by $C':=C\cup \{s\}$
+There is an $s$ in $\mathcal{C}_{0}$, but $s$ and $\neg s$ are not in $\mathcal{C}$. We can now define a new $\mathcal{C}'$ by $\mathcal{C}':=\mathcal{C}\cup \{s\}$
 
 *Faithfulness*
 
@@ -119,31 +121,31 @@ There is an $s$ in $C_{0}$, but $s$ and $\neg s$ are not in $C$. We can now defi
 
 *Account*
 
-- Case: $s \in \overline{T}$: agreement (new) - expansion (old): -0.7
-- Case $\neg s \in \overline{T}$: contradiction (new) - expansion (old): + 0.7
-- Case $s$ and $\neg s \notin \overline{T}$ (\*): contraction (new)- agreement (old): +1
+- Case: $s \in \overline{\mathcal{T}}$: agreement (new) - expansion (old): -0.7
+- Case $\neg s \in \overline{\mathcal{T}}$: contradiction (new) - expansion (old): + 0.7
+- Case $s$ and $\neg s \notin \overline{\mathcal{T}}$ (\*): contraction (new)- agreement (old): +1
 
-That is, adding $s$ to $C$ yields a +1 contribution to the account penalties in the worst case. This is counterbalanced by a -1 improvement in the faithfulness penalties.
+That is, adding $s$ to $\mathcal{C}$ yields a +1 contribution to the account penalties in the worst case. This is counterbalanced by a -1 improvement in the faithfulness penalties.
 
 **Case 2** 
 
-Without loss of generality, we can assume that $s \in C_{0}$ and $\neg s \in C$. We can now either remove $\neg s$ from $C$ (Subcase A) or revise $C$ with $s$ (Subcase B).
+Without loss of generality, we can assume that $s \in \mathcal{C}_{0}$ and $\neg s \in \mathcal{C}$. We can now either remove $\neg s$ from $\mathcal{C}$ (Subcase A) or revise $\mathcal{C}$ with $s$ (Subcase B).
 
-**Subcase A:** $C':=C\setminus \{\neg s\}$
+**Subcase A:** $\mathcal{C}':=\mathcal{C}\setminus \{\neg s\}$
 
 *Faithfulness*
 
-+ contraction (new) - contradiction (old) : +0
++ contraction (new) - contradiction (old): +0
 
 *Account*
 
-- $s \in \overline{T}$: expansion (new) - contradiction (old):  -0.7
-- Case $\neg s \in \overline{T}$ (\*): expansion (new) - agreement (old): +0.3
-- Case $s$ and $\neg s \notin \overline{T}$: agreement(new) - contraction(old): -1
+- $s \in \overline{\mathcal{T}}$: expansion (new) - contradiction (old):  -0.7
+- Case $\neg s \in \overline{\mathcal{T}}$ (\*): expansion (new) - agreement (old): +0.3
+- Case $s$ and $\neg s \notin \overline{\mathcal{T}}$: agreement(new) - contraction(old): -1
 
-Now, removing $\neg s$ from $C$ leads to a worsening in the account penalties of +0.3 in the worst case. This is contrasted with no differences in the contributions to faithfulness.
+Now, removing $\neg s$ from $\mathcal{C}$ leads to a worsening in the account penalties of +0.3 in the worst case. This is contrasted with no differences in the contributions to faithfulness.
 
-**Subcase B:** $C':=(C\setminus \{\neg s\}) \cup\{s\}$
+**Subcase B:** $\mathcal{C}':=(\mathcal{C}\setminus \{\neg s\}) \cup\{s\}$
 
 *Faithfulness*
 
@@ -151,38 +153,34 @@ Now, removing $\neg s$ from $C$ leads to a worsening in the account penalties of
 
 *Account*
 
-- Case: $s \in \overline{T}$: agreement (new) - contradiction (old): -1
-- Case $\neg s \in \overline{T}$ (\*): contradiction (new) - agreement (old): +1
-- Case $s$ and $\neg s \notin \overline{T}$: contraction (new) - contraction (old): +0
+- Case: $s \in \overline{\mathcal{T}}$: agreement (new) - contradiction (old): -1
+- Case $\neg s \in \overline{\mathcal{T}}$ (\*): contradiction (new) - agreement (old): +1
+- Case $s$ and $\neg s \notin \overline{\mathcal{T}}$: contraction (new) - contraction (old): +0
 
-In this case, revising $C$ with $s$ leads to a +1 contribution to the account penalties in the worst case. This is counterbalanced by an improvement of -1 in the faithfulness penalties. 
+In this case, revising $\mathcal{C}$ with $s$ leads to a +1 contribution to the account penalties in the worst case. This is counterbalanced by an improvement of -1 in the faithfulness penalties. 
 
-The complete linearity of the achievement function allows to distribute (push in) the weights $\alpha_{A}$ and $\alpha{F}$ over the individual contributions of the hamming distances in $Z$. Hence, the weights also apply to the individual contributions considered above. Moreover, changing the commitments does not affect the systematicity of the theory, i.e. $S(T)$ is identical for $(C, T)$ and $(C', T)$. Hence, the achievement function is optimised for minimal contributions in the measures for account and faithfulness and $\alpha_{F} > \alpha{A}$.
+The complete linearity of the achievement function allows us to distribute (push in) the weights $\alpha_{A}$ and $\alpha_{F}$ over the individual contributions of the hamming distances in $Z$. Hence, the weights also apply to the individual contributions considered above. Moreover, changing the commitments does not affect the systematicity of the theory, i.e. $S(\mathcal{T})$ is identical for $(\mathcal{C}, \mathcal{T})$ and $(\mathcal{C}', \mathcal{T})$. Hence, the achievement function is optimized for minimal contributions in the measures for account and faithfulness and $\alpha_{F} > \alpha_{A}$.
 
 Consequently, it is always (Case 1, Case 2 (A and B)) more attractive to stay faithful to the initial commitments rather than to change the commitments in order to increase account.
 
-This argument can be repeated for every sentence, for which $C_{0}$ and $C$ differ.
+This argument can be repeated for every sentence, for which $\mathcal{C}_{0}$ and $\mathcal{C}$ differ.
 
-In summary, if $(C, T)$ is a global optimum but it is assumed that $F(C\,\vert\, C_{0}) < 1$, then there is
-a position $(C', T)$ such that $Z(C, T \,\vert\, C_{0}) < Z(C', T \,\vert\, C_{0})$, contradicting $(C, T)$ being a
-global optimum. Consequently, we must have $F(C \,\vert\, C_{0}) = 1$.
+In summary, if $(\mathcal{C}, \mathcal{T})$ is a global optimum but it is assumed that $F(\mathcal{C}\,\vert\, \mathcal{C}_{0}) < 1$, then there is
+a position $(\mathcal{C}', \mathcal{T})$ such that $Z(\mathcal{C}, \mathcal{T} \,\vert\, \mathcal{C}_{0}) < Z(\mathcal{C}', \mathcal{T} \,\vert\, \mathcal{C}_{0})$, contradicting $(\mathcal{C}, \mathcal{T})$ being a
+global optimum. Consequently, we must have $F(\mathcal{C} \,\vert\, \mathcal{C}_{0}) = 1$.
 
 ## Generalization to fixed points
 
-A second inspection of the results of linear mode variants reveals that the corollaries seem to hold for fixed points as well. The analoguous propositions for fixed points require slightly modified proofs.
-
-Here is an outline for a proof of Propostion 1 and fixed points from the globally optimizing model variant(`LinearGlobalRE`). Proposition 2 can be generalized with an analogous proof as well.
+The results we prooved for the linear model variants hold not only for global optima but also for fixed points, which requires but a slight modification of the above proofs. The following proof sketch shows howto generalize Proposition 1 to fixed points for the semi-globally optimizing model variant `LinearGlobalRE`. Proposition 2 can be generalized similarly.
 
 **Proof sketch**
 
-Assume that a dialectical structure $\tau$ and some initial commitments $C_{0}$ are given. Moreover, assume $\alpha_{A} > \alpha_{F}$ for a configuration of weights $(\alpha_{A}, \alpha_{S}, \alpha_{F})$ in a linear model variant.
+Let $\tau$ be a dialectical structure and $\mathcal{C}_{0}$ some initial commitments. Moreover, assume $\alpha_{A} > \alpha_{F}$ for a configuration of weights $(\alpha_{A}, \alpha_{S}, \alpha_{F})$.
 
-Let $(C_{i}, T_{i})$ be a fixed point from the (semi-)globally optimizing model variant(`LinearGlobalRE`) that resulted from an RE process with initial commitments $C_{0}$.
+For a proof by contradiction, we assume that $(\mathcal{C}_{i}, \mathcal{T}_{i})$ is a fixed point with $A(\mathcal{C}_{i}, \mathcal{T}_{i}) < 1$. 
 
-For a proof by contradiction, we assume once again that $A(C_{i}, T_{i}) < 1$. Hence, there is at least one sentence $s$ for which there is a positive contribution to the Hamming distance in the measure of account.
-
-However, during the last adjustment step, *all* minimally consistent position were available as candidates. We consider $C_{i}'$ which results from changing $C_{i}$ with respect to $s$. From this point on, the proof is analogous to the proof from above for global optima. Hence, $(C_{i}', T_{i})$ would perform better than $(C_{i}, T_{i})$ according to the achievement functon, contradicting $(C_ {i}, T_{i})$ being a fixed point.
+$(\mathcal{C}_{i}, \mathcal{T}_{i})$ being a fixed point implies that $(\mathcal{C}_{i-1}, \mathcal{T}_{i-1})=(\mathcal{C}_{i}, \mathcal{T}_{i})$ and hence that $A(\mathcal{C}_{i-1}, \mathcal{T}_{i-1}) < 1$ as well. However, during the last adjustment step (from $i-1$ to $i$), *all* minimally consistent positions were available as candidates. Since $A(\mathcal{C}_{i-1}, \mathcal{T}_{i-1}) < 1$, the process could have found *other* commitments $\mathcal{C}_{i}'$ which would have resulted from changing $\mathcal{C}_{i-1}$ with respect to $s$ following the same line of reasoning we used to prove Proposition 1. Again, there would have been at least one sentence $s$ for which there is a positive contribution to the Hamming distance in the measure of account. Hence, there would have been $(\mathcal{C}_{i}', \mathcal{T}_{i})$ with $\mathcal{C}_{i}'\neq \mathcal{C}_{i-1}$ that would have performed better than $(\mathcal{C}_{i}, \mathcal{T}_{i})$ according to the achievement functon. This shows that $(\mathcal{C}_ {i}, \mathcal{T}_{i})$ cannot be a fixed point (contradicting the assumption).
 
 **Local Model variants**
 
-Finally, we can also generalize Propostion 1 and Proposition 2 to fixed points of the `LinearLocalRE` model variant. The difference to the semi-globally optimizing RE process of `LinearGlobalRE` is that locally optimzing models proceed by changing at most one sentence per adjustment step. But this is all we need to get the above proofs by contradiction off the ground, where hypothetical adjustments of the commitments with respect to a single element are considered.
+Finally, we can also generalize Proposition 1 and Proposition 2 to fixed points of the `LinearLocalRE` model variant. The difference to the semi-globally optimizing RE process of `LinearGlobalRE` is that locally optimizing models (with a neighborhood depth of $1$) proceed by changing at most one sentence per adjustment step. But this is all we need to get the above proofs by contradiction off the ground, where we only considered hypothetical adjustments of the commitments with respect to a single sentence. Accordingly, the propositions will also hold if we enlarge the $d$-neighborhood to more than one sentence.
