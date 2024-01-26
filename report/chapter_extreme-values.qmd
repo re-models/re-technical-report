@@ -1,19 +1,23 @@
 # Extreme values for account, systematicity, and faithfulness {#sec-extreme-values}
 
 ## Background {#sec-extreme-values-background}
-In this study, we examine extreme values from measures that operationalize RE desiderata in the formal model of RE: account, systematicity and faithfulness.
 
-$A(C, T) = 1$ means that the theory $T$ fully and exclusively accounts for the commitments $C$. Full and exclusive account is a condition for full RE states. Conversely, $A(C, T) = 0$ holds if a theory completely fails to account for commitments, that is, for every sentence in the commitments the closure theory does not contain this sentence, or contradicts the theory.
+In this chapter, we examine the conditions under which the desiderata account ($A$), systematicity ($S$) and faithfulness ($F$) yield extreme value (i.e., $0$ or $1$).
+
+
+Maximal account ($A(\mathcal{C}, \mathcal{T}) = 1$) means that the theory $\mathcal{T}$ fully and exclusively accounts for the commitments $\mathcal{C}$. Full and exclusive account is a condition for full RE states. Conversely, $A(\mathcal{C}, \mathcal{T}) = 0$ holds if a theory completely fails to account for commitments---that is, if for every sentence in the commitments, the theory's closure does not contain this sentence.
 
 The measure of systematicity for a theory $\mathcal{T}$ is defined as follows:
+
 $$
-S(\mathcal{T}) = G(\frac{\vert \mathcal{T}\vert -1}{\vert\overline{\mathcal{T}}\vert })
+S(\mathcal{T}) = G\left(\frac{\vert \mathcal{T}\vert -1}{\vert\overline{\mathcal{T}}\vert }\right)
 $$
 
-Hence, $S(\mathcal{T}) = 1$ if and only if $\vert \mathcal{T}\vert = 1$, i.e., $\mathcal{T}$ is a singleton theory, e.g., $\mathcal{T} =\lbrace s\rbrace$. Note that it does not matter whether $G$ is linear or quadratic. Furthermore, $S(T) = 0$ if and only if $\mathcal{T}=\emptyset$ by definition.
+with $G=1-x^2$ for quadratic models and $G=1-x$ for linear models.
 
+Hence, $S(\mathcal{T}) = 1$ if and only if $\vert \mathcal{T}\vert = 1$ (i.e., if and only if $\mathcal{T}$ is a singleton theory, e.g., $\mathcal{T} =\lbrace s\rbrace$). Note that it does not matter whether $G$ is linear or quadratic. Furthermore, $S(T) = 0$ if and only if $\mathcal{T}=\emptyset$ by definition.
 
-$F(C \vert C_{0}) = 1$ holds if and only if the initial committments $C_{0}$ are a subset of the commitments $C$ (expansions of the initial commitments are not penalized). $F(C \vert C_{0})$ attains the minimal value of 0, if every sentence of the initial commitments $C_{0}$ is missing in or contradicted by the commitments $C$.
+$F(\mathcal{C} \vert \mathcal{C}_{0}) = 1$ holds if and only if the initial commitments $\mathcal{C}_{0}$ are a subset of the commitments $\mathcal{C}$ (expansions of the initial commitments are not penalized). $F(\mathcal{C} \vert \mathcal{C}_{0})$ attains the minimal value of $0$ if every sentence of the initial commitments $\mathcal{C}_{0}$ is missing in or contradicted by the commitments $\mathcal{C}$.
 
 <!-- Extreme values for systematicity are not included. $S(T) = 1$ holds if and only if $T$ is a singleton. $S(T) = 0$ is no serious option, because it is reserved for the empty theory $T=\emptyset$.-->
 
@@ -38,9 +42,9 @@ The results of this chapter can be reproduced with the Jupyter notebook located 
 
 #### Minimal values
 
-There is no simulation setup which resulted in a global optimum or a fixed point that has a minimal value for the measure of account, systematicity or faithfulness. Consequently, we can exclude the consideration of minimal values from the subsequent analysis.
+There is no simulation setup that resulted in a global optimum or a fixed point with a minimal value for account, systematicity or faithfulness. Consequently, we can exclude the consideration of minimal values from the subsequent analysis.
 
-This is a desirable result, as minimal values for would constitute quite strange behaviour of the model variants. For example, $F(C\,\vert\,C_{0}) = 0$ would mean that an agent completely departed from their initial commitments $C_{0}$, which could amount to the undesirable outcome of changing the subject matter.
+This is a desirable result, as minimal values for $A$, $F$ and $S$ would constitute quite strange behaviour of the model variants, at least in the range of weights we considered in this study, for we omitted $\alpha$-weight combinations with zero-valued $\alpha$ weights. Take, for instance, faithfulness: $F(\mathcal{C}\,\vert\,\mathcal{C}_{0}) = 0$ would mean that an agent completely departed from their initial commitments $\mathcal{C}_{0}$, which could be interpreted as changing the subject matter. To the extent that faithfulness matters to some degree (i.e., $\alpha_F\neq 0$), we expect that fixed points and global optima take faithfulness into account (in the sense of $F(\mathcal{C}\,\vert\,\mathcal{C}_{0}) \neq 0$ for fixed point commitments or global optima commitments respectively).
 
 #### Maximal values
 
