@@ -2,108 +2,112 @@
 
 ## Overview
 
-In this report, we thoroughly assessed the formal RE model by @beisbart_making_2021 by numerical investigation. We ran computer simulations for a broad spectrum of model parameters, initial conditions and with different model variants. In the following paragraphs we summarize the most important findings with respect to the metrics described in @sec-intro-metrics.
+This report thoroughly assessed the formal RE model by @beisbart_making_2021 by numerical investigation. We ran computer simulations for a broad spectrum of model parameters and initial conditions and used four different model variants. In this chapter, we summarize the most important findings with respect to the metrics described in @sec-intro-metrics.
 
 **Global optima and fixed points**
 
-In @sec-go-and-fp, we investigated whether fixed points are global optima (GO efficiency), and conversely, whether global optima are reachable by equilibration processes (GO reachability).
+In @sec-go-and-fp, we investigated whether fixed points are global optima (GO efficiency) and, conversely, whether global optima are reachable by equilibration processes (GO reachability).
 
 - Overall, GO efficiency is high for semi-globally optimizing models and medium-high for locally optimizing models. 
 - GO efficiency drops for locally optimizing models with the size of the sentence pool.
 - For $\alpha_A < \alpha_S$, GO efficiency of the `LinearLocalRE` model is as high as of the models `QuadraticGlobalRE` and `LinearGlobalRE`.
 - GO reachability is low to medium for all models.
-- All but the `QuadraticGlobalRE` model perform worse concerning GO reachabiity with an increase in the size of the sentence pool.
+- All models except the `QuadraticGlobalRE` model perform worse concerning GO reachability with an increase in the size of the sentence pool.
 - The `QuadraticGlobalRE` model outperforms all other models on average.
 - The`LinearLocalRE` model reaches a higher GO efficiency than the `QuadraticLocalRE` model, but it is the other way around with respect to GO reachability.
 
 
 **Full RE states**
 
-In @sec-full-re-states, we explored whether fixed points and global optima attain full RE states, i.e., globally optimal states in which the theory fully and exlusively accounts for the commitments. 
+In @sec-full-re-states, we explored whether fixed points and global optima attain full RE states (i.e., global optima for which the theory fully and exclusively accounts for the commitments). 
 
-- Overall, the relative shares of full RE states among global optima and fixed points are rather low.
+- Overall, the relative share of full RE states among global optima and fixed points is rather low.
 - Heatmaps reveal combinations of weights for `GlobalQuadraticRE`, `GlobalLinearRE` and `LinearLocalRE`, where the relative share of full RE states among the outputs is acceptable. 
-- There is a sightly negative trend for the relative shares of full RE states among global optima and fixed points (result perspective) for increasing sentence pool sizes. 
-- The relative share of full RE fixed points (process perspective) of`LinearLocalRE` is not affected by the sentence pool size.
+- There is a slight negative trend for the relative shares of full RE states among global optima and fixed points (result perspective) for increasing sentence pool sizes. 
+- The sentence pool size does not affect the relative share of full RE fixed points (process perspective) of`LinearLocalRE`.
 
 
 **Consistency**
 
-In @sec-commitment-consistency, we assessed different aspects of consistency conduciveness of the  model variants.
+In @sec-commitment-consistency, we assessed different aspects of consistency conduciveness of the model variants.
 
-- The overall relative shares of consistent outputs, inconsistency-eliminating and consistency-preserving cases, as well as consistent unions are satisfactorily high for all model variants.
-- In view increasing sentence pool sizes, `LinearLocalRE` performs best with respect to all examined aspects of consistency. 
+- The overall relative shares of consistent outputs, inconsistency-eliminating and consistency-preserving cases, as well as consistent unions, are satisfactorily high for all model variants.
+- In view of increasing sentence pool sizes, `LinearLocalRE` performs best with respect to all examined aspects of consistency. 
 - There are regions of weight configurations ($\alpha_{A} > \alpha_{F}$) that yield desirable behaviour concerning consistency across all model variants. 
-- A salient "tipping line" in heatmaps of linear model variants marks off regions of weight configurations that yield funamentally different behavior. It can be explained by analytical results in @sec-appendix-tipping.
+- A salient "tipping line" in heatmaps of linear model variants marks off regions of weight configurations that yield a fundamentally different behaviour. The analytical results from @sec-appendix-tipping explain these observations.
 
 **Extreme measure values**
 
-In @sec-extreme-values, we nvestigated whether global optima and fixed points yield extreme values in the normalized measures $A$, $F$ and $S$.
+In @sec-extreme-values, we investigated whether global optima and fixed points yield extreme values in the normalized measures $A$, $F$ and $S$.
 
-- Overall, there are no surprising observations: Increasing the weight of a specific measure leads to more outputs maximizing the corresponding measure.
+- Overall, there are no surprising observations: Increasing the weight of a specific measure leads to more outputs that maximize the corresponding measure.
 
 
 ## Appendices
 
-We complemented the results concerning the main metrics with additional material in various appendices.
+The appendices include additional material, which can be used to explain some of the simulation results and which motivates suggestions for further research.
 
 **The tipping line of linear model variants**
 
 In @sec-appendix-tipping, we provide analytical results concerning a "tipping line" in linear model variants that help to explain various observations in the report.
 
-- For $\alpha_{A} > \alpha_{F}$, global optima of linear model variants always achieve full and exclusive account ($A(C, T) = 1$).
-- For $\alpha_{F} > \alpha_{A}$, the commitments of global optima of linear gmodel variants are always maximally faithful to the initial commitments ($F(C\,\vert\,C_{0}) = 1$).
-- These results also pertain to fixed points of linear model variants (CHECK)
+- For $\alpha_{A} > \alpha_{F}$, global optima of linear model variants always achieve full and exclusive account ($A(\mathcal{C}, \mathcal{T}) = 1$).
+- For $\alpha_{F} > \alpha_{A}$, the commitments of global optima of linear model variants are always maximally faithful to the initial commitments ($F(\mathcal{C}\,\vert\,\mathcal{C}_{0}) = 1$).
+- These results can be generalized to fixed points of the linear model variants.
 
+Note that the "tipping-line behaviour" we observed in the simulation results for the linear model variants concern their performance with respect to the various validation metrics and not which global optima and fixed points are reached. In other words, in each of the two regions ($\alpha_{A} > \alpha_{F}$ and $\alpha_{F} > \alpha_{A}$), global optima and fixed points will generally depend on the $\alpha$-weight combinations. Otherwise, we would have observed the tipping-line behaviour in all results for the linear model variants, which we didn't. 
 
-It is important to note that we cannot conclude from this tipping behavior of linear models with repsect to some metrics, that the liner model variants do not allow for more fine-grained trade-offs between the measures for account and faithfulness (and ultimately, turn this into a point that speaks against the linear model variants). Results from @sec-go-and-fp make it clear that weight configurations yield different sets of global despite there being uniform with respect to model validation metrics.
+The described restriction of the tipping-line behaviour is essential because, without this restriction, we could formulate a substantive objection against using the linear model variants. If global optima (and fixed points, respectively) would only depend on whether $\alpha_{A} > \alpha_{F}$ or $\alpha_{F} > \alpha_{A}$, and, accordingly not change within these regions, the model would fail to represent different decisions as how to balance account and faithfulness in reaching reflective equilibria---at least, the decision would be trivialized into a binary decision. However, the whole idea of using the proposed achievement function with $\alpha$ weights on a continuous scale is to allow for a fine-grained spectrum of balancing the different desiderata.  
+
 
 **Trivial endpoints**
 
-In @sec-appendix-trivial, we analyzed whether the model vriants yield "trivial" outputs, i.e. global optima or fixed points that consists of a singleton theory and a singleton commitment.
+In @sec-appendix-trivial, we analyzed whether the model variants yield "trivial" outputs---that is, global optima or fixed points that consist of singleton theories and commitments.
 
-- Overall, the relative share of trivial gobal optima and fixed points (result perspective) is very low for quadratic model variants
+- Overall, the relative share of trivial global optima and fixed points (result perspective) is very low for the quadratic model variants.
 - Linear model variants exhibit substantially more trivial global optima, but the relative shares are still low.
-- `LinearLocalRE` exhibits a substantial share of trivial fixed points in the process perspective, but not for the result perspectve.
+- `LinearLocalRE` exhibits a substantial share of trivial fixed points from the process perspective but not from the result perspective.
 - The relative shares of trivial global optima or fixed points tend to decrease with increasing sentence pool sizes.
-- In quadratic model variants, the configuration of weights have a small impact on the relative shares of trivial endpoints.
+- In quadratic model variants, the $\alpha$ weights have only a small impact on the relative shares of trivial endpoints.
 
 
 ## Conclusion
 
-The multifacetted analysis of the formal model RE in this report makes it difficult to draw universal conclusion or establish hard and fast rules for selecting one of the model variants. In general, we did not find conclusive evidence to exclude a model variant as a future reference point. First, each model variant meets the metrics to a sufficient degree for some range of simulation setups. Next, undesirable behavior (failing with respect to some metric) cannot be attributed to a model variant on its own, but may result from a combination of other aspects of a simulation setup, such as the randomly generated dialectical structures including the sentence pool size, the specific configuration of weights, or the also randomly chosen initial commitments.
+The results we arrived at are insufficient to draw general conclusions about the overall performance of the four analyzed model variants. Neither did we find conclusive evidence to exclude one model as generally inadequate, nor did we identify one model that outperforms the others in all aspects. Instead, each model variant meets some of the validation criteria to a sufficient degree within some ranges of simulation setups. In cases where a model variant performs poorly on average (over the spectrum of simulation setups), the others did as well. In other words, the performance of a model depends crucially on the specifics of the simulation setup (e.g., the chosen dialectical structure, sentence pool size, $\alpha$ weights and initial commitments) and the evaluation criterion at hand.
 
-This does not mean, that there are no differences between model variants at all. There are tendencies that could lead us to favor some model variant over another given specific objectives one strives for in an applcation of RE. Thus, trade-offs emerge on the level of metrics as well. The global model variants are superior to the locally optmizing models in reaching global optima through RE processes, but this comes at the cost of an exponentially growing search space for the global model variants. In turn, the outputs of models with a linear achievement function are guaranteed to meet certain metrics (e.g. consistency or full and exclusive account) for specific regions of weight configurations, but perform terible elsewhere.   
+This does not mean there are no differences between the model variants. Instead, in a specific context of using the RE model, there might be good reasons to prefer some model variant over the other. This is because the context might fix certain specifics of the simulation setup and provide independent reasons for them. Similarly, the context might give us a more nuanced picture of the relative importance of the different validation criteria. In light of such specifications, the results we presented can be used (possibly in combination with additional analyses) to choose a specific model (or at least exclude some). 
 
-Having to choose between models that trade off desirable features may be an unsatisfactory outcome of a technical report, but this is in perfect agreement with central ideas about RE.
+For instance, the context might prescribe a limited range of $\alpha$-weight combinations. In other words, there might be independent reasons of how to balance account, faithfulness and systematicity. We already saw that a model's performance is often highly sensitive to the chosen $\alpha$ weights. Within this region, one might repeat all those dependency analyses we only averaged over all $\alpha$-weight configurations (e.g., a model's performance in dependence of the sentence pool size). Then, it can (and will) still happen that the models perform differently with respect to the different validation criteria (consistency, reaching global optima and full RE states). However, that only means that there is a trade-off between these metrics. In other words, in addition to balancing account, faithfulness and systematicity, there is a balancing of those desiderata that are connected to the used validation criteria. 
+
+From this perspective, it is perhaps not that surprising and worrisome that the described results are mixed but in perfect agreement with central ideas about RE.
 
 
 ## Outlook
 
-The present state of the technical report is a starting point for future lines of research. We present a selection of possible next steps that came to our mind during working with the models. 
+In many ways, this technical report is but a starting point for future lines of research. In the following, we describe some promising and pressing issues that call for further research.
 
-Note that the current Python implementation of the formal model is designed to facilitate extending the model (as demonstrated by the three model variants included in this report). Various components of the formal model, e.g. the measures for desiderata in the achievement function, can be changed with few lines of code (see XXX).
+Note that the current Python implementation of the model is designed to facilitate extending the model (as demonstrated by the three model variants used in this report). Various components of the formal model, for instance, the measures account, faithfulness, and systematicity can be changed with a few lines of code (see XXX).
 
-### The neighborhood depth of locally optimizing model variants
+### The Neighborhood Depth and Search Strategy of Locally Optimizing Model Variants
 
-The local model variants examine available candidate positions for adjustments during RE processes in a small neighborhood of the current positon. For this report, this search depth was confined to adjusting a single sentence per adjustemt step. 
-A particular shortcoming of such a small neighborhood depths of local model variants is that they may "miss" sensible adjustments that involve arguments with more than one premise.^[Results that might suggest such a shortoming of local model variants can be found in @fig-rel-fpgo-fp-by-np-rp and @fig-rel-fpgo-fp-by-np-pp.]
+The local model variants examine available candidate positions for adjustments during RE processes in a small neighborhood of the current position. For this report, the search depth was confined to adjusting one single sentence per adjustment step. 
+A particular shortcoming of such small neighborhood depths is that they may "miss" sensible adjustments that involve arguments with more than one premise.^[Results that might suggest such a shortcoming of local model variants can be found in @fig-rel-fpgo-fp-by-np-rp and @fig-rel-fpgo-fp-by-np-pp.] In particular, the adjustment of theories might be severely restricted. 
 
-It is important to note that considering larger neighborhood depths reintroduces an exponential growth of the search space depending on the size of the sentence pool. However, this defies an original motivation to include locally optimizing models in this report, as they render future examples of larger sentence pool size computationally feasible.
-In view of this, new model variations are an interesting line of future exporation. For example, one could devise variations of locally optimizing models that allow to "backtrack" on branches, if adjustments in a different branch prove to bettter at some point.
+It is important to note that considering larger neighborhood depths reintroduces an exponential growth of the search space depending on the size of the sentence pool. One might, therefore, worry that enlarging the neighborhood depth defies the original motivation to use locally optimizing models---namely, providing a model that works computationally feasible with larger sentence pools.
 
-### The measure of systematicity
+In view of this and additional reasons, it is worthwhile to devise and analyze locally optimizing models that implement other search strategies for finding subsequent epistemic states. For instance, the process might mimic a random walk, or we might allow the model to "backtrack" different branches, enabling them to avoid dead-ends (i.e., mere local optima). 
 
-The measure of systematicity in the original formal model of @beisbart_making_2021 has a shortcoming as it does not discriminate between singleton theories on the basis of their scope (for formal details, see @sec-extreme-values-background). 
 
-The formal presentation of alternative systematicity measures needs to be complemented with the exploration of simulation results of corresponding model variants.
+### Alternative Systematicity Measures
 
-### The inferential density of dialectical structure
+The measure of systematicity in the original formal model of @beisbart_making_2021 has a shortcoming, as it does not discriminate between singleton theories on the basis of their scope (for formal details, see @sec-extreme-values-background). 
 
-We did not present results with repsect to the inferential density of the randomly generated dialectical structures (for the definition, see @sec-intro-dia). The dialectical structure determines relevant aspects at the outet of RE processes or global optmization (e.g. the number of complete and consistent positions). Hence, it may be interesting to treat the inferential density as an independent variable to gain new insights about the model's behaviour.
+In @sec-appendix-systematicity, we discussed several alternative suggestions to define systematicity and began to analyze them with respect to some intuitive criteria. These preliminary considerations should be complemented with the exploration of simulation results of corresponding model variants.
 
-### Extrapolation to larger sentence pool sizes
+### The Inferential Density of Dialectical Structures
 
-We considered a small range of sentence pool sizes (ranging from 6 to 9 unnegated sentences). It is quite clear that applications of the formal model of RE to somewhat realistic examples will involve much more sentences.
+We did not analyze the performance of the model variants in dependence on the inferential density of the randomly generated dialectical structures (for the definition, see @sec-intro-dia). One reason for this omission was the worry that the generated 50 dialectical structures per sentence pool hardly correspond to a representative sample of dialectical structures. Accordingly, we did not analyze whether and to what extent model outcomes depend on properties of the dialectical structure other than the sentence pool size. Hence, it may be interesting to treat, for instance, inferential density as an independent variable to gain new insights about the model's behaviour. 
 
-As it stands, the results of this report provide no solid basis to extrapolate findings to larger sentence pool sizes, e.g. about the attainment of global optima by locally optimizing model variants. However, this is an important step towards working with larger sentence pool sizes, for which the (semi)-global optimization of the original model of @beisbart_making_2021 is no longer computationally feasible. In these cases, some form of local optimization has to take over, but the prospects of using locally optimizing have to be evaluated carefully beforehand. To arrive at better estimates, one would need dedicated ensembles of simulations that comprise a wider, but still computationally feasible, range of sentence pool sizes for which results of (semi)-globally and locally model variants can be compared.
+### Extrapolation to Larger Sentence Pool
+
+We considered only a confined range of sentence pools with few sentences ($12$, $14$, $16$ and $18$). As it stands, the results of this report provide no solid basis to extrapolate our findings to larger sentence pools. Such results are, however, needed since it is pretty clear that applications of the formal RE model to somewhat realistic cases will involve much more sentences.^[For instance, the reconstruction of the XXX refer to Tanja Trolley Cases reconstruction.] It is, in particular, important to know whether and under which conditions locally optimizing model variants can reach global optima since a semi-global optimization is computationally infeasible with larger sentence pools. In these cases, some form of local optimization has to take over. However, the prospects of using locally optimizing models have to be evaluated carefully beforehand. To arrive at better estimates, one would need dedicated ensembles of simulations comprising larger sentence pools that simultaneously allow the calculation of global optima as reference points.
