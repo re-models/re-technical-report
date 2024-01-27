@@ -695,6 +695,25 @@ def consistency_case_heatmaps_by_weights(data,
                      vmin=0, vmax=1,
                      bootstrap = bootstrap,
                      n_resamples = n_resamples)
+    
+
+def get_lengths(x, pos_type):
+    # working on strings directly in order to avoid having to literal_eval millions of strings
+    
+    # split the list of endpoint tuples 
+    l = x.split('), (')
+
+    # split each endpoint tuple into a theory and a commitment position (set representation with {})
+    l = [s.split('}, {') for s in l]
+    
+    if not pos_type in ["theory", "commitments"]:
+        raise ValueError("pos_type must be 'theory' or 'commitments'")
+    
+    idx = 0 if pos_type == "theory" else 1
+     
+    # length of the first (theory) or second (commitments) element  after 
+    # the comma-separated sentences have been split
+    return [len(s[idx].split(',')) for s in l]
 
 
 ######################################################################    
