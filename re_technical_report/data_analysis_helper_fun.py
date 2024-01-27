@@ -74,7 +74,6 @@ def re_data_by_name(data_name,
     # not running on colab (using local file system to load data)
     else:
         # Checking whether we have an already unpacked data file (to reduce costly re-unpacking of archived data files)
-        print(data_dir)
         if path.exists(path.join(data_dir,f"{data_set_name_to_file_name[data_name]}.csv")):
             data_file_name = f"{data_set_name_to_file_name[data_name]}.csv"
         elif path.exists(path.join(data_dir,f"{data_set_name_to_file_name[data_name]}.tar.gz")):
@@ -246,7 +245,8 @@ def plot_multiple_error_bars(data, var_y, ylabel,
                              bbox_to_anchor=(1., 0.2),
                              alt_labels=None):
     
-    set_errorbar_plot_style()
+    n_hues = data[var_hue].nunique()
+    set_errorbar_plot_style(n_hues, models=var_hue=="model_name")
     
     # If no col for error bars is given, we assume that the data is not aggregated and use `describe()` to do so
     if var_std is None:
@@ -551,20 +551,37 @@ def rel_share_of_property(re_data,
     result_df = re_data.groupby(groupby_cols)[property_col].agg(agg_fun).rename(columns=col_rename)
     return result_df
 
-def set_errorbar_plot_style():
+def set_errorbar_plot_style(n_hues=4, models=False):
+    
+    # set figure size
+    plt.rcParams["figure.figsize"] = (9, 7.5)
     
     sns.set_theme(style="darkgrid", 
-                  font_scale = 1.5,
+                  font_scale = 1.25,
                   rc={#"axes.spines.right": False, 
                       #"axes.spines.top": False,
                       #"axes.grid" : True,
                       #"axes.grid.axis": "y",
-                      "lines.linewidth": 2.5})
+                      "lines.linewidth": 1.5})
 
     # set the default color cycle on basis of the color palette "coolwarm"
-    mpl.rcParams['axes.prop_cycle'] = mpl.cycler(color=['#6788ee', '#9abbff', '#e26952', '#f7a889'])
+    if models:
+        if n_hues == 4:
+            # reorder four elements to fit linear-quadratic and global-local distinctions
+            color_name_list = ['#6788ee', '#9abbff', '#e26952', '#f7a889']
+        else:
+            color_name_list = sns.color_palette("coolwarm", n_hues).as_hex()
+    else:
+        color_name_list = sns.color_palette("coolwarm", n_hues).as_hex()
+    
+    mpl.rcParams['axes.prop_cycle'] = mpl.cycler(color=color_name_list)
+    
     
 def set_heatmap_plot_style():
+    
+    # set figure size
+    plt.rcParams["figure.figsize"] = (9, 7.5)
+    
     sns.set_theme(style="darkgrid",
                   font_scale = 1.0)
     
