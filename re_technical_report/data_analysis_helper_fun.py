@@ -61,8 +61,7 @@ def re_data_by_name(data_name,
                     data_set_tiny_url="https://raw.githubusercontent.com/re-models/re-technical-report/main/data/re_data_tau_alpha_tiny.csv"):
     
     # running on colab
-    #if 'google.colab' in str(get_ipython()):
-    if True:
+    if 'google.colab' in str(get_ipython()):
         # On Colab we can only load the 'TINY' data set.
         if data_name == 'TINY':
             return load_re_data(url=data_set_tiny_url,
@@ -77,10 +76,8 @@ def re_data_by_name(data_name,
         # Checking whether we have an already unpacked data file (to reduce costly re-unpacking of archived data files)
         print(data_dir)
         if path.exists(path.join(data_dir,f"{data_set_name_to_file_name[data_name]}.csv")):
-            print("CSV exists")
             data_file_name = f"{data_set_name_to_file_name[data_name]}.csv"
         elif path.exists(path.join(data_dir,f"{data_set_name_to_file_name[data_name]}.tar.gz")):
-            print("tar exists")
             data_file_name = f"{data_set_name_to_file_name[data_name]}.tar.gz"
         else:
             msg = f"Requested data file does not exist. Make sure that the data file is in the corresponding" \
