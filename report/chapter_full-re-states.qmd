@@ -5,15 +5,16 @@
 RE is commonly understood as an account of justification, and the aspired outcomes of applying RE are equilibrium states, which are supposed to be justified according to RE.
 
 Consequently, it is interesting to study the formal counterparts in the model that represent, or at least approximate, equilibrium states: *full RE states*.
-A theory-commitment-pair $(C, T)$ is a *full RE state* if and only if they live up to very high standards, namely,
+A theory-commitment-pair $(\mathcal{C}, \mathcal{T})$ is a *full RE state* if and only if they live up to very high standards, namely,
 
 1. if it is a global optimum according to the achievement function and 
-2. the theory $T$ fully and exlusively accounts for the commitments $C$.
+2. the theory $\mathcal{T}$ fully and exlusively accounts for the commitments $\mathcal{C}$.
 
 The second criterion amounts to the requirement that every commitment and no other sentence of the sentence pool is derivable from the theory, given the arguments of the dialectical structure in the background.
 
-An RE model is not required to yield a full RE state in every case. However, from the viewpoint of model evaluation, it is still desirable to have a model that is somewhat likely to reach full RE states. This is especially relevant to the fixed points of locally optimizing model variants, which have a severely restricted set of options at every adjustment step.
+An RE model is not required to yield a full RE state in every case. However, from the viewpoint of model evaluation, it may still desirable to have a model that is at least somewhat likely to reach full RE states. This is especially relevant to the fixed points of locally optimizing model variants, which have a severely restricted set of options at every adjustment step.
 
+Still, whether the attainment of full RE states is important, will depend on the objectives pursued with a specific application of RE (or formal models thereof). If, for example, the objective is making up one's mind, gaining understanding of a subject matter, or if we take justification to come in degrees rather than being a yes-or-no matter, less than full RE states may be completely satisfactory outcomes.
 
 Note that both fixed points and global optima can qualify as a full RE states. Hence, we present the results for global optima and fixed points separately. For the latter, we distinguish again between the result and the process perspective.
 
@@ -54,7 +55,13 @@ df = df.round(3)
 
 keep_columns = [col for col in df.columns if "Standard deviation" not in col]
 
-display(Markdown(df[keep_columns].to_markdown(index = False)))
+df = df[keep_columns]
+
+df = df[(df["Model"] == "QuadraticGlobalRE") | (df["Model"] == "LinearGlobalRE")]
+
+df["Model"] = df.apply(lambda row: "QuadraticRE" if row["Model"]=="QuadraticGlobalRE" else "LinearRE", axis=1)
+
+display(Markdown(df.to_markdown(index = False)))
 
 
 #df.style.hide(axis="index")  
@@ -180,6 +187,6 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 ## Conclusion
 
-Overall, the relative share of full RE states among global optima and fixed points is not overwhelming. However, heatmaps reveal combinations of weights for `QuadraticGlobalRE`, `LinearGlobalRE` and `LinearLocalRE`, where the relative share of full RE states among the outputs is acceptable. For `QuadraticLocalRE`, this holds at least for global optima. However, this is not a strong reason to reject `QuadraticLocalRE`. Depending on the particular goals of an inquiry with RE, a low relative share of full RE states can be seen as a strength of a model, as it does not render everything into a full RE state.
+Overall, the relative share of full RE states among global optima and fixed points is not overwhelming. However, heatmaps reveal combinations of weights for `QuadraticGlobalRE`, `LinearGlobalRE` and `LinearLocalRE`, where the relative share of full RE states among the outputs is acceptable. For `QuadraticLocalRE`, this holds at least for global optima. However, this is not a strong reason to reject `QuadraticLocalRE`. Depending on the particular goals of an RE inquiry, a low relative share of full RE states can be seen as a strength of a model, as it may not be desirable to render everything into a full RE state, or states satisfying less demanding requirements may be acceptable.
 
 Concerning the influence of the sentence pool size, there is a negative trend for the relative shares of full RE states among global optima and fixed points (result perspective). Only the relative share of full RE fixed points (process perspective) of the `LinearLocalRE` model is not affected by the sentence pool size. At this point, we cannot offer an explanation for this behaviour, which calls for further analysis. 
