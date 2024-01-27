@@ -166,6 +166,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 - Linear model variants exhibit a "tipping line" (see @sec-appendix-tipping). For $\alpha_{A} > \alpha_{F}$, the relative share of full RE global optima is 1.0, i.e., all global optima are full RE states.
 - Quadratic model variants have a smooth transition between low and high relative shares and have a "hotspot" for very high values of $\alpha_{A}$. This result is made plausible by the fact that full RE states require a maximal value for the measure of account (i.e., $A(\mathcal{C}, \mathcal{T}) = 1)$. High values for $\alpha_{A}$ benefit the fulfilment of this requirement.
+  
 ![Relative share of full RE states among unique fixed points grouped by model variant and configuration of weights.](figures/hm_rel_fp_full_re_rp){#fig-hm-full-re-fp-setups}
 
 
