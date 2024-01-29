@@ -66,7 +66,13 @@ df = df.round(3)
 
 keep_columns = [col for col in df.columns if "Standard deviation" not in col]
 
-display(Markdown(df[keep_columns].to_markdown(index = False)))
+df = df[keep_columns]
+
+df = df[(df["Model"] == "QuadraticGlobalRE") | (df["Model"] == "LinearGlobalRE")]
+
+df["Model"] = df.apply(lambda row: "QuadraticRE" if row["Model"]=="QuadraticGlobalRE" else "LinearRE", axis=1)
+
+display(Markdown(df.to_markdown(index = False)))
 
 
 #df.style.hide(axis="index")  
