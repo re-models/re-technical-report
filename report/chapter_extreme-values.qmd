@@ -15,7 +15,7 @@ $$
 
 with $G=1-x^2$ for quadratic models and $G=1-x$ for linear models.
 
-Hence, $S(\mathcal{T}) = 1$ if and only if $\vert \mathcal{T}\vert = 1$ (i.e., if and only if $\mathcal{T}$ is a singleton theory, e.g., $\mathcal{T} =\lbrace s\rbrace$). Note that it does not matter whether $G$ is linear or quadratic. Furthermore, $S(T) = 0$ if and only if $\mathcal{T}=\emptyset$ by definition.
+Hence, $S(\mathcal{T}) = 1$ if and only if $\vert \mathcal{T}\vert = 1$ (i.e., if and only if $\mathcal{T}$ is a singleton theory, e.g., $\mathcal{T} =\lbrace s\rbrace$). Note that it does not matter whether $G$ is linear or quadratic. Furthermore, we have $S(T) = 0$ if and only if $\mathcal{T}=\emptyset$ by definition.
 
 $F(\mathcal{C} \vert \mathcal{C}_{0}) = 1$ holds if and only if the initial commitments $\mathcal{C}_{0}$ are a subset of the commitments $\mathcal{C}$ (expansions of the initial commitments are not penalized). $F(\mathcal{C} \vert \mathcal{C}_{0})$ attains the minimal value of $0$ if every sentence of the initial commitments $\mathcal{C}_{0}$ is missing in or contradicted by the commitments $\mathcal{C}$.
 
@@ -104,7 +104,8 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 **Observations**
 
 - Outputs of linear model variants maximize the measures more often than the outcomes of quadratic models.
-- Outputs of all model variants maximize the measure of systematicity more often than the measures for account or faithfulness, excepting fixed points from `LinearLocalRE` (@fig-overall-max-values-fp)
+- Outputs of all model variants maximize the measure of systematicity more often than the measures for account or faithfulness, excepting fixed points from `LinearLocalRE` (@fig-overall-max-values-fp). 
+  + It may be easier to maximize $S$ due to the fact that the measure does discriminate singleton theories on the basis of their scope ($\vert\bar{\mathcal{T}}\vert$). Thus, there may be many cases in which at least somewhat attractive singleton theories significantly shape the subsequent process of adjustments or the outcome of global optimization.
 
 ### Grouped by sentence pool size
 
@@ -125,6 +126,12 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 ![Relative share of global optima maximizing the measure for faithfulness grouped by model variant and sentence pool size.](figures/rel_max_go_faithfulness_by_sp_rp){#fig-max-faithfulness-go-sp-rp}
 
 ![Relative share of fixed points (result perspective) maximizing the measure for faithfulness grouped by model variant and sentence pool size.](figures/rel_max_fp_faithfulness_by_sp_rp){#fig-max-faithfulness-fp-sp-rp}
+
+**Observations**
+
+- The global optima of both quadratic and linear model variants  maximize account (@fig-max-account-go-sp-rp) and faithfulness (@fig-max-faithfulness-go-sp-rp) less frequently for larger sentence pool sizes.
+- This tendency is less pronounced for fixed points (result perspective) in @fig-max-account-fp-sp-rp and @fig-max-faithfulness-fp-sp-rp , respectively.
+- The relative share of fixed points (result perspective) that maximize systematcity is not affected by the sentence pool size for global model variants (@fig-max-systematicity-fp-sp-rp). In contrast this relative share decreases with increasing sentence pool sizes for local model variants. 
 
 ### Grouped by configuration of weights
 
@@ -148,6 +155,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 **Observations**
 
 - For all model variants and outputs, we can observe a gradient of increasing relative shares of outputs with maximal systematicity for increasing values of $\alpha_{S}$.
+- Moreover, the relative share also increases for decreasing weights for $\alpha_{A}$. If account does not receive much weight, the theory can be optimized with respect to systematicity more independently of the commitments, even if $\alpha_{S}$ is low.
 
 #### Faithfulness
 
@@ -166,3 +174,5 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 Many observations in this chapter are not surprising. It is to be expected that increasing the weight results in higher relatives shares of maximized measures. Nonetheless, this is a reassuring result from the viewpoint of model evaluation, indcating that configuring weights has forseeable consequences.
 
 The high relative shares of outputs maximizing the measure for systematicity may be a consequence of a shortcoming in the measure for systematicity. If $\vert\mathcal{T}\vert = 1$, then $S(\mathcal{T}) = 1$ irrespective of $\vert\overline{\mathcal{T}}\vert$. That is the measure for systematictiy does not discriminate between singleton theories on the basis of their scope ($\overline{\mathcal{T}}$). This renders all singleton theories equally and maximally attractive according to the measure of systematicity. For another consequence of frequently maximizing the measure for systematicity, see @sec-appendix-trivial.
+
+Further exploration is required to provide full explanations for the more salient observations. For example, one could analyze the "evolution" of theories during RE processes.^[This information is already available in the data.] Are singleton theories chosen in the first adjustment step and not altered afterwards? Or do RE processes set out with larger theories and are elements remove subsequently? 
