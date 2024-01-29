@@ -75,25 +75,25 @@ and $n$ is fixed. Consequently, $Z$ can be optimised by changing the commitments
 
 $$
 \begin{align}
-&\alpha_{A}\cdot D_{0,\, 0.3,\, 1,\, 1}(C, \overline{T})+ \alpha_{F}\cdot D_{0,\, 0,\, 1,\, 1}(C_{0}, C)\\  
-&= \alpha_{A}\cdot\sum_{i=1}^{n} d_{0,\, 0.3,\, 1,\, 1}(C, \overline{T}, \lbrace s_{i}, \neg s_{i}\rbrace) + \alpha_{F}\cdot\sum_{i=1}^{n} d_{0,\, 0,\, 1,\, 1}(C_{0}, C, \lbrace s_{i}, \neg s_{i}\rbrace)\\
-&= \sum_{i=1}^{n} \alpha_{A}\cdot d_{0,\, 0.3,\, 1,\, 1}(C, \overline{T}, \lbrace s_{i}, \neg s_{i}\rbrace) + \alpha_{F}\cdot d_{0,\, 0,\, 1,\, 1}(C_{0}, C, \lbrace s_{i}, \neg s_{i}\rbrace)
+&\alpha_{A}\cdot D_{0,\, 0.3,\, 1,\, 1}(\mathcal{C}, \overline{\mathcal{T}})+ \alpha_{F}\cdot D_{0,\, 0,\, 1,\, 1}(\mathcal{C}_{0}, \mathcal{C})\\  
+&= \alpha_{A}\cdot\sum_{i=1}^{n} d_{0,\, 0.3,\, 1,\, 1}(\mathcal{C}, \overline{\mathcal{T}}, \lbrace s_{i}, \neg s_{i}\rbrace) + \alpha_{F}\cdot\sum_{i=1}^{n} d_{0,\, 0,\, 1,\, 1}(\mathcal{C}_{0}, \mathcal{C}, \lbrace s_{i}, \neg s_{i}\rbrace)\\
+&= \sum_{i=1}^{n} \alpha_{A}\cdot d_{0,\, 0.3,\, 1,\, 1}(\mathcal{C}, \overline{\mathcal{T}}, \lbrace s_{i}, \neg s_{i}\rbrace) + \alpha_{F}\cdot d_{0,\, 0,\, 1,\, 1}(\mathcal{C}_{0}, \mathcal{C}, \lbrace s_{i}, \neg s_{i}\rbrace)
 \end{align}
 $$
 
 
-Since the achievement function is optimized for minimal contributions and $\alpha_{A} > \alpha_{F}$, it is always more attractive to change the commitments to increase account rather than faithfully respecting the initial commitments. To see this, consider the change in contributions multiplied by the corresponding weights in @fig-table-account. This argument can be repeated for every sentence for which $\mathcal{C}$ and $\overline{\mathcal{T}}$ differ.
+Since the achievement function is optimized for minimal contributions and $\alpha_{A} > \alpha_{F}$, it is always more attractive to change the commitments to increase account rather than faithfully respecting the initial commitments. To see this, consider the change in contributions multiplied by the corresponding weights in the table below. This argument can be repeated for every sentence for which $\mathcal{C}$ and $\overline{\mathcal{T}}$ differ.
 
 
 |                                       | account penalty                                                          | faithfulness penalty (worst case)                                 |
 |---------------------------------------|-------------------------------------------------------------------|-----------------------------------------------------------|
-|adjusted  commitmetments                                     | $d_{0,\,0.3,\,1,\,1}(C',\overline{T}, \lbrace s, \neg s\rbrace)$  | $d_{0,\,0,\,1,\,1}(C_{0}, C', \lbrace s, \neg s\rbrace)$  |
-| -old commitments                           | $- d_{0,\,0.3,\,1,\,1}(C,\overline{T}, \lbrace s, \neg s\rbrace)$ | $- d_{0,\,0,\,1,\,1}(C_{0}, C, \lbrace s, \neg s\rbrace)$ |
+|adjusted  commitmetments                                     | $d_{0,\,0.3,\,1,\,1}(\mathcal{C}',\overline{\mathcal{T}}, \lbrace s, \neg s\rbrace)$  | $d_{0,\,0,\,1,\,1}(\mathcal{C}_{0}, \mathcal{C}', \lbrace s, \neg s\rbrace)$  |
+| -old commitments                           | $- d_{0,\,0.3,\,1,\,1}(\mathcal{C},\overline{\mathcal{T}}, \lbrace s, \neg s\rbrace)$ | $- d_{0,\,0,\,1,\,1}(\mathcal{C}_{0}, \mathcal{C}, \lbrace s, \neg s\rbrace)$ |
 | **change**                                | difference | difference |
-| remove contradicting element from $C$ | -1                                                                | +1                                                        |
-| revise contradicting element in $C$   | -1                                                                | +1                                                        |
-| add missing element to $C$            | -0.3                                                              | 0                                                         |
-| remove additional element from $C$    | -1                                                                | +1                                                        |
+| remove contradicting element from $\mathcal{C}$ | -1                                                                | +1                                                        |
+| revise contradicting element in $\mathcal{C}$   | -1                                                                | +1                                                        |
+| add missing element to $\mathcal{C}$            | -0.3                                                              | 0                                                         |
+| remove additional element from $\mathcal{C}$    | -1                                                                | +1                                                        |
   
 
 In summary, if $(\mathcal{C}, \mathcal{T})$ is a global optimum but $A(\mathcal{C}, \mathcal{T}) < 1$, then there is a position $(\mathcal{C}', \mathcal{T})$ such that $A(\mathcal{C}, \mathcal{T}) < A(\mathcal{C}', \mathcal{T})$ contradicting $(\mathcal{C}, \mathcal{T})$ being a global optimum. Consequently, we must have $A(\mathcal{C}, \mathcal{T}) = 1$, i.e., $\mathcal{T}$ accounts fully and exclusively for $S$. This shows that $(\mathcal{C}, \mathcal{T})$ is a full RE state.
