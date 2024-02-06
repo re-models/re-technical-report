@@ -33,7 +33,7 @@ By default, the notebooks use a convenience function to import one of the three 
 Alternatively, you can load the data by specifying the directory and file name of the data file in the following way:
 
 ```python
-re_data = load_re_data(data_dir=path.join(Path(getcwd()).parent.absolute(), "data"), 
+re_data = load_re_data(data_dir=path.join(Path(getcwd()).parent.absolute(), 'data'), 
                        data_file_name='re_data_tau_alpha_mini.tar.gz')
 ```
 
