@@ -20,6 +20,19 @@ __all__ = [
     "rel_share_of_property",
     "set_errorbar_plot_style",
     "set_heatmap_plot_style",
-    "re_data_by_name"
+    "re_data_by_name",
+    "sys_grec",
+    "sys_ec",
+    "sys_ec_2",
+    "sys_bbb",
+    "sys_csw_alpha",
+    "sys_csw_beta",
+    "sys_bbb",
+    "sys_mm",
+    "restricted_sigma",
+    "conditional_restricted_sigma",
+    "sigma_content",
+    "plot_sys_measure"    
+
 
 ]
