@@ -20,6 +20,7 @@ book:
   appendices:
     - appendix_tipping_line.qmd
     - appendix_trivial_endpoints.qmd
+    - appendix_systematicity.qmd
 bibliography: references.bib
 
 format:
@@ -28,6 +29,7 @@ format:
     toc-depth: 4
   pdf:
     documentclass: scrreprt
+    pdf-engine: pdflatex
 
 tbl-cap-location: bottom
 
