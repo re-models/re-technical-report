@@ -48,9 +48,9 @@ Unsurprisingly, the locally optimizing models have roughly a mean step length of
 
 ![Mean distance between initial commitments and fixed points.](figures/distance-init-final-coms){width=80%  #fig-distance-init-final-coms}
 
-## Global optima
+## Global optima {#sec-general-props-go}
 
-Global optima are fully determined by the achievement function of the RE model. Accordingly, global optima might differ between the linear and quadratic model variants but do not depend on whether the RE process is based on a locally or semi-globally optimization. In the following, we will therefore summarize analysis results with respect to global optima for linear models under the heading `LinearRE` and for quadratic models under the heading `QuadraticRE`.^[In our data set, the analysis results might differ between semi-globally and locally optimizing models, which is, however, an artifact of the difference in erroneous model runs (i.e., mode runs that could not properly end (see XXX)). For the subsequent analysis of global optima, we rely on the model results of `QuadraticGlobalRE` and `LinearGlobalRE` since they had fewer erroneous model runs.]
+Global optima are fully determined by the achievement function of the RE model. Accordingly, global optima might differ between the linear and quadratic model variants but do not depend on whether the RE process is based on a locally or semi-globally optimization. In the following, we will therefore summarize analysis results with respect to global optima for linear models under the heading `LinearRE` and for quadratic models under the heading `QuadraticRE`.^[In our data set, the analysis results might differ between semi-globally and locally optimizing models, which is, however, an artifact of the difference in interrupted model runs (i.e., mode runs that could not properly end (see @sec-intro-ensemble-description)). For the subsequent analysis of global optima, we rely on the model results of `QuadraticGlobalRE` and `LinearGlobalRE` since they had fewer interrupted model runs.]
 
 The mean number of global optima does not differ significantly between linear and quadratic models ($4\pm 14$ vs. $4\pm 9$ [XXX]) and does not depend on the size of the sentence pool (see @fig-number-global-optima).
 
