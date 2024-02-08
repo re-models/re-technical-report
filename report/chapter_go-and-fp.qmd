@@ -1,6 +1,6 @@
 # Global optima and fixed points {#sec-go-and-fp}
 
-## Background
+## Background {#sec-go-and-fp-background}
 
 Global optima are epistemic states (i.e., commitments-theory pairs) that maximize epistemic desiderata as the achievement function defines it. The models we assess simulate RE processes by mutually adjusting commitments and theories. Since these models proceed in a semi-globally or locally optimizing fashion, fixed points of RE processes are not necessarily global optima (see @sec-intro-metrics for details). It is, therefore, important to assess the performance of the different models with respect to their ability to reach global optima. Two main questions guide the following evaluation:
 
