@@ -56,13 +56,13 @@ Each case of changing $\mathcal{C}$ with respect to $s$, yielding new commitment
 The complete linearity of the achievement function allows us to distribute ("push in") the weights $\alpha_{A}$ and $\alpha_{F}$ over the individual contributions of the hamming distances.
 
 $$
-\begin{align}
+\begin{aligned}
  & Z(C, T\vert C_{0})\\  
  & = \alpha_{A}\cdot A(C, T) + \alpha_{F}\cdot F(C\vert C_{0}) + \alpha_{S}\cdot S(T)\\
  & = \alpha_{A}\cdot (1-\frac{D_{0,\, 0.3,\, 1,\, 1}(C, \overline{T})}{n}) + \alpha_{F}\cdot (1-\frac{D_{0,\, 0,\, 1,\, 1}(C_{0}, C)}{n}) + \alpha_{S}\cdot (1-\frac{\vert T\vert-1}{\vert\overline{T}\vert})\\
  & =  \alpha_{A} - \frac{\alpha_{A}\cdot D_{0,\, 0.3,\, 1,\, 1}(C, \overline{T})}{n} + \alpha_{F} - \frac{\alpha_{F}\cdot D_{0,\, 0,\, 1,\, 1}(C_{0}, C)}{n} + \alpha_{S} - \frac{\alpha_{S}\cdot(\vert T\vert-1)}{\vert\overline{T}\vert}\\
  & = 1 - \frac{\alpha_{A}\cdot D_{0,\, 0.3,\, 1,\, 1}(C, \overline{T})+ \alpha_{F}\cdot D_{0,\, 0,\, 1,\, 1}(C_{0}, C)}{n} - \frac{\alpha_{S}\cdot(\vert T\vert-1)}{\vert\overline{T}\vert}
-\end{align}
+\end{aligned}
 $$
 
 Changing the commitments has no effect on 
@@ -74,11 +74,11 @@ and $n$ is fixed. Consequently, $Z$ can be optimised by changing the commitments
 
 
 $$
-\begin{align}
+\begin{aligned}
 &\alpha_{A}\cdot D_{0,\, 0.3,\, 1,\, 1}(\mathcal{C}, \overline{\mathcal{T}})+ \alpha_{F}\cdot D_{0,\, 0,\, 1,\, 1}(\mathcal{C}_{0}, \mathcal{C})\\  
 &= \alpha_{A}\cdot\sum_{i=1}^{n} d_{0,\, 0.3,\, 1,\, 1}(\mathcal{C}, \overline{\mathcal{T}}, \lbrace s_{i}, \neg s_{i}\rbrace) + \alpha_{F}\cdot\sum_{i=1}^{n} d_{0,\, 0,\, 1,\, 1}(\mathcal{C}_{0}, \mathcal{C}, \lbrace s_{i}, \neg s_{i}\rbrace)\\
 &= \sum_{i=1}^{n} \alpha_{A}\cdot d_{0,\, 0.3,\, 1,\, 1}(\mathcal{C}, \overline{\mathcal{T}}, \lbrace s_{i}, \neg s_{i}\rbrace) + \alpha_{F}\cdot d_{0,\, 0,\, 1,\, 1}(\mathcal{C}_{0}, \mathcal{C}, \lbrace s_{i}, \neg s_{i}\rbrace)
-\end{align}
+\end{aligned}
 $$
 
 
