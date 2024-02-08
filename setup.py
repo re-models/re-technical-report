@@ -5,7 +5,7 @@ with open("package_description.md", "r") as fh:
 
 setup(
     name="re_technical_report",
-    version="0.0.5a1",
+    version="0.0.6a1",
     author="Sebastian Cacean, Andreas Freivogel",
     author_email="sebastian.cacean@kit.edu, andreas.freivogel@unibe.ch",
     description="Helper functions for the report 'Assessing a Formal Model of Reflective Equilibrium'",
