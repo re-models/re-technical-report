@@ -4,7 +4,7 @@ from __future__ import annotations
 from typing import Set, Tuple, Dict
 
 from rethon import StandardGlobalReflectiveEquilibrium, StandardLocalReflectiveEquilibrium
-from tau import DialecticalStructure, Position, DAGDialecticalStructure
+from theodias import DialecticalStructure, Position, DAGDialecticalStructure
 
 
 class StandardGlobalReflectiveEquilibriumLinearG(StandardGlobalReflectiveEquilibrium):

@@ -20,7 +20,7 @@ from itertools import combinations
 from IPython import get_ipython
 
 from matplotlib_venn import venn2
-from tau import DialecticalStructure, Position, StandardPosition
+from theodias import DialecticalStructure, Position, StandardPosition
 
 
 nice_model_names = {'StandardGlobalReflectiveEquilibrium':'QuadraticGlobalRE',
