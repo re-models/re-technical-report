@@ -48,13 +48,31 @@ The data that the model produced can be found [here](https://github.com/re-model
 
 Note that using the full data set might, depending on the available RAM, overload your computational resources.  
 
-## Credits
-
-Earlier versions of this report were discussed on several occasions with all members of the research project  ['How far does Reflective Equilibrium Take us? Investigating the Power of a Philosophical Method'](https://www.philosophie.unibe.ch/forschung/forschungsprojekte/how_far_does_reflective_equilibrium_take_us/project/index_ger.html) (SNSF grant 182854 and German Research Foundation grant 412679086). We thank, in particular, Claus Beisbart, Gregor Betz, Georg Brun, Alexander Koch and Richard Lohse for their helpful comments, which helped to improve this report considerably.
 
 ## Citing
 
-xxx
+BibTex citation:
+
+```bibtex
+@article{freivogel_assessing_2024,
+  title = {Assessing a {{Formal Model}} of {{Reflective Equilibrium}}},
+  author = {Freivogel, Andreas and Cacean, Sebastian},
+  year = {2024},
+  month = mar,
+  doi = {xxx},
+  langid = {english},
+  url = {https://re-models.github.io/re-technical-report/},
+}
+```
+
+For attribution, please cite this works as, for instance:
+
+Freivogel, A., & Cacean, S. (2024). *Assessing a Formal Model of Reflective Equilibrium*. <https://doi.org/xx.xxxx/xxxxxxxx>
+
+
+## Credits
+
+Earlier versions of this report were discussed on several occasions with all members of the research project  ['How far does Reflective Equilibrium Take us? Investigating the Power of a Philosophical Method'](https://www.philosophie.unibe.ch/forschung/forschungsprojekte/how_far_does_reflective_equilibrium_take_us/project/index_ger.html) (SNSF grant 182854 and German Research Foundation grant 412679086). We thank, in particular, Claus Beisbart, Gregor Betz, Georg Brun, Alexander Koch and Richard Lohse for their helpful comments, which helped to improve this report considerably. Finally, the authors acknowledge support by the state of Baden-Württemberg through the joint high-performance computer system [bwHPC](https://www.scc.kit.edu/en/services/bwUniCluster_2.0.php).
 
 ---
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
