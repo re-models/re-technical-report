@@ -53,11 +53,11 @@ These considerations motivate:
 
 **Simplicity (D2)**: Everything else being equal, systematicity should (monotonically) increase with decreasing theory size.
 
-How does the suggested measure $S_{BBB}$ conforms to these constraints? In our modelling context, a theory is simply a set of sentences, which you can think of as its principles or some axiomatic basis. Accordingly, the size of a theory can be measured by $\vert \mathcal{T} \vert$ in @eq-s-bbb. There are different possibilities for conceptualizing the notion of content. One suggestion is to equate dialectical closure $\overline{\mathcal{T}}$ of a theory with its content. 
+How does the suggested measure $S_{BBB}$ conform to these constraints? In our modelling context, a theory is simply a set of sentences, which you can think of as its principles or some axiomatic basis. Accordingly, the size of a theory can be measured by $\vert \mathcal{T} \vert$ in @eq-s-bbb. There are different possibilities for conceptualizing the notion of content. One suggestion is to equate the dialectical closure  of a theory ($\overline{\mathcal{T}}$) with its content. 
 
-Since the sentence pool is finite, so is the dialectical closure of a theory.^[The closure $\overline{\mathcal{T}}$ is defined by $\{s\in \mathcal{S}\vert \mathcal{T}\models_{\tau} s\}$, where $\models_{\tau}$ denotes the relation of dialectical implication. In other words, this closure only contains "atomic" sentences from the sentence pool; it does not include any other logical consequences (such as conjunctions).] Accordingly, we can measure the size of a theory's content simply by $|\overline{\mathcal{T}}|$. 
+Since the sentence pool is finite, so is the dialectical closure of a theory.^[The closure $\overline{\mathcal{T}}$ is defined by $\{s\in \mathcal{S}\vert \mathcal{T}\models_{\tau} s\}$, where $\models_{\tau}$ denotes the relation of dialectical implication. In other words, this closure only contains "atomic" sentences from the sentence pool; it does not include any other logical consequences (such as conjunctions, for example).] Accordingly, we can measure the size of a theory's content by $|\overline{\mathcal{T}}|$.
 
-The quadratic term in @eq-s-bbb can be considered a penalizing contribution, which increases with the theory's size ($\vert \mathcal{T} \vert$) and decreases with the theory's content size ($\vert \overline{\mathcal{T}} \vert$). @fig-s-bbb illustrates systematicity values calculated by $S_{BBB}$ for a sentence pool of size $14$.^[In the RE Model, theories are dialectically consistent and therefore minimally consistent (see @sec-intro). Hence, a theory can have at most $n$ principles if $2n$ is the size of the sentence pool.] 
+The bracketed term in @eq-s-bbb can be considered as a penalizing contribution, which increases with the theory's size ($\vert \mathcal{T} \vert$) and decreases with the theory's content size ($\vert \overline{\mathcal{T}} \vert$). @fig-s-bbb illustrates systematicity values calculated by $S_{BBB}$ for a sentence pool of size $14$.^[In the RE Model, theories are dialectically consistent and therefore minimally consistent (see @sec-intro). Hence, a theory can have at most $n$ principles if $2n$ is the size of the sentence pool.] 
 
 
 ```{python}
@@ -70,13 +70,15 @@ plot_sys_measure(sys_data, "sys_bbb", scale=0.8)
 plt.show()
 ```
 
-By following vertical lines (with a constant size of theories' closure), you can see that everything else being equal, "smaller" theories receive higher systematicity values. Hence, $S_{BBB}$ satisfies *D2 (simplicity)*. By following the plotted lines (constant theory size), you can see that $S_{BBB}$ satisfies *D1 (content)* for all theory sizes except for $\vert \mathcal{T} \vert = 1$. As noted before (see @sec-extreme-values), these singleton theories receive maximum systematicity independent of their content. 
+By following vertical lines (constant theory closure size), you can see that everything else being equal, "smaller" theories receive higher systematicity values. Hence, $S_{BBB}$ satisfies *D2 (simplicity)*. By following the plotted lines (constant theory size), you can see that $S_{BBB}$ satisfies *D1 (content)* for all theory sizes except for $\vert \mathcal{T} \vert = 1$. As noted before (see @sec-extreme-values), these singleton theories receive the maximal systematicity value of $1.0$ independent of their content. 
 
-How problematic is this violation of *D1*? After all, *D1* is only violated for singleton theories and only violated in a "weak" sense. While it is true that systematicity does not *monotonically* increase with increasing content for singleton theories, systematicity does at least not decrease with increasing content. In @sec-appendix-trivial, we presented a preliminary analysis of how pervasive singleton theories are in fixed points and global optima. Their sparse emergence suggests that singleton theories (with low content) do not have a significant advantage over other theories. But that does not mean that the violation of *D1* does not cause trouble in other contexts. We should, therefore, consider and analyze other systematicity measures, which we intend in this appendix.
+How problematic is this violation of *D1*? After all, *D1* is only violated for singleton theories and only violated in a "weak" sense. While it is true that systematicity does not *monotonically* increase with increasing content for singleton theories, systematicity does at least not decrease with increasing content. 
+In @sec-extreme-values, we observed that fixed points and global optima frequently maximize the standard measure of systematicity (with singleton theories). 
+In @sec-appendix-trivial, we presented a preliminary analysis of how pervasive fixed points and global optima are that consist of a singleton theory and a single commitment. The  sparse emergence of such "trivial" endpoints suggests that singleton theories (with extremely  low content) do not have a significant advantage over other theories. But this does not mean that the violation of *D1* could not lead to problematic behavior of the model in other contexts. We should, therefore, consider and analyze other systematicity measures, which we intend in this appendix.
 
 ### D3 -- Minimal Systematicity
 
-Besides, there are other constraints as well. Due to the finiteness of the sentence pool, there are lower bounds and upper bounds for systematicity. The systematicity measure $S_{BBB}$ is normalized to yield values within the unit interval $[0,1]$. We will follow this convention.
+There are other constraints as well: Due to the assumption that the sentence pool is finite, there are lower bounds and upper bounds for systematicity. The systematicity measure $S_{BBB}$ is normalized to yield values within the unit interval $[0,1]$. We will follow this convention.
 
 So, under which conditions should systematicity be minimal? The above formulated intuitions that led to *D1* and *D2* suggest that
 
@@ -108,7 +110,7 @@ Hence, we should require:
 
 **D4 (non-ad-hocness)**: Extending a theory with ad hoc principles (i.e., principles that do not expand the theory's content besides the added principles) should not increase its systematicity.
 
-In the context of modelling RE, *D4* is even too weak to allow the model to penalize the addition of ad hoc principle in every case (independent of the chosen weights). Suppose two theories $\mathcal{T}$ and $\mathcal{T}^{+}$ where the latter is constructed by adding an ad hoc principle to the former. Suppose further a set of commitments that coincide with the closure of $\mathcal{T}^{+}$. Additionally, we assume that there are no other theories that compare better with respect to the summation of account and systematicity. In such cases, the achievement function will always prefer $\mathcal{T}^{+}$ over $\mathcal{T}$ if we don't strengthen *D4*. The problem is that $\mathcal{T}^{+}$ performs better than $\mathcal{T}$ with respect to account since account is maximized if the theory's closure matches the commitments. We must, therefore, counterbalance the advantage in account of $\mathcal{T}^{+}$ over $\mathcal{T}$ by penalizing the addition of ad hoc principles within the systematicity measure.^[There, of course, other possibilities to adapt the model to achieve this goal.] This might suggest that the extension of ad hoc principles should decrease a theory's systematicity. 
+In the context of modelling RE, *D4* is even too weak to allow the model to penalize the addition of ad hoc principle in every case (independent of the chosen weights). Suppose two theories $\mathcal{T}$ and $\mathcal{T}^{*}$ where the latter is constructed by adding an ad hoc principle to the former. Suppose further a set of commitments that coincide with the closure of $\mathcal{T}^{*}$. Additionally, we assume that there are no other theories that compare better with respect to the summation of account and systematicity. In such cases, the achievement function will always prefer $\mathcal{T}^{*}$ over $\mathcal{T}$ if we don't strengthen *D4*. The problem is that $\mathcal{T}^{*}$ performs better than $\mathcal{T}$ with respect to account since account is maximized if the theory's closure matches the commitments. We must, therefore, counterbalance the advantage in account of $\mathcal{T}^{*}$ over $\mathcal{T}$ by penalizing the addition of ad hoc principles within the systematicity measure.^[There, of course, other possibilities to adapt the model to achieve this goal.] This might suggest that the extension of ad hoc principles should decrease a theory's systematicity. 
 
 However, that might be too strong since one might want to satisfy *D3.1* by letting $S=0$ for empty theories. But then, one cannot further reduce systematicity for ad hoc extensions of empty theories. Hence, *D.3* might conflict with the requirement that systematicity should decrease with ad hoc extension. Fortunately, there is a simple solution. The described case is only relevant for non-empty theories. Hence, an appropriate strengthening of *D4* is:
 
@@ -118,7 +120,7 @@ However, that might be too strong since one might want to satisfy *D3.1* by lett
 
 ### D5 -- Internal Connectedness
 
-One rationale for *D4 (non-ad-hocness)* was the intuition that ad hoc principles are loners in some way. They do not work together with other principles in implying other sentences than the theories' principles; they do not add something to the inferential potential of a theory besides themselves. The requirement *D4* is, therefore, a special case of a more general requirement that demands:
+One rationale for *D4 (non-ad-hocness)* was the intuition that ad hoc principles are loners in some way. They do not work together with other principles in implying other sentences than the theory's principles; they do not add something to the inferential potential of a theory besides themselves. The requirement *D4* is, therefore, a special case of a more general requirement that demands:
 
 **D5 (internal connectedness)**: Everything else being equal (content and size), a theory in which principles work together is more systematic than a theory in which principles do not work together (so much).
 
@@ -129,7 +131,7 @@ At this point, we do not further explicate the notion of working together but si
 
 ## First example for *D5*
 
-Consider the dialectical structure depicted in @fig-map-sys1 and the theories $\mathcal{T}_1 = \{1,2\}$ and $\mathcal{T}_2 = \{7,8\}$. Both theories have the same size ($2$) and the same size of their dialectical closure ($6$). The principles of $\mathcal{T}_1$ work in the following sense together: We need both principles to deduce the other sentences of its dialectical closure ($3-6$). In contrast, the principles of $\mathcal{T}_2$ do not work together. Instead, the inferential workload is distributed among its principles: The principle $7$ implies $3$ and $4$, and the other ($8$) implies $5$ and $6$. According to *D5*, we should expect that $S(\mathcal{T}_2) < S(\mathcal{T}_1)$
+Consider the dialectical structure depicted in @fig-map-sys1 and the theories $\mathcal{T}_1 = \{1,2\}$ and $\mathcal{T}_2 = \{7,8\}$. Both theories have the same size ($2$) and the same size of their dialectical closure ($6$). The principles of $\mathcal{T}_1$ work together in the following sense: We need both principles to deduce the other sentences of its dialectical closure ($3-6$). In contrast, the principles of $\mathcal{T}_2$ do not work together. Instead, the inferential workload is distributed among its principles: The principle $7$ implies $3$ and $4$, and principle $8$ implies $5$ and $6$. According to *D5*, we should expect that $S(\mathcal{T}_2) < S(\mathcal{T}_1)$
 
 ![First illustration of principles (not) working together.](figures/map_sys1){width=60%  #fig-map-sys1}
 
@@ -140,7 +142,7 @@ Consider the dialectical structure depicted in @fig-map-sys1 and the theories $\
 
 ## Second example for *D5*
 
-A similar case is depicted in @fig-map-sys2. Here, you do not need all principles of the theory $\mathcal{T}_1 = \{1,2,4\}$ to deduce the sentences $3$ and $4$, but they still work together since you need sentence $2$. In contrast, the principles of the theory $\mathcal{T}_2 = \{1,6,7\}$ work alone to deduce $3$ and $4$. (Here, $1$ is even an ad hoc principle.) Again, *D5* requires that $S(\mathcal{T}_2) < S(\mathcal{T}_1)$
+A similar case is depicted in @fig-map-sys2. Here, you do not need all principles of the theory $\mathcal{T}_1 = \{1,2,4\}$ to deduce sentence $3$ or $5$ on their own. However, the principles of $\mathcal{T}_1$ still work together since you need sentence $1$ in either case. In contrast, the principles of the theory $\mathcal{T}_2 = \{1,6,7\}$ work alone to deduce $3$ and $5$. (Here, $1$ is even an ad hoc principle.) Again, *D5* requires that $S(\mathcal{T}_2) < S(\mathcal{T}_1)$
 
 ![Second illustration of principles (not) working together.](figures/map_sys2){width=35%  #fig-map-sys2}
 
@@ -157,7 +159,7 @@ So far, we have only considered the inferential potential of a theory based on w
 
 ## Example for *D6*
 
-For instance, the theory  $\mathcal{T}_1=\{1\}$ does not imply anything on its own (besides its principle) and is thus on par with other singleton theories. However, in contrast to, let's say, the theory $\mathcal{T}_2=\{4\}$, it does imply sentences if it is combined with other sentences. We might, therefore, expect that the systematicity of $\mathcal{T}_1$ is higher than the systematicity of $\mathcal{T}_2$. 
+For instance, the theory  $\mathcal{T}_1=\{1\}$ does not imply anything on its own (besides its principle) and is thus on par with other singleton theories according to the original measure of systematicity.However, in contrast to, let's say, the theory $\mathcal{T}_2=\{4\}$, $\mathcal{T}_1$ does imply sentences if it is combined with other sentences, in particular $2$ or $3$. We might, therefore, expect that the systematicity of $\mathcal{T}_1$ is higher than the systematicity of $\mathcal{T}_2$. 
 
 ![Illustration of principles working together with other sentences.](figures/map_sys3){width=20%  #fig-map-sys3}
 
@@ -176,7 +178,7 @@ The measure $S_{BBB}$ uses only the size of a theory and the size of its dialect
 
 ### Minimal Mutation Systematicity
 
-The measure $S_{BBB}$ violates *D1 (content)* due to the nominator $\vert \mathcal{T}\vert-1$ in @eq-s-bbb, which becomes zero for singleton theories. Accordingly, singleton theories receive maximum systematicity independent of their content. One simple suggestion to fix this behaviour is to adapt the nominator such that it does not become zero for theories of size one. A minimal adaption would be to subtract smaller values than one:
+The measure $S_{BBB}$ violates *D1 (content)* due to the numerator $\vert \mathcal{T}\vert-1$ in @eq-s-bbb, which becomes zero for singleton theories. Accordingly, singleton theories receive maximum systematicity independent of their content. One simple suggestion to fix this behaviour is to adapt the numerator such that it does not become zero for theories of size one. A minimal adaption would be to subtract smaller values than one:
 
 $$
 S_{mm}(\mathcal{T}\vert \gamma):=G\left(\frac{|\mathcal{T}|-\gamma}{|\overline{\mathcal{T}}|}\right)
@@ -221,7 +223,7 @@ S_{ec}(\mathcal{T})=\frac{\vert \overline{\mathcal{T}}\setminus \mathcal{T}\vert
 $$
 
 
-Maximally systematizing theories are singleton theories that are able to imply for every sentence $s$ outside the domain of theory either $s$ or its negation.^[If $\mathcal{S}$ is the sentence pool, the domain of a theory $\mathcal{T}$ is defined by $\{s\in \mathcal{S}\vert s\in\mathcal{S}\text{ or }\neg s\in\mathcal{T}\}$.] For such theories, we have $\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert = n-1$, which motivates the denominator. Worst cases are empty theories for which $\vert \overline{\mathcal{T}}\vert = \vert \mathcal{T}\vert$ holds, which yields $S_{ec}=0$.
+Maximally systematizing theories are singleton theories that are able to imply for every sentence $s$ outside of their *domain* either $s$ or its negation.^[If $\mathcal{S}$ is the sentence pool, the *domain* of a theory $\mathcal{T}$ is defined by $\{s\in \mathcal{S}\vert s\in\mathcal{T}\text{ or }\neg s\in\mathcal{T}\}$.] For such theories, we have $\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert = n-1$, which motivates the denominator. Worst cases are empty theories for which $\vert \overline{\mathcal{T}}\vert = \vert \mathcal{T}\vert$ holds, which yields $S_{ec}=0$.
 
 
 $S_{ec}$ is linear. An alternative would be to use a quadratic term that is more akin to the quadratic form of $S_{BBB}$:
@@ -257,7 +259,7 @@ The measure $S_{ec}$ can be motivated in an additional way, which will not only 
 The basic idea is to formulate separate penalizing terms for simplicity and content:
 
 - Simplicity penalties: $\vert\mathcal{T}\vert -1$
-- Scope penalties: $n - \vert\overline{\mathcal{T}}\vert$
+- Content penalties: $n - \vert\overline{\mathcal{T}}\vert$
 
 Note that theories that are optimal according to simplicity and content receive no penalties.
 
@@ -289,7 +291,7 @@ $$
 
 One can show that $S_{csw_\alpha}(\mathcal{T}\vert 0.5)=S_{ec}$. In other words, if we balance the penalizing terms for content and size similarly, the new measure $S_{csw_\alpha}$ reduces to $S_{ec}$, which explains why the latter is not able to satisfy *D4.1 (non-ad-hocness*). Adding an ad hoc principle to a theory will increase its size by one and similarly increase its content by one. What is gained in content is lost in simplicity. 
 
-If we want that systematicity decreases under the addition of ad hoc principle s(*D4.1*), we must penalize an increase in size more than a decrease in content (i.e., $\alpha > \frac{1}{2}$.) This is illustrated in @fig-sys-csw. For $\alpha=0.1$ and $\alpha=0.5$ *D4.1* is violated. If, however, we set $\alpha>0.5$ (e.g., $0.7$ or $0.9$), the measure satisfies *D4.1*.
+If we want that systematicity decreases with the addition of ad hoc principles (*D4.1*), we must penalize an increase in size more than a decrease in content (i.e., $\alpha > \frac{1}{2}$.) This is illustrated in @fig-sys-csw. For $\alpha=0.1$ and $\alpha=0.5$ *D4.1* is violated. If, however, we set $\alpha>0.5$ (e.g., $0.7$ or $0.9$), the measure satisfies *D4.1*.
 
 
 ```{python}
@@ -363,14 +365,14 @@ The formulation of another solution starts by framing the problem of $S_{ec}$ in
 
 However, if a theory is expanded by ad hoc principles, its content measured relative to its size ($\frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\vert \mathcal{T}\vert}$ ) will decrease. 
 
-This suggests to measure $\frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\vert \mathcal{T}\vert}$ instead of simply measuring $\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert$: E.g., sth. like:
+This suggests to measure $\frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\vert \mathcal{T}\vert}$ instead of simply measuring $\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert$, e.g.,  as follows:
 
 
 $$
 S(\mathcal{T})= \frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\vert \mathcal{T}\vert (n-1)}
 $$
 
-Alternatively, we can conceptualise $\frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\vert \mathcal{T}\vert}$ as a multiplicative correction factor for $S_{ec}$ which leads to sth. like 
+Alternatively, we can conceptuali7e $\frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\vert \mathcal{T}\vert}$ as a multiplicative correction factor for $S_{ec}$ which can lead to the following:
 
 $$
 S(\mathcal{T})=S_{ec}\frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\vert \mathcal{T}\vert (n-1)}
@@ -411,7 +413,7 @@ with $\sigma$ being the number of complete and dialectically consistent position
 
 A *position* is a set of sentences from $\mathcal{S}$ (e.g., the commitments of an epistemic state in our RE model). A dialectical structure will render some of these positions dialectically inconsistent. For instance, an argument with one premise $s_1$ and the conclusion $s_2$ renders the position $\{s_1,\neg s_2\}$ dialectically inconsistent. 
 
-A *complete position* is a position that includes for each $s\in\mathcal{S}$ either $s$ or $\neg s$. If a dialectical structure is empty and thusly doesn't render any position inconsistent, then there are $2^n$ complete and consistent positions (we assume that complete positions do not include flat contradictions, i.e., are minimally consistent). In this case, $D(\tau)=0$. If, on the other hand, $\tau$ implies one complete position (and, hence, renders all other positions as dialectically inconsistent), $D(\tau)=1$.  
+A *complete position* is a position that includes for each $s\in\mathcal{S}$ either $s$ or $\neg s$. Hence, complete positions do not include flat contradictions ($s$ and $\neg s$), i.e. they are minimally consistent. If a dialectical structure is empty, and thus does not render any position dialectically inconsistent, then there are $2^n$ complete and consistent positions. In this case, $D(\tau)=0$. On the other hand, if $\tau$ allows for exactly one complete and consistent position, and hence renders all other complete positions  dialectically inconsistent, then we have $D(\tau)=1$.  
 
 It is straightforward to generalize the concept of inferential density to a notion of content. The inferential density $D(\tau)$ measures how many complete positions are dialectically inconsistent given the dialectical structure alone. We can now ask which complete positions are rendered *additionally* inconsistent if we further assume the truth of sentences from a theory $\mathcal{T}$. In other words, if $\sigma_{\mathcal{T}}$ is the number of complete consistent positions that extend a theory $\mathcal{T}$, the term $\sigma-\sigma_\mathcal{T}$ can be taken to measure the ($\sigma$-based) content size $\vert C_\sigma(\mathcal{T})\vert$ of a theory. Proper normalization leads to the following:
 
@@ -425,14 +427,14 @@ The more implications $\mathcal{T}$ has, the more complete positions are (additi
 
 ### Generalizing Relative Effective Content Systematicity {#sec-appendix-systematicity-s-grec}
 
-There are surely different possibilities to introduce systematicity measures based on the ($\sigma$-based) content size $\vert C_\sigma(\mathcal{T})\vert$. Here, we discuss but one measure based on the same considerations we used to devise the measure $S_{rec}$ (@sec-rel-eff-content-systematicity). The basic idea of this measure was to take the effective content size $\vert\overline{\mathcal{T}}\setminus\mathcal{T}\vert$ in relation to the size of the theory.
+There are surely different possibilities to introduce systematicity measures based on the ($\sigma$-based) content size $\vert C_\sigma(\mathcal{T})\vert$. Here, we discuss but one measure, which is based on the considerations we used to devise the measure $S_{rec}$ in @sec-rel-eff-content-systematicity. The basic idea of this measure was to take the effective content size $\vert\overline{\mathcal{T}}\setminus\mathcal{T}\vert$ in relation to the size of the theory.
 
 Hence, the first step is to find a generalization of the expression $\vert\overline{\mathcal{T}}\setminus\mathcal{T}\vert$. Similar to $S_{rec}$, we are interested in what a theory inferentially accomplishes besides implying its principles. To that end, we might consider those positions that are complete and dialectically consistent outside the domain of the theory. That is, we consider a restriction of the sentence pool $\mathcal{S}$ to those sentences that are neither principles nor negations of a theory's principles.  
 
-More formally, let $S_{\mathcal{T}}$ be the domain of $\mathcal{T}$, $S\setminus\mathcal{T}=S\setminus S_{\mathcal{T}}$ the domain outside the principles of $\mathcal{T}$, $2m$ the size of the restricted sentence pool and $\sigma_{X}^{S\setminus\mathcal{T}}$ the number of positions that are dialectically consistent given $\mathcal{T}$ and complete on the restricted domain $S\setminus\mathcal{T}$, then we can define the *effective content size* on $S\setminus\mathcal{T}$ as:
+More formally, let $S_{\mathcal{T}}$ be the domain of $\mathcal{T}$, and let $S\setminus\mathcal{T}=S\setminus S_{\mathcal{T}}$ be the domain outside the principles of $\mathcal{T}$, $2m$ the size of the restricted sentence pool and $\sigma_{\mathcal{T}}^{S\setminus\mathcal{T}}$ the number of positions that are dialectically consistent given $\mathcal{T}$ and complete on the restricted domain $S\setminus\mathcal{T}$. Then, we can define the *effective content size* on $S\setminus\mathcal{T}$ as
 
 $$
-\vert C_\sigma(\mathcal{T, S\setminus\mathcal{T}})\vert = \frac{lg(\sigma^{S\setminus\mathcal{T}}-\sigma^{S\setminus\mathcal{T}}_{\mathcal{T}}+1)}{m}
+\vert C_\sigma(\mathcal{T}, S\setminus\mathcal{T})\vert = \frac{lg(\sigma^{S\setminus\mathcal{T}}-\sigma^{S\setminus\mathcal{T}}_{\mathcal{T}}+1)}{m}.
 $$ {#eq-generalization-effective-content}
 
 Similar to $S_{rec}$, systematicity should measure the effective content size relative to the size of the theory---that is, something like: 
@@ -455,7 +457,7 @@ How does this measure perform with respect to the different desiderata?
 
 For the simple measures, we equated content with $\overline{\mathcal{T}}$. Since we adopted a more ambitious concept of content for the generalized measure, we have to assess its performance with respect to this explication of content. 
 
-The desiderata *D1 (content)* and *D2 (simplicity)* are trivially satisfied. The nominator of @eq-s-grec is proportional to the size of the generalized content; the denominator is proportional to the theory size. Accordingly, if we keep the size of the theory constant, systematicity increases with increasing content (*D1*). Similarly, if we keep the theory's content constant, systematicity increases with a decrease in theory size (*D2*). Figure @fig-sys-grec illustrates this behaviour.^[The figure is plotted based on a data set of 100 randomly generated dialectical structures and all possible theory candidates for each $\tau$. This dataset is not needed to plot the function $S_{grec}$. However, it contains all information of $\tau$-theory pairs to assess $\sigma$-based systematicity measures in detail (e.g., it contains for each pair $\sigma^{S\setminus\mathcal{T}}$ and $\sigma^{S\setminus\mathcal{T}}_{\mathcal{T}}$).]
+The desiderata *D1 (content)* and *D2 (simplicity)* are trivially satisfied. The numerator of @eq-s-grec is proportional to the size of the generalized content; the denominator is proportional to the theory size. Accordingly, if we keep the size of the theory constant, systematicity increases with increasing content (*D1*). Similarly, if we keep the theory's content constant, systematicity increases with a decrease in theory size (*D2*). Figure @fig-sys-grec illustrates this behaviour.^[The figure is plotted based on a data set of 100 randomly generated dialectical structures and all possible theory candidates for each $\tau$. This dataset is not needed to plot the function $S_{grec}$. However, it contains all information of $\tau$-theory pairs to assess $\sigma$-based systematicity measures in detail (e.g., it contains for each pair $\sigma^{S\setminus\mathcal{T}}$ and $\sigma^{S\setminus\mathcal{T}}_{\mathcal{T}}$).]
 
 
 ```{python}
@@ -611,7 +613,7 @@ In example @exm-sys11, we considered two theories $\mathcal{T}_1 = \{1,2\}$ and 
 
 The same happens in @exm-sys12 (@fig-map-sys2). There we expected $S(\mathcal{T}_2) < S(\mathcal{T}_1)$ for the given theories. However, the calculation of $S_{grec}$ yields: $S(\mathcal{T}_2) > S(\mathcal{T}_1)$ ($0.20$ vs. $0.14$)---again due to $\sigma^{\mathcal{S}\setminus\mathcal{T}_1}<\sigma^{\mathcal{S}\setminus\mathcal{T}_2}$ ($9$ vs. $16$). 
 
-In consequence, principles working together is a disadvantage in terms of systematicity. The examples were intentionally constructed to yield $\sigma^{\mathcal{S}\setminus\mathcal{T}_1}_{\mathcal{T}_1}=\sigma^{\mathcal{S}\setminus\mathcal{T}_2}_{\mathcal{T}_2}$ since we wanted to compare theories that differ to each other only in whether their principles work together. However, the only remaining relevant quantity in ($\sigma^{\mathcal{S}\setminus\mathcal{T}}$) will induce systematicity values in conflict with *D5*.
+In consequence, principles working together is a disadvantage in terms of systematicity measured this way. The examples were intentionally constructed to yield $\sigma^{\mathcal{S}\setminus\mathcal{T}_1}_{\mathcal{T}_1}=\sigma^{\mathcal{S}\setminus\mathcal{T}_2}_{\mathcal{T}_2}$ since we wanted to compare theories that differ to each other only in whether their principles work together. However, the only remaining relevant quantity in ($\sigma^{\mathcal{S}\setminus\mathcal{T}}$) will induce systematicity values in conflict with *D5*.
 
 @exm-sys2 (@fig-map-sys3) was used to motivate *D6 (external connectedness)*. According to the formulated intuitions, everything else being equal, a theory's systematicity should exceed another's if the former implies more in combination with other sentences than the latter. The simple measures cannot satisfy *D6* since they are insensitive to the non-trivial content (i.e., the content outside $\overline{\mathcal{T}}$). On the other hand, the effective content size $\vert C_\sigma(\mathcal{T, S\setminus\mathcal{T}})\vert$ was conceptualized to account for these implications. Accordingly, it is not surprsing that $S_{grec}$ satisfies *D6*.^[At least, if *'everything else being equal'* includes $\sigma^{\mathcal{S}\setminus\mathcal{T}}$.] In the example, we expected that $S(\mathcal{T}_2) < S(\mathcal{T}_1)$, which is confirmed by the corresponding calculations ($0$ vs. $0.78$).
 
@@ -622,7 +624,7 @@ We motivated the desiderata *D1-D6* by arguing that the systematicity measure $S
 
 Simple systematicity measures calculate their values based on the two quantities $\vert \mathcal{T} \vert$ and $\vert \overline{\mathcal{T}} \vert$. Accordingly, all simple measures cannot account for *D5* and *D6*, which demands the consideration of additional properties of theories. 
 
-$S_{BBB}$ does not (fully) satisfies *D1* and does not satisfy *D3.1*. The most simple adaption of $S_{BBB}$ ($S_{mm}$) satisfies *D1-D4.1*. The measures $S_{ec}$ and $S_{ec^2}$ are also able to fix the shortcomings of $S_{BBB}$ but do not satisfy *D4.1*. We suggested three adaptions of $S_{ec}$ that satisfy *D1-D4.1*, two of which incorporate an additional parameter to model the balancing between content and simplicity. 
+$S_{BBB}$ does not (fully) satisfy *D1* and does not satisfy *D3.1*. The most simple adaption of $S_{BBB}$ ($S_{mm}$) satisfies *D1-D4.1*. The measures $S_{ec}$ and $S_{ec^2}$ are also able to fix the shortcomings of $S_{BBB}$ but do not satisfy *D4.1*. We suggested three adaptions of $S_{ec}$ that satisfy *D1-D4.1*, two of which incorporate an additional parameter to model the balancing between content and simplicity. 
 
 Sigma-based measures draw on a more sophisticated notion of content (@sec-appendix-systematicity-sigma-measures), which can be used to devise additional systematicity measures. We suggested one systematicity measure that is able to account for *D1-D4.1* and *D6* but which does not satisfy *D5* (@sec-appendix-systematicity-s-grec). 
 
