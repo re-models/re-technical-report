@@ -191,7 +191,8 @@ def heatmap_plot(*args, **kwargs):
         agg_std = lambda x: bootstrap_std(x, n_resamples=n_resamples)
         
     else:
-        agg_mean = np.mean
+        #agg_mean = np.mean
+        agg_mean = lambda x: sum(x)/len(x)        
         agg_std = np.std
     
     cmap = plt.get_cmap('coolwarm')
@@ -273,7 +274,9 @@ def plot_multiple_error_bars(data, var_y, ylabel,
                      #linestyle='', # providing an empty string omits lines 
                      markersize=5,
                      capsize=3,
-                     label=name)
+                     # depending on the chosen hue, 
+                     # the value might be a numerical value, which needs typing:
+                     label=str(name))
 
     plt.legend(loc='center left', bbox_to_anchor=bbox_to_anchor, ncol=1, title=hue_title)
     plt.ylabel(ylabel)
@@ -391,9 +394,9 @@ def diff_heatmap_plot(*args, **kwargs):
         raise NotImplementedError("Bootstrapping is not implemented (yet) for diff heatmaps.")
     else:
         x_mean_m1 = pd.pivot_table(sub_data_m1, index=[index], columns=columns,
-                                    values=values, aggfunc=np.mean)
+                                    values=values, aggfunc=lambda x: sum(x)/len(x))
         x_mean_m2 = pd.pivot_table(sub_data_m2, index=[index], columns=columns,
-                                    values=values, aggfunc=np.mean)
+                                    values=values, aggfunc=lambda x: sum(x)/len(x))
         x_mean = x_mean_m1-x_mean_m2
         mask = x_mean.isnull()
         if annot_std:
