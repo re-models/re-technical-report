@@ -5,6 +5,7 @@ project:
 book:
   title: "Assessing a Formal Model of Reflective Equilibrium"
   subtitle: "Technical Report"
+  description: "Based on Beisbart, Betz, and Brun (2021), this report assesses different models of reflective equilibrium (RE) by numerical investigation."
   author: 
     - name: Andreas Freivogel
       affiliation: 
@@ -34,19 +35,14 @@ book:
     - appendix_tipping_line.qmd
     - appendix_trivial_endpoints.qmd
     - appendix_systematicity.qmd
-
+  keyword: "philosophy, formal-methods, modelling, epistemology, reflective-equilibrium"
 
 citation: 
   type: report
   url: https://re-models.github.io/re-technical-report/
   doi: 10.5555/12345678
 
-keywords: 
-  - philosophy
-  - formal-methods
-  - modelling
-  - epistemology
-  - reflective-equilibrium
+
 
 google-scholar: true
 
