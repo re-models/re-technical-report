@@ -5,7 +5,7 @@ with open("package_description.md", "r") as fh:
 
 setup(
     name="re_technical_report",
-    version="0.0.6a1",
+    version="0.0.9a1",
     author="Sebastian Cacean, Andreas Freivogel",
     author_email="sebastian.cacean@kit.edu, andreas.freivogel@unibe.ch",
     description="Helper functions for the report 'Assessing a Formal Model of Reflective Equilibrium'",
@@ -18,6 +18,5 @@ setup(
                  "License :: OSI Approved :: MIT License",
                  "Operating System :: OS Independent"],
     python_requires='>=3.9',
-    install_requires=['numpy', 'pandas','scipy', 'rethon'
-                     ],
+    install_requires=['rethon', 'matplotlib_venn'],
 )
