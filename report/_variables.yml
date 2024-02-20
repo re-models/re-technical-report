@@ -6,7 +6,11 @@ link:
   reproduction-infos: https://github.com/re-models/re-technical-report?tab=readme-ov-file#reproducing-the-results
   reproduction-notebooks: https://github.com/re-models/re-technical-report/blob/main/notebooks
   reproduction-data: https://github.com/re-models/re-technical-report/tree/main/data
-  reproduction-nb-bbb2021: https://github.com/re-models/re-technical-report/blob/main/notebooks/replication_bbb_2021.ipynb
-  re-project: https://www.philosophie.unibe.ch/forschung/forschungsprojekte/how_far_does_reflective_equilibrium_take_us/project/index_ger.html
-  # re-project: https://re-models.github.io/
+  argument-maps: https://github.com/re-models/re-technical-report/tree/main/maps
+  #re-project: https://www.philosophie.unibe.ch/forschung/forschungsprojekte/how_far_does_reflective_equilibrium_take_us/project/index_ger.html
+  re-project: https://re-models.github.io/
   bwHPC: https://www.scc.kit.edu/en/services/bwUniCluster_2.0.php
+  reproduction-nb-bbb2021: https://github.com/re-models/re-technical-report/blob/main/notebooks/replication_bbb_2021.ipynb
+  nb-intro-general-props: https://github.com/re-models/re-technical-report/blob/main/notebooks/chapter_general-props.ipynb 
+  nb-fp-go: https://github.com/re-models/re-technical-report/blob/main/notebooks/data_analysis_chapter-go-and-fp.ipynb
+  theodias-util: https://github.com/re-models/theodias/blob/master/theodias/util.py
