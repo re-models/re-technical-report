@@ -8,7 +8,10 @@ ToDos:
 + Make links to package docs perhaps more visible (how?) 
 -->
 
-This report summarizes findings of analysing a formal model of the method of reflective equilibrium. The model is based on @beisbart_making_2021.
+## Abstract
+
+@beisbart_making_2021 have introduced a formal model of reflective equilibrium based on the theory of dialectical structures [@betz_theorie_2010, @betz_debate_2013], which they use as a methodological tool to understand the method of reflective equilibrium better. This report summarizes the findings of assessing the model thoroughly by numerical investigation. We simulate RE processes for a broad spectrum of model parameters and initial conditions and use four different model variants (including the original model). We analyze the dependence of simulation results on different parameters and assess the models' consistency conduciveness and ability to reach global optima and full RE states. The results show that the models' behaviour depends crucially on the specifics of the simulation setup (e.g., the sentence pool size and $\alpha$ weights). We can, therefore, not draw any general conclusions about the overall performance of the model variants. Rather, the specifics of the context in which an RE model is used must be considered to choose a specific model. Finally, we identify some critical knowledge gaps we cannot close with this report that call for further research into RE modelling.      
+
 
 ## Content
 
@@ -154,7 +157,7 @@ In @sec-appendix-tipping , we prove analytic results about linear model variants
 
 ## Reproducibility
 
-All findings and the underlying data can be reproduced by using the [Python implementation]({{< var link.rethon >}}) of the model. The data that the model produced can be found [here]({{< var link.reproduction-data >}}). For each chapter you will find [here]({{< var link.reproduction-notebooks >}}) a Jupyter notebook whose execution produces all analysis results. 
+All findings and the underlying data can be reproduced by using the [Python implementation]({{< var link.rethon >}}) of the model. The data that the model produced can be found [here]({{< var link.reproduction-data >}}). For each chapter you will find [here]({{< var link.reproduction-notebooks >}}) a Jupyter notebook whose execution produces all analysis results. For more specific instructions of how to reproduce all findings, please refer to the [github repo of this report]({{< var link.reproduction-infos >}}).
 
 ## Licence
 
@@ -167,6 +170,31 @@ This work is licensed under a
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
+## Citation
+
+BibTex citation:
+
+```bibtex
+@article{freivogel_assessing_2024,
+  title = {Assessing a {{Formal Model}} of {{Reflective Equilibrium}}},
+  author = {Freivogel, Andreas and Cacean, Sebastian},
+  year = {2024},
+  month = mar,
+  doi = {xxx},
+  langid = {english},
+  url = {https://re-models.github.io/re-technical-report/},
+}
+```
+
+
+::: {.callout-note icon=false}
+
+## For attribution, please cite this works as, for instance:
+
+Freivogel, A., & Cacean, S. (2024). *Assessing a Formal Model of Reflective Equilibrium*. <https://doi.org/xx.xxxx/xxxxxxxx>
+
+:::
+
 ## Credits
 
-Earlier versions of this report were discussed on several occasions with all members of the research project ['How far does Reflective Equilibrium Take us? Investigating the Power of a Philosophical Method']({{< var link.re-project >}}) (SNSF grant 182854 and German Research Foundation grant 412679086). We thank, in particular, Claus Beisbart, Gregor Betz, Georg Brun, Alexander Koch and Richard Lohse for their helpful comments, which helped to improve this report considerably.
+Earlier versions of this report were discussed on several occasions with all members of the research project ['How far does Reflective Equilibrium Take us? Investigating the Power of a Philosophical Method']({{< var link.re-project >}}) (SNSF grant 182854 and German Research Foundation grant 412679086). We thank, in particular, Claus Beisbart, Gregor Betz, Georg Brun, Alexander Koch and Richard Lohse for their helpful comments, which helped to improve this report considerably. Finally, the authors acknowledge support by the state of Baden-Württemberg through the joint high-performance computer system [bwHPC]({{< var link.bwHPC >}}).
