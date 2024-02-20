@@ -2,9 +2,11 @@
 
 link:
   remoma: https://github.com/debatelab/remoma
-  rethon: https://github.com/debatelab/rethon
-  reproduction-notebooks: https://github.com/debatelab/re-technical-report/blob/main/notebooks
-  reproduction-data: https://github.com/debatelab/re-technical-report/tree/main/data
-  reproduction-nb-bbb2021: https://github.com/debatelab/re-technical-report/blob/main/notebooks/replication_bbb_2021.ipynb
+  rethon: https://github.com/re-models/rethon
+  reproduction-infos: https://github.com/re-models/re-technical-report?tab=readme-ov-file#reproducing-the-results
+  reproduction-notebooks: https://github.com/re-models/re-technical-report/blob/main/notebooks
+  reproduction-data: https://github.com/re-models/re-technical-report/tree/main/data
+  reproduction-nb-bbb2021: https://github.com/re-models/re-technical-report/blob/main/notebooks/replication_bbb_2021.ipynb
   re-project: https://www.philosophie.unibe.ch/forschung/forschungsprojekte/how_far_does_reflective_equilibrium_take_us/project/index_ger.html
   # re-project: https://re-models.github.io/
+  bwHPC: https://www.scc.kit.edu/en/services/bwUniCluster_2.0.php
