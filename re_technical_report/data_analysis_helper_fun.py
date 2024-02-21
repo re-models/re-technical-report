@@ -1,6 +1,6 @@
 
 from ast import literal_eval
-from math import log, sqrt
+from math import log, sqrt, isnan
 from os import getcwd, path
 from pathlib import Path
 import tarfile
@@ -172,6 +172,12 @@ def load_re_data(data_dir=None,
 #    else:
 #        sns.heatmap(x_mean, cmap=cmap, mask=mask, annot=x_mean, **kwargs)
 
+def mean(x):
+    # filter nans
+    x = [value for value in x if ((value is not None) and (not isnan(value))) ]
+    return sum(x)/len(x)
+
+
 def heatmap_plot(*args, **kwargs):
     data = kwargs.pop('data')
     mask = kwargs.pop('mask')
@@ -192,7 +198,7 @@ def heatmap_plot(*args, **kwargs):
         
     else:
         #agg_mean = np.mean
-        agg_mean = lambda x: sum(x)/len(x)        
+        agg_mean = mean      
         agg_std = np.std
     
     cmap = plt.get_cmap('coolwarm')
@@ -394,9 +400,9 @@ def diff_heatmap_plot(*args, **kwargs):
         raise NotImplementedError("Bootstrapping is not implemented (yet) for diff heatmaps.")
     else:
         x_mean_m1 = pd.pivot_table(sub_data_m1, index=[index], columns=columns,
-                                    values=values, aggfunc=lambda x: sum(x)/len(x))
+                                    values=values, aggfunc=lambda x: mean(x))
         x_mean_m2 = pd.pivot_table(sub_data_m2, index=[index], columns=columns,
-                                    values=values, aggfunc=lambda x: sum(x)/len(x))
+                                    values=values, aggfunc=lambda x: mean(x))
         x_mean = x_mean_m1-x_mean_m2
         mask = x_mean.isnull()
         if annot_std:
