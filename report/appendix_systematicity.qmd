@@ -82,19 +82,21 @@ There are other constraints as well: Due to the assumption that the sentence poo
 
 So, under which conditions should systematicity be minimal? The above formulated intuitions that led to *D1* and *D2* suggest that
 
-**Minimal systematicity (D3)**: Systematicity should be minimal if a theory does not imply anything besides its principles (let's call them *empty theories*).
+**Minimal systematicity (D3)**: Systematicity should be minimal if a theory does not imply anything besides its principles.
 
-The formulation *D3* is, however, imprecise or even ambiguous. If we read it strongly, we might require:
+We might say that theories that do not imply anything in addition to their principles are vacuous in the sense of being ineffective in their aim to systematize sentences. We will call such theories *ineffective theories*. Similarly, we will call theories that imply more than their principles *effective theories*.   
 
-**Minimal systematicity (D3.1)**: Theories that do not imply anything besides their principles (empty theories) receive lower systematicity values than other theories.
+The formulation *D3* is imprecise or even ambiguous. If we read it strongly, we might require:
 
-In other words, the systematicity values of empty theories are lower bounds for non-empty theories. One way of satisfying *D3.1* is to let $S(\mathcal{T})=0$ if $\mathcal{T}$ is an empty theory. But there are other possibilities. In particular, *D3.1* allows it to distribute different systematicity values to empty theories.
+**Minimal systematicity (D3.1)**: Theories that do not imply anything besides their principles (ineffective theories) receive lower systematicity values than other theories.
 
-The measure $S_{BBB}$ does not satisfy *D3.1*---not only because of its preferential treatment of singleton theories. In the following, we will refer to points in figures such as @fig-s-bbb by using tuples of the form $(\vert \mathcal{T}\vert, \vert \overline{\mathcal{T}}\vert)$. For instance, the point $(3,4)$ denotes the equivalence class of theories of size three with a dialectical closure of size four. Empty theories are points of the form $(n,n)$, which are the left (lower) end points of lines in @fig-s-bbb. You can see in this figure that for $2n=14$, there are only four theories that are lower bounds for non-empty theories (namely, $(4,4)$, $(5,5)$, $(6,6)$, $(7,7)$). For the other empty theories, we can find non-empty theories that receive lower systematicity values (e.g., $S_{BBB}(3,3)>S_{BBB}(6,7)$). Hence, $S_{BBB}$ violates *D3.1*. 
+In other words, the systematicity values of ineffective theories are lower bounds for effective theories. One way of satisfying *D3.1* is to let $S(\mathcal{T})=0$ if $\mathcal{T}$ is an ineffective theory. But there are other possibilities. In particular, *D3.1* allows it to distribute different systematicity values to ineffective theories.
 
-There is, however, a weaker interpretation of *D3*. We might only demand that empty theories receive the lowest systematicity value in comparison to non-empty theories with the same amount of principles (e.g., $S(3,3) < S(3,4) < \dots < S(3,n)$). This weaker criterion is satisfied by $S_{BBB}$. Since this weak version of *D3* is already implied by *D1 (content)*, we will not list it as an additional criterion.
+The measure $S_{BBB}$ does not satisfy *D3.1*---not only because of its preferential treatment of singleton theories. In the following, we will refer to points in figures such as @fig-s-bbb by using tuples of the form $(\vert \mathcal{T}\vert, \vert \overline{\mathcal{T}}\vert)$. For instance, the point $(3,4)$ denotes the equivalence class of theories of size three with a dialectical closure of size four. Empty theories are points of the form $(n,n)$, which are the left (lower) end points of lines in @fig-s-bbb. You can see in this figure that for $2n=14$, there are only four theories that are lower bounds for effective theories (namely, $(4,4)$, $(5,5)$, $(6,6)$, $(7,7)$). For the other ineffective theories, we can find effective theories that receive lower systematicity values (e.g., $S_{BBB}(3,3)>S_{BBB}(6,7)$). Hence, $S_{BBB}$ violates *D3.1*. 
 
-If empty theories are, in some sense, the least systematizing, we might ask which theories are most systematizing. According to the above-formulated intuitions, we might suggest that theories with the least number of principles and the largest number of implications should receive maximum systematicity values. For a sentence pool of size $14$, these are singleton theories that imply seven sentences. Similar to the weak version of *D3*, this criterion is satisfied by $S_{BBB}$ and already implied by *D1* and *D2*. 
+There is, however, a weaker interpretation of *D3*. We might only demand that ineffective theories receive the lowest systematicity value in comparison to effective theories with the same amount of principles (e.g., $S(3,3) < S(3,4) < \dots < S(3,n)$). This weaker criterion is satisfied by $S_{BBB}$. Since this weak version of *D3* is already implied by *D1 (content)*, we will not list it as an additional criterion.
+
+If ineffective theories are, in some sense, the least systematizing, we might ask which theories are most systematizing. According to the above-formulated intuitions, we might suggest that theories with the least number of principles and the largest number of implications should receive maximum systematicity values. For a sentence pool of size $14$, these are singleton theories that imply seven sentences. Similar to the weak version of *D3*, this criterion is satisfied by $S_{BBB}$ and already implied by *D1* and *D2*. 
 
 ### D4 -- Non-Ad-Hocness
 
@@ -112,9 +114,9 @@ Hence, we should require:
 
 In the context of modelling RE, *D4* is even too weak to allow the model to penalize the addition of ad hoc principle in every case (independent of the chosen weights). Suppose two theories $\mathcal{T}$ and $\mathcal{T}^{*}$ where the latter is constructed by adding an ad hoc principle to the former. Suppose further a set of commitments that coincide with the closure of $\mathcal{T}^{*}$. Additionally, we assume that there are no other theories that compare better with respect to the summation of account and systematicity. In such cases, the achievement function will always prefer $\mathcal{T}^{*}$ over $\mathcal{T}$ if we don't strengthen *D4*. The problem is that $\mathcal{T}^{*}$ performs better than $\mathcal{T}$ with respect to account since account is maximized if the theory's closure matches the commitments. We must, therefore, counterbalance the advantage in account of $\mathcal{T}^{*}$ over $\mathcal{T}$ by penalizing the addition of ad hoc principles within the systematicity measure.^[There, of course, other possibilities to adapt the model to achieve this goal.] This might suggest that the extension of ad hoc principles should decrease a theory's systematicity. 
 
-However, that might be too strong since one might want to satisfy *D3.1* by letting $S=0$ for empty theories. But then, one cannot further reduce systematicity for ad hoc extensions of empty theories. Hence, *D.3* might conflict with the requirement that systematicity should decrease with ad hoc extension. Fortunately, there is a simple solution. The described case is only relevant for non-empty theories. Hence, an appropriate strengthening of *D4* is:
+However, that might be too strong since one might want to satisfy *D3.1* by letting $S=0$ for ineffective theories. But then, one cannot further reduce systematicity for ad hoc extensions of ineffective theories. Hence, *D.3* might conflict with the requirement that systematicity should decrease with ad hoc extension. Fortunately, there is a simple solution. The described case is only relevant for effective theories. Hence, an appropriate strengthening of *D4* is:
 
-**D4.1 (non-ad-hocness)**: Extending a non-empty theory with ad hoc principles should (monotonically) decrease its systematicity; extending an empty theory with ad hoc principles must not increase its systematicity.
+**D4.1 (non-ad-hocness)**: Extending a effective theory with ad hoc principles should (monotonically) decrease its systematicity; extending an ineffective theory with ad hoc principles must not increase its systematicity.
 
 @fig-s-bbb illustrates that $S_{BBB}$ complies with *D4.1*. This requirement is satisfied if $S(n,m)>S(n+i,m+i)$ (with $n$ the theorie's size, $m$ its closure's size and $i$ the amount of added ad hoc principles). In @fig-s-bbb, you see, for instance, $S_{BBB}(1,4) > S_{BBB}(2,5) > S_{BBB}(3,6) > S_{BBB}(4,7)$. 
 
@@ -186,29 +188,32 @@ $$
 
 with $\gamma<1$.
 
-@fig-sys-mm plots the systematicity measure for different values of the parameter $\gamma$. By construction, the measure satisfies *D1 (content)*. Similar to $S_{BBB}$, it also satisfies *D2 (simplicity)* and *D4.1 (non-ad-hocness)*. It is even possible to comply with *D3.1 (minimal systematicity)* if we set $\gamma$ high enough. In our case (sentence pool of size *14*), $\gamma=0.1$ is able to push the systematicity values of $(m,m)$ theories (i.e., empty theories) such that they are lower bounds for non-empty theories. 
+@fig-sys-mm plots the systematicity measure for different values of the parameter $\gamma$. By construction, the measure satisfies *D1 (content)*. Similar to $S_{BBB}$, it also satisfies *D2 (simplicity)* and *D4.1 (non-ad-hocness)*. It is even possible to comply with *D3.1 (minimal systematicity)* if we set $\gamma$ high enough. In our case (sentence pool of size *14*), $\gamma=0.1$ is able to push the systematicity values of $(m,m)$ theories (i.e., ineffective theories) such that they are lower bounds for effective theories. 
+
+
+
 
 ```{python}
+#| layout: [[45, 55], [45, 55]]
 #| label: fig-sys-mm
 #| fig-cap: "Minimal mutation systematicity of theories in dependence of their size and closure's size."
 #| echo: false
-#| layout-ncol: 2
 #| fig-subcap:
 #|   - "$\\gamma = 0.9$"
 #|   - "$\\gamma = 0.7$"
 #|   - "$\\gamma = 0.5$"
 #|   - "$\\gamma = 0.1$"
 
-plot_sys_measure(sys_data, "sys_mm", param_name="gamma", param_value=0.9)
+plot_sys_measure(sys_data, "sys_mm", param_name="gamma", param_value=0.9, scale=0.7, legend=False)
 plt.show()
 
-plot_sys_measure(sys_data, "sys_mm", param_name="gamma", param_value=0.5)
+plot_sys_measure(sys_data, "sys_mm", param_name="gamma", param_value=0.5, scale=0.7)
 plt.show()
 
-plot_sys_measure(sys_data, "sys_mm", param_name="gamma", param_value=0.7)
+plot_sys_measure(sys_data, "sys_mm", param_name="gamma", param_value=0.7, scale=0.7, legend=False)
 plt.show()
 
-plot_sys_measure(sys_data, "sys_mm", param_name="gamma", param_value=0.1)
+plot_sys_measure(sys_data, "sys_mm", param_name="gamma", param_value=0.1, scale=0.7)
 plt.show()
 ```
 
@@ -223,7 +228,7 @@ S_{ec}(\mathcal{T})=\frac{\vert \overline{\mathcal{T}}\setminus \mathcal{T}\vert
 $$
 
 
-Maximally systematizing theories are singleton theories that are able to imply for every sentence $s$ outside of their *domain* either $s$ or its negation.^[If $\mathcal{S}$ is the sentence pool, the *domain* of a theory $\mathcal{T}$ is defined by $\{s\in \mathcal{S}\vert s\in\mathcal{T}\text{ or }\neg s\in\mathcal{T}\}$.] For such theories, we have $\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert = n-1$, which motivates the denominator. Worst cases are empty theories for which $\vert \overline{\mathcal{T}}\vert = \vert \mathcal{T}\vert$ holds, which yields $S_{ec}=0$.
+Maximally systematizing theories are singleton theories that are able to imply for every sentence $s$ outside of their *domain* either $s$ or its negation.^[If $\mathcal{S}$ is the sentence pool, the *domain* of a theory $\mathcal{T}$ is defined by $\{s\in \mathcal{S}\vert s\in\mathcal{T}\text{ or }\neg s\in\mathcal{T}\}$.] For such theories, we have $\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert = n-1$, which motivates the denominator. Worst cases are ineffective theories for which $\vert \overline{\mathcal{T}}\vert = \vert \mathcal{T}\vert$ holds, which yields $S_{ec}=0$.
 
 
 $S_{ec}$ is linear. An alternative would be to use a quadratic term that is more akin to the quadratic form of $S_{BBB}$:
@@ -233,20 +238,18 @@ S_{ec^2}(\mathcal{T})=1-\left(1-\frac{\vert \overline{\mathcal{T}}\vert - \vert 
 $$
 
 ```{python}
+#| layout: [[45, 55]]
 #| label: fig-ec
 #| fig-cap: "Effective content systematicity of theories in dependence of their size and closure's size."
 #| echo: false
-#| layout-ncol: 2
 #| fig-subcap: 
 #|   - "Linear effective content systematicity"
 #|   - "Quadratic effective content systematicity"
 
-#plot_sys_measure("s_sligs", scale=0.8)
-plot_sys_measure(sys_data, "sys_ec")
+plot_sys_measure(sys_data, "sys_ec", scale=0.7, legend=False)
 plt.show()
 
-#plot_sys_measure("s_squags", scale=0.8)
-plot_sys_measure(sys_data, "sys_ec_2")
+plot_sys_measure(sys_data, "sys_ec_2", scale=0.7)
 plt.show()
 ```
 
@@ -298,29 +301,29 @@ If we want that systematicity decreases with the addition of ad hoc principles (
 #| label: fig-sys-csw
 #| fig-cap: "Content-simplicity weigthed systematicity (alpha) of theories in dependence of their size and closure's size."
 #| echo: false
-#| layout-ncol: 2
+#| layout: [[45, 55], [45, 55]]
 #| fig-subcap: 
 #|   - "$\\alpha = 0.1$"
 #|   - "$\\alpha = 0.5$"
 #|   - "$\\alpha = 0.7$"
 #|   - "$\\alpha = 0.9$"
 
-plot_sys_measure(sys_data, "sys_csw_alpha", param_name="alpha", param_value=0.1)
+plot_sys_measure(sys_data, "sys_csw_alpha", param_name="alpha", param_value=0.1, scale=0.7, legend=False)
 plt.show()
 
-plot_sys_measure(sys_data, "sys_csw_alpha", param_name="alpha", param_value=0.5)
+plot_sys_measure(sys_data, "sys_csw_alpha", param_name="alpha", param_value=0.5, scale=0.7)
 plt.show()
 
-plot_sys_measure(sys_data, "sys_csw_alpha", param_name="alpha", param_value=0.7)
+plot_sys_measure(sys_data, "sys_csw_alpha", param_name="alpha", param_value=0.7, scale=0.7, legend=False)
 plt.show()
 
-plot_sys_measure(sys_data, "sys_csw_alpha", param_name="alpha", param_value=0.9)
+plot_sys_measure(sys_data, "sys_csw_alpha", param_name="alpha", param_value=0.9, scale=0.7)
 plt.show()
 
 ```
 
 
-Similarly to $S_{ec}$, the new measure $S_{csw_\alpha}$ complies with *D3.1 (minimal systematicity)*. They do so in a very specific way: The systematicity values for empty theories are not only lower bounds for non-empty theories, but they also receive the same and lowest systematicity value possible, namely $0$. 
+Similarly to $S_{ec}$, the new measure $S_{csw_\alpha}$ complies with *D3.1 (minimal systematicity)*. They do so in a very specific way: The systematicity values for ineffective theories are not only lower bounds for effective theories, but they also receive the same and lowest systematicity value possible, namely $0$. 
 
 Surely, for a fixed $\vert\mathcal{T}\vert$, systematicity should be minimised for $\vert\overline{\mathcal{T}}\vert = \vert\mathcal{T}\vert$ and vice versa. However, it is not clear that all cases of $\vert\overline{\mathcal{T}}\vert = \vert\mathcal{T}\vert$ should have equal systematicity of $0$. Especially if we conceive systematicity to be a weighted combination of simplicity and content, we might think that cases of larger $\vert\overline{\mathcal{T}}\vert = \vert\mathcal{T}\vert$ are better or worse than cases of smaller ones. In particular, if simplicity has more weight than content ($\alpha>0.5$), then smaller ones should be (a little) more systematic than larger ones (because they are simpler).
 
@@ -339,23 +342,23 @@ Similar to $S_{sw_\alpha}$, $S_{sw_\beta}$ satisfies *D1*, *D2*. The desiderata 
 #| label: fig-sys-csw-beta
 #| fig-cap: "Content-simplicity weighted systematicity (beta) of theories in dependence of their size and closure's size ."
 #| echo: false
-#| layout-ncol: 2
+#| layout: [[45, 55], [45, 55]]
 #| fig-subcap: 
 #|   - "$\\beta= 0.3$"
 #|   - "$\\beta = 0.525$"
 #|   - "$\\beta = 0.7$"
 #|   - "$\\beta = 0.9$"
 
-plot_sys_measure(sys_data, "sys_csw_beta", param_name="beta", param_value=0.3)
+plot_sys_measure(sys_data, "sys_csw_beta", param_name="beta", param_value=0.3, scale=0.7, legend=False)
 plt.show()
 
-plot_sys_measure(sys_data, "sys_csw_beta", param_name="beta", param_value=0.525)
+plot_sys_measure(sys_data, "sys_csw_beta", param_name="beta", param_value=0.525, scale=0.7)
 plt.show()
 
-plot_sys_measure(sys_data, "sys_csw_beta", param_name="beta", param_value=0.7)
+plot_sys_measure(sys_data, "sys_csw_beta", param_name="beta", param_value=0.7, scale=0.7, legend=False)
 plt.show()
 
-plot_sys_measure(sys_data, "sys_csw_beta", param_name="beta", param_value=0.9)
+plot_sys_measure(sys_data, "sys_csw_beta", param_name="beta", param_value=0.9, scale=0.7)
 plt.show()
 ```
 
@@ -413,7 +416,7 @@ with $\sigma$ being the number of complete and dialectically consistent position
 
 A *position* is a set of sentences from $\mathcal{S}$ (e.g., the commitments of an epistemic state in our RE model). A dialectical structure will render some of these positions dialectically inconsistent. For instance, an argument with one premise $s_1$ and the conclusion $s_2$ renders the position $\{s_1,\neg s_2\}$ dialectically inconsistent. 
 
-A *complete position* is a position that includes for each $s\in\mathcal{S}$ either $s$ or $\neg s$. Hence, complete positions do not include flat contradictions ($s$ and $\neg s$), i.e. they are minimally consistent. If a dialectical structure is empty, and thus does not render any position dialectically inconsistent, then there are $2^n$ complete and consistent positions. In this case, $D(\tau)=0$. On the other hand, if $\tau$ allows for exactly one complete and consistent position, and hence renders all other complete positions  dialectically inconsistent, then we have $D(\tau)=1$.  
+A *complete position* is a position that includes for each $s\in\mathcal{S}$ either $s$ or $\neg s$. Hence, complete positions do not include flat contradictions ($s$ and $\neg s$), i.e. they are minimally consistent. If a dialectical structure is ineffective, and thus does not render any position dialectically inconsistent, then there are $2^n$ complete and consistent positions. In this case, $D(\tau)=0$. On the other hand, if $\tau$ allows for exactly one complete and consistent position, and hence renders all other complete positions  dialectically inconsistent, then we have $D(\tau)=1$.  
 
 It is straightforward to generalize the concept of inferential density to a notion of content. The inferential density $D(\tau)$ measures how many complete positions are dialectically inconsistent given the dialectical structure alone. We can now ask which complete positions are rendered *additionally* inconsistent if we further assume the truth of sentences from a theory $\mathcal{T}$. In other words, if $\sigma_{\mathcal{T}}$ is the number of complete consistent positions that extend a theory $\mathcal{T}$, the term $\sigma-\sigma_\mathcal{T}$ can be taken to measure the ($\sigma$-based) content size $\vert C_\sigma(\mathcal{T})\vert$ of a theory. Proper normalization leads to the following:
 
@@ -431,25 +434,25 @@ There are surely different possibilities to introduce systematicity measures bas
 
 Hence, the first step is to find a generalization of the expression $\vert\overline{\mathcal{T}}\setminus\mathcal{T}\vert$. Similar to $S_{rec}$, we are interested in what a theory inferentially accomplishes besides implying its principles. To that end, we might consider those positions that are complete and dialectically consistent outside the domain of the theory. That is, we consider a restriction of the sentence pool $\mathcal{S}$ to those sentences that are neither principles nor negations of a theory's principles.  
 
-More formally, let $S_{\mathcal{T}}$ be the domain of $\mathcal{T}$, and let $S\setminus\mathcal{T}=S\setminus S_{\mathcal{T}}$ be the domain outside the principles of $\mathcal{T}$, $2m$ the size of the restricted sentence pool and $\sigma_{\mathcal{T}}^{S\setminus\mathcal{T}}$ the number of positions that are dialectically consistent given $\mathcal{T}$ and complete on the restricted domain $S\setminus\mathcal{T}$. Then, we can define the *effective content size* on $S\setminus\mathcal{T}$ as
+More formally, let $\mathcal{S}_{\mathcal{T}}$ be the domain of $\mathcal{T}$, and let $\mathcal{S}\setminus\mathcal{T}=\mathcal{S}\setminus \mathcal{S}_{\mathcal{T}}$ be the domain outside the principles of $\mathcal{T}$, $2m$ the size of the restricted sentence pool and $\sigma_{\mathcal{T}}^{\mathcal{S}\setminus\mathcal{T}}$ the number of positions that are dialectically consistent given $\mathcal{T}$ and complete on the restricted domain $\mathcal{S}\setminus\mathcal{T}$. Then, we can define the *effective content size* on $\mathcal{S}\setminus\mathcal{T}$ as
 
 $$
-\vert C_\sigma(\mathcal{T}, S\setminus\mathcal{T})\vert = \frac{lg(\sigma^{S\setminus\mathcal{T}}-\sigma^{S\setminus\mathcal{T}}_{\mathcal{T}}+1)}{m}.
+\vert C_\sigma(\mathcal{T}, \mathcal{S}\setminus\mathcal{T})\vert = \frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}}-\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}+1)}{m}.
 $$ {#eq-generalization-effective-content}
 
 Similar to $S_{rec}$, systematicity should measure the effective content size relative to the size of the theory---that is, something like: 
 $$
-S\propto\frac{lg(\sigma^{S\setminus\mathcal{T}}-\sigma^{S\setminus\mathcal{T}}_{\mathcal{T}}+1)}{\vert\mathcal{T}\vert \cdot m}
+S\propto\frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}}-\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}+1)}{\vert\mathcal{T}\vert \cdot m}
 $$ 
 
 What remains is a proper normalization. 
 
-Maximal effective content is reached by singleton theories that render all but one position inconsistent. Under this assumption we have $\sigma^{S\setminus\mathcal{T}}_{\mathcal{T}}=1$ and $\vert \mathcal{T}\vert=1$. The value of $\sigma^{S\setminus\mathcal{T}}$ will depend on the singleton theory in question. One suggestion is, therefore, to take $max(\{\sigma^{S\setminus \{s\}})\vert s\in S \}$ to normalize the measure. 
+Maximal effective content is reached by singleton theories that render all but one position inconsistent. Under this assumption we have $\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}=1$ and $\vert \mathcal{T}\vert=1$. The value of $\sigma^{\mathcal{S}\setminus\mathcal{T}}$ will depend on the singleton theory in question. One suggestion is, therefore, to take $max(\{\sigma^{\mathcal{S}\setminus \{s\}})\vert s\in \mathcal{S} \}$ to normalize the measure. 
 
-For simplicity, we will use another estimation. $\sigma^{S\setminus\mathcal{T}}$ will be maximal if the dialectical structure is silent on the domain $S\setminus\mathcal{T}$; that is, if it doesn't render anything dialectically inconsistent on $S\setminus\mathcal{T}$. In this case, $\sigma^{S\setminus\mathcal{T}}$ will be $2^{n-1}$ for singleton theories. This motivates the following normalization:^[Admittedly, $S_{grec}$ will under this construction never reach the value one, because $\sigma^{S\setminus\mathcal{T}}=2^{n-1}$ means that the theory won't imply anything on $S\setminus\mathcal{T}$. However, $S_{grec}$ will still have maximal systematicity values for singleton theories that have maximal content on $S\setminus\mathcal{T}$.]
+For simplicity, we will use another estimation. $\sigma^{\mathcal{S}\setminus\mathcal{T}}$ will be maximal if the dialectical structure is silent on the domain $\mathcal{S}\setminus\mathcal{T}$; that is, if it doesn't render anything dialectically inconsistent on $\mathcal{S}\setminus\mathcal{T}$. In this case, $\sigma^{\mathcal{S}\setminus\mathcal{T}}$ will be $2^{n-1}$ for singleton theories. This motivates the following normalization:^[Admittedly, $S_{grec}$ will under this construction never reach the value one, because $\sigma^{\mathcal{S}\setminus\mathcal{T}}=2^{n-1}$ means that the theory won't imply anything on $\mathcal{S}\setminus\mathcal{T}$. However, $S_{grec}$ will still have maximal systematicity values for singleton theories that have maximal content on $\mathcal{S}\setminus\mathcal{T}$.]
 
 $$
-S_{grec}(\mathcal{T})=\frac{lg(\sigma^{S\setminus\mathcal{T}}-\sigma^{S\setminus\mathcal{T}}_{\mathcal{T}}+1)}{\vert\mathcal{T}\vert \cdot (n-1)}
+S_{grec}(\mathcal{T})=\frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}}-\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}+1)}{\vert\mathcal{T}\vert \cdot (n-1)}
 $$ {#eq-s-grec}
 
 
@@ -457,7 +460,7 @@ How does this measure perform with respect to the different desiderata?
 
 For the simple measures, we equated content with $\overline{\mathcal{T}}$. Since we adopted a more ambitious concept of content for the generalized measure, we have to assess its performance with respect to this explication of content. 
 
-The desiderata *D1 (content)* and *D2 (simplicity)* are trivially satisfied. The numerator of @eq-s-grec is proportional to the size of the generalized content; the denominator is proportional to the theory size. Accordingly, if we keep the size of the theory constant, systematicity increases with increasing content (*D1*). Similarly, if we keep the theory's content constant, systematicity increases with a decrease in theory size (*D2*). Figure @fig-sys-grec illustrates this behaviour.^[The figure is plotted based on a data set of 100 randomly generated dialectical structures and all possible theory candidates for each $\tau$. This dataset is not needed to plot the function $S_{grec}$. However, it contains all information of $\tau$-theory pairs to assess $\sigma$-based systematicity measures in detail (e.g., it contains for each pair $\sigma^{S\setminus\mathcal{T}}$ and $\sigma^{S\setminus\mathcal{T}}_{\mathcal{T}}$).]
+The desiderata *D1 (content)* and *D2 (simplicity)* are trivially satisfied. The numerator of @eq-s-grec is proportional to the size of the generalized content; the denominator is proportional to the theory size. Accordingly, if we keep the size of the theory constant, systematicity increases with increasing content (*D1*). Similarly, if we keep the theory's content constant, systematicity increases with a decrease in theory size (*D2*). Figure @fig-sys-grec illustrates this behaviour.^[The figure is plotted based on a data set of 100 randomly generated dialectical structures and all possible theory candidates for each $\tau$. This dataset is not needed to plot the function $S_{grec}$. However, it contains all information of $\tau$-theory pairs to assess $\sigma$-based systematicity measures in detail (e.g., it contains for each pair $\sigma^{\mathcal{S}\setminus\mathcal{T}}$ and $\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}$).]
 
 
 ```{python}
@@ -484,7 +487,7 @@ plt.show()
 ```
 
 
-Empty theories do not imply anything besides their principles that is not already tautologically true (with respect to $\tau$). Accordingly, they do not render any positions inconsistent on $\sigma^{S\setminus\mathcal{T}}$ that are not already dialectically inconsistent according to $\tau$ alone. Hence, we have $\sigma^{S\setminus\mathcal{T}}=\sigma^{S\setminus\mathcal{T}}_{\mathcal{T}}$, which implies that $S_{grec}(\mathcal{T})=0$ for empty theories. Non-empty theories, on the other hand, do imply something additional on $\sigma^{S\setminus\mathcal{T}}$. Hence, we have  $\sigma^{S\setminus\mathcal{T}}>\sigma^{S\setminus\mathcal{T}}_{\mathcal{T}}$ and accordingly $S_{grec}(\mathcal{T})>0$ for non-empty theories. Taken together, this implies that systematicity values of empty theories are lower bounds for those of non-empty theories (*D3.1*).
+Empty theories do not imply anything besides their principles that is not already tautologically true (with respect to $\tau$). Accordingly, they do not render any positions inconsistent on $\sigma^{\mathcal{S}\setminus\mathcal{T}}$ that are not already dialectically inconsistent according to $\tau$ alone. Hence, we have $\sigma^{\mathcal{S}\setminus\mathcal{T}}=\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}$, which implies that $S_{grec}(\mathcal{T})=0$ for ineffective theories. Effective theories, on the other hand, do imply something additional on $\sigma^{\mathcal{S}\setminus\mathcal{T}}$. Hence, we have  $\sigma^{\mathcal{S}\setminus\mathcal{T}}>\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}$ and accordingly $S_{grec}(\mathcal{T})>0$ for effective theories. Taken together, this implies that systematicity values of ineffective theories are lower bounds for those of effective theories (*D3.1*).
 
 It is difficult to assess the desideratum *D4.1* visually (as we did with the simple measures) since we cannot identify ad hoc extensions of theories in @fig-sys-grec. However, similar to *D3.1*, we can provide a proof that $S_{grec}$ conforms to *D4.1*. 
 
@@ -498,16 +501,16 @@ We have to show that $S_{grec}(\mathcal{T}^*) < S_{grec}(\mathcal{T})$ if $\math
 We have to show that
 
 $$
-\frac{lg(\sigma^{S\setminus\mathcal{T}^*}-\sigma^{S\setminus\mathcal{T}^*}_{\mathcal{T}^*}+1)}{\vert\mathcal{T}^{*}\vert \cdot (n-1)} < \frac{lg(\sigma^{S\setminus\mathcal{T}}-\sigma^{S\setminus\mathcal{T}}_{\mathcal{T}}+1)}{\vert\mathcal{T}\vert \cdot (n-1)}
+\frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}^*}-\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}^*}+1)}{\vert\mathcal{T}^{*}\vert \cdot (n-1)} < \frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}}-\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}+1)}{\vert\mathcal{T}\vert \cdot (n-1)}
 $$
 
 The corresponding comparison for simple systematicity measures is more or less trivial. In these cases, we could simply use that $\vert\overline{\mathcal{T}}\setminus\mathcal{T}\vert = \vert\overline{\mathcal{T}}^*\setminus\mathcal{T}^*\vert$. Adding one ad hoc principle to a theory increases its closure and size by one. If we compare the change of size and $\sigma$-based content, the comparison is not so straightforward any more. 
 
-Basically, we have to compare $\sigma^{S\setminus\mathcal{T}^*}-\sigma^{S\setminus\mathcal{T}^*}_{\mathcal{T}^*}$ with $\sigma^{S\setminus\mathcal{T}}-\sigma^{S\setminus\mathcal{T}}_{\mathcal{T}}$. Clearly, $\sigma^{S\setminus\mathcal{T}^*}\leq\sigma^{S\setminus\mathcal{T}}$ (since $S\setminus\mathcal{T}^*\subset S\setminus\mathcal{T}$). Additionally, we can use the definition of ad hoc principles: Adding ad hoc principles to a theory $\mathcal{T}$ does not do anything in addition to $\mathcal{T}$ on $S\setminus\mathcal{T}^*$. Hence, $\sigma^{S\setminus\mathcal{T}^*}_{\mathcal{T}^*}=\sigma^{S\setminus\mathcal{T}^*}_{\mathcal{T}}$. Considering this equation, we have to compare $\sigma^{S\setminus\mathcal{T}^*}_{\mathcal{T}}$ with $\sigma^{S\setminus\mathcal{T}}_{\mathcal{T}}$ and, again, we have $\sigma^{S\setminus\mathcal{T}^*}_{\mathcal{T}}\leq \sigma^{S\setminus\mathcal{T}}_{\mathcal{T}}$. But this simple estimation does not help to get us any further with comparing $\sigma^{S\setminus\mathcal{T}^*}-\sigma^{S\setminus\mathcal{T}^*}_{\mathcal{T}^*}$ and $\sigma^{S\setminus\mathcal{T}}-\sigma^{S\setminus\mathcal{T}}_{\mathcal{T}}$. 
+Basically, we have to compare $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}-\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}^*}$ with $\sigma^{\mathcal{S}\setminus\mathcal{T}}-\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}$. Clearly, $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}\leq\sigma^{\mathcal{S}\setminus\mathcal{T}}$ (since $\mathcal{S}\setminus\mathcal{T}^*\subset \mathcal{S}\setminus\mathcal{T}$). Additionally, we can use the definition of ad hoc principles: Adding ad hoc principles to a theory $\mathcal{T}$ does not do anything in addition to $\mathcal{T}$ on $\mathcal{S}\setminus\mathcal{T}^*$. Hence, $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}^*}=\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}}$. Considering this equation, we have to compare $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}}$ with $\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}$ and, again, we have $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}}\leq \sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}$. But this simple estimation does not help to get us any further with comparing $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}-\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}^*}$ and $\sigma^{\mathcal{S}\setminus\mathcal{T}}-\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}$. 
 
-What we need is a more precise estimation of the forms $\sigma^{S\setminus\mathcal{T}^*}+a = \sigma^{S\setminus\mathcal{T}}$ and $\sigma^{S\setminus\mathcal{T}^*}_{\mathcal{T}}+b= \sigma^{S\setminus\mathcal{T}}_{\mathcal{T}}$. In other words, we need to know the extent to which $\sigma^{S\setminus\mathcal{T}}_{(\mathcal{T})}$ increases when further restricting the sentence pool.
+What we need is a more precise estimation of the forms $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}+a = \sigma^{\mathcal{S}\setminus\mathcal{T}}$ and $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}}+b= \sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}$. In other words, we need to know the extent to which $\sigma^{\mathcal{S}\setminus\mathcal{T}}_{(\mathcal{T})}$ increases when further restricting the sentence pool.
 
-Let's start with $\sigma^{S\setminus\mathcal{T}^*}$ and $\sigma^{S\setminus\mathcal{T}}$. We will search for an additive expression for both terms. Let $\Gamma$ be the set of all complete and consistent positions on $\tau$ (hence, $\sigma=\vert \Gamma\vert$). In analogy to $\sigma^{\mathcal{S}'}$, we will define $\Gamma^{\mathcal{S}'}$ as the set of consistent positions that are complete on the subdomain $\mathcal{S}'\subset \mathcal{S}$. More formally, we can define:
+Let's start with $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}$ and $\sigma^{\mathcal{S}\setminus\mathcal{T}}$. We will search for an additive expression for both terms. Let $\Gamma$ be the set of all complete and consistent positions on $\tau$ (hence, $\sigma=\vert \Gamma\vert$). In analogy to $\sigma^{\mathcal{S}'}$, we will define $\Gamma^{\mathcal{S}'}$ as the set of consistent positions that are complete on the subdomain $\mathcal{S}'\subset \mathcal{S}$. More formally, we can define:
 
 $$
 \Gamma^{\mathcal{S}'}=\{\mathcal{A}\cap \mathcal{S}' \vert \mathcal{A}\in \Gamma\}
@@ -531,12 +534,13 @@ $$
 \Gamma^{\mathcal{S}\setminus\mathcal{T}^*}= \Gamma^{\mathcal{S}\setminus\mathcal{T}^*}_1 \cup \Gamma^{\mathcal{S}\setminus\mathcal{T}^*}_2 \cup \Gamma^{\mathcal{S}\setminus\mathcal{T}^*}_3
 $$
 
-$\Gamma^{\mathcal{S}\setminus\mathcal{T}}$ can be partioned into 
+Similar to the definition of $\sigma_{\mathcal{T}}$, let $\Gamma_{\mathcal{T}}$ the set of complete positions that extend $\mathcal{T}$. Using this definition, we can partition $\Gamma^{\mathcal{S}\setminus\mathcal{T}}$ into 
+
 $$
 \Gamma^{\mathcal{S}\setminus\mathcal{T}}= \Gamma^{\mathcal{S}\setminus\mathcal{T}}_{\{p\}} \cup \Gamma^{\mathcal{S}\setminus\mathcal{T}}_{\{\neg p\}} 
 $$
 
-we can use the above defined sets to rewrite $\Gamma^{\mathcal{S}\setminus\mathcal{T}}_{\{p\}}$ and $\Gamma^{\mathcal{S}\setminus\mathcal{T}}_{\{\neg p\}}$ in the following way:
+We can now use the above defined sets to rewrite $\Gamma^{\mathcal{S}\setminus\mathcal{T}}_{\{p\}}$ and $\Gamma^{\mathcal{S}\setminus\mathcal{T}}_{\{\neg p\}}$ in the following way:
 
 $$
 \Gamma^{\mathcal{S}\setminus\mathcal{T}}_{\{p\}}=\left( \Gamma^{\mathcal{S}\setminus\mathcal{T}^*}_1 \cup \{p\} \right) \cup \left( \Gamma^{\mathcal{S}\setminus\mathcal{T}^*}_3 \cup \{p\} \right)
