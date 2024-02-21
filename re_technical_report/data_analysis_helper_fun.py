@@ -799,7 +799,7 @@ def sigma_content(tau: DialecticalStructure, theory: Position):
 def sys_grec(tau: DialecticalStructure, theory: Position):
     return sigma_content(tau,theory)/theory.size()
 
-def plot_sys_measure(sys_data, measure_name, by_scope=True, param_name=None, param_value=None, scale=None):
+def plot_sys_measure(sys_data, measure_name, by_scope=True, param_name=None, param_value=None, scale=None, legend=True):
     
     # plotting systemacity against content
     if by_scope:
@@ -827,10 +827,14 @@ def plot_sys_measure(sys_data, measure_name, by_scope=True, param_name=None, par
     plt.ylabel("Systematicity")
     plt.xlabel(x_label)
 
-    sns.move_legend(
-        g, "upper right",
-        bbox_to_anchor=(1, 1), title=legend_title,
-    )
+    if legend:
+        sns.move_legend(
+            g, "upper right",
+            bbox_to_anchor=(1, 1), title=legend_title,
+        )
+    else:
+        g._legend.remove()
+        
     if scale:
         F = plt.gcf()
         Size = F.get_size_inches()
