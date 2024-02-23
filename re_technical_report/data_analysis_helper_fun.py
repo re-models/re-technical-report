@@ -46,7 +46,7 @@ coolwarm = ['#6788ee',
 
 def literal_eval_cols(data: DataFrame, cols: List[str]):
     for col_name in cols:
-        data[col_name] = data.apply(lambda x: literal_eval(x[col_name]), axis=1)
+        data[col_name] = data.apply(lambda x: literal_eval(x[col_name]) if type(x[col_name])==str else x[col_name], axis=1)
 
 # replace string 'set()' for literal_eval to work  properly
 def replace_set(row, label):
@@ -834,7 +834,7 @@ def plot_sys_measure(sys_data, measure_name, by_scope=True, param_name=None, par
         )
     else:
         g._legend.remove()
-        
+
     if scale:
         F = plt.gcf()
         Size = F.get_size_inches()
