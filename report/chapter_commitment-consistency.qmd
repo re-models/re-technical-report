@@ -40,7 +40,7 @@ The results of this chapter can be reproduced with the Jupyter notebook located 
 
 ```{python}
 #| echo: false
-#| label: tbl-consistency_outputs_go
+#| label: tbl-consistency-outputs-go
 #| tbl-cap: 'Relative share of consistent commitments among global optima'
 
 import pandas as pd
@@ -64,7 +64,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 ```{python}
 #| echo: false
-#| label: tbl-consistency_outputs_fp_setups
+#| label: tbl-consistency-outputs-fp-setups
 #| tbl-cap: 'Relative share of consistent commitments among fixed points (result perspective)'
 
 import pandas as pd
@@ -90,7 +90,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 ```{python}
 #| echo: false
-#| label: tbl-consistency_outputs_fp_branches
+#| label: tbl-consistency-outputs-fp-branches
 #| tbl-cap: 'Relative share of consistent commitments among fixed points (process perspective)'
 
 import pandas as pd
@@ -118,12 +118,12 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 <!--
 New: excluding erroneous simulation runs from the ensemble introduces small differences between global optima of local and global model variants
 Old:
-- The relative share of global optima with consistent outputs is identical for `QuadraticGlobalRE` and `QuadraticLocalRE`, as well as for `LinearGlobalRE` and `LinearLocalRE` in @tbl-consistency_outputs_go. (Explanation: The local model variants rely on their global counterparts to determine global optima. Hence, these results are not interesting for the present study, but included for the sake of completeness.)
+- The relative share of global optima with consistent outputs is identical for `QuadraticGlobalRE` and `QuadraticLocalRE`, as well as for `LinearGlobalRE` and `LinearLocalRE` in @tbl-consistency-outputs-go. (Explanation: The local model variants rely on their global counterparts to determine global optima. Hence, these results are not interesting for the present study, but included for the sake of completeness.)
 --> 
-- The overall relative share of consistent global optima commitments is slightly boosted for linear model variants compared to their quadratic counterparts in @tbl-consistency_outputs_go.
-- The relative shares of consistent commitments among fixed points (result perspective: @tbl-consistency_outputs_fp_setups, and process perspective: @tbl-consistency_outputs_fp_branches) is slightly lower than the corresponding results for global optima in @tbl-consistency_outputs_go for `QuadraticGlobalRE`, `QuadraticLocalRE`, and `LinearGlobalRE`
+- The overall relative share of consistent global optima commitments is slightly boosted for linear model variants compared to their quadratic counterparts in @tbl-consistency-outputs-go.
+- The relative shares of consistent commitments among fixed points (result perspective: @tbl-consistency-outputs-fp-setups, and process perspective: @tbl-consistency-outputs-fp-branches) is slightly lower than the corresponding results for global optima in @tbl-consistency-outputs-go for `QuadraticGlobalRE`, `QuadraticLocalRE`, and `LinearGlobalRE`
 - `LinearLocalRE` exhibits substantially higher relative shares of consistent commitments among fixed points (result and process perspective) 
-- The number of fixed points reached through different branches (process perspective) in local model variants is substantially higher than for global model variants (@tbl-consistency_outputs_fp_branches)
+- The number of fixed points reached through different branches (process perspective) in local model variants is substantially higher than for global model variants (@tbl-consistency-outputs-fp-branches)
 
 #### Results Grouped by Sentence Pool Size
 
@@ -165,7 +165,7 @@ Consequently, the relative share of inconsistency eleminating and inconsistency 
 
 ```{python}
 #| echo: false
-#| label: tbl-consistency_cases_go
+#| label: tbl-consistency-cases-go
 #| tbl-cap: 'Relative share of consistency cases among global optima'
 
 import pandas as pd
@@ -187,13 +187,13 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 #df.style.hide(axis="index")  
 ```
 
-![Relative share of consistency cases among global optima resulting from consistent initial commitments](figures/consistency_cases_go_ic_cons_rp){#fig-overall-go-ic-cons width=70%}
+![Relative share of consistency cases among global optima resulting from consistent initial commitments](figures/consistency_cases_go_ic_cons_rp){#fig-overall-go-ic-cons-rp width=70%}
 
-![Relative share of consistency cases among global optima resulting from inconsistent initial commitments](figures/consistency_cases_go_ic_incons_rp){#fig-overall-go-ic_incons width=70%}
+![Relative share of consistency cases among global optima resulting from inconsistent initial commitments](figures/consistency_cases_go_ic_incons_rp){#fig-overall-go-ic-incons-rp width=70%}
 
 ```{python}
 #| echo: false
-#| label: tbl-consistency_cases_fp_setups
+#| label: tbl-consistency-cases-fp-setups
 #| tbl-cap: 'Relative share of consistency cases among fixed points (result perspective)'
 
 import pandas as pd
@@ -223,7 +223,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 ```{python}
 #| echo: false
-#| label: tbl-consistency_cases_fp_branches
+#| label: tbl-consistency-cases-fp-branches
 #| tbl-cap: 'Relative share of consistency cases among fixed points (process perspective)'
 
 import pandas as pd
@@ -253,7 +253,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 <!--- As it is to be expected, there are no differences in relative shares for global optima for `QuadraticGlobalRE` and `QuadraticLocalRE`, as well as for `LinearGlobalRE` and `LinearLocalRE`.-->
 - The relative share of consistency-preserving cases is high for all model variants and output types (@fig-overall-go-ic-cons-rp,@fig-overall-fp-ic-cons-rp, and @fig-overall-fp-ic-cons-pp). Consistency-eliminating cases occur very rarely.
-- The relative share of inconsistency preserving cases slightly exceed the inconsistency eliminating cases for global optima and fixed points of `QuadraticGlobalRE`, `QuadraticLocalRE`, as well as `LinearGlobalRE` (@fig-overall-go-ic-incons-rp,@fig-overall-fp-ic-incons-rp, and @fig-overall-fp-ic-incons-pp).
+- The relative share of inconsistency preserving cases slightly exceed the inconsistency eliminating cases for global optima and fixed points of `QuadraticGlobalRE`, `QuadraticLocalRE`, as well as `LinearGlobalRE` (@fig-overall-go-ic-incons-rp, @fig-overall-fp-ic-incons-rp, and @fig-overall-fp-ic-incons-pp).
 - The result perspective makes clear that the linear local model variant reaches inconsistent output commitments from both consistent and inconsistent initial commitments (@fig-overall-fp-ic-cons-rp and @fig-overall-fp-ic-incons-rp), but the process perspective reveals that only very few branches result in these inconsistent output commitments (@fig-overall-fp-ic-cons-pp and @fig-overall-fp-ic-incons-pp).
 
 #### Results Grouped by Sentence Pool Size
@@ -376,7 +376,7 @@ In this section, we will analyze the dialectical consistency of whole epistemic 
 
 ```{python}
 #| echo: false
-#| label: tbl-consistency_union_go
+#| label: tbl-consistency-union-go
 #| tbl-cap: 'Relative share of global optima with a consistent union of commitments and theory'
 
 import pandas as pd
@@ -401,7 +401,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 ```{python}
 #| echo: false
-#| label: tbl-consistency_union_fp_setups
+#| label: tbl-consistency-union-fp-setups
 #| tbl-cap: 'Relative share of fixed points (result perspective) with a consistent union of commitments and theory'
 
 import pandas as pd
@@ -428,7 +428,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 ```{python}
 #| echo: false
-#| label: tbl-consistency_union_fp_branches
+#| label: tbl-consistency-union-fp-branches
 #| tbl-cap: 'Relative share of fixed points (process perspective) with a consistent union of commitments and theory'
 
 import pandas as pd

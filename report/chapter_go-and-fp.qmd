@@ -53,11 +53,11 @@ The results of this chapter can be reproduced with this [notebook]({{< var link.
 
 ### Model Overview
 
-@tbl-go_fp and @fig-go-fp-venn provide an overview of the different models' overall GO efficiency and reachability. 
+@tbl-go-fp and @fig-go-fp-venn provide an overview of the different models' overall GO efficiency and reachability. 
 
 ```{python}
 #| echo: false
-#| label: tbl-go_fp
+#| label: tbl-go-fp
 #| tbl-cap: 'Overall GO efficiency and reachability of the different models'
 
 import pandas as pd

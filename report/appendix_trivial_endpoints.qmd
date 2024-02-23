@@ -16,7 +16,7 @@ The results of this chapter can be reproduced with the Jupyter notebook located 
 
 ```{python}
 #| echo: false
-#| label: tbl-trivial_go
+#| label: tbl-trivial-go
 #| tbl-cap: 'Relative share of trivial global optima'
 
 import pandas as pd
@@ -40,7 +40,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 ```{python}
 #| echo: false
-#| label: tbl-trivial_fp_rp
+#| label: tbl-trivial-fp-rp
 #| tbl-cap: 'Relative share of trivial fixed points (result perspective)'
 
 import pandas as pd
@@ -65,7 +65,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 ```{python}
 #| echo: false
-#| label: tbl-trivial_fp_pp
+#| label: tbl-trivial-fp-pp
 #| tbl-cap: 'Relative share of trivial fixed points (process perspective)'
 
 import pandas as pd
@@ -89,9 +89,9 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 **Observations**
 
-- Overall, the relative share of trivial gobal optima (@tbl-trivial_go) and fixed points (result perspective @tbl-trivial_fp_rp) is very low for quadratic model variants
+- Overall, the relative share of trivial gobal optima (@tbl-trivial-go) and fixed points (result perspective @tbl-trivial-fp-rp) is very low for quadratic model variants
 - Linear model variants exhibit substantially more trivial global optima, but the relative shares are still low.
-- `LinearLocalRE` exhibits a substantial share of trivial fixed points in the process perspective (@tbl-trivial_fp_pp), but not for the result perspectve (@tbl-trivial_fp_rp).  This indicates that relatively many branches lead to trivial fixed points.
+- `LinearLocalRE` exhibits a substantial share of trivial fixed points in the process perspective (@tbl-trivial-fp-pp), but not for the result perspectve (@tbl-trivial-fp-rp).  This indicates that relatively many branches lead to trivial fixed points.
 
 ### Results Grouped by Sentence Pool Size
 
