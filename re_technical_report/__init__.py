@@ -1,4 +1,5 @@
 from .data_analysis_helper_fun import *
+from .model_variations import *
 
 # Use __all__ to let type checkers know what is part of the public API.
 __all__ = [
@@ -32,7 +33,11 @@ __all__ = [
     "restricted_sigma",
     "conditional_restricted_sigma",
     "sigma_content",
-    "plot_sys_measure"    
+    "plot_sys_measure",
+    "StandardGlobalReflectiveEquilibriumLinearG",
+    "StandardGlobalReflectiveEquilibriumLinearG",
+    "StandardLocalReflectiveEquilibriumWithGO",
+    "StandardLocalReflectiveEquilibriumLinearGWithGO"    
 
 
 ]
