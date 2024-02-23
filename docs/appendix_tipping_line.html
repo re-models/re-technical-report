@@ -2,10 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Based on Beisbart, Betz, and Brun (2021), this report assesses different models of reflective equilibrium (RE) by numerical investigation.">
 
 <title>Assessing a Formal Model of Reflective Equilibrium - Appendix A — The Tipping Line of Linear Model Variants</title>
 <style>
@@ -24,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -49,6 +51,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./appendix_trivial_endpoints.html" rel="next">
 <link href="./references.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -65,7 +68,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -74,6 +83,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -83,6 +93,45 @@ div.csl-indent {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta name="citation_title" content="[Appendix A — The Tipping Line of Linear Model Variants]{#sec-appendix-tipping .quarto-section-identifier}">
+<meta name="citation_fulltext_html_url" content="https://re-models.github.io/re-technical-report/">
+<meta name="citation_doi" content="10.5555/12345678">
+<meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Making Reflective Equlibrium Precise: A Formal Model;,citation_abstract=&amp;amp;amp;lt;p&amp;gt;Reflective equilibrium (RE) is often regarded as a powerful method in ethics, logic, and even philosophy in general. Despite this popularity, characterizations of the method have been fairly vague and unspecific so far. It thus may be doubted whether RE is more than a jumble of appealing but ultimately sketchy ideas that cannot be spelled out consistently. In this paper, we dispel such doubts by devising a formal model of RE. The model contains as components the agent’s commitments and a theory that tries to systematize the commitments. It yields a precise picture of how the commitments and the theory are adjusted to each other. The model differentiates between equilibrium as a target state and the dynamic equilibration process. First solutions to the model, obtained by computer simulation, show that the method allows for consistent specification and that the model’s implications are plausible in view of expectations on RE. In particular, the mutual adjustment of commitments and theory can improve one’s commitments, as proponents of RE have suggested. We argue that our model is fruitful not only because it points to issues that need to be dealt with for a better understanding of RE, but also because it provides the means to address these issues.&amp;lt;/p&amp;gt;;,citation_author=Claus Beisbart;,citation_author=Gregor Betz;,citation_author=Georg Brun;,citation_publication_date=2021-12;,citation_cover_date=2021-12;,citation_year=2021;,citation_issue=0;,citation_doi=10.3998/ergo.1152;,citation_issn=2330-4014;,citation_volume=8;,citation_language=en-US;,citation_journal_title=Ergo;,citation_publisher=Michigan Publishing Services;">
+<meta name="citation_reference" content="citation_title=Debate Dynamics: How Controversy Improves Our Beliefs;,citation_abstract=Is critical argumentation an effective way to overcome disagreement? And does the exchange of arguments bring opponents in a controversy closer to the truth? This study provides a new perspective on these pivotal questions. By means of multi-agent simulations, it investigates the truth and consensus-conduciveness of controversial debates. The book brings together research in formal epistemology and argumentation theory. Aside from its consequences for discursive practice, the work may have important implications for philosophy of science and the way we construe scientific rationality as well.;,citation_author=Gregor Betz;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_isbn=978-94-007-4598-8;,citation_language=en-US;,citation_series_title=Synthese Library;">
+<meta name="citation_reference" content="citation_title=Theorie dialektischer Strukturen;,citation_author=Gregor Betz;,citation_publication_date=2010;,citation_cover_date=2010;,citation_year=2010;,citation_isbn=978-3-465-03629-6 3-465-03629-8;,citation_language=de-DE;">
+<meta name="citation_reference" content="citation_title=Does reflective equilibrium help us converge?;,citation_author=Andreas Freivogel;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=6;,citation_doi=10.1007/s11229-023-04375-0;,citation_volume=202;,citation_journal_title=Synthese;,citation_publisher=Springer Verlag;">
+<meta name="citation_reference" content="citation_title=Debate Dynamics: How Controversy Improves Our Beliefs;,citation_abstract=Is critical argumentation an effective way to overcome disagreement? And does the exchange of arguments bring opponents in a controversy closer to the truth? This study provides a new perspective on these pivotal questions. By means of multi-agent simulations, it investigates the truth and consensus-conduciveness of controversial debates. The book brings together research in formal epistemology and argumentation theory. Aside from its consequences for discursive practice, the work may have important implications for philosophy of science and the way we construe scientific rationality as well.;,citation_author=Gregor Betz;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_isbn=978-94-007-4598-8;,citation_language=en-US;,citation_series_title=Synthese Library;">
+<meta name="citation_reference" content="citation_title=Virtuously circular. Theoretical virtues in reflective equilibrium;,citation_author=Andreas Freivogel;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_dissertation_institution=University of Bern;">
+<meta name="citation_reference" content="citation_title=Turning the Trolley with Reflective Equilibrium;,citation_author=Tanja Rechnitzer;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=4;,citation_doi=10.1007/s11229-022-03762-3;,citation_volume=200;,citation_journal_title=Synthese;,citation_publisher=Springer Verlag;">
+<meta name="citation_reference" content="citation_title=Turning the trolley;,citation_author=Judith Jarvis Thomson;,citation_publication_date=2008;,citation_cover_date=2008;,citation_year=2008;,citation_issue=4;,citation_doi=10.1111/j.1088-4963.2008.00144.x;,citation_volume=36;,citation_journal_title=Philosophy and Public Affairs;,citation_publisher=Blackwell;">
 </head>
 
 <body class="nav-sidebar floating">
@@ -91,12 +140,12 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix_tipping_line.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix_tipping_line.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">The Tipping Line of Linear Model Variants</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix_tipping_line.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix_tipping_line.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">The Tipping Line of Linear Model Variants</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -106,10 +155,31 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Assessing a Formal Model of Reflective Equilibrium</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/re-models/re-technical-report" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Assessing-a-Formal-Model-of-Reflective-Equilibrium.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -134,19 +204,19 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter_general-props.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">General ensemble properties</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">General Ensemble Properties</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter_go-and-fp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Global optima and fixed points</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Global Optima and Fixed Points</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter_full-re-states.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Full RE states</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Full RE States</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -158,7 +228,13 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter_extreme-values.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Extreme values for account and faitfulness</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Extreme values for account, systematicity, and faithfulness</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -182,12 +258,24 @@ div.csl-indent {
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">The Tipping Line of Linear Model Variants</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_trivial_endpoints.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Trivial Endpoints</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_systematicity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Alternative systematicity measures</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -196,13 +284,14 @@ div.csl-indent {
   <ul>
   <li><a href="#proposition-1" id="toc-proposition-1" class="nav-link active" data-scroll-target="#proposition-1"><span class="header-section-number">A.1</span> Proposition 1</a></li>
   <li><a href="#proposition-2" id="toc-proposition-2" class="nav-link" data-scroll-target="#proposition-2"><span class="header-section-number">A.2</span> Proposition 2</a></li>
+  <li><a href="#generalization-to-fixed-points" id="toc-generalization-to-fixed-points" class="nav-link" data-scroll-target="#generalization-to-fixed-points"><span class="header-section-number">A.3</span> Generalization to fixed points</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix_tipping_line.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix_tipping_line.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">The Tipping Line of Linear Model Variants</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-appendix-tipping" class="quarto-section-identifier">Appendix A — The Tipping Line of Linear Model Variants</span></h1>
 </div>
@@ -217,106 +306,221 @@ div.csl-indent {
   </div>
   
 
+
 </header>
 
-<p>A <em>linear model variant</em>, is a model that differs from the model provided by <span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span> only in that the measures involve the linear function <span class="math inline">\(G(x) = 1- x\)</span> instead of the quadratic <span class="math inline">\(G(x) = 1-x^2\)</span>. This variant exhibits a <em>tipping line</em> in ternary plots that marks off configurations of weights that lead to drastically different behaviour with respect to consistency considerations or the attainment of full RE states, for example.</p>
-<p>We can characterise the tipping line as an equation that relates <span class="math inline">\(\alpha_{A}\)</span> and <span class="math inline">\(\alpha_{S}\)</span>: <span id="eq-lin"><span class="math display">\[
-\begin{equation} \label{eq:lin}
-  \alpha_{A} = \frac{1-\alpha_{S}}{2}  
-\end{equation}
-\tag{A.1}\]</span></span> The boundary condition <span class="math inline">\(\alpha_{A} + \alpha_{S} + \alpha_{F} = 1\)</span> allows us to rewrite <a href="#eq-lin">Equation&nbsp;<span>A.1</span></a> in an even simpler form: <span class="math display">\[
+
+<p><em>Linear model variants</em> involve a linear function <span class="math inline">\(G(x) = 1-x\)</span> in the calculation of account (<span class="math inline">\(A\)</span>), faithfulness (<span class="math inline">\(F\)</span>) and systematicity (<span class="math inline">\(S\)</span>) instead of the quadratic function <span class="math inline">\(G(x) = 1-x^2\)</span> used in <span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span>. For the linear models, we observed a <em>tipping line</em> in ternary plots that marks off configurations of weights that lead to drastically different behaviour with respect to the attainment of full RE states (see, e.g., <a href="chapter_full-re-states.html#fig-hm-full-re-go" class="quarto-xref">Figure&nbsp;<span>4.7</span></a>) consistency considerations (see, e.g., <a href="chapter_commitment-consistency.html#fig-cons-go-hm-rp" class="quarto-xref">Figure&nbsp;<span>5.4</span></a> and <a href="chapter_commitment-consistency.html#fig-cons-fp-hm-rp" class="quarto-xref">Figure&nbsp;<span>5.5</span></a>), or the maximization of measures such as account or faithfulness (see, e.g., <a href="chapter_extreme-values.html#fig-hm-max-account-go" class="quarto-xref">Figure&nbsp;<span>6.9</span></a> and <a href="chapter_extreme-values.html#fig-hm-max-account-fp" class="quarto-xref">Figure&nbsp;<span>6.10</span></a>).</p>
+<p>This tipping line is characeterized by the following equation: <span id="eq-lin"><span class="math display">\[
+\alpha_{A} = \frac{1-\alpha_{S}}{2}  
+\tag{A.1}\]</span></span></p>
+<p>The boundary condition <span class="math inline">\(\alpha_{A} + \alpha_{S} + \alpha_{F} = 1\)</span> allows us to rewrite <a href="#eq-lin" class="quarto-xref">Equation&nbsp;<span>A.1</span></a> in an even simpler form:</p>
+<p><span class="math display">\[
 \alpha_{A} = \alpha_{F}
-\]</span> Consequently, the tipping line splits the space of weight configuration in two regions <span class="math inline">\(\alpha_{A} &lt; \alpha_{F}\)</span> and <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span>. For the latter region, where account receives more weight than faithfulness, we have some interesting analytical results.</p>
-<p>The following proposition and its corollaries help to explain the salient change in the behaviour of linear model variants when crossing the tipping line.</p>
+\]</span></p>
+<p>Consequently, the tipping line splits the space of weight configurations into the two regions <span class="math inline">\(\alpha_{A} &lt; \alpha_{F}\)</span> and <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span>.</p>
+<p>There are interesting analytical results for both regions. The following propositions and their corollaries help to explain the salient change in the behaviour of linear model variants when crossing the tipping line.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<ul>
+<li><strong>Proposition 1</strong>: For the linear model variants all global optima are full RE states if <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span>.</li>
+<li><strong>Proposition 2</strong>: For the linear model variants all global-optimum commitments maximize faithfulness if <span class="math inline">\(\alpha_{F} &gt; \alpha_{A}\)</span>.</li>
+</ul>
 <section id="proposition-1" class="level2" data-number="A.1">
 <h2 data-number="A.1" class="anchored" data-anchor-id="proposition-1"><span class="header-section-number">A.1</span> Proposition 1</h2>
-<p>Assume that a dialectical structure <span class="math inline">\(\tau\)</span> and some initial commitments <span class="math inline">\(C_{0}\)</span> are given. Moreover, assume <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span> for a configuration of weights <span class="math inline">\((\alpha_{A}, \alpha_{S}, \alpha_{F})\)</span> in a linear model variant. Then all global optima (relative to <span class="math inline">\(C_{0}\)</span>) according to the achievement function specified by the configuration of weights are full RE states.</p>
-<p><strong>Corollaries</strong> The linear model variants exhibit the following behaviour for <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span>:</p>
+<p>Let <span class="math inline">\(\tau\)</span> be a dialectical structure and <span class="math inline">\(\mathcal{C}_{0}\)</span> some initial commitments. Moreover, assume <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span> for a configuration of weights <span class="math inline">\((\alpha_{A}, \alpha_{S}, \alpha_{F})\)</span> in a linear model variant. Then, all global optima (relative to <span class="math inline">\(\mathcal{C}_{0}\)</span>) are full RE states.</p>
+<p><strong>Corollaries</strong> The linear model variants exhibit the following behaviour for <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span>.</p>
 <ul>
-<li>For global optima, there no inconsistency preserving cases</li>
-<li>Consistency eliminating cases do not occur for global optima</li>
+<li>For global optima, there are no inconsistency-preserving cases.</li>
+<li>Consistency-eliminating cases do not occur for global optima.</li>
 </ul>
-<p>In contrast, for <span class="math inline">\(\alpha_{A} &lt; \alpha_{F}\)</span> the following holds for the linear model variants:</p>
+<p><strong>Proof sketch</strong></p>
+<p>Intuitively, <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span> means that account trumps faithfulness. Accordingly, the process can maximize account during the adjustment step of commitments without caring about faithfulness.</p>
+<p>Assume that an epistemic state <span class="math inline">\((\mathcal{C}, \mathcal{T})\)</span> is a global optimum according to the achievement function <span class="math inline">\(Z\)</span> given some initial commitments <span class="math inline">\(\mathcal{C}_{0}\)</span> and a configuration of weights <span class="math inline">\((\alpha_{A}, \alpha_{S}, \alpha_{F})\)</span> such that <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span>. We need to show that <span class="math inline">\((\mathcal{C}, \mathcal{T})\)</span> is a full RE state, i.e., that <span class="math inline">\(\mathcal{T}\)</span> fully and exclusively accounts for <span class="math inline">\(\mathcal{C}\)</span>, or equivalently, <span class="math inline">\(A(\mathcal{C}, \mathcal{T}) = 1\)</span>.</p>
+<p>For a proof by contradiction, assume that <span class="math display">\[
+A(\mathcal{C}, \mathcal{T})=G\left(\frac{D_{0,\,0.3,\,1,\,1}(\mathcal{C},\overline{\mathcal{T}})}{n}\right) &lt; 1
+\]</span></p>
+<p>This holds only if <span class="math inline">\(D_{0,\,0.3,\,1,\,1}(\mathcal{C},\overline{\mathcal{T}}) &gt; 0\)</span>. In other words, there is at least one sentence <span class="math inline">\(s\)</span> (negated or unnegated) for which there is a positive contribution to the Hamming distance (penalty). In particular, we have the following cases:</p>
+<ol type="1">
+<li><span class="math inline">\(\overline{\mathcal{T}}\)</span> extends <span class="math inline">\(\mathcal{C}\)</span> with respect to <span class="math inline">\(s\)</span>: There is <span class="math inline">\(s \in \overline{\mathcal{T}}\)</span>, but <span class="math inline">\(s\)</span> and <span class="math inline">\(\neg s\)</span> are not in <span class="math inline">\(\mathcal{C}\)</span>.
 <ul>
-<li>Inconsistency eliminating cases do not occur for global optima</li>
-</ul>
-<p><strong>Open questions</strong></p>
+<li>penalty: <span class="math inline">\(0.3\)</span></li>
+</ul></li>
+<li><span class="math inline">\(\overline{\mathcal{T}}\)</span> contracts <span class="math inline">\(\mathcal{C}\)</span> with respect to <span class="math inline">\(s\)</span>: There is <span class="math inline">\(s \in \mathcal{C}\)</span>, but <span class="math inline">\(s\)</span> and <span class="math inline">\(\neg s\)</span> are not in <span class="math inline">\(\overline{\mathcal{T}}\)</span>.
 <ul>
-<li>Interestingly, the corollaries almost always hold for fixed points as well. However, an analoguous proposition for fixed points would require a different proof.</li>
-</ul>
-<p><strong>Proof sketch for Proposition 1</strong></p>
-<p>Intuitively, <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span> means that account trumps faithfulness, which allows to select commitments ignoring faithfulness so that they are fully and exclusively accounted for by a theory.</p>
-<p>Assume that an epistemic state <span class="math inline">\((C, T)\)</span> is a global optimum according to the achievement function <span class="math inline">\(Z\)</span> given some initial commitments <span class="math inline">\(C_{0}\)</span> and a configuration of weights <span class="math inline">\((\alpha_{A}, \alpha_{S}, \alpha_{F})\)</span> such that <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span>. We need to show that <span class="math inline">\((C, T)\)</span> is a full RE state, i.e., that <span class="math inline">\(T\)</span> fully and exclusively accounts for <span class="math inline">\(C\)</span> (FEA), or equivalently, <span class="math inline">\(A(C, T) = 1\)</span>.</p>
-<p>For a proof by contradiction, assume that <span class="math display">\[A(C, T)=G(\frac{D_{0,\,0.3,\,1,\,1}(C,\overline{T})}{n}) &lt; 1,\]</span> which holds only if <span class="math inline">\(D_{0,\,0.3,\,1,\,1}(C,\overline{T}) &gt; 0\)</span>. In other words, there is at least one sentence <span class="math inline">\(s\)</span> (negated or unnegated) for which there is a positive contribution to the Hamming distance. In particular, we have the following cases:</p>
-<ol type="i">
-<li><span class="math inline">\(\overline{T}\)</span> extends <span class="math inline">\(C\)</span> with respect to <span class="math inline">\(s\)</span>: <span class="math inline">\(+0.3\)</span></li>
-<li><span class="math inline">\(\overline{T}\)</span> contracts <span class="math inline">\(C\)</span> with respect to <span class="math inline">\(s\)</span>: <span class="math inline">\(+1\)</span></li>
-<li><span class="math inline">\(\overline{T}\)</span> and <span class="math inline">\(C\)</span> contradict each other with respect to <span class="math inline">\(s\)</span>: <span class="math inline">\(+1\)</span></li>
+<li>penalty: <span class="math inline">\(1\)</span></li>
+</ul></li>
+<li><span class="math inline">\(\overline{\mathcal{T}}\)</span> and <span class="math inline">\(\mathcal{C}\)</span> contradict each other with respect to <span class="math inline">\(s\)</span>: Either <span class="math inline">\(s \in \overline{\mathcal{T}}\)</span> and <span class="math inline">\(\neg s \in \mathcal{C}\)</span> or <span class="math inline">\(\neg s \in \overline{\mathcal{T}}\)</span> and <span class="math inline">\(s \in \mathcal{C}\)</span>
+<ul>
+<li>penalty: <span class="math inline">\(1\)</span></li>
+</ul></li>
 </ol>
-<p>Each case of changing <span class="math inline">\(C\)</span> with respect to <span class="math inline">\(s\)</span>, yielding new commitments <span class="math inline">\(C'\)</span>, impacts the contributions to the Hamming distances for account and faithfulness. Note that systematicity is not affected by changing the commitments.</p>
-<p>The complete linearity of the achievement function allows to distribute (“push in”) the weights <span class="math inline">\(\alpha_{A}\)</span> and <span class="math inline">\(\alpha_{F}\)</span> over the individual contributions of the hamming distances.</p>
-<p>Since the achievement function is optimised for minimal contributions and <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span>, it is always more attractive to change the commitments to increase account rather than faithfully respecting the initial commitments. This argument can be repeated for every sentence for which <span class="math inline">\(C\)</span> and <span class="math inline">\(\overline{T}\)</span> differ.</p>
-<p>In summary, if <span class="math inline">\((C, T)\)</span> is a global optimum but <span class="math inline">\(A(C, T) &lt; 1\)</span>, then there is a position <span class="math inline">\((C', T)\)</span> such that <span class="math inline">\(A(C, T) &lt; A(C', T)\)</span> contradicting <span class="math inline">\((C, T)\)</span> being a global optimum. Consequently, we must have <span class="math inline">\(A(C, T) = 1\)</span>, i.e., <span class="math inline">\(T\)</span> accounts fully and exclusively for <span class="math inline">\(S\)</span> (FEA). This shows that <span class="math inline">\((C, T)\)</span> is a full RE state.</p>
-<p><em>Remark</em></p>
-<p>Note that this argument does not work for quadratic model variants, and in particular, the default model of <span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span>. Remember that the Hamming distance <span class="math inline">\(D\)</span> is a summation of penalties. Consequently, squaring the hamming distance yields a polynomial expression where every contributing penalty “interferes” by multiplication with the others. This blocks the above strategy of comparing the contributions and distributing the weights <span class="math inline">\(\alpha_{A}\)</span> or <span class="math inline">\(\alpha_{S}\)</span> over these expressions. In the quadratic models of the above ensemble study, we can observe a gradual transition between configurations that yield global optima, which exhibit a specific behaviour, to configurations that almost certainly fail in this respect.</p>
+<p>Each case of changing <span class="math inline">\(\mathcal{C}\)</span> with respect to <span class="math inline">\(s\)</span>, yielding new commitments <span class="math inline">\(\mathcal{C}'\)</span>, impacts the contributions to the Hamming distances for account and faithfulness. Note that systematicity is not affected by changing the commitments.</p>
+<p>The complete linearity of the achievement function allows us to distribute (“push in”) the weights <span class="math inline">\(\alpha_{A}\)</span> and <span class="math inline">\(\alpha_{F}\)</span> over the individual contributions of the hamming distances.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; Z(C, T\vert C_{0})\\  
+&amp; = \alpha_{A}\cdot A(C, T) + \alpha_{F}\cdot F(C\vert C_{0}) + \alpha_{S}\cdot S(T)\\
+&amp; = \alpha_{A}\cdot (1-\frac{D_{0,\, 0.3,\, 1,\, 1}(C, \overline{T})}{n}) + \alpha_{F}\cdot (1-\frac{D_{0,\, 0,\, 1,\, 1}(C_{0}, C)}{n}) + \alpha_{S}\cdot (1-\frac{\vert T\vert-1}{\vert\overline{T}\vert})\\
+&amp; =  \alpha_{A} - \frac{\alpha_{A}\cdot D_{0,\, 0.3,\, 1,\, 1}(C, \overline{T})}{n} + \alpha_{F} - \frac{\alpha_{F}\cdot D_{0,\, 0,\, 1,\, 1}(C_{0}, C)}{n} + \alpha_{S} - \frac{\alpha_{S}\cdot(\vert T\vert-1)}{\vert\overline{T}\vert}\\
+&amp; = 1 - \frac{\alpha_{A}\cdot D_{0,\, 0.3,\, 1,\, 1}(C, \overline{T})+ \alpha_{F}\cdot D_{0,\, 0,\, 1,\, 1}(C_{0}, C)}{n} - \frac{\alpha_{S}\cdot(\vert T\vert-1)}{\vert\overline{T}\vert}
+\end{aligned}
+\]</span></p>
+<p>Changing the commitments has no effect on <span class="math display">\[
+\frac{\alpha_{S}\cdot(\vert \mathcal{T}\vert-1)}{\vert\overline{\mathcal{T}}\vert},
+\]</span></p>
+<p>and <span class="math inline">\(n\)</span> is fixed. Consequently, <span class="math inline">\(Z\)</span> can be optimised by changing the commitments such that the following term is minimized:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\alpha_{A}\cdot D_{0,\, 0.3,\, 1,\, 1}(\mathcal{C}, \overline{\mathcal{T}})+ \alpha_{F}\cdot D_{0,\, 0,\, 1,\, 1}(\mathcal{C}_{0}, \mathcal{C})\\  
+&amp;= \alpha_{A}\cdot\sum_{i=1}^{n} d_{0,\, 0.3,\, 1,\, 1}(\mathcal{C}, \overline{\mathcal{T}}, \lbrace s_{i}, \neg s_{i}\rbrace) + \alpha_{F}\cdot\sum_{i=1}^{n} d_{0,\, 0,\, 1,\, 1}(\mathcal{C}_{0}, \mathcal{C}, \lbrace s_{i}, \neg s_{i}\rbrace)\\
+&amp;= \sum_{i=1}^{n} \alpha_{A}\cdot d_{0,\, 0.3,\, 1,\, 1}(\mathcal{C}, \overline{\mathcal{T}}, \lbrace s_{i}, \neg s_{i}\rbrace) + \alpha_{F}\cdot d_{0,\, 0,\, 1,\, 1}(\mathcal{C}_{0}, \mathcal{C}, \lbrace s_{i}, \neg s_{i}\rbrace)
+\end{aligned}
+\]</span></p>
+<p>Since the achievement function is optimized for minimal contributions and <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span>, it is always more attractive to change the commitments to increase account rather than faithfully respecting the initial commitments. To see this, consider the change in contributions multiplied by the corresponding weights in the table below. This argument can be repeated for every sentence for which <span class="math inline">\(\mathcal{C}\)</span> and <span class="math inline">\(\overline{\mathcal{T}}\)</span> differ.</p>
+<table class="table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 40%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>account penalty</th>
+<th>faithfulness penalty (worst case)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>adjusted commitmetments</td>
+<td><span class="math inline">\(d_{0,\,0.3,\,1,\,1}(\mathcal{C}',\overline{\mathcal{T}}, \lbrace s, \neg s\rbrace)\)</span></td>
+<td><span class="math inline">\(d_{0,\,0,\,1,\,1}(\mathcal{C}_{0}, \mathcal{C}', \lbrace s, \neg s\rbrace)\)</span></td>
+</tr>
+<tr class="even">
+<td>-old commitments</td>
+<td><span class="math inline">\(- d_{0,\,0.3,\,1,\,1}(\mathcal{C},\overline{\mathcal{T}}, \lbrace s, \neg s\rbrace)\)</span></td>
+<td><span class="math inline">\(- d_{0,\,0,\,1,\,1}(\mathcal{C}_{0}, \mathcal{C}, \lbrace s, \neg s\rbrace)\)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>change</strong></td>
+<td>difference</td>
+<td>difference</td>
+</tr>
+<tr class="even">
+<td>remove contradicting element from <span class="math inline">\(\mathcal{C}\)</span></td>
+<td>-1</td>
+<td>+1</td>
+</tr>
+<tr class="odd">
+<td>revise contradicting element in <span class="math inline">\(\mathcal{C}\)</span></td>
+<td>-1</td>
+<td>+1</td>
+</tr>
+<tr class="even">
+<td>add missing element to <span class="math inline">\(\mathcal{C}\)</span></td>
+<td>-0.3</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>remove additional element from <span class="math inline">\(\mathcal{C}\)</span></td>
+<td>-1</td>
+<td>+1</td>
+</tr>
+</tbody>
+</table>
+<p>In summary, if <span class="math inline">\((\mathcal{C}, \mathcal{T})\)</span> is a global optimum but <span class="math inline">\(A(\mathcal{C}, \mathcal{T}) &lt; 1\)</span>, then there is a position <span class="math inline">\((\mathcal{C}', \mathcal{T})\)</span> such that <span class="math inline">\(A(\mathcal{C}, \mathcal{T}) &lt; A(\mathcal{C}', \mathcal{T})\)</span> contradicting <span class="math inline">\((\mathcal{C}, \mathcal{T})\)</span> being a global optimum. Consequently, we must have <span class="math inline">\(A(\mathcal{C}, \mathcal{T}) = 1\)</span>, i.e., <span class="math inline">\(\mathcal{T}\)</span> accounts fully and exclusively for <span class="math inline">\(S\)</span>. This shows that <span class="math inline">\((\mathcal{C}, \mathcal{T})\)</span> is a full RE state.</p>
+<p><em>Remark</em>: Note that this argument does not work for quadratic model variants, and in particular, the default model of <span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span>. The Hamming distance <span class="math inline">\(D\)</span> is a summation of penalties. Consequently, squaring the hamming distance yields a polynomial expression where every contributing penalty “interferes” due to multiplication with the others. The resulting multiplicative terms block the above strategy of comparing the contributions and distributing the weights <span class="math inline">\(\alpha_{A}\)</span> or <span class="math inline">\(\alpha_{S}\)</span> over these expressions. This is why the quadratic models’ share of full RE states among global optima changes gradually with a change in <span class="math inline">\(\alpha\)</span>-weights (see <a href="chapter_full-re-states.html" class="quarto-xref"><span>Chapter 4</span></a>).</p>
 </section>
 <section id="proposition-2" class="level2" data-number="A.2">
 <h2 data-number="A.2" class="anchored" data-anchor-id="proposition-2"><span class="header-section-number">A.2</span> Proposition 2</h2>
-<p>Assume that a dialectical structure <span class="math inline">\(\tau\)</span> and some initial commitments <span class="math inline">\(C_{0}\)</span> are given. Moreover, assume <span class="math inline">\(\alpha_{A} &lt; \alpha_{F}\)</span> for a configuration of weights <span class="math inline">\((\alpha_{A}, \alpha_{S}, \alpha_{F})\)</span> in a linear model variant. Then, for all global optima (relative to <span class="math inline">\(C_{0}\)</span>) according to the achievement function specified by the configuration of weights the following holds:</p>
+<p>Assume that a dialectical structure <span class="math inline">\(\tau\)</span> and some initial commitments <span class="math inline">\(\mathcal{C}_{0}\)</span> are given. Moreover, assume <span class="math inline">\(\alpha_{A} &lt; \alpha_{F}\)</span> for a configuration of weights <span class="math inline">\((\alpha_{A}, \alpha_{S}, \alpha_{F})\)</span> in a linear model variant. Then, for all global optima:</p>
 <p><span class="math display">\[
-F(C\,\vert\,C_{0}) = 1.
+F(\mathcal{C}\,\vert\,\mathcal{C}_{0}) = 1.
 \]</span></p>
-<p><strong>Proof sketch of Proposition 2</strong></p>
-<p>For a proof by contradiction, assume that <span class="math inline">\((C, T)\)</span> is a global optimum according to <span class="math inline">\(Z\)</span>, but <span class="math inline">\(F(C\,\vert\,C_{0}) &lt; 1\)</span>.</p>
-<p>This holds only if <span class="math inline">\(G(\frac{D_{0,0,1,1}(C_{0}, C)}{n}) &lt; 1\)</span>, i.e.&nbsp;only if <span class="math inline">\(D_{0,0,1,1}(C_{0}, C) &gt; 0\)</span>. In other words, there is at least one sentence, for which there is a positive contribution to the Hamming distance. In particular, there are two cases</p>
-<ol type="i">
-<li><span class="math inline">\(C\)</span> contracts <span class="math inline">\(C_{0}\)</span> with respect to <span class="math inline">\(s\)</span>: +1 (there is <span class="math inline">\(s \in C_{0}\)</span>, but <span class="math inline">\(s\)</span> and <span class="math inline">\(\neg s\)</span> are not in <span class="math inline">\(C\)</span>)</li>
-<li><span class="math inline">\(C\)</span> and <span class="math inline">\(C_{0}\)</span> contradict each other with respect to <span class="math inline">\(s\)</span>: +1</li>
-</ol>
-<p>Consider the impacts on individual contributions to the Hamming distances for account and faithfulness of changing <span class="math inline">\(C\)</span> with respect to <span class="math inline">\(s\)</span>, yielding new commitments <span class="math inline">\(C′\)</span>, in particular the difference <span class="math inline">\(d(C_{0}, C', \lbrace s, \neg s\rbrace) - d(C_{0}, C, \lbrace s, \neg s\rbrace)\)</span>. * denotes the worst cases.</p>
-
-<!-- ToDo(@Andreas): present cases in a nicer form, e.g. in a table-->
-<p><em>Situation i)</em></p>
-<p>There is an <span class="math inline">\(s\)</span> in <span class="math inline">\(C_{0}\)</span>, but <span class="math inline">\(s\)</span> and <span class="math inline">\(\neg s\)</span> are not in <span class="math inline">\(C\)</span>.</p>
-<p>Add <span class="math inline">\(s\)</span> to <span class="math inline">\(C\)</span>. Result: <span class="math inline">\(s\)</span> in <span class="math inline">\(C'\)</span></p>
-<p>Faithfulness</p>
-<p>agreement (new) - contraction (old): faithfulness: -1</p>
-<p>Account</p>
+<p><strong>Corollaries</strong></p>
+<p>The linear model variants exhibit the following behaviour for <span class="math inline">\(\alpha_{A} &lt; \alpha_{F}\)</span>:</p>
 <ul>
-<li>Case: <span class="math inline">\(s \in \overline{T}\)</span>: agreement (new) - expansion (old): -0.7</li>
-<li>Case <span class="math inline">\(\neg\in \overline{T}\)</span>: contradiction (new) - expansion (old): + 0.7</li>
-<li>*Case <span class="math inline">\(s\)</span> and <span class="math inline">\(\neg s\)</span> not in <span class="math inline">\(\overline{T}\)</span>: contraction (new)- agreement (old): +1</li>
-</ul>
-<p><em>Situation ii)</em></p>
-<p>w.l.o.g. asssume <span class="math inline">\(s\)</span> in <span class="math inline">\(C_{0}\)</span>, <span class="math inline">\(\neg s\)</span> in <span class="math inline">\(C\)</span>.</p>
-<p>a: Remove the contradicting element from <span class="math inline">\(C\)</span>. Result: <span class="math inline">\(\neg s\)</span> (and <span class="math inline">\(s\)</span>) are not in <span class="math inline">\(C'\)</span>.</p>
-<p>Faithfulness</p>
-<p>contraction (new) - contradiction (old) : +0</p>
-<p>Account - <span class="math inline">\(s in \overline{T}\)</span>: expansion (new) - contradiction (old): -0.7 - *Case <span class="math inline">\(\neg s \in \overline{T}\)</span>: expansion (new) - agreement (old): +0.3 - Case <span class="math inline">\(s\)</span> and <span class="math inline">\(\neg s\)</span> not in <span class="math inline">\(\overline{T}\)</span>: agreement(new) - contraction(old): -1</p>
-<p>b:Revise the contradicting element in <span class="math inline">\(C\)</span>: Result: <span class="math inline">\(s\)</span> in <span class="math inline">\(C'\)</span></p>
-<p>Faithfulness agreement (new) - contradiction (old): -1</p>
-<p>Account - Case: <span class="math inline">\(s in \overline{T}\)</span>: agreement (new) - contradiction (old): -1 - *Case <span class="math inline">\(\neg\in \overline{T}\)</span>: contradiction (new) - agreement (old): +1 - Case <span class="math inline">\(s\)</span> and <span class="math inline">\(\neg\)</span> not in <span class="math inline">\(\overline{T}\)</span>: contraction (new) - contraction (old): +0</p>
-<p>The complete linearity of the achievement function allows to distribute (push in) the weights <span class="math inline">\(\alpha_{A}\)</span> and <span class="math inline">\(\alpha{F}\)</span> over the individual contributions of the hamming distances in <span class="math inline">\(Z\)</span>. Hence, the weights also apply to the individual contributions considered above. Moreover, changing the commitments does not affect the systematicity of the theory, i.e.&nbsp;<span class="math inline">\(S(T)\)</span> is identical for <span class="math inline">\((C, T)\)</span> and <span class="math inline">\((C', T)\)</span>. Hence, the achievement function is optimised for minimal contributions in the measures for account and faithfulness and <span class="math inline">\(\alpha_{F} &gt; \alpha{A}\)</span>.</p>
-<p>Consequently, it is always (cases i.a, ii.a and ii.b) more attractive to stay faithful to the initial commitments rather than to change the commitments in order to increase account.</p>
-<p>This argument can be repeated for every sentence, for which <span class="math inline">\(C_{0}\)</span> and <span class="math inline">\(C\)</span> differ.</p>
-<p>In summary, if <span class="math inline">\((C, T)\)</span> is a global optimum but it is assumed that <span class="math inline">\(F(C\,\vert\, C_{0}) &lt; 1\)</span>, then there is a position <span class="math inline">\((C′, T)\)</span> such that <span class="math inline">\(Z(C, T \,\vert\, C_{0}) &lt; Z(C', T \,\vert\, C_{0})\)</span>, contradicting <span class="math inline">\((C, T)\)</span> being a global optimum. Consequently, we must have <span class="math inline">\(F(C \,\vert\, C_{0}) = 1\)</span>.</p>
-<p><strong>Corollaries</strong> The linear model variants exhibit the following behaviour for <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span>:</p>
+<li>The relative share of inconsistency-eliminating cases among global optima is 0.0.
 <ul>
-<li>The relative share of inconsistency eliminating cases among global optima is 0.0. Explanation: Removing or revising an initial inconsistency requires to deviate from the initial commitments, which is incompatible with maximal faithfulness.</li>
-<li>Similarly, the relative share of inconsistency preserving cases in this region of weight configurations correspond to the relative share of inconsistent initial commitments.</li>
+<li><em>Explanation</em>: Removing or revising an initial inconsistency requires deviating from the initial commitments, which is incompatible with maximal faithfulness.</li>
+</ul></li>
+<li>Similarly, the relative share of inconsistency-preserving cases in this region of weight configurations corresponds to the relative share of inconsistent initial commitments.</li>
 <li>In turn, the relative share of global optima with maximal value for faithfulness is 1.0.</li>
 </ul>
-<p><strong>Open questions</strong></p>
+<p><strong>Proof sketch of Proposition 2</strong></p>
+<p>The proof of Proposition 2 is highly similar to that of Proposition 1.</p>
+<p>For a proof by contradiction, assume that <span class="math inline">\((\mathcal{C}, \mathcal{T})\)</span> is a global optimum according to <span class="math inline">\(Z\)</span>, but <span class="math inline">\(F(\mathcal{C}\,\vert\,\mathcal{C}_{0}) &lt; 1\)</span>.</p>
+<p>This holds only if <span class="math inline">\(G\left(\frac{D_{0,0,1,1}(\mathcal{C}_{0}, \mathcal{C})}{n}\right) &lt; 1\)</span>, i.e.&nbsp;only if <span class="math inline">\(D_{0,0,1,1}(\mathcal{C}_{0}, \mathcal{C}) &gt; 0\)</span>. In other words, there is at least one sentence for which there is a positive contribution to the Hamming distance. In particular, there are two cases:</p>
+<ol type="1">
+<li><span class="math inline">\(\mathcal{C}\)</span> contracts <span class="math inline">\(\mathcal{C}_{0}\)</span> with respect to <span class="math inline">\(s\)</span>: +1 (there is <span class="math inline">\(s \in \mathcal{C}_{0}\)</span>, but <span class="math inline">\(s\)</span> and <span class="math inline">\(\neg s\)</span> are not in <span class="math inline">\(\mathcal{C}\)</span>)</li>
+<li><span class="math inline">\(\mathcal{C}\)</span> and <span class="math inline">\(\mathcal{C}_{0}\)</span> contradict each other with respect to <span class="math inline">\(s\)</span>: +1</li>
+</ol>
+<p>Consider the impacts on individual contributions to the Hamming distances for account and faithfulness of changing <span class="math inline">\(\mathcal{C}\)</span> with respect to <span class="math inline">\(s\)</span>, yielding new commitments <span class="math inline">\(\mathcal{C}'\)</span>, in particular the difference <span class="math inline">\(d(\mathcal{C}_{0}, \mathcal{C}', \lbrace s, \neg s\rbrace) - d(\mathcal{C}_{0}, \mathcal{C}, \lbrace s, \neg s\rbrace)\)</span>. In the following subcases, (*) will denote the worst cases.</p>
+<p><strong>Case 1</strong></p>
+<p>There is an <span class="math inline">\(s\)</span> in <span class="math inline">\(\mathcal{C}_{0}\)</span>, but <span class="math inline">\(s\)</span> and <span class="math inline">\(\neg s\)</span> are not in <span class="math inline">\(\mathcal{C}\)</span>. We can now define a new <span class="math inline">\(\mathcal{C}'\)</span> by <span class="math inline">\(\mathcal{C}':=\mathcal{C}\cup \{s\}\)</span></p>
+<p><em>Faithfulness</em></p>
 <ul>
-<li>Fixed points (unique) also exhibit this behaviour, respectively. Can the proof be adapted to cover such cases as well?</li>
+<li>agreement (new) - contraction (old): -1</li>
 </ul>
+<p><em>Account</em></p>
+<ul>
+<li>Case: <span class="math inline">\(s \in \overline{\mathcal{T}}\)</span>: agreement (new) - expansion (old): -0.7</li>
+<li>Case <span class="math inline">\(\neg s \in \overline{\mathcal{T}}\)</span>: contradiction (new) - expansion (old): + 0.7</li>
+<li>Case <span class="math inline">\(s\)</span> and <span class="math inline">\(\neg s \notin \overline{\mathcal{T}}\)</span> (*): contraction (new)- agreement (old): +1</li>
+</ul>
+<p>That is, adding <span class="math inline">\(s\)</span> to <span class="math inline">\(\mathcal{C}\)</span> yields a +1 contribution to the account penalties in the worst case. This is counterbalanced by a -1 improvement in the faithfulness penalties.</p>
+<p><strong>Case 2</strong></p>
+<p>Without loss of generality, we can assume that <span class="math inline">\(s \in \mathcal{C}_{0}\)</span> and <span class="math inline">\(\neg s \in \mathcal{C}\)</span>. We can now either remove <span class="math inline">\(\neg s\)</span> from <span class="math inline">\(\mathcal{C}\)</span> (Subcase A) or revise <span class="math inline">\(\mathcal{C}\)</span> with <span class="math inline">\(s\)</span> (Subcase B).</p>
+<p><strong>Subcase A:</strong> <span class="math inline">\(\mathcal{C}':=\mathcal{C}\setminus \{\neg s\}\)</span></p>
+<p><em>Faithfulness</em></p>
+<ul>
+<li>contraction (new) - contradiction (old): +0</li>
+</ul>
+<p><em>Account</em></p>
+<ul>
+<li><span class="math inline">\(s \in \overline{\mathcal{T}}\)</span>: expansion (new) - contradiction (old): -0.7</li>
+<li>Case <span class="math inline">\(\neg s \in \overline{\mathcal{T}}\)</span> (*): expansion (new) - agreement (old): +0.3</li>
+<li>Case <span class="math inline">\(s\)</span> and <span class="math inline">\(\neg s \notin \overline{\mathcal{T}}\)</span>: agreement(new) - contraction(old): -1</li>
+</ul>
+<p>Now, removing <span class="math inline">\(\neg s\)</span> from <span class="math inline">\(\mathcal{C}\)</span> leads to a worsening in the account penalties of +0.3 in the worst case. This is contrasted with no differences in the contributions to faithfulness.</p>
+<p><strong>Subcase B:</strong> <span class="math inline">\(\mathcal{C}':=(\mathcal{C}\setminus \{\neg s\}) \cup\{s\}\)</span></p>
+<p><em>Faithfulness</em></p>
+<ul>
+<li>agreement (new) - contradiction (old): -1</li>
+</ul>
+<p><em>Account</em></p>
+<ul>
+<li>Case: <span class="math inline">\(s \in \overline{\mathcal{T}}\)</span>: agreement (new) - contradiction (old): -1</li>
+<li>Case <span class="math inline">\(\neg s \in \overline{\mathcal{T}}\)</span> (*): contradiction (new) - agreement (old): +1</li>
+<li>Case <span class="math inline">\(s\)</span> and <span class="math inline">\(\neg s \notin \overline{\mathcal{T}}\)</span>: contraction (new) - contraction (old): +0</li>
+</ul>
+<p>In this case, revising <span class="math inline">\(\mathcal{C}\)</span> with <span class="math inline">\(s\)</span> leads to a +1 contribution to the account penalties in the worst case. This is counterbalanced by an improvement of -1 in the faithfulness penalties.</p>
+<p>The complete linearity of the achievement function allows us to distribute (push in) the weights <span class="math inline">\(\alpha_{A}\)</span> and <span class="math inline">\(\alpha_{F}\)</span> over the individual contributions of the hamming distances in <span class="math inline">\(Z\)</span>. Hence, the weights also apply to the individual contributions considered above. Moreover, changing the commitments does not affect the systematicity of the theory, i.e.&nbsp;<span class="math inline">\(S(\mathcal{T})\)</span> is identical for <span class="math inline">\((\mathcal{C}, \mathcal{T})\)</span> and <span class="math inline">\((\mathcal{C}', \mathcal{T})\)</span>. Hence, the achievement function is optimized for minimal contributions in the measures for account and faithfulness and <span class="math inline">\(\alpha_{F} &gt; \alpha_{A}\)</span>.</p>
+<p>Consequently, it is always (Case 1, Case 2 (A and B)) more attractive to stay faithful to the initial commitments rather than to change the commitments in order to increase account.</p>
+<p>This argument can be repeated for every sentence, for which <span class="math inline">\(\mathcal{C}_{0}\)</span> and <span class="math inline">\(\mathcal{C}\)</span> differ.</p>
+<p>In summary, if <span class="math inline">\((\mathcal{C}, \mathcal{T})\)</span> is a global optimum but it is assumed that <span class="math inline">\(F(\mathcal{C}\,\vert\, \mathcal{C}_{0}) &lt; 1\)</span>, then there is a position <span class="math inline">\((\mathcal{C}', \mathcal{T})\)</span> such that <span class="math inline">\(Z(\mathcal{C}, \mathcal{T} \,\vert\, \mathcal{C}_{0}) &lt; Z(\mathcal{C}', \mathcal{T} \,\vert\, \mathcal{C}_{0})\)</span>, contradicting <span class="math inline">\((\mathcal{C}, \mathcal{T})\)</span> being a global optimum. Consequently, we must have <span class="math inline">\(F(\mathcal{C} \,\vert\, \mathcal{C}_{0}) = 1\)</span>.</p>
+</section>
+<section id="generalization-to-fixed-points" class="level2" data-number="A.3">
+<h2 data-number="A.3" class="anchored" data-anchor-id="generalization-to-fixed-points"><span class="header-section-number">A.3</span> Generalization to fixed points</h2>
+<p>The results we prooved for the linear model variants hold not only for global optima but also for fixed points, which requires but a slight modification of the above proofs. The following proof sketch shows howto generalize Proposition 1 to fixed points for the semi-globally optimizing model variant <code>LinearGlobalRE</code>. Proposition 2 can be generalized similarly.</p>
+<p><strong>Proof sketch</strong></p>
+<p>Let <span class="math inline">\(\tau\)</span> be a dialectical structure and <span class="math inline">\(\mathcal{C}_{0}\)</span> some initial commitments. Moreover, assume <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span> for a configuration of weights <span class="math inline">\((\alpha_{A}, \alpha_{S}, \alpha_{F})\)</span>.</p>
+<p>For a proof by contradiction, we assume that <span class="math inline">\((\mathcal{C}_{i}, \mathcal{T}_{i})\)</span> is a fixed point with <span class="math inline">\(A(\mathcal{C}_{i}, \mathcal{T}_{i}) &lt; 1\)</span>.</p>
+<p><span class="math inline">\((\mathcal{C}_{i}, \mathcal{T}_{i})\)</span> being a fixed point implies that <span class="math inline">\((\mathcal{C}_{i-1}, \mathcal{T}_{i-1})=(\mathcal{C}_{i}, \mathcal{T}_{i})\)</span> and hence that <span class="math inline">\(A(\mathcal{C}_{i-1}, \mathcal{T}_{i-1}) &lt; 1\)</span> as well. However, during the last adjustment step (from <span class="math inline">\(i-1\)</span> to <span class="math inline">\(i\)</span>), <em>all</em> minimally consistent positions were available as candidates. Since <span class="math inline">\(A(\mathcal{C}_{i-1}, \mathcal{T}_{i-1}) &lt; 1\)</span>, the process could have found <em>other</em> commitments <span class="math inline">\(\mathcal{C}_{i}'\)</span> which would have resulted from changing <span class="math inline">\(\mathcal{C}_{i-1}\)</span> with respect to <span class="math inline">\(s\)</span> following the same line of reasoning we used to prove Proposition 1. Again, there would have been at least one sentence <span class="math inline">\(s\)</span> for which there is a positive contribution to the Hamming distance in the measure of account. Hence, there would have been <span class="math inline">\((\mathcal{C}_{i}', \mathcal{T}_{i})\)</span> with <span class="math inline">\(\mathcal{C}_{i}'\neq \mathcal{C}_{i-1}\)</span> that would have performed better than <span class="math inline">\((\mathcal{C}_{i}, \mathcal{T}_{i})\)</span> according to the achievement functon. This shows that <span class="math inline">\((\mathcal{C}_ {i}, \mathcal{T}_{i})\)</span> cannot be a fixed point (contradicting the assumption).</p>
+<p><strong>Local Model variants</strong></p>
+<p>Finally, we can also generalize Proposition 1 and Proposition 2 to fixed points of the <code>LinearLocalRE</code> model variant. The difference to the semi-globally optimizing RE process of <code>LinearGlobalRE</code> is that locally optimizing models (with a neighborhood depth of <span class="math inline">\(1\)</span>) proceed by changing at most one sentence per adjustment step. But this is all we need to get the above proofs by contradiction off the ground, where we only considered hypothetical adjustments of the commitments with respect to a single sentence. Accordingly, the propositions will also hold if we enlarge the <span class="math inline">\(d\)</span>-neighborhood to more than one sentence.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-beisbart_making_2021" class="csl-entry" role="listitem">
 Beisbart, Claus, Gregor Betz, and Georg Brun. 2021. <span>“Making <span>Reflective Equlibrium Precise</span>: <span>A Formal Model</span>.”</span> <em>Ergo</em> 8 (0). <a href="https://doi.org/10.3998/ergo.1152">https://doi.org/10.3998/ergo.1152</a>.
 </div>
 </div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>We follow the notation used in <span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span>. Definitions of terms we neither introduced here nor in the introduction (<a href="intro.html" class="quarto-xref"><span>Chapter 1</span></a>) can be found in <span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -399,10 +603,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -412,8 +615,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -426,6 +638,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -469,6 +800,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -494,6 +826,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -555,14 +913,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./references.html" class="pagination-link">
+      <a href="./references.html" class="pagination-link  aria-label=" references"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">References</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./appendix_trivial_endpoints.html" class="pagination-link" aria-label="<span class='chapter-number'>B</span>&nbsp; <span class='chapter-title'>Trivial Endpoints</span>">
+        <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Trivial Endpoints</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

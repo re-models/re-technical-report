@@ -2,12 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Based on Beisbart, Betz, and Brun (2021), this report assesses different models of reflective equilibrium (RE) by numerical investigation.">
 
-<title>Assessing a Formal Model of Reflective Equilibrium - 2&nbsp; General ensemble properties</title>
+<title>Assessing a Formal Model of Reflective Equilibrium - 2&nbsp; General Ensemble Properties</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -66,7 +68,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -75,6 +83,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -84,6 +93,45 @@ div.csl-indent {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta name="citation_title" content="[[2]{.chapter-number}&nbsp; [General Ensemble Properties]{.chapter-title}]{#sec-general-props .quarto-section-identifier}">
+<meta name="citation_fulltext_html_url" content="https://re-models.github.io/re-technical-report/">
+<meta name="citation_doi" content="10.5555/12345678">
+<meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Making Reflective Equlibrium Precise: A Formal Model;,citation_abstract=&amp;amp;amp;lt;p&amp;gt;Reflective equilibrium (RE) is often regarded as a powerful method in ethics, logic, and even philosophy in general. Despite this popularity, characterizations of the method have been fairly vague and unspecific so far. It thus may be doubted whether RE is more than a jumble of appealing but ultimately sketchy ideas that cannot be spelled out consistently. In this paper, we dispel such doubts by devising a formal model of RE. The model contains as components the agent’s commitments and a theory that tries to systematize the commitments. It yields a precise picture of how the commitments and the theory are adjusted to each other. The model differentiates between equilibrium as a target state and the dynamic equilibration process. First solutions to the model, obtained by computer simulation, show that the method allows for consistent specification and that the model’s implications are plausible in view of expectations on RE. In particular, the mutual adjustment of commitments and theory can improve one’s commitments, as proponents of RE have suggested. We argue that our model is fruitful not only because it points to issues that need to be dealt with for a better understanding of RE, but also because it provides the means to address these issues.&amp;lt;/p&amp;gt;;,citation_author=Claus Beisbart;,citation_author=Gregor Betz;,citation_author=Georg Brun;,citation_publication_date=2021-12;,citation_cover_date=2021-12;,citation_year=2021;,citation_issue=0;,citation_doi=10.3998/ergo.1152;,citation_issn=2330-4014;,citation_volume=8;,citation_language=en-US;,citation_journal_title=Ergo;,citation_publisher=Michigan Publishing Services;">
+<meta name="citation_reference" content="citation_title=Debate Dynamics: How Controversy Improves Our Beliefs;,citation_abstract=Is critical argumentation an effective way to overcome disagreement? And does the exchange of arguments bring opponents in a controversy closer to the truth? This study provides a new perspective on these pivotal questions. By means of multi-agent simulations, it investigates the truth and consensus-conduciveness of controversial debates. The book brings together research in formal epistemology and argumentation theory. Aside from its consequences for discursive practice, the work may have important implications for philosophy of science and the way we construe scientific rationality as well.;,citation_author=Gregor Betz;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_isbn=978-94-007-4598-8;,citation_language=en-US;,citation_series_title=Synthese Library;">
+<meta name="citation_reference" content="citation_title=Theorie dialektischer Strukturen;,citation_author=Gregor Betz;,citation_publication_date=2010;,citation_cover_date=2010;,citation_year=2010;,citation_isbn=978-3-465-03629-6 3-465-03629-8;,citation_language=de-DE;">
+<meta name="citation_reference" content="citation_title=Does reflective equilibrium help us converge?;,citation_author=Andreas Freivogel;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=6;,citation_doi=10.1007/s11229-023-04375-0;,citation_volume=202;,citation_journal_title=Synthese;,citation_publisher=Springer Verlag;">
+<meta name="citation_reference" content="citation_title=Debate Dynamics: How Controversy Improves Our Beliefs;,citation_abstract=Is critical argumentation an effective way to overcome disagreement? And does the exchange of arguments bring opponents in a controversy closer to the truth? This study provides a new perspective on these pivotal questions. By means of multi-agent simulations, it investigates the truth and consensus-conduciveness of controversial debates. The book brings together research in formal epistemology and argumentation theory. Aside from its consequences for discursive practice, the work may have important implications for philosophy of science and the way we construe scientific rationality as well.;,citation_author=Gregor Betz;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_isbn=978-94-007-4598-8;,citation_language=en-US;,citation_series_title=Synthese Library;">
+<meta name="citation_reference" content="citation_title=Virtuously circular. Theoretical virtues in reflective equilibrium;,citation_author=Andreas Freivogel;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_dissertation_institution=University of Bern;">
+<meta name="citation_reference" content="citation_title=Turning the Trolley with Reflective Equilibrium;,citation_author=Tanja Rechnitzer;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=4;,citation_doi=10.1007/s11229-022-03762-3;,citation_volume=200;,citation_journal_title=Synthese;,citation_publisher=Springer Verlag;">
+<meta name="citation_reference" content="citation_title=Turning the trolley;,citation_author=Judith Jarvis Thomson;,citation_publication_date=2008;,citation_cover_date=2008;,citation_year=2008;,citation_issue=4;,citation_doi=10.1111/j.1088-4963.2008.00144.x;,citation_volume=36;,citation_journal_title=Philosophy and Public Affairs;,citation_publisher=Blackwell;">
 </head>
 
 <body class="nav-sidebar floating">
@@ -92,12 +140,12 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter_general-props.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">General ensemble properties</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter_general-props.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">General Ensemble Properties</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -107,10 +155,31 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Assessing a Formal Model of Reflective Equilibrium</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/re-models/re-technical-report" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Assessing-a-Formal-Model-of-Reflective-Equilibrium.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -135,19 +204,19 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter_general-props.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">General ensemble properties</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">General Ensemble Properties</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter_go-and-fp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Global optima and fixed points</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Global Optima and Fixed Points</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter_full-re-states.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Full RE states</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Full RE States</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -159,7 +228,13 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter_extreme-values.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Extreme values for account and faitfulness</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Extreme values for account, systematicity, and faithfulness</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -183,21 +258,33 @@ div.csl-indent {
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">The Tipping Line of Linear Model Variants</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_trivial_endpoints.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Trivial Endpoints</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_systematicity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Alternative systematicity measures</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#process-length-and-step-length" id="toc-process-length-and-step-length" class="nav-link active" data-scroll-target="#process-length-and-step-length"><span class="header-section-number">2.1</span> Process length and step length</a></li>
-  <li><a href="#global-optima" id="toc-global-optima" class="nav-link" data-scroll-target="#global-optima"><span class="header-section-number">2.2</span> Global optima</a></li>
-  <li><a href="#branching" id="toc-branching" class="nav-link" data-scroll-target="#branching"><span class="header-section-number">2.3</span> Branching</a></li>
+  <li><a href="#process-length-and-step-length" id="toc-process-length-and-step-length" class="nav-link active" data-scroll-target="#process-length-and-step-length"><span class="header-section-number">2.1</span> Process Length and Step Length</a></li>
+  <li><a href="#sec-general-props-go" id="toc-sec-general-props-go" class="nav-link" data-scroll-target="#sec-general-props-go"><span class="header-section-number">2.2</span> Global Optima</a></li>
+  <li><a href="#sec-general-branching" id="toc-sec-general-branching" class="nav-link" data-scroll-target="#sec-general-branching"><span class="header-section-number">2.3</span> Branching</a></li>
   </ul>
 </nav>
     </div>
@@ -206,7 +293,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-general-props" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">General ensemble properties</span></span></h1>
+<h1 class="title"><span id="sec-general-props" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">General Ensemble Properties</span></span></h1>
 </div>
 
 
@@ -219,191 +306,195 @@ div.csl-indent {
   </div>
   
 
+
 </header>
 
-<div class="callout callout-style-default callout-warning callout-titled">
+
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>So far, analysis results in this chapter are based but on a subset of the whole data set.</p>
+<p>The results of this chapter can be reproduced with the this <a href="https://github.com/re-models/re-technical-report/blob/main/notebooks/chapter_general-props.ipynb">notebook</a>.</p>
 </div>
 </div>
-<p>Before analyzing how the model variants perform with regard to the described performance criteria, we will analyze some basic features of model runs that help us understand the model better. In particular, we assess the overall length of processes, the (mean) step length of commitments adjustments steps and the extent of branching.</p>
+<p>Before analyzing how the model variants perform with regard to the described performance criteria, we will analyze some basic features of model runs that help us understand the model better. The resulting insights will (hopefully) help to understand and interpret some of the results, we will present in subsequent chapters.</p>
+<p>In particular, we assess the overall length of processes, the (mean) step length of commitments adjustments steps, properties of global optima and the extent of branching.</p>
+<p>Here and in the following chapters, we will assess different properties of model runs and their dependence (mainly) on the chosen model variant, the selection of <span class="math inline">\(\alpha\)</span> weights and the size of the sentence pool. Admittedly, other dimensions as, for instance, properties of the dialectical structures (such as inferential density) are also interesting as independent variables to assess the performance of the different models. However, we had to confine the analysis to some extent and regard the chosen dimensions as particularly important.</p>
+<p>Since we want to compare the performance of different model variants, we have, of course, to vary the model. The variation of <span class="math inline">\(\alpha\)</span>-weights is important since the modeler has to choose a particular set of <span class="math inline">\(\alpha\)</span>-weights in a specific context. It is therefore not enough to know how the different models compare to each other on average (with respect to <span class="math inline">\(\alpha\)</span>-weights) but important to compare them within different confined spectra of <span class="math inline">\(\alpha\)</span>-weight configurations. The dependence on the size of the sentence pool is motivated by the practical restrictions to use semi-globally optimizing model variants. Due to computational complexity the use of semi-globally optizing models is feasible for small sentence pools only. However, these small sentence pools are too small to model reflective equilibration of actual real-world debates.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Accordingly, we are confined to use locally optimizing models in these cases. It is, therefore, of particular interest whether the observations of this ensemble study can be generalised to larger sentence pools.</p>
 <section id="process-length-and-step-length" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="process-length-and-step-length"><span class="header-section-number">2.1</span> Process length and step length</h2>
+<h2 data-number="2.1" class="anchored" data-anchor-id="process-length-and-step-length"><span class="header-section-number">2.1</span> Process Length and Step Length</h2>
 <p>In the following, we understand <em>process length</em> (<span class="math inline">\(l_p\)</span>) as the number of theories and commitment sets in the evolution <span class="math inline">\(e\)</span> of the epistemic state, including the initial and final state.</p>
 <p><span class="math display">\[
 \mathcal{C_0} \rightarrow \mathcal{T_0} \rightarrow \mathcal{C_1} \rightarrow \mathcal{T_1} \rightarrow \dots \rightarrow \mathcal{T_{final}} \rightarrow \mathcal{C_{final}}
 \]</span></p>
 <p>In other words, if <span class="math inline">\((\mathcal{T_{0}}, \mathcal{C_{0}})\)</span> is the initial state and <span class="math inline">\((\mathcal{T_{m}}, \mathcal{C_{m}})\)</span> the fixed-point state, <span class="math inline">\(l_p(e)=2(m+1)\)</span>. An equilibration process reaches a fixed point if the newly chosen theory and commitments set are identical to the previous epistemic state—that is, if <span class="math inline">\((\mathcal{T_{i+1}}, \mathcal{C_{i+1}})=(\mathcal{T_{i}}, \mathcal{C_{i}})\)</span> <span class="citation" data-cites="beisbart_making_2021">(<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">Beisbart, Betz, and Brun 2021, 466</a>)</span>. Therefore, the minimal length of a process is <span class="math inline">\(4\)</span>. In such a case, the achievement of initial commitments and the first chosen theory cannot be further improved. Accordingly, the initial commitments are also the final commitments.</p>
-<p><a href="#fig-dist-process-length">Figure&nbsp;<span>2.1</span></a> shows the distribution of process lengths, and <a href="#fig-process-length">Figure&nbsp;<span>2.2</span></a> shows the mean process length (and its standard deviation) for the different model variants dependent on the size of the sentence pool (<span class="math inline">\(2n\)</span>) over all branches.</p>
-<div id="fig-dist-process-length" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/dist-process-length.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.1: Distribution of process lengths for different models.</figcaption>
+<p><a href="#fig-dist-process-length" class="quarto-xref">Figure&nbsp;<span>2.1</span></a> shows the distribution of process lengths, and <a href="#fig-process-length" class="quarto-xref">Figure&nbsp;<span>2.2</span></a> shows the mean process length (and its standard deviation) for the different model variants dependent on the size of the sentence pool (<span class="math inline">\(2n\)</span>) over all branches.</p>
+<p>Note that <a href="#fig-dist-process-length" class="quarto-xref">Figure&nbsp;<span>2.1</span></a> counts branches of a particular length for each model. One simulation setup can result in different branches if the adjustment of commitments or theories is underdetermined. Additionally, the number of branches for a specific simulation setup can vary between different models. Consequently, the overall number of branches per model can differ. This, in turn, explains why the sum of bars varies between the subfigures of <a href="#fig-dist-process-length" class="quarto-xref">Figure&nbsp;<span>2.1</span></a> (see <a href="#sec-general-branching" class="quarto-xref"><span>Section 2.3</span></a> for details).</p>
+<div id="fig-dist-process-length" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dist-process-length-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/dist-process-length.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dist-process-length-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Distribution of process lengths for different models.
+</figcaption>
 </figure>
 </div>
-<p>The first interesting observation is that the semi-globally optimizing models (<code>QGRE</code> and <code>LGRE</code>) reach their fixed points quickly. Often, they adjust their commitments only once (<span class="math inline">\(l_p(e)=6\)</span>); the linear model variant (<code>LGRE</code>) will sometimes not even adjust the initial commitments of processes (<span class="math inline">\(l_p(e)=4\)</span>). In contrast, the locally optimizing models (<code>QLRE</code> and <code>LLRE</code>) need significantly more adjustment steps. This difference is expected if we assume that local and global optima commitments are not often in the <span class="math inline">\(1\)</span>-neighbourhood of initial commitments (see <a href="#fig-distance-init-final-coms">Figure&nbsp;<span>2.4</span></a> and <a href="#fig-distance-go-coms-n">Figure&nbsp;<span>2.8</span></a>). Under this assumption, the locally searching models will need more than one adjustment step to reach a global or local optimum.</p>
-<div id="fig-process-length" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/process-length.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.2: Mean process length for different models and sentence pools.</figcaption>
+<p>The first interesting observation is that the semi-globally optimizing models (<code>QuadraticGlobalRE</code> and <code>LinearGlobalRE</code>) reach their fixed points quickly. Often, they adjust their commitments only once (<span class="math inline">\(l_p(e)=6\)</span>); the linear model variant (<code>LinearGlobalRE</code>) will sometimes not even adjust the initial commitments of processes (<span class="math inline">\(l_p(e)=4\)</span>). In contrast, the locally optimizing models (<code>QuardraticLocalRE</code> and <code>LinearLocalRE</code>) need significantly more adjustment steps. This difference is expected if we assume that local and global optima commitments are not often in the <span class="math inline">\(1\)</span>-neighbourhood of initial commitments (see <a href="#fig-distance-init-final-coms" class="quarto-xref">Figure&nbsp;<span>2.4</span></a> and <a href="#fig-distance-go-coms-n" class="quarto-xref">Figure&nbsp;<span>2.9</span></a>). Under this assumption, the locally searching models will need more than one adjustment step to reach a global or local optimum.</p>
+<div id="fig-process-length" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-process-length-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/process-length.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-process-length-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: Mean process length for different models and sentence pools.
+</figcaption>
 </figure>
 </div>
-<p>Additionally, the models <code>QLRE</code> and <code>LLRE</code> have a much larger variance in process lengths than the models <code>QGRE</code> and <code>LGRE</code>.</p>
-<p>A third observation concerns the difference in process lengths between semi-globally and locally optimizing models in terms of their dependence on the sentence pool. <a href="#fig-process-length">Figure&nbsp;<span>2.2</span></a> suggests that the process length of locally optimizing models increases with the size of the sentence pool. The semi-globally optimizing models lack such a dependence on the sentence pool size.</p>
-<p>A possible explanation is motivated by analyzing the step length during the adjustment of commitments. <a href="#fig-step-length">Figure&nbsp;<span>2.3</span></a> shows the mean distance between adjacent commitments sets in the evolution of epistemic states over all branches. For simplicity, we measure the distance between two commitment sets by their simple Hamming distance, defined as the number of sentences not shared by both sets. For example, the simple Hamming distance between the commitments sets <span class="math inline">\(\{s_1,s_2\}\)</span> and <span class="math inline">\(\{s_2,s_3\}\)</span> is <span class="math inline">\(2\)</span> since there are two sentences (<span class="math inline">\(s_1\)</span> and <span class="math inline">\(s_3\)</span>) not shared by both sets.</p>
-<div id="fig-step-length" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/step-length.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.3: Mean step length of adjacent commitments for different models and sentence pools.</figcaption>
+<p>Additionally, the models <code>QuardraticLocalRE</code> and <code>LinearLocalRE</code> have a much larger variance in process lengths than the models <code>QuadraticGlobalRE</code> and <code>LinearGlobalRE</code>.</p>
+<p>A third observation concerns the difference in process lengths between semi-globally and locally optimizing models in terms of their dependence on the sentence pool. <a href="#fig-process-length" class="quarto-xref">Figure&nbsp;<span>2.2</span></a> suggests that the process length of locally optimizing models increases with the size of the sentence pool. The semi-globally optimizing models lack such a dependence on the sentence pool size.</p>
+<p>A possible explanation is motivated by analyzing the step length during the adjustment of commitments. <a href="#fig-step-length" class="quarto-xref">Figure&nbsp;<span>2.3</span></a> shows the mean distance between adjacent commitments sets in the evolution of epistemic states over all branches. For simplicity, we measure the distance between two commitment sets by their simple Hamming distance, defined as the number of sentences not shared by both sets. For example, the simple Hamming distance between the commitments sets <span class="math inline">\(\{s_1,s_2\}\)</span> and <span class="math inline">\(\{s_2,s_3\}\)</span> is <span class="math inline">\(2\)</span> since there are two sentences (<span class="math inline">\(s_1\)</span> and <span class="math inline">\(s_3\)</span>) not shared by both sets.</p>
+<div id="fig-step-length" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-step-length-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/step-length.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-step-length-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.3: Mean step length of adjacent commitments for different models and sentence pools.
+</figcaption>
 </figure>
 </div>
-<p>Unsurprisingly, the locally optimizing models have roughly a mean step length of <span class="math inline">\(1\)</span> since they are confined in their choice of new commitments to the <span class="math inline">\(1\)</span>-neighbourhood.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> In contrast, the semi-globally optimizing models take bigger leaps with an increasing sentence pool size. <a href="#fig-distance-init-final-coms">Figure&nbsp;<span>2.4</span></a> shows why: With the increasing size of the sentence pool, the mean distance between initial commitments and fixed-point commitments increases. In other words, RE processes must overcome larger distances to reach their equilibrium state. Semi-globally optimizing models can walk this distance with fewer steps (<a href="#fig-process-length">Figure&nbsp;<span>2.2</span></a>) since they can take comparably large steps (<a href="#fig-step-length">Figure&nbsp;<span>2.3</span></a>). Locally optimizing models are confined to small steps (<a href="#fig-step-length">Figure&nbsp;<span>2.3</span></a>) and, thus, have to take more steps (<a href="#fig-process-length">Figure&nbsp;<span>2.2</span></a>).</p>
-<div id="fig-distance-init-final-coms" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/distance-init-final-coms.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.4: Mean distance between initial commitments and fixed points.</figcaption>
+<p>Unsurprisingly, the locally optimizing models have roughly a mean step length of <span class="math inline">\(1\)</span> since they are confined in their choice of new commitments to the <span class="math inline">\(1\)</span>-neighbourhood.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> In contrast, the semi-globally optimizing models take bigger leaps with an increasing sentence pool size. <a href="#fig-distance-init-final-coms" class="quarto-xref">Figure&nbsp;<span>2.4</span></a> shows why: With the increasing size of the sentence pool, the mean distance between initial commitments and fixed-point commitments increases. In other words, RE processes must overcome larger distances to reach their final states. Semi-globally optimizing models can walk this distance with fewer steps (<a href="#fig-process-length" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>) since they can take comparably large steps (<a href="#fig-step-length" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>). Locally optimizing models are confined to small steps (<a href="#fig-step-length" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>) and, thus, have to take more steps (<a href="#fig-process-length" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>).</p>
+<div id="fig-distance-init-final-coms" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-distance-init-final-coms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/distance-init-final-coms.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-distance-init-final-coms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.4: Mean distance between initial commitments and fixed points.
+</figcaption>
 </figure>
 </div>
 </section>
-<section id="global-optima" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="global-optima"><span class="header-section-number">2.2</span> Global optima</h2>
-<p>Global optima are fully determined by the achievement function of the RE model. Accordingly, global optima might differ between the linear and quadratic model variants but do not depend on whether the RE process is based on a locally or semi-globally optimization. In the following, we will therefore summarize analysis results with respect to global optima for linear models under the heading <code>LinearRE</code> and for quadratic models under the heading <code>QuadraticRE</code>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<p>The mean number of global optima does not differ significantly between linear and quadratic models (<span class="math inline">\(4\pm 14\)</span> vs.&nbsp;<span class="math inline">\(4\pm 9\)</span> [XXX]) and does not depend on the size of the sentence pool (see <a href="#fig-number-global-optima">Figure&nbsp;<span>2.5</span></a>).</p>
-<div id="fig-number-global-optima" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/number-global-optima.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.5: Number of global optima for different <span class="math inline">\(n\)</span>.</figcaption>
+<section id="sec-general-props-go" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sec-general-props-go"><span class="header-section-number">2.2</span> Global Optima</h2>
+<p>Global optima are fully determined by the achievement function of the RE model. Accordingly, global optima might differ between the linear and quadratic model variants but do not depend on whether the RE process is based on a local or semi-global optimization. In the following, we will therefore summarize analysis results with respect to global optima for linear models under the heading <code>LinearRE</code> and for quadratic models under the heading <code>QuadraticRE</code>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>The mean number of global optima does not differ significantly between linear and quadratic models (<span class="math inline">\(5\pm 26\)</span> vs.&nbsp;<span class="math inline">\(5\pm 14\)</span>) and does not depend on the size of the sentence pool (see <a href="#fig-number-global-optima" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>).</p>
+<div id="fig-number-global-optima" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-number-global-optima-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/number-global-optima.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-number-global-optima-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.5: Number of global optima for different <span class="math inline">\(n\)</span>.
+</figcaption>
 </figure>
 </div>
-<p>However, the heatmap in <a href="#fig-hm-mean-n-global-optima">Figure&nbsp;<span>2.6</span></a> shows an interesting dependence on the <span class="math inline">\(\alpha\)</span>-weights.</p>
+<p>However, the heatmap in <a href="#fig-hm-mean-n-global-optima" class="quarto-xref">Figure&nbsp;<span>2.6</span></a> shows an interesting dependence on the <span class="math inline">\(\alpha\)</span>-weights.</p>
 <p>Here and in the following chapters, we will often rely on such heatmaps. Let us therefore provide some clarifications of their interpretation. If we are interested in visualising the dependence on <span class="math inline">\(\alpha\)</span>-weight configurations (i.e., a specific triples of <span class="math inline">\(\alpha_A\)</span>, <span class="math inline">\(\alpha_F\)</span> and <span class="math inline">\(\alpha_S\)</span>), it is sufficient to use two dimensions (<span class="math inline">\(\alpha_A\)</span> and <span class="math inline">\(\alpha_S\)</span> in our case) since the three weights <span class="math inline">\(\alpha_A\)</span>, <span class="math inline">\(\alpha_F\)</span> and <span class="math inline">\(\alpha_S\)</span> are not independent. The diagonals in these heatmaps from southwest to northeast are isolines for the faithfulness weight (<span class="math inline">\(\alpha_F\)</span>). In the following, we will refer to specific cells in these heatmaps in the typical <span class="math inline">\((x,y)\)</span> fashion. For instance, we will call the cell with <span class="math inline">\(\alpha_S=0.5\)</span> and <span class="math inline">\(\alpha_A=0.2\)</span> the <span class="math inline">\((0.5,0.2)\)</span> cell.</p>
-<p>Now, let’s come back to <a href="#fig-hm-mean-n-global-optima">Figure&nbsp;<span>2.6</span></a>. For each simulation setup there is not necessarily one global optimum. Instead, there can be multiple global optima. Each cell in the heatmap provides for a specific <span class="math inline">\(\alpha\)</span>-configuration setup the mean number of global optima of simulation setups with this <span class="math inline">\(\alpha\)</span> configuration. For the quadratic models, the number of global optima (and its variance) increases with an increase in <span class="math inline">\(\alpha_S\)</span>. For the linear models, on the other hand, the number of global optima is comparably low (<span class="math inline">\(1-3\)</span>) in all cells with the exception of the three islands <span class="math inline">\((0.4,0.3)\)</span>, <span class="math inline">\((0.6,0.2)\)</span> and <span class="math inline">\((0.8,0.1)\)</span>. These cells are characterised by <span class="math inline">\(\alpha_F = \alpha_A\)</span>. For linear models, there are more ties in the achievement function under these conditions, which results in an increase in global optima.</p>
-<div id="fig-hm-mean-n-global-optima" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/hm-mean-n-global-optima.png" class="img-fluid figure-img" style="width:88.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.6: Mean number of global optima for different <span class="math inline">\(\alpha\)</span>-weight configurations.</figcaption>
+<p>Now, let’s come back to <a href="#fig-hm-mean-n-global-optima" class="quarto-xref">Figure&nbsp;<span>2.6</span></a>. For each simulation setup there is not necessarily one global optimum. Instead, there can be multiple global optima. Each cell in the heatmap provides for a specific <span class="math inline">\(\alpha\)</span>-weight configuration the mean number of global optima (over all simulation setups with this <span class="math inline">\(\alpha\)</span>-weight configuration). For the quadratic models, the number of global optima (and its variance) increases with an increase in <span class="math inline">\(\alpha_S\)</span>. For the linear models, on the other hand, the number of global optima is comparably low (<span class="math inline">\(1-3\)</span>) in all cells with the exception of the three islands <span class="math inline">\((0.4,0.3)\)</span>, <span class="math inline">\((0.6,0.2)\)</span> and <span class="math inline">\((0.8,0.1)\)</span>. These cells are characterised by <span class="math inline">\(\alpha_F = \alpha_A\)</span>. For linear models, there are more ties in the achievement function under these conditions (see <a href="appendix_tipping_line.html" class="quarto-xref"><span>Appendix A</span></a>), which results in an increase in global optima.</p>
+<div id="fig-hm-mean-n-global-optima" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hm-mean-n-global-optima-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/hm-mean-n-global-optima.png" class="img-fluid figure-img" style="width:88.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hm-mean-n-global-optima-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.6: Mean number of global optima for different <span class="math inline">\(\alpha\)</span>-weight configurations.
+</figcaption>
 </figure>
 </div>
-<p>The following figures provide an overview of two topological properties of global optima. <a href="#fig-mean-distance-global-optima-n">Figure&nbsp;<span>2.7</span></a> and <a href="#fig-mean-distance-global-optima-al">Figure&nbsp;<span>2.9</span></a> depict the mean distance of global-optimum commitments. We calculated for each configuration setup that has more than one global optimum the mean (simple Hamming) distance between global-optimum commitments and took the average of these means with respect to different ensemble properties. <a href="#fig-distance-go-coms-n">Figure&nbsp;<span>2.8</span></a> and <a href="#fig-distance-go-coms-al">Figure&nbsp;<span>2.10</span></a>, one the other hand, depict the mean distance between initial commitments and global-optimum commitments. For that, we calculated for each simulation setup the mean (simle Hamming) distance between initial commitments and all global-optimum commitments of the simulation setup and, again, took the average of these means with respect to different ensemble properties.</p>
-<p><a href="#fig-mean-distance-global-optima-n">Figure&nbsp;<span>2.7</span></a> and <a href="#fig-mean-distance-global-optima-al">Figure&nbsp;<span>2.9</span></a> are hard to interpret. The mean distance of initial commitments and global-optimum commitments might increase with the size of the sentence pool. However, without an additional consideration of larger sentence pool, we cannot draw this conclusion with certainty (due to the large variance). It is similarly difficult to read of any dependence of the mean distance between global optima on the size of the senctence pool.</p>
-<div id="fig-mean-distance-global-optima-n" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/mean-distance-global-optima-n.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.7: Mean distance of global-optima commitments for different <span class="math inline">\(n\)</span>.</figcaption>
+<p>Besides analysing the number of global optima, it is helpful to get a preliminary grasp on some topological properties of global optima. How are the commitments of global optima distributed over the space of all minimally consistent commitments? Are they located in a dense way to each other, or are they widely distributed in the whole space? What is their distance from initial commitments?</p>
+<p><a href="#fig-mean-distance-global-optima-n" class="quarto-xref">Figure&nbsp;<span>2.7</span></a> and <a href="#fig-mean-distance-global-optima-al" class="quarto-xref">Figure&nbsp;<span>2.8</span></a> depict the mean distance of global-optimum commitments in dependence of the sentence pool’s size and <span class="math inline">\(\alpha_F\)</span>. We calculated for each configuration setup that has more than one global optimum the mean (simple Hamming) distance between global-optimum commitments and took the average of these means with respect to different ensemble properties. The share of configuration setups that have more than one global optimum is <span class="math inline">\(0.58\)</span> over all models, <span class="math inline">\(0.54\)</span> for linear models and <span class="math inline">\(0.62\)</span> for quadratic models.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<div id="fig-mean-distance-global-optima-n" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mean-distance-global-optima-n-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/mean-distance-global-optima-n.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mean-distance-global-optima-n-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.7: Mean distance of global-optima commitments for different <span class="math inline">\(n\)</span>.
+</figcaption>
 </figure>
 </div>
-<div id="fig-distance-go-coms-n" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/distance-go-coms-n.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.8: Mean distance between initial commitments and optimal commitments for different <span class="math inline">\(n\)</span>.</figcaption>
+<div id="fig-mean-distance-global-optima-al" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mean-distance-global-optima-al-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/mean-distance-global-optima-al.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mean-distance-global-optima-al-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.8: Mean distance of global-optima commitments for different <span class="math inline">\(\alpha\)</span>.
+</figcaption>
 </figure>
 </div>
-<p><a href="#fig-distance-go-coms-n">Figure&nbsp;<span>2.8</span></a> and <a href="#fig-distance-go-coms-al">Figure&nbsp;<span>2.10</span></a>, one the other hand, show that the mean distance of initial commitments and global-optimum commitments as well as the mean distance between global-optimum commitments depend on <span class="math inline">\(\alpha_F\)</span>. The smaller <span class="math inline">\(\alpha_F\)</span>, the larger the distance. This result is not suprising. The weight <span class="math inline">\(\alpha_F\)</span> determines the extent to what final commitments should resemble initial commitments. You can think of <span class="math inline">\(\alpha_F\)</span> as the magnitude of an attractive force that pulls the commitments of the epistemic state to the initial commitments. Accordingly, if <span class="math inline">\(\alpha_F\)</span> gets smaller, global optima and fixed points will be distributed more widerspread in the space of epistemic states.</p>
-<div id="fig-mean-distance-global-optima-al" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/mean-distance-global-optima-al.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.9: Mean distance of global-optima commitments for different <span class="math inline">\(\alpha\)</span>.</figcaption>
+<p><a href="#fig-distance-go-coms-n" class="quarto-xref">Figure&nbsp;<span>2.9</span></a> and <a href="#fig-distance-go-coms-al" class="quarto-xref">Figure&nbsp;<span>2.10</span></a>, one the other hand, depict the mean distance between initial commitments and global-optimum commitments. For that, we calculated for each simulation setup the mean (simple Hamming) distance between initial commitments and all global-optimum commitments of the simulation setup and, again, took the average of these means with respect to different ensemble properties.</p>
+<div id="fig-distance-go-coms-n" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-distance-go-coms-n-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/distance-go-coms-n.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-distance-go-coms-n-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.9: Mean distance between initial commitments and optimal commitments for different <span class="math inline">\(n\)</span>.
+</figcaption>
 </figure>
 </div>
-<div id="fig-distance-go-coms-al" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/distance-go-coms-al.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.10: Mean distance between initial commitments and optimal commitments for different <span class="math inline">\(\alpha\)</span>.</figcaption>
+<div id="fig-distance-go-coms-al" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-distance-go-coms-al-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/distance-go-coms-al.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-distance-go-coms-al-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.10: Mean distance between initial commitments and optimal commitments for different <span class="math inline">\(\alpha\)</span>.
+</figcaption>
 </figure>
 </div>
+<p><a href="#fig-mean-distance-global-optima-n" class="quarto-xref">Figure&nbsp;<span>2.7</span></a> and <a href="#fig-distance-go-coms-n" class="quarto-xref">Figure&nbsp;<span>2.9</span></a> are hard to interpret. The mean distance of global optima does not seem to depend on the size of the sentence pool; the mean distance of initial commitments and global-optimum commitments might increase with the size of the sentence pool. However, without an additional consideration of larger sentence pools, we cannot draw these conclusions with certainty due to the large variance.</p>
+<p><a href="#fig-mean-distance-global-optima-al" class="quarto-xref">Figure&nbsp;<span>2.8</span></a> and <a href="#fig-distance-go-coms-al" class="quarto-xref">Figure&nbsp;<span>2.10</span></a>, one the other hand, show that the mean distance of initial commitments and global-optimum commitments as well as the mean distance between global-optimum commitments depend on <span class="math inline">\(\alpha_F\)</span>. The smaller <span class="math inline">\(\alpha_F\)</span>, the larger the distance. This result is not suprising. The weight <span class="math inline">\(\alpha_F\)</span> determines the extent to what final commitments should resemble initial commitments. You can think of <span class="math inline">\(\alpha_F\)</span> as the magnitude of an attractive force that pulls the commitments of the epistemic state to the initial commitments. Accordingly, if <span class="math inline">\(\alpha_F\)</span> gets smaller, global optima and fixed points will be distributed more widerspread in the space of epistemic states.</p>
 </section>
-<section id="branching" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="branching"><span class="header-section-number">2.3</span> Branching</h2>
+<section id="sec-general-branching" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="sec-general-branching"><span class="header-section-number">2.3</span> Branching</h2>
 <p>The choice of a new theory (or a new set of commitments respectively) is underdetermined if there are different candidate theories (or commitment sets) that maximize the achievement of the accordingly adjusted epistemic state. In such a case, the model randomly chooses the new epistemic state. The model we use is able to track all these different branches to assess the degree of this type of underdetermination and to determine all possible fixed points for each configuration setup.</p>
-<div id="fig-mean-branches" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/mean-branches.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.11: Mean number of branches for different models and sentence pools.</figcaption>
+<div id="fig-mean-branches" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mean-branches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/mean-branches.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mean-branches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.11: Mean number of branches for different models and sentence pools.
+</figcaption>
 </figure>
 </div>
-<p><a href="#fig-mean-branches">Figure&nbsp;<span>2.11</span></a> shows the mean number of branches with their dependence on the model and sentence pool. It suggests that branching is more prevalent in locally optimizing models. The large variance can be partly explained by the heat maps in <a href="#fig-hm-mean-branches">Figure&nbsp;<span>2.12</span></a>, which depict mean values (and standard deviations) for different weight combinations.</p>
-<p>For <code>LinearGlobalRE</code> there are, again, islands with many branches (the cells <span class="math inline">\((0.4,0.3)\)</span>, <span class="math inline">\((0.6,0.2)\)</span> and <span class="math inline">\((0.8,0.1)\)</span>) which are characterised by <span class="math inline">\(\alpha_F = \alpha_A\)</span>. The high number of branches correlates with a high number of fixed points (compare <a href="#fig-hm-mean-n-fixed-points">Figure&nbsp;<span>2.13</span></a>) and a high number of global optima within these cells (compare <a href="#fig-hm-mean-n-global-optima">Figure&nbsp;<span>2.6</span></a>). We might, therefore, hypothesize that the model produces a high number of branches in these cells due to the high number of global optima.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<div id="fig-hm-mean-branches" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/hm-mean-branches.png" class="img-fluid figure-img" style="width:88.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.12: Mean number of branches for different models and weights.</figcaption>
+<p><a href="#fig-mean-branches" class="quarto-xref">Figure&nbsp;<span>2.11</span></a> shows the mean number of branches with their dependence on the model and sentence pool. It suggests that branching is more prevalent in locally optimizing models. The large variance can be partly explained by the heat maps in <a href="#fig-hm-mean-branches" class="quarto-xref">Figure&nbsp;<span>2.12</span></a>, which depict mean values (and standard deviations) for different weight combinations.</p>
+<p>For <code>LinearGlobalRE</code> there are, again, islands with many branches (the cells <span class="math inline">\((0.4,0.3)\)</span>, <span class="math inline">\((0.6,0.2)\)</span> and <span class="math inline">\((0.8,0.1)\)</span>) which are characterised by <span class="math inline">\(\alpha_F = \alpha_A\)</span>. The high number of branches correlates with a high number of fixed points (compare <a href="#fig-hm-mean-n-fixed-points" class="quarto-xref">Figure&nbsp;<span>2.13</span></a>) and a high number of global optima within these cells (compare <a href="#fig-hm-mean-n-global-optima" class="quarto-xref">Figure&nbsp;<span>2.6</span></a>). We might, therefore, hypothesize that the model produces a high number of branches in these cells due to the high number of global optima.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<div id="fig-hm-mean-branches" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hm-mean-branches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/hm-mean-branches.png" class="img-fluid figure-img" style="width:88.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hm-mean-branches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.12: Mean number of branches for different models and weights.
+</figcaption>
 </figure>
 </div>
-<p>Interestingly, the identified hotspots of branches (and fixed points) for the <code>LinearGlobalRE</code> model are not reproduced by its locally optimizing cousin. This suggests that the <code>LinearLocalRE</code> model will perform worse than the <code>LinearGlobalRE</code> model to reach the increased amount of global optima.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<p>The “<span class="math inline">\(\alpha_F=\alpha_A\)</span>”-line is, however, also relevant for the <code>LinearLocalRE</code> model. Above that line, branching is comparably low (roughly <span class="math inline">\(1-3\)</span>) and below that line comparably high (with a high variance). The high number of branches does, however, not correlate with a high number of fixed points (see <a href="#fig-hm-mean-n-fixed-points">Figure&nbsp;<span>2.13</span></a>). In other words, a lot of these branches end up in the same fixed point. This behaviour is to some extent even observable in the <code>QuadraticLocalRE</code> model.</p>
-<div id="fig-hm-mean-n-fixed-points" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/hm-mean-n-fixed-points.png" class="img-fluid figure-img" style="width:88.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.13: Mean number of fixed points for different models and weights.</figcaption>
+<p>Interestingly, the identified hotspots of branches (and fixed points) for the <code>LinearGlobalRE</code> model are not reproduced by its locally optimizing cousin. This suggests that the <code>LinearLocalRE</code> model will perform worse than the <code>LinearGlobalRE</code> model to reach the increased amount of global optima.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<p>The “<span class="math inline">\(\alpha_F=\alpha_A\)</span>”-line is, however, also relevant for the <code>LinearLocalRE</code> model. Above that line, branching is comparably low (roughly <span class="math inline">\(1-3\)</span>) and below that line comparably high (with a high variance). The high number of branches does, however, not correlate with a high number of fixed points (see <a href="#fig-hm-mean-n-fixed-points" class="quarto-xref">Figure&nbsp;<span>2.13</span></a>). In other words, a lot of these branches end up in the same fixed point. This behaviour is to some extent even observable in the <code>QuadraticLocalRE</code> model.</p>
+<div id="fig-hm-mean-n-fixed-points" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hm-mean-n-fixed-points-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/hm-mean-n-fixed-points.png" class="img-fluid figure-img" style="width:88.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hm-mean-n-fixed-points-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.13: Mean number of fixed points for different models and weights.
+</figcaption>
 </figure>
 </div>
-<!-- 
-Relevant documents:
-
-+ <https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-template.ipynb>
-+ <https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-07.ipynb>
-
-Remarks/Todos:
-
-+ What do we want to add here from <https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-07.ipynb>
--->
-<!-- 
-Principles
-
-Relevant documents: <https://github.com/debatelab/re-studies/blob/master/projects/ensemble_study_02/ensemble-study-02-dataexploration-06.ipynb>
-
--->
-<!--
-## Principles
-
-**Background**
-
-The new generation of random arguments allows to ensure that the dialectical structures includes principles, i.e. sentences that only occur as premises in arguments. Consequently, principles have potential to account for other sentences (maybe together wit auxiliary premises).  The question is whether fixed points or global optima tend to include principles in their theories.
-
-**Method**
-
-*Definition*: A sentence is a principle of multiplicity $n$ in a dialectical structure iff (i) it occurs in exactly $n$ arguments as a premise and (ii) it or its negation does not occur as a conclusion in any argument. 
-
-We generated ensemble 06 with at least two principles per dialectical structure (150 structures). Upon initialization, the principles and their multiplicity are saved as a list of tuples of the form (principle, multiplicity) in the dataframe.  The study only included principles with multiplicity $`\geq`$ 2 and addressed the following questions:
-- Comparison with a chance model for the expected number of principles occurring in if theories were selected randomly.
-- Are principles in initial commitments preserved/transferred to fixed point theories?
-
-**Results**
-
-*Observations*
-- the number of principles with multiplicity $\geq 2$ is normally distributed around 2.
-
-*Chance model*
-- in most cases the mean number of principles in fixed point theories is higher than the expected number by chance
-
-*Preservation of principles*
-- in most of processes the amount of principles does not change from initial commitments to fixed point theory.
-- QDS performs better with respect to the mean difference of principles in initial commitments and theory (QDS: 0.0) than the other variants (QPS, LDS, LPS: -0.18)
-- the difference of principles in intial commitments and theory depends on the number of principles in the initial commitments. Only for initial commitments without principles the difference is positive. Again, QDS performs best.
-
-**Conclusion**
-
-The results are interesting but not decisive or well understood for the consolidation of the model.There are many open questions concerning the current implementation of principles:
-
-- Is the definition of principles reasonble in view of alternatives?
-- Is it possible to define other important and related concepts syntactically (e.g. additional or background assumptions, evidence etc.)?
-- Is the chance model too benevolent?
-- Should we consider only those principles, which are not elements of the initial commitments?
-- Should the chance model consider the distribution of principles in the set of all consistent and complete positions?
-
-In contrast to later ensembles, ensemble 06 does not completely track all fixed points and global optima for a configuration. It may be interesting to explore principles in a newly generated ensemble, which allows to study all fixed points as well as global optima.
--->
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-beisbart_making_2021" class="csl-entry" role="listitem">
 Beisbart, Claus, Gregor Betz, and Georg Brun. 2021. <span>“Making <span>Reflective Equlibrium Precise</span>: <span>A Formal Model</span>.”</span> <em>Ergo</em> 8 (0). <a href="https://doi.org/10.3998/ergo.1152">https://doi.org/10.3998/ergo.1152</a>.
 </div>
@@ -412,10 +503,12 @@ Beisbart, Claus, Gregor Betz, and Georg Brun. 2021. <span>“Making <span>Reflec
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>The mean distance is, for some cases, slightly greater than <span class="math inline">\(1\)</span>, which can be simply explained: The definition of the <span class="math inline">\(1\)</span>-neighbourhood is based on another Hamming distance than the one used here. In particular, there are sentence sets in the <span class="math inline">\(1\)</span>-neighbourhood of a sentence set whose simple Hamming distance is greater than <span class="math inline">\(1\)</span>. For instance, the set <span class="math inline">\(\mathcal{C}_1=\{s_1, \neg s_2\}\)</span> is in the <span class="math inline">\(1\)</span>-neighbourhood of the sentence set <span class="math inline">\(\mathcal{C}_2=\{s_1,s_2\}\)</span> since it only needs an attitude change towards one sentence (i.e., an attitude change towards <span class="math inline">\(s_2\)</span> from rejection to acceptance). However, the simple Hamming distance is <span class="math inline">\(2\)</span> since both <span class="math inline">\(s_2\)</span> and <span class="math inline">\(\neg s_2\)</span> are not shared by <span class="math inline">\(\mathcal{C}_1\)</span> and <span class="math inline">\(\mathcal{C}_2\)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>In our data set, the analysis results might differ between semi-globally and locally optimizing models, which is, however, an artifact of the difference in erroneous model runs (i.e., mode runs that could not properly end (see XXX)). For the subsequent analysis of global optima, we rely on the model results of <code>QuadraticGlobalRE</code> and <code>LinearGlobalRE</code> since it had fewer erroneous model runs.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>In <a href="chapter_go-and-fp.html"><span>Chapter&nbsp;3</span></a>, we will analyze to what extent the model is able to reach these global optima. The numbers (<span class="math inline">\(7/8/8\)</span> branches and fixed points and <span class="math inline">\(11/32/25\)</span> global optima) suggest that the number of fixed point are nevertheless not enough to reach all these global optima (see, e.g., <a href="chapter_go-and-fp.html#fig-hm-rel-fpgo-fp-rp">Figure&nbsp;<span>3.6</span></a> and <a href="chapter_go-and-fp.html#fig-hm-rel-fpgo-go">Figure&nbsp;<span>3.14</span></a> in <a href="chapter_go-and-fp.html"><span>Chapter&nbsp;3</span></a>).<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>A hypothesis we will scrutinize in <a href="chapter_go-and-fp.html"><span>Chapter&nbsp;3</span></a> (see, e.g., <a href="chapter_go-and-fp.html#fig-hm-rel-fpgo-fp-rp">Figure&nbsp;<span>3.6</span></a> and <a href="chapter_go-and-fp.html#fig-hm-rel-fpgo-go">Figure&nbsp;<span>3.14</span></a>).<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Note/link about Andreas’ modelling of Tanja’s reconstruction.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>The mean distance is, for some cases, slightly greater than <span class="math inline">\(1\)</span>, which can be simply explained: The definition of the <span class="math inline">\(1\)</span>-neighbourhood is based on another Hamming distance than the one used here. In particular, there are sentence sets in the <span class="math inline">\(1\)</span>-neighbourhood of a sentence set whose simple Hamming distance is greater than <span class="math inline">\(1\)</span>. For instance, the set <span class="math inline">\(\mathcal{C}_1=\{s_1, \neg s_2\}\)</span> is in the <span class="math inline">\(1\)</span>-neighbourhood of the sentence set <span class="math inline">\(\mathcal{C}_2=\{s_1,s_2\}\)</span> since it only needs an attitude change towards one sentence (i.e., an attitude change towards <span class="math inline">\(s_2\)</span> from rejection to acceptance). However, the simple Hamming distance is <span class="math inline">\(2\)</span> since both <span class="math inline">\(s_2\)</span> and <span class="math inline">\(\neg s_2\)</span> are not shared by <span class="math inline">\(\mathcal{C}_1\)</span> and <span class="math inline">\(\mathcal{C}_2\)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>In our data set, the analysis results might differ between semi-globally and locally optimizing models, which is, however, an artifact of the difference in interrupted model runs (i.e., model runs that could not properly end (see <a href="intro.html#sec-intro-ensemble-description" class="quarto-xref"><span>Section 1.4</span></a>)). For the subsequent analysis of global optima, we rely on the model results of <code>QuadraticGlobalRE</code> and <code>LinearGlobalRE</code> since they had fewer interrupted model runs.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Note that global optima a process-independent. Hence, semi-globally and locally optimizing models do not differ with respect to their global optima.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>In <a href="chapter_go-and-fp.html" class="quarto-xref"><span>Chapter 3</span></a>, we will analyze to what extent the model is able to reach these global optima. The numbers (<span class="math inline">\(7/8/8\)</span> branches and fixed points and <span class="math inline">\(11/32/25\)</span> global optima) suggest that the number of fixed points are nevertheless not enough to reach all these global optima (see, e.g., <a href="chapter_go-and-fp.html#fig-hm-rel-fpgo-fp-rp" class="quarto-xref">Figure&nbsp;<span>3.6</span></a> and <a href="chapter_go-and-fp.html#fig-hm-rel-fpgo-go" class="quarto-xref">Figure&nbsp;<span>3.14</span></a> in <a href="chapter_go-and-fp.html" class="quarto-xref"><span>Chapter 3</span></a>).<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>A hypothesis we will scrutinize in <a href="chapter_go-and-fp.html" class="quarto-xref"><span>Chapter 3</span></a> (see, e.g., <a href="chapter_go-and-fp.html#fig-hm-rel-fpgo-fp-rp" class="quarto-xref">Figure&nbsp;<span>3.6</span></a> and <a href="chapter_go-and-fp.html#fig-hm-rel-fpgo-go" class="quarto-xref">Figure&nbsp;<span>3.14</span></a>).<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -499,10 +592,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -512,8 +604,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -526,6 +627,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -569,6 +789,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -594,6 +815,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -655,17 +902,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link">
+      <a href="./intro.html" class="pagination-link  aria-label=" &lt;span="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter_go-and-fp.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Global optima and fixed points</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter_go-and-fp.html" class="pagination-link" aria-label="<span class='chapter-number'>3</span>&nbsp; <span class='chapter-title'>Global Optima and Fixed Points</span>">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Global Optima and Fixed Points</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

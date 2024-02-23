@@ -2,12 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Based on Beisbart, Betz, and Brun (2021), this report assesses different models of reflective equilibrium (RE) by numerical investigation.">
 
-<title>Assessing a Formal Model of Reflective Equilibrium - 6&nbsp; Extreme values for account and faitfulness</title>
+<title>Assessing a Formal Model of Reflective Equilibrium - 6&nbsp; Extreme values for account, systematicity, and faithfulness</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./summary.html" rel="next">
 <link href="./chapter_commitment-consistency.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -47,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -65,6 +73,45 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta name="citation_title" content="[[6]{.chapter-number}&nbsp; [Extreme values for account, systematicity, and faithfulness]{.chapter-title}]{#sec-extreme-values .quarto-section-identifier}">
+<meta name="citation_fulltext_html_url" content="https://re-models.github.io/re-technical-report/">
+<meta name="citation_doi" content="10.5555/12345678">
+<meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Making Reflective Equlibrium Precise: A Formal Model;,citation_abstract=&amp;amp;amp;lt;p&amp;gt;Reflective equilibrium (RE) is often regarded as a powerful method in ethics, logic, and even philosophy in general. Despite this popularity, characterizations of the method have been fairly vague and unspecific so far. It thus may be doubted whether RE is more than a jumble of appealing but ultimately sketchy ideas that cannot be spelled out consistently. In this paper, we dispel such doubts by devising a formal model of RE. The model contains as components the agent’s commitments and a theory that tries to systematize the commitments. It yields a precise picture of how the commitments and the theory are adjusted to each other. The model differentiates between equilibrium as a target state and the dynamic equilibration process. First solutions to the model, obtained by computer simulation, show that the method allows for consistent specification and that the model’s implications are plausible in view of expectations on RE. In particular, the mutual adjustment of commitments and theory can improve one’s commitments, as proponents of RE have suggested. We argue that our model is fruitful not only because it points to issues that need to be dealt with for a better understanding of RE, but also because it provides the means to address these issues.&amp;lt;/p&amp;gt;;,citation_author=Claus Beisbart;,citation_author=Gregor Betz;,citation_author=Georg Brun;,citation_publication_date=2021-12;,citation_cover_date=2021-12;,citation_year=2021;,citation_issue=0;,citation_doi=10.3998/ergo.1152;,citation_issn=2330-4014;,citation_volume=8;,citation_language=en-US;,citation_journal_title=Ergo;,citation_publisher=Michigan Publishing Services;">
+<meta name="citation_reference" content="citation_title=Debate Dynamics: How Controversy Improves Our Beliefs;,citation_abstract=Is critical argumentation an effective way to overcome disagreement? And does the exchange of arguments bring opponents in a controversy closer to the truth? This study provides a new perspective on these pivotal questions. By means of multi-agent simulations, it investigates the truth and consensus-conduciveness of controversial debates. The book brings together research in formal epistemology and argumentation theory. Aside from its consequences for discursive practice, the work may have important implications for philosophy of science and the way we construe scientific rationality as well.;,citation_author=Gregor Betz;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_isbn=978-94-007-4598-8;,citation_language=en-US;,citation_series_title=Synthese Library;">
+<meta name="citation_reference" content="citation_title=Theorie dialektischer Strukturen;,citation_author=Gregor Betz;,citation_publication_date=2010;,citation_cover_date=2010;,citation_year=2010;,citation_isbn=978-3-465-03629-6 3-465-03629-8;,citation_language=de-DE;">
+<meta name="citation_reference" content="citation_title=Does reflective equilibrium help us converge?;,citation_author=Andreas Freivogel;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=6;,citation_doi=10.1007/s11229-023-04375-0;,citation_volume=202;,citation_journal_title=Synthese;,citation_publisher=Springer Verlag;">
+<meta name="citation_reference" content="citation_title=Debate Dynamics: How Controversy Improves Our Beliefs;,citation_abstract=Is critical argumentation an effective way to overcome disagreement? And does the exchange of arguments bring opponents in a controversy closer to the truth? This study provides a new perspective on these pivotal questions. By means of multi-agent simulations, it investigates the truth and consensus-conduciveness of controversial debates. The book brings together research in formal epistemology and argumentation theory. Aside from its consequences for discursive practice, the work may have important implications for philosophy of science and the way we construe scientific rationality as well.;,citation_author=Gregor Betz;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_isbn=978-94-007-4598-8;,citation_language=en-US;,citation_series_title=Synthese Library;">
+<meta name="citation_reference" content="citation_title=Virtuously circular. Theoretical virtues in reflective equilibrium;,citation_author=Andreas Freivogel;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_dissertation_institution=University of Bern;">
+<meta name="citation_reference" content="citation_title=Turning the Trolley with Reflective Equilibrium;,citation_author=Tanja Rechnitzer;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=4;,citation_doi=10.1007/s11229-022-03762-3;,citation_volume=200;,citation_journal_title=Synthese;,citation_publisher=Springer Verlag;">
+<meta name="citation_reference" content="citation_title=Turning the trolley;,citation_author=Judith Jarvis Thomson;,citation_publication_date=2008;,citation_cover_date=2008;,citation_year=2008;,citation_issue=4;,citation_doi=10.1111/j.1088-4963.2008.00144.x;,citation_volume=36;,citation_journal_title=Philosophy and Public Affairs;,citation_publisher=Blackwell;">
 </head>
 
 <body class="nav-sidebar floating">
@@ -73,12 +120,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter_extreme-values.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Extreme values for account and faitfulness</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter_extreme-values.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Extreme values for account, systematicity, and faithfulness</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -88,10 +135,31 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Assessing a Formal Model of Reflective Equilibrium</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/re-models/re-technical-report" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Assessing-a-Formal-Model-of-Reflective-Equilibrium.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -116,19 +184,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter_general-props.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">General ensemble properties</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">General Ensemble Properties</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter_go-and-fp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Global optima and fixed points</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Global Optima and Fixed Points</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter_full-re-states.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Full RE states</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Full RE States</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -140,7 +208,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter_extreme-values.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Extreme values for account and faitfulness</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Extreme values for account, systematicity, and faithfulness</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -164,35 +238,52 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">The Tipping Line of Linear Model Variants</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_trivial_endpoints.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Trivial Endpoints</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_systematicity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Alternative systematicity measures</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="header-section-number">6.1</span> Background</a></li>
-  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method"><span class="header-section-number">6.2</span> Method</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">6.3</span> Results</a>
+  <li><a href="#sec-extreme-values-background" id="toc-sec-extreme-values-background" class="nav-link active" data-scroll-target="#sec-extreme-values-background"><span class="header-section-number">6.1</span> Background</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">6.2</span> Results</a>
   <ul>
-  <li><a href="#overall" id="toc-overall" class="nav-link" data-scroll-target="#overall"><span class="header-section-number">6.3.1</span> Overall</a>
+  <li><a href="#overall" id="toc-overall" class="nav-link" data-scroll-target="#overall"><span class="header-section-number">6.2.1</span> Overall</a>
   <ul class="collapse">
-  <li><a href="#minimal-values" id="toc-minimal-values" class="nav-link" data-scroll-target="#minimal-values"><span class="header-section-number">6.3.1.1</span> Minimal values</a></li>
-  <li><a href="#maximal-values" id="toc-maximal-values" class="nav-link" data-scroll-target="#maximal-values"><span class="header-section-number">6.3.1.2</span> Maximal values</a></li>
+  <li><a href="#minimal-values" id="toc-minimal-values" class="nav-link" data-scroll-target="#minimal-values"><span class="header-section-number">6.2.1.1</span> Minimal values</a></li>
+  <li><a href="#maximal-values" id="toc-maximal-values" class="nav-link" data-scroll-target="#maximal-values"><span class="header-section-number">6.2.1.2</span> Maximal values</a></li>
   </ul></li>
-  <li><a href="#grouped-by-configuration-of-weights" id="toc-grouped-by-configuration-of-weights" class="nav-link" data-scroll-target="#grouped-by-configuration-of-weights"><span class="header-section-number">6.3.2</span> Grouped by configuration of weights</a>
+  <li><a href="#grouped-by-sentence-pool-size" id="toc-grouped-by-sentence-pool-size" class="nav-link" data-scroll-target="#grouped-by-sentence-pool-size"><span class="header-section-number">6.2.2</span> Grouped by sentence pool size</a>
   <ul class="collapse">
-  <li><a href="#account" id="toc-account" class="nav-link" data-scroll-target="#account"><span class="header-section-number">6.3.2.1</span> Account</a></li>
-  <li><a href="#systematicity" id="toc-systematicity" class="nav-link" data-scroll-target="#systematicity"><span class="header-section-number">6.3.2.2</span> Systematicity</a></li>
-  <li><a href="#faithfulness" id="toc-faithfulness" class="nav-link" data-scroll-target="#faithfulness"><span class="header-section-number">6.3.2.3</span> Faithfulness</a></li>
+  <li><a href="#account" id="toc-account" class="nav-link" data-scroll-target="#account"><span class="header-section-number">6.2.2.1</span> Account</a></li>
+  <li><a href="#systematicity" id="toc-systematicity" class="nav-link" data-scroll-target="#systematicity"><span class="header-section-number">6.2.2.2</span> Systematicity</a></li>
+  <li><a href="#faithfulness" id="toc-faithfulness" class="nav-link" data-scroll-target="#faithfulness"><span class="header-section-number">6.2.2.3</span> Faithfulness</a></li>
+  </ul></li>
+  <li><a href="#grouped-by-configuration-of-weights" id="toc-grouped-by-configuration-of-weights" class="nav-link" data-scroll-target="#grouped-by-configuration-of-weights"><span class="header-section-number">6.2.3</span> Grouped by configuration of weights</a>
+  <ul class="collapse">
+  <li><a href="#account-1" id="toc-account-1" class="nav-link" data-scroll-target="#account-1"><span class="header-section-number">6.2.3.1</span> Account</a></li>
+  <li><a href="#systematicity-1" id="toc-systematicity-1" class="nav-link" data-scroll-target="#systematicity-1"><span class="header-section-number">6.2.3.2</span> Systematicity</a></li>
+  <li><a href="#faithfulness-1" id="toc-faithfulness-1" class="nav-link" data-scroll-target="#faithfulness-1"><span class="header-section-number">6.2.3.3</span> Faithfulness</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#conclusion-old" id="toc-conclusion-old" class="nav-link" data-scroll-target="#conclusion-old"><span class="header-section-number">6.4</span> Conclusion (old)</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">6.3</span> Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -201,7 +292,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-extreme-values" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Extreme values for account and faitfulness</span></span></h1>
+<h1 class="title"><span id="sec-extreme-values" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Extreme values for account, systematicity, and faithfulness</span></span></h1>
 </div>
 
 
@@ -214,251 +305,403 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
-<section id="background" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="background"><span class="header-section-number">6.1</span> Background</h2>
-<p>In this study we examine extreme values from measures of account and faithfulness.</p>
-<p><span class="math inline">\(A(C, T) = 1\)</span> means that the theory <span class="math inline">\(T\)</span> fully and exclusively accounts for the commitments <span class="math inline">\(C\)</span>. Full and exclusive account is a condition for full RE states. Conversely, <span class="math inline">\(A(C, T) = 0\)</span> holds if a theory completely fails to account for commitments, that is, for every sentence in the commitments the closure theory does not contain this sentence, or contradicts the theory.</p>
-<p>The measure of systematicity for a theory <span class="math inline">\(\mathcal{T}\)</span> is defined as follows: <span class="math display">\[
-S(\mathcal{T}) = G(\frac{\vert \mathcal{T}\vert -1}{\vert\overline{\mathcal{T}}\vert })
+
+<section id="sec-extreme-values-background" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="sec-extreme-values-background"><span class="header-section-number">6.1</span> Background</h2>
+<p>In this chapter, we examine the conditions under which the desiderata account (<span class="math inline">\(A\)</span>), systematicity (<span class="math inline">\(S\)</span>) and faithfulness (<span class="math inline">\(F\)</span>) yield extreme value (i.e., <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span>).</p>
+<p>Maximal account (<span class="math inline">\(A(\mathcal{C}, \mathcal{T}) = 1\)</span>) means that the theory <span class="math inline">\(\mathcal{T}\)</span> fully and exclusively accounts for the commitments <span class="math inline">\(\mathcal{C}\)</span>. Full and exclusive account is a condition for full RE states. Conversely, <span class="math inline">\(A(\mathcal{C}, \mathcal{T}) = 0\)</span> holds if a theory completely fails to account for commitments—that is, if for every sentence in the commitments, the theory’s closure does not contain this sentence.</p>
+<p>The measure of systematicity for a theory <span class="math inline">\(\mathcal{T}\)</span> is defined as follows:</p>
+<p><span class="math display">\[
+S(\mathcal{T}) = G\left(\frac{\vert \mathcal{T}\vert -1}{\vert\overline{\mathcal{T}}\vert }\right)
 \]</span></p>
-<p>Hence, <span class="math inline">\(S(\mathcal{T}) = 1\)</span> if and only if <span class="math inline">\(\vert \mathcal{T}\vert = 1\)</span>, i.e., <span class="math inline">\(\mathcal{T}\)</span> is a singleton theory, e.g., <span class="math inline">\(\mathcal{T} =\lbrace s\rbrace\)</span>. Note that it does not matter whether <span class="math inline">\(G\)</span> is linear or quadratic. Furthermore, <span class="math inline">\(S(T) = 0\)</span> if and only if <span class="math inline">\(\mathcal{T}=\emptyset\)</span> by definition.</p>
-<p><span class="math inline">\(F(C \vert C_{0}) = 1\)</span> holds if and only if the initial committments <span class="math inline">\(C_{0}\)</span> are a subset of the commitments <span class="math inline">\(C\)</span> (expansions of the initial commitments are not penalized). <span class="math inline">\(F(C \vert C_{0})\)</span> attains the minimal value of 0, if every sentence of the initial commitments <span class="math inline">\(C_{0}\)</span> is missing in or contradicted by the commitments <span class="math inline">\(C\)</span>.</p>
+<p>with <span class="math inline">\(G=1-x^2\)</span> for quadratic models and <span class="math inline">\(G=1-x\)</span> for linear models.</p>
+<p>Hence, <span class="math inline">\(S(\mathcal{T}) = 1\)</span> if and only if <span class="math inline">\(\vert \mathcal{T}\vert = 1\)</span> (i.e., if and only if <span class="math inline">\(\mathcal{T}\)</span> is a singleton theory, e.g., <span class="math inline">\(\mathcal{T} =\lbrace s\rbrace\)</span>). Note that it does not matter whether <span class="math inline">\(G\)</span> is linear or quadratic. Furthermore, we have <span class="math inline">\(S(T) = 0\)</span> if and only if <span class="math inline">\(\mathcal{T}=\emptyset\)</span> by definition.</p>
+<p><span class="math inline">\(F(\mathcal{C} \vert \mathcal{C}_{0}) = 1\)</span> holds if and only if the initial commitments <span class="math inline">\(\mathcal{C}_{0}\)</span> are a subset of the commitments <span class="math inline">\(\mathcal{C}\)</span> (expansions of the initial commitments are not penalized). <span class="math inline">\(F(\mathcal{C} \vert \mathcal{C}_{0})\)</span> attains the minimal value of <span class="math inline">\(0\)</span> if every sentence of the initial commitments <span class="math inline">\(\mathcal{C}_{0}\)</span> is missing in or contradicted by the commitments <span class="math inline">\(\mathcal{C}\)</span>.</p>
 <!-- Extreme values for systematicity are not included. $S(T) = 1$ holds if and only if $T$ is a singleton. $S(T) = 0$ is no serious option, because it is reserved for the empty theory $T=\emptyset$.-->
+<!--
+## Method
+
+During the ensemble generation, the values for account and faithfulness are calculated for every global optimum and fixed point for each simulation setup.
+The systematicity value has not been stored, but extreme values can (easily) be determined by considering the length (i.e. the number of sentences) in the theory. 
+
+
+Note that the information about the values of measures has not been stored in the dataframe for fixed points from all branches. Thus, the current study only includes results concerning unique fixed points reached from each simulation setup
+-->
 </section>
-<section id="method" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="method"><span class="header-section-number">6.2</span> Method</h2>
-<p>During the ensemble generation, the values for account and faithfulness are calculated for every global optimum and fixed point for each simulation setup. The systematicity value has not been stored, but extreme values can (easily) be determined by considering the length (i.e.&nbsp;the number of sentences) in the theory.</p>
-<!-- The finformation for branches could be retrieved from the unique fixed point information by complex work on the dataframe, however. -->
-<p>Note that the information about the values of measures has not been stored in the dataframe for fixed points from all branches. Thus, the current study only includes results concerning unique fixed points reached from each simulation setup</p>
+<section id="results" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="results"><span class="header-section-number">6.2</span> Results</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The results of this chapter can be reproduced with the Jupyter notebook located <a href="https://github.com/debatelab/re-technical-report/blob/main/notebooks/data_analysis_chapter_extreme_values.ipynb">here</a>.</p>
+</div>
+</div>
+<section id="overall" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="overall"><span class="header-section-number">6.2.1</span> Overall</h3>
+<section id="minimal-values" class="level4" data-number="6.2.1.1">
+<h4 data-number="6.2.1.1" class="anchored" data-anchor-id="minimal-values"><span class="header-section-number">6.2.1.1</span> Minimal values</h4>
+<p>There is no simulation setup that resulted in a global optimum or a fixed point with a minimal value for account, systematicity or faithfulness. Consequently, we can exclude the consideration of minimal values from the subsequent analysis.</p>
+<p>This is a desirable result, as minimal values for <span class="math inline">\(A\)</span>, <span class="math inline">\(F\)</span> and <span class="math inline">\(S\)</span> would constitute quite strange behaviour of the model variants, at least in the range of weights we considered in this study, for we omitted <span class="math inline">\(\alpha\)</span>-weight combinations with zero-valued <span class="math inline">\(\alpha\)</span> weights. Take, for instance, faithfulness: <span class="math inline">\(F(\mathcal{C}\,\vert\,\mathcal{C}_{0}) = 0\)</span> would mean that an agent completely departed from their initial commitments <span class="math inline">\(\mathcal{C}_{0}\)</span>, which could be interpreted as changing the subject matter. To the extent that faithfulness matters to some degree (i.e., <span class="math inline">\(\alpha_F\neq 0\)</span>), we expect that fixed points and global optima take faithfulness into account (in the sense of <span class="math inline">\(F(\mathcal{C}\,\vert\,\mathcal{C}_{0}) \neq 0\)</span> for fixed point commitments or global optima commitments respectively).</p>
 </section>
-<section id="results" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="results"><span class="header-section-number">6.3</span> Results</h2>
-<section id="overall" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="overall"><span class="header-section-number">6.3.1</span> Overall</h3>
-<section id="minimal-values" class="level4" data-number="6.3.1.1">
-<h4 data-number="6.3.1.1" class="anchored" data-anchor-id="minimal-values"><span class="header-section-number">6.3.1.1</span> Minimal values</h4>
-<p>There is no simulation setup which resulted in a global optimum or a fixed point that has a minimal value for the measure of account, systematicity or faithfulness. Consequently, we can exclude the consideration of minimal values from the subsequent analysis.</p>
-<p>This is a desirable result, as minimal values for would constitute quite strange behaviour of the model variants. For example, <span class="math inline">\(F(C\,\vert\,C_{0}) = 0\)</span> would mean that an agent completely departed from their initial commitments <span class="math inline">\(C_{0}\)</span>, which could amount to the undesirable outcome of changing the subject matter.</p>
-</section>
-<section id="maximal-values" class="level4" data-number="6.3.1.2">
-<h4 data-number="6.3.1.2" class="anchored" data-anchor-id="maximal-values"><span class="header-section-number">6.3.1.2</span> Maximal values</h4>
+<section id="maximal-values" class="level4" data-number="6.2.1.2">
+<h4 data-number="6.2.1.2" class="anchored" data-anchor-id="maximal-values"><span class="header-section-number">6.2.1.2</span> Maximal values</h4>
 <div class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display">
-<div id="tbl-max-values-go" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Table&nbsp;6.1: Absolute and relative numbers of global optima maximizing various desiderata measures.</caption>
+<div id="tbl-max-values-go" class="cell quarto-float anchored" data-execution_count="1">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-max-values-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display cell-output-markdown">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
-<col style="width: 5%">
+<col style="width: 3%">
+<col style="width: 14%">
 <col style="width: 12%">
-<col style="width: 14%">
-<col style="width: 13%">
 <col style="width: 7%">
+<col style="width: 16%">
 <col style="width: 14%">
 <col style="width: 16%">
-<col style="width: 16%">
+<col style="width: 14%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Model</th>
-<th style="text-align: right;">Number of global optima with maximal account</th>
-<th style="text-align: right;">Number of global optima with maximal systematicity</th>
-<th style="text-align: right;">Number of global optima with maximal faithfulness</th>
-<th style="text-align: right;">Number of global optima</th>
 <th style="text-align: right;">Relative share of global optima with maximal account</th>
+<th style="text-align: right;">Number of global optima with maximal account</th>
+<th style="text-align: right;">Number of global optima</th>
 <th style="text-align: right;">Relative share of global optima with maximal systematicity</th>
+<th style="text-align: right;">Number of global optima with maximal systematicity</th>
 <th style="text-align: right;">Relative share of global optima with maximal faithfulness</th>
+<th style="text-align: right;">Number of global optima with maximal faithfulness</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">QuadraticGlobalRE</td>
-<td style="text-align: right;">8167</td>
-<td style="text-align: right;">44715</td>
-<td style="text-align: right;">8185</td>
-<td style="text-align: right;">64141</td>
-<td style="text-align: right;">0.127</td>
-<td style="text-align: right;">0.697</td>
-<td style="text-align: right;">0.128</td>
+<td style="text-align: left;">QuadraticRE</td>
+<td style="text-align: right;">0.115</td>
+<td style="text-align: right;">82318</td>
+<td style="text-align: right;">714584</td>
+<td style="text-align: right;">0.727</td>
+<td style="text-align: right;">519496</td>
+<td style="text-align: right;">0.115</td>
+<td style="text-align: right;">82133</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">LinearGlobalRE</td>
-<td style="text-align: right;">19430</td>
-<td style="text-align: right;">51305</td>
-<td style="text-align: right;">20301</td>
-<td style="text-align: right;">59949</td>
-<td style="text-align: right;">0.324</td>
-<td style="text-align: right;">0.856</td>
-<td style="text-align: right;">0.339</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">QuadraticLocalRE</td>
-<td style="text-align: right;">8150</td>
-<td style="text-align: right;">44685</td>
-<td style="text-align: right;">8183</td>
-<td style="text-align: right;">64071</td>
-<td style="text-align: right;">0.127</td>
-<td style="text-align: right;">0.697</td>
-<td style="text-align: right;">0.128</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">LinearLocalRE</td>
-<td style="text-align: right;">19163</td>
-<td style="text-align: right;">51077</td>
-<td style="text-align: right;">20297</td>
-<td style="text-align: right;">59682</td>
-<td style="text-align: right;">0.321</td>
-<td style="text-align: right;">0.856</td>
-<td style="text-align: right;">0.34</td>
+<td style="text-align: left;">LinearRE</td>
+<td style="text-align: right;">0.275</td>
+<td style="text-align: right;">192559</td>
+<td style="text-align: right;">700830</td>
+<td style="text-align: right;">0.875</td>
+<td style="text-align: right;">613282</td>
+<td style="text-align: right;">0.288</td>
+<td style="text-align: right;">201631</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-max-values-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.1: Absolute and relative numbers of global optima maximizing various desiderata measures.
+</figcaption>
+</figure>
 </div>
-<div id="fig-overall-nax-values-go" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/overall_max_values_go_setups.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.1: Relative shares of global optima maximizing the desiderata measures for account, systematicity and faithfulness</figcaption>
+</div>
+<div id="fig-overall-nmax-values-go" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-overall-nmax-values-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/overall_max_values_go_rp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-overall-nmax-values-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.1: Relative shares of global optima maximizing the desiderata measures for account, systematicity and faithfulness
+</figcaption>
 </figure>
 </div>
 <div class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display">
-<div id="tbl-max-values-fp" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Table&nbsp;6.2: Absolute and relative numbers of fixed points maximizing various desiderata measures.</caption>
+<div id="tbl-max-values-fp" class="cell quarto-float anchored" data-execution_count="2">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-max-values-fp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display cell-output-markdown">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 5%">
+<col style="width: 14%">
 <col style="width: 12%">
-<col style="width: 14%">
-<col style="width: 13%">
 <col style="width: 6%">
+<col style="width: 16%">
 <col style="width: 14%">
 <col style="width: 16%">
-<col style="width: 16%">
+<col style="width: 13%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Model</th>
-<th style="text-align: right;">Number of fixed points with maximal account</th>
-<th style="text-align: right;">Number of fixed points with maximal systematicity</th>
-<th style="text-align: right;">Number of fixed points with maximal faithfulness</th>
-<th style="text-align: right;">Number of fixed points</th>
 <th style="text-align: right;">Relative share of fixed points with maximal account</th>
+<th style="text-align: right;">Number of fixed points with maximal account</th>
+<th style="text-align: right;">Number of fixed points</th>
 <th style="text-align: right;">Relative share of fixed points with maximal systematicity</th>
+<th style="text-align: right;">Number of fixed points with maximal systematicity</th>
 <th style="text-align: right;">Relative share of fixed points with maximal faithfulness</th>
+<th style="text-align: right;">Number of fixed points with maximal faithfulness</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">QuadraticGlobalRE</td>
-<td style="text-align: right;">7482</td>
-<td style="text-align: right;">22990</td>
-<td style="text-align: right;">9244</td>
-<td style="text-align: right;">41725</td>
-<td style="text-align: right;">0.179</td>
-<td style="text-align: right;">0.551</td>
-<td style="text-align: right;">0.222</td>
+<td style="text-align: right;">0.166</td>
+<td style="text-align: right;">75903</td>
+<td style="text-align: right;">458147</td>
+<td style="text-align: right;">0.582</td>
+<td style="text-align: right;">266761</td>
+<td style="text-align: right;">0.199</td>
+<td style="text-align: right;">91150</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">LinearGlobalRE</td>
-<td style="text-align: right;">11893</td>
-<td style="text-align: right;">23756</td>
-<td style="text-align: right;">17311</td>
-<td style="text-align: right;">32210</td>
-<td style="text-align: right;">0.369</td>
-<td style="text-align: right;">0.738</td>
-<td style="text-align: right;">0.537</td>
+<td style="text-align: right;">0.382</td>
+<td style="text-align: right;">119569</td>
+<td style="text-align: right;">312783</td>
+<td style="text-align: right;">0.724</td>
+<td style="text-align: right;">226486</td>
+<td style="text-align: right;">0.573</td>
+<td style="text-align: right;">179208</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">QuadraticLocalRE</td>
-<td style="text-align: right;">8353</td>
-<td style="text-align: right;">25863</td>
-<td style="text-align: right;">5100</td>
-<td style="text-align: right;">55643</td>
-<td style="text-align: right;">0.15</td>
-<td style="text-align: right;">0.465</td>
-<td style="text-align: right;">0.092</td>
+<td style="text-align: right;">0.138</td>
+<td style="text-align: right;">81396</td>
+<td style="text-align: right;">588236</td>
+<td style="text-align: right;">0.495</td>
+<td style="text-align: right;">291113</td>
+<td style="text-align: right;">0.083</td>
+<td style="text-align: right;">49095</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">LinearLocalRE</td>
-<td style="text-align: right;">14661</td>
-<td style="text-align: right;">11364</td>
-<td style="text-align: right;">8136</td>
-<td style="text-align: right;">22907</td>
-<td style="text-align: right;">0.64</td>
-<td style="text-align: right;">0.496</td>
-<td style="text-align: right;">0.355</td>
+<td style="text-align: right;">0.639</td>
+<td style="text-align: right;">145846</td>
+<td style="text-align: right;">228122</td>
+<td style="text-align: right;">0.503</td>
+<td style="text-align: right;">114636</td>
+<td style="text-align: right;">0.357</td>
+<td style="text-align: right;">81451</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-max-values-fp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.2: Absolute and relative numbers of fixed points (resutlt perspective) maximizing various desiderata measures.
+</figcaption>
+</figure>
 </div>
-<div id="fig-overall-nax-values-fp" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/overall_max_values_fp_setups.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.2: Relative shares of unique fixed points maximizing the desiderata measures for account, systematicity and faithfulness</figcaption>
+</div>
+<div id="fig-overall-max-values-fp" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-overall-max-values-fp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/overall_max_values_fp_rp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-overall-max-values-fp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.2: Relative shares of unique fixed points (result perspective) maximizing the desiderata measures for account, systematicity and faithfulness
+</figcaption>
+</figure>
+</div>
+<p><strong>Observations</strong></p>
+<ul>
+<li>Outputs of linear model variants maximize the measures more often than the outcomes of quadratic models.</li>
+<li>Outputs of all model variants maximize the measure of systematicity more often than the measures for account or faithfulness, excepting fixed points from <code>LinearLocalRE</code> (<a href="#fig-overall-max-values-fp" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>).
+<ul>
+<li>It may be easier to maximize <span class="math inline">\(S\)</span> due to the fact that the measure does discriminate singleton theories on the basis of their scope (<span class="math inline">\(\vert\bar{\mathcal{T}}\vert\)</span>). Thus, there may be many cases in which at least somewhat attractive singleton theories significantly shape the subsequent process of adjustments or the outcome of global optimization.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="grouped-by-sentence-pool-size" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="grouped-by-sentence-pool-size"><span class="header-section-number">6.2.2</span> Grouped by sentence pool size</h3>
+<section id="account" class="level4" data-number="6.2.2.1">
+<h4 data-number="6.2.2.1" class="anchored" data-anchor-id="account"><span class="header-section-number">6.2.2.1</span> Account</h4>
+<div id="fig-max-account-go-sp-rp" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-max-account-go-sp-rp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/rel_max_go_account_by_sp_rp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-max-account-go-sp-rp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.3: Relative share of global optima maximizing the measure for account grouped by model variant and sentence pool size.
+</figcaption>
+</figure>
+</div>
+<div id="fig-max-account-fp-sp-rp" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-max-account-fp-sp-rp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/rel_max_fp_account_by_sp_rp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-max-account-fp-sp-rp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.4: Relative share of fixed points (result perspective) maximizing the measure for account grouped by model variant and sentence pool size.
+</figcaption>
 </figure>
 </div>
 </section>
-</section>
-<section id="grouped-by-configuration-of-weights" class="level3" data-number="6.3.2">
-<h3 data-number="6.3.2" class="anchored" data-anchor-id="grouped-by-configuration-of-weights"><span class="header-section-number">6.3.2</span> Grouped by configuration of weights</h3>
-<section id="account" class="level4" data-number="6.3.2.1">
-<h4 data-number="6.3.2.1" class="anchored" data-anchor-id="account"><span class="header-section-number">6.3.2.1</span> Account</h4>
-<div id="fig-hm-max-account-go" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/rel_go_max_account_setups.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.3: Relative share of global optima maximizing the measure for account grouped by model variant and configuration of weights.</figcaption>
+<section id="systematicity" class="level4" data-number="6.2.2.2">
+<h4 data-number="6.2.2.2" class="anchored" data-anchor-id="systematicity"><span class="header-section-number">6.2.2.2</span> Systematicity</h4>
+<div id="fig-max-systematicity-go-sp-rp" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-max-systematicity-go-sp-rp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/rel_max_go_systematicity_by_sp_rp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-max-systematicity-go-sp-rp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.5: Relative share of global optima maximizing the measure for systematicity grouped by model variant and sentence pool size.
+</figcaption>
 </figure>
 </div>
-<div id="fig-hm-max-account-fp" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/rel_fp_max_account_setups.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.4: Relative share of fixed points maximizing the measure for account grouped by model variant and configuration of weights.</figcaption>
-</figure>
+<div id="fig-max-systematicity-fp-sp-rp" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-max-systematicity-fp-sp-rp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/rel_max_fp_systematicity_by_sp_rp.png" class="img-fluid figure-img">
 </div>
-</section>
-<section id="systematicity" class="level4" data-number="6.3.2.2">
-<h4 data-number="6.3.2.2" class="anchored" data-anchor-id="systematicity"><span class="header-section-number">6.3.2.2</span> Systematicity</h4>
-<div id="fig-hm-max-systematicity-go" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/rel_go_max_systematicity_setups.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.5: Relative share of global optima maximizing the measure for systematicity grouped by model variant and configuration of weights.</figcaption>
-</figure>
-</div>
-<div id="fig-hm-max-systematicity-fp" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/rel_fp_max_systematicity_setups.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.6: Relative share of fixed points maximizing the measure for systematicity grouped by model variant and configuration of weights.</figcaption>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-max-systematicity-fp-sp-rp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.6: Relative share of fixed points (result perspective) maximizing the measure for systematicity grouped by model variant and sentence pool size.
+</figcaption>
 </figure>
 </div>
 </section>
-<section id="faithfulness" class="level4" data-number="6.3.2.3">
-<h4 data-number="6.3.2.3" class="anchored" data-anchor-id="faithfulness"><span class="header-section-number">6.3.2.3</span> Faithfulness</h4>
-<div id="fig-hm-max-faithfulness-go" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/rel_go_max_faithfulness_setups.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.7: Relative share of global optima maximizing the measure for faithfulness grouped by model variant and configuration of weights.</figcaption>
+<section id="faithfulness" class="level4" data-number="6.2.2.3">
+<h4 data-number="6.2.2.3" class="anchored" data-anchor-id="faithfulness"><span class="header-section-number">6.2.2.3</span> Faithfulness</h4>
+<div id="fig-max-faithfulness-go-sp-rp" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-max-faithfulness-go-sp-rp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/rel_max_go_faithfulness_by_sp_rp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-max-faithfulness-go-sp-rp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.7: Relative share of global optima maximizing the measure for faithfulness grouped by model variant and sentence pool size.
+</figcaption>
 </figure>
 </div>
-<div id="fig-hm-max-faithfulness-fp" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/rel_fp_max_faithfulness_setups.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.8: Relative share of fixed points maximizing the measure for faithfulness grouped by model variant and configuration of weights.</figcaption>
+<div id="fig-max-faithfulness-fp-sp-rp" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-max-faithfulness-fp-sp-rp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/rel_max_fp_faithfulness_by_sp_rp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-max-faithfulness-fp-sp-rp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.8: Relative share of fixed points (result perspective) maximizing the measure for faithfulness grouped by model variant and sentence pool size.
+</figcaption>
 </figure>
 </div>
+<p><strong>Observations</strong></p>
+<ul>
+<li>The global optima of both quadratic and linear model variants maximize account (<a href="#fig-max-account-go-sp-rp" class="quarto-xref">Figure&nbsp;<span>6.3</span></a>) and faithfulness (<a href="#fig-max-faithfulness-go-sp-rp" class="quarto-xref">Figure&nbsp;<span>6.7</span></a>) less frequently for larger sentence pool sizes.</li>
+<li>This tendency is less pronounced for fixed points (result perspective) in <a href="#fig-max-account-fp-sp-rp" class="quarto-xref">Figure&nbsp;<span>6.4</span></a> and <a href="#fig-max-faithfulness-fp-sp-rp" class="quarto-xref">Figure&nbsp;<span>6.8</span></a> , respectively.</li>
+<li>The relative share of fixed points (result perspective) that maximize systematcity is not affected by the sentence pool size for global model variants (<a href="#fig-max-systematicity-fp-sp-rp" class="quarto-xref">Figure&nbsp;<span>6.6</span></a>). In contrast this relative share decreases with increasing sentence pool sizes for local model variants.</li>
+</ul>
+</section>
+</section>
+<section id="grouped-by-configuration-of-weights" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="grouped-by-configuration-of-weights"><span class="header-section-number">6.2.3</span> Grouped by configuration of weights</h3>
+<section id="account-1" class="level4" data-number="6.2.3.1">
+<h4 data-number="6.2.3.1" class="anchored" data-anchor-id="account-1"><span class="header-section-number">6.2.3.1</span> Account</h4>
+<div id="fig-hm-max-account-go" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hm-max-account-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/rel_go_max_account_rp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hm-max-account-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.9: Relative share of global optima maximizing the measure for account grouped by model variant and configuration of weights.
+</figcaption>
+</figure>
+</div>
+<div id="fig-hm-max-account-fp" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hm-max-account-fp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/rel_fp_max_account_rp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hm-max-account-fp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.10: Relative share of fixed points (result perspective) maximizing the measure for account grouped by model variant and configuration of weights.
+</figcaption>
+</figure>
+</div>
+<p><strong>Observation</strong></p>
+<ul>
+<li>Linear model variants exhibit a “tipping line”. For <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span> global optima and fixed points always maximize the measure for account. For an explanation, see <a href="appendix_tipping_line.html" class="quarto-xref"><span>Appendix A</span></a>.</li>
+<li>Quadratic model variants exhibit a gradient with increasing relative shares for higher values of <span class="math inline">\(\alpha_{A}\)</span>.</li>
+</ul>
+</section>
+<section id="systematicity-1" class="level4" data-number="6.2.3.2">
+<h4 data-number="6.2.3.2" class="anchored" data-anchor-id="systematicity-1"><span class="header-section-number">6.2.3.2</span> Systematicity</h4>
+<div id="fig-hm-max-systematicity-go" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hm-max-systematicity-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/rel_go_max_systematicity_rp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hm-max-systematicity-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.11: Relative share of global optima maximizing the measure for systematicity grouped by model variant and configuration of weights.
+</figcaption>
+</figure>
+</div>
+<div id="fig-hm-max-systematicity-fp" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hm-max-systematicity-fp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/rel_fp_max_systematicity_rp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hm-max-systematicity-fp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.12: Relative share of fixed points (result perspective) maximizing the measure for systematicity grouped by model variant and configuration of weights.
+</figcaption>
+</figure>
+</div>
+<p><strong>Observations</strong></p>
+<ul>
+<li>For all model variants and outputs, we can observe a gradient of increasing relative shares of outputs with maximal systematicity for increasing values of <span class="math inline">\(\alpha_{S}\)</span>.</li>
+<li>Moreover, the relative share also increases for decreasing weights for <span class="math inline">\(\alpha_{A}\)</span>. If account does not receive much weight, the theory can be optimized with respect to systematicity more independently of the commitments, even if <span class="math inline">\(\alpha_{S}\)</span> is low.</li>
+</ul>
+</section>
+<section id="faithfulness-1" class="level4" data-number="6.2.3.3">
+<h4 data-number="6.2.3.3" class="anchored" data-anchor-id="faithfulness-1"><span class="header-section-number">6.2.3.3</span> Faithfulness</h4>
+<div id="fig-hm-max-faithfulness-go" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hm-max-faithfulness-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/rel_go_max_faithfulness_rp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hm-max-faithfulness-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.13: Relative share of global optima maximizing the measure for faithfulness grouped by model variant and configuration of weights.
+</figcaption>
+</figure>
+</div>
+<div id="fig-hm-max-faithfulness-fp" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hm-max-faithfulness-fp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/rel_fp_max_faithfulness_rp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hm-max-faithfulness-fp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.14: Relative share of fixed points (result perspective) maximizing the measure for faithfulness grouped by model variant and configuration of weights.
+</figcaption>
+</figure>
+</div>
+<p><strong>Observations</strong></p>
+<ul>
+<li>Linear model variants exhibit a “tipping line”. For <span class="math inline">\(\alpha_{F} &gt; \alpha_{A}\)</span> global optima and fixed points always maximize the measure for faithfulness. For an explanation, see <a href="appendix_tipping_line.html" class="quarto-xref"><span>Appendix A</span></a>.</li>
+<li>Quadratic model variants exhibit a gradient with increasing relative shares for higher values of <span class="math inline">\(\alpha_{F}\)</span>.</li>
+</ul>
 </section>
 </section>
 </section>
-<section id="conclusion-old" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="conclusion-old"><span class="header-section-number">6.4</span> Conclusion (old)</h2>
-<p>The frequency of minimal values for account and faithfulness in LDS is extremely small and they occur in one ensemble (07), only. Moreover, the extreme values for faithfulness and systematicity correlate with extreme, coresponding weights (<span class="math inline">\(\alpha_{F} \leq 0.2\)</span> and <span class="math inline">\(\alpha_{A}\leq 0.2\)</span>).</p>
-<p>The occurence of singleton theories in global optima and fixed points might make for an intersting exploration in the future.</p>
+<section id="conclusion" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">6.3</span> Conclusion</h2>
+<p>Many observations in this chapter are not surprising. It is to be expected that increasing the weight results in higher relatives shares of maximized measures. Nonetheless, this is a reassuring result from the viewpoint of model evaluation, indcating that configuring weights has forseeable consequences.</p>
+<p>The high relative shares of outputs maximizing the measure for systematicity may be a consequence of a shortcoming in the measure for systematicity. If <span class="math inline">\(\vert\mathcal{T}\vert = 1\)</span>, then <span class="math inline">\(S(\mathcal{T}) = 1\)</span> irrespective of <span class="math inline">\(\vert\overline{\mathcal{T}}\vert\)</span>. That is the measure for systematictiy does not discriminate between singleton theories on the basis of their scope (<span class="math inline">\(\overline{\mathcal{T}}\)</span>). This renders all singleton theories equally and maximally attractive according to the measure of systematicity. For another consequence of frequently maximizing the measure for systematicity, see <a href="appendix_trivial_endpoints.html" class="quarto-xref"><span>Appendix B</span></a>.</p>
+<p>Further exploration is required to provide full explanations for the more salient observations. For example, one could analyze the “evolution” of theories during RE processes.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Are singleton theories chosen in the first adjustment step and not altered afterwards? Or do RE processes set out with larger theories and are elements remove subsequently?</p>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>This information is already available in the data.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -541,10 +784,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -554,8 +796,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -568,6 +819,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -611,6 +981,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -636,6 +1007,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -697,17 +1094,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter_commitment-consistency.html" class="pagination-link">
+      <a href="./chapter_commitment-consistency.html" class="pagination-link  aria-label=" &lt;span="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Consistency</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./summary.html" class="pagination-link" aria-label="<span class='chapter-number'>7</span>&nbsp; <span class='chapter-title'>Summary</span>">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

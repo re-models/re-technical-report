@@ -2,12 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Based on Beisbart, Betz, and Brun (2021), this report assesses different models of reflective equilibrium (RE) by numerical investigation.">
 
-<title>Assessing a Formal Model of Reflective Equilibrium - 4&nbsp; Full RE states</title>
+<title>Assessing a Formal Model of Reflective Equilibrium - 4&nbsp; Full RE States</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -47,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -65,6 +73,45 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta name="citation_title" content="[[4]{.chapter-number}&nbsp; [Full RE States]{.chapter-title}]{#sec-full-re-states .quarto-section-identifier}">
+<meta name="citation_fulltext_html_url" content="https://re-models.github.io/re-technical-report/">
+<meta name="citation_doi" content="10.5555/12345678">
+<meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Making Reflective Equlibrium Precise: A Formal Model;,citation_abstract=&amp;amp;amp;lt;p&amp;gt;Reflective equilibrium (RE) is often regarded as a powerful method in ethics, logic, and even philosophy in general. Despite this popularity, characterizations of the method have been fairly vague and unspecific so far. It thus may be doubted whether RE is more than a jumble of appealing but ultimately sketchy ideas that cannot be spelled out consistently. In this paper, we dispel such doubts by devising a formal model of RE. The model contains as components the agent’s commitments and a theory that tries to systematize the commitments. It yields a precise picture of how the commitments and the theory are adjusted to each other. The model differentiates between equilibrium as a target state and the dynamic equilibration process. First solutions to the model, obtained by computer simulation, show that the method allows for consistent specification and that the model’s implications are plausible in view of expectations on RE. In particular, the mutual adjustment of commitments and theory can improve one’s commitments, as proponents of RE have suggested. We argue that our model is fruitful not only because it points to issues that need to be dealt with for a better understanding of RE, but also because it provides the means to address these issues.&amp;lt;/p&amp;gt;;,citation_author=Claus Beisbart;,citation_author=Gregor Betz;,citation_author=Georg Brun;,citation_publication_date=2021-12;,citation_cover_date=2021-12;,citation_year=2021;,citation_issue=0;,citation_doi=10.3998/ergo.1152;,citation_issn=2330-4014;,citation_volume=8;,citation_language=en-US;,citation_journal_title=Ergo;,citation_publisher=Michigan Publishing Services;">
+<meta name="citation_reference" content="citation_title=Debate Dynamics: How Controversy Improves Our Beliefs;,citation_abstract=Is critical argumentation an effective way to overcome disagreement? And does the exchange of arguments bring opponents in a controversy closer to the truth? This study provides a new perspective on these pivotal questions. By means of multi-agent simulations, it investigates the truth and consensus-conduciveness of controversial debates. The book brings together research in formal epistemology and argumentation theory. Aside from its consequences for discursive practice, the work may have important implications for philosophy of science and the way we construe scientific rationality as well.;,citation_author=Gregor Betz;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_isbn=978-94-007-4598-8;,citation_language=en-US;,citation_series_title=Synthese Library;">
+<meta name="citation_reference" content="citation_title=Theorie dialektischer Strukturen;,citation_author=Gregor Betz;,citation_publication_date=2010;,citation_cover_date=2010;,citation_year=2010;,citation_isbn=978-3-465-03629-6 3-465-03629-8;,citation_language=de-DE;">
+<meta name="citation_reference" content="citation_title=Does reflective equilibrium help us converge?;,citation_author=Andreas Freivogel;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=6;,citation_doi=10.1007/s11229-023-04375-0;,citation_volume=202;,citation_journal_title=Synthese;,citation_publisher=Springer Verlag;">
+<meta name="citation_reference" content="citation_title=Debate Dynamics: How Controversy Improves Our Beliefs;,citation_abstract=Is critical argumentation an effective way to overcome disagreement? And does the exchange of arguments bring opponents in a controversy closer to the truth? This study provides a new perspective on these pivotal questions. By means of multi-agent simulations, it investigates the truth and consensus-conduciveness of controversial debates. The book brings together research in formal epistemology and argumentation theory. Aside from its consequences for discursive practice, the work may have important implications for philosophy of science and the way we construe scientific rationality as well.;,citation_author=Gregor Betz;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_isbn=978-94-007-4598-8;,citation_language=en-US;,citation_series_title=Synthese Library;">
+<meta name="citation_reference" content="citation_title=Virtuously circular. Theoretical virtues in reflective equilibrium;,citation_author=Andreas Freivogel;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_dissertation_institution=University of Bern;">
+<meta name="citation_reference" content="citation_title=Turning the Trolley with Reflective Equilibrium;,citation_author=Tanja Rechnitzer;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=4;,citation_doi=10.1007/s11229-022-03762-3;,citation_volume=200;,citation_journal_title=Synthese;,citation_publisher=Springer Verlag;">
+<meta name="citation_reference" content="citation_title=Turning the trolley;,citation_author=Judith Jarvis Thomson;,citation_publication_date=2008;,citation_cover_date=2008;,citation_year=2008;,citation_issue=4;,citation_doi=10.1111/j.1088-4963.2008.00144.x;,citation_volume=36;,citation_journal_title=Philosophy and Public Affairs;,citation_publisher=Blackwell;">
 </head>
 
 <body class="nav-sidebar floating">
@@ -73,12 +120,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter_full-re-states.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Full RE states</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter_full-re-states.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Full RE States</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -88,10 +135,31 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Assessing a Formal Model of Reflective Equilibrium</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/re-models/re-technical-report" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Assessing-a-Formal-Model-of-Reflective-Equilibrium.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -116,19 +184,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter_general-props.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">General ensemble properties</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">General Ensemble Properties</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter_go-and-fp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Global optima and fixed points</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Global Optima and Fixed Points</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter_full-re-states.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Full RE states</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Full RE States</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -140,7 +208,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter_extreme-values.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Extreme values for account and faitfulness</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Extreme values for account, systematicity, and faithfulness</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -164,12 +238,24 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">The Tipping Line of Linear Model Variants</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_trivial_endpoints.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Trivial Endpoints</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_systematicity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Alternative systematicity measures</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -177,13 +263,17 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="header-section-number">4.1</span> Background</a></li>
-  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method"><span class="header-section-number">4.2</span> Method</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">4.3</span> Results</a>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">4.2</span> Results</a>
   <ul>
-  <li><a href="#overall" id="toc-overall" class="nav-link" data-scroll-target="#overall"><span class="header-section-number">4.3.1</span> Overall</a></li>
-  <li><a href="#heatmaps" id="toc-heatmaps" class="nav-link" data-scroll-target="#heatmaps"><span class="header-section-number">4.3.2</span> Heatmaps</a></li>
+  <li><a href="#overall-results" id="toc-overall-results" class="nav-link" data-scroll-target="#overall-results"><span class="header-section-number">4.2.1</span> Overall Results</a>
+  <ul class="collapse">
+  <li><a href="#global-optima" id="toc-global-optima" class="nav-link" data-scroll-target="#global-optima"><span class="header-section-number">4.2.1.1</span> Global Optima</a></li>
+  <li><a href="#fixed-points" id="toc-fixed-points" class="nav-link" data-scroll-target="#fixed-points"><span class="header-section-number">4.2.1.2</span> Fixed Points</a></li>
   </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">4.4</span> Conclusion</a></li>
+  <li><a href="#results-grouped-by-sentence-pool-size" id="toc-results-grouped-by-sentence-pool-size" class="nav-link" data-scroll-target="#results-grouped-by-sentence-pool-size"><span class="header-section-number">4.2.2</span> Results Grouped by Sentence Pool Size</a></li>
+  <li><a href="#results-grouped-by-configuration-of-weights" id="toc-results-grouped-by-configuration-of-weights" class="nav-link" data-scroll-target="#results-grouped-by-configuration-of-weights"><span class="header-section-number">4.2.3</span> Results Grouped by Configuration of Weights</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">4.3</span> Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -192,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-full-re-states" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Full RE states</span></span></h1>
+<h1 class="title"><span id="sec-full-re-states" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Full RE States</span></span></h1>
 </div>
 
 
@@ -205,238 +295,337 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <section id="background" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="background"><span class="header-section-number">4.1</span> Background</h2>
-<p>A theory-commitment-pair <span class="math inline">\((C, T)\)</span> is a <em>full RE state</em> iff</p>
-<ol type="i">
-<li>it is a global optimum according to the achievement function, and</li>
-<li>the theory <span class="math inline">\(T\)</span> fully and exlusively accounts for the commitments <span class="math inline">\(C\)</span>.</li>
+<p>RE is commonly understood as an account of justification, and the aspired outcomes of applying RE are equilibrium states, which are supposed to be justified according to RE.</p>
+<p>Consequently, it is interesting to study the formal counterparts in the model that represent, or at least approximate, equilibrium states: <em>full RE states</em>. A theory-commitment-pair <span class="math inline">\((\mathcal{C}, \mathcal{T})\)</span> is a <em>full RE state</em> if and only if they live up to very high standards, namely,</p>
+<ol type="1">
+<li>if it is a global optimum according to the achievement function and</li>
+<li>the theory <span class="math inline">\(\mathcal{T}\)</span> fully and exlusively accounts for the commitments <span class="math inline">\(\mathcal{C}\)</span>.</li>
 </ol>
+<p>The second criterion amounts to the requirement that every commitment and no other sentence of the sentence pool is derivable from the theory, given the arguments of the dialectical structure in the background.</p>
+<p>An RE model is not required to yield a full RE state in every case. However, from the viewpoint of model evaluation, it may still desirable to have a model that is at least somewhat likely to reach full RE states. This is especially relevant to the fixed points of locally optimizing model variants, which have a severely restricted set of options at every adjustment step.</p>
+<p>Still, whether the attainment of full RE states is important, will depend on the objectives pursued with a specific application of RE (or formal models thereof). If, for example, the objective is making up one’s mind, gaining understanding of a subject matter, or if we take justification to come in degrees rather than being a yes-or-no matter, less than full RE states may be completely satisfactory outcomes.</p>
+<p>Note that both fixed points and global optima can qualify as a full RE states. Hence, we present the results for global optima and fixed points separately. For the latter, we distinguish again between the result and the process perspective.</p>
+<!--
+## Method
+
+Formally and irrespecitve of the model variant, full and exclusive account means $C = \overline{T}$, or equivalenty, $A(C, T) = 1$. During the generation of an ensemble, we can store for every global optima and for every fixed point resulting from a simulation setup, whether it satisfies conditions i) and ii) of full RE states, i) being trivially satisfied by global optima. For the relative shares we can consider ratio between the number of full RE states among global optima (fixed points) and the total number of global optima (fixed points) per configuration.
+-->
 </section>
-<section id="method" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="method"><span class="header-section-number">4.2</span> Method</h2>
-<p>Formally and irrespecitve of the model variant, full and exclusive account means <span class="math inline">\(C = \overline{T}\)</span>, or equivalenty, <span class="math inline">\(A(C, T) = 1\)</span>. During the generation of an ensemble, we can store for every global optima and for every fixed point resulting from a simulation setup, whether it satisfies conditions i) and ii) of full RE states, i) being trivially satisfied by global optima. For the relative shares we can consider ratio between the number of full RE states among global optima (fixed points) and the total number of global optima (fixed points) per configuration.</p>
-<!--Since (full) account plays a prominent role in the definition of an RE state, the corresponding weight $alpha_{A}$ in heatmaps.-->
-</section>
-<section id="results" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="results"><span class="header-section-number">4.3</span> Results</h2>
-<section id="overall" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="overall"><span class="header-section-number">4.3.1</span> Overall</h3>
+<section id="results" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="results"><span class="header-section-number">4.2</span> Results</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The results of this chapter can be reproduced with the Jupyter notebook located <a href="https://github.com/debatelab/re-technical-report/blob/main/notebooks/data_analysis_chapter_full_re_states.ipynb">here</a>.</p>
+</div>
+</div>
+<section id="overall-results" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="overall-results"><span class="header-section-number">4.2.1</span> Overall Results</h3>
+<section id="global-optima" class="level4" data-number="4.2.1.1">
+<h4 data-number="4.2.1.1" class="anchored" data-anchor-id="global-optima"><span class="header-section-number">4.2.1.1</span> Global Optima</h4>
 <div class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display">
-<div id="tbl-full-re-go" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Table&nbsp;4.1: Relative share of full RE states among global optima</caption>
+<div id="tbl-full-re-go" class="cell quarto-float anchored" data-execution_count="1">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-full-re-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display cell-output-markdown">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 28%">
-<col style="width: 21%">
-<col style="width: 34%">
+<col style="width: 11%">
+<col style="width: 36%">
+<col style="width: 29%">
+<col style="width: 22%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Model</th>
+<th style="text-align: right;">Relative share of full RE global optima</th>
 <th style="text-align: right;">Number of full RE global optima</th>
 <th style="text-align: right;">Number of global optima</th>
-<th style="text-align: right;">Relative share of full RE global optima</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">QuadraticGlobalRE</td>
-<td style="text-align: right;">8167</td>
-<td style="text-align: right;">64147</td>
-<td style="text-align: right;">0.127</td>
+<td style="text-align: left;">QuadraticRE</td>
+<td style="text-align: right;">0.115</td>
+<td style="text-align: right;">82318</td>
+<td style="text-align: right;">714584</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">LinearGlobalRE</td>
-<td style="text-align: right;">19430</td>
-<td style="text-align: right;">59949</td>
-<td style="text-align: right;">0.324</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">QuadraticLocalRE</td>
-<td style="text-align: right;">8167</td>
-<td style="text-align: right;">64147</td>
-<td style="text-align: right;">0.127</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">LinearLocalRE</td>
-<td style="text-align: right;">19430</td>
-<td style="text-align: right;">59949</td>
-<td style="text-align: right;">0.324</td>
+<td style="text-align: left;">LinearRE</td>
+<td style="text-align: right;">0.275</td>
+<td style="text-align: right;">192559</td>
+<td style="text-align: right;">700830</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-</div>
-<div id="fig-overall-full-re-go" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/overall_full_re_go_setups.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4.1: Relative share of full RE states among global optima grouped by model variant</figcaption>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-full-re-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4.1: Relative share of full RE states among global optima
+</figcaption>
 </figure>
 </div>
-<p><strong>Observations</strong></p>
-<ul>
-<li>The relative share of full RE states among global optima is identical for <code>QuadraticGlobalRE</code> and <code>QuadraticLocalRE</code>, as well as for <code>LinearGlobalRE</code> and <code>LinearLocalRE</code> in <a href="#tbl-full-re-go">Table&nbsp;<span>4.1</span></a> and <a href="#fig-overall-full-re-go">Figure&nbsp;<span>4.1</span></a>. This is to be expected because the local model variants rely on their global counterparts to determine global optima.</li>
-<li>The relative share of full RE states among global optima is substantially higher for linear model variants.</li>
-</ul>
-<div class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display">
-<div id="tbl-full-re-fp-setups" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Table&nbsp;4.2: Relative share of full RE states among fixed points (unique)</caption>
-<colgroup>
-<col style="width: 15%">
-<col style="width: 28%">
-<col style="width: 21%">
-<col style="width: 34%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Model</th>
-<th style="text-align: right;">Number of full RE fixed points</th>
-<th style="text-align: right;">Number of fixed points</th>
-<th style="text-align: right;">Relative share of full RE fixed points</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">QuadraticGlobalRE</td>
-<td style="text-align: right;">4201</td>
-<td style="text-align: right;">41726</td>
-<td style="text-align: right;">0.101</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">LinearGlobalRE</td>
-<td style="text-align: right;">7418</td>
-<td style="text-align: right;">32210</td>
-<td style="text-align: right;">0.23</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">QuadraticLocalRE</td>
-<td style="text-align: right;">3025</td>
-<td style="text-align: right;">55659</td>
-<td style="text-align: right;">0.054</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">LinearLocalRE</td>
-<td style="text-align: right;">4538</td>
-<td style="text-align: right;">22977</td>
-<td style="text-align: right;">0.198</td>
-</tr>
-</tbody>
-</table>
 </div>
+<div id="fig-overall-full-re-go" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-overall-full-re-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/full_re_go_rp.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
-</div>
-<div id="fig-overall-full-re-fp-setups" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/overall_full_re_fp_setups.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4.2: Relative share of full RE states among unique fixed points grouped by model variant</figcaption>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-overall-full-re-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Relative share of full RE states among global optima grouped by model variant
+</figcaption>
 </figure>
 </div>
-<p><strong>Observations</strong></p>
+<p><strong>Observations</strong> <!--
+- The relative share of full RE states among global optima  is identical for `QuadraticGlobalRE` and `QuadraticLocalRE`, as well as for `LinearGlobalRE` and `LinearLocalRE` in @tbl-full-re-go and @fig-overall-full-re-go. This is to be expected because the local model variants rely on their global counterparts to determine global optima.
+--></p>
 <ul>
-<li>The relative share of unique full RE fixed points (<a href="#fig-overall-full-re-fp-setups">Figure&nbsp;<span>4.2</span></a>) is lower than the corresponding results for global optima (<a href="#fig-overall-full-re-go">Figure&nbsp;<span>4.1</span></a>). This is not surprising as fixed points are reached through semi-globalLY or locally optimizing processes, which cover a restricted search space in contrast to global optimization.</li>
-</ul>
-<div class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display">
-<div id="tbl-full-re-fp-branches" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Table&nbsp;4.3: Relative share of full RE states among fixed points (all branches)</caption>
-<colgroup>
-<col style="width: 15%">
-<col style="width: 28%">
-<col style="width: 21%">
-<col style="width: 34%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Model</th>
-<th style="text-align: right;">Number of full RE fixed points</th>
-<th style="text-align: right;">Number of fixed points</th>
-<th style="text-align: right;">Relative share of full RE fixed points</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">QuadraticGlobalRE</td>
-<td style="text-align: right;">4699</td>
-<td style="text-align: right;">48105</td>
-<td style="text-align: right;">0.098</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">LinearGlobalRE</td>
-<td style="text-align: right;">7418</td>
-<td style="text-align: right;">32218</td>
-<td style="text-align: right;">0.23</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">QuadraticLocalRE</td>
-<td style="text-align: right;">12644</td>
-<td style="text-align: right;">157034</td>
-<td style="text-align: right;">0.081</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">LinearLocalRE</td>
-<td style="text-align: right;">55638</td>
-<td style="text-align: right;">112049</td>
-<td style="text-align: right;">0.497</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="fig-overall-full-re-fp-branches" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/overall_full_re_fp_branches.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4.3: Relative share of full RE states among fixed points from all branches grouped by model variant</figcaption>
-</figure>
-</div>
-<p><strong>Observations</strong></p>
-<ul>
-<li>The relative share of full RE fixed points from all branches (<a href="#fig-overall-full-re-fp-branches">Figure&nbsp;<span>4.3</span></a>) are similar to the corresponding results for unique fixed points (<a href="#fig-overall-full-re-fp-setups">Figure&nbsp;<span>4.2</span></a>), for <code>QuadraticGlobalRE</code>, <code>LinearGlobalRE</code>, an <code>QuadraticLocalRE</code>, excepting <code>LinearLocalRE</code>.</li>
-<li>For <code>LinearLocalRE</code>, the relative share of full RE fixed points is significantly higher when consdering the fixed points from all branches rather than unique fixed points. This means that a relatively higher share of branches lead to full RE fixed points than to non-full-RE fixed points.</li>
-<li>The relative share of full RE fixed points for <code>LinearLocalRE</code> (<a href="#fig-overall-full-re-fp-branches">Figure&nbsp;<span>4.3</span></a>), even exceeds the relative share of full RE global optima for linear model variants (<a href="#fig-overall-full-re-go">Figure&nbsp;<span>4.1</span></a>).</li>
-<li>The number of fixed points from all branches (<a href="#tbl-full-re-fp-branches">Table&nbsp;<span>4.3</span></a>) is only slightly higher than the number of unique fixed points (<a href="#tbl-full-re-fp-setups">Table&nbsp;<span>4.2</span></a>) for <code>QuadraticGlobalRE</code> and <code>LinearGlobalRE</code>. In contrast, the number of fixed points from all branches is substantially higher than the number of unique fixed points for <code>QuadraticLocalRE</code>, and even more so for <code>LinearLocalRE</code>.</li>
+<li>The relative share of full RE states among global optima is substantially higher for linear model variants than for quadratic models (<a href="#fig-overall-full-re-go" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>).</li>
+<li>The small differences in <a href="#tbl-full-re-go" class="quarto-xref">Table&nbsp;<span>4.1</span></a> between semi-globally optimizing model variants and their globally optimizing counterparts are but an artifact of the model implementation. They can be explained by differences in interrupted model runs (see <a href="chapter_general-props.html#sec-general-props-go" class="quarto-xref"><span>Section 2.2</span></a>).</li>
 </ul>
 </section>
-<section id="heatmaps" class="level3" data-number="4.3.2">
-<h3 data-number="4.3.2" class="anchored" data-anchor-id="heatmaps"><span class="header-section-number">4.3.2</span> Heatmaps</h3>
-<div id="fig-hm-full-re-go" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/rel_go_full_re_setups.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4.4: Relative share of full RE states among global optima grouped by model variant and configuration of weights.</figcaption>
+<section id="fixed-points" class="level4" data-number="4.2.1.2">
+<h4 data-number="4.2.1.2" class="anchored" data-anchor-id="fixed-points"><span class="header-section-number">4.2.1.2</span> Fixed Points</h4>
+<div class="cell" data-execution_count="2">
+<div id="tbl-full-re-fp-setups" class="cell quarto-float anchored" data-execution_count="2">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-full-re-fp-setups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display cell-output-markdown">
+<table class="do-not-create-environment cell table table-sm table-striped small">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 34%">
+<col style="width: 28%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">Relative share of full RE fixed points</th>
+<th style="text-align: right;">Number of full RE fixed points</th>
+<th style="text-align: right;">Number of fixed points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QuadraticGlobalRE</td>
+<td style="text-align: right;">0.093</td>
+<td style="text-align: right;">42660</td>
+<td style="text-align: right;">458147</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearGlobalRE</td>
+<td style="text-align: right;">0.235</td>
+<td style="text-align: right;">73477</td>
+<td style="text-align: right;">312783</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QuadraticLocalRE</td>
+<td style="text-align: right;">0.052</td>
+<td style="text-align: right;">30616</td>
+<td style="text-align: right;">588236</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearLocalRE</td>
+<td style="text-align: right;">0.198</td>
+<td style="text-align: right;">45241</td>
+<td style="text-align: right;">228122</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-full-re-fp-setups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4.2: Relative share of full RE states among fixed points (result perspective)
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="fig-overall-full-re-fp-setups" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-overall-full-re-fp-setups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/full_re_fp_rp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-overall-full-re-fp-setups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.2: Relative share of full RE states among fixed points (result perspective) grouped by model variant
+</figcaption>
 </figure>
 </div>
 <p><strong>Observations</strong></p>
 <ul>
-<li>Linear model variants exhibit a “tipping line” (see XXX). For <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span>, the relative share of full RE global optima is 1, i.e., all global optima are full RE states.</li>
-<li>Quadrat model variants have a smooth transition between low and high relative shares, and they have a “hotspot” for very high values of <span class="math inline">\(\alpha_{A}\)</span>. This result is made plausible by the fact that full RE states require a maximal value for the measure of account, i.e, <span class="math inline">\(A(\mathcal{C}, \mathcal{T}) = 1\)</span>. High values for <span class="math inline">\(\alpha_{A}\)</span> benefit the fulfillment of this requirement.</li>
+<li>The relative share of full RE fixed points from the result perspective (<a href="#fig-overall-full-re-fp-setups" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>) is lower than the corresponding results for global optima (<a href="#fig-overall-full-re-go" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>). This result is unsurprising as fixed points are reached through semi-globally or locally optimizing processes, which cover a restricted search space in contrast to global optimization.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li>From the result perspective, the relative shares of full RE fixed points of quadratic model variants are substantially lower than those of their corresponding linear model variants.</li>
 </ul>
-<div id="fig-hm-full-re-fp-setups" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/rel_fp_full_re_setups.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4.5: Relative share of full RE states among unique fixed points grouped by model variant and configuration of weights.</figcaption>
+<div class="cell" data-execution_count="3">
+<div id="tbl-full-re-fp-branches" class="cell quarto-float anchored" data-execution_count="3">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-full-re-fp-branches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display cell-output-markdown">
+<table class="do-not-create-environment cell table table-sm table-striped small">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 34%">
+<col style="width: 28%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">Relative share of full RE fixed points</th>
+<th style="text-align: right;">Number of full RE fixed points</th>
+<th style="text-align: right;">Number of fixed points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">QuadraticGlobalRE</td>
+<td style="text-align: right;">0.088</td>
+<td style="text-align: right;">46644</td>
+<td style="text-align: right;">528616</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearGlobalRE</td>
+<td style="text-align: right;">0.235</td>
+<td style="text-align: right;">73492</td>
+<td style="text-align: right;">313002</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">QuadraticLocalRE</td>
+<td style="text-align: right;">0.081</td>
+<td style="text-align: right;">162044</td>
+<td style="text-align: right;">1991852</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LinearLocalRE</td>
+<td style="text-align: right;">0.479</td>
+<td style="text-align: right;">623825</td>
+<td style="text-align: right;">1303077</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-full-re-fp-branches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4.3: Relative share of full RE states among fixed points (process perspective)
+</figcaption>
 </figure>
 </div>
-<div id="fig-hm-full-re-fp-branches" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/rel_fp_full_re_branches.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4.6: Relative share of full RE states among fixed points from all branches grouped by model variant and configuration of weights.</figcaption>
+</div>
+<div id="fig-overall-full-re-fp-branches" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-overall-full-re-fp-branches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/full_re_fp_pp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-overall-full-re-fp-branches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.3: Relative share of full RE states among fixed points (process perspective) grouped by model variant
+</figcaption>
 </figure>
 </div>
 <p><strong>Observations</strong></p>
 <ul>
-<li>Linear model variants do not exhibit the tipping line for fixed points (<a href="#fig-hm-full-re-fp-setups">Figure&nbsp;<span>4.5</span></a> and <a href="#fig-hm-full-re-fp-branches">Figure&nbsp;<span>4.6</span></a>)</li>
-<li>Linear model variants have high relative shares for low faihtfulness, moderate account and high (but non-extreme) weights for systematicity.</li>
-<li>There are only small differences between relative share of full RE states among unique fixed points (<a href="#fig-hm-full-re-fp-setups">Figure&nbsp;<span>4.5</span></a>) and fixed points from all branches (<a href="#fig-hm-full-re-fp-branches">Figure&nbsp;<span>4.6</span></a>).</li>
-<li><code>QuadratGlobalRE</code> exhibits its highest relative shares of full RE fixed points for moderately high values for <span class="math inline">\(\alpha_{A}\)</span> and very low values for <span class="math inline">\(\alpha_{S}\)</span>.</li>
+<li>The relative share of full RE fixed points (process perspective, <a href="#fig-overall-full-re-fp-branches" class="quarto-xref">Figure&nbsp;<span>4.3</span></a>) is similar to the corresponding results from the result perspective (<a href="#fig-overall-full-re-fp-setups" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>) for <code>QuadraticGlobalRE</code>, <code>LinearGlobalRE</code>, and <code>QuadraticLocalRE</code> except for <code>LinearLocalRE</code>.</li>
+<li>For <code>LinearLocalRE</code>, the relative share of full RE fixed points is significantly higher when considering the fixed points from all branches (process perspective) rather than the set of fixed points (result perspective). This means that a relatively higher share of branches leads to full RE fixed points than to non-full-RE fixed points.</li>
+<li>The relative share of full RE fixed points for <code>LinearLocalRE</code> (<a href="#fig-overall-full-re-fp-branches" class="quarto-xref">Figure&nbsp;<span>4.3</span></a>) even exceeds the relative share of full RE global optima for linear model variants (<a href="#fig-overall-full-re-go" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>).</li>
+<li>The number of fixed points in the process perspective (<a href="#tbl-full-re-fp-branches" class="quarto-xref">Table&nbsp;<span>4.3</span></a>) is only slightly higher than the number in the result perspective (<a href="#tbl-full-re-fp-setups" class="quarto-xref">Table&nbsp;<span>4.2</span></a>) for <code>QuadraticGlobalRE</code> and <code>LinearGlobalRE</code>. In contrast, the number of fixed points from all branches is substantially higher than the number of fixed points from the result perspective for <code>QuadraticLocalRE</code>, and even more so for <code>LinearLocalRE</code>.</li>
+</ul>
+</section>
+</section>
+<section id="results-grouped-by-sentence-pool-size" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="results-grouped-by-sentence-pool-size"><span class="header-section-number">4.2.2</span> Results Grouped by Sentence Pool Size</h3>
+<div id="fig-full-re-go-sp-rp" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-full-re-go-sp-rp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/rel_full_re_go_by_sp_rp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-full-re-go-sp-rp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.4: Relative share of full RE states among global optima grouped by model variant and sentence pool size
+</figcaption>
+</figure>
+</div>
+<div id="fig-full-re-fp-sp-rp" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-full-re-fp-sp-rp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/rel_full_re_fp_by_sp_rp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-full-re-fp-sp-rp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.5: Relative share of full RE states among fixed points (result perspective) grouped by model variant and sentence pool size
+</figcaption>
+</figure>
+</div>
+<div id="fig-full-re-fp-sp-pp" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-full-re-fp-sp-pp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/rel_full_re_fp_by_sp_pp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-full-re-fp-sp-pp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.6: Relative share of full RE states among fixed points (process perspective) grouped by model variant and sentence pool size
+</figcaption>
+</figure>
+</div>
+<p><strong>Observations</strong></p>
+<ul>
+<li>The relative share of full RE states among global optima decreases with increasing sentence-pool size for all model variants (<a href="#fig-full-re-go-sp-rp" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>).</li>
+<li>The relative share of full RE states among the set of fixed points (result perspective) decreases with increasing sentence-pool size for all model variants (<a href="#fig-full-re-fp-sp-rp" class="quarto-xref">Figure&nbsp;<span>4.5</span></a>).</li>
+<li>The relative share of full RE states among the fixed points from all branches (process perspective) decreases with increasing sentence-pool size for the model variants<code>QuadraticLocalRE</code>, <code>QuadraticGlobalRE</code> and <code>LinearGlobalRE</code> (<a href="#fig-full-re-fp-sp-pp" class="quarto-xref">Figure&nbsp;<span>4.6</span></a>).</li>
+<li>The relative share of full RE states among fixed points from all branches (process perspective) is roughly constant with respect to sentence pool sizes for <code>LinearLocalRE</code> (<a href="#fig-full-re-fp-sp-pp" class="quarto-xref">Figure&nbsp;<span>4.6</span></a>).</li>
+</ul>
+</section>
+<section id="results-grouped-by-configuration-of-weights" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="results-grouped-by-configuration-of-weights"><span class="header-section-number">4.2.3</span> Results Grouped by Configuration of Weights</h3>
+<div id="fig-hm-full-re-go" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hm-full-re-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/hm_rel_go_full_re_rp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hm-full-re-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.7: Relative share of full RE states among global optima grouped by model variant and configuration of weights
+</figcaption>
+</figure>
+</div>
+<p><strong>Observations</strong></p>
+<ul>
+<li>Linear model variants exhibit a “tipping line” (see <a href="appendix_tipping_line.html" class="quarto-xref"><span>Appendix A</span></a>). For <span class="math inline">\(\alpha_{A} &gt; \alpha_{F}\)</span>, the relative share of full RE global optima is 1.0, i.e., all global optima are full RE states.</li>
+<li>Quadratic model variants have a smooth transition between low and high relative shares and have a “hotspot” for very high values of <span class="math inline">\(\alpha_{A}\)</span>. This result is made plausible by the fact that full RE states require a maximal value for the measure of account (i.e., <span class="math inline">\(A(\mathcal{C}, \mathcal{T}) = 1)\)</span>. High values for <span class="math inline">\(\alpha_{A}\)</span> benefit the fulfilment of this requirement.</li>
+</ul>
+<div id="fig-hm-full-re-fp-setups" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hm-full-re-fp-setups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/hm_rel_fp_full_re_rp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hm-full-re-fp-setups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.8: Relative share of full RE states among unique fixed points grouped by model variant and configuration of weights.
+</figcaption>
+</figure>
+</div>
+<div id="fig-hm-full-re-fp-branches" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hm-full-re-fp-branches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/hm_rel_fp_full_re_pp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hm-full-re-fp-branches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.9: Relative share of full RE states among fixed points from all branches grouped by model variant and configuration of weights.
+</figcaption>
+</figure>
+</div>
+<p><strong>Observations</strong></p>
+<ul>
+<li>Linear model variants do not exhibit the tipping line for fixed points (<a href="#fig-hm-full-re-fp-setups" class="quarto-xref">Figure&nbsp;<span>4.8</span></a> and <a href="#fig-hm-full-re-fp-branches" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>)</li>
+<li>Linear model variants have high relative shares for low faithfulness, moderate account and high (but non-extreme) weights for systematicity.</li>
+<li>There are only small differences between the relative share of full RE states among sets of fixed points (result perspective, <a href="#fig-hm-full-re-fp-setups" class="quarto-xref">Figure&nbsp;<span>4.8</span></a>) and fixed points from all branches (process perspective, <a href="#fig-hm-full-re-fp-branches" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>).</li>
+<li><code>QuadraticGlobalRE</code> exhibits its highest relative shares of full RE fixed points for moderately high values for <span class="math inline">\(\alpha_{A}\)</span> and very low values for <span class="math inline">\(\alpha_{S}\)</span>.</li>
 </ul>
 <!-- 
 + Reference to the analytical results:  (see [here](https://git.scc.kit.edu/debatelab/re-python/-/blob/master/projects/ensemble_study_02/documents/linear_models_tipping_line.md))
@@ -444,11 +633,18 @@ ul.task-list li input[type="checkbox"] {
 -->
 </section>
 </section>
-<section id="conclusion" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">4.4</span> Conclusion</h2>
-<p>Overall, the relative shares of full RE states among global optima and fixed points is not overwhelming, but heatmaps reveal combinations of weights for <code>GlobalQuadraticRE</code>, <code>GlobalLinearRE</code> and <code>LinearLocalRE</code>, where the relative share of full RE states among the outputs is acceptable. For <code>QuadraticLocalRE</code>, this holds at least for global optima. However, this does not constitute strong reasons to reject <code>QuadraticLocalRE</code>. Depending on the particular goals of an inquiry with RE, a low relative share of full RE states can be seen as a strength of a model, as it does not render everything into a full RE state.</p>
+<section id="conclusion" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">4.3</span> Conclusion</h2>
+<p>Overall, the relative share of full RE states among global optima and fixed points is not overwhelming. However, heatmaps reveal combinations of weights for <code>QuadraticGlobalRE</code>, <code>LinearGlobalRE</code> and <code>LinearLocalRE</code>, where the relative share of full RE states among the outputs is acceptable. For <code>QuadraticLocalRE</code>, this holds at least for global optima. However, this is not a strong reason to reject <code>QuadraticLocalRE</code>. Depending on the particular goals of an RE inquiry, a low relative share of full RE states can be seen as a strength of a model, as it may not be desirable to render everything into a full RE state, or states satisfying less demanding requirements may be acceptable.</p>
+<p>Concerning the influence of the sentence pool size, there is a negative trend for the relative shares of full RE states among global optima and fixed points (result perspective). Only the relative share of full RE fixed points (process perspective) of the <code>LinearLocalRE</code> model is not affected by the sentence pool size. At this point, we cannot offer an explanation for this behaviour, which calls for further analysis.</p>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>For the difference between result and process perspective, see <a href="chapter_go-and-fp.html#sec-go-and-fp-background" class="quarto-xref"><span>Section 3.1</span></a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -531,10 +727,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -544,8 +739,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -558,6 +762,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -601,6 +924,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -626,6 +950,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -687,17 +1037,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter_go-and-fp.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Global optima and fixed points</span></span>
+      <a href="./chapter_go-and-fp.html" class="pagination-link  aria-label=" &lt;span="" optima="" and="" fixed="" points&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Global Optima and Fixed Points</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter_commitment-consistency.html" class="pagination-link">
+      <a href="./chapter_commitment-consistency.html" class="pagination-link" aria-label="<span class='chapter-number'>5</span>&nbsp; <span class='chapter-title'>Consistency</span>">
         <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Consistency</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

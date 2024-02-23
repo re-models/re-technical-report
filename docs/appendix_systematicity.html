@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Based on Beisbart, Betz, and Brun (2021), this report assesses different models of reflective equilibrium (RE) by numerical investigation.">
+
+<title>Assessing a Formal Model of Reflective Equilibrium - Appendix C — Alternative systematicity measures</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./appendix_trivial_endpoints.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta name="citation_title" content="[Appendix C — Alternative systematicity measures]{#sec-appendix-systematicity .quarto-section-identifier}">
+<meta name="citation_fulltext_html_url" content="https://re-models.github.io/re-technical-report/">
+<meta name="citation_doi" content="10.5555/12345678">
+<meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Making Reflective Equlibrium Precise: A Formal Model;,citation_abstract=&amp;amp;amp;lt;p&amp;gt;Reflective equilibrium (RE) is often regarded as a powerful method in ethics, logic, and even philosophy in general. Despite this popularity, characterizations of the method have been fairly vague and unspecific so far. It thus may be doubted whether RE is more than a jumble of appealing but ultimately sketchy ideas that cannot be spelled out consistently. In this paper, we dispel such doubts by devising a formal model of RE. The model contains as components the agent’s commitments and a theory that tries to systematize the commitments. It yields a precise picture of how the commitments and the theory are adjusted to each other. The model differentiates between equilibrium as a target state and the dynamic equilibration process. First solutions to the model, obtained by computer simulation, show that the method allows for consistent specification and that the model’s implications are plausible in view of expectations on RE. In particular, the mutual adjustment of commitments and theory can improve one’s commitments, as proponents of RE have suggested. We argue that our model is fruitful not only because it points to issues that need to be dealt with for a better understanding of RE, but also because it provides the means to address these issues.&amp;lt;/p&amp;gt;;,citation_author=Claus Beisbart;,citation_author=Gregor Betz;,citation_author=Georg Brun;,citation_publication_date=2021-12;,citation_cover_date=2021-12;,citation_year=2021;,citation_issue=0;,citation_doi=10.3998/ergo.1152;,citation_issn=2330-4014;,citation_volume=8;,citation_language=en-US;,citation_journal_title=Ergo;,citation_publisher=Michigan Publishing Services;">
+<meta name="citation_reference" content="citation_title=Debate Dynamics: How Controversy Improves Our Beliefs;,citation_abstract=Is critical argumentation an effective way to overcome disagreement? And does the exchange of arguments bring opponents in a controversy closer to the truth? This study provides a new perspective on these pivotal questions. By means of multi-agent simulations, it investigates the truth and consensus-conduciveness of controversial debates. The book brings together research in formal epistemology and argumentation theory. Aside from its consequences for discursive practice, the work may have important implications for philosophy of science and the way we construe scientific rationality as well.;,citation_author=Gregor Betz;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_isbn=978-94-007-4598-8;,citation_language=en-US;,citation_series_title=Synthese Library;">
+<meta name="citation_reference" content="citation_title=Theorie dialektischer Strukturen;,citation_author=Gregor Betz;,citation_publication_date=2010;,citation_cover_date=2010;,citation_year=2010;,citation_isbn=978-3-465-03629-6 3-465-03629-8;,citation_language=de-DE;">
+<meta name="citation_reference" content="citation_title=Does reflective equilibrium help us converge?;,citation_author=Andreas Freivogel;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=6;,citation_doi=10.1007/s11229-023-04375-0;,citation_volume=202;,citation_journal_title=Synthese;,citation_publisher=Springer Verlag;">
+<meta name="citation_reference" content="citation_title=Debate Dynamics: How Controversy Improves Our Beliefs;,citation_abstract=Is critical argumentation an effective way to overcome disagreement? And does the exchange of arguments bring opponents in a controversy closer to the truth? This study provides a new perspective on these pivotal questions. By means of multi-agent simulations, it investigates the truth and consensus-conduciveness of controversial debates. The book brings together research in formal epistemology and argumentation theory. Aside from its consequences for discursive practice, the work may have important implications for philosophy of science and the way we construe scientific rationality as well.;,citation_author=Gregor Betz;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_isbn=978-94-007-4598-8;,citation_language=en-US;,citation_series_title=Synthese Library;">
+<meta name="citation_reference" content="citation_title=Virtuously circular. Theoretical virtues in reflective equilibrium;,citation_author=Andreas Freivogel;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_dissertation_institution=University of Bern;">
+<meta name="citation_reference" content="citation_title=Turning the Trolley with Reflective Equilibrium;,citation_author=Tanja Rechnitzer;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=4;,citation_doi=10.1007/s11229-022-03762-3;,citation_volume=200;,citation_journal_title=Synthese;,citation_publisher=Springer Verlag;">
+<meta name="citation_reference" content="citation_title=Turning the trolley;,citation_author=Judith Jarvis Thomson;,citation_publication_date=2008;,citation_cover_date=2008;,citation_year=2008;,citation_issue=4;,citation_doi=10.1111/j.1088-4963.2008.00144.x;,citation_volume=36;,citation_journal_title=Philosophy and Public Affairs;,citation_publisher=Blackwell;">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix_tipping_line.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix_systematicity.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Alternative systematicity measures</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Assessing a Formal Model of Reflective Equilibrium</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/re-models/re-technical-report" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Assessing-a-Formal-Model-of-Reflective-Equilibrium.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter_general-props.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">General Ensemble Properties</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter_go-and-fp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Global Optima and Fixed Points</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter_full-re-states.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Full RE States</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter_commitment-consistency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Consistency</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter_extreme-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Extreme values for account, systematicity, and faithfulness</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_tipping_line.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">The Tipping Line of Linear Model Variants</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_trivial_endpoints.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Trivial Endpoints</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_systematicity.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Alternative systematicity measures</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-appendix-systematicity-desiderata" id="toc-sec-appendix-systematicity-desiderata" class="nav-link active" data-scroll-target="#sec-appendix-systematicity-desiderata"><span class="header-section-number">C.1</span> Desiderata for systematicity measures</a>
+  <ul>
+  <li><a href="#d1-content" id="toc-d1-content" class="nav-link" data-scroll-target="#d1-content"><span class="header-section-number">C.1.1</span> D1 – Content</a></li>
+  <li><a href="#d2-simplicity" id="toc-d2-simplicity" class="nav-link" data-scroll-target="#d2-simplicity"><span class="header-section-number">C.1.2</span> D2 – Simplicity</a></li>
+  <li><a href="#d3-minimal-systematicity" id="toc-d3-minimal-systematicity" class="nav-link" data-scroll-target="#d3-minimal-systematicity"><span class="header-section-number">C.1.3</span> D3 – Minimal Systematicity</a></li>
+  <li><a href="#d4-non-ad-hocness" id="toc-d4-non-ad-hocness" class="nav-link" data-scroll-target="#d4-non-ad-hocness"><span class="header-section-number">C.1.4</span> D4 – Non-Ad-Hocness</a></li>
+  <li><a href="#d5-internal-connectedness" id="toc-d5-internal-connectedness" class="nav-link" data-scroll-target="#d5-internal-connectedness"><span class="header-section-number">C.1.5</span> D5 – Internal Connectedness</a></li>
+  <li><a href="#d6-external-connectedness" id="toc-d6-external-connectedness" class="nav-link" data-scroll-target="#d6-external-connectedness"><span class="header-section-number">C.1.6</span> D6 – External Connectedness</a></li>
+  </ul></li>
+  <li><a href="#sec-appendix-systematicity-simple-measures" id="toc-sec-appendix-systematicity-simple-measures" class="nav-link" data-scroll-target="#sec-appendix-systematicity-simple-measures"><span class="header-section-number">C.2</span> Simple Systematicity Measures</a>
+  <ul>
+  <li><a href="#minimal-mutation-systematicity" id="toc-minimal-mutation-systematicity" class="nav-link" data-scroll-target="#minimal-mutation-systematicity"><span class="header-section-number">C.2.1</span> Minimal Mutation Systematicity</a></li>
+  <li><a href="#effective-content-systematicity" id="toc-effective-content-systematicity" class="nav-link" data-scroll-target="#effective-content-systematicity"><span class="header-section-number">C.2.2</span> Effective Content Systematicity</a></li>
+  <li><a href="#content-simplicity-weighted-systematicity" id="toc-content-simplicity-weighted-systematicity" class="nav-link" data-scroll-target="#content-simplicity-weighted-systematicity"><span class="header-section-number">C.2.3</span> Content-Simplicity Weighted Systematicity</a></li>
+  <li><a href="#sec-rel-eff-content-systematicity" id="toc-sec-rel-eff-content-systematicity" class="nav-link" data-scroll-target="#sec-rel-eff-content-systematicity"><span class="header-section-number">C.2.4</span> Relative Effective Content Systematicity</a></li>
+  </ul></li>
+  <li><a href="#sec-appendix-systematicity-sigma-measures" id="toc-sec-appendix-systematicity-sigma-measures" class="nav-link" data-scroll-target="#sec-appendix-systematicity-sigma-measures"><span class="header-section-number">C.3</span> Sigma-Based Systematicity Measures</a>
+  <ul>
+  <li><a href="#sec-appendix-systematicity-s-grec" id="toc-sec-appendix-systematicity-s-grec" class="nav-link" data-scroll-target="#sec-appendix-systematicity-s-grec"><span class="header-section-number">C.3.1</span> Generalizing Relative Effective Content Systematicity</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">C.4</span> Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix_tipping_line.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix_systematicity.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Alternative systematicity measures</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-appendix-systematicity" class="quarto-section-identifier">Appendix C — Alternative systematicity measures</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this appendix, we will point to some shortcomings of the systematicity measure used in <span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span> and discuss several alternative measures.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<section id="sec-appendix-systematicity-desiderata" class="level2" data-number="C.1">
+<h2 data-number="C.1" class="anchored" data-anchor-id="sec-appendix-systematicity-desiderata"><span class="header-section-number">C.1</span> Desiderata for systematicity measures</h2>
+<section id="d1-content" class="level3" data-number="C.1.1">
+<h3 data-number="C.1.1" class="anchored" data-anchor-id="d1-content"><span class="header-section-number">C.1.1</span> D1 – Content</h3>
+<p>The achievement function models the trade-off between the three desiderata <em>account</em>, <em>faithfulness</em> and <em>systematicity</em>. The latter is supposed to measure the extent of a theory’s ability to systematize sentences from the given sentence pool <span class="math inline">\(\mathcal{S}\)</span>. The formulation is admittedly in need of explication. <span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span> used the following definition for their RE model:</p>
+<p><span id="eq-s-bbb"><span class="math display">\[
+S_{BBB}(\mathcal{T}) = 1-\left(\frac{\vert \mathcal{T}\vert -1}{\vert\overline{\mathcal{T}}\vert }\right)^2
+\tag{C.1}\]</span></span></p>
+<p>with <span class="math inline">\(\mathcal{T}\)</span> being a set of sentences representing the principles of the theory and <span class="math inline">\(\overline{\mathcal{T}}\)</span> being the dialectical closure of <span class="math inline">\(\mathcal{T}\)</span> (i.e., all implications of <span class="math inline">\(\mathcal{T}\)</span> according to some dialectical structure <span class="math inline">\(\tau\)</span>).</p>
+<p>The underlying idea is simple. The more content a theory has (as, for instance, measured by the amount of its implications), the more sentences it systematizes. Hence, we should require:</p>
+<p><strong>Content (D1):</strong> Everything else being equal, systematicity should (monotonically) increase with increasing content.</p>
+</section>
+<section id="d2-simplicity" class="level3" data-number="C.1.2">
+<h3 data-number="C.1.2" class="anchored" data-anchor-id="d2-simplicity"><span class="header-section-number">C.1.2</span> D2 – Simplicity</h3>
+<p>This simple suggestion is, however, in need of refinement. The systematizing power of a theory should be evaluated in relation to its size. If a theory implies many sentences only because it contains many sentences as its principles, its systematizing power should be considered low. The reason is that systematization is usually thought of as somehow summarising a lot with little. Theories in physics systematize empirical facts to the extent that they imply a lot of these facts by using but few physical laws (as, for instance, Newton’s three laws of motion).</p>
+<p>These considerations motivate:</p>
+<p><strong>Simplicity (D2)</strong>: Everything else being equal, systematicity should (monotonically) increase with decreasing theory size.</p>
+<p>How does the suggested measure <span class="math inline">\(S_{BBB}\)</span> conform to these constraints? In our modelling context, a theory is simply a set of sentences, which you can think of as its principles or some axiomatic basis. Accordingly, the size of a theory can be measured by <span class="math inline">\(\vert \mathcal{T} \vert\)</span> in <a href="#eq-s-bbb" class="quarto-xref">Equation&nbsp;<span>C.1</span></a>. There are different possibilities for conceptualizing the notion of content. One suggestion is to equate the dialectical closure of a theory (<span class="math inline">\(\overline{\mathcal{T}}\)</span>) with its content.</p>
+<p>Since the sentence pool is finite, so is the dialectical closure of a theory.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Accordingly, we can measure the size of a theory’s content by <span class="math inline">\(|\overline{\mathcal{T}}|\)</span>.</p>
+<p>The bracketed term in <a href="#eq-s-bbb" class="quarto-xref">Equation&nbsp;<span>C.1</span></a> can be considered as a penalizing contribution, which increases with the theory’s size (<span class="math inline">\(\vert \mathcal{T} \vert\)</span>) and decreases with the theory’s content size (<span class="math inline">\(\vert \overline{\mathcal{T}} \vert\)</span>). <a href="#fig-s-bbb" class="quarto-xref">Figure&nbsp;<span>C.1</span></a> illustrates systematicity values calculated by <span class="math inline">\(S_{BBB}\)</span> for a sentence pool of size <span class="math inline">\(14\)</span>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<div id="cell-fig-s-bbb" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div id="fig-s-bbb" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-s-bbb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="appendix_systematicity_files/figure-html/fig-s-bbb-output-1.png" width="463" height="399" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-s-bbb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;C.1: Standard systematicity of theories in dependence of their size and closure’s size.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>By following vertical lines (constant theory closure size), you can see that everything else being equal, “smaller” theories receive higher systematicity values. Hence, <span class="math inline">\(S_{BBB}\)</span> satisfies <em>D2 (simplicity)</em>. By following the plotted lines (constant theory size), you can see that <span class="math inline">\(S_{BBB}\)</span> satisfies <em>D1 (content)</em> for all theory sizes except for <span class="math inline">\(\vert \mathcal{T} \vert = 1\)</span>. As noted before (see <a href="chapter_extreme-values.html" class="quarto-xref"><span>Chapter 6</span></a>), these singleton theories receive the maximal systematicity value of <span class="math inline">\(1.0\)</span> independent of their content.</p>
+<p>How problematic is this violation of <em>D1</em>? After all, <em>D1</em> is only violated for singleton theories and only violated in a “weak” sense. While it is true that systematicity does not <em>monotonically</em> increase with increasing content for singleton theories, systematicity does at least not decrease with increasing content. In <a href="chapter_extreme-values.html" class="quarto-xref"><span>Chapter 6</span></a>, we observed that fixed points and global optima frequently maximize the standard measure of systematicity (with singleton theories). In <a href="appendix_trivial_endpoints.html" class="quarto-xref"><span>Appendix B</span></a>, we presented a preliminary analysis of how pervasive fixed points and global optima are that consist of a singleton theory and a single commitment. The sparse emergence of such “trivial” endpoints suggests that singleton theories (with extremely low content) do not have a significant advantage over other theories. But this does not mean that the violation of <em>D1</em> could not lead to problematic behavior of the model in other contexts. We should, therefore, consider and analyze other systematicity measures, which we intend in this appendix.</p>
+</section>
+<section id="d3-minimal-systematicity" class="level3" data-number="C.1.3">
+<h3 data-number="C.1.3" class="anchored" data-anchor-id="d3-minimal-systematicity"><span class="header-section-number">C.1.3</span> D3 – Minimal Systematicity</h3>
+<p>There are other constraints as well: Due to the assumption that the sentence pool is finite, there are lower bounds and upper bounds for systematicity. The systematicity measure <span class="math inline">\(S_{BBB}\)</span> is normalized to yield values within the unit interval <span class="math inline">\([0,1]\)</span>. We will follow this convention.</p>
+<p>So, under which conditions should systematicity be minimal? The above formulated intuitions that led to <em>D1</em> and <em>D2</em> suggest that</p>
+<p><strong>Minimal systematicity (D3)</strong>: Systematicity should be minimal if a theory does not imply anything besides its principles.</p>
+<p>We might say that theories that do not imply anything in addition to their principles are vacuous in the sense of being ineffective in their aim to systematize sentences. We will call such theories <em>ineffective theories</em>. Similarly, we will call theories that imply more than their principles <em>effective theories</em>.</p>
+<p>The formulation <em>D3</em> is imprecise or even ambiguous. If we read it strongly, we might require:</p>
+<p><strong>Minimal systematicity (D3.1)</strong>: Theories that do not imply anything besides their principles (ineffective theories) receive lower systematicity values than other theories.</p>
+<p>In other words, the systematicity values of ineffective theories are lower bounds for effective theories. One way of satisfying <em>D3.1</em> is to let <span class="math inline">\(S(\mathcal{T})=0\)</span> if <span class="math inline">\(\mathcal{T}\)</span> is an ineffective theory. But there are other possibilities. In particular, <em>D3.1</em> allows it to distribute different systematicity values to ineffective theories.</p>
+<p>The measure <span class="math inline">\(S_{BBB}\)</span> does not satisfy <em>D3.1</em>—not only because of its preferential treatment of singleton theories. In the following, we will refer to points in figures such as <a href="#fig-s-bbb" class="quarto-xref">Figure&nbsp;<span>C.1</span></a> by using tuples of the form <span class="math inline">\((\vert \mathcal{T}\vert, \vert \overline{\mathcal{T}}\vert)\)</span>. For instance, the point <span class="math inline">\((3,4)\)</span> denotes the equivalence class of theories of size three with a dialectical closure of size four. Ineffective theories are points of the form <span class="math inline">\((n,n)\)</span>, which are the left (lower) end points of lines in <a href="#fig-s-bbb" class="quarto-xref">Figure&nbsp;<span>C.1</span></a>. You can see in this figure that for <span class="math inline">\(2n=14\)</span>, there are only four theories that are lower bounds for effective theories (namely, <span class="math inline">\((4,4)\)</span>, <span class="math inline">\((5,5)\)</span>, <span class="math inline">\((6,6)\)</span>, <span class="math inline">\((7,7)\)</span>). For the other ineffective theories, we can find effective theories that receive lower systematicity values (e.g., <span class="math inline">\(S_{BBB}(3,3)&gt;S_{BBB}(6,7)\)</span>). Hence, <span class="math inline">\(S_{BBB}\)</span> violates <em>D3.1</em>.</p>
+<p>There is, however, a weaker interpretation of <em>D3</em>. We might only demand that ineffective theories receive the lowest systematicity value in comparison to effective theories with the same amount of principles (e.g., <span class="math inline">\(S(3,3) &lt; S(3,4) &lt; \dots &lt; S(3,n)\)</span>). This weaker criterion is satisfied by <span class="math inline">\(S_{BBB}\)</span>. Since this weak version of <em>D3</em> is already implied by <em>D1 (content)</em>, we will not list it as an additional criterion.</p>
+<p>If ineffective theories are, in some sense, the least systematizing, we might ask which theories are most systematizing. According to the above-formulated intuitions, we might suggest that theories with the least number of principles and the largest number of implications should receive maximum systematicity values. For a sentence pool of size <span class="math inline">\(14\)</span>, these are singleton theories that imply seven sentences. Similar to the weak version of <em>D3</em>, this criterion is satisfied by <span class="math inline">\(S_{BBB}\)</span> and already implied by <em>D1</em> and <em>D2</em>.</p>
+</section>
+<section id="d4-non-ad-hocness" class="level3" data-number="C.1.4">
+<h3 data-number="C.1.4" class="anchored" data-anchor-id="d4-non-ad-hocness"><span class="header-section-number">C.1.4</span> D4 – Non-Ad-Hocness</h3>
+<p>Are there other reasonable constraints we should put on systematicity measures? Consider a theory <span class="math inline">\(\mathcal{T}\)</span> with one sentence (<span class="math inline">\(\mathcal{T}=\{s_1\}\)</span>) that has an additional sentence <span class="math inline">\(s_2\)</span> in its closure (<span class="math inline">\(\overline{\mathcal{T}}=\{s_1, s_2\}\)</span>). Suppose further we add another sentence <span class="math inline">\(s_3\)</span> to construct a new theory <span class="math inline">\(\mathcal{T}^*=\{s_1,s_3\}\)</span>. If, now, the dialectical closure <span class="math inline">\(\overline{\mathcal{T}}^*\)</span> is not expanded as compared to <span class="math inline">\(\overline{\mathcal{T}}\)</span> besides the added sentence (i.e., <span class="math inline">\(\overline{\mathcal{T}^*}=\{s_1, s_2, s_3\}\)</span>), we will say that we constructed <span class="math inline">\(\mathcal{T}^*\)</span> by adding <em>ad hoc principles</em> to <span class="math inline">\(\mathcal{T}\)</span>.</p>
+<p>One could argue that adding ad hoc principles should not lead to an increase in systematicity.</p>
+<p>First, while the dialectical closure does increase by one sentence, the size of the theory is also increased by one. What we win in content, we lose in simplicity. In other words, the introductory intuitions that led to <em>D1 (content)</em> and <em>D2 (simplicity)</em> might be used to argue that adding ad hoc principles should not increase its systematicity.</p>
+<p>Second, there is another intuition we have not used so far. Usually, we think of a theory’s principles as working together in their sytematizing activity. For many, or at least for some implications, we have to combine principles. By definition, ad hoc principles do not work together with other principles to imply other sentences. Accordingly, they do not add something to the systematization efforts of the other principles. They work on their own.</p>
+<p>Hence, we should require:</p>
+<p><strong>D4 (non-ad-hocness)</strong>: Extending a theory with ad hoc principles (i.e., principles that do not expand the theory’s content besides the added principles) should not increase its systematicity.</p>
+<p>In the context of modelling RE, <em>D4</em> is even too weak to allow the model to penalize the addition of ad hoc principle in every case (independent of the chosen weights). Suppose two theories <span class="math inline">\(\mathcal{T}\)</span> and <span class="math inline">\(\mathcal{T}^{*}\)</span> where the latter is constructed by adding an ad hoc principle to the former. Suppose further a set of commitments that coincide with the closure of <span class="math inline">\(\mathcal{T}^{*}\)</span>. Additionally, we assume that there are no other theories that compare better with respect to the summation of account and systematicity. In such cases, the achievement function will always prefer <span class="math inline">\(\mathcal{T}^{*}\)</span> over <span class="math inline">\(\mathcal{T}\)</span> if we don’t strengthen <em>D4</em>. The problem is that <span class="math inline">\(\mathcal{T}^{*}\)</span> performs better than <span class="math inline">\(\mathcal{T}\)</span> with respect to account since account is maximized if the theory’s closure matches the commitments. We must, therefore, counterbalance the advantage in account of <span class="math inline">\(\mathcal{T}^{*}\)</span> over <span class="math inline">\(\mathcal{T}\)</span> by penalizing the addition of ad hoc principles within the systematicity measure.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> This might suggest that the extension of ad hoc principles should decrease a theory’s systematicity.</p>
+<p>However, that might be too strong since one might want to satisfy <em>D3.1</em> by letting <span class="math inline">\(S=0\)</span> for ineffective theories. But then, one cannot further reduce systematicity for ad hoc extensions of ineffective theories. Hence, <em>D.3</em> might conflict with the requirement that systematicity should decrease with ad hoc extension. Fortunately, there is a simple solution. The described case is only relevant for effective theories. Hence, an appropriate strengthening of <em>D4</em> is:</p>
+<p><strong>D4.1 (non-ad-hocness)</strong>: Extending a effective theory with ad hoc principles should (monotonically) decrease its systematicity; extending an ineffective theory with ad hoc principles must not increase its systematicity.</p>
+<p><a href="#fig-s-bbb" class="quarto-xref">Figure&nbsp;<span>C.1</span></a> illustrates that <span class="math inline">\(S_{BBB}\)</span> complies with <em>D4.1</em>. This requirement is satisfied if <span class="math inline">\(S(n,m)&gt;S(n+i,m+i)\)</span> (with <span class="math inline">\(n\)</span> the theorie’s size, <span class="math inline">\(m\)</span> its closure’s size and <span class="math inline">\(i\)</span> the amount of added ad hoc principles). In <a href="#fig-s-bbb" class="quarto-xref">Figure&nbsp;<span>C.1</span></a>, you see, for instance, <span class="math inline">\(S_{BBB}(1,4) &gt; S_{BBB}(2,5) &gt; S_{BBB}(3,6) &gt; S_{BBB}(4,7)\)</span>.</p>
+</section>
+<section id="d5-internal-connectedness" class="level3" data-number="C.1.5">
+<h3 data-number="C.1.5" class="anchored" data-anchor-id="d5-internal-connectedness"><span class="header-section-number">C.1.5</span> D5 – Internal Connectedness</h3>
+<p>One rationale for <em>D4 (non-ad-hocness)</em> was the intuition that ad hoc principles are loners in some way. They do not work together with other principles in implying other sentences than the theory’s principles; they do not add something to the inferential potential of a theory besides themselves. The requirement <em>D4</em> is, therefore, a special case of a more general requirement that demands:</p>
+<p><strong>D5 (internal connectedness)</strong>: Everything else being equal (content and size), a theory in which principles work together is more systematic than a theory in which principles do not work together (so much).</p>
+<p>At this point, we do not further explicate the notion of working together but simply offer two illustrating examples.</p>
+<div id="exm-sys11" class="theorem example">
+<p><span class="theorem-title"><strong>Example C.1 (First example for <em>D5</em>)</strong></span> Consider the dialectical structure depicted in <a href="#fig-map-sys1" class="quarto-xref">Figure&nbsp;<span>C.2</span></a> and the theories <span class="math inline">\(\mathcal{T}_1 = \{1,2\}\)</span> and <span class="math inline">\(\mathcal{T}_2 = \{7,8\}\)</span>. Both theories have the same size (<span class="math inline">\(2\)</span>) and the same size of their dialectical closure (<span class="math inline">\(6\)</span>). The principles of <span class="math inline">\(\mathcal{T}_1\)</span> work together in the following sense: We need both principles to deduce the other sentences of its dialectical closure (<span class="math inline">\(3-6\)</span>). In contrast, the principles of <span class="math inline">\(\mathcal{T}_2\)</span> do not work together. Instead, the inferential workload is distributed among its principles: The principle <span class="math inline">\(7\)</span> implies <span class="math inline">\(3\)</span> and <span class="math inline">\(4\)</span>, and principle <span class="math inline">\(8\)</span> implies <span class="math inline">\(5\)</span> and <span class="math inline">\(6\)</span>. According to <em>D5</em>, we should expect that <span class="math inline">\(S(\mathcal{T}_2) &lt; S(\mathcal{T}_1)\)</span></p>
+<div id="fig-map-sys1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-map-sys1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/map_sys1.png" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-sys1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;C.2: First illustration of principles (not) working together.
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="exm-sys12" class="theorem example">
+<p><span class="theorem-title"><strong>Example C.2 (Second example for <em>D5</em>)</strong></span> A similar case is depicted in <a href="#fig-map-sys2" class="quarto-xref">Figure&nbsp;<span>C.3</span></a>. Here, you do not need all principles of the theory <span class="math inline">\(\mathcal{T}_1 = \{1,2,4\}\)</span> to deduce sentence <span class="math inline">\(3\)</span> or <span class="math inline">\(5\)</span> on their own. However, the principles of <span class="math inline">\(\mathcal{T}_1\)</span> still work together since you need sentence <span class="math inline">\(1\)</span> in either case. In contrast, the principles of the theory <span class="math inline">\(\mathcal{T}_2 = \{1,6,7\}\)</span> work alone to deduce <span class="math inline">\(3\)</span> and <span class="math inline">\(5\)</span>. (Here, <span class="math inline">\(1\)</span> is even an ad hoc principle.) Again, <em>D5</em> requires that <span class="math inline">\(S(\mathcal{T}_2) &lt; S(\mathcal{T}_1)\)</span></p>
+<div id="fig-map-sys2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-map-sys2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/map_sys2.png" class="img-fluid figure-img" style="width:35.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-sys2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;C.3: Second illustration of principles (not) working together.
+</figcaption>
+</figure>
+</div>
+</div>
+<p>The measure <span class="math inline">\(S_{BBB}\)</span> cannot satisfy <em>D5</em> for the simple reason that the measure is blind to the differences in the given examples. This measure calculates systematicity based on the theory’s size and the size of its dialectical closure without considering any other inferential properties of the dialectical structure.</p>
+</section>
+<section id="d6-external-connectedness" class="level3" data-number="C.1.6">
+<h3 data-number="C.1.6" class="anchored" data-anchor-id="d6-external-connectedness"><span class="header-section-number">C.1.6</span> D6 – External Connectedness</h3>
+<p>So far, we have only considered the inferential potential of a theory based on what is implied by the principles alone (<em>D1</em>) and how the principles work together in producing their content (<em>D5</em>). It might, additionally, be relevant to consider what the theory implies with the help of other sentences.</p>
+<div id="exm-sys2" class="theorem example">
+<p><span class="theorem-title"><strong>Example C.3 (Example for <em>D6</em>)</strong></span> For instance, the theory <span class="math inline">\(\mathcal{T}_1=\{1\}\)</span> does not imply anything on its own (besides its principle) and is thus on par with other singleton theories according to the original measure of systematicity.However, in contrast to, let’s say, the theory <span class="math inline">\(\mathcal{T}_2=\{4\}\)</span>, <span class="math inline">\(\mathcal{T}_1\)</span> does imply sentences if it is combined with other sentences, in particular <span class="math inline">\(2\)</span> or <span class="math inline">\(3\)</span>. We might, therefore, expect that the systematicity of <span class="math inline">\(\mathcal{T}_1\)</span> is higher than the systematicity of <span class="math inline">\(\mathcal{T}_2\)</span>.</p>
+<div id="fig-map-sys3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-map-sys3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/map_sys3.png" class="img-fluid figure-img" style="width:20.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-sys3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;C.4: Illustration of principles working together with other sentences.
+</figcaption>
+</figure>
+</div>
+</div>
+<p>This motivates:</p>
+<p><strong>D6 (external connectedness)</strong>: Everything else being equal, if the content of a theory <span class="math inline">\(\mathcal{T}_1\)</span> is larger with some auxiliary assumptions as compared to another theory <span class="math inline">\(\mathcal{T}_2\)</span>, then <span class="math inline">\(\mathcal{T}_1\)</span> has a larger systematicity than <span class="math inline">\(\mathcal{T}_2\)</span>.</p>
+<p>Again, <span class="math inline">\(S_{BBB}\)</span> cannot satisfy <em>D6</em> since it is confined to calculate systematicity based on <span class="math inline">\(\vert\mathcal{T}\vert\)</span> and <span class="math inline">\(\vert\overline{\mathcal{T}}\vert\)</span>.</p>
+</section>
+</section>
+<section id="sec-appendix-systematicity-simple-measures" class="level2" data-number="C.2">
+<h2 data-number="C.2" class="anchored" data-anchor-id="sec-appendix-systematicity-simple-measures"><span class="header-section-number">C.2</span> Simple Systematicity Measures</h2>
+<p>The measure <span class="math inline">\(S_{BBB}\)</span> uses only the size of a theory and the size of its dialectical closure to calculate systematicity. We will call systematicity measures that follow this recipe <em>simple systematicity measures</em>. In the following, we will suggest alternative systematicity measures and analyze their performance concerning <em>D1-D6</em>. We will begin with simple systematicity measures.</p>
+<section id="minimal-mutation-systematicity" class="level3" data-number="C.2.1">
+<h3 data-number="C.2.1" class="anchored" data-anchor-id="minimal-mutation-systematicity"><span class="header-section-number">C.2.1</span> Minimal Mutation Systematicity</h3>
+<p>The measure <span class="math inline">\(S_{BBB}\)</span> violates <em>D1 (content)</em> due to the numerator <span class="math inline">\(\vert \mathcal{T}\vert-1\)</span> in <a href="#eq-s-bbb" class="quarto-xref">Equation&nbsp;<span>C.1</span></a>, which becomes zero for singleton theories. Accordingly, singleton theories receive maximum systematicity independent of their content. One simple suggestion to fix this behaviour is to adapt the numerator such that it does not become zero for theories of size one. A minimal adaption would be to subtract smaller values than one:</p>
+<p><span class="math display">\[
+S_{mm}(\mathcal{T}\vert \gamma):=G\left(\frac{|\mathcal{T}|-\gamma}{|\overline{\mathcal{T}}|}\right)
+\]</span></p>
+<p>with <span class="math inline">\(\gamma&lt;1\)</span>.</p>
+<p><a href="#fig-sys-mm" class="quarto-xref">Figure&nbsp;<span>C.5</span></a> plots the systematicity measure for different values of the parameter <span class="math inline">\(\gamma\)</span>. By construction, the measure satisfies <em>D1 (content)</em>. Similar to <span class="math inline">\(S_{BBB}\)</span>, it also satisfies <em>D2 (simplicity)</em> and <em>D4.1 (non-ad-hocness)</em>. It is even possible to comply with <em>D3.1 (minimal systematicity)</em> if we set <span class="math inline">\(\gamma\)</span> high enough. In our case (sentence pool of size <em>14</em>), <span class="math inline">\(\gamma=0.1\)</span> is able to push the systematicity values of <span class="math inline">\((m,m)\)</span> theories (i.e., ineffective theories) such that they are lower bounds for effective theories.</p>
+<div class="cell" data-layout="[[45,55],[45,55]]" data-execution_count="3">
+<div id="fig-sys-mm" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sys-mm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sys-mm" style="flex-basis: 45.0%;justify-content: flex-start;">
+<div id="fig-sys-mm-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-sys-mm-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="appendix_systematicity_files/figure-html/fig-sys-mm-output-1.png" data-ref-parent="fig-sys-mm" width="345" height="353" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-sys-mm-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) <span class="math inline">\(\gamma = 0.9\)</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sys-mm" style="flex-basis: 55.0%;justify-content: flex-start;">
+<div id="fig-sys-mm-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-sys-mm-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="appendix_systematicity_files/figure-html/fig-sys-mm-output-2.png" data-ref-parent="fig-sys-mm" width="414" height="357" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-sys-mm-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) <span class="math inline">\(\gamma = 0.7\)</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sys-mm" style="flex-basis: 45.0%;justify-content: flex-start;">
+<div id="fig-sys-mm-3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-sys-mm-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="appendix_systematicity_files/figure-html/fig-sys-mm-output-3.png" data-ref-parent="fig-sys-mm" width="345" height="353" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-sys-mm-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) <span class="math inline">\(\gamma = 0.5\)</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sys-mm" style="flex-basis: 55.0%;justify-content: flex-start;">
+<div id="fig-sys-mm-4" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-sys-mm-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="appendix_systematicity_files/figure-html/fig-sys-mm-output-4.png" data-ref-parent="fig-sys-mm" width="414" height="357" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-sys-mm-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) <span class="math inline">\(\gamma = 0.1\)</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sys-mm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;C.5: Minimal mutation systematicity of theories in dependence of their size and closure’s size.
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="effective-content-systematicity" class="level3" data-number="C.2.2">
+<h3 data-number="C.2.2" class="anchored" data-anchor-id="effective-content-systematicity"><span class="header-section-number">C.2.2</span> Effective Content Systematicity</h3>
+<p>The basic idea of the measure <span class="math inline">\(S_{BBB}\)</span> to satisfy <em>D1 (content)</em> and <em>D2 (simplicity)</em> is to employ the “penalizing” term <span class="math inline">\(\frac{|\mathcal{T}|-1}{|\overline{\mathcal{T}}|}\)</span>, which gets bigger with an increase in theory size (<span class="math inline">\(|\mathcal{T}|\)</span>) and a decrease in the size of the closure (<span class="math inline">\(|\overline{\mathcal{T}}|\)</span>). There are, however, other ideas to implement a similar behaviour. A straightforward suggestion is to use the non-trivial content—that is, a theory’s dialectical implications besides its principles (<span class="math inline">\(\overline{\mathcal{T}}\setminus \mathcal{T}\)</span>)—to measure systematicity. In this way, an increase in the amount of principles leads to a decrease in systematicity and an increase in the content to an increase.</p>
+<p>What remains is a proper normalization of the measure:</p>
+<p><span class="math display">\[
+S_{ec}(\mathcal{T})=\frac{\vert \overline{\mathcal{T}}\setminus \mathcal{T}\vert }{n-1}=\frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{n-1}
+\]</span></p>
+<p>Maximally systematizing theories are singleton theories that are able to imply for every sentence <span class="math inline">\(s\)</span> outside of their <em>domain</em> either <span class="math inline">\(s\)</span> or its negation.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> For such theories, we have <span class="math inline">\(\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert = n-1\)</span>, which motivates the denominator. Worst cases are ineffective theories for which <span class="math inline">\(\vert \overline{\mathcal{T}}\vert = \vert \mathcal{T}\vert\)</span> holds, which yields <span class="math inline">\(S_{ec}=0\)</span>.</p>
+<p><span class="math inline">\(S_{ec}\)</span> is linear. An alternative would be to use a quadratic term that is more akin to the quadratic form of <span class="math inline">\(S_{BBB}\)</span>:</p>
+<p><span class="math display">\[
+S_{ec^2}(\mathcal{T})=1-\left(1-\frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{n-1}\right)^2
+\]</span></p>
+<div class="cell" data-layout="[[45,55]]" data-execution_count="4">
+<div id="fig-ec" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ec-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-ec" style="flex-basis: 45.0%;justify-content: flex-start;">
+<div id="fig-ec-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-ec-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="appendix_systematicity_files/figure-html/fig-ec-output-1.png" data-ref-parent="fig-ec" width="345" height="353" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-ec-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Linear effective content systematicity
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-ec" style="flex-basis: 55.0%;justify-content: flex-start;">
+<div id="fig-ec-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-ec-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="appendix_systematicity_files/figure-html/fig-ec-output-2.png" data-ref-parent="fig-ec" width="414" height="357" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-ec-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Quadratic effective content systematicity
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ec-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;C.6: Effective content systematicity of theories in dependence of their size and closure’s size.
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Both measureses satisfy <em>D1, D2, D3.1</em>. However, they fail to account properly for ad hoc principles (<em>D4.1</em>) and similar to all simple measures, they do not satisfy <em>D5</em> and <em>D6</em>.</p>
+</section>
+<section id="content-simplicity-weighted-systematicity" class="level3" data-number="C.2.3">
+<h3 data-number="C.2.3" class="anchored" data-anchor-id="content-simplicity-weighted-systematicity"><span class="header-section-number">C.2.3</span> Content-Simplicity Weighted Systematicity</h3>
+<p>The measure <span class="math inline">\(S_{ec}\)</span> can be motivated in an additional way, which will not only explain why it violates <em>D4.1 (non-ad-hocness)</em> but which will allow us to construct other measures which will satisfy <em>D4.1</em>.</p>
+<p>The basic idea is to formulate separate penalizing terms for simplicity and content:</p>
+<ul>
+<li>Simplicity penalties: <span class="math inline">\(\vert\mathcal{T}\vert -1\)</span></li>
+<li>Content penalties: <span class="math inline">\(n - \vert\overline{\mathcal{T}}\vert\)</span></li>
+</ul>
+<p>Note that theories that are optimal according to simplicity and content receive no penalties.</p>
+<p>We can now aggregate them and introduce an additional parameter <span class="math inline">\(\alpha\)</span> that can be used to balance the penalizing contributions:</p>
+<p><span id="eq-penalty"><span class="math display">\[
+\alpha\cdot(\vert\mathcal{T}\vert -1) + (1-\alpha)\cdot(n - \vert\overline{\mathcal{T}}\vert)
+\tag{C.2}\]</span></span></p>
+<p>Thus, if <span class="math inline">\(\alpha &gt; \frac{1}{2}\)</span>, then a loss in simplicity is penalized more severely than a loss in content.</p>
+<p>Using <span class="math inline">\(\vert\overline{\mathcal{T}}\vert \geq \vert\mathcal{T}\vert \geq 0\)</span>, one can show that</p>
+<p><span class="math display">\[
+\alpha\cdot(\vert\mathcal{T}\vert -1) + (1-\alpha)\cdot(n - \vert\overline{\mathcal{T}}\vert) \leq \vert\overline{\mathcal{T}}\vert\cdot (2\cdot\alpha - 1) + n\cdot (1-\alpha) - \alpha
+\]</span></p>
+<p>Accordingly, we define</p>
+<p><span class="math display">\[
+c:= \vert\overline{\mathcal{T}}\vert\cdot (2\cdot\alpha - 1) + n\cdot (1-\alpha) - \alpha
+\]</span></p>
+<p>and use it to normalize the penalizing term. We will define the new weighted measure by:</p>
+<p><span class="math display">\[
+S_{csw_\alpha}(\mathcal{T}\vert \alpha) = 1-\frac{\alpha\cdot(\vert\mathcal{T}\vert -1) + (1-\alpha)\cdot(n - \vert\overline{\mathcal{T}}\vert)}{c}
+\]</span></p>
+<p>One can show that <span class="math inline">\(S_{csw_\alpha}(\mathcal{T}\vert 0.5)=S_{ec}\)</span>. In other words, if we balance the penalizing terms for content and size similarly, the new measure <span class="math inline">\(S_{csw_\alpha}\)</span> reduces to <span class="math inline">\(S_{ec}\)</span>, which explains why the latter is not able to satisfy <em>D4.1 (non-ad-hocness</em>). Adding an ad hoc principle to a theory will increase its size by one and similarly increase its content by one. What is gained in content is lost in simplicity.</p>
+<p>If we want that systematicity decreases with the addition of ad hoc principles (<em>D4.1</em>), we must penalize an increase in size more than a decrease in content (i.e., <span class="math inline">\(\alpha &gt; \frac{1}{2}\)</span>.) This is illustrated in <a href="#fig-sys-csw" class="quarto-xref">Figure&nbsp;<span>C.7</span></a>. For <span class="math inline">\(\alpha=0.1\)</span> and <span class="math inline">\(\alpha=0.5\)</span> <em>D4.1</em> is violated. If, however, we set <span class="math inline">\(\alpha&gt;0.5\)</span> (e.g., <span class="math inline">\(0.7\)</span> or <span class="math inline">\(0.9\)</span>), the measure satisfies <em>D4.1</em>.</p>
+<div class="cell" data-layout="[[45,55],[45,55]]" data-execution_count="5">
+<div id="fig-sys-csw" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sys-csw-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sys-csw" style="flex-basis: 45.0%;justify-content: flex-start;">
+<div id="fig-sys-csw-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-sys-csw-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="appendix_systematicity_files/figure-html/fig-sys-csw-output-1.png" data-ref-parent="fig-sys-csw" width="345" height="353" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-sys-csw-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) <span class="math inline">\(\alpha = 0.1\)</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sys-csw" style="flex-basis: 55.0%;justify-content: flex-start;">
+<div id="fig-sys-csw-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-sys-csw-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="appendix_systematicity_files/figure-html/fig-sys-csw-output-2.png" data-ref-parent="fig-sys-csw" width="414" height="357" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-sys-csw-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) <span class="math inline">\(\alpha = 0.5\)</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sys-csw" style="flex-basis: 45.0%;justify-content: flex-start;">
+<div id="fig-sys-csw-3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-sys-csw-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="appendix_systematicity_files/figure-html/fig-sys-csw-output-3.png" data-ref-parent="fig-sys-csw" width="345" height="353" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-sys-csw-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) <span class="math inline">\(\alpha = 0.7\)</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sys-csw" style="flex-basis: 55.0%;justify-content: flex-start;">
+<div id="fig-sys-csw-4" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-sys-csw-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="appendix_systematicity_files/figure-html/fig-sys-csw-output-4.png" data-ref-parent="fig-sys-csw" width="414" height="357" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-sys-csw-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) <span class="math inline">\(\alpha = 0.9\)</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sys-csw-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;C.7: Content-simplicity weigthed systematicity (alpha) of theories in dependence of their size and closure’s size.
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Similarly to <span class="math inline">\(S_{ec}\)</span>, the new measure <span class="math inline">\(S_{csw_\alpha}\)</span> complies with <em>D3.1 (minimal systematicity)</em>. They do so in a very specific way: The systematicity values for ineffective theories are not only lower bounds for effective theories, but they also receive the same and lowest systematicity value possible, namely <span class="math inline">\(0\)</span>.</p>
+<p>Surely, for a fixed <span class="math inline">\(\vert\mathcal{T}\vert\)</span>, systematicity should be minimised for <span class="math inline">\(\vert\overline{\mathcal{T}}\vert = \vert\mathcal{T}\vert\)</span> and vice versa. However, it is not clear that all cases of <span class="math inline">\(\vert\overline{\mathcal{T}}\vert = \vert\mathcal{T}\vert\)</span> should have equal systematicity of <span class="math inline">\(0\)</span>. Especially if we conceive systematicity to be a weighted combination of simplicity and content, we might think that cases of larger <span class="math inline">\(\vert\overline{\mathcal{T}}\vert = \vert\mathcal{T}\vert\)</span> are better or worse than cases of smaller ones. In particular, if simplicity has more weight than content (<span class="math inline">\(\alpha&gt;0.5\)</span>), then smaller ones should be (a little) more systematic than larger ones (because they are simpler).</p>
+<p>This suggests an alternative normalization. For <span class="math inline">\(\alpha&gt;0.5\)</span>, the worst case would be <span class="math inline">\(\vert\overline{\mathcal{T}}\vert = \vert\mathcal{T}\vert = n\)</span> (minimal simplicity). Plugging this into the penalty function <a href="#eq-penalty" class="quarto-xref">Equation&nbsp;<span>C.2</span></a> gives us a normalizing denominator of <span class="math inline">\(\alpha\cdot(n -1)\)</span>. For <span class="math inline">\(\alpha&lt;0.5\)</span>, the worst case would be <span class="math inline">\(\vert\overline{\mathcal{T}}\vert = \vert\mathcal{T}\vert = 1\)</span> (minimal content). Plugging this into the penalty function gives us the normalizing denominator <span class="math inline">\((1-\alpha)\cdot(n -1)\)</span>. The denominator that covers both cases is <span class="math inline">\((\vert\alpha -0.5\vert+0.5)\cdot(n-1)\)</span>.</p>
+<p>To better distinguish the resulting alternative measure from <span class="math inline">\(S_{sw_\alpha}\)</span>, we rename the parameter <span class="math inline">\(\alpha\)</span> to <span class="math inline">\(\beta\)</span>. This gives:</p>
+<p><span class="math display">\[
+S_{sw_\beta}(\mathcal{T}) = 1-\frac{\beta\cdot(\vert\mathcal{T}\vert -1) + (1-\beta)\cdot(n - \vert\overline{\mathcal{T}}\vert)}{(\vert\beta -0.5\vert+0.5)\cdot(n-1)}
+\]</span></p>
+<p>Similar to <span class="math inline">\(S_{sw_\alpha}\)</span>, <span class="math inline">\(S_{sw_\beta}\)</span> satisfies <em>D1</em>, <em>D2</em>. The desiderata <em>D3.1</em> and <em>D4.1</em> are satisfied for certain valus of <span class="math inline">\(\alpha\)</span> (in our case for <span class="math inline">\(\alpha == 0.525\)</span>) as illustrated in <a href="#fig-sys-csw-beta" class="quarto-xref">Figure&nbsp;<span>C.8</span></a>.</p>
+<div class="cell" data-layout="[[45,55],[45,55]]" data-execution_count="6">
+<div id="fig-sys-csw-beta" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sys-csw-beta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sys-csw-beta" style="flex-basis: 45.0%;justify-content: flex-start;">
+<div id="fig-sys-csw-beta-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-sys-csw-beta-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="appendix_systematicity_files/figure-html/fig-sys-csw-beta-output-1.png" data-ref-parent="fig-sys-csw-beta" width="345" height="353" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-sys-csw-beta-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) <span class="math inline">\(\beta= 0.3\)</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sys-csw-beta" style="flex-basis: 55.0%;justify-content: flex-start;">
+<div id="fig-sys-csw-beta-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-sys-csw-beta-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="appendix_systematicity_files/figure-html/fig-sys-csw-beta-output-2.png" data-ref-parent="fig-sys-csw-beta" width="414" height="357" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-sys-csw-beta-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) <span class="math inline">\(\beta = 0.525\)</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sys-csw-beta" style="flex-basis: 45.0%;justify-content: flex-start;">
+<div id="fig-sys-csw-beta-3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-sys-csw-beta-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="appendix_systematicity_files/figure-html/fig-sys-csw-beta-output-3.png" data-ref-parent="fig-sys-csw-beta" width="345" height="353" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-sys-csw-beta-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) <span class="math inline">\(\beta = 0.7\)</span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sys-csw-beta" style="flex-basis: 55.0%;justify-content: flex-start;">
+<div id="fig-sys-csw-beta-4" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-sys-csw-beta-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="appendix_systematicity_files/figure-html/fig-sys-csw-beta-output-4.png" data-ref-parent="fig-sys-csw-beta" width="414" height="357" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-sys-csw-beta-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) <span class="math inline">\(\beta = 0.9\)</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sys-csw-beta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;C.8: Content-simplicity weighted systematicity (beta) of theories in dependence of their size and closure’s size .
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="sec-rel-eff-content-systematicity" class="level3" data-number="C.2.4">
+<h3 data-number="C.2.4" class="anchored" data-anchor-id="sec-rel-eff-content-systematicity"><span class="header-section-number">C.2.4</span> Relative Effective Content Systematicity</h3>
+<p>The formulation of another solution starts by framing the problem of <span class="math inline">\(S_{ec}\)</span> in the following way: <span class="math inline">\(S_{ec}\)</span> simply measures the number of implied sentences outside the theory’s principles (<span class="math inline">\(\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert\)</span>). Consequently, <span class="math inline">\(S_{ec}\)</span> cannot distinguish between theories that are expanded by ad hoc principles, that is, principles that do not expand the theory’s content besides the added principles.</p>
+<p>However, if a theory is expanded by ad hoc principles, its content measured relative to its size (<span class="math inline">\(\frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\vert \mathcal{T}\vert}\)</span> ) will decrease.</p>
+<p>This suggests to measure <span class="math inline">\(\frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\vert \mathcal{T}\vert}\)</span> instead of simply measuring <span class="math inline">\(\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert\)</span>, e.g., as follows:</p>
+<p><span class="math display">\[
+S(\mathcal{T})= \frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\vert \mathcal{T}\vert (n-1)}
+\]</span></p>
+<p>Alternatively, we can conceptuali7e <span class="math inline">\(\frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\vert \mathcal{T}\vert}\)</span> as a multiplicative correction factor for <span class="math inline">\(S_{ec}\)</span> which can lead to the following:</p>
+<p><span class="math display">\[
+S(\mathcal{T})=S_{ec}\frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\vert \mathcal{T}\vert (n-1)}
+\]</span></p>
+<p>This quadratic form might, however, decrease <span class="math inline">\(S(\mathcal{T})\)</span> unnecessarily, which motivates us to take the square root of the latter expression:</p>
+<p><span class="math display">\[
+S_{rec}(\mathcal{T}):= \sqrt{S_{ec}\frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\vert \mathcal{T}\vert (n-1)}}= \frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\sqrt{\vert \mathcal{T}\vert} (n-1)}
+\]</span></p>
+<p><a href="#fig-rec" class="quarto-xref">Figure&nbsp;<span>C.9</span></a> illustrates that <span class="math inline">\(S_{rec}(\mathcal{T})\)</span> satisfies <em>D1</em>, <em>D2</em>, <em>D3.1</em> and <em>D4.1</em>.</p>
+<div id="cell-fig-rec" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div id="fig-rec" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rec-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="appendix_systematicity_files/figure-html/fig-rec-output-1.png" width="463" height="399" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rec-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;C.9: Relative effective content systematicity of theories in dependence of their size and closure’s size.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-appendix-systematicity-sigma-measures" class="level2" data-number="C.3">
+<h2 data-number="C.3" class="anchored" data-anchor-id="sec-appendix-systematicity-sigma-measures"><span class="header-section-number">C.3</span> Sigma-Based Systematicity Measures</h2>
+<p>All simple systematicity measures are not able to account for <em>D5 (internal connectedness)</em> and <em>D6 (internal connectedness)</em> for the simple reason that they evaluate systematicity based on <span class="math inline">\(\vert \mathcal{T}\vert\)</span> and <span class="math inline">\(\vert \overline{\mathcal{T}}\vert\)</span> alone. The problem, in particular, is that the dialectical closure as defined by <span class="math inline">\(\overline{\mathcal{T}}=\{s\in \mathcal{S}\vert \mathcal{T}\models_{\tau} s\}\)</span> will miss those dialectical implications that are relevant for <em>D5</em> and <em>D6</em>. The dialectical closure <span class="math inline">\(\overline{\mathcal{T}}\)</span> enumerates only atomic sentences as implications. While it is clear that arbitrary conjunctions of these atomic sentences are also implications, <span class="math inline">\(\overline{\mathcal{T}}\)</span> is blind to other complex implications of <span class="math inline">\(\mathcal{T}\)</span>. It can, in particular, not distinguish between theories <span class="math inline">\(\mathcal{T}_1\)</span> and <span class="math inline">\(\mathcal{T}_2\)</span> for which <span class="math inline">\(\overline{\mathcal{T}_1} \neq \overline{\mathcal{T}_2}\)</span> but which differ with respect to certain disjunctions implied by the theories (i.e., extensional if-then clauses or “conditional implications”).</p>
+<p>If we want to account for <em>D5</em> and <em>D6</em>, we have to use a more ambitious concept of <em>content</em>. In the following, we will draw on the theory of dialectical structures <span class="citation" data-cites="betz_debate_2013">(<a href="references.html#ref-betz_debate_2013" role="doc-biblioref">Betz 2013</a>)</span> to explicate such a notion of <em>content</em>.</p>
+<p>The <em>inferential density</em> of a dialectical structure <span class="math inline">\(\tau\)</span> “can be understood as measure of the inferential constraints encoded in <span class="math inline">\(\tau\)</span>” <span class="citation" data-cites="betz_debate_2013">(<a href="references.html#ref-betz_debate_2013" role="doc-biblioref">Betz 2013, 44</a>)</span> and is defined as</p>
+<p><span class="math display">\[
+D(\tau) = \frac{n-lg(\sigma)}{n}
+\]</span></p>
+<p>with <span class="math inline">\(\sigma\)</span> being the number of complete and dialectically consistent positions on a dialectical structure <span class="math inline">\(\tau\)</span> and <span class="math inline">\(2n\)</span> the size of the sentence pool <span class="math inline">\(\mathcal{S}\)</span>.</p>
+<p>A <em>position</em> is a set of sentences from <span class="math inline">\(\mathcal{S}\)</span> (e.g., the commitments of an epistemic state in our RE model). A dialectical structure will render some of these positions dialectically inconsistent. For instance, an argument with one premise <span class="math inline">\(s_1\)</span> and the conclusion <span class="math inline">\(s_2\)</span> renders the position <span class="math inline">\(\{s_1,\neg s_2\}\)</span> dialectically inconsistent.</p>
+<p>A <em>complete position</em> is a position that includes for each <span class="math inline">\(s\in\mathcal{S}\)</span> either <span class="math inline">\(s\)</span> or <span class="math inline">\(\neg s\)</span>. Hence, complete positions do not include flat contradictions (<span class="math inline">\(s\)</span> and <span class="math inline">\(\neg s\)</span>), i.e.&nbsp;they are minimally consistent. If a dialectical structure is ineffective, and thus does not render any position dialectically inconsistent, then there are <span class="math inline">\(2^n\)</span> complete and consistent positions. In this case, <span class="math inline">\(D(\tau)=0\)</span>. On the other hand, if <span class="math inline">\(\tau\)</span> allows for exactly one complete and consistent position, and hence renders all other complete positions dialectically inconsistent, then we have <span class="math inline">\(D(\tau)=1\)</span>.</p>
+<p>It is straightforward to generalize the concept of inferential density to a notion of content. The inferential density <span class="math inline">\(D(\tau)\)</span> measures how many complete positions are dialectically inconsistent given the dialectical structure alone. We can now ask which complete positions are rendered <em>additionally</em> inconsistent if we further assume the truth of sentences from a theory <span class="math inline">\(\mathcal{T}\)</span>. In other words, if <span class="math inline">\(\sigma_{\mathcal{T}}\)</span> is the number of complete consistent positions that extend a theory <span class="math inline">\(\mathcal{T}\)</span>, the term <span class="math inline">\(\sigma-\sigma_\mathcal{T}\)</span> can be taken to measure the (<span class="math inline">\(\sigma\)</span>-based) content size <span class="math inline">\(\vert C_\sigma(\mathcal{T})\vert\)</span> of a theory. Proper normalization leads to the following:</p>
+<p><span id="eq-generalization-content"><span class="math display">\[
+\vert C_\sigma(\mathcal{T})\vert = \frac{lg(\sigma-\sigma_{\mathcal{T}}+1)}{n}
+\tag{C.3}\]</span></span></p>
+<p>If <span class="math inline">\(\sigma=2^n\)</span> (minimal inferential density) and <span class="math inline">\(\sigma_\mathcal{T}=1\)</span> (maximal content), <span class="math inline">\(\vert C_\sigma(\mathcal{T})\vert=1\)</span>. If, on the other hand, the theory cannot render anything inconsistent that is not already inconsistent by <span class="math inline">\(\tau\)</span> alone (i.e., <span class="math inline">\(\sigma=\sigma_\mathcal{T}\)</span>), <span class="math inline">\(\vert C_\sigma(\mathcal{T})\vert=0\)</span>.</p>
+<p>The more implications <span class="math inline">\(\mathcal{T}\)</span> has, the more complete positions are (additionally) rendered dialectically inconsistent. In this way, the expression <a href="#eq-generalization-content" class="quarto-xref">Equation&nbsp;<span>C.3</span></a> is a natural generalization of <span class="math inline">\(\vert\overline{\mathcal{T}}\vert\)</span>.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<section id="sec-appendix-systematicity-s-grec" class="level3" data-number="C.3.1">
+<h3 data-number="C.3.1" class="anchored" data-anchor-id="sec-appendix-systematicity-s-grec"><span class="header-section-number">C.3.1</span> Generalizing Relative Effective Content Systematicity</h3>
+<p>There are surely different possibilities to introduce systematicity measures based on the (<span class="math inline">\(\sigma\)</span>-based) content size <span class="math inline">\(\vert C_\sigma(\mathcal{T})\vert\)</span>. Here, we discuss but one measure, which is based on the considerations we used to devise the measure <span class="math inline">\(S_{rec}\)</span> in <a href="#sec-rel-eff-content-systematicity" class="quarto-xref"><span>Section C.2.4</span></a>. The basic idea of this measure was to take the effective content size <span class="math inline">\(\vert\overline{\mathcal{T}}\setminus\mathcal{T}\vert\)</span> in relation to the size of the theory.</p>
+<p>Hence, the first step is to find a generalization of the expression <span class="math inline">\(\vert\overline{\mathcal{T}}\setminus\mathcal{T}\vert\)</span>. Similar to <span class="math inline">\(S_{rec}\)</span>, we are interested in what a theory inferentially accomplishes besides implying its principles. To that end, we might consider those positions that are complete and dialectically consistent outside the domain of the theory. That is, we consider a restriction of the sentence pool <span class="math inline">\(\mathcal{S}\)</span> to those sentences that are neither principles nor negations of a theory’s principles.</p>
+<p>More formally, let <span class="math inline">\(\mathcal{S}_{\mathcal{T}}\)</span> be the domain of <span class="math inline">\(\mathcal{T}\)</span>, and let <span class="math inline">\(\mathcal{S}\setminus\mathcal{T}=\mathcal{S}\setminus \mathcal{S}_{\mathcal{T}}\)</span> be the domain outside the principles of <span class="math inline">\(\mathcal{T}\)</span>, <span class="math inline">\(2m\)</span> the size of the restricted sentence pool and <span class="math inline">\(\sigma_{\mathcal{T}}^{\mathcal{S}\setminus\mathcal{T}}\)</span> the number of positions that are dialectically consistent given <span class="math inline">\(\mathcal{T}\)</span> and complete on the restricted domain <span class="math inline">\(\mathcal{S}\setminus\mathcal{T}\)</span>. Then, we can define the <em>effective content size</em> on <span class="math inline">\(\mathcal{S}\setminus\mathcal{T}\)</span> as</p>
+<p><span id="eq-generalization-effective-content"><span class="math display">\[
+\vert C_\sigma(\mathcal{T}, \mathcal{S}\setminus\mathcal{T})\vert = \frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}}-\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}+1)}{m}.
+\tag{C.4}\]</span></span></p>
+<p>Similar to <span class="math inline">\(S_{rec}\)</span>, systematicity should measure the effective content size relative to the size of the theory—that is, something like: <span class="math display">\[
+S\propto\frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}}-\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}+1)}{\vert\mathcal{T}\vert \cdot m}
+\]</span></p>
+<p>What remains is a proper normalization.</p>
+<p>Maximal effective content is reached by singleton theories that render all but one position inconsistent. Under this assumption we have <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}=1\)</span> and <span class="math inline">\(\vert \mathcal{T}\vert=1\)</span>. The value of <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}}\)</span> will depend on the singleton theory in question. One suggestion is, therefore, to take <span class="math inline">\(max(\{\sigma^{\mathcal{S}\setminus \{s\}})\vert s\in \mathcal{S} \}\)</span> to normalize the measure.</p>
+<p>For simplicity, we will use another estimation. <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}}\)</span> will be maximal if the dialectical structure is silent on the domain <span class="math inline">\(\mathcal{S}\setminus\mathcal{T}\)</span>; that is, if it doesn’t render anything dialectically inconsistent on <span class="math inline">\(\mathcal{S}\setminus\mathcal{T}\)</span>. In this case, <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}}\)</span> will be <span class="math inline">\(2^{n-1}\)</span> for singleton theories. This motivates the following normalization:<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
+<p><span id="eq-s-grec"><span class="math display">\[
+S_{grec}(\mathcal{T})=\frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}}-\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}+1)}{\vert\mathcal{T}\vert \cdot (n-1)}
+\tag{C.5}\]</span></span></p>
+<p>How does this measure perform with respect to the different desiderata?</p>
+<p>For the simple measures, we equated content with <span class="math inline">\(\overline{\mathcal{T}}\)</span>. Since we adopted a more ambitious concept of content for the generalized measure, we have to assess its performance with respect to this explication of content.</p>
+<p>The desiderata <em>D1 (content)</em> and <em>D2 (simplicity)</em> are trivially satisfied. The numerator of <a href="#eq-s-grec" class="quarto-xref">Equation&nbsp;<span>C.5</span></a> is proportional to the size of the generalized content; the denominator is proportional to the theory size. Accordingly, if we keep the size of the theory constant, systematicity increases with increasing content (<em>D1</em>). Similarly, if we keep the theory’s content constant, systematicity increases with a decrease in theory size (<em>D2</em>). Figure <a href="#fig-sys-grec" class="quarto-xref">Figure&nbsp;<span>C.10</span></a> illustrates this behaviour.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
+<div id="cell-fig-sys-grec" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div id="fig-sys-grec" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sys-grec-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="appendix_systematicity_files/figure-html/fig-sys-grec-output-1.png" width="562" height="476" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sys-grec-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;C.10: Generalized relative effective content size systematicity of theories in dependence of their size and closure’s size.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Ineffective theories do not imply anything besides their principles that is not already tautologically true (with respect to <span class="math inline">\(\tau\)</span>). Accordingly, they do not render any positions inconsistent on <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}}\)</span> that are not already dialectically inconsistent according to <span class="math inline">\(\tau\)</span> alone. Hence, we have <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}}=\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}\)</span>, which implies that <span class="math inline">\(S_{grec}(\mathcal{T})=0\)</span> for ineffective theories. Effective theories, on the other hand, do imply something additional on <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}}\)</span>. Hence, we have <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}}&gt;\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}\)</span> and accordingly <span class="math inline">\(S_{grec}(\mathcal{T})&gt;0\)</span> for effective theories. Taken together, this implies that systematicity values of ineffective theories are lower bounds for those of effective theories (<em>D3.1</em>).</p>
+<p>It is difficult to assess the desideratum <em>D4.1</em> visually (as we did with the simple measures) since we cannot identify ad hoc extensions of theories in <a href="#fig-sys-grec" class="quarto-xref">Figure&nbsp;<span>C.10</span></a>. However, similar to <em>D3.1</em>, we can provide a proof that <span class="math inline">\(S_{grec}\)</span> conforms to <em>D4.1</em>.</p>
+<div id="lem-grec" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma C.1 (Generalized relative effective content systematicity satisfies D4.1)</strong></span> We have to show that <span class="math inline">\(S_{grec}(\mathcal{T}^*) &lt; S_{grec}(\mathcal{T})\)</span> if <span class="math inline">\(\mathcal{T}^*\)</span> is an extension of <span class="math inline">\(\mathcal{T}\)</span> with mere ad hoc principles. So let us assume that <span class="math inline">\(\mathcal{T}^*\)</span> is the result of adding an ad hoc principle <span class="math inline">\(p\in\mathcal{S}\)</span> to a theory <span class="math inline">\(\mathcal{T}\)</span>.</p>
+<p>We have to show that</p>
+<p><span class="math display">\[
+\frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}^*}-\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}^*}+1)}{\vert\mathcal{T}^{*}\vert \cdot (n-1)} &lt; \frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}}-\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}+1)}{\vert\mathcal{T}\vert \cdot (n-1)}
+\]</span></p>
+<p>The corresponding comparison for simple systematicity measures is more or less trivial. In these cases, we could simply use that <span class="math inline">\(\vert\overline{\mathcal{T}}\setminus\mathcal{T}\vert = \vert\overline{\mathcal{T}}^*\setminus\mathcal{T}^*\vert\)</span>. Adding one ad hoc principle to a theory increases its closure and size by one. If we compare the change of size and <span class="math inline">\(\sigma\)</span>-based content, the comparison is not so straightforward any more.</p>
+<p>Basically, we have to compare <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}^*}-\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}^*}\)</span> with <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}}-\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}\)</span>. Clearly, <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}^*}\leq\sigma^{\mathcal{S}\setminus\mathcal{T}}\)</span> (since <span class="math inline">\(\mathcal{S}\setminus\mathcal{T}^*\subset \mathcal{S}\setminus\mathcal{T}\)</span>). Additionally, we can use the definition of ad hoc principles: Adding ad hoc principles to a theory <span class="math inline">\(\mathcal{T}\)</span> does not do anything in addition to <span class="math inline">\(\mathcal{T}\)</span> on <span class="math inline">\(\mathcal{S}\setminus\mathcal{T}^*\)</span>. Hence, <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}^*}=\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}}\)</span>. Considering this equation, we have to compare <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}}\)</span> with <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}\)</span> and, again, we have <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}}\leq \sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}\)</span>. But this simple estimation does not help to get us any further with comparing <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}^*}-\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}^*}\)</span> and <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}}-\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}\)</span>.</p>
+<p>What we need is a more precise estimation of the forms <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}^*}+a = \sigma^{\mathcal{S}\setminus\mathcal{T}}\)</span> and <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}}+b= \sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}\)</span>. In other words, we need to know the extent to which <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}}_{(\mathcal{T})}\)</span> increases when further restricting the sentence pool.</p>
+<p>Let’s start with <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}^*}\)</span> and <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}}\)</span>. We will search for an additive expression for both terms. Let <span class="math inline">\(\Gamma\)</span> be the set of all complete and consistent positions on <span class="math inline">\(\tau\)</span> (hence, <span class="math inline">\(\sigma=\vert \Gamma\vert\)</span>). In analogy to <span class="math inline">\(\sigma^{\mathcal{S}'}\)</span>, we will define <span class="math inline">\(\Gamma^{\mathcal{S}'}\)</span> as the set of consistent positions that are complete on the subdomain <span class="math inline">\(\mathcal{S}'\subset \mathcal{S}\)</span>. More formally, we can define:</p>
+<p><span class="math display">\[
+\Gamma^{\mathcal{S}'}=\{\mathcal{A}\cap \mathcal{S}' \vert \mathcal{A}\in \Gamma\}
+\]</span></p>
+<p>We will now partition <span class="math inline">\(\Gamma^{\mathcal{S}\setminus\mathcal{T}^*}\)</span>. Since, <span class="math inline">\(\mathcal{S}\setminus\mathcal{T}^*\subset \mathcal{S}\setminus\mathcal{T}\)</span>, we have</p>
+<p><span id="eq-gamma-restricted"><span class="math display">\[
+\Gamma^{\mathcal{S}\setminus\mathcal{T}^*}=\{\mathcal{A}\cap \mathcal{S}\setminus\mathcal{T}^* \vert \mathcal{A}\in \Gamma^{\mathcal{S}\setminus\mathcal{T}}\}
+\tag{C.6}\]</span></span></p>
+<p>In other words, elements in <span class="math inline">\(\Gamma^{\mathcal{S}\setminus\mathcal{T}^*}\)</span> result from reducing elements in <span class="math inline">\(\Gamma^{\mathcal{S}\setminus\mathcal{T}}\)</span> to the domain outside <span class="math inline">\(\mathcal{T}^*\)</span>. Since the domains <span class="math inline">\(\mathcal{S}\setminus\mathcal{T}\)</span> and <span class="math inline">\(\mathcal{S}\setminus\mathcal{T}^*\)</span> only differ with respect to the principle <span class="math inline">\(p\)</span> and its negation (i.e., <span class="math inline">\(\mathcal{S}\setminus\mathcal{T}-\mathcal{S}\setminus\mathcal{T}^*=\{p,\neg p\}\)</span>), there are three (exclusive) possibilities of how elements from <span class="math inline">\(\Gamma^{\mathcal{S}\setminus\mathcal{T}}\)</span> are mapped to elements from <span class="math inline">\(\Gamma^{\mathcal{S}\setminus\mathcal{T}^*}\)</span>: For all <span class="math inline">\(A\in\Gamma^{\mathcal{S}\setminus\mathcal{T}^*}\)</span> either</p>
+<ol type="1">
+<li><span class="math inline">\(A\cup \{p\}\in \Gamma^{\mathcal{S}\setminus\mathcal{T}}\)</span> and <span class="math inline">\(A\cup \{\neg p\}\notin \Gamma^{\mathcal{S}\setminus\mathcal{T}}\)</span>, or</li>
+<li><span class="math inline">\(A\cup \{p\}\notin \Gamma^{\mathcal{S}\setminus\mathcal{T}}\)</span> and <span class="math inline">\(A\cup \{\neg p\}\in \Gamma^{\mathcal{S}\setminus\mathcal{T}}\)</span>, or</li>
+<li><span class="math inline">\(A\cup \{p\}\in \Gamma^{\mathcal{S}\setminus\mathcal{T}}\)</span> and <span class="math inline">\(A\cup \{\neg p\}\in \Gamma^{\mathcal{S}\setminus\mathcal{T}}\)</span>.</li>
+</ol>
+<p>The corresponding sets are denoted by <span class="math inline">\(\Gamma^{\mathcal{S}\setminus\mathcal{T}^*}_1\)</span>, <span class="math inline">\(\Gamma^{\mathcal{S}\setminus\mathcal{T}^*}_2\)</span> and <span class="math inline">\(\Gamma^{\mathcal{S}\setminus\mathcal{T}^*}_3\)</span> and represent a partitioning of <span class="math inline">\(\Gamma^{\mathcal{S}\setminus\mathcal{T}^*}\)</span>:</p>
+<p><span class="math display">\[
+\Gamma^{\mathcal{S}\setminus\mathcal{T}^*}= \Gamma^{\mathcal{S}\setminus\mathcal{T}^*}_1 \cup \Gamma^{\mathcal{S}\setminus\mathcal{T}^*}_2 \cup \Gamma^{\mathcal{S}\setminus\mathcal{T}^*}_3
+\]</span></p>
+<p>Similar to the definition of <span class="math inline">\(\sigma_{\mathcal{T}}\)</span>, let <span class="math inline">\(\Gamma_{\mathcal{T}}\)</span> the set of complete positions that extend <span class="math inline">\(\mathcal{T}\)</span>. Using this definition, we can partition <span class="math inline">\(\Gamma^{\mathcal{S}\setminus\mathcal{T}}\)</span> into</p>
+<p><span class="math display">\[
+\Gamma^{\mathcal{S}\setminus\mathcal{T}}= \Gamma^{\mathcal{S}\setminus\mathcal{T}}_{\{p\}} \cup \Gamma^{\mathcal{S}\setminus\mathcal{T}}_{\{\neg p\}}
+\]</span></p>
+<p>We can now use the above defined sets to rewrite <span class="math inline">\(\Gamma^{\mathcal{S}\setminus\mathcal{T}}_{\{p\}}\)</span> and <span class="math inline">\(\Gamma^{\mathcal{S}\setminus\mathcal{T}}_{\{\neg p\}}\)</span> in the following way:</p>
+<p><span class="math display">\[
+\Gamma^{\mathcal{S}\setminus\mathcal{T}}_{\{p\}}=\left( \Gamma^{\mathcal{S}\setminus\mathcal{T}^*}_1 \cup \{p\} \right) \cup \left( \Gamma^{\mathcal{S}\setminus\mathcal{T}^*}_3 \cup \{p\} \right)
+\]</span></p>
+<p><span class="math display">\[
+\Gamma^{\mathcal{S}\setminus\mathcal{T}}_{\{\neg p\}}=\left( \Gamma^{\mathcal{S}\setminus\mathcal{T}^*}_2 \cup \{\neg p\} \right) \cup \left( \Gamma^{\mathcal{S}\setminus\mathcal{T}^*}_3 \cup \{\neg p\} \right)
+\]</span></p>
+<p>This leads to</p>
+<p><span class="math display">\[
+\sigma^{\mathcal{S}\setminus\mathcal{T}^*}=\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_1 + \sigma^{\mathcal{S}\setminus\mathcal{T}^*}_2 + \sigma^{\mathcal{S}\setminus\mathcal{T}^*}_3
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\sigma^{\mathcal{S}\setminus\mathcal{T}}=\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_1 + \sigma^{\mathcal{S}\setminus\mathcal{T}^*}_2 + 2\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_3
+\]</span></p>
+<p>and hence</p>
+<p><span id="eq-est1"><span class="math display">\[
+\sigma^{\mathcal{S}\setminus\mathcal{T}} = \sigma^{\mathcal{S}\setminus\mathcal{T}^*} + \sigma^{\mathcal{S}\setminus\mathcal{T}^*}_3
+\tag{C.7}\]</span></span></p>
+<p>An analogical partitioning of <span class="math inline">\(\Gamma^{S\setminus\mathcal{T}^*}_{\mathcal{T}}\)</span> and <span class="math inline">\(\Gamma^{S\setminus\mathcal{T}}_{\mathcal{T}}\)</span> yields</p>
+<p><span id="eq-est2"><span class="math display">\[
+\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}} = \sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}} + (\sigma_{\mathcal{T}})^{\mathcal{S}\setminus\mathcal{T}^*}_{3}
+\tag{C.8}\]</span></span></p>
+<p>We will now use <a href="#eq-est1" class="quarto-xref">Equation&nbsp;<span>C.7</span></a> and <a href="#eq-est2" class="quarto-xref">Equation&nbsp;<span>C.8</span></a> to show that <span class="math inline">\(S_{grec}(\mathcal{T}^*) &lt; S_{grec}(\mathcal{T})\)</span>.</p>
+<p>Clearly, <span class="math inline">\((\sigma_{\mathcal{T}})^{\mathcal{S}\setminus\mathcal{T}^*}_{3}\leq \sigma^{\mathcal{S}\setminus\mathcal{T}^*}_3\)</span>. <a href="#eq-est1" class="quarto-xref">Equation&nbsp;<span>C.7</span></a> and <a href="#eq-est2" class="quarto-xref">Equation&nbsp;<span>C.8</span></a> can now be used to deduce</p>
+<p><span class="math display">\[
+\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}} - \sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}} \leq \sigma^{\mathcal{S}\setminus\mathcal{T}} - \sigma^{\mathcal{S}\setminus\mathcal{T}^*}
+\]</span></p>
+<p>Since <span class="math inline">\(\mathcal{T}^*\)</span> is an ad hoc extension of <span class="math inline">\(\mathcal{T}\)</span>, we have <span class="math inline">\(\sigma^{S\setminus\mathcal{T}^*}_{\mathcal{T}^*}=\sigma^{S\setminus\mathcal{T}^*}_{\mathcal{T}}\)</span>, which leads to</p>
+<p><span class="math display">\[
+\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}} - \sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}^*} \leq \sigma^{\mathcal{S}\setminus\mathcal{T}} - \sigma^{\mathcal{S}\setminus\mathcal{T}^*}
+\]</span></p>
+<p>which can be rewritten as</p>
+<p><span id="eq-almost-there1"><span class="math display">\[
+\frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}^*} - \sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}^*}+1)}{(n-1)} \leq \frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}} - \sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}+1)}{(n-1)}
+\tag{C.9}\]</span></span></p>
+<p>Since <span class="math inline">\(\frac{\vert\mathcal{T}^*\vert}{\vert\mathcal{T}\vert}&gt;1\)</span> we have also</p>
+<p><span id="eq-almost-there2"><span class="math display">\[
+\frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}} - \sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}+1)}{(n-1)}&lt; \frac{\vert\mathcal{T}^*\vert}{\vert\mathcal{T}\vert}\frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}} - \sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}+1)}{(n-1)}
+\tag{C.10}\]</span></span></p>
+<p>Using both estimations <a href="#eq-almost-there1" class="quarto-xref">Equation&nbsp;<span>C.9</span></a> and <a href="#eq-almost-there2" class="quarto-xref">Equation&nbsp;<span>C.10</span></a> we arrive at:</p>
+<p><span class="math display">\[
+\frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}^*} - \sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}^*}+1)}{\vert\mathcal{T}^*\vert(n-1)} &lt;  \frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}} - \sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}+1)}{\vert\mathcal{T}\vert(n-1)}
+\]</span></p>
+<p>Hence, <span class="math inline">\(S_{grec}(\mathcal{T}^*) &lt; S_{grec}(\mathcal{T})\)</span> if <span class="math inline">\(\mathcal{T}^*\)</span> is an ad hoc extension of <span class="math inline">\(\mathcal{T}\)</span>. <span class="math inline">\(\square\)</span></p>
+</div>
+<p>How does <span class="math inline">\(S_{grec}\)</span> performs with respect to <em>D5 (internal connectedness)</em> and <em>D6 (external conenectedness)</em>? Since we did not provide any explications of these desiderata, we only calculated <span class="math inline">\(S_{grec}\)</span> for the given illustrations.</p>
+<p>In example <a href="#exm-sys11" class="quarto-xref">Example&nbsp;<span>C.1</span></a>, we considered two theories <span class="math inline">\(\mathcal{T}_1 = \{1,2\}\)</span> and <span class="math inline">\(\mathcal{T}_2 = \{7,8\}\)</span> and expect according to <em>D5</em> that <span class="math inline">\(S(\mathcal{T}_2) &lt; S(\mathcal{T}_1)\)</span>. However, the calculated values (<span class="math inline">\(S(\mathcal{T}_1)=0.32\)</span> and <span class="math inline">\(S(\mathcal{T}_2)=0.40\)</span>) yield the exact opposite: <span class="math inline">\(S(\mathcal{T}_2) &gt; S(\mathcal{T}_1)\)</span>. Surprisingly, these results can be explained by the same reasoning we used to motivate <em>D5</em> (compare <a href="#fig-map-sys1" class="quarto-xref">Figure&nbsp;<span>C.2</span></a>). Since the sentences of <span class="math inline">\(S(\mathcal{T}_1)\)</span> (<span class="math inline">\(1\)</span> and <span class="math inline">\(2\)</span>) only imply other sentences in their combination and the sentences of <span class="math inline">\(S(\mathcal{T}_2)\)</span> (<span class="math inline">\(7\)</span> and <span class="math inline">\(8\)</span>) imply other sentences on their own, there are, for instance, more complete consistent positions given <span class="math inline">\(1\)</span> than complete consistent positions given <span class="math inline">\(7\)</span>. In consequence, <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}_1}&lt;\sigma^{\mathcal{S}\setminus\mathcal{T}_2}\)</span> (<span class="math inline">\(25\)</span> vs.&nbsp;<span class="math inline">\(49\)</span>). Additionally, <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}_1}_{\mathcal{T}_1}=\sigma^{\mathcal{S}\setminus\mathcal{T}_2}_{\mathcal{T}_2}\)</span> (<span class="math inline">\(4\)</span>) and accordingly <span class="math inline">\(S(\mathcal{T}_2) &gt; S(\mathcal{T}_1)\)</span>.</p>
+<p>The same happens in <a href="#exm-sys12" class="quarto-xref">Example&nbsp;<span>C.2</span></a> (<a href="#fig-map-sys2" class="quarto-xref">Figure&nbsp;<span>C.3</span></a>). There we expected <span class="math inline">\(S(\mathcal{T}_2) &lt; S(\mathcal{T}_1)\)</span> for the given theories. However, the calculation of <span class="math inline">\(S_{grec}\)</span> yields: <span class="math inline">\(S(\mathcal{T}_2) &gt; S(\mathcal{T}_1)\)</span> (<span class="math inline">\(0.20\)</span> vs.&nbsp;<span class="math inline">\(0.14\)</span>)—again due to <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}_1}&lt;\sigma^{\mathcal{S}\setminus\mathcal{T}_2}\)</span> (<span class="math inline">\(9\)</span> vs.&nbsp;<span class="math inline">\(16\)</span>).</p>
+<p>In consequence, principles working together is a disadvantage in terms of systematicity measured this way. The examples were intentionally constructed to yield <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}_1}_{\mathcal{T}_1}=\sigma^{\mathcal{S}\setminus\mathcal{T}_2}_{\mathcal{T}_2}\)</span> since we wanted to compare theories that differ to each other only in whether their principles work together. However, the only remaining relevant quantity in (<span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}}\)</span>) will induce systematicity values in conflict with <em>D5</em>.</p>
+<p><a href="#exm-sys2" class="quarto-xref">Example&nbsp;<span>C.3</span></a> (<a href="#fig-map-sys3" class="quarto-xref">Figure&nbsp;<span>C.4</span></a>) was used to motivate <em>D6 (external connectedness)</em>. According to the formulated intuitions, everything else being equal, a theory’s systematicity should exceed another’s if the former implies more in combination with other sentences than the latter. The simple measures cannot satisfy <em>D6</em> since they are insensitive to the non-trivial content (i.e., the content outside <span class="math inline">\(\overline{\mathcal{T}}\)</span>). On the other hand, the effective content size <span class="math inline">\(\vert C_\sigma(\mathcal{T, S\setminus\mathcal{T}})\vert\)</span> was conceptualized to account for these implications. Accordingly, it is not surprsing that <span class="math inline">\(S_{grec}\)</span> satisfies <em>D6</em>.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> In the example, we expected that <span class="math inline">\(S(\mathcal{T}_2) &lt; S(\mathcal{T}_1)\)</span>, which is confirmed by the corresponding calculations (<span class="math inline">\(0\)</span> vs.&nbsp;<span class="math inline">\(0.78\)</span>).</p>
+</section>
+</section>
+<section id="conclusion" class="level2" data-number="C.4">
+<h2 data-number="C.4" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">C.4</span> Conclusion</h2>
+<p>We motivated the desiderata <em>D1-D6</em> by arguing that the systematicity measure <span class="math inline">\(S_{BBB}\)</span> used in <span class="citation" data-cites="beisbart_making_2021">Beisbart, Betz, and Brun (<a href="references.html#ref-beisbart_making_2021" role="doc-biblioref">2021</a>)</span> has some shortcomings and by alluding to some general intuitions concerning the concept of systematicity (<a href="#sec-appendix-systematicity-desiderata" class="quarto-xref"><span>Section C.1</span></a>). We moved on to motivate some alternative measures and discussed their advantages and disadvantages in terms of <em>D1-D6</em> (see <a href="#tbl-measures" class="quarto-xref">Table&nbsp;<span>C.1</span></a> for an overview).</p>
+<p>Simple systematicity measures calculate their values based on the two quantities <span class="math inline">\(\vert \mathcal{T} \vert\)</span> and <span class="math inline">\(\vert \overline{\mathcal{T}} \vert\)</span>. Accordingly, all simple measures cannot account for <em>D5</em> and <em>D6</em>, which demands the consideration of additional properties of theories.</p>
+<p><span class="math inline">\(S_{BBB}\)</span> does not (fully) satisfy <em>D1</em> and does not satisfy <em>D3.1</em>. The most simple adaption of <span class="math inline">\(S_{BBB}\)</span> (<span class="math inline">\(S_{mm}\)</span>) satisfies <em>D1-D4.1</em>. The measures <span class="math inline">\(S_{ec}\)</span> and <span class="math inline">\(S_{ec^2}\)</span> are also able to fix the shortcomings of <span class="math inline">\(S_{BBB}\)</span> but do not satisfy <em>D4.1</em>. We suggested three adaptions of <span class="math inline">\(S_{ec}\)</span> that satisfy <em>D1-D4.1</em>, two of which incorporate an additional parameter to model the balancing between content and simplicity.</p>
+<p>Sigma-based measures draw on a more sophisticated notion of content (<a href="#sec-appendix-systematicity-sigma-measures" class="quarto-xref"><span>Section C.3</span></a>), which can be used to devise additional systematicity measures. We suggested one systematicity measure that is able to account for <em>D1-D4.1</em> and <em>D6</em> but which does not satisfy <em>D5</em> (<a href="#sec-appendix-systematicity-s-grec" class="quarto-xref"><span>Section C.3.1</span></a>).</p>
+<div id="tbl-measures" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-measures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<colgroup>
+<col style="width: 70%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Systematicity measure</th>
+<th style="text-align: center;">D1</th>
+<th style="text-align: center;">D2</th>
+<th style="text-align: center;">D3.1</th>
+<th style="text-align: center;">D4.1</th>
+<th style="text-align: center;">D5</th>
+<th style="text-align: center;">D6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Standard measure (<span class="math inline">\(S_{BBB}\)</span>)</td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Minimal mutation systematicity (<span class="math inline">\(S_{mm}\)</span>)</td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Effective content systematicity (<span class="math inline">\(S_{ec}\)</span>)</td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Quadratic effective content systematicity (<span class="math inline">\(S_{ec^2}\)</span>)</td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Weighted systematicity (<span class="math inline">\(S_{csw_\alpha}\)</span>)</td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Weighted systematicity (<span class="math inline">\(S_{csw_\beta}\)</span>)</td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Relative effective content systematicity (<span class="math inline">\(S_{rec}\)</span>)</td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Generalized effective content systematicity (<span class="math inline">\(S_{grec}\)</span>)</td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/x-square.svg" class="img-fluid figure-img"></td>
+<td style="text-align: center;"><img src="figures/check-square.svg" class="img-fluid figure-img"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-measures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;C.1: Overview of how the different measures conform to the suggested requirements <em>content (D1), simplicity (D2), minimal systematicity (D3.1), non-ad-hocness (D4.1), internal connectedness (D5) and external connectedness (D6)</em>.
+</figcaption>
+</figure>
+</div>
+<p>The described results are preliminary in that they do not prescribe to replace the measure <span class="math inline">\(S_{BBB}\)</span>.</p>
+<p>First of all, we did not provide any simulation results of model variants using these alternative measures. Hence, we do not know how these model variants perform with respect to the described evaluation criteria (<a href="intro.html#sec-intro-metrics" class="quarto-xref"><span>Section 1.3</span></a>).</p>
+<p>Second, we formulated but a few intuitions in favour of these desiderata without systematically arguing for them. Hence, it is undecided which of them are important (and to what extent).</p>
+<p>Finally, even if these desiderata are important, there are other possibilities to account for them. Instead of threading them into one complex systematicity measure, they might be separated into different measures that are used to extend the given achievement function. For the measures <span class="math inline">\(S_{csw_\alpha}\)</span> and <span class="math inline">\(S_{csw_\beta}\)</span> we already suggested that content (<em>D1</em>) and simplicity (<em>D2</em>) might be weighted against each other. The considerations concerning how <span class="math inline">\(S_{grec}\)</span> performs with respect to <em>D5</em> and <em>D6</em> also suggest that <em>D5</em> and <em>D6</em> might be in conflict with each other. Accordingly, making the corresponding balancing explicit (by parametrization) might be appropriate.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-beisbart_making_2021" class="csl-entry" role="listitem">
+Beisbart, Claus, Gregor Betz, and Georg Brun. 2021. <span>“Making <span>Reflective Equlibrium Precise</span>: <span>A Formal Model</span>.”</span> <em>Ergo</em> 8 (0). <a href="https://doi.org/10.3998/ergo.1152">https://doi.org/10.3998/ergo.1152</a>.
+</div>
+<div id="ref-betz_debate_2013" class="csl-entry" role="listitem">
+Betz, Gregor. 2013. <em>Debate <span>Dynamics</span>: <span>How Controversy Improves Our Beliefs</span></em>. Synthese <span>Library</span>. <span>Dordrecht</span>: <span>Springer Netherlands</span>.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>The considerations and suggestions we present in this appendix are based on different project-internal drafts and were discussed and further developed on several occasions within our project group of the project <a href="https://re-models.github.io/">‘How far does Reflective Equilibrium Take us? Investigating the Power of a Philosophical Method’</a>. The considerations presented here are, in particular, not our original ideas.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>The closure <span class="math inline">\(\overline{\mathcal{T}}\)</span> is defined by <span class="math inline">\(\{s\in \mathcal{S}\vert \mathcal{T}\models_{\tau} s\}\)</span>, where <span class="math inline">\(\models_{\tau}\)</span> denotes the relation of dialectical implication. In other words, this closure only contains “atomic” sentences from the sentence pool; it does not include any other logical consequences (such as conjunctions, for example).<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>In the RE Model, theories are dialectically consistent and therefore minimally consistent (see <a href="intro.html" class="quarto-xref"><span>Chapter 1</span></a>). Hence, a theory can have at most <span class="math inline">\(n\)</span> principles if <span class="math inline">\(2n\)</span> is the size of the sentence pool.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>There, of course, other possibilities to adapt the model to achieve this goal.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>If <span class="math inline">\(\mathcal{S}\)</span> is the sentence pool, the <em>domain</em> of a theory <span class="math inline">\(\mathcal{T}\)</span> is defined by <span class="math inline">\(\{s\in \mathcal{S}\vert s\in\mathcal{T}\text{ or }\neg s\in\mathcal{T}\}\)</span>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>In fact, <a href="#eq-generalization-content" class="quarto-xref">Equation&nbsp;<span>C.3</span></a> is more akin to <span class="math inline">\(\vert\overline{\mathcal{T}}\vert\)</span> minus the amount of <span class="math inline">\(\tau\)</span> truths (i.e., sentences that are tautologically true with respect to the dialectical structure <span class="math inline">\(\tau\)</span>).<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Admittedly, <span class="math inline">\(S_{grec}\)</span> will under this construction never reach the value one, because <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}}=2^{n-1}\)</span> means that the theory won’t imply anything on <span class="math inline">\(\mathcal{S}\setminus\mathcal{T}\)</span>. However, <span class="math inline">\(S_{grec}\)</span> will still have maximal systematicity values for singleton theories that have maximal content on <span class="math inline">\(\mathcal{S}\setminus\mathcal{T}\)</span>.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>The figure is plotted based on a data set of 100 randomly generated dialectical structures and all possible theory candidates for each <span class="math inline">\(\tau\)</span>. This dataset is not needed to plot the function <span class="math inline">\(S_{grec}\)</span>. However, it contains all information of <span class="math inline">\(\tau\)</span>-theory pairs to assess <span class="math inline">\(\sigma\)</span>-based systematicity measures in detail (e.g., it contains for each pair <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}}\)</span> and <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}\)</span>).<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>At least, if <em>‘everything else being equal’</em> includes <span class="math inline">\(\sigma^{\mathcal{S}\setminus\mathcal{T}}\)</span>.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./appendix_trivial_endpoints.html" class="pagination-link  aria-label=" &lt;span="" endpoints&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Trivial Endpoints</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
