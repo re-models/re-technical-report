@@ -35,7 +35,8 @@ Note that the information about the values of measures has not been stored in th
 ## Results
 
 ::: {.callout-note}
-The results of this chapter can be reproduced with the Jupyter notebook located [here](https://github.com/debatelab/re-technical-report/blob/main/notebooks/data_analysis_chapter_extreme_values.ipynb).
+The results of this chapter can be reproduced with the Jupyter notebook located [here]({{< var link.nb-ext-val >}}).
+
 :::
 
 ### Overall

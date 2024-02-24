@@ -9,7 +9,7 @@ Such outcomes are not bad per se, but they may be indicative of the model exploi
 ## Results
 
 ::: {.callout-note}
-The results of this chapter can be reproduced with the Jupyter notebook located [here](https://github.com/debatelab/re-technical-report/blob/main/notebooks/data_analysis_appendix_trivial_endpoints.ipynb).
+The results of this chapter can be reproduced with the Jupyter notebook located [here]({{< var link.nb-trivial-ep >}}).
 :::
 
 ### Overall Results
