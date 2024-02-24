@@ -53,9 +53,11 @@ format:
   html:
     theme: cosmo
     toc-depth: 4
+    link-external-newwindow: true
   pdf:
     documentclass: scrreprt
     pdf-engine: pdflatex
+    
 
 tbl-cap-location: bottom
 
