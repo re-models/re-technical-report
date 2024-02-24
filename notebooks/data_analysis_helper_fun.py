@@ -509,3 +509,25 @@ def set_errorbar_plot_style():
 def set_heatmap_plot_style():
     sns.set_theme(style="darkgrid",
                   font_scale = 1.0)
+    
+
+# working on strings of outputs directly to avoid having to literal_eval millions of strings
+def get_length(pos):
+    return len(pos.split(","))
+
+def get_lengths(x, pos_type):
+    
+    # split the list of endpoint tuples 
+    l = x.split('), (')
+
+    # split each endpoint tuple into a theory and a commitment position (set representation with {})
+    l = [s.split('}, {') for s in l]
+    
+    if not pos_type in ["theory", "commitments"]:
+        raise ValueError("pos_type must be 'theory' or 'commitments'")
+    
+    idx = 0 if pos_type == "theory" else 1
+     
+    # length of the first (theory) or second (commitments) element  after 
+    # the comma-separated sentences have been split
+    return [len(s[idx].split(',')) for s in l]
