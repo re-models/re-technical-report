@@ -18,10 +18,10 @@ Since we want to compare the performance of different model variants, we have, o
 In the following, we understand *process length* ($l_p$) as the number of theories and commitment sets in the evolution $e$ of the epistemic state, including the initial and final state. 
 
 $$
-\mathcal{C_0} \rightarrow \mathcal{T_0} \rightarrow \mathcal{C_1} \rightarrow \mathcal{T_1} \rightarrow \dots \rightarrow \mathcal{T_{final}} \rightarrow \mathcal{C_{final}}
+\mathcal{C}_0 \rightarrow \mathcal{T}_0 \rightarrow \mathcal{C}_1 \rightarrow \mathcal{T}_1 \rightarrow \dots \rightarrow \mathcal{T}_{final} \rightarrow \mathcal{C}_{final}
 $$
 
-In other words, if $(\mathcal{T_{0}}, \mathcal{C_{0}})$ is the initial state and $(\mathcal{T_{m}}, \mathcal{C_{m}})$ the fixed-point state, $l_p(e)=2(m+1)$. An equilibration process reaches a fixed point if the newly chosen theory and commitments set are identical to the previous epistemic state---that is, if $(\mathcal{T_{i+1}}, \mathcal{C_{i+1}})=(\mathcal{T_{i}}, \mathcal{C_{i}})$  [@beisbart_making_2021, p. 466]. Therefore, the minimal length of a process is $4$. In such a case, the achievement of initial commitments and the first chosen theory cannot be further improved. Accordingly, the initial commitments are also the final commitments. 
+In other words, if $(\mathcal{T}_{0}, \mathcal{C}_{0})$ is the initial state and $(\mathcal{T}_{m}, \mathcal{C}_{m})$ the fixed-point state, $l_p(e)=2(m+1)$. An equilibration process reaches a fixed point if the newly chosen theory and commitments set are identical to the previous epistemic state---that is, if $(\mathcal{T}_{i+1}, \mathcal{C}_{i+1})=(\mathcal{T}_{i}, \mathcal{C}_{i})$  [@beisbart_making_2021, p. 466]. Therefore, the minimal length of a process is $4$. In such a case, the achievement of initial commitments and the first chosen theory cannot be further improved. Accordingly, the initial commitments are also the final commitments. 
 
 @fig-dist-process-length shows the distribution of process lengths, and @fig-process-length shows the mean process length (and its standard deviation) for the different model variants dependent on the size of the sentence pool ($2n$) over all branches. 
 
