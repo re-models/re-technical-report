@@ -71,6 +71,13 @@ In @sec-appendix-trivial, we analyzed whether the model variants yield "trivial"
 - In quadratic model variants, the $\alpha$ weights have only a small impact on the relative shares of trivial endpoints.
 
 
+**Alternative Systematicity Measures**
+
+In @sec-appendix-systematicity, we motivated alternative systematicity measures in view of shortcomings of the original systematicity measure in @beisbart_making_2021. We discussed their advantages and disadvantages in terms of various desiderate for such measures (see @tbl-measures for an overview).
+
+One sophisiticated systematicity measure (@sec-appendix-systematicity-s-grec) is able to satisfy five out of six desiderata, but no proposed measure is able to satisfy all six of them. In view of the only intuitively motivated desiderata and the lack of simulation data, we conclude that these results are preliminary. In particular, they do not prescribe to replace the original measure of systematicity.
+
+
 ## Conclusion
 
 The results we arrived at are insufficient to draw general conclusions about the overall performance of the four analyzed model variants. Neither did we find conclusive evidence to exclude one model as generally inadequate, nor did we identify one model that outperforms the others in all aspects. Instead, each model variant meets some of the validation criteria to a sufficient degree within some ranges of simulation setups. In cases where a model variant performs poorly on average (over the spectrum of simulation setups), the others did as well. In other words, the performance of a model depends crucially on the specifics of the simulation setup (e.g., the chosen dialectical structure, sentence pool size, $\alpha$ weights and initial commitments) and the evaluation criterion at hand.
@@ -88,7 +95,7 @@ In many ways, this technical report is but a starting point for future lines of 
 
 Note that the current Python implementation of the model is designed to facilitate extending the model (as demonstrated by the three model variants used in this report). Various components of the formal model, for instance, the measures account, faithfulness, and systematicity can be changed with a few lines of code ([source](https://github.com/re-models/re-technical-report/blob/main/notebooks/model_variations.py)).
 
-### The Neighborhood Depth and Search Strategy of Locally Optimizing Model Variants
+### The Neighborhood Depth and the Search Strategy of Locally Optimizing Model Variants
 
 The local model variants examine available candidate positions for adjustments during RE processes in a small neighborhood of the current position. For this report, the search depth was confined to adjusting one single sentence per adjustment step. 
 A particular shortcoming of such small neighborhood depths is that they may "miss" sensible adjustments that involve arguments with more than one premise.^[Results that might suggest such a shortcoming of local model variants can be found in @fig-rel-fpgo-fp-by-np-rp and @fig-rel-fpgo-fp-by-np-pp.] In particular, the adjustment of theories might be severely restricted. 
