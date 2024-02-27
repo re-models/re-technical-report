@@ -16,7 +16,7 @@ ToDos:
 
 <!--Introduction-->
 ::: {.column width="20%"}
-![](figures/preface_scales)
+![](figures/preface_scales){width=100}
 :::
 
 ::: {.column width="10%"}
@@ -33,7 +33,7 @@ In @sec-intro, we introduce the formal model of reflective equilibrium of @beisb
 
 <!--General Properties-->
 ::: {.column width="20%"}
-![](figures/preface_data)
+![](figures/preface_data){width=100}
 :::
 
 ::: {.column width="10%"}
@@ -50,7 +50,7 @@ In @sec-general-props, we present general results about the ensemble of RE simul
 
 <!--GO and FP-->
 ::: {.column width="20%"}
-![](figures/preface_venn)
+![](figures/preface_venn){width=100}
 :::
 
 ::: {.column width="10%"}
@@ -67,7 +67,7 @@ In @sec-go-and-fp, we provide results concerning the overlap of two outputs prod
 
 <!--Full RE statesy-->
 ::: {.column width="20%"}
-![](figures/preface_crown)
+![](figures/preface_crown){width=100}
 :::
 
 ::: {.column width="10%"}
@@ -84,7 +84,7 @@ In @sec-full-re-states, we present results concerning the attainment of full RE 
 
 <!--Consistency-->
 ::: {.column width="20%"}
-![](figures/preface_contradiction)
+![](figures/preface_contradiction){width=100}
 :::
 
 ::: {.column width="10%"}
@@ -101,7 +101,7 @@ In @sec-commitment-consistency, we analyse different aspects of consistency pert
 
 <!--Extreme values-->
 ::: {.column width="20%"}
-![](figures/preface_max)
+![](figures/preface_max){width=100}
 :::
 
 ::: {.column width="10%"}
@@ -118,7 +118,7 @@ In @sec-extreme-values, we display outcomes regarding maximal values of measures
 
 <!--Summary-->
 ::: {.column width="20%"}
-![](figures/preface_plane)
+![](figures/preface_plane){width=100}
 :::
 
 ::: {.column width="10%"}
@@ -136,7 +136,7 @@ In @sec-summary, we summarize the main outcomes of the report and provide an out
 
 <!--Appendix: Tipping Line-->
 ::: {.column width="20%"}
-![](figures/preface_formula)
+![](figures/preface_formula){width=100}
 :::
 
 ::: {.column width="10%"}
@@ -153,7 +153,7 @@ In @sec-appendix-tipping , we prove analytic results about linear model variants
 
 <!--Appendix: Trivial Endpoints-->
 ::: {.column width="20%"}
-![](figures/preface_trivial)
+![](figures/preface_trivial){width=100}
 :::
 
 ::: {.column width="10%"}
@@ -170,7 +170,7 @@ In @sec-appendix-trivial, we analyse data with respect to the attainment of "tri
 
 <!--Appendix: Systematicity measures-->
 ::: {.column width="20%"}
-![](figures/preface_check)
+![](figures/preface_check){width=100}
 :::
 
 ::: {.column width="10%"}
