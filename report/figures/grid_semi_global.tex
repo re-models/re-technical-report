@@ -16,11 +16,11 @@
 \begin{document}
 \begin{tikzpicture}
     \foreach \i in {\xMin,...,\xMax} {
-        \draw node [below] at (\i-0.5,\yMin-1) {$C_{\i}$};
+        \draw node [below] at (\i-0.5,\yMin-1) {$\mathcal{C}_{\i}$};
     }
     %%\draw node [below] at (\xMax+0.5,\yMin-1.1) {$\dots$};
     \foreach \i in {\yMin,...,\yMax} {
-        \draw node at (\xMin-1,\i-0.2,) {$T_{\i}$};
+        \draw node at (\xMin-1,\i-0.2,) {$\mathcal{T}_{\i}$};
     %\draw node at (\xMin-1,\yMax+0.8,) {$\vdots$};
     }
         \draw [step=1.0, black, very thick] (0.0,0.0) grid (\xMax,\yMax);
