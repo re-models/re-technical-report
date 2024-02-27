@@ -1,10 +1,7 @@
-# Preface {.unnumbered}
+# Preface <!-- {.unnumbered} -->
 
 <!--
 ToDos:
-+ Add howto cite info.
-+ Add abstract.
-+ Add a graphical representation of the report's structure.
 + Make links to package docs perhaps more visible (how?) 
 -->
 
@@ -134,6 +131,7 @@ In @sec-summary, we summarize the main outcomes of the report and provide an out
 
 :::{.column width="100%"}
 <!-- empty column to create vertical gap -->
+**Appendices**
 :::
 
 <!--Appendix: Tipping Line-->
@@ -147,6 +145,40 @@ In @sec-summary, we summarize the main outcomes of the report and provide an out
 
 ::: {.column width="70%"}
 In @sec-appendix-tipping , we prove analytic results about linear model variants. These results explain the salient behaviour of linear model variants that occurs throughout the report.
+:::
+
+:::{.column width="100%"}
+<!-- empty column to create vertical gap -->
+:::
+
+<!--Appendix: Trivial Endpoints-->
+::: {.column width="20%"}
+![](figures/preface_trivial)
+:::
+
+::: {.column width="10%"}
+<!-- empty column to create horizontal gap -->
+:::
+
+::: {.column width="70%"}
+In @sec-appendix-trivial, we analyse data with respect to the attainment of "trivial" outcomes, i.e. states that consist of a single commitment paired with a singleton theory.
+:::
+
+:::{.column width="100%"}
+<!-- empty column to create vertical gap -->
+:::
+
+<!--Appendix: Systematicity measures-->
+::: {.column width="20%"}
+![](figures/preface_check)
+:::
+
+::: {.column width="10%"}
+<!-- empty column to create horizontal gap -->
+:::
+
+::: {.column width="70%"}
+In @sec-appendix-systematicity, we discuss alternative systematicity measures by analytical means. In view of shortcomings of the original systematicity measure, we evaluate the newly proposed measures in view of various desiderata for such measures.
 :::
 
 :::{.column width="100%"}
