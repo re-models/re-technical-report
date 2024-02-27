@@ -71,7 +71,7 @@ df = df[keep_columns]
 
 df = df[(df["Model"] == "QuadraticGlobalRE") | (df["Model"] == "LinearGlobalRE")]
 
-df["Model"] = df.apply(lambda row: "QuadraticRE" if row["Model"]=="QuadraticGlobalRE" else "LinearRE", axis=1)
+df["Model"] = df.apply(lambda row: "QRE" if row["Model"]=="QuadraticGlobalRE" else "LRE", axis=1)
 
 display(Markdown(df.to_markdown(index = False)))
 
@@ -97,6 +97,14 @@ tables_output_dir = path.join(Path(getcwd()).parent.absolute(), "report", "table
 file_name = 'table_max_values_fp_rp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
 df = df.round(3)
+
+model_short_names = {'QuadraticGlobalRE':'QGRE',
+                     'QuadraticLocalRE':'QLRE',
+                     'LinearGlobalRE': 'LGRE',
+                     'LinearLocalRE': 'LLRE'
+                    }
+
+df['Model'] = df['Model'].map(lambda x: model_short_names[x])
 
 keep_columns = [col for col in df.columns if "Standard deviation" not in col]
 
