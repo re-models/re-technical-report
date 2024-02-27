@@ -493,8 +493,10 @@ It is difficult to assess the desideratum *D4.1* visually (as we did with the si
 
 
 ::: {#lem-grec}
+The generalized relative effective content systematicity satisfies D4.1.
+:::
 
-## Generalized relative effective content systematicity satisfies D4.1 
+:::{.proof}
 
 We have to show that $S_{grec}(\mathcal{T}^*) < S_{grec}(\mathcal{T})$ if $\mathcal{T}^*$ is an extension of $\mathcal{T}$ with mere ad hoc principles. So let us assume that $\mathcal{T}^*$ is the result of adding an ad hoc principle $p\in\mathcal{S}$ to a theory $\mathcal{T}$. 
 
@@ -607,7 +609,7 @@ $$
 \frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}^*} - \sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}^*}+1)}{\vert\mathcal{T}^*\vert(n-1)} <  \frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}} - \sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}+1)}{\vert\mathcal{T}\vert(n-1)}
 $$
 
-Hence, $S_{grec}(\mathcal{T}^*) < S_{grec}(\mathcal{T})$ if $\mathcal{T}^*$ is an ad hoc extension of $\mathcal{T}$. $\square$
+Hence, $S_{grec}(\mathcal{T}^*) < S_{grec}(\mathcal{T})$ if $\mathcal{T}^*$ is an ad hoc extension of $\mathcal{T}$. This concludes the proof of @lem-grec.
 :::
 
 
