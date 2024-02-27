@@ -180,6 +180,15 @@ file_name = 'table_consistency_cases_go_rp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
 df = df.round(3)
 
+model_short_names = {'QuadraticGlobalRE':'QGRE',
+                     'QuadraticLocalRE':'QLRE',
+                     'LinearGlobalRE': 'LGRE',
+                     'LinearLocalRE': 'LLRE'
+                    }
+
+df['Model'] = df['Model'].map(lambda x: model_short_names[x])
+
+
 keep_columns = [col for col in df.columns if "Standard deviation" not in col]
 
 display(Markdown(df[keep_columns].to_markdown(index = False)))
@@ -208,6 +217,14 @@ file_name = 'table_consistency_cases_fp_rp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
 
 df = df.round(3)
+
+model_short_names = {'QuadraticGlobalRE':'QGRE',
+                     'QuadraticLocalRE':'QLRE',
+                     'LinearGlobalRE': 'LGRE',
+                     'LinearLocalRE': 'LLRE'
+                    }
+
+df['Model'] = df['Model'].map(lambda x: model_short_names[x])
 
 keep_columns = [col for col in df.columns if "Standard deviation" not in col]
 
@@ -238,6 +255,14 @@ file_name = 'table_consistency_cases_fp_pp.csv'
 df = pd.read_csv(path.join(tables_output_dir, file_name))
 df = df.round(3)
 
+model_short_names = {'QuadraticGlobalRE':'QGRE',
+                     'QuadraticLocalRE':'QLRE',
+                     'LinearGlobalRE': 'LGRE',
+                     'LinearLocalRE': 'LLRE'
+                    }
+
+df['Model'] = df['Model'].map(lambda x: model_short_names[x])
+
 keep_columns = [col for col in df.columns if "Standard deviation" not in col]
 
 display(Markdown(df[keep_columns].to_markdown(index = False)))
@@ -260,6 +285,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 #### Results Grouped by Sentence Pool Size
 
 **Inconsistency Eliminating Cases**
+
 ![Relative share of inconsistency eliminating cases among global optima grouped by model variant and sentence pool size](figures/rel_inconsistency_eliminating_case_go_by_sp_rp){#fig-IE-go-sp}
 
 ![Relative share of inconsistency eliminating cases among fixed points (result perspective) grouped by model variant and sentence pool size](figures/rel_inconsistency_eliminating_case_fp_by_sp_rp){#fig-IE-fp-sp-rp}
@@ -268,6 +294,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 
 
 **Consistency Preserving Cases**
+
 ![Relative share of consistency preserving cases among global optima grouped by model variant and sentence pool size](figures/rel_consistency_preserving_case_go_by_sp_rp){#fig-CP-go-sp}
 
 ![Relative share of consistency preserving cases among fixed points (result perspective) grouped by model variant and sentence pool size](figures/rel_consistency_preserving_case_fp_by_sp_rp){#fig-CP-fp-sp-rp}
