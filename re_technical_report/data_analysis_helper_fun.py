@@ -98,9 +98,10 @@ def load_re_data(data_dir=None,
                  evalcols=None,
                  filter_erroneous_runs:bool = False,
                  replace_model_names = True):
+    
     if url:
         re_data = pd.read_csv(url, usecols=usecols)
-    elif data_file_name[data_file_name.find('.'):len(data_file_name)] == '.csv.tar.gz':
+    elif data_file_name[data_file_name.find('.'):len(data_file_name)] == '.tar.gz':
         with tarfile.open(path.join(data_dir,data_file_name)) as tar:
             for tarinfo in tar:
                 file_name = tarinfo.name
