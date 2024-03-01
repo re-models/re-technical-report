@@ -1,4 +1,4 @@
-# Extreme values for account, systematicity, and faithfulness {#sec-extreme-values}
+# Extreme Values for Account, Systematicity, and Faithfulness {#sec-extreme-values}
 
 ## Background {#sec-extreme-values-background}
 
@@ -39,15 +39,15 @@ The results of this chapter can be reproduced with the Jupyter notebook located 
 
 :::
 
-### Overall
+### Overall Results
 
-#### Minimal values
+#### Minimal Values
 
 There is no simulation setup that resulted in a global optimum or a fixed point with a minimal value for account, systematicity or faithfulness. Consequently, we can exclude the consideration of minimal values from the subsequent analysis.
 
 This is a desirable result, as minimal values for $A$, $F$ and $S$ would constitute quite strange behaviour of the model variants, at least in the range of weights we considered in this study, for we omitted $\alpha$-weight combinations with zero-valued $\alpha$ weights. Take, for instance, faithfulness: $F(\mathcal{C}\,\vert\,\mathcal{C}_{0}) = 0$ would mean that an agent completely departed from their initial commitments $\mathcal{C}_{0}$, which could be interpreted as changing the subject matter. To the extent that faithfulness matters to some degree (i.e., $\alpha_F\neq 0$), we expect that fixed points and global optima take faithfulness into account (in the sense of $F(\mathcal{C}\,\vert\,\mathcal{C}_{0}) \neq 0$ for fixed point commitments or global optima commitments respectively).
 
-#### Maximal values
+#### Maximal Values
 
 ```{python}
 #| echo: false
@@ -122,7 +122,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 - Outputs of all model variants maximize the measure of systematicity more often than the measures for account or faithfulness, excepting fixed points from `LinearLocalRE` (@fig-overall-max-values-fp). 
   + It may be easier to maximize $S$ due to the fact that the measure does discriminate singleton theories on the basis of their scope ($\vert\bar{\mathcal{T}}\vert$). Thus, there may be many cases in which at least somewhat attractive singleton theories significantly shape the subsequent process of adjustments or the outcome of global optimization.
 
-### Grouped by sentence pool size
+### Results Grouped by Sentence Pool Size
 
 #### Account
 
@@ -148,7 +148,7 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 - This tendency is less pronounced for fixed points (result perspective) in @fig-max-account-fp-sp-rp and @fig-max-faithfulness-fp-sp-rp , respectively.
 - The relative share of fixed points (result perspective) that maximize systematcity is not affected by the sentence pool size for global model variants (@fig-max-systematicity-fp-sp-rp). In contrast this relative share decreases with increasing sentence pool sizes for local model variants. 
 
-### Grouped by configuration of weights
+### Results Grouped by Configuration of Weights
 
 #### Account
 

@@ -194,7 +194,7 @@ In summary, if $(\mathcal{C}, \mathcal{T})$ is a global optimum but it is assume
 a position $(\mathcal{C}', \mathcal{T})$ such that $Z(\mathcal{C}, \mathcal{T} \,\vert\, \mathcal{C}_{0}) < Z(\mathcal{C}', \mathcal{T} \,\vert\, \mathcal{C}_{0})$, contradicting $(\mathcal{C}, \mathcal{T})$ being a
 global optimum. Consequently, we must have $F(\mathcal{C} \,\vert\, \mathcal{C}_{0}) = 1$.
 
-## Generalization to fixed points
+## Generalization to Fixed Points
 
 The results we prooved for the linear model variants hold not only for global optima but also for fixed points, which requires but a slight modification of the above proofs. The following proof sketch shows howto generalize Proposition 1 to fixed points for the semi-globally optimizing model variant `LinearGlobalRE`. Proposition 2 can be generalized similarly.
 

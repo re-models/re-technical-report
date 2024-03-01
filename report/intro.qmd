@@ -60,7 +60,7 @@ $$
 
 However, the quadratic term $x^2$ is not motivated.  The linear models `LGRE` and `LLRE` will be based on $G(x)= 1-x$ to examine the repercussions of such a variation.
 
-### Semi-globally and locally optimizing equilibration processes 
+### Semi-globally and Locally Optimizing Equilibration Processes 
 
 The mutual adjustment of commitments and theories involves two types of revisions. The agent will revise their current commitments $\mathcal{C}_i$ and their current theory $\mathcal{T}_i$ in an alternating fashion. More specifically, when adjusting their commitments, the agent will search for new commitments $\mathcal{C}_{i+1}$ such that the resulting state $(\mathcal{C}_{i+1}, \mathcal{T}_i)$ performs better w.r.t. $Z$. Similarly, when adjusting their theory, the agent will search for a theory $\mathcal{T}_{i+1}$ such that $Z(\mathcal{C}_{i}, \mathcal{T}_{i+1}\,\vert\, \mathcal{C}_0)> Z(\mathcal{C}_{i}, \mathcal{T}_{i}\,\vert\, \mathcal{C}_0)$. 
 
