@@ -2,24 +2,24 @@
 
 ## Background {#sec-go-and-fp-background}
 
-Global optima are epistemic states (i.e., commitments-theory pairs) that maximize epistemic desiderata as the achievement function defines it. The models we assess simulate RE processes by mutually adjusting commitments and theories. Since these models proceed in a semi-globally or locally optimizing fashion, fixed points of RE processes are not necessarily global optima (see @sec-intro-metrics for details). It is, therefore, important to assess the performance of the different models with respect to their ability to reach global optima. Two main questions guide the following evaluation:
+Global optima are epistemic states (i.e., commitments-theory pairs) that maximize the achievement function (see @sec-intro). The models we assess simulate RE processes by mutually adjusting commitments and theories. Since these models proceed in a semi-globally or locally optimizing fashion, fixed points of RE processes are not necessarily global optima (see @sec-intro-metrics for details). It is, therefore, important to assess the performance of the different models with respect to their ability to reach global optima. Two main questions guide the following evaluation:
 
 1. **GO efficiency**: Are fixed points global optima? More specifically, what is the share of global optima among fixed points?
-2. **GO reachability**: Are global optima reachable by RE processes? More specifically, what is the share of fixed points that are global optima among global optima?  
+2. **GO reachability**: Are global optima reachable by RE processes? More specifically, what is the share of fixed points among global optima?  
 
 GO efficiency and reachability might not only differ between model variants but might, additionally, depend on the specifics of the simulation setups. In the following, we will confine the consideration to the following dimensions:
 
 + How do GO efficiency and reachability depend on the size of the sentence pool?
 + How do GO efficiency and reachability depend on the arguments' mean number of premises?
-+ How do GO efficiency and reachability depend on $\alpha$ weights?
++ How do GO efficiency and reachability depend on $\alpha$-weights?
 
 We will answer these questions by calculating different relative shares in the following way. 
 
-Let the *ensemble* $E$ be the entirety of simulation setups we used to simulate RE processes. Each simulation setup $e\in E$ corresponds to a set of RE processes that can evolve with this specific setup. Remember that the different steps in the evolution can be underdetermined. In other words, a RE process might branch. We will denote the set of all branches of a specific simulation setup $e$ with $B_e$. Consequently, a specific setup can have more than one fixed point. Similarly, there is not necessarily one global optimum for each simulation setup but possibly many (denoted by $GO_e$). 
+Let the *ensemble* $E$ be the entirety of simulation setups we used to simulate RE processes. Each simulation setup $e\in E$ corresponds to a set of RE processes that can evolve with this specific setup. Remember that the different steps in the evolution can be underdetermined. In other words, an RE process might branch. We will denote the set of all branches of a specific simulation setup $e$ with $B_e$. Consequently, a specific setup can have more than one fixed point. Similarly, there is not necessarily one global optimum for each simulation setup but possibly many (denoted by $GO_e$). 
 
 GO efficiency can be calculated in two different ways. First, we can assess the share of global optima among all branches. In other words, we count those branches in $B_e$ that end up in global optima and divide by $|B_e|$. We will refer to this type of GO efficiency as *GO efficiency from the process perspective*. However, different branches might end up in the same fixed points. Another way of calculating GO efficiency---*GO efficiency from the result perspective*---avoids a possible "multiple" counting of fixed points by considering the *(mathematical) set* of fixed points. 
 
-More formally, let $\{FPGO\}_e$ the set of all fixed points of $e$ that are global optima, and let $[FPGO]_e$ the fixed points of all branches in $e$ that are global optima. The latter is formally a multiset, which can contain one fixed point multiple times. We can now define different types of GO efficiency---one based on $\{FPGO\}_e$ and one on $[FPGO]_e$. The corresponding share will be calculated by formulas of the form 
+More formally, let $\{FPGO\}_e$ be the set of all fixed points of $e$ that are global optima, and let $[FPGO]_e$ be the fixed points of all branches in $e$ that are global optima. The latter is formally a multiset, which can contain one fixed point multiple times. We can now define different types of GO efficiency---one based on $\{FPGO\}_e$ and one on $[FPGO]_e$. The corresponding share will be calculated by formulas of the form 
 
 $$
 GOE^{proc}(E^*):=\frac{\sum_{e\in E^*}\vert [FPGO]_e\vert}{\sum_{e\in E^*}\vert B_e\vert}
@@ -47,7 +47,7 @@ $$
 ## Results
 
 ::: {.callout-note}
-The results of this chapter can be reproduced with this [notebook]({{< var link.nb-fp-go >}}).
+The results of this chapter can be reproduced with the following Jupyter notebook: [{{< var link.nb-fp-go >}}]({{< var link.nb-fp-go >}}).
 :::
 
 
@@ -78,11 +78,11 @@ display(Markdown(df.to_markdown(index = False)))
 ```
 
 
-The semi-globally optimizing models perform on all measures better than the locally optimizing models. 
+The semi-globally optimizing models perform better than the locally optimizing models regarding all measures. 
 
-GO efficiency is high for the former ($0.73-0.76$) and does not (much) differ between the process and result perspectives. GO efficiency varies for locally optimizing models between $0.33$ and $0.54$. We only observe a difference between the process and result perspective for the `LinearLocalRE` model ($0.45$ vs. $0.54$). In other words, the extent of branching for the `LinearLocalRE` model differs between those processes that end up in global optima and those which do not. 
+GO efficiency is high for the former ($0.73-0.76$) and does not differ (much) between the process and result perspective. For locally optimizing models, GO efficiency varies between $0.33$ and $0.54$. We only observe a difference between the process and result perspective for the `LinearLocalRE` model ($0.45$ vs. $0.54$). In other words, the extent of branching for the `LinearLocalRE` model differs between those processes that end up in global optima and those which do not. 
 
-GO reachability is for all models below GO efficiency and varies between low ($0.14$ for `LinearLocalRE`) and medium ($0.49$ for `QuadraticGlobalRE`). 
+GO reachability is below GO efficiency for all models and varies between low ($0.14$ for `LinearLocalRE`) and medium ($0.49$ for `QuadraticGlobalRE`). 
 
 With respect to the overall GO efficiency and reachability, the `QuadraticGlobalRE` model performs best since it reaches the highest value in GO reachability and is slightly better than `LinearGlobalRE` concerning GO efficiency. 
 
@@ -107,7 +107,7 @@ As we already saw in the model overview, there is no big difference between the 
 
 #### Dependence on Mean Number of Premises
 
-@fig-rel-fpgo-fp-by-np-rp and @fig-rel-fpgo-fp-by-np-pp show the dependence of GO efficiency on the mean number of argument's premises. They might be interpreted as suggesting that the locally optimizing models tend to perform worse with an increasing amount of premises in arguments. At least the difference between semi-globally and locally optimizing models is smaller for lower mean numbers of premises. 
+@fig-rel-fpgo-fp-by-np-rp and @fig-rel-fpgo-fp-by-np-pp show the dependence of GO efficiency on the mean number of the arguments' premises. They might be interpreted as suggesting that the locally optimizing models tend to perform worse with an increasing amount of premises in arguments. At least the difference between semi-globally and locally optimizing models is smaller for lower mean numbers of premises. 
 
 The zigzag shape of the lines suggests that the actual underlying variance is bigger than the pictured error bars.^[The error bars are standard deviations, which are calculated by bootstrapping on the used subset $E^*$ in the calculation of $GOE(E^*)$.] One explanation might be that GO efficiency depends crucially on properties of the dialectical structures other than the mean number of premises. Since there are few dialectical structures for individual data points, their calculation is hardly based on a representative sample. Accordingly, the zigzag might indicate the variation in GO efficiency more accurately. Consequently, the plots must be interpreted with caution.
 
@@ -120,11 +120,11 @@ The zigzag shape of the lines suggests that the actual underlying variance is bi
 
 #### Dependence on $\alpha$-Weights
 
-In the preceding sections, we aggregated over the spectrum of different $\alpha$-weight configurations. The question is to what extent GO efficiency depends on the chosen $\alpha$ weights. 
+In the preceding sections, we aggregated over the spectrum of different $\alpha$-weight configurations. The question is to what extent GO efficiency depends on the chosen $\alpha$-weights. 
 
 The heatmaps in @fig-hm-rel-fpgo-fp-rp and @fig-hm-rel-fpgo-fp-pp provide an overview of the $\alpha$-weight dependence. In the following, we will refer to specific cells in the typical $(x,y)$ fashion. For instance, we will call the cell with $\alpha_S=0.5$ and $\alpha_A=0.2$ the $(0.5,0.2)$ cell.  
 
-GO efficiency tends to increase with a decrease in $\alpha_A$ and with an increase in $\alpha_S$. There are some exceptions to this pattern, especially in linear models. Most notably, there are four "cold" islands in the linear models from both perspectives (compare the $(0.2,0.4)$, $(0.4,0.3)$, $(0.6,0.2)$ and $(0.8,0.1)$ cells in @fig-hm-rel-fpgo-fp-rp and @fig-hm-rel-fpgo-fp-pp). The comparably dinimished magnitude of GO efficiency can be explained by the comparably high number of global optima in three of theses cells (compare the $(0.4,0.3)$, $(0.6,0.2)$ and $(0.8,0.1)$ cells in @fig-hm-mean-n-global-optima). Surprisingly, the locally and semi-globally optimizing model perform similarly bad, although the semi-globally optimizing model produces much more branches and fixed points in these cells (compare @fig-hm-mean-branches and @fig-hm-mean-n-fixed-points).
+GO efficiency tends to increase with a decrease in $\alpha_A$ and with an increase in $\alpha_S$. There are some exceptions to this pattern, especially in linear models. Most notably, there are four "cold" islands in the linear models from both perspectives (compare the $(0.2,0.4)$, $(0.4,0.3)$, $(0.6,0.2)$ and $(0.8,0.1)$ cells in @fig-hm-rel-fpgo-fp-rp and @fig-hm-rel-fpgo-fp-pp). The comparably diminished magnitude of GO efficiency can be explained by the comparably high number of global optima in three of theses cells (compare the $(0.4,0.3)$, $(0.6,0.2)$ and $(0.8,0.1)$ cells in @fig-hm-mean-n-global-optima). Surprisingly, the locally and semi-globally optimizing model perform similarly bad, although the semi-globally optimizing model produces much more branches and fixed points in these cells (compare @fig-hm-mean-branches and @fig-hm-mean-n-fixed-points).
 
 Additionally, linear models tend to exhibit more extreme values than quadratic models. In other words, the difference between "hot" and "cold" regions is higher for linear models than for the quadratic counterparts. 
 
@@ -133,7 +133,7 @@ Additionally, linear models tend to exhibit more extreme values than quadratic m
 ![Dependence of GO efficiency (process perspective) from $\alpha$-weights for the different model variants.](figures/hm-rel-fpgo-fp-pp){#fig-hm-rel-fpgo-fp-pp}
 
 
-@fig-diff-hm-rel-fpgo-fp-rp and @fig-diff-hm-rel-fpgo-fp-pp can be used to compare semi-globally with locally optimizing models. It shows for each $\alpha$ cell the difference in GO efficiency between the semi-globally optimizing model and its locally optimizing variant. As already observed above, the locally optimizing models perform on average worse than the semi-globally optimizing models. The difference in performance is smaller between the linear variants than the quadratic variants. The `LinearLocalRE` model is for some $\alpha$-weight combinations even better than the `LinearGlobalRE` and for many configurations as good as the latter. 
+@fig-diff-hm-rel-fpgo-fp-rp and @fig-diff-hm-rel-fpgo-fp-pp can be used to compare semi-globally with locally optimizing models. For each $\alpha$ cell, they show the difference in GO efficiency between the semi-globally optimizing model and its locally optimizing variant. As already observed above, the locally optimizing models perform on average worse than the semi-globally optimizing models. The difference in performance is smaller between the linear variants than the quadratic variants. The `LinearLocalRE` model is for some $\alpha$-weight combinations even better than the `LinearGlobalRE` and for many configurations as good as the latter. 
 
 ![Comparing GO efficiency (result perspective) between semi-globally and locally optimizing models for different $\alpha$-weights.](figures/diff-hm-rel-fpgo-fp-rp){#fig-diff-hm-rel-fpgo-fp-rp}
 
@@ -166,11 +166,11 @@ As before, the overall performance in dependence on the mean number of premises 
 
 #### Dependence on $\alpha$-Weights
 
-The dependence of GO reachability on $\alpha$ weights is somewhat similar to that of GO efficiency. For the semi-globally optimizing models, GO reachability tends to increase with a decrease in $\alpha_A$ and an increase in $\alpha_S$. Again, there are exceptions to this behaviour. Besides the islands of the `LinearGlobalRE` model, the $0.1$ $\alpha_F$ isoline has particularly low GO reachability values for the `QuadraticGlobalRE` model. 
+The dependence of GO reachability on $\alpha$-weights is somewhat similar to that of GO efficiency. For the semi-globally optimizing models, GO reachability tends to increase with a decrease in $\alpha_A$ and an increase in $\alpha_S$. Again, there are exceptions to this behaviour. Besides the islands of the `LinearGlobalRE` model, the $0.1$ $\alpha_F$ isoline has particularly low GO reachability values for the `QuadraticGlobalRE` model. 
 
 The linear model variants' cold islands can, again, be explained by the comparably high number of global optima in three of theses cells (compare the $(0.4,0.3)$, $(0.6,0.2)$ and $(0.8,0.1)$ cells in @fig-hm-mean-n-global-optima).
 
-The locally optimizing model variants have a comparably non-regular dependence on $\alpha$ weights. Additionally, the values do not vary that much between different cells as compared to the globally optimizing models. 
+The locally optimizing model variants have a comparably non-regular dependence on $\alpha$-weights. Additionally, the values do not vary that much between different cells as compared to the globally optimizing models. 
 
 ![Dependence of GO reachability from $\alpha$-weights for the different model variants.](figures/hm-rel-fpgo-go){#fig-hm-rel-fpgo-go}
 
@@ -179,16 +179,16 @@ The direct comparison between semi-globally and locally optimizing models (@fig-
 
 ![Comparing GO reachability between semi-globally and locally optimizing models for different $\alpha$-weights.](figures/diff-hm-rel-fpgo-go){#fig-diff-hm-rel-fpgo-go}
 
-By separating dialectical structures according to their mean number of premises (@fig-diff-hm-rel-fpgo-go-by-n-premises) we can see that the advantage of $\alpha$-weight combinations for which the semi-globally optimizing models are on average particularly better w.r.t. GO reachability (roughly, the "hot" cells in the $(0.2-0.7, 0.1-0.2)$ area in @fig-diff-hm-rel-fpgo-go) is mainly generated by dialectical structures with a higher mean number of premises. In contrast, cells in which locally optimizing models outperform semi-globally optimizing models (roughly, the "cold" cells of the $0.1/0.2$ $\alpha_F$ isolines in @fig-diff-hm-rel-fpgo-go) are more or less stable for the different bins for the mean number of premises.    
+By separating dialectical structures according to their mean number of premises (@fig-diff-hm-rel-fpgo-go-by-n-premises) we can assess whether GO reachability depends on the mean number of premises: The advantage of semi-globally optimizing models as roughly indicated by the "hot" cells in the $(0.2-0.7, 0.1-0.2)$ area in @fig-diff-hm-rel-fpgo-go increases with the mean number of premises. In contrast, the positions of cells for which locally optimizing models outperform semi-globally optimizing models (roughly, the "cold" cells of the $0.1/0.2$ $\alpha_F$ isolines in @fig-diff-hm-rel-fpgo-go) do not depend that much on the mean number of premises.
 
 ![Comparing GO reachability between semi-globally and locally optimizing models for different $\alpha$-weights and different intervalls of the mean number of arguments' premises.](figures/diff-hm-rel-fpgo-go-by-n-premises){#fig-diff-hm-rel-fpgo-go-by-n-premises}
 
 
 ## Conclusion
 
-On average, GO efficiency is high for semi-globally optimizing models and medium-high for locally optimizing models. The fact that GO efficiency drops for locally optimizing models with the size of the sentence pool is, to some extent, worrisome since they are intended to be used in scenarios with larger sentence pools, which are computationally too demanding for semi-globally optimizing models. The question is whether their performance can be improved by increasing their search depth $d$. 
+On average, GO efficiency is high for semi-globally optimizing models and medium-high for locally optimizing models. The fact that for locally optimizing models GO efficiency drops with the size of the sentence pool is, to some extent, worrisome since they are intended to be used in scenarios with larger sentence pools, which are computationally too demanding for semi-globally optimizing models. The question is whether their performance can be improved by increasing their search depth $d$. 
 
-However, in specific contexts the modeller will choose a specific set of $\alpha$ weights. We already saw that the performance of the different models varies significantly between different $\alpha$-weight configurations. Consequently, the dependence on the sentence pool should be repeated for those regions of $\alpha$-weight configurations that are of interest for the modeller. For instance, if we choose to confine the analysis to $\alpha$-weight configurations with $\alpha_{A} < \alpha_{S}$, the `LinearLocalRE` model outperforms every other model in GO efficiency (see @fig-rel-fpgo-fp-by-n-pp-restricted).  
+However, in specific contexts the modeller will choose a specific set of $\alpha$-weights. We already saw that the performance of the different models varies significantly between different $\alpha$-weight configurations. Consequently, the dependence on the sentence pool should be assessed for those regions of $\alpha$-weight configurations that are of interest to the modeller. For instance, if we choose to confine the analysis to $\alpha$-weight configurations with $\alpha_{A} < \alpha_{S}$, the `LinearLocalRE` model outperforms every other model in GO efficiency (see @fig-rel-fpgo-fp-by-n-pp-restricted).  
 
 ![Dependence of GO efficiency (process perspective) on the size ($2n$) of the sentence pool for $\alpha_{A} < \alpha_{S}$.](figures/rel-fpgo-fp-by-n-pp-restricted){#fig-rel-fpgo-fp-by-n-pp-restricted}
 

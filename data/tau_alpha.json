@@ -32,7 +32,7 @@
         ],
         "tau_name": "tau_alpha_001",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_002": {
@@ -68,7 +68,7 @@
         ],
         "tau_name": "tau_alpha_002",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_003": {
@@ -104,7 +104,7 @@
         ],
         "tau_name": "tau_alpha_003",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_004": {
@@ -132,7 +132,7 @@
         ],
         "tau_name": "tau_alpha_004",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_005": {
@@ -168,7 +168,7 @@
         ],
         "tau_name": "tau_alpha_005",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_006": {
@@ -196,7 +196,7 @@
         ],
         "tau_name": "tau_alpha_006",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_007": {
@@ -224,7 +224,7 @@
         ],
         "tau_name": "tau_alpha_007",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_008": {
@@ -252,7 +252,7 @@
         ],
         "tau_name": "tau_alpha_008",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_009": {
@@ -284,7 +284,7 @@
         ],
         "tau_name": "tau_alpha_009",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_010": {
@@ -316,7 +316,7 @@
         ],
         "tau_name": "tau_alpha_010",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_011": {
@@ -355,7 +355,7 @@
         ],
         "tau_name": "tau_alpha_011",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_012": {
@@ -389,7 +389,7 @@
         ],
         "tau_name": "tau_alpha_012",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_013": {
@@ -414,7 +414,7 @@
         ],
         "tau_name": "tau_alpha_013",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_014": {
@@ -453,7 +453,7 @@
         ],
         "tau_name": "tau_alpha_014",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_015": {
@@ -489,7 +489,7 @@
         ],
         "tau_name": "tau_alpha_015",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_016": {
@@ -520,7 +520,7 @@
         ],
         "tau_name": "tau_alpha_016",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_017": {
@@ -548,7 +548,7 @@
         ],
         "tau_name": "tau_alpha_017",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_018": {
@@ -573,7 +573,7 @@
         ],
         "tau_name": "tau_alpha_018",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_019": {
@@ -598,7 +598,7 @@
         ],
         "tau_name": "tau_alpha_019",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_020": {
@@ -627,7 +627,7 @@
         ],
         "tau_name": "tau_alpha_020",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_021": {
@@ -660,7 +660,7 @@
         ],
         "tau_name": "tau_alpha_021",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_022": {
@@ -697,7 +697,7 @@
         ],
         "tau_name": "tau_alpha_022",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_023": {
@@ -733,7 +733,7 @@
         ],
         "tau_name": "tau_alpha_023",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_024": {
@@ -767,7 +767,7 @@
         ],
         "tau_name": "tau_alpha_024",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_025": {
@@ -792,7 +792,7 @@
         ],
         "tau_name": "tau_alpha_025",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_026": {
@@ -821,7 +821,7 @@
         ],
         "tau_name": "tau_alpha_026",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_027": {
@@ -856,7 +856,7 @@
         ],
         "tau_name": "tau_alpha_027",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_028": {
@@ -882,7 +882,7 @@
         ],
         "tau_name": "tau_alpha_028",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_029": {
@@ -908,7 +908,7 @@
         ],
         "tau_name": "tau_alpha_029",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_030": {
@@ -944,7 +944,7 @@
         ],
         "tau_name": "tau_alpha_030",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_031": {
@@ -984,7 +984,7 @@
         ],
         "tau_name": "tau_alpha_031",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_032": {
@@ -1010,7 +1010,7 @@
         ],
         "tau_name": "tau_alpha_032",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_033": {
@@ -1044,7 +1044,7 @@
         ],
         "tau_name": "tau_alpha_033",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_034": {
@@ -1070,7 +1070,7 @@
         ],
         "tau_name": "tau_alpha_034",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_035": {
@@ -1097,7 +1097,7 @@
         ],
         "tau_name": "tau_alpha_035",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_036": {
@@ -1138,7 +1138,7 @@
         ],
         "tau_name": "tau_alpha_036",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_037": {
@@ -1170,7 +1170,7 @@
         ],
         "tau_name": "tau_alpha_037",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_038": {
@@ -1197,7 +1197,7 @@
         ],
         "tau_name": "tau_alpha_038",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_039": {
@@ -1227,7 +1227,7 @@
         ],
         "tau_name": "tau_alpha_039",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_040": {
@@ -1262,7 +1262,7 @@
         ],
         "tau_name": "tau_alpha_040",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_041": {
@@ -1305,7 +1305,7 @@
         ],
         "tau_name": "tau_alpha_041",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_042": {
@@ -1348,7 +1348,7 @@
         ],
         "tau_name": "tau_alpha_042",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_043": {
@@ -1391,7 +1391,7 @@
         ],
         "tau_name": "tau_alpha_043",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_044": {
@@ -1434,7 +1434,7 @@
         ],
         "tau_name": "tau_alpha_044",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_045": {
@@ -1477,7 +1477,7 @@
         ],
         "tau_name": "tau_alpha_045",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_046": {
@@ -1515,7 +1515,7 @@
         ],
         "tau_name": "tau_alpha_046",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_047": {
@@ -1558,7 +1558,7 @@
         ],
         "tau_name": "tau_alpha_047",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_048": {
@@ -1601,7 +1601,7 @@
         ],
         "tau_name": "tau_alpha_048",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_049": {
@@ -1634,7 +1634,7 @@
         ],
         "tau_name": "tau_alpha_049",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_050": {
@@ -1672,7 +1672,7 @@
         ],
         "tau_name": "tau_alpha_050",
         "n_unnegated_sentence_pool": 6,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_051": {
@@ -1708,7 +1708,7 @@
         ],
         "tau_name": "tau_alpha_051",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_052": {
@@ -1744,7 +1744,7 @@
         ],
         "tau_name": "tau_alpha_052",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_053": {
@@ -1776,7 +1776,7 @@
         ],
         "tau_name": "tau_alpha_053",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_054": {
@@ -1812,7 +1812,7 @@
         ],
         "tau_name": "tau_alpha_054",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_055": {
@@ -1852,7 +1852,7 @@
         ],
         "tau_name": "tau_alpha_055",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_056": {
@@ -1884,7 +1884,7 @@
         ],
         "tau_name": "tau_alpha_056",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_057": {
@@ -1916,7 +1916,7 @@
         ],
         "tau_name": "tau_alpha_057",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_058": {
@@ -1952,7 +1952,7 @@
         ],
         "tau_name": "tau_alpha_058",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_059": {
@@ -1992,7 +1992,7 @@
         ],
         "tau_name": "tau_alpha_059",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_060": {
@@ -2024,7 +2024,7 @@
         ],
         "tau_name": "tau_alpha_060",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_061": {
@@ -2066,7 +2066,7 @@
         ],
         "tau_name": "tau_alpha_061",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_062": {
@@ -2108,7 +2108,7 @@
         ],
         "tau_name": "tau_alpha_062",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_063": {
@@ -2145,7 +2145,7 @@
         ],
         "tau_name": "tau_alpha_063",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_064": {
@@ -2184,7 +2184,7 @@
         ],
         "tau_name": "tau_alpha_064",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_065": {
@@ -2216,7 +2216,7 @@
         ],
         "tau_name": "tau_alpha_065",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_066": {
@@ -2255,7 +2255,7 @@
         ],
         "tau_name": "tau_alpha_066",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_067": {
@@ -2285,7 +2285,7 @@
         ],
         "tau_name": "tau_alpha_067",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_068": {
@@ -2319,7 +2319,7 @@
         ],
         "tau_name": "tau_alpha_068",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_069": {
@@ -2352,7 +2352,7 @@
         ],
         "tau_name": "tau_alpha_069",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_070": {
@@ -2394,7 +2394,7 @@
         ],
         "tau_name": "tau_alpha_070",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_071": {
@@ -2430,7 +2430,7 @@
         ],
         "tau_name": "tau_alpha_071",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_072": {
@@ -2471,7 +2471,7 @@
         ],
         "tau_name": "tau_alpha_072",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_073": {
@@ -2517,7 +2517,7 @@
         ],
         "tau_name": "tau_alpha_073",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_074": {
@@ -2553,7 +2553,7 @@
         ],
         "tau_name": "tau_alpha_074",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_075": {
@@ -2597,7 +2597,7 @@
         ],
         "tau_name": "tau_alpha_075",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_076": {
@@ -2638,7 +2638,7 @@
         ],
         "tau_name": "tau_alpha_076",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_077": {
@@ -2678,7 +2678,7 @@
         ],
         "tau_name": "tau_alpha_077",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_078": {
@@ -2714,7 +2714,7 @@
         ],
         "tau_name": "tau_alpha_078",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_079": {
@@ -2744,7 +2744,7 @@
         ],
         "tau_name": "tau_alpha_079",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_080": {
@@ -2785,7 +2785,7 @@
         ],
         "tau_name": "tau_alpha_080",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_081": {
@@ -2831,7 +2831,7 @@
         ],
         "tau_name": "tau_alpha_081",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_082": {
@@ -2867,7 +2867,7 @@
         ],
         "tau_name": "tau_alpha_082",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_083": {
@@ -2899,7 +2899,7 @@
         ],
         "tau_name": "tau_alpha_083",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_084": {
@@ -2937,7 +2937,7 @@
         ],
         "tau_name": "tau_alpha_084",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_085": {
@@ -2978,7 +2978,7 @@
         ],
         "tau_name": "tau_alpha_085",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_086": {
@@ -3025,7 +3025,7 @@
         ],
         "tau_name": "tau_alpha_086",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_087": {
@@ -3063,7 +3063,7 @@
         ],
         "tau_name": "tau_alpha_087",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_088": {
@@ -3105,7 +3105,7 @@
         ],
         "tau_name": "tau_alpha_088",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_089": {
@@ -3145,7 +3145,7 @@
         ],
         "tau_name": "tau_alpha_089",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_090": {
@@ -3192,7 +3192,7 @@
         ],
         "tau_name": "tau_alpha_090",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_091": {
@@ -3230,7 +3230,7 @@
         ],
         "tau_name": "tau_alpha_091",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_092": {
@@ -3268,7 +3268,7 @@
         ],
         "tau_name": "tau_alpha_092",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_093": {
@@ -3311,7 +3311,7 @@
         ],
         "tau_name": "tau_alpha_093",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_094": {
@@ -3349,7 +3349,7 @@
         ],
         "tau_name": "tau_alpha_094",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_095": {
@@ -3392,7 +3392,7 @@
         ],
         "tau_name": "tau_alpha_095",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_096": {
@@ -3440,7 +3440,7 @@
         ],
         "tau_name": "tau_alpha_096",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_097": {
@@ -3483,7 +3483,7 @@
         ],
         "tau_name": "tau_alpha_097",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_098": {
@@ -3531,7 +3531,7 @@
         ],
         "tau_name": "tau_alpha_098",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_099": {
@@ -3579,7 +3579,7 @@
         ],
         "tau_name": "tau_alpha_099",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_100": {
@@ -3622,7 +3622,7 @@
         ],
         "tau_name": "tau_alpha_100",
         "n_unnegated_sentence_pool": 7,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_101": {
@@ -3662,7 +3662,7 @@
         ],
         "tau_name": "tau_alpha_101",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_102": {
@@ -3706,7 +3706,7 @@
         ],
         "tau_name": "tau_alpha_102",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_103": {
@@ -3742,7 +3742,7 @@
         ],
         "tau_name": "tau_alpha_103",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_104": {
@@ -3786,7 +3786,7 @@
         ],
         "tau_name": "tau_alpha_104",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_105": {
@@ -3830,7 +3830,7 @@
         ],
         "tau_name": "tau_alpha_105",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_106": {
@@ -3866,7 +3866,7 @@
         ],
         "tau_name": "tau_alpha_106",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_107": {
@@ -3902,7 +3902,7 @@
         ],
         "tau_name": "tau_alpha_107",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_108": {
@@ -3938,7 +3938,7 @@
         ],
         "tau_name": "tau_alpha_108",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_109": {
@@ -3978,7 +3978,7 @@
         ],
         "tau_name": "tau_alpha_109",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_110": {
@@ -4022,7 +4022,7 @@
         ],
         "tau_name": "tau_alpha_110",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_111": {
@@ -4055,7 +4055,7 @@
         ],
         "tau_name": "tau_alpha_111",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_112": {
@@ -4093,7 +4093,7 @@
         ],
         "tau_name": "tau_alpha_112",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_113": {
@@ -4142,7 +4142,7 @@
         ],
         "tau_name": "tau_alpha_113",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_114": {
@@ -4176,7 +4176,7 @@
         ],
         "tau_name": "tau_alpha_114",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_115": {
@@ -4213,7 +4213,7 @@
         ],
         "tau_name": "tau_alpha_115",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_116": {
@@ -4254,7 +4254,7 @@
         ],
         "tau_name": "tau_alpha_116",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_117": {
@@ -4296,7 +4296,7 @@
         ],
         "tau_name": "tau_alpha_117",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_118": {
@@ -4332,7 +4332,7 @@
         ],
         "tau_name": "tau_alpha_118",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_119": {
@@ -4365,7 +4365,7 @@
         ],
         "tau_name": "tau_alpha_119",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_120": {
@@ -4401,7 +4401,7 @@
         ],
         "tau_name": "tau_alpha_120",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_121": {
@@ -4440,7 +4440,7 @@
         ],
         "tau_name": "tau_alpha_121",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_122": {
@@ -4485,7 +4485,7 @@
         ],
         "tau_name": "tau_alpha_122",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_123": {
@@ -4523,7 +4523,7 @@
         ],
         "tau_name": "tau_alpha_123",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_124": {
@@ -4569,7 +4569,7 @@
         ],
         "tau_name": "tau_alpha_124",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_125": {
@@ -4604,7 +4604,7 @@
         ],
         "tau_name": "tau_alpha_125",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_126": {
@@ -4651,7 +4651,7 @@
         ],
         "tau_name": "tau_alpha_126",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_127": {
@@ -4699,7 +4699,7 @@
         ],
         "tau_name": "tau_alpha_127",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_128": {
@@ -4734,7 +4734,7 @@
         ],
         "tau_name": "tau_alpha_128",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_129": {
@@ -4775,7 +4775,7 @@
         ],
         "tau_name": "tau_alpha_129",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_130": {
@@ -4818,7 +4818,7 @@
         ],
         "tau_name": "tau_alpha_130",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_131": {
@@ -4870,7 +4870,7 @@
         ],
         "tau_name": "tau_alpha_131",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_132": {
@@ -4915,7 +4915,7 @@
         ],
         "tau_name": "tau_alpha_132",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_133": {
@@ -4961,7 +4961,7 @@
         ],
         "tau_name": "tau_alpha_133",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_134": {
@@ -4994,7 +4994,7 @@
         ],
         "tau_name": "tau_alpha_134",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_135": {
@@ -5030,7 +5030,7 @@
         ],
         "tau_name": "tau_alpha_135",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_136": {
@@ -5076,7 +5076,7 @@
         ],
         "tau_name": "tau_alpha_136",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_137": {
@@ -5116,7 +5116,7 @@
         ],
         "tau_name": "tau_alpha_137",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_138": {
@@ -5153,7 +5153,7 @@
         ],
         "tau_name": "tau_alpha_138",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_139": {
@@ -5196,7 +5196,7 @@
         ],
         "tau_name": "tau_alpha_139",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_140": {
@@ -5238,7 +5238,7 @@
         ],
         "tau_name": "tau_alpha_140",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_141": {
@@ -5281,7 +5281,7 @@
         ],
         "tau_name": "tau_alpha_141",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_142": {
@@ -5324,7 +5324,7 @@
         ],
         "tau_name": "tau_alpha_142",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_143": {
@@ -5367,7 +5367,7 @@
         ],
         "tau_name": "tau_alpha_143",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_144": {
@@ -5420,7 +5420,7 @@
         ],
         "tau_name": "tau_alpha_144",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_145": {
@@ -5463,7 +5463,7 @@
         ],
         "tau_name": "tau_alpha_145",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_146": {
@@ -5511,7 +5511,7 @@
         ],
         "tau_name": "tau_alpha_146",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_147": {
@@ -5564,7 +5564,7 @@
         ],
         "tau_name": "tau_alpha_147",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_148": {
@@ -5617,7 +5617,7 @@
         ],
         "tau_name": "tau_alpha_148",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_149": {
@@ -5670,7 +5670,7 @@
         ],
         "tau_name": "tau_alpha_149",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_150": {
@@ -5718,7 +5718,7 @@
         ],
         "tau_name": "tau_alpha_150",
         "n_unnegated_sentence_pool": 8,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_151": {
@@ -5758,7 +5758,7 @@
         ],
         "tau_name": "tau_alpha_151",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_152": {
@@ -5798,7 +5798,7 @@
         ],
         "tau_name": "tau_alpha_152",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_153": {
@@ -5838,7 +5838,7 @@
         ],
         "tau_name": "tau_alpha_153",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_154": {
@@ -5882,7 +5882,7 @@
         ],
         "tau_name": "tau_alpha_154",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_155": {
@@ -5930,7 +5930,7 @@
         ],
         "tau_name": "tau_alpha_155",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_156": {
@@ -5970,7 +5970,7 @@
         ],
         "tau_name": "tau_alpha_156",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_157": {
@@ -6018,7 +6018,7 @@
         ],
         "tau_name": "tau_alpha_157",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_158": {
@@ -6058,7 +6058,7 @@
         ],
         "tau_name": "tau_alpha_158",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_159": {
@@ -6106,7 +6106,7 @@
         ],
         "tau_name": "tau_alpha_159",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_160": {
@@ -6150,7 +6150,7 @@
         ],
         "tau_name": "tau_alpha_160",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_161": {
@@ -6188,7 +6188,7 @@
         ],
         "tau_name": "tau_alpha_161",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_162": {
@@ -6230,7 +6230,7 @@
         ],
         "tau_name": "tau_alpha_162",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_163": {
@@ -6270,7 +6270,7 @@
         ],
         "tau_name": "tau_alpha_163",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_164": {
@@ -6315,7 +6315,7 @@
         ],
         "tau_name": "tau_alpha_164",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_165": {
@@ -6362,7 +6362,7 @@
         ],
         "tau_name": "tau_alpha_165",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_166": {
@@ -6399,7 +6399,7 @@
         ],
         "tau_name": "tau_alpha_166",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_167": {
@@ -6437,7 +6437,7 @@
         ],
         "tau_name": "tau_alpha_167",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_168": {
@@ -6485,7 +6485,7 @@
         ],
         "tau_name": "tau_alpha_168",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_169": {
@@ -6526,7 +6526,7 @@
         ],
         "tau_name": "tau_alpha_169",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_170": {
@@ -6573,7 +6573,7 @@
         ],
         "tau_name": "tau_alpha_170",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_171": {
@@ -6614,7 +6614,7 @@
         ],
         "tau_name": "tau_alpha_171",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_172": {
@@ -6663,7 +6663,7 @@
         ],
         "tau_name": "tau_alpha_172",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_173": {
@@ -6712,7 +6712,7 @@
         ],
         "tau_name": "tau_alpha_173",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_174": {
@@ -6751,7 +6751,7 @@
         ],
         "tau_name": "tau_alpha_174",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_175": {
@@ -6800,7 +6800,7 @@
         ],
         "tau_name": "tau_alpha_175",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_176": {
@@ -6845,7 +6845,7 @@
         ],
         "tau_name": "tau_alpha_176",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_177": {
@@ -6899,7 +6899,7 @@
         ],
         "tau_name": "tau_alpha_177",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_178": {
@@ -6948,7 +6948,7 @@
         ],
         "tau_name": "tau_alpha_178",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_179": {
@@ -6998,7 +6998,7 @@
         ],
         "tau_name": "tau_alpha_179",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_180": {
@@ -7040,7 +7040,7 @@
         ],
         "tau_name": "tau_alpha_180",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_181": {
@@ -7081,7 +7081,7 @@
         ],
         "tau_name": "tau_alpha_181",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_182": {
@@ -7133,7 +7133,7 @@
         ],
         "tau_name": "tau_alpha_182",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_183": {
@@ -7180,7 +7180,7 @@
         ],
         "tau_name": "tau_alpha_183",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_184": {
@@ -7227,7 +7227,7 @@
         ],
         "tau_name": "tau_alpha_184",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_185": {
@@ -7272,7 +7272,7 @@
         ],
         "tau_name": "tau_alpha_185",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_186": {
@@ -7314,7 +7314,7 @@
         ],
         "tau_name": "tau_alpha_186",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_187": {
@@ -7366,7 +7366,7 @@
         ],
         "tau_name": "tau_alpha_187",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_188": {
@@ -7410,7 +7410,7 @@
         ],
         "tau_name": "tau_alpha_188",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_189": {
@@ -7459,7 +7459,7 @@
         ],
         "tau_name": "tau_alpha_189",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_190": {
@@ -7510,7 +7510,7 @@
         ],
         "tau_name": "tau_alpha_190",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_191": {
@@ -7568,7 +7568,7 @@
         ],
         "tau_name": "tau_alpha_191",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_192": {
@@ -7621,7 +7621,7 @@
         ],
         "tau_name": "tau_alpha_192",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_193": {
@@ -7669,7 +7669,7 @@
         ],
         "tau_name": "tau_alpha_193",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_194": {
@@ -7722,7 +7722,7 @@
         ],
         "tau_name": "tau_alpha_194",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_195": {
@@ -7765,7 +7765,7 @@
         ],
         "tau_name": "tau_alpha_195",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_196": {
@@ -7808,7 +7808,7 @@
         ],
         "tau_name": "tau_alpha_196",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_197": {
@@ -7851,7 +7851,7 @@
         ],
         "tau_name": "tau_alpha_197",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_198": {
@@ -7899,7 +7899,7 @@
         ],
         "tau_name": "tau_alpha_198",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_199": {
@@ -7952,7 +7952,7 @@
         ],
         "tau_name": "tau_alpha_199",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     },
     "tau_alpha_200": {
@@ -8000,7 +8000,7 @@
         ],
         "tau_name": "tau_alpha_200",
         "n_unnegated_sentence_pool": 9,
-        "module_name": "tau.core",
+        "module_name": "theodias",
         "class_name": "BDDDialecticalStructure"
     }
 }

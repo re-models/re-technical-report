@@ -1,11 +1,11 @@
 project:
   type: book
-  output-dir: ../output
+  output-dir: ../docs
 
 book:
   title: "Assessing a Formal Model of Reflective Equilibrium"
   subtitle: "Technical Report"
-  description: "Based on Beisbart, Betz, and Brun (2021), this report assesses different models of reflective equilibrium (RE) by numerical investigation."
+  description: "In philosophy, and especially in ethics, reflective equilibrium (RE) is often considered a powerful method for obtaining beliefs that mutually support each other, are justified by evidence, and are backed by good reasons. Based on Beisbart, Betz, and Brun (2021), this report assesses formal RE models by numerical investigation to scrutinize and advance the method."
   author: 
     - name: Andreas Freivogel
       affiliation: 

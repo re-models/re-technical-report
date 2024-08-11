@@ -104,7 +104,7 @@ Finally, we will investigate whether global optima and fixed points yield extrem
 ## Ensemble Description {#sec-intro-ensemble-description}
 
 ::: {.callout-note}
-The results presented in this section can be reproduced with this [notebook]({{< var link.nb-intro-general-props >}}).
+The results presented in this section can be reproduced with the following notebook: [{{< var link.nb-intro-general-props >}}]({{< var link.nb-intro-general-props >}}).
 :::
 
 

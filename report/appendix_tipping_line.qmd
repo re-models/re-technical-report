@@ -15,7 +15,7 @@ $$
 
 Consequently, the tipping line splits the space of weight configurations into the two regions $\alpha_{A} < \alpha_{F}$ and $\alpha_{A} > \alpha_{F}$. 
 
-There are interesting analytical results for both regions. The following propositions and their corollaries help to explain the salient change in the behaviour of linear model variants when crossing the tipping line.^[We follow the notation used in @beisbart_making_2021. Definitions of terms we neither introduced here nor in the introduction (@sec-intro) can be found in @beisbart_making_2021.]
+There are interesting analytical results for both regions. The following propositions and their corollaries help to explain the salient change in the behaviour of linear model variants when crossing the tipping line.^[We follow the notation used in @beisbart_making_2021. We did not explicitly define all terms here. You can find some of the missing definitions in the introduction (@sec-intro) and some in @beisbart_making_2021.]
 
 + **Proposition 1**: For the linear model variants all global optima are full RE states if $\alpha_{A} > \alpha_{F}$.
 + **Proposition 2**: For the linear model variants all global-optimum commitments maximize faithfulness if $\alpha_{F} > \alpha_{A}$.
@@ -196,7 +196,7 @@ global optimum. Consequently, we must have $F(\mathcal{C} \,\vert\, \mathcal{C}_
 
 ## Generalization to Fixed Points
 
-The results we prooved for the linear model variants hold not only for global optima but also for fixed points, which requires but a slight modification of the above proofs. The following proof sketch shows howto generalize Proposition 1 to fixed points for the semi-globally optimizing model variant `LinearGlobalRE`. Proposition 2 can be generalized similarly.
+The results we prooved for the linear model variants hold not only for global optima but also for fixed points, which requires but a slight modification of the above proofs. The following proof sketch shows how to generalize Proposition 1 to fixed points for the semi-globally optimizing model variant `LinearGlobalRE`. Proposition 2 can be generalized similarly.
 
 **Proof sketch**
 

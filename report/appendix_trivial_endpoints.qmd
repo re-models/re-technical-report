@@ -3,7 +3,7 @@
 ## Background
 A "trivial" endpoint is a fixed point or a global optimum that consists of a singleton theory (e.g. $T=\lbrace s_{1}\rbrace$) and a singleton commitment (e.g. $C = \lbrace s_{1}\rbrace$). 
 
-Such outcomes are not bad per se, but they may be indicative of the model exploiting shortcomings in the underlying measures. In particular, "trivial" endpoints may be a consequence of the original model's shortcoming concerning the measure of systematicity, which and does not discriminate between singleton theories on the basis of the scope of theories. Note that the same shortcoming also applies to the model variants explored in this report.
+Such outcomes are not bad per se, but they may be indicative of the model exploiting shortcomings in the underlying measures. In particular, "trivial" endpoints may be a consequence of the original model's shortcoming concerning the measure of systematicity, which does not discriminate between singleton theories on the basis of the scope of theories. Note that the same shortcoming also applies to the model variants explored in this report.
 
 
 ## Results
@@ -117,4 +117,4 @@ display(Markdown(df[keep_columns].to_markdown(index = False)))
 **Observations**
 
 - In quadratic model variants, the configuration of weights have a small impact on the relative shares of trivial endpoints.
-- Linear model variants tend to produce higher relative shares of trivial endpoints for low values of $\alpha_{F}$ (tipping line?) and high values of  $\alpha_{S}$.
+- Linear model variants tend to produce higher relative shares of trivial endpoints for low values of $\alpha_{F}$ and high values of  $\alpha_{S}$.

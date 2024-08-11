@@ -28,6 +28,10 @@ sys_data = pd.read_csv(path.join(data_dir, 'systematicity_data_simple_measures.c
 
 In this appendix, we will point to some shortcomings of the systematicity measure used in @beisbart_making_2021 and discuss several alternative measures.^[The considerations and suggestions we present in this appendix are based on different project-internal drafts and were discussed and further developed on several occasions within our project group of the project ['How far does Reflective Equilibrium Take us? Investigating the Power of a Philosophical Method']({{< var link.re-project >}}). The considerations presented here are, in particular, not our original ideas.]
 
+::: {.callout-note}
+The results of this appendix can be reproduced with the following Jupyter notebook: [{{< var link.nb-systematicity >}}]({{< var link.nb-systematicity >}}).
+:::
+
 ## Desiderata for systematicity measures {#sec-appendix-systematicity-desiderata}
 
 
@@ -133,7 +137,7 @@ At this point, we do not further explicate the notion of working together but si
 
 ## First example for *D5*
 
-Consider the dialectical structure depicted in @fig-map-sys1 and the theories $\mathcal{T}_1 = \{1,2\}$ and $\mathcal{T}_2 = \{7,8\}$. Both theories have the same size ($2$) and the same size of their dialectical closure ($6$). The principles of $\mathcal{T}_1$ work together in the following sense: We need both principles to deduce the other sentences of its dialectical closure ($3-6$). In contrast, the principles of $\mathcal{T}_2$ do not work together. Instead, the inferential workload is distributed among its principles: The principle $7$ implies $3$ and $4$, and principle $8$ implies $5$ and $6$. According to *D5*, we should expect that $S(\mathcal{T}_2) < S(\mathcal{T}_1)$
+Consider the dialectical structure depicted in @fig-map-sys1 and the theories $\mathcal{T}_1 = \{1,2\}$ and $\mathcal{T}_2 = \{7,8\}$. Both theories have the same size ($\vert\mathcal{T}_1\vert=\vert\mathcal{T}_2\vert=2$) and the same size of their dialectical closure ($\vert\overline{\mathcal{T}}_1\vert=\vert\overline{\mathcal{T}}_2\vert=6$). The principles of $\mathcal{T}_1$ work together in the following sense: We need both principles to deduce the other sentences of its dialectical closure ($\{3,4,5,6\}$). In contrast, the principles of $\mathcal{T}_2$ do not work together. Instead, the inferential workload is distributed among its principles: The principle $7$ implies $3$ and $4$, and principle $8$ implies $5$ and $6$. According to *D5*, we should expect that $S(\mathcal{T}_2) < S(\mathcal{T}_1)$
 
 ![First illustration of principles (not) working together.](figures/map_sys1){width=60%  #fig-map-sys1}
 
@@ -144,7 +148,7 @@ Consider the dialectical structure depicted in @fig-map-sys1 and the theories $\
 
 ## Second example for *D5*
 
-A similar case is depicted in @fig-map-sys2. Here, you do not need all principles of the theory $\mathcal{T}_1 = \{1,2,4\}$ to deduce sentence $3$ or $5$ on their own. However, the principles of $\mathcal{T}_1$ still work together since you need sentence $1$ in either case. In contrast, the principles of the theory $\mathcal{T}_2 = \{1,6,7\}$ work alone to deduce $3$ and $5$. (Here, $1$ is even an ad hoc principle.) Again, *D5* requires that $S(\mathcal{T}_2) < S(\mathcal{T}_1)$
+A similar case is depicted in @fig-map-sys2. Here, you do not need all principles of the theory $\mathcal{T}_1 = \{1,2,4\}$ to deduce sentence $3$ or $5$. However, the principles of $\mathcal{T}_1$ still work together since you need sentence $1$ in either case. In contrast, the principles of the theory $\mathcal{T}_2 = \{1,6,7\}$ work alone to deduce $3$ and $5$. (Here, $1$ is even an ad hoc principle.) Again, *D5* requires that $S(\mathcal{T}_2) < S(\mathcal{T}_1)$
 
 ![Second illustration of principles (not) working together.](figures/map_sys2){width=35%  #fig-map-sys2}
 
@@ -253,7 +257,7 @@ plot_sys_measure(sys_data, "sys_ec_2", scale=0.7)
 plt.show()
 ```
 
-Both measureses satisfy *D1, D2, D3.1*. However, they fail to account properly for ad hoc principles (*D4.1*) and similar to all simple measures, they do not satisfy *D5* and *D6*.  
+Both measures satisfy *D1, D2*, and *D3.1*. However, they fail to account for ad hoc principles (*D4.1*). Like all simple measures, they also do not satisfy *D5* and *D6*.  
 
 ### Content-Simplicity Weighted Systematicity
 
@@ -364,7 +368,7 @@ plt.show()
 
 ### Relative Effective Content Systematicity {#sec-rel-eff-content-systematicity}
 
-The formulation of another solution starts by framing the problem of $S_{ec}$ in the following way: $S_{ec}$ simply measures the number of implied sentences outside the theory's principles ($\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert$). Consequently, $S_{ec}$ cannot distinguish between theories that are expanded by ad hoc principles, that is, principles that do not expand the theory's content besides the added principles. 
+The formulation of another solution starts by framing the problem of $S_{ec}$ in the following way: $S_{ec}$ simply measures the number of implied sentences outside the theory's principles (i.e., $\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert$). Consequently, $S_{ec}$ cannot distinguish between theories that are expanded by ad hoc principles, that is, principles that do not expand the theory's content besides the added principles. 
 
 However, if a theory is expanded by ad hoc principles, its content measured relative to its size ($\frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\vert \mathcal{T}\vert}$ ) will decrease. 
 
@@ -375,7 +379,7 @@ $$
 S(\mathcal{T})= \frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\vert \mathcal{T}\vert (n-1)}
 $$
 
-Alternatively, we can conceptuali7e $\frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\vert \mathcal{T}\vert}$ as a multiplicative correction factor for $S_{ec}$ which can lead to the following:
+Alternatively, we can conceptualize $\frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\vert \mathcal{T}\vert}$ as a multiplicative correction factor for $S_{ec}$ which can lead to the following:
 
 $$
 S(\mathcal{T})=S_{ec}\frac{\vert \overline{\mathcal{T}}\vert - \vert \mathcal{T}\vert}{\vert \mathcal{T}\vert (n-1)}
@@ -401,7 +405,7 @@ plt.show()
 
 ## Sigma-Based Systematicity Measures {#sec-appendix-systematicity-sigma-measures}
 
-All simple systematicity measures are not able to account for *D5 (internal connectedness)* and *D6 (internal connectedness)* for the simple reason that they evaluate systematicity based on $\vert \mathcal{T}\vert$ and $\vert \overline{\mathcal{T}}\vert$ alone. The problem, in particular, is that the dialectical closure as defined by $\overline{\mathcal{T}}=\{s\in \mathcal{S}\vert \mathcal{T}\models_{\tau} s\}$ will miss those dialectical implications that are relevant for *D5* and *D6*. The dialectical closure $\overline{\mathcal{T}}$ enumerates only atomic sentences as implications. While it is clear that arbitrary conjunctions of these atomic sentences are also implications, $\overline{\mathcal{T}}$ is blind to other complex implications of $\mathcal{T}$. It can, in particular, not distinguish between theories $\mathcal{T}_1$ and $\mathcal{T}_2$ for which $\overline{\mathcal{T}_1} \neq \overline{\mathcal{T}_2}$ but which differ with respect to certain disjunctions implied by the theories (i.e., extensional if-then clauses or "conditional implications"). 
+All simple systematicity measures are not able to account for *D5 (internal connectedness)* and *D6 (external connectedness)* for the simple reason that they evaluate systematicity based on $\vert \mathcal{T}\vert$ and $\vert \overline{\mathcal{T}}\vert$ alone. The problem, in particular, is that the dialectical closure as defined by $\overline{\mathcal{T}}=\{s\in \mathcal{S}\vert \mathcal{T}\models_{\tau} s\}$ will miss those dialectical implications that are relevant for *D5* and *D6*. The dialectical closure $\overline{\mathcal{T}}$ enumerates only atomic sentences as implications. While it is clear that arbitrary conjunctions of these atomic sentences are also implications, $\overline{\mathcal{T}}$ is blind to other complex implications of $\mathcal{T}$. It can, in particular, not distinguish between theories $\mathcal{T}_1$ and $\mathcal{T}_2$ for which $\overline{\mathcal{T}_1} \neq \overline{\mathcal{T}_2}$ but which differ with respect to certain disjunctions implied by the theories (i.e., extensional if-then clauses or "conditional implications"). 
 
 If we want to account for *D5* and *D6*, we have to use a more ambitious concept of *content*. In the following, we will draw on the theory of dialectical structures [@betz_debate_2013] to explicate such a notion of *content*.
 
@@ -510,7 +514,7 @@ The corresponding comparison for simple systematicity measures is more or less t
 
 Basically, we have to compare $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}-\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}^*}$ with $\sigma^{\mathcal{S}\setminus\mathcal{T}}-\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}$. Clearly, $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}\leq\sigma^{\mathcal{S}\setminus\mathcal{T}}$ (since $\mathcal{S}\setminus\mathcal{T}^*\subset \mathcal{S}\setminus\mathcal{T}$). Additionally, we can use the definition of ad hoc principles: Adding ad hoc principles to a theory $\mathcal{T}$ does not do anything in addition to $\mathcal{T}$ on $\mathcal{S}\setminus\mathcal{T}^*$. Hence, $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}^*}=\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}}$. Considering this equation, we have to compare $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}}$ with $\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}$ and, again, we have $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}}\leq \sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}$. But this simple estimation does not help to get us any further with comparing $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}-\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}^*}$ and $\sigma^{\mathcal{S}\setminus\mathcal{T}}-\sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}$. 
 
-What we need is a more precise estimation of the forms $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}+a = \sigma^{\mathcal{S}\setminus\mathcal{T}}$ and $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}}+b= \sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}$. In other words, we need to know the extent to which $\sigma^{\mathcal{S}\setminus\mathcal{T}}_{(\mathcal{T})}$ increases when further restricting the sentence pool.
+What we need is a more precise estimation in terms of $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}+a = \sigma^{\mathcal{S}\setminus\mathcal{T}}$ and $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}}+b= \sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}$. In other words, we need to know the extent to which $\sigma^{\mathcal{S}\setminus\mathcal{T}}_{(\mathcal{T})}$ increases when further restricting the sentence pool.
 
 Let's start with $\sigma^{\mathcal{S}\setminus\mathcal{T}^*}$ and $\sigma^{\mathcal{S}\setminus\mathcal{T}}$. We will search for an additive expression for both terms. Let $\Gamma$ be the set of all complete and consistent positions on $\tau$ (hence, $\sigma=\vert \Gamma\vert$). In analogy to $\sigma^{\mathcal{S}'}$, we will define $\Gamma^{\mathcal{S}'}$ as the set of consistent positions that are complete on the subdomain $\mathcal{S}'\subset \mathcal{S}$. More formally, we can define:
 
@@ -603,7 +607,7 @@ $$
 \frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}} - \sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}+1)}{(n-1)}< \frac{\vert\mathcal{T}^*\vert}{\vert\mathcal{T}\vert}\frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}} - \sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}+1)}{(n-1)} 
 $$ {#eq-almost-there2}
 
-Using both estimations @eq-almost-there1 and @eq-almost-there2 we arrive at:
+Using both estimations @eq-almost-there1 and @eq-almost-there2, we arrive at:
 
 $$
 \frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}^*} - \sigma^{\mathcal{S}\setminus\mathcal{T}^*}_{\mathcal{T}^*}+1)}{\vert\mathcal{T}^*\vert(n-1)} <  \frac{lg(\sigma^{\mathcal{S}\setminus\mathcal{T}} - \sigma^{\mathcal{S}\setminus\mathcal{T}}_{\mathcal{T}}+1)}{\vert\mathcal{T}\vert(n-1)}
