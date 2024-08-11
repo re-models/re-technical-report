@@ -2,6 +2,8 @@
 
 This repository contains the technical report ["Assessing a Formal Model of Reflective Equilibrium"](https://re-models.github.io/re-technical-report/) for the SNSF-DFG project ["Formal Models of Reflective Equilibrium - How Far Does Reflective Equilibrium Take Us?"](https://www.philosophie.unibe.ch/forschung/forschungsprojekte/how_far_does_reflective_equilibrium_take_us/project/index_ger.html).
 
+You can read this report in the browser (<https://re-models.github.io/re-technical-report/>) or download it as pdf file (<https://doi.org/10.5281/zenodo.13294165>).
+
 This repository has the following structure:
 
 + `data`: Contains all data files on which this report is based.
@@ -10,7 +12,6 @@ This repository has the following structure:
 + `output`: Quarto generated output.
 + `re-technical-report`: A small Python package that provides some helper functions for data generation and analysis.
 
-You can read this report in the browser (<https://re-models.github.io/re-technical-report/>) or as pdf file (XX)
 
 ## Reproducing the Results
 
@@ -18,7 +19,7 @@ All findings and the underlying data can be reproduced by using the [Python impl
 
 ### Using Colab
 
-Simply click the Colab badge (![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)) in the notebooks. Note, however, that it is not possible to use the complete data set on Colab. Instead, you are confined to using the subdata set `TINY` (see below).  
+Simply click on the Colab badge (![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)) in the notebooks. Note, however, that it is not possible to use the complete data set on Colab. Instead, you are confined to using the subdata set `TINY` (see below).  
 
 ### Running the Notebooks locally
 
@@ -58,8 +59,8 @@ BibTex citation:
   title = {Assessing a {{Formal Model}} of {{Reflective Equilibrium}}},
   author = {Freivogel, Andreas and Cacean, Sebastian},
   year = {2024},
-  month = mar,
-  doi = {xxx},
+  month = august,
+  doi = {10.5281/zenodo.13294165},
   langid = {english},
   url = {https://re-models.github.io/re-technical-report/},
 }
@@ -67,7 +68,7 @@ BibTex citation:
 
 For attribution, please cite this works as, for instance:
 
-Freivogel, A., & Cacean, S. (2024). *Assessing a Formal Model of Reflective Equilibrium*. <https://doi.org/xx.xxxx/xxxxxxxx>
+Freivogel, A., & Cacean, S. (2024). *Assessing a Formal Model of Reflective Equilibrium*. <https://doi.org/10.5281/zenodo.13294165>
 
 
 ## Credits

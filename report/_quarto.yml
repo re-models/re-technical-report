@@ -4,7 +4,7 @@ project:
 
 book:
   title: "Assessing a Formal Model of Reflective Equilibrium"
-  subtitle: "Technical Report"
+  subtitle: "Technical Report (v1.0)"
   description: "In philosophy, and especially in ethics, reflective equilibrium (RE) is often considered a powerful method for obtaining beliefs that mutually support each other, are justified by evidence, and are backed by good reasons. Based on Beisbart, Betz, and Brun (2021), this report assesses formal RE models by numerical investigation to scrutinize and advance the method."
   author: 
     - name: Andreas Freivogel
@@ -15,7 +15,9 @@ book:
       affiliation: 
       - name: Karlsruhe Institute of Technology (KIT)
         url: https://www.kit.edu/
-  date: March 01, 2024
+  date: August 11, 2024
+  version: v1.0
+  doi: 10.5281/zenodo.13294165
   downloads: [pdf]
   sharing: [twitter, linkedin]
   site-url: https://re-models.github.io/re-technical-report/
