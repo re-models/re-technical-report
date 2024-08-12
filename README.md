@@ -1,6 +1,8 @@
 # Formal Models of Reflective Equilibrium - Technical Report
 
-This repository contains the technical report ["Assessing a Formal Model of Reflective Equilibrium"](https://re-models.github.io/re-technical-report/) for the SNSF-DFG project ["Formal Models of Reflective Equilibrium - How Far Does Reflective Equilibrium Take Us?"](https://www.philosophie.unibe.ch/forschung/forschungsprojekte/how_far_does_reflective_equilibrium_take_us/project/index_ger.html).
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13294165.svg)](https://doi.org/10.5281/zenodo.13294165)
+
+This repository contains the technical report ["Assessing a Formal Model of Reflective Equilibrium"](https://re-models.github.io/re-technical-report/) for the SNSF-DFG project ["Formal Models of Reflective Equilibrium - How Far Does Reflective Equilibrium Take Us?"](https://re-models.github.io/).
 
 You can read this report in the browser (<https://re-models.github.io/re-technical-report/>) or download it as pdf file (<https://doi.org/10.5281/zenodo.13294165>).
 
@@ -76,6 +78,8 @@ Freivogel, A., & Cacean, S. (2024). *Assessing a Formal Model of Reflective Equi
 Earlier versions of this report were discussed on several occasions with all members of the research project  ['How far does Reflective Equilibrium Take us? Investigating the Power of a Philosophical Method'](https://www.philosophie.unibe.ch/forschung/forschungsprojekte/how_far_does_reflective_equilibrium_take_us/project/index_ger.html) (SNSF grant 182854 and German Research Foundation grant 412679086). We thank, in particular, Claus Beisbart, Gregor Betz, Georg Brun, Alexander Koch and Richard Lohse for their helpful comments, which helped to improve this report considerably. Finally, the authors acknowledge support by the state of Baden-Württemberg through the joint high-performance computer system [bwHPC](https://www.scc.kit.edu/en/services/bwUniCluster_2.0.php).
 
 ---
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13294165.svg)](https://doi.org/10.5281/zenodo.13294165)
+
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
 
 This work is licensed under a
