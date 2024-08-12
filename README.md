@@ -80,7 +80,7 @@ Earlier versions of this report were discussed on several occasions with all mem
 ---
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13294165.svg)](https://doi.org/10.5281/zenodo.13294165)
 
-Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
+[![CC BY 4.0][cc-by-shield]][cc-by]
 
 This work is licensed under a
 [Creative Commons Attribution 4.0 International License][cc-by].
